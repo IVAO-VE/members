@@ -9,8 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Metro 4 -->
-    <link rel="stylesheet" href="<?php echo base_url()."index.php/_include/"; ?>vendors/metro4/css/metro-all.min.css">
-    <link rel="stylesheet" href="<?php echo base_url()."index.php/_include/"; ?>css/index.css">
+    <link rel="stylesheet" href="<?php echo APPPATH."views/_include/"; ?>vendors/metro4/css/metro-all.min.css">
+    <link rel="stylesheet" href="<?php echo APPPATH."views/_include/"; ?>css/index.css">
 
     <title>Pandora - Admin template build with Metro 4</title>
 

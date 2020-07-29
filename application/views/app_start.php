@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+    
+    $this->load->view("_lib/lib.header.php");
+    $this->load->view("_lib/lib.menu.php");
 ?>
 
 
@@ -247,3 +250,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </div>
 
+
+<?php
+	$this->load->view("_lib/lib.footer.php");
+?>

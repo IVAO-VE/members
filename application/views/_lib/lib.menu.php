@@ -320,7 +320,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">
             <div>&copy; 2019 <a href="mailto:sergey@pimenov.com.ua" class="text-muted fg-white-hover no-decor">Sergey Pimenov</a></div>
-            <div>Created with <a href="https://metroui.org.ua" class="text-muted fg-white-hover no-decor">Metro 4</a></div>
+            <div>Page rendered in <strong>{elapsed_time}</strong> seconds.</div>
         </div>
     </div>
 

@@ -9,8 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Metro 4 -->
-    <link rel="stylesheet" href="<?php echo base_url('views/_include/vendors/metro4/css/metro-all.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('views/_include/css/index.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('_include/vendors/metro4/css/metro-all.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('_include/css/index.css'); ?>">
 
     <title>Pandora - Admin template build with Metro 4</title>
 
@@ -420,12 +420,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <!-- jQuery first, then Metro UI JS -->
-<script src="<?php echo APPPATH."views/_include/"; ?>vendors/jquery/jquery-3.4.1.min.js"></script>
-<script src="<?php echo APPPATH."views/_include/"; ?>vendors/chartjs/Chart.bundle.min.js"></script>
-<script src="<?php echo APPPATH."views/_include/"; ?>vendors/qrcode/qrcode.min.js"></script>
-<script src="<?php echo APPPATH."views/_include/"; ?>vendors/jsbarcode/JsBarcode.all.min.js"></script>
-<script src="<?php echo APPPATH."views/_include/"; ?>vendors/ckeditor/ckeditor.js"></script>
-<script src="<?php echo APPPATH."views/_include/"; ?>vendors/metro4/js/metro.min.js"></script>
-<script src="<?php echo APPPATH."views/_include/"; ?>js/index.js"></script>
+<script src="<?php echo base_url('_include/vendors/jquery/jquery-3.4.1.min.js'); ?>"></script>
+<script src="<?php echo base_url('_include/vendors/chartjs/Chart.bundle.min.js'); ?>"></script>
+<script src="<?php echo base_url('_include/vendors/qrcode/qrcode.min.js'); ?>"></script>
+<script src="<?php echo base_url('_include/vendors/jsbarcode/JsBarcode.all.min.js'); ?>"></script>
+<script src="<?php echo base_url('_include/vendors/ckeditor/ckeditor.js'); ?>"></script>
+<script src="<?php echo base_url('_include/vendors/metro4/js/metro.min.js'); ?>"></script>
+<script src="<?php echo base_url('_include/js/index.js'); ?>"></script>
 </body>
 </html>

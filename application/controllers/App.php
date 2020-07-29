@@ -5,6 +5,7 @@ class App extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('app_start');
+		$this->load->helper('url');
+        $this->load->view('app_start');
 	}
 }

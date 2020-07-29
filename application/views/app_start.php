@@ -666,7 +666,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </div>
 
-<script src="<?php echo base_url('_include/js/charts.js'); ?>"></script>
+
         
         </div>
     
@@ -681,6 +681,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!-- jQuery first, then Metro UI JS -->
 <script src="<?php echo base_url('_include/vendors/jquery/jquery-3.4.1.min.js'); ?>"></script>
+<script src="<?php echo base_url('_include/js/charts.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/chartjs/Chart.bundle.min.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/qrcode/qrcode.min.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/jsbarcode/JsBarcode.all.min.js'); ?>"></script>

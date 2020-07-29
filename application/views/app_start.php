@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-echo "<br>".base_url()."<br>";
+echo "<br>".site_url()."<br>";
 ?>
 <!DOCTYPE html>
 <html lang="en" class=" scrollbar-type-1 sb-cyan">

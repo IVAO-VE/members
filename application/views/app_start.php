@@ -30,13 +30,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="suggest-box">
             <div class="data-box">
-                <img src="images/jek_vorobey.jpg" class="avatar">
+                <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
                 <div class="ml-4 avatar-title flex-column">
                     <a href="#" class="d-block fg-white text-medium no-decor"><span class="reduce-1">Jack Sparrow</span></a>
                     <p class="m-0"><span class="fg-green mr-2">&#x25cf;</span><span class="text-small">online</span></p>
                 </div>
             </div>
-            <img src="images/jek_vorobey.jpg" class="avatar holder ml-2">
+            <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar holder ml-2">
         </div>
 
         <div class="suggest-box">
@@ -388,12 +388,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </a>
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
-                        <img src="images/jek_vorobey.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
                         <span class="ml-2 app-bar-name">Jack Sparrow</span>
                     </a>
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">
-                            <img src="images/jek_vorobey.jpg" class="avatar">
+                            <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
                             <div class="h4 mb-0">Jack Sparrow</div>
                             <div>Pirate captain</div>
                         </div>

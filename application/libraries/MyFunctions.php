@@ -10,7 +10,7 @@
 
     //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
-
+    $this->load->helper('file'); //Manipulación de archivos.
 
 class MyFunctions {
 
@@ -77,8 +77,8 @@ class MyFunctions {
     /** ***************************************************************************************************************************** **/
    public function auditar($texto){
         $strLOG = '';
-        $filename = "auditoria [".date('d.m.Y')."].log";
-        $dataFile = fopen($_SERVER['DOCUMENT_ROOT']."/logs/".$filename, "a+");
+        $filename = $_SERVER['DOCUMENT_ROOT']."/logs/auditoria [".date('d.m.Y')."].log";
+        //$dataFile = fopen($_SERVER['DOCUMENT_ROOT']."/logs/".$filename, "a+");
         $dia = date("d");
         $mes = date("m");
         $anno = date("Y");
@@ -86,15 +86,13 @@ class MyFunctions {
         $minuto = date("i");
         $segundo = date("s");
         $tiempo = "\n".$dia."/".$mes."/".$anno." ".$hora.":".$minuto.":".$segundo;
+        $strLOG =   str_pad($tiempo, 19, " ", STR_PAD_BOTH)." | ".
+                    str_pad(get_cliente_ip(), 15, " ", STR_PAD_BOTH)." | ".
+                    str_pad(basename($_SERVER['PHP_SELF'], ".php"), 17, " ", STR_PAD_RIGHT)." | ".
+                    utf8_decode($texto);
     
-        if($dataFile){
-            $strLOG =   str_pad($tiempo, 19, " ", STR_PAD_BOTH)." | ".
-                        str_pad(get_cliente_ip(), 15, " ", STR_PAD_BOTH)." | ".
-                        str_pad(basename($_SERVER['PHP_SELF'], ".php"), 17, " ", STR_PAD_RIGHT)." | ".
-                        utf8_decode($texto);
-                    
-            fwrite($dataFile, $strLOG);
-            fclose($dataFile);
+        if (!write_file($filename, $strLOG)){
+                echo 'Imposible auditar';
         }
     }
     /** ***************************************************************************************************************************** **/

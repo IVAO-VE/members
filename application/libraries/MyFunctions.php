@@ -20,7 +20,7 @@ class MyFunctions {
         define('cookie_name', 'ivao_token');
         define('login_url', 'http://login.ivao.aero/index.php');
         define('api_url', 'http://login.ivao.aero/api.php');
-        define('url', get_HOSTPROTOCOL().$url_GOTO);
+        define('url', $this->get_HOSTPROTOCOL().$url_GOTO);
         
         function redirect() {
         	setcookie(cookie_name, '', time()-3600);

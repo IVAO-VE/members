@@ -402,7 +402,7 @@ $config['sess_regenerate_destroy'] = FALSE;
 */
 $config['cookie_prefix']	= 'members';
 $config['cookie_domain']	= 've.ivao.aero';
-$config['cookie_path']		= '/var/www/vhosts/ve.ivao.aero/members.ve.ivao.aero/temp/';
+$config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
 $config['cookie_httponly'] 	= FALSE;
 

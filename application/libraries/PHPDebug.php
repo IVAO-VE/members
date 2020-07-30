@@ -33,7 +33,7 @@ class PHPDebug {
         /// end of IE    
     }
     /** ***************************************************************************************************************************** **/
-    function debug($name, $var = null, $type = LOG) {
+    public function debug($name, $var = null, $type = LOG) {
         echo '<script type="text/javascript">'.NL;
         switch($type) {
             case LOG:
@@ -49,7 +49,6 @@ class PHPDebug {
                 echo 'console.error("'.$name.'");'.NL;    
             break;
         }
-    /** ***************************************************************************************************************************** **/
         if (!empty($var)) {
             if (is_object($var) || is_array($var)) {
                 $object = json_encode($var);

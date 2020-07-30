@@ -1,11 +1,16 @@
 <?php
 /**
  * @autor Rixio Iguarán y Simón Cardona.
+ * @Departamento Sistemas y Webmaster
  * @Licencia Exclusivo sistemas IVAO.AERO
- * Descripción general:
- *   Biblioteca de funciones generales para la aplicación.
+ * @Licencia División Venezuela.
+ * @Correo ve-web@ivao.aero
+ * 
  **/
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+    //Asegurando el acceso directo al script
+    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
+
 
 class MyFunctions {
 

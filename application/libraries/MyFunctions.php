@@ -16,7 +16,7 @@ class MyFunctions {
 
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null){
-        $this->myfunctions->auditar("Sistema validando la sesión API, Redirect to: ".$url_GOTO);
+        $this->auditar("Sistema validando la sesión API, Redirect to: ".$url_GOTO);
         define('cookie_name', 'ivao_token');
         define('login_url', 'http://login.ivao.aero/index.php');
         define('api_url', 'http://login.ivao.aero/api.php');
@@ -34,7 +34,7 @@ class MyFunctions {
         	//Generando la cookie
             setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
             //Generando las variables de entorno de usuario
-            $this->myfunctions->auditar("Asignando las variables de sesión.");
+            $this->auditar("Asignando las variables de sesión.");
             $this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);
             $this->session->set_userdata('SES-FIRSTNAME', $_SESSION['SES-WEB']['firstname']);
             /*$lastname       = $_SESSION['SES-WEB']['lastname'];
@@ -54,13 +54,13 @@ class MyFunctions {
             $this->session->set_userdata('some_name', 'some_value'); */
             //Validando redirección a otra página
             if($url_GOTO){
-               $this->myfunctions->auditar("Redirigiendo a: ".url);
+               $this->auditar("Redirigiendo a: ".url);
         	   header('Location: '.url);
             }
         	exit;
         } elseif($_GET['IVAOTOKEN'] == 'error') {
         	die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
-            $this->myfunctions->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
+            $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
         }
         
         if($_COOKIE[cookie_name]) {

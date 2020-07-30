@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-    $this->load->library('MyFunctions');
+    
     
     if(!$this->session->userdata('SES-VID')){
         $this->MyFunctions->tes_x();

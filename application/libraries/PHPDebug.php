@@ -22,7 +22,7 @@ class PHPDebug {
         define("NL","\r\n");
         echo '<script type="text/javascript">'.NL;
          
-        /// IE and other browsers w/o console
+        /// IE y otros exploradores w/o console
         echo 'if (!window.console) console = {};';
         echo 'console.log = console.log || function(){};';
         echo 'console.warn = console.warn || function(){};';
@@ -30,7 +30,7 @@ class PHPDebug {
         echo 'console.info = console.info || function(){};';
         echo 'console.debug = console.debug || function(){};';
         echo '</script>';
-        /// end of IE    
+        /// final de IE    
     }
     /** ***************************************************************************************************************************** **/
     public function debug($name, $var = null, $type = LOG) {

@@ -1,9 +1,8 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     if(!$this->session->userdata('SES-VID')){
-        echo 'NO';
-        
-    }else{ echo 'Si'; }
+        echo APPPATH;        
+    }
     $this->load->view("_lib/lib.header.php");
     $this->load->view("_lib/lib.menu.php");
 ?>

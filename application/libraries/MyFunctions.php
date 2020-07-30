@@ -7,7 +7,7 @@
  **/
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MyFuntions {
+class MyFunctions {
 
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null){

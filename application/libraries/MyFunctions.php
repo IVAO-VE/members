@@ -86,7 +86,7 @@ class MyFunctions {
         $segundo = date("s");
         $tiempo = "\n".$dia."/".$mes."/".$anno." ".$hora.":".$minuto.":".$segundo;
         $strLOG =   str_pad($tiempo, 19, " ", STR_PAD_BOTH)." | ".
-                    str_pad(get_cliente_ip(), 15, " ", STR_PAD_BOTH)." | ".
+                    str_pad($this->get_cliente_ip(), 15, " ", STR_PAD_BOTH)." | ".
                     str_pad(basename($_SERVER['PHP_SELF'], ".php"), 17, " ", STR_PAD_RIGHT)." | ".
                     utf8_decode($texto);
     
@@ -107,6 +107,24 @@ class MyFunctions {
     	exit;
     }
     /** ***************************************************************************************************************************** **/
+    public function get_cliente_ip() {
+        $ipaddress = '';
+        if (getenv('HTTP_CLIENT_IP'))
+            $ipaddress = getenv('HTTP_CLIENT_IP');
+        else if(getenv('HTTP_X_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+        else if(getenv('HTTP_X_FORWARDED'))
+            $ipaddress = getenv('HTTP_X_FORWARDED');
+        else if(getenv('HTTP_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_FORWARDED_FOR');
+        else if(getenv('HTTP_FORWARDED'))
+           $ipaddress = getenv('HTTP_FORWARDED');
+        else if(getenv('REMOTE_ADDR'))
+            $ipaddress = getenv('REMOTE_ADDR');
+        else
+            $ipaddress = 'UNKNOWN';
+        return $ipaddress;
+    }    
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

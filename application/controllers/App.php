@@ -7,7 +7,7 @@ class App extends CI_Controller {
 	{
 		
         $this->load->helper('url');
-        $this->load->library('myfunctions');
+        //$this->load->library('myfunctions');
         $this->load->view('app_start');
 	}
 }

@@ -23,12 +23,10 @@ class MyFunctions {
         
         $ref = 'https://ve.ivao.aero';
         
-        //$_GET['IVAOTOKEN']
-        $xTOKEN = $this->input->get('IVAOTOKEN', FALSE);
-        if(isset($xTOKEN) && $xTOKEN != '') {
-            if($xTOKEN !== 'error') {
+        if(isset($_GET['IVAOTOKEN'])) {
+            if($_GET['IVAOTOKEN'] !== 'error') {
             	//Generando la cookie
-                setcookie(cookie_name, $xTOKEN, time()+3600);
+                setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
                 //Generando las variables de entorno de usuario
                 $this->auditar("Asignando las variables de sesión.");
                 $vid            = $_SESSION['SES-WEB']['vid'];
@@ -48,7 +46,7 @@ class MyFunctions {
                 $division       = $_SESSION['SES-WEB']['division'];
                 //$this->session->set_userdata('some_name', 'some_value');
                 $img            = 've.jpg';
-                $_SESSION['IVAOTOKEN'] = $xTOKEN;
+                $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
                 //$this->session->set_userdata('some_name', 'some_value'); 
                 //Validando redirección a otra página
                 if($url_GOTO){

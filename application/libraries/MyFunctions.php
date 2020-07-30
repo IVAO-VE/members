@@ -32,21 +32,21 @@ class MyFunctions {
             
             //$this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);
             //$this->session->set_userdata('SES-FIRSTNAME', $_SESSION['SES-WEB']['firstname']);
-            /*$lastname       = $_SESSION['SES-WEB']['lastname'];
-            $this->session->set_userdata('some_name', 'some_value');
+            $lastname       = $_SESSION['SES-WEB']['lastname'];
+            //$this->session->set_userdata('some_name', 'some_value');
             $rating         = $_SESSION['SES-WEB']['rating'];
-            $this->session->set_userdata('some_name', 'some_value');
+            //$this->session->set_userdata('some_name', 'some_value');
             $ratingatc      = $_SESSION['SES-WEB']['ratingatc'];
-            $this->session->set_userdata('some_name', 'some_value');
+            //$this->session->set_userdata('some_name', 'some_value');
             $ratingpilot    = $_SESSION['SES-WEB']['ratingpilot'];
-            $this->session->set_userdata('some_name', 'some_value');
+            //$this->session->set_userdata('some_name', 'some_value');
             $country        = $_SESSION['SES-WEB']['country'];
-            $this->session->set_userdata('some_name', 'some_value');
+            //$this->session->set_userdata('some_name', 'some_value');
             $division       = $_SESSION['SES-WEB']['division'];
-            $this->session->set_userdata('some_name', 'some_value');
+            //$this->session->set_userdata('some_name', 'some_value');
             $img            = 've.jpg';
             $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
-            $this->session->set_userdata('some_name', 'some_value'); */
+            //$this->session->set_userdata('some_name', 'some_value'); 
             //Validando redirección a otra página
             if($url_GOTO){
                $this->auditar("Redirigiendo a: ".url);

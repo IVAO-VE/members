@@ -22,12 +22,6 @@ class MyFunctions {
         define('api_url', 'http://login.ivao.aero/api.php');
         define('url', $this->get_HOSTPROTOCOL().$url_GOTO);
         
-        function redirect() {
-        	setcookie(cookie_name, '', time()-3600);
-        	header('Location: '.login_url.'?url='.url);
-        	exit;
-        }
-    
         $ref = 'https://ve.ivao.aero';
         
         if($_GET['IVAOTOKEN'] && $_GET['IVAOTOKEN'] !== 'error') {
@@ -75,7 +69,7 @@ class MyFunctions {
         		exit;
             }
         } else {
-            redirect($ref);
+            $this->redirect($ref);
         }
        
     }
@@ -109,6 +103,11 @@ class MyFunctions {
         return "$MyPROTOCOL://$MyHOST";  
     }
     /** ***************************************************************************************************************************** **/
+    public function redirect() {
+    	setcookie(cookie_name, '', time()-3600);
+    	header('Location: '.login_url.'?url='.url);
+    	exit;
+    }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

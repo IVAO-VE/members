@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     if(!$this->session->userdata('SES-VID')){
-                
+        $this->MyFunctions->tes_x();
     }
     $this->load->view("_lib/lib.header.php");
     $this->load->view("_lib/lib.menu.php");

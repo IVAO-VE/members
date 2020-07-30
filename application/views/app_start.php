@@ -8,6 +8,7 @@
  * 
  **/
 
+    //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
     //Validando el acceso en IVAO
     if(!$this->session->userdata('SES-VID')){

@@ -9,6 +9,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MyFuntions {
 
+    public function __construct(){
+                parent::__construct();
+                // Your own constructor code
+                $this->session();
+                
+    }
+
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null){
         auditar("Sistema validando la sesión API, Redirect to: ".$url_GOTO);

@@ -3,7 +3,7 @@
     
     
     if(!$this->session->userdata('SES-VID')){
-        $this->myfunctions->tes_x();
+        $this->myfunctions->valida_API();
     }
     $this->load->view("_lib/lib.header.php");
     $this->load->view("_lib/lib.menu.php");

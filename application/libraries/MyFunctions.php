@@ -29,8 +29,9 @@ class MyFunctions {
             setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
             //Generando las variables de entorno de usuario
             $this->auditar("Asignando las variables de sesión.");
-            $this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);
-            $this->session->set_userdata('SES-FIRSTNAME', $_SESSION['SES-WEB']['firstname']);
+            
+            //$this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);
+            //$this->session->set_userdata('SES-FIRSTNAME', $_SESSION['SES-WEB']['firstname']);
             /*$lastname       = $_SESSION['SES-WEB']['lastname'];
             $this->session->set_userdata('some_name', 'some_value');
             $rating         = $_SESSION['SES-WEB']['rating'];

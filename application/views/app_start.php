@@ -1,11 +1,21 @@
 <?php
-    defined('BASEPATH') OR exit('No direct script access allowed');
-    
-    
+/**
+ * @autor Rixio Iguarán y Simón Cardona.
+ * @Departamento Sistemas y Webmaster
+ * @Licencia Exclusivo sistemas IVAO.AERO
+ * @Licencia División Venezuela.
+ * @Correo ve-web@ivao.aero
+ * 
+ **/
+
+    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
+    //Validando el acceso en IVAO
     if(!$this->session->userdata('SES-VID')){
-        $this->myfunctions->tes_x();
+        $this->myfunctions->valida_API();
     }
+    //Cargando la estructura del HEADER
     $this->load->view("_lib/lib.header.php");
+    //Cargando la estructura del MENU
     $this->load->view("_lib/lib.menu.php");
 ?>
 

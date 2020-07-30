@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MyFunctions {
 
     /** ***************************************************************************************************************************** **/
-    /*public function valida_API($url_GOTO = null){
+    public function valida_API($url_GOTO = null){
         auditar("Sistema validando la sesión API, Redirect to: ".$url_GOTO);
         define('cookie_name', 'ivao_token');
         define('login_url', 'http://login.ivao.aero/index.php');
@@ -48,7 +48,7 @@ class MyFunctions {
             $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
             $this->session->set_userdata('some_name', 'some_value'); */
             //Validando redirección a otra página
-           /* if($url_GOTO){
+            if($url_GOTO){
                auditar("Redirigiendo a: ".url);
         	   header('Location: '.url);
             }
@@ -73,7 +73,7 @@ class MyFunctions {
             redirect($ref);
         }
        
-    }*/
+    }
     /** ***************************************************************************************************************************** **/
    public function auditar($texto){
         $strLOG = '';

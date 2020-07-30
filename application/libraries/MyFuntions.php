@@ -6,15 +6,9 @@
  *   Biblioteca de funciones generales para la aplicación.
  **/
 defined('BASEPATH') OR exit('No direct script access allowed');
+$this->session();
 
 class MyFuntions {
-
-    public function __construct(){
-                parent::__construct();
-                // Your own constructor code
-                $this->session();
-                
-    }
 
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null){

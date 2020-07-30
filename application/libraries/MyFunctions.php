@@ -71,7 +71,7 @@ class MyFunctions {
         		exit;
             }
         } else {
-            $this->redirect($ref);
+            $this->APIredirect($ref);
         }
        
     }
@@ -103,7 +103,7 @@ class MyFunctions {
         return "$MyPROTOCOL://$MyHOST";  
     }
     /** ***************************************************************************************************************************** **/
-    public function redirect() {
+    public function APIredirect() {
     	setcookie(cookie_name, '', time()-3600);
     	header('Location: '.login_url.'?url='.url);
     	exit;

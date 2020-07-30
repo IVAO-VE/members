@@ -1,5 +1,8 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
+    if(!$_SESSION['SES-WEB']['vid']){
+        valida_API($_SERVER['SCRIPT_NAME']);
+    }
     $this->load->view("_lib/lib.header.php");
     $this->load->view("_lib/lib.menu.php");
 ?>

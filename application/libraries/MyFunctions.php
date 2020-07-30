@@ -54,7 +54,7 @@ class MyFunctions {
             	   header('Location: '.url);
                 }
             }else{
-                die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
+                echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
                 $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
             }
         } 

@@ -11,9 +11,11 @@
     //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
     //Validando el acceso en IVAO
+/*
     if(!$this->session->userdata('SES-VID')){
-        //$this->myfunctions->valida_API($_SERVER['SCRIPT_NAME']);
+        $this->myfunctions->valida_API($_SERVER['SCRIPT_NAME']);
     }
+*/    
     //Cargando la estructura del HEADER
     $this->load->view("_lib/lib.header.php");
     //Cargando la estructura del MENU

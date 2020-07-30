@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('PHPDebug', 'session','database','MyFunctions');
+$autoload['libraries'] = array('PHPDebug', 'MyFunctions', 'session','database');
 
 /*
 | -------------------------------------------------------------------

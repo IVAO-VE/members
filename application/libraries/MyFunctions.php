@@ -23,39 +23,41 @@ class MyFunctions {
         
         $ref = 'https://ve.ivao.aero';
         
-        if($_GET['IVAOTOKEN'] && $_GET['IVAOTOKEN'] !== 'error') {
-        	//Generando la cookie
-            setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
-            //Generando las variables de entorno de usuario
-            $this->auditar("Asignando las variables de sesión.");
-            
-            //$this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);
-            //$this->session->set_userdata('SES-FIRSTNAME', $_SESSION['SES-WEB']['firstname']);
-            $lastname       = $_SESSION['SES-WEB']['lastname'];
-            //$this->session->set_userdata('some_name', 'some_value');
-            $rating         = $_SESSION['SES-WEB']['rating'];
-            //$this->session->set_userdata('some_name', 'some_value');
-            $ratingatc      = $_SESSION['SES-WEB']['ratingatc'];
-            //$this->session->set_userdata('some_name', 'some_value');
-            $ratingpilot    = $_SESSION['SES-WEB']['ratingpilot'];
-            //$this->session->set_userdata('some_name', 'some_value');
-            $country        = $_SESSION['SES-WEB']['country'];
-            //$this->session->set_userdata('some_name', 'some_value');
-            $division       = $_SESSION['SES-WEB']['division'];
-            //$this->session->set_userdata('some_name', 'some_value');
-            $img            = 've.jpg';
-            $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
-            //$this->session->set_userdata('some_name', 'some_value'); 
-            //Validando redirección a otra página
-            if($url_GOTO){
-               $this->auditar("Redirigiendo a: ".url);
-        	   header('Location: '.url);
+        if(isset($_GET['IVAOTOKEN'])) {
+            if($_GET['IVAOTOKEN'] !== 'error') {
+            	//Generando la cookie
+                setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
+                //Generando las variables de entorno de usuario
+                $this->auditar("Asignando las variables de sesión.");
+                $vid            = $_SESSION['SES-WEB']['vid'];
+                //$this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);                
+                $firstname      = $_SESSION['SES-WEB']['firstname'];
+                //$this->session->set_userdata('SES-FIRSTNAME', $_SESSION['SES-WEB']['firstname']);
+                $lastname       = $_SESSION['SES-WEB']['lastname'];
+                //$this->session->set_userdata('some_name', 'some_value');
+                $rating         = $_SESSION['SES-WEB']['rating'];
+                //$this->session->set_userdata('some_name', 'some_value');
+                $ratingatc      = $_SESSION['SES-WEB']['ratingatc'];
+                //$this->session->set_userdata('some_name', 'some_value');
+                $ratingpilot    = $_SESSION['SES-WEB']['ratingpilot'];
+                //$this->session->set_userdata('some_name', 'some_value');
+                $country        = $_SESSION['SES-WEB']['country'];
+                //$this->session->set_userdata('some_name', 'some_value');
+                $division       = $_SESSION['SES-WEB']['division'];
+                //$this->session->set_userdata('some_name', 'some_value');
+                $img            = 've.jpg';
+                $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
+                //$this->session->set_userdata('some_name', 'some_value'); 
+                //Validando redirección a otra página
+                if($url_GOTO){
+                   $this->auditar("Redirigiendo a: ".url);
+            	   header('Location: '.url);
+                }
+            }else{
+                die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
+                $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
             }
-        	exit;
-        } elseif($_GET['IVAOTOKEN'] == 'error') {
-        	die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
-            $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
-        }
+        } 
         
         if($_COOKIE[cookie_name]) {
         	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));

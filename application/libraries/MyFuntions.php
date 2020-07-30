@@ -9,8 +9,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MyFuntions {
     /** ***************************************************************************************************************************** **/
-    public function some_method(){
+    public function valida_API($url_GOTO = null){
+        auditar("Sistema validando la sesión API, Redirect to: ".$url_GOTO);
+        define('cookie_name', 'ivao_token');
+        define('login_url', 'http://login.ivao.aero/index.php');
+        define('api_url', 'http://login.ivao.aero/api.php');
+        define('url', get_HOSTPROTOCOL().$url_GOTO);
+        
+        function redirect() {
+        	setcookie(cookie_name, '', time()-3600);
+        	header('Location: '.login_url.'?url='.url);
+        	exit;
+        }
     
+        $ref = 'https://ve.ivao.aero';
+        
+        if($_GET['IVAOTOKEN'] && $_GET['IVAOTOKEN'] !== 'error') {
+        	//Generando la cookie
+            setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
+            //Generando las variables de entorno de usuario
+            auditar("Asignando las variables de sesión.");
+            $vid            = $_SESSION['SES-WEB']['vid'];
+            $firstname      = $_SESSION['SES-WEB']['firstname'];
+            $lastname       = $_SESSION['SES-WEB']['lastname'];
+            $rating         = $_SESSION['SES-WEB']['rating'];
+            $ratingatc      = $_SESSION['SES-WEB']['ratingatc'];
+            $ratingpilot    = $_SESSION['SES-WEB']['ratingpilot'];
+            $country        = $_SESSION['SES-WEB']['country'];
+            $division       = $_SESSION['SES-WEB']['division'];
+            $img            = 've.jpg';
+            $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
+            //Validando redirección a otra página
+            if($url_GOTO){
+               auditar("Redirigiendo a: ".url);
+        	   header('Location: '.url);
+            }
+        	exit;
+        } elseif($_GET['IVAOTOKEN'] == 'error') {
+        	die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
+            auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
+        }
+        
+        if($_COOKIE[cookie_name]) {
+        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
+        	if($user_array->result) {
+                foreach($user_array as $key => $data){
+                    $_SESSION['SES-WEB'][$key] = $data;
+    			}
+        	}else{
+        		session_destroy();
+        		redirect_login($ref);
+        		exit;
+            }
+        } else {
+            redirect($ref);
+        }
+       
     }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

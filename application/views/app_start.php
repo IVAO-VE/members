@@ -12,7 +12,7 @@
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
     //Validando el acceso en IVAO
 
-
+    print_r($this->myfunctions->valida_API());
     
     //Cargando la estructura del HEADER
     $this->load->view("_lib/lib.header.php");

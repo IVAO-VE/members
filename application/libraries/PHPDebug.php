@@ -5,7 +5,41 @@
  * @Licencia Exclusivo sistemas IVAO.AERO
  * @Licencia División Venezuela.
  * @Correo ve-web@ivao.aero
+ *
+ * USO DE LA CLASE
  * 
+ * MENSAJE SIMPLE A CONSOLA
+    $debug->debug("A very simple message");
+     
+   VARIABLE A CONSOLA
+    $x = 3;
+    $y = 5;
+    $z = $x/$y;
+    $debug->debug("Variable Z: ", $z);
+     
+   TIPO PRECAUCIÓN
+    $debug->debug("A simple Warning", null, WARN);
+     
+   TIPO INFORMACIÓN
+    $debug->debug("A simple Info message", null, INFO);
+     
+   TIPO ERROR
+    $debug->debug("A simple error messsage", null, ERROR);
+     
+   ARREGLO A CONSOLA
+    $fruits = array("banana", "apple", "strawberry", "pineaple");
+    $fruits = array_reverse($fruits);
+    $debug->debug("Fruits array", $fruits);
+     
+     
+   OBJETO A CONSOLA
+    $book               = new stdClass;
+    $book->title        = "Harry Potter and the Prisoner of Azkaban";
+    $book->author       = "J. K. Rowling";
+    $book->publisher    = "Arthur A. Levine Books";
+    $book->amazon_link  = "http://www.amazon.com/dp/0439136369/";
+    $debug->debug("Object", $book);
+ *  
  **/
 
     //Asegurando el acceso directo al script

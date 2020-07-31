@@ -10,7 +10,6 @@
 
     //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
-    $this->load->library('PHPDebug');
 
 class MyFunctions {
 
@@ -33,7 +32,7 @@ class MyFunctions {
         
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] !== 'error') {
-                $this->phpdebug->debug('IVAOTOKEN: '.$_GET['IVAOTOKEN']);
+                $phpdebug->debug('IVAOTOKEN: '.$_GET['IVAOTOKEN']);
             	//Generando la cookie
                 $cookie= array(
                     'name'   => cookie_name,

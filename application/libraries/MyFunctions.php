@@ -164,7 +164,7 @@ class MyFunctions {
                    $this->auditar("Redirigiendo a: ".url);
             	   header('Location: http://members.ve.ivao.aero/');
                }else{
-                   $this->load->view('app_start2');
+                   reditect('app_start2');
                }               
         	   exit;
             }else{

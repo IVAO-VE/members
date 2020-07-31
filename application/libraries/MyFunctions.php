@@ -158,7 +158,7 @@ class MyFunctions {
         	   header('Location: '.url);
         	   exit;
             }else{
-                die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
+                echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
                 exit;
             }
         }
@@ -170,6 +170,7 @@ class MyFunctions {
         	if($user_array->result) {
         		//Success! A user has been found!
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
+                exit;
         	}else{
             	set_cookie('ivao_token', '', time()-3600);
             	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');

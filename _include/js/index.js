@@ -83,8 +83,8 @@ $(function(){
             return false;
         }
 
-        hash = href.substr(1);
-        href = hash + ".html";
+        //hash = href.substr(1);
+        //href = hash + ".html";
 
         //getContent(hash);
 
@@ -95,7 +95,7 @@ $(function(){
         pane.find("li").removeClass("active");
         $(this).closest("li").addClass("active");
 
-        window.history.pushState(href, href, "index.html#"+hash);
+        //window.history.pushState(href, href, "index.html#"+hash);
 
         return false;
     });

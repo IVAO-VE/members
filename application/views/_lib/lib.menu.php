@@ -319,7 +319,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ul>
 
         <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">
-            <div>&copy; 2019 <a href="mailto:sergey@pimenov.com.ua" class="text-muted fg-white-hover no-decor">Sergey Pimenov</a></div>
+            <div>&copy; 2020 <a href="mailto:ve-web@ivao.aero" class="text-muted fg-white-hover no-decor">Webmasters Venezuela</a></div>
             <div>Page rendered in <strong>{elapsed_time}</strong> seconds.</div>
         </div>
     </div>
@@ -345,7 +345,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
                         <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
-                        <span class="ml-2 app-bar-name">Jack Sparrow</span>
+                        <span class="ml-2 app-bar-name"><?php echo utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname); ?></span>
                     </a>
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">

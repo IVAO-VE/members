@@ -15,7 +15,7 @@ class MyFunctions {
 
     /** ***************************************************************************************************************************** **/    
     function __construct() {
-        
+        session_start();
     }
     /** ***************************************************************************************************************************** **/    
 
@@ -174,7 +174,7 @@ class MyFunctions {
         	$user_array = json_decode(file_get_contents('http://login.ivao.aero/api.php?type=json&token='.$_COOKIE['ivao_token']));
         	if($user_array->result) {
         		//Success! A user has been found!
-                $this->session->set_userdata('SES-VID', '195631');
+                $_SESSION['SES-VID'] = $user_array->vid;
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
                 exit;
         	}else{

@@ -30,7 +30,7 @@ class App extends CI_Controller {
             //Generando arreglo con datos del miembro detectado
             $arraymember = array(
                     'vid'           => $xMIEMBRO->vid,
-                    'firstname'     => $xMIEMBRO->fistname,
+                    'firstname'     => $xMIEMBRO->firstname,
                     'lastname'      => $xMIEMBRO->lastname
             );
             //Cargando los datos de sesión

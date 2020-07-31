@@ -7,9 +7,8 @@ class App extends CI_Controller {
 	{
 
         //Validando el acceso en IVAO
-        //list($result, $vid, $firstname, $lastname, $rating, $ratingatc, $ratingpilot, $division, $country, $skype, $hours_atc, $hours_pilot, $staff, $va_staff_ids, $va_staff, $va_staff_icaos, $isNpoMember, $va_member_ids, $hq_pilot) = $this->myfunctions->valida_API();
         $xMIEMBRO = $this->myfunctions->valida_API();
-        if($xMIEMBRO->vid != '0'){
+        if(!empty($xMIEMBRO->vid)){
             $this->load->helper('url');
             $this->load->view('app_start');
         }

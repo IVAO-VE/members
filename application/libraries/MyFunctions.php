@@ -176,6 +176,7 @@ class MyFunctions {
         		//Success! A user has been found!
                 $_SESSION['SES-VID'] = $user_array->vid;
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
+                return $user_array;
                 exit;
         	}else{
             	set_cookie('ivao_token', '', time()-3600);

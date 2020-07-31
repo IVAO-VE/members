@@ -12,12 +12,7 @@
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
     //Validando el acceso en IVAO
 
-    if(!$_SESSION['SES-VID']){
-        $this->phpdebug->debug('No hay session y se debe de crear.');
-        $this->myfunctions->valida_API();
-    }else{
-        $this->phpdebug->debug('Sesion creada');
-    }
+
     
     //Cargando la estructura del HEADER
     $this->load->view("_lib/lib.header.php");

@@ -30,23 +30,6 @@ class MyFunctions {
             
         $ref = 'https://members.ve.ivao.aero';
         
-        if($_COOKIE[cookie_name]) {
-            echo "entre a cookie_name";
-        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
-        	if($user_array->result) {
-                foreach($user_array as $key => $data){
-                    $_SESSION['SES-WEB'][$key] = $data;
-    			}
-        	}else{
-        		session_destroy();
-        		redirect_login($ref);
-        		exit;
-            }
-        } else {
-            $this->APIredirect($ref);
-            exit;
-        }
-       
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] !== 'error') {
             	//Generando la cookie
@@ -89,7 +72,25 @@ class MyFunctions {
                 $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
                 exit;
             }
-        } 
+        }
+        
+        if($_COOKIE[cookie_name]) {
+            echo "entre a cookie_name";
+        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
+        	if($user_array->result) {
+                foreach($user_array as $key => $data){
+                    $_SESSION['SES-WEB'][$key] = $data;
+    			}
+        	}else{
+        		session_destroy();
+        		redirect_login($ref);
+        		exit;
+            }
+        } else {
+            $this->APIredirect($ref);
+            exit;
+        }
+         
     }
     /** ***************************************************************************************************************************** **/
    public function auditar($texto){

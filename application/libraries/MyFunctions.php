@@ -160,7 +160,7 @@ class MyFunctions {
         
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] != 'error') {
-        	   setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
+        	   setcookie('ivao_token', $_GET['IVAOTOKEN'], time()+3600);
         	   header('Location: '.url);
         	   exit;
             }else{
@@ -169,8 +169,8 @@ class MyFunctions {
         }
         
         //check if the cookie is set and/or is correct
-        if($_COOKIE[cookie_name]) {
-        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
+        if($_COOKIE['ivao_token']) {
+        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE['ivao_token']));
         	if($user_array->result) {
         		//Success! A user has been found!
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';

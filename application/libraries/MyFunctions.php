@@ -33,7 +33,13 @@ class MyFunctions {
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] !== 'error') {
             	//Generando la cookie
-                setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
+                $cookie= array(
+                    'name'   => cookie_name,
+                    'value'  => $_GET['IVAOTOKEN'],
+                    'expire' => time()+3600,
+                );                
+                $this->input->set_cookie($cookie);
+                //setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
                 //Generando las variables de entorno de usuario
                 $this->auditar("Asignando las variables de sesión.");
                 $vid            = $_SESSION['SES-WEB']['vid'];

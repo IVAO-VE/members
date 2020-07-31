@@ -32,7 +32,7 @@ class MyFunctions {
         
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] !== 'error') {
-                $this->PHPDebug->debug('IVAOTOKEN: '.$_GET['IVAOTOKEN']);
+                $this->phpdebug->debug('IVAOTOKEN: '.$_GET['IVAOTOKEN']);
             	//Generando la cookie
                 $cookie= array(
                     'name'   => cookie_name,

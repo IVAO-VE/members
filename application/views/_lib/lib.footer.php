@@ -27,6 +27,6 @@
 <script src="<?php echo base_url('_include/vendors/jsbarcode/JsBarcode.all.min.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/ckeditor/ckeditor.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/metro4/js/metro.min.js'); ?>"></script>
-<!--<script src="<?php echo base_url('_include/js/index.js'); ?>"></script>-->
+<script src="<?php echo base_url('_include/js/index.js'); ?>"></script>
 </body>
 </html>

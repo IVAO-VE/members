@@ -44,6 +44,12 @@ $(function(){
     var menu = link.closest("ul[data-role=dropdown]");
     var node = link.parent("li").addClass("active");
 
+    /**
+     * Funcion que obtiene el contenido del archivo HTML.
+     * La comento porque cuando esta activa duplica la pagina, cuando no tambien...
+     * Si se entra a https://members.ve.ivao.aero/dashboard.html no se duplica
+     * Esto lo veo que en linea 42 (Tambien comentada) se obtiene la ubicacion y segun eso carga la pagina, por defecto tiene Dashboard entonces nos carga este.
+     * **/
     /*function getContent(target){
         window.on_page_functions = [];
         $.get(target + ".html").then(

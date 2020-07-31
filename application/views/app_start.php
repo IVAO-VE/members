@@ -11,9 +11,7 @@
     //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
     //Cargando la estructura del HEADER
-    $this->load->view("_lib/lib.header.php");
     //Cargando la estructura del MENU
-    $this->load->view("_lib/lib.menu.php");
 ?>
 
 
@@ -263,5 +261,4 @@
 
 
 <?php
-	$this->load->view("_lib/lib.footer.php");
 ?>

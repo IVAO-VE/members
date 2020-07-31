@@ -18,82 +18,7 @@ class MyFunctions {
         
     }
     /** ***************************************************************************************************************************** **/    
-
-
-    /** ***************************************************************************************************************************** **/
-    public function Xvalida_API($url_GOTO = null){
-        $this->auditar("Sistema validando la sesión API");
-        define('cookie_name', 'ivao_token');
-        define('login_url', 'http://login.ivao.aero/index.php');
-        define('api_url', 'http://login.ivao.aero/api.php');
-        define('url', $this->get_HOSTPROTOCOL().$url_GOTO);
-            
-        $ref = 'https://members.ve.ivao.aero';
-        
-        if(isset($_GET['IVAOTOKEN'])) {
-            if($_GET['IVAOTOKEN'] !== 'error') {
-            	//Generando la cookie
-                $cookie= array(
-                    'name'   => cookie_name,
-                    'value'  => $_GET['IVAOTOKEN'],
-                    'expire' => time()+3600,
-                );                
-                set_cookie($cookie);
-                //setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
-                //Generando las variables de entorno de usuario
-/*                $this->auditar("Asignando las variables de sesión.");
-                $vid            = $_SESSION['SES-WEB']['vid'];
-                //$this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);                
-                $firstname      = $_SESSION['SES-WEB']['firstname'];
-                //$this->session->set_userdata('SES-FIRSTNAME', $_SESSION['SES-WEB']['firstname']);
-                $lastname       = $_SESSION['SES-WEB']['lastname'];
-                //$this->session->set_userdata('some_name', 'some_value');
-                $rating         = $_SESSION['SES-WEB']['rating'];
-                //$this->session->set_userdata('some_name', 'some_value');
-                $ratingatc      = $_SESSION['SES-WEB']['ratingatc'];
-                //$this->session->set_userdata('some_name', 'some_value');
-                $ratingpilot    = $_SESSION['SES-WEB']['ratingpilot'];
-                //$this->session->set_userdata('some_name', 'some_value');
-                $country        = $_SESSION['SES-WEB']['country'];
-                //$this->session->set_userdata('some_name', 'some_value');
-                $division       = $_SESSION['SES-WEB']['division'];
-                //$this->session->set_userdata('some_name', 'some_value');
-                $img            = 've.jpg';
-                $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
-                //$this->session->set_userdata('some_name', 'some_value'); 
-*/                //Validando redirección a otra página
-                if($url_GOTO){
-                   $this->auditar("Redirigiendo a: ".url);
-            	   header('Location: '.url);
-                }
-                exit;
-            }else{
-                echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
-                $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
-                exit;
-            }
-        }
-        
-        if($_COOKIE[cookie_name]) {
-            echo "entre a cookie_name";
-        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
-        	if($user_array->result) {
-                foreach($user_array as $key => $data){
-                    $_SESSION['SES-WEB'][$key] = $data;
-    			}
-        	}else{
-        		session_destroy();
-        		redirect_login($ref);
-        		exit;
-            }
-        } else {
-            $this->APIredirect($ref);
-            exit;
-        }
-         
-    }
-    /** ***************************************************************************************************************************** **/
-   public function auditar($texto){
+    public function auditar($texto){
         $strLOG = '';
         $filename = $_SERVER['DOCUMENT_ROOT']."/logs/auditoria [".date('d.m.Y')."].log";
         //$dataFile = fopen($_SERVER['DOCUMENT_ROOT']."/logs/".$filename, "a+");
@@ -118,12 +43,6 @@ class MyFunctions {
         $MyHOST     = $_SERVER['HTTP_HOST'];
         $MyPROTOCOL = $_SERVER['PROTOCOL'] = isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) ? 'https' : 'http';
         return "$MyPROTOCOL://$MyHOST";  
-    }
-    /** ***************************************************************************************************************************** **/    
-    public function APIredirect() {
-    	setcookie(cookie_name, '', time()-3600);
-    	header('Location: '.login_url.'?url='.url);
-    	exit;
     }
     /** ***************************************************************************************************************************** **/
     public function get_cliente_ip() {
@@ -174,8 +93,7 @@ class MyFunctions {
         	$user_array = json_decode(file_get_contents('http://login.ivao.aero/api.php?type=json&token='.$_COOKIE['ivao_token']));
         	if($user_array->result) {
         		//Success! A user has been found!
-                $_SESSION['SES-VID'] = $user_array->vid;
-        		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
+        		//echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
                 return $user_array;
                 exit;
         	}else{

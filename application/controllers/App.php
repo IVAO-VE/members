@@ -45,9 +45,9 @@ class App extends CI_Controller {
             $arraymember = array(
                     'result'        => $xMIEMBRO->result,
                     'vid'           => $xMIEMBRO->vid,
-                    'firstname'     => utf8_encode($xMIEMBRO->firstname),
-                    'lastname'      => utf8_encode($xMIEMBRO->lastname),
-                    'fullname'      => utf8_encode($xMIEMBRO->firstname.' '.$xMIEMBRO->lastname),
+                    'firstname'     => $xMIEMBRO->firstname,
+                    'lastname'      => $xMIEMBRO->lastname,
+                    'fullname'      => $xMIEMBRO->firstname.' '.$xMIEMBRO->lastname,
                     'rating'        => $xMIEMBRO->rating,
                     'ratingatc'     => $xMIEMBRO->ratingatc,
                     'ratingpilot'   => $xMIEMBRO->ratingpilot,

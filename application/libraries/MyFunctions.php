@@ -64,6 +64,7 @@ class MyFunctions {
             }else{
                 echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
                 $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");
+                exit;
             }
         } 
         

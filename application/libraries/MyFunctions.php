@@ -163,9 +163,9 @@ class MyFunctions {
         	   setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
         	   header('Location: '.url);
         	   exit;
+            }else{
+                die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
             }
-        } elseif($_GET['IVAOTOKEN'] == 'error') {
-        	die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
         }
         
         //check if the cookie is set and/or is correct

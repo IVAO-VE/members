@@ -21,7 +21,7 @@ class MyFunctions {
 
 
     /** ***************************************************************************************************************************** **/
-    public function _____valida_API($url_GOTO = null){
+    public function Xvalida_API($url_GOTO = null){
         $this->auditar("Sistema validando la sesión API");
         define('cookie_name', 'ivao_token');
         define('login_url', 'http://login.ivao.aero/index.php');

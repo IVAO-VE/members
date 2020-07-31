@@ -163,8 +163,6 @@ class MyFunctions {
                if($url_GOTO){
                    $this->auditar("Redirigiendo a: ".url);
             	   header('Location: http://members.ve.ivao.aero/');
-               }else{
-                   reditect('app_start2');
                }               
         	   exit;
             }else{

@@ -119,12 +119,6 @@ class MyFunctions {
         $MyPROTOCOL = $_SERVER['PROTOCOL'] = isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) ? 'https' : 'http';
         return "$MyPROTOCOL://$MyHOST";  
     }
-    /** ***************************************************************************************************************************** **/
-    public function IVAOredirect() {
-    	setcookie('ivao_token', '', time()-3600);
-    	header('Location: '.login_url.'?url='.url);
-    	exit;
-    }
     /** ***************************************************************************************************************************** **/    
     public function APIredirect() {
     	setcookie(cookie_name, '', time()-3600);
@@ -175,14 +169,19 @@ class MyFunctions {
         	if($user_array->result) {
         		//Success! A user has been found!
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
-        	} else {
+        	}else{
         		IVAOredirect();
             }
-        } else {
+        }else{
         	IVAOredirect();
         }        
     }
     /** ***************************************************************************************************************************** **/
+    public function IVAOredirect() {
+    	setcookie('ivao_token', '', time()-3600);
+    	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
+    	exit;
+    }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

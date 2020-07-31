@@ -30,9 +30,24 @@ class MyFunctions {
             
         $ref = 'https://members.ve.ivao.aero';
         
+        if($_COOKIE[cookie_name]) {
+            echo "entre a cookie_name";
+        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
+        	if($user_array->result) {
+                foreach($user_array as $key => $data){
+                    $_SESSION['SES-WEB'][$key] = $data;
+    			}
+        	}else{
+        		session_destroy();
+        		redirect_login($ref);
+        		exit;
+            }
+        } else {
+            $this->APIredirect($ref);
+        }
+       
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] !== 'error') {
-                print_r($_SESSION);
             	//Generando la cookie
                 $cookie= array(
                     'name'   => cookie_name,
@@ -74,23 +89,6 @@ class MyFunctions {
                 exit;
             }
         } 
-        
-        if($_COOKIE[cookie_name]) {
-            echo "entre a cookie_name";
-        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
-        	if($user_array->result) {
-                foreach($user_array as $key => $data){
-                    $_SESSION['SES-WEB'][$key] = $data;
-    			}
-        	}else{
-        		session_destroy();
-        		redirect_login($ref);
-        		exit;
-            }
-        } else {
-            $this->APIredirect($ref);
-        }
-       
     }
     /** ***************************************************************************************************************************** **/
    public function auditar($texto){

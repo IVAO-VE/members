@@ -26,13 +26,30 @@ class App extends CI_Controller {
 	public function index() {
         //Validando el acceso en IVAO
         $xMIEMBRO = $this->myfunctions->valida_API();
-        if(!empty($xMIEMBRO->vid)){
+        if(($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))){
             //Generando arreglo con datos del miembro detectado
             $arraymember = array(
+                    'result'        => $xMIEMBRO->result,
                     'vid'           => $xMIEMBRO->vid,
                     'firstname'     => utf8_decode($xMIEMBRO->firstname),
                     'lastname'      => utf8_decode($xMIEMBRO->lastname),
-                    'fullname'      => utf8_decode($xMIEMBRO->firstname.' '.$xMIEMBRO->lastname)
+                    'fullname'      => utf8_decode($xMIEMBRO->firstname.' '.$xMIEMBRO->lastname),
+                    'rating'        => $xMIEMBRO->rating,
+                    'ratingatc'     => $xMIEMBRO->ratingatc,
+                    'ratingpilot'   => $xMIEMBRO->ratingpilot,
+                    'division'      => $xMIEMBRO->division,
+                    'country'       => $xMIEMBRO->country,
+                    'skype'         => $xMIEMBRO->skype,
+                    'hours_atc'     => $xMIEMBRO->hours_atc,
+                    'hours_pilot'   => $xMIEMBRO->hours_pilot,
+                    'staff'         => $xMIEMBRO->staff,
+                    'va_staff_ids'  => $xMIEMBRO->va_staff_ids,
+                    'va_staff'      => $xMIEMBRO->va_staff,
+                    'va_staff_icaos'=> $xMIEMBRO->va_staff_icaos,
+                    'isNpoMember'   => $xMIEMBRO->isNpoMember,
+                    'va_member_ids' => $xMIEMBRO->va_member_ids,
+                    'hq_pilot'      => $xMIEMBRO->hq_pilot
+                    
             );
             //Cargando los datos de sesión
             $this->session->set_userdata($arraymember);

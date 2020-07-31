@@ -13,15 +13,22 @@
 
 class MyFunctions {
 
+    /** ***************************************************************************************************************************** **/    
+    function __construct() {
+        
+    }
+    /** ***************************************************************************************************************************** **/    
+
+
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null){
-        $this->auditar("Sistema validando la sesión API, Redirect to: ".$url_GOTO);
+        $this->auditar("Sistema validando la sesión API");
         define('cookie_name', 'ivao_token');
         define('login_url', 'http://login.ivao.aero/index.php');
         define('api_url', 'http://login.ivao.aero/api.php');
         define('url', $this->get_HOSTPROTOCOL().$url_GOTO);
-        
-        $ref = 'https://ve.ivao.aero';
+            
+        $ref = 'https://members.ve.ivao.aero';
         
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] !== 'error') {

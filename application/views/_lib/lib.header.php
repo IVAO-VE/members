@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <button class="pull-button m-0 bg-darkCyan-hover">
                 <span class="mif-menu fg-white"></span>
             </button>
-            <h2 class="text-light m-0 fg-white pl-7" style="line-height: 52px">IVAO Venezuela</h2>
+            <h2 class="text-light m-0 fg-white pl-7" style="line-height: 52px">IVAO-VE</h2>
         </div>
 
         <div class="suggest-box">

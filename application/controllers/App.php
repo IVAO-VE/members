@@ -23,7 +23,7 @@ class App extends CI_Controller {
         $this->load->helper('url');
         //Cargando el archivo de idioma correspondiente
         $lang = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-        if (strtoupper(substr($lang, 0, 2)) == 'ES') {
+        if (strtoupper(substr($lang, 0, 2)) == 'ES') { //es_ES, en_US
             $this->lang->load('website', 'spanish');
         }else{
             $this->lang->load('website', 'english');

@@ -76,6 +76,7 @@ class MyFunctions {
         } 
         
         if($_COOKIE[cookie_name]) {
+            echo "entre a cookie_name";
         	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE[cookie_name]));
         	if($user_array->result) {
                 foreach($user_array as $key => $data){

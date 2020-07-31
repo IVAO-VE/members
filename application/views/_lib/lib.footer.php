@@ -1,15 +1,15 @@
 <?php
 /**
- * @autor Rixio Iguarán y Simón Cardona.
+ * @autor Rixio Iguarï¿½n y Simï¿½n Cardona.
  * @Departamento Sistemas y Webmaster
  * @Licencia Exclusivo sistemas IVAO.AERO
- * @Licencia División Venezuela.
+ * @Licencia Divisiï¿½n Venezuela.
  * @Correo ve-web@ivao.aero
  * 
  **/
 
     //Asegurando el acceso directo al script
-    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
+    defined('BASEPATH') OR exit('El acceso directo al cï¿½digo no estï¿½ permitido.');
 
 ?>
         
@@ -27,6 +27,6 @@
 <script src="<?php echo base_url('_include/vendors/jsbarcode/JsBarcode.all.min.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/ckeditor/ckeditor.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/metro4/js/metro.min.js'); ?>"></script>
-<script src="<?php echo base_url('_include/js/index.js'); ?>"></script>
+<!--<script src="<?php echo base_url('_include/js/index.js'); ?>"></script>-->
 </body>
 </html>

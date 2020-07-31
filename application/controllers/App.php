@@ -30,8 +30,9 @@ class App extends CI_Controller {
             //Generando arreglo con datos del miembro detectado
             $arraymember = array(
                     'vid'           => $xMIEMBRO->vid,
-                    'firstname'     => $xMIEMBRO->firstname,
-                    'lastname'      => $xMIEMBRO->lastname
+                    'firstname'     => utf8_decode($xMIEMBRO->firstname),
+                    'lastname'      => utf8_decode($xMIEMBRO->lastname),
+                    'fullname'      => utf8_decode($xMIEMBRO->firstname.' '.$xMIEMBRO->lastname)
             );
             //Cargando los datos de sesión
             $this->session->set_userdata($arraymember);

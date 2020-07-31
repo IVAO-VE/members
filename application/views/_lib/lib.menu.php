@@ -356,7 +356,7 @@
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
                         <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
-                        <span class="ml-2 app-bar-name"><?php echo $this->session->userdata('firstname').' '.$this->session->userdata('lastname'); ?></span>
+                        <span class="ml-2 app-bar-name"><?php echo $this->session->userdata('fullname'); ?></span>
                     </a>
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">

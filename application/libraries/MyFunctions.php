@@ -94,6 +94,7 @@ class MyFunctions {
         	if($user_array->result) {
         		//Success! A user has been found!
         		//echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
+                print_r($user_array);
                 return $user_array;
                 exit;
         	}else{

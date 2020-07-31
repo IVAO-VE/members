@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="<?php echo base_url('_include/vendors/metro4/css/metro-all.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('_include/css/index.css'); ?>">
 
-    <title>Pandora - Admin template build with Metro 4</title>
+    <title>&#8482; IVAO Venezuela &#171; <?php echo $lang['membersarea']; ?> &#187;</title>
 
     <script>
         window.on_page_functions = [];
@@ -43,8 +43,8 @@
             <div class="data-box">
                 <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
                 <div class="ml-4 avatar-title flex-column">
-                    <a href="#" class="d-block fg-white text-medium no-decor"><span class="reduce-1">Jack Sparrow</span></a>
-                    <p class="m-0"><span class="fg-green mr-2">&#x25cf;</span><span class="text-small">online</span></p>
+                    <a href="#" class="d-block fg-white text-medium no-decor"><span class="reduce-1"><?php echo $this->session->userdata('fullname'); ?></span></a>
+                    <p class="m-0"><span class="fg-green mr-2">&#x25cf;</span><span class="text-small"><?php echo $this->session->userdata('vid'); ?> : online</span></p>
                 </div>
             </div>
             <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar holder ml-2">

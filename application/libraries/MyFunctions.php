@@ -42,7 +42,7 @@ class MyFunctions {
                 set_cookie($cookie);
                 //setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
                 //Generando las variables de entorno de usuario
-                $this->auditar("Asignando las variables de sesión.");
+/*                $this->auditar("Asignando las variables de sesión.");
                 $vid            = $_SESSION['SES-WEB']['vid'];
                 //$this->session->set_userdata('SES-VID', $_SESSION['SES-WEB']['vid']);                
                 $firstname      = $_SESSION['SES-WEB']['firstname'];
@@ -62,7 +62,7 @@ class MyFunctions {
                 $img            = 've.jpg';
                 $_SESSION['IVAOTOKEN'] = $_GET['IVAOTOKEN'];
                 //$this->session->set_userdata('some_name', 'some_value'); 
-                //Validando redirección a otra página
+*/                //Validando redirección a otra página
                 if($url_GOTO){
                    $this->auditar("Redirigiendo a: ".url);
             	   header('Location: '.url);

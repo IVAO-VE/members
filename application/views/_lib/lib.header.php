@@ -44,7 +44,7 @@
                 <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
                 <div class="ml-4 avatar-title flex-column">
                     <a href="#" class="d-block fg-white text-medium no-decor"><span class="reduce-1"><?php echo $this->session->userdata('fullname'); ?></span></a>
-                    <p class="m-0"><span class="fg-green mr-2">&#x25cf;</span><span class="text-small"><?php echo $this->session->userdata('vid'); ?> : online</span></p>
+                    <p class="m-0"><span class="fg-green mr-2">&#x25cf;</span><span class="text-small"><?php echo $this->session->userdata('vid').' : '.$this->lang->line('online'); ?></span></p>
                 </div>
             </div>
             <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar holder ml-2">

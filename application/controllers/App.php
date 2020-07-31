@@ -7,7 +7,7 @@ class App extends CI_Controller {
 	{
 
         $MyUSER = array($this->myfunctions->valida_API());
-        if($MyUSER['vid'] != ''){
+        if($MyUSER['firstname'] != ''){
             $this->load->helper('url');
             $this->load->view('app_start');
         }

@@ -170,18 +170,17 @@ class MyFunctions {
         		//Success! A user has been found!
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
         	}else{
-        		IVAOredirect();
+            	set_cookie('ivao_token', '', time()-3600);
+            	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
+            	exit;
             }
         }else{
-        	IVAOredirect();
+        	set_cookie('ivao_token', '', time()-3600);
+        	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
+        	exit;
         }        
     }
     /** ***************************************************************************************************************************** **/
-    public function IVAOredirect() {
-    	setcookie('ivao_token', '', time()-3600);
-    	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
-    	exit;
-    }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

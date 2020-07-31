@@ -44,6 +44,7 @@ class MyFunctions {
             }
         } else {
             $this->APIredirect($ref);
+            exit;
         }
        
         if(isset($_GET['IVAOTOKEN'])) {

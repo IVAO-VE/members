@@ -6,11 +6,12 @@ class App extends CI_Controller {
 	public function index()
 	{
 
-        //$MyUSER = array($this->myfunctions->valida_API());
-        //if($MyUSER['firstname'] != ''){
+        //Validando el acceso en IVAO
+        list($result, $vid, $firstname, $lastname, $rating, $ratingatc, $ratingpilot, $division, $country, $skype, $hours_atc, $hours_pilot, $staff, $va_staff_ids, $va_staff, $va_staff_icaos, $isNpoMember, $va_member_ids, $hq_pilot) = $this->myfunctions->valida_API();
+        if($vid != ''){
             $this->load->helper('url');
             $this->load->view('app_start');
-        //}
+        }
 		
 	}
 }

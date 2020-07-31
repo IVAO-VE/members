@@ -147,15 +147,15 @@ class MyFunctions {
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null){
         //define variables
-        define('cookie_name', 'ivao_token');
-        define('login_url', 'http://login.ivao.aero/index.php');
-        define('api_url', 'http://login.ivao.aero/api.php');
-        define('url', 'http://members.ve.ivao.aero/');
+        //define('cookie_name', 'ivao_token');
+        //define('login_url', 'http://login.ivao.aero/index.php');
+        //define('api_url', 'http://login.ivao.aero/api.php');
+        //define('url', 'http://members.ve.ivao.aero/');
         
         if(isset($_GET['IVAOTOKEN'])) {
-            if($_GET['IVAOTOKEN'] != 'error') {
+            if($_GET['IVAOTOKEN'] !== 'error') {
         	   set_cookie('ivao_token', $_GET['IVAOTOKEN'], time()+3600);
-        	   header('Location: '.url);
+        	   header('Location: http://members.ve.ivao.aero/');
         	   exit;
             }else{
                 echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
@@ -166,7 +166,7 @@ class MyFunctions {
         //check if the cookie is set and/or is correct
         $MyCOOKIE = get_cookie('ivao_token');
         if(!empty($MyCOOKIE)) {
-        	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE['ivao_token']));
+        	$user_array = json_decode(file_get_contents('http://login.ivao.aero/api.php?type=json&token='.$_COOKIE['ivao_token']));
         	if($user_array->result) {
         		//Success! A user has been found!
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="<?php echo base_url('_include/vendors/metro4/css/metro-all.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('_include/css/index.css'); ?>">
 
-    <title>&#8482; IVAO Venezuela &#171; <?php echo $lang['membersarea']; ?> &#187;</title>
+    <title>IVAO Venezuela | <?php echo $lang['membersarea']; ?></title>
 
     <script>
         window.on_page_functions = [];

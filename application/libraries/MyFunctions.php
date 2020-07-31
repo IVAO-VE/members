@@ -10,6 +10,7 @@
 
     //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
+    $this->load->library('phpdebug');
 
 class MyFunctions {
 

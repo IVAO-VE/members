@@ -27,6 +27,13 @@ class App extends CI_Controller {
         //Validando el acceso en IVAO
         $xMIEMBRO = $this->myfunctions->valida_API();
         if(($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))){
+            //Consultado con la DB
+            $query  = $this->db->select('*')
+                               ->from('paises')
+                               ->where('code', $xMIEMBRO->country) //Código de país 
+                               ->get();
+            $country_name = $query->result();            
+            $this->phpdebug->debug($country_name); 
             //Generando arreglo con datos del miembro detectado
             $arraymember = array(
                     'result'        => $xMIEMBRO->result,
@@ -37,11 +44,14 @@ class App extends CI_Controller {
                     'rating'        => $xMIEMBRO->rating,
                     'ratingatc'     => $xMIEMBRO->ratingatc,
                     'ratingpilot'   => $xMIEMBRO->ratingpilot,
-                    'division'      => $xMIEMBRO->division,
-                    'country'       => $xMIEMBRO->country,
+                    'division_code' => $xMIEMBRO->division,
+                    'division_name' => $xMIEMBRO->division,
+                    'country_code'  => $xMIEMBRO->country,
+                    'country_name'  => $xMIEMBRO->country,
                     'skype'         => $xMIEMBRO->skype,
                     'hours_atc'     => $xMIEMBRO->hours_atc,
                     'hours_pilot'   => $xMIEMBRO->hours_pilot,
+                    'fullhours'     => ($xMIEMBRO->hours_pilot + $xMIEMBRO->hours_atc),
                     'staff'         => $xMIEMBRO->staff,
                     'va_staff_ids'  => $xMIEMBRO->va_staff_ids,
                     'va_staff'      => $xMIEMBRO->va_staff,

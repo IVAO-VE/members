@@ -14,5 +14,9 @@
 $lang['connected'] = 'conectado';
 $lang['online'] = 'en línea';
 $lang['membersarea'] = 'Área de miembros';
+$lang['renderpage'] = 'Página generada en';
+$lang['seconds'] = 'segundos';
+
+
     
 ?>

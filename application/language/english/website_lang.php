@@ -14,5 +14,8 @@
 $lang['connected'] = 'connected';
 $lang['online'] = 'online';
 $lang['membersarea'] = 'Members area';
+$lang['renderpage'] = 'Page rendered in';
+$lang['seconds'] = 'seconds';
+
     
 ?>

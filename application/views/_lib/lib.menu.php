@@ -331,7 +331,7 @@
 
         <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">
             <div>&copy; 2020 <a href="mailto:ve-web@ivao.aero" class="text-muted fg-white-hover no-decor">Webmasters Venezuela</a></div>
-            <div>Page rendered in <strong>{elapsed_time}</strong> seconds.</div>
+            <div><?php echo $this->lang->line('renderpage'); ?> <strong>{elapsed_time}</strong> <?php echo $this->lang->line('seconds'); ?>.</div>
         </div>
     </div>
 

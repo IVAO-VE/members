@@ -39,12 +39,12 @@ var customerPanelButtons = [
 
 $(function(){
     var hash = location.hash;
-    var target = hash.length > 0 ? hash.substr(1) : "dashboard";
+    //var target = hash.length > 0 ? hash.substr(1) : "dashboard";
     var link = $(".navview-menu a[href*="+target+"]");
     var menu = link.closest("ul[data-role=dropdown]");
     var node = link.parent("li").addClass("active");
 
-    function getContent(target){
+    /*function getContent(target){
         window.on_page_functions = [];
         $.get(target + ".html").then(
             function(response){
@@ -57,7 +57,7 @@ $(function(){
         );
     }
 
-    getContent(target);
+    getContent(target);*/
 
     if (menu.length > 0) {
         Metro.getPlugin(menu, "dropdown").open();
@@ -80,7 +80,7 @@ $(function(){
         hash = href.substr(1);
         href = hash + ".html";
 
-        getContent(hash);
+        //getContent(hash);
 
         if (pane.hasClass("open")) {
             pane.removeClass("open");

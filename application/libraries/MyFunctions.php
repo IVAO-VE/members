@@ -60,6 +60,7 @@ class MyFunctions {
                    $this->auditar("Redirigiendo a: ".url);
             	   header('Location: '.url);
                 }
+                exit;
             }else{
                 echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
                 $this->auditar("ERROR API: This domain is not allowed to use the Login API! Contact the System Adminstrator!");

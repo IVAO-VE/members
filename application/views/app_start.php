@@ -15,6 +15,8 @@
     if(!$this->session->userdata('SES-VID')){
         $this->phpdebug->debug('No hay session y se debe de crear.');
         $this->myfunctions->valida_API();
+    }else{
+        $this->phpdebug->debug('Sesion creada');
     }
     
     //Cargando la estructura del HEADER

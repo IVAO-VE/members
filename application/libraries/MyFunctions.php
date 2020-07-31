@@ -39,7 +39,7 @@ class MyFunctions {
                     'value'  => $_GET['IVAOTOKEN'],
                     'expire' => time()+3600,
                 );                
-                $this->set_cookie($cookie);
+                set_cookie($cookie);
                 //setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
                 //Generando las variables de entorno de usuario
                 $this->auditar("Asignando las variables de sesión.");

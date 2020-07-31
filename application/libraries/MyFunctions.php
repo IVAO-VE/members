@@ -154,8 +154,16 @@ class MyFunctions {
         
         if(isset($_GET['IVAOTOKEN'])) {
             if($_GET['IVAOTOKEN'] !== 'error') {
-        	   set_cookie('ivao_token', $_GET['IVAOTOKEN'], time()+3600);
-        	   header('Location: http://members.ve.ivao.aero/');
+                $cookie= array(
+                    'name'   => 'ivao_token',
+                    'value'  => $_GET['IVAOTOKEN'],
+                    'expire' => time()+3600,
+                );                
+        	   set_cookie($cookie);
+               if($url_GOTO){
+                   $this->auditar("Redirigiendo a: ".url);
+            	   header('Location: http://members.ve.ivao.aero/');
+               }               
         	   exit;
             }else{
                 echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';

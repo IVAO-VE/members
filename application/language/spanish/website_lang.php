@@ -11,12 +11,14 @@
     //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
 
+//Traducciones para Perfil
 $lang['connected'] = 'conectado';
 $lang['online'] = 'en línea';
 $lang['membersarea'] = 'Área de miembros';
 $lang['renderpage'] = 'Página generada en';
 $lang['seconds'] = 'segundos';
 
-
+//Traducciones para MENU
+$lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
     
 ?>

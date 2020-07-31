@@ -14,7 +14,7 @@
 ?>
         <!-- INICIO DEL MENU DE OPCIONES -->
         <ul class="navview-menu mt-4" id="side-menu">
-            <li class="item-header">MAIN NAVIGATION</li>
+            <li class="item-header"><?php echo $this->lang->line('menutitle'); ?></li>
             <li>
                 <a href="#dashboard">
                     <span class="icon"><span class="mif-meter"></span></span>

@@ -147,17 +147,21 @@ class MyFunctions {
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null){
         //define variables
+        echo "<script type=\"text/javascript\">console.log('entando a validaAPI')</script>";
         define('cookie_name', 'ivao_token');
         define('login_url', 'http://login.ivao.aero/index.php');
         define('api_url', 'http://login.ivao.aero/api.php');
         define('url', 'http://members.ve.ivao.aero/');
         
         if(isset($_GET['IVAOTOKEN'])) {
+            echo "<script type=\"text/javascript\">console.log('ivaotoken existe')</script>";
             if($_GET['IVAOTOKEN'] != 'error') {
+                echo "<script type=\"text/javascript\">console.log('token ok')</script>";
         	   set_cookie('ivao_token', $_GET['IVAOTOKEN'], time()+3600);
         	   header('Location: '.url);
         	   exit;
             }else{
+                echo "<script type=\"text/javascript\">console.log('token error')</script>";
                 die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
             }
         }
@@ -165,16 +169,20 @@ class MyFunctions {
         //check if the cookie is set and/or is correct
         $MyCOOKIE = get_cookie('ivao_token');
         if(!empty($MyCOOKIE)) {
+            echo "<script type=\"text/javascript\">console.log('datos en cooke')</script>";
         	$user_array = json_decode(file_get_contents(api_url.'?type=json&token='.$_COOKIE['ivao_token']));
         	if($user_array->result) {
         		//Success! A user has been found!
+                echo "<script type=\"text/javascript\">console.log('usuario encontrado')</script>";
         		echo 'Hello '.utf8_decode($user_array->firstname).' '.utf8_decode($user_array->lastname).'!';
         	}else{
+                echo "<script type=\"text/javascript\">console.log('usuario no encontrado')</script>";
             	set_cookie('ivao_token', '', time()-3600);
             	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
             	exit;
             }
         }else{
+            echo "<script type=\"text/javascript\">console.log('cookie vacia')</script>";
         	set_cookie('ivao_token', '', time()-3600);
         	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
         	exit;

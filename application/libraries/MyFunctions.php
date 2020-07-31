@@ -158,12 +158,12 @@ class MyFunctions {
         define('api_url', 'http://login.ivao.aero/api.php');
         define('url', 'http://members.ve.ivao.aero/');
         
-        
-        //if the token is set in the link
-        if($_GET['IVAOTOKEN'] && $_GET['IVAOTOKEN'] !== 'error') {
-        	setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
-        	header('Location: '.url);
-        	exit;
+        if(isset($_GET['IVAOTOKEN'])) {
+            if($_GET['IVAOTOKEN'] != 'error') {
+        	   setcookie(cookie_name, $_GET['IVAOTOKEN'], time()+3600);
+        	   header('Location: '.url);
+        	   exit;
+            }
         } elseif($_GET['IVAOTOKEN'] == 'error') {
         	die('This domain is not allowed to use the Login API! Contact the System Adminstrator!');
         }

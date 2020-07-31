@@ -1,5 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+/**
+ * @autor Rixio Iguarán y Simón Cardona.
+ * @Departamento Sistemas y Webmaster
+ * @Licencia Exclusivo sistemas IVAO.AERO
+ * @Licencia División Venezuela.
+ * @Correo ve-web@ivao.aero
+ * 
+ **/
+
+    //Asegurando el acceso directo al script
+    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
+
 ?>
         <!-- INICIO DEL MENU DE OPCIONES -->
         <ul class="navview-menu mt-4" id="side-menu">
@@ -345,7 +356,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
                         <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
-                        <span class="ml-2 app-bar-name"><?php echo utf8_decode($xMIEMBRO->firstname).' '.utf8_decode($xMIEMBRO->lastname); ?></span>
+                        <span class="ml-2 app-bar-name"><?php echo $this->session->userdata('firstname').' '.$this->session->userdata('lastname'); ?></span>
                     </a>
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">

@@ -120,7 +120,7 @@ class MyFunctions {
         return "$MyPROTOCOL://$MyHOST";  
     }
     /** ***************************************************************************************************************************** **/
-    function IVAOredirect() {
+    public function IVAOredirect() {
     	setcookie('ivao_token', '', time()-3600);
     	header('Location: '.login_url.'?url='.url);
     	exit;

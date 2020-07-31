@@ -13,6 +13,7 @@
     //Validando el acceso en IVAO
 
     if(!$this->session->userdata('SES-VID')){
+        $this->phpdebug->debug('No hay session y se debe de crear.');
         $this->myfunctions->valida_API();
     }
     

@@ -160,10 +160,7 @@ class MyFunctions {
                     'expire' => time()+3600,
                 );                
         	   set_cookie($cookie);
-               if($url_GOTO){
-                   $this->auditar("Redirigiendo a: ".url);
-            	   header('Location: http://members.ve.ivao.aero/');
-               }               
+               header('Location: http://members.ve.ivao.aero/');            
         	   exit;
             }else{
                 echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';

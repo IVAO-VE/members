@@ -320,7 +320,7 @@
                 </ul>
             </li>
 
-            <li class="item-header">Documentation</li>
+            <li class="item-header"><?php echo $this->lang->line('staff_title'); ?></li>
             <li>
                 <a href="https://metroui.org.ua/intro.html">
                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>

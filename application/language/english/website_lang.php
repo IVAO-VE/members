@@ -21,6 +21,9 @@ $lang['seconds'] = 'seconds';
 //Menu traslators
 $lang['menutitle'] = 'MAIN NAVIGATION';
 
+//Only STAFF
+$lang['staff_title'] = 'Staff options';
+
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';
 $lang['mainversion'] = 'Version 2.0';

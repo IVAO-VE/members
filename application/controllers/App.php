@@ -39,8 +39,13 @@ class App extends CI_Controller {
                                ->from('paises')
                                ->where('code', $xMIEMBRO->country) //Código de país 
                                ->get();
-            $country_name = $query->row_array();            
-            echo $country_name['pais'];
+            $country_name = $query->row_array();
+            $query  = $this->db->select('*')
+                               ->from('paises')
+                               ->where('code', $xMIEMBRO->division) //Código de país 
+                               ->get();
+            $division_name = $query->row_array();            
+            
             //Generando arreglo con datos del miembro detectado
             $arraymember = array(
                     'result'        => $xMIEMBRO->result,
@@ -52,9 +57,9 @@ class App extends CI_Controller {
                     'ratingatc'     => $xMIEMBRO->ratingatc,
                     'ratingpilot'   => $xMIEMBRO->ratingpilot,
                     'division_code' => $xMIEMBRO->division,
-                    'division_name' => $xMIEMBRO->division,
+                    'division_name' => $division_name['pais'],
                     'country_code'  => $xMIEMBRO->country,
-                    'country_name'  => $xMIEMBRO->country,
+                    'country_name'  => $country_name['pais'],
                     'skype'         => $xMIEMBRO->skype,
                     'hours_atc'     => $xMIEMBRO->hours_atc,
                     'hours_pilot'   => $xMIEMBRO->hours_pilot,
@@ -68,6 +73,8 @@ class App extends CI_Controller {
                     'hq_pilot'      => $xMIEMBRO->hq_pilot
                     
             );
+            
+            print_r($arraymember);
             //Cargando los datos de sesión
             $this->session->set_userdata($arraymember);
             //Cargando la vista inicial            

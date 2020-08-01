@@ -39,6 +39,7 @@ class Model_access extends CI_Model {
             $this->db->set($MyDEPARTAMENT, 'false');
             $this->db->where('vid', $MyVID);
             $this->db->update('permisos');
+            
         }
 
 }	

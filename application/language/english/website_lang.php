@@ -22,6 +22,7 @@ $lang['seconds'] = 'seconds';
 $lang['menutitle'] = 'MAIN NAVIGATION';
 
 //Main conten traslator
-$lang['mainpage'] = 'Members zone v2.0';
+$lang['mainpage'] = 'Members zone';
+$lang['mainversion'] = 'Version 2.0';
     
 ?>

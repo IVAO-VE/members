@@ -22,7 +22,8 @@ $lang['seconds'] = 'segundos';
 $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
 
 //Traducciones del contenido principal
-$lang['mainpage'] = 'Zona de miembros v2.0';
+$lang['mainpage'] = 'Zona de miembros';
+$lang['mainversion'] = 'Versión 2.0';
 
     
 ?>

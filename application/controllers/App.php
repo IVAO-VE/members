@@ -147,6 +147,9 @@ class App extends CI_Controller {
                     'hq_pilot'          => $xMIEMBRO->hq_pilot
                     
             );
+            
+            print_r($arraymember);
+            
             //Cargando los datos de sesión
             $this->session->set_userdata($arraymember);
             //Cargando la vista inicial            

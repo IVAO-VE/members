@@ -42,7 +42,7 @@ class App extends CI_Controller {
                                ->where('vid', $xMIEMBRO->vid) //Código de país 
                                ->get();
             $xPermisos = $query_permisos->row_array();
-            if($xPermisos['access_HQ'] == false){ //Tiene permisos para access_HQ
+            if($xPermisos['access_HQ'] == 'false'){ //Tiene permisos para access_HQ
                 exit('Usted no tiene permisos para acceder a este sitio.');
             }
             

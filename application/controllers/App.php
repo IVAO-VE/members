@@ -63,7 +63,7 @@ class App extends CI_Controller {
                     'skype'         => $xMIEMBRO->skype,
                     'hours_atc'     => $xMIEMBRO->hours_atc,
                     'hours_pilot'   => $xMIEMBRO->hours_pilot,
-                    'fullhours'     => ($xMIEMBRO->hours_pilot + $xMIEMBRO->hours_atc),
+                    'fullhours'     => ($xMIEMBRO->hours_pilot + $xMIEMBRO->hours_atc), //Solo tiempo de vuelo y control ([ OJO ])
                     'staff'         => $xMIEMBRO->staff,
                     'va_staff_ids'  => $xMIEMBRO->va_staff_ids,
                     'va_staff'      => $xMIEMBRO->va_staff,

@@ -148,7 +148,7 @@ class App extends CI_Controller {
                     
             );
             
-            print_r($arraymember);
+            //print_r($arraymember);
             
             //Cargando los datos de sesión
             $this->session->set_userdata($arraymember);

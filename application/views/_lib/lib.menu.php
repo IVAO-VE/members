@@ -361,7 +361,7 @@
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">
                             <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
-                            <div class="h4 mb-0">Jack Sparrow</div>
+                            <div class="h4 mb-0"><?php echo $this->session->userdata('fullname'); ?></div>
                             <div>Pirate captain</div>
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2">

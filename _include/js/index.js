@@ -36,21 +36,21 @@ var customerPanelButtons = [
         onclick: "alert('You press customer cog button')"
     }
 ];
-
+/*
 $(function(){
     var hash = location.hash;
-    //var target = hash.length > 0 ? hash.substr(1) : "dashboard";
-    //var link = $(".navview-menu a[href*="+target+"]");
+    var target = hash.length > 0 ? hash.substr(1) : "dashboard";
+    var link = $(".navview-menu a[href*="+target+"]");
     var menu = link.closest("ul[data-role=dropdown]");
     var node = link.parent("li").addClass("active");
 
-    /**
-     * Funcion que obtiene el contenido del archivo HTML.
-     * La comento porque cuando esta activa duplica la pagina, cuando no tambien...
-     * Si se entra a https://members.ve.ivao.aero/dashboard.html no se duplica
-     * Esto lo veo que en linea 42 (Tambien comentada) se obtiene la ubicacion y segun eso carga la pagina, por defecto tiene Dashboard entonces nos carga este.
-     * **/
-    /*function getContent(target){
+    
+     // Funcion que obtiene el contenido del archivo HTML.
+     // La comento porque cuando esta activa duplica la pagina, cuando no tambien...
+     // Si se entra a https://members.ve.ivao.aero/dashboard.html no se duplica
+     // Esto lo veo que en linea 42 (Tambien comentada) se obtiene la ubicacion y segun eso carga la pagina, por defecto tiene Dashboard entonces nos carga este.
+     
+    function getContent(target){
         window.on_page_functions = [];
         $.get(target + ".html").then(
             function(response){
@@ -63,7 +63,7 @@ $(function(){
         );
     }
 
-    getContent(target);*/
+    getContent(target);
 
     if (menu.length > 0) {
         Metro.getPlugin(menu, "dropdown").open();
@@ -114,4 +114,4 @@ $(function(){
         table.prepend(tr);
     }
 });
-
+*/

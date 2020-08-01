@@ -40,7 +40,7 @@ class App extends CI_Controller {
                                ->where('code', $xMIEMBRO->country) //Código de país 
                                ->get();
             $country_name = $query->result();            
-            echo $country_name;
+            print_r($country_name);
             //Generando arreglo con datos del miembro detectado
             $arraymember = array(
                     'result'        => $xMIEMBRO->result,

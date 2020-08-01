@@ -20,5 +20,9 @@ $lang['seconds'] = 'segundos';
 
 //Traducciones para MENU
 $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
+
+//Traducciones del contenido principal
+$lang['mainpage'] = 'Zona de miembros v2.0';
+
     
 ?>

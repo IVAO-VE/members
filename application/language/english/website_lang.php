@@ -20,5 +20,8 @@ $lang['seconds'] = 'seconds';
 
 //Menu traslators
 $lang['menutitle'] = 'MAIN NAVIGATION';
+
+//Main conten traslator
+$lang['mainpage'] = 'Members zone v2.0';
     
 ?>

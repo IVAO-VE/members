@@ -27,13 +27,28 @@ class App extends CI_Controller {
             $this->lang->load('website', 'spanish');
         }else{
             $this->lang->load('website', 'english');
-        }        
+        }
+        
     }
 
 	public function index() {
         //Validando el acceso en IVAO
         $xMIEMBRO = $this->myfunctions->valida_API();
         if(($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))){
+            
+            //Verificando los permisos de usuario
+            $query_permisos  = $this->db->select('*')
+                               ->from('permisos')
+                               ->where('vid', $xMIEMBRO->vid) //Código de país 
+                               ->get();
+            $xPermisos = $query->row_array();
+            if($xPermisos['access_HQ'] == false){ //Tiene permisos para access_HQ
+                exit('Usted no tiene permisos para acceder a este sitio.');
+            }
+            
+            
+            
+            
             //Consultado con la DB
             $query  = $this->db->select('*')
                                ->from('paises')

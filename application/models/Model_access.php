@@ -32,8 +32,14 @@ class Model_access extends CI_Model {
             $this->db->set($MyDEPARTAMENT, 'true');
             $this->db->where('vid', $MyVID);
             $this->db->update('permisos');
+            
         }
 
+        public function delete_access($MyVID, $MyDEPARTAMENT) {
+            $this->db->set($MyDEPARTAMENT, 'false');
+            $this->db->where('vid', $MyVID);
+            $this->db->update('permisos');
+        }
 
 }	
 ?>

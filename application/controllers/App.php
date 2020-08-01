@@ -36,14 +36,10 @@ class App extends CI_Controller {
         $xMIEMBRO = $this->myfunctions->valida_API();
         if(($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))){
             
-            $this->model_access->grant_access('528508', 'pages_HQ');
-            
             //Verificando los permisos de usuario
             if(!$this->model_access->get_access($xMIEMBRO->vid, 'pages_HQ')){
                 exit('Usted no tiene permisos para acceder a este sitio.');
             }            
-            
-            
             //Consultado con la DB
             $query  = $this->db->select('*')
                                ->from('paises')

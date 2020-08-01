@@ -22,7 +22,7 @@ $lang['seconds'] = 'seconds';
 $lang['menutitle'] = 'MAIN NAVIGATION';
 
 //Only STAFF
-$lang['staff_title'] = 'Staff options';
+$lang['staff_title'] = 'STAFF OPERATIONS';
 
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';

@@ -22,11 +22,10 @@ $lang['seconds'] = 'segundos';
 $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
 
 //Opciones del STAFF
-$lang['staff_title'] = 'Opciones de administración';
+$lang['staff_title'] = 'OPCIONES DE ADMINISTRÁCION';
 
 //Traducciones del contenido principal
 $lang['mainpage'] = 'Zona de miembros';
 $lang['mainversion'] = 'Versión v2.0';
-
     
 ?>

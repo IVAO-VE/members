@@ -26,7 +26,7 @@ $lang['staff_title'] = 'Opciones de administración';
 
 //Traducciones del contenido principal
 $lang['mainpage'] = 'Zona de miembros';
-$lang['mainversion'] = 'Versión 2.0';
+$lang['mainversion'] = 'Versión v2.0';
 
     
 ?>

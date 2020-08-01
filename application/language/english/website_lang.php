@@ -26,6 +26,6 @@ $lang['staff_title'] = 'Staff options';
 
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';
-$lang['mainversion'] = 'Version 2.0';
+$lang['mainversion'] = 'Version v2.0';
     
 ?>

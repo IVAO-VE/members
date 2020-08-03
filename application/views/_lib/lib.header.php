@@ -47,7 +47,7 @@
                     <p class="m-0"><span class="fg-green mr-2">&#x25cf;</span><span class="text-small"><?php echo $this->session->userdata('vid').' : '.$this->lang->line('online'); ?></span></p>
                 </div>
             </div>
-            <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar holder ml-2">
+            <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar holder ml-2">
         </div>
 
         <div class="suggest-box">

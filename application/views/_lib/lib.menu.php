@@ -24,13 +24,13 @@
             <li>
                 <a href="#widgets">
                     <span class="icon"><span class="mif-widgets"></span></span>
-                    <span class="caption">Widgets</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto01'); ?></span>
                 </a>
             </li>
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-versions"></span></span>
-                    <span class="caption">Sample Pages</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto02'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown">
                     <li class="item-header">Pages</li>
@@ -105,7 +105,7 @@
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-devices"></span></span>
-                    <span class="caption">Forms</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto03'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
                     <li class="item-header">Forms</li>
@@ -131,7 +131,7 @@
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-table"></span></span>
-                    <span class="caption">Tables</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto04'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
                     <li class="item-header">Tables</li>
@@ -149,7 +149,7 @@
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-air"></span></span>
-                    <span class="caption">UI Elements</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto05'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown">
                     <li class="item-header">UI Elements</li>
@@ -209,7 +209,7 @@
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-play"></span></span>
-                    <span class="caption">Media</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto06'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
                     <li class="item-header">Media</li>
@@ -227,7 +227,7 @@
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-comment"></span></span>
-                    <span class="caption">Information</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto07'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
                     <li class="item-header">Information</li>
@@ -253,7 +253,7 @@
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-envelop"></span></span>
-                    <span class="caption">Mailbox</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto08'); ?></span>
                     <span class="badges ml-auto mr-3">
                         <span class="badge inline bg-cyan fg-white">17</span>
                         <span class="badge inline bg-red fg-white">7</span>
@@ -293,7 +293,7 @@
             <li>
                 <a href="#chat">
                     <span class="icon"><span class="mif-bubbles"></span></span>
-                    <span class="caption">Chat</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto09'); ?></span>
                     <span class="badges ml-auto mr-3">
                         <span class="badge inline bg-red fg-white">7</span>
                         <span class="badge inline bg-green fg-white">4</span>
@@ -305,7 +305,7 @@
             <li>
                 <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-magic-wand"></span></span>
-                    <span class="caption">Wizards</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto10'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
                     <li class="item-header">Wizards</li>

@@ -22,6 +22,9 @@ $lang['renderpage'] = 'Página generada en';
 $lang['seconds'] = 'segundos';
 
 //Traducciones para MENU
+$lang['selectlang'] = 'Idioma';
+$lang['lang_ES'] = 'Español';
+$lang['lang_EN'] = 'Ingles';
 $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
 
 //Opciones del STAFF

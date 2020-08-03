@@ -353,6 +353,18 @@
                     <span class="mif-flag"></span>
                     <span class="badge bg-red fg-white mt-2 mr-1">9</span>
                 </a>
+                
+                <div class="bg-white p-4 clear">
+                    <div class="split-button">
+                        <button class="button"><?php echo $this->lang->line('selectlang'); ?></button>
+                        <button class="split dropdown-toggle"></button>
+                        <ul class="d-menu" data-role="dropdown" data-role-dropdown="true" style="display: none;">
+                            <li><a href="#" <?php if($this->session->userdata('site_lang') == 'english'); ?>><?php echo $this->lang->line('lang_EN'); ?></a></li>
+                            <li><a href="#" <?php if($this->session->userdata('site_lang') == 'spanish'); ?>><?php echo $this->lang->line('lang_ES'); ?></a></li>
+                        </ul>
+                    </div>
+                </div>                
+                
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
                         <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">

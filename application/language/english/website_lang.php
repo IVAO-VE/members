@@ -22,6 +22,9 @@ $lang['renderpage'] = 'Page rendered in';
 $lang['seconds'] = 'seconds';
 
 //Menu traslators
+$lang['selectlang'] = 'Languaje';
+$lang['lang_ES'] = 'Spanish';
+$lang['lang_EN'] = 'English';
 $lang['menutitle'] = 'MAIN NAVIGATION';
 
 //Only STAFF

@@ -121,7 +121,13 @@ class App extends CI_Controller {
             
             }
             $atc_rating_image = 'https://ivao.aero/data/images/ratings/atc/'.$xMIEMBRO->ratingatc.'.gif';
-            
+            //Buscando la imagen de perfil del usuario.
+            $filename = base_url()."_include/images/perfiles/".$xMIEMBRO->vid.".jpg";
+            if(file_exists($filename)){
+                $member_image = $filename;
+            }else{
+                $member_image = base_url()."_include/images/perfiles/ve.png";
+            }            
             //Generando arreglo con datos del miembro detectado
             $arraymember = array(
                     'result'            => $xMIEMBRO->result,
@@ -129,6 +135,7 @@ class App extends CI_Controller {
                     'firstname'         => $xMIEMBRO->firstname,
                     'lastname'          => $xMIEMBRO->lastname,
                     'fullname'          => $xMIEMBRO->firstname.' '.$xMIEMBRO->lastname,
+                    'member_img'        => $member_image,
                     'rating'            => $xMIEMBRO->rating,
                     'ratingatc'         => $xMIEMBRO->ratingatc,
                     'ratingatc_name'    => $atc_rating,

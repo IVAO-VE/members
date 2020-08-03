@@ -20,6 +20,9 @@ $lang['online'] = 'en línea';
 $lang['membersarea'] = 'Área de miembros';
 $lang['renderpage'] = 'Página generada en';
 $lang['seconds'] = 'segundos';
+$lang['range_FL'] = 'Rango piloto';
+$lang['range_CL'] = 'Rango controlador';
+
 
 //Traducciones para MENU
 $lang['selectlang'] = 'Idioma';

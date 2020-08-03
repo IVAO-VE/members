@@ -48,5 +48,7 @@ $lang['staff_title'] = 'OPCIONES DE ADMINISTRÁCION';
 //Traducciones del contenido principal
 $lang['mainpage'] = 'Zona de miembros';
 $lang['mainversion'] = 'Versión v2.0';
+$lang['main_tflight'] = 'Tiempo de vuelo';
+$lang['main_tcontrol'] = 'Tiempo de control';
     
 ?>

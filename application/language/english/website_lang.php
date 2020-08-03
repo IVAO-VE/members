@@ -48,5 +48,7 @@ $lang['staff_title'] = 'STAFF OPERATIONS';
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';
 $lang['mainversion'] = 'Version v2.0';
+$lang['main_tflight'] = 'Flight time';
+$lang['main_tcontrol'] = 'Controller time';
     
 ?>

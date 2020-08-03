@@ -36,7 +36,7 @@
         <div class="icon-box border bd-cyan">
             <div class="icon bg-cyan fg-white"><span class="mif-local-airport"></span></div>
             <div class="content p-4">
-                <div class="text-upper">cpu traffic</div>
+                <div class="text-upper"><?php echo $this->lang->line('main_tflight'); ?></div>
                 <div class="text-upper text-bold text-lead">90%</div>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="icon-box border bd-red">
             <div class="icon bg-red fg-white"><span class="mif-headphones"></span></div>
             <div class="content p-4">
-                <div class="text-upper">likes</div>
+                <div class="text-upper"><?php echo $this->lang->line('main_tcontrol'); ?></div>
                 <div class="text-upper text-bold text-lead">41,410</div>
             </div>
         </div>

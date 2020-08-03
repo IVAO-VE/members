@@ -43,7 +43,7 @@
     </div>
     <div class="cell-lg-3 cell-sm-6 mt-2">
         <div class="icon-box border bd-red">
-            <div class="icon bg-red fg-white"><span class="mif-google-plus"></span></div>
+            <div class="icon bg-red fg-white"><span class="mif-headphones"></span></div>
             <div class="content p-4">
                 <div class="text-upper">likes</div>
                 <div class="text-upper text-bold text-lead">41,410</div>

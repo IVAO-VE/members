@@ -369,7 +369,7 @@
                         <div class="bg-darkCyan fg-white p-2 text-center">
                             <img src="<?php echo base_url('_include/'); ?>images/jek_vorobey.jpg" class="avatar">
                             <div class="h4 mb-0"><?php echo $this->session->userdata('fullname'); ?></div>
-                            <div><?php echo $this->lang->line('range_FL').': '.$this->session->userdata('ratingpilot_name').'<br>'.$this->lang->line('range_CL').': '.$this->session->userdata('ratingatc_name'); ?></div>
+                            <div><?php echo $this->session->userdata('ratingpilot_name').'<br>'.$this->session->userdata('ratingatc_name'); ?></div>
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2">
                             <button class="button flat-button">Followers</button>

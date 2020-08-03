@@ -52,7 +52,7 @@
     </div>
     <div class="cell-lg-3 cell-sm-6 mt-2">
         <div class="icon-box border bd-green">
-            <div class="icon bg-green fg-white"><span class="mif-cart"></span></div>
+            <div class="icon bg-green fg-white"><span class="mif-location"></span></div>
             <div class="content p-4">
                 <div class="text-upper">sales</div>
                 <div class="text-upper text-bold text-lead">1024</div>
@@ -61,7 +61,7 @@
     </div>
     <div class="cell-lg-3 cell-sm-6 mt-2">
         <div class="icon-box border bd-orange">
-            <div class="icon bg-orange fg-white"><span class="mif-users"></span></div>
+            <div class="icon bg-orange fg-white"><span class="mif-flag"></span></div>
             <div class="content p-4">
                 <div class="text-upper">new members</div>
                 <div class="text-upper text-bold text-lead">3,300</div>

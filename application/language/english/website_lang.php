@@ -50,5 +50,7 @@ $lang['mainpage'] = 'Members zone';
 $lang['mainversion'] = 'Version v2.0';
 $lang['main_tflight'] = 'Flight estimated time';
 $lang['main_tcontrol'] = 'Controller estimated time';
+$lang['main_country'] = 'Registred in';
+$lang['main_division'] = 'Your division';
     
 ?>

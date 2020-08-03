@@ -30,6 +30,7 @@ $lang['selectlang'] = 'Idioma';
 $lang['lang_ES'] = 'Español';
 $lang['lang_EN'] = 'Ingles';
 $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
+$lang['dpto00'] = 'Estado general';
 $lang['dpto01'] = 'Dirección';
 $lang['dpto02'] = 'Operaciones de vuelo';
 $lang['dpto03'] = 'Operaciones de control';

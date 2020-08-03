@@ -30,6 +30,7 @@ $lang['selectlang'] = 'Languaje';
 $lang['lang_ES'] = 'Spanish';
 $lang['lang_EN'] = 'English';
 $lang['menutitle'] = 'MAIN NAVIGATION';
+$lang['dpto00'] = 'General status';
 $lang['dpto01'] = 'Directive';
 $lang['dpto02'] = 'Flight operations';
 $lang['dpto03'] = 'Controller operations';

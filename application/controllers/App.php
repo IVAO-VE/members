@@ -17,11 +17,15 @@ class App extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->phpdebug->debug('[LOAD] -> Cargando el controlador de la aplicación');
         //Cargando la librería de sesiones
+        $this->phpdebug->debug('[LOAD] -> Cargando la sesión');
         $this->load->library('session');
         //Cargando ayudante de redirecciones
+        $this->phpdebug->debug('[LOAD] -> Cargando ayudantes de la aplicación');
         $this->load->helper('url');
         //Cargando el archivo de idioma correspondiente
+        $this->phpdebug->debug('[LOAD] -> Determinando el lenguaje para el usuario');
         $lang = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
         if (strtoupper(substr($lang, 0, 2)) == 'ES') { //es_ES, en_US
             $this->lang->load('website', 'spanish');
@@ -33,14 +37,17 @@ class App extends CI_Controller {
 
 	public function index() {
         //Validando el acceso en IVAO
+        $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de la red IVAO');
         $xMIEMBRO = $this->myfunctions->valida_API();
         if(($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))){
-            
+            $this->phpdebug->debug('[APP] -> Miembro detactado y validado');
             //Verificando los permisos de usuario
+            $this->phpdebug->debug('[APP] -> Determinando el nivel de acceso');
             if(!$this->model_access->get_access($xMIEMBRO->vid, 'pages_HQ')){
                 exit('Usted no tiene permisos para acceder a este sitio.');
             }            
             //Consultado con la DB
+            $this->phpdebug->debug('[APP] -> Traduciendo su ubicación');
             $query  = $this->db->select('*')
                                ->from('paises')
                                ->where('code', $xMIEMBRO->country) //Código de país 
@@ -51,7 +58,8 @@ class App extends CI_Controller {
                                ->where('code', $xMIEMBRO->division) //Código de país 
                                ->get();
             $division_name = $query->row_array(); 
-            //Analizando el rango del miembro piloto           
+            //Analizando el rango del miembro piloto 
+            $this->phpdebug->debug('[APP] -> Validando el rango de piloto');          
             switch ($xMIEMBRO->ratingpilot){ 
             	case 1: //
                     $pilot_rating = 'Newbie Pilot';
@@ -86,7 +94,8 @@ class App extends CI_Controller {
             
             }
             $pilot_rating_image = 'https://ivao.aero/data/images/ratings/atc/'.$xMIEMBRO->ratingpilot.'.gif';
-            //Analizando el rango del miembro controlador           
+            //Analizando el rango del miembro controlador
+            $this->phpdebug->debug('[APP] -> Validando el rango de controlador');           
             switch ($xMIEMBRO->ratingatc){ 
             	case 1: //
                     $atc_rating = 'Newbie Controller';
@@ -122,6 +131,7 @@ class App extends CI_Controller {
             }
             $atc_rating_image = 'https://ivao.aero/data/images/ratings/atc/'.$xMIEMBRO->ratingatc.'.gif';
             //Buscando la imagen de perfil del usuario.
+            $this->phpdebug->debug('[APP] -> Asignando la imagen de perfil');
             $filename = base_url("_include/images/perfiles/").$xMIEMBRO->vid.".jpg";
             $this->phpdebug->debug($filename, null, WARN);
             if(file_exists($filename)){
@@ -130,6 +140,7 @@ class App extends CI_Controller {
                 $member_image = base_url('_include/images/perfiles/')."ve.png";
             }            
             //Generando arreglo con datos del miembro detectado
+            $this->phpdebug->debug('[APP] -> Asignando variables globales de aplicación');
             $arraymember = array(
                     'result'            => $xMIEMBRO->result,
                     'vid'               => $xMIEMBRO->vid,
@@ -166,7 +177,8 @@ class App extends CI_Controller {
             
             //Cargando los datos de sesión
             $this->session->set_userdata($arraymember);
-            //Cargando la vista inicial            
+            //Cargando la vista inicial
+            $this->phpdebug->debug('[APP] -> Iniciando visualización de la página');            
             $this->load->view('app_start');
         }
 		

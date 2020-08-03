@@ -34,7 +34,7 @@
 <div class="row mt-2">
     <div class="cell-lg-3 cell-sm-6 mt-2">
         <div class="icon-box border bd-cyan">
-            <div class="icon bg-cyan fg-white"><span class="local-airport"></span></div>
+            <div class="icon bg-cyan fg-white"><span class="mif-local-airport"></span></div>
             <div class="content p-4">
                 <div class="text-upper">cpu traffic</div>
                 <div class="text-upper text-bold text-lead">90%</div>

@@ -20,6 +20,8 @@ $lang['online'] = 'online';
 $lang['membersarea'] = 'Members area';
 $lang['renderpage'] = 'Page rendered in';
 $lang['seconds'] = 'seconds';
+$lang['range_FL'] = 'Flight range';
+$lang['range_CL'] = 'Controller range';
 
 //Menu traslators
 $lang['selectlang'] = 'Languaje';

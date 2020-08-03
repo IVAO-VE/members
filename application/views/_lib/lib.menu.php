@@ -353,11 +353,12 @@
                     <span class="mif-flag"></span>
                     <span class="badge bg-red fg-white mt-2 mr-1">9</span>
                 </a>
-                
+<!--             
                 <select onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
                     <option value="english" <?php if($this->session->userdata('site_lang') == 'english') echo 'selected="selected"'; ?>><?php echo $this->lang->line('lang_EN'); ?></option>
                     <option value="spanish" <?php if($this->session->userdata('site_lang') == 'spanish') echo 'selected="selected"'; ?>><?php echo $this->lang->line('lang_ES'); ?></option>
                 </select>                              
+-->
                 
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">

@@ -54,8 +54,8 @@
         <div class="icon-box border bd-green">
             <div class="icon bg-green fg-white"><span class="mif-location"></span></div>
             <div class="content p-4">
-                <div class="text-upper">sales</div>
-                <div class="text-upper text-bold text-lead">1024</div>
+                <div class="text-upper"><?php echo $this->lang->line('main_division'); ?></div>
+                <div class="text-upper text-bold text-lead"><?php echo $this->session->userdata('division_name'); ?></div>
             </div>
         </div>
     </div>
@@ -63,8 +63,8 @@
         <div class="icon-box border bd-orange">
             <div class="icon bg-orange fg-white"><span class="mif-flag"></span></div>
             <div class="content p-4">
-                <div class="text-upper">new members</div>
-                <div class="text-upper text-bold text-lead">3,300</div>
+                <div class="text-upper"><?php echo $this->lang->line('main_country'); ?></div>
+                <div class="text-upper text-bold text-lead"><?php echo $this->session->userdata('country_name'); ?></div>
             </div>
         </div>
     </div>

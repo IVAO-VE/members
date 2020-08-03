@@ -25,12 +25,21 @@ $lang['range_CL'] = 'Controller range';
 $lang['logout'] = 'Logout';
 $lang['profile'] = 'Profile';
 
-
 //Menu traslators
 $lang['selectlang'] = 'Languaje';
 $lang['lang_ES'] = 'Spanish';
 $lang['lang_EN'] = 'English';
 $lang['menutitle'] = 'MAIN NAVIGATION';
+$lang['dpto01'] = 'Directive';
+$lang['dpto02'] = 'Flight operations';
+$lang['dpto03'] = 'Controller operations';
+$lang['dpto04'] = 'Special operations';
+$lang['dpto05'] = 'Training';
+$lang['dpto06'] = 'Members and affiliation';
+$lang['dpto07'] = 'Events';
+$lang['dpto08'] = 'Public relations';
+$lang['dpto09'] = 'Web and systems';
+$lang['dpto10'] = 'FIR'; 
 
 //Only STAFF
 $lang['staff_title'] = 'STAFF OPERATIONS';

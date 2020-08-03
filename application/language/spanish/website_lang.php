@@ -30,6 +30,16 @@ $lang['selectlang'] = 'Idioma';
 $lang['lang_ES'] = 'Español';
 $lang['lang_EN'] = 'Ingles';
 $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
+$lang['dpto01'] = 'Dirección';
+$lang['dpto02'] = 'Operaciones de vuelo';
+$lang['dpto03'] = 'Operaciones de control';
+$lang['dpto04'] = 'Operaciones especiales';
+$lang['dpto05'] = 'Entrenamiento';
+$lang['dpto06'] = 'Miembros y afiliación';
+$lang['dpto07'] = 'Eventos';
+$lang['dpto08'] = 'Relaciones públicas';
+$lang['dpto09'] = 'Sistemas y web';
+$lang['dpto10'] = 'FIR'; 
 
 //Opciones del STAFF
 $lang['staff_title'] = 'OPCIONES DE ADMINISTRÁCION';

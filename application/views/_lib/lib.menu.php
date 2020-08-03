@@ -377,8 +377,8 @@
                             <button class="button flat-button">Friends</button>
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2 bg-light">
-                            <button class="button mr-1">Profile</button>
-                            <button class="button ml-1">Sign out</button>
+                            <button class="button mr-1"><?php echo $this->lang->line('profile'); ?></button>
+                            <button class="button ml-1"><?php echo $this->lang->line('logout'); ?></button>
                         </div>
                     </div>
                 </div>

@@ -22,6 +22,9 @@ $lang['renderpage'] = 'Page rendered in';
 $lang['seconds'] = 'seconds';
 $lang['range_FL'] = 'Flight range';
 $lang['range_CL'] = 'Controller range';
+$lang['logout'] = 'Logout';
+$lang['profile'] = 'Profile';
+
 
 //Menu traslators
 $lang['selectlang'] = 'Languaje';

@@ -22,7 +22,8 @@ $lang['renderpage'] = 'Página generada en';
 $lang['seconds'] = 'segundos';
 $lang['range_FL'] = 'Rango piloto';
 $lang['range_CL'] = 'Rango controlador';
-
+$lang['logout'] = 'Cerrar sesión';
+$lang['profile'] = 'Perfil';
 
 //Traducciones para MENU
 $lang['selectlang'] = 'Idioma';

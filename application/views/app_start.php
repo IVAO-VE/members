@@ -46,7 +46,7 @@
             <div class="icon bg-red fg-white"><span class="mif-headphones"></span></div>
             <div class="content p-4">
                 <div class="text-upper"><?php echo $this->lang->line('main_tcontrol'); ?></div>
-                <div class="text-upper text-bold text-lead">41,410</div>
+                <div class="text-upper text-bold text-lead"><?php echo $this->myfunctions->segundos_a_horas($this->session->userdata('hours_atc')); ?></div>
             </div>
         </div>
     </div>

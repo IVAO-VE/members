@@ -18,7 +18,7 @@
             <li>
                 <a href="#dashboard">
                     <span class="icon"><span class="mif-meter"></span></span>
-                    <span class="caption">Dashboard</span>
+                    <span class="caption"><?php echo $this->lang->line('dpto00'); ?></span>
                 </a>
             </li>
             <li>

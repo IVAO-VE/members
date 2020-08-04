@@ -37,6 +37,7 @@ class App extends CI_Controller
         }
 
         public function logout(){
+            $this->phpdebug->debug("Entré a LOGOUT", null, ERROR);
             print_r($arraymember);
         }
 

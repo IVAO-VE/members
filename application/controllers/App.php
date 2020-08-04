@@ -36,6 +36,12 @@ class App extends CI_Controller
                 }
         }
 
+        public function logout(){
+            print_r($arraymember);
+        }
+
+
+
         public function index()
         {
                 //Validando el acceso en IVAO

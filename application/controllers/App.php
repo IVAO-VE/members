@@ -214,6 +214,7 @@ class App extends CI_Controller
                         );
                         //Eliminamos todos los datos de la sesion
                         $this->session->unset_userdata($arraymember);
+                        $this->session->sess_destroy();
                         exit('Sesion finalizada correctamente');
 
                 }

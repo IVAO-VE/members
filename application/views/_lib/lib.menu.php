@@ -1,15 +1,15 @@
 <?php
 /**
- * @autor Rixio Iguarán y Simón Cardona.
+ * @autor Rixio Iguarï¿½n y Simï¿½n Cardona.
  * @Departamento Sistemas y Webmaster
  * @Licencia Exclusivo sistemas IVAO.AERO
- * @Licencia División Venezuela.
+ * @Licencia Divisiï¿½n Venezuela.
  * @Correo ve-web@ivao.aero
  * 
  **/
 
     //Asegurando el acceso directo al script
-    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
+    defined('BASEPATH') OR exit('El acceso directo al cï¿½digo no estï¿½ permitido.');
 
 ?>
         <!-- INICIO DEL MENU DE OPCIONES -->
@@ -378,7 +378,7 @@
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2 bg-light">
                             <button class="button mr-1"><?php echo $this->lang->line('profile'); ?></button>
-                            <button class="button ml-1"><?php echo $this->lang->line('logout'); ?></button>
+                            <a href="<?php echo base_url() ?>inicio/logout"><button class="button ml-1"><?php echo $this->lang->line('logout'); ?></button></a>
                         </div>
                     </div>
                 </div>

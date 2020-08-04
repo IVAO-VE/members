@@ -132,7 +132,7 @@ class App extends CI_Controller {
             $atc_rating_image = 'https://ivao.aero/data/images/ratings/atc/'.$xMIEMBRO->ratingatc.'.gif';
             //Buscando la imagen de perfil del usuario.
             $this->phpdebug->debug('[APP] -> Asignando la imagen de perfil');
-            $filename = base_url("_include/images/perfiles/").$xMIEMBRO->vid.".jpg";
+            $filename = dir_name(FCPATH."_include/images/perfiles/").$xMIEMBRO->vid.".jpg";
             $this->phpdebug->debug($filename, null, WARN);
             if(file_exists($filename)){
                 $member_image = $filename;

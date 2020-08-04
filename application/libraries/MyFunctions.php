@@ -108,18 +108,16 @@ class MyFunctions {
         return $horas . ':' . $minutos . ":" . $segundos;
     }    
     /** ***************************************************************************************************************************** **/
-        public function logout(){
-                //Verificamos que haya una sesion creada
-                if($this->session->userdata('vid')){
-
-                        print_r($arraymember);
-                        //Eliminamos todos los datos de la sesion
-                        //$this->session->unset_userdata($arraymember);
-                        //$this->session->sess_destroy();
-                        //redirect(base_url());
-
-                }
+    public function logout(){
+        //Verificamos que haya una sesion creada
+        if($this->session->userdata('vid')){
+            print_r($arraymember);
+            //Eliminamos todos los datos de la sesion
+            //$this->session->unset_userdata($arraymember);
+            //$this->session->sess_destroy();
+            //redirect(base_url());
         }
+    }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

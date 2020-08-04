@@ -36,6 +36,11 @@ class App extends CI_Controller
                 }
         }
 
+        public function loco(){
+            $this->phpdebug->debug('[LOCO] -> acá estoy');
+            redirect(base_url('/loco'));
+        }
+
         public function index()
         {
                 //Validando el acceso en IVAO

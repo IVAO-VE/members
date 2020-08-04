@@ -378,7 +378,7 @@
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2 bg-light">
                             <button class="button mr-1"><?php echo $this->lang->line('profile'); ?></button>
-                            <a href="#"><button onclick="<?php //$this->myfunctions->logout(); ?>" class="button ml-1"><?php echo $this->lang->line('logout'); ?></button></a>
+                            <button onclick="<?php //$this->myfunctions->logout(); ?>" class="button ml-1"><?php echo $this->lang->line('logout'); ?></button>
                         </div>
                     </div>
                 </div>

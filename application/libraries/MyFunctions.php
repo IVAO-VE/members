@@ -112,40 +112,11 @@ class MyFunctions {
                 //Verificamos que haya una sesion creada
                 if($this->session->userdata('vid')){
 
-                        $arraymember = array(
-                                'result',
-                                'vid',
-                                'firstname',
-                                'lastname',
-                                'fullname',
-                                'member_img',
-                                'rating',
-                                'ratingatc',
-                                'ratingatc_name',
-                                'ratingatc_img',
-                                'ratingpilot',
-                                'ratingpilot_name',
-                                'ratingpilot_img',
-                                'division_code',
-                                'division_name',
-                                'country_code',
-                                'country_name',
-                                'skype',
-                                'hours_atc',
-                                'hours_pilot',
-                                'fullhours',
-                                'staff',
-                                'va_staff_ids',
-                                'va_staff',
-                                'va_staff_icaos',
-                                'isNpoMember',
-                                'va_member_ids',
-                                'hq_pilot'
-                        );
+                        print_r($arraymember);
                         //Eliminamos todos los datos de la sesion
-                        $this->session->unset_userdata($arraymember);
-                        $this->session->sess_destroy();
-                        redirect(base_url());
+                        //$this->session->unset_userdata($arraymember);
+                        //$this->session->sess_destroy();
+                        //redirect(base_url());
 
                 }
         }

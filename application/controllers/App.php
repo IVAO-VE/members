@@ -37,7 +37,7 @@ class App extends CI_Controller {
 
 	public function index() {
         //Validando el acceso en IVAO
-        $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de la red IVAO');
+        $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de IVAO');
         $xMIEMBRO = $this->myfunctions->valida_API();
         if(($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))){
             $this->phpdebug->debug('[APP] -> Miembro detactado y validado');

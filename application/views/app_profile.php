@@ -36,7 +36,7 @@
         <div class="bg-white p-4">
             <div class="skill-box mt-4-minus">
                 <div class="header border-top border-bottom bd-default">
-                    <img src="images/jek_vorobey.jpg" class="avatar">
+                    <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
                     <div class="title">Jack Sparrow</div>
                     <div class="subtitle">Pirate captain</div>
                 </div>
@@ -71,42 +71,42 @@
             <div data-role="panel" data-title-caption="Friends  <span class='place-right text-bold'>new 3</span>">
                 <ul class="user-list flex-justify-start">
                     <li>
-                        <img src="images/user1-128x128.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user1-128x128.jpg" class="avatar">
                         <div class="text-ellipsis">Sergey</div>
                         <div class="text-small text-muted">Today</div>
                     </li>
                     <li>
-                        <img src="images/user2-160x160.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user2-160x160.jpg" class="avatar">
                         <div class="text-ellipsis">Alex</div>
                         <div class="text-small text-muted">Yesterday</div>
                     </li>
                     <li>
-                        <img src="images/user3-128x128.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user3-128x128.jpg" class="avatar">
                         <div class="text-ellipsis">Norma</div>
                         <div class="text-small text-muted">Yesterday</div>
                     </li>
                     <li>
-                        <img src="images/user4-128x128.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user4-128x128.jpg" class="avatar">
                         <div class="text-ellipsis">Katty</div>
                         <div class="text-small text-muted">11 Jan</div>
                     </li>
                     <li>
-                        <img src="images/user5-128x128.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user5-128x128.jpg" class="avatar">
                         <div class="text-ellipsis">Julia</div>
                         <div class="text-small text-muted">11 Jan</div>
                     </li>
                     <li>
-                        <img src="images/user6-128x128.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user6-128x128.jpg" class="avatar">
                         <div class="text-ellipsis">Mark</div>
                         <div class="text-small text-muted">11 Jan</div>
                     </li>
                     <li>
-                        <img src="images/user7-128x128.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user7-128x128.jpg" class="avatar">
                         <div class="text-ellipsis">Marta</div>
                         <div class="text-small text-muted">11 Jan</div>
                     </li>
                     <li>
-                        <img src="images/user8-128x128.jpg" class="avatar">
+                        <img src="<?php echo base_url('_include/'); ?>images/user8-128x128.jpg" class="avatar">
                         <div class="text-ellipsis">Ustas</div>
                         <div class="text-small text-muted">11 Jan</div>
                     </li>

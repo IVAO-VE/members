@@ -195,9 +195,9 @@ class App extends CI_Controller
         {
                 //$MyIDS = session_id();
                 //unlink(FCPATH . '/temp/ci_session' . $MyIDS); // Elimino el archivo fisico de la sesión
-                //unset($_COOKIE['__cfduid']); //Elimina cookies
-                //unset($_COOKIE['ivao_token']);
-                //unset($_COOKIE['ci_session']);
+                unset($_COOKIE['__cfduid']); //Elimina cookies
+                unset($_COOKIE['ivao_token']);
+                unset($_COOKIE['ci_session']);
                 delete_cookie('__cfduid');
                 delete_cookie('remember');
                 delete_cookie('ivao_token');
@@ -237,7 +237,7 @@ class App extends CI_Controller
                 $this->session->unset_userdata($arraymember);
                 $this->session->sess_destroy();
                 set_cookie('ivao_token', "", time() - 3600);
-                //unset($_GET['IVAOTOKEN']); //Elimina TOKEN de ivao
+                unset($_GET['IVAOTOKEN']); //Elimina TOKEN de ivao
                 redirect(base_url('home/vid'));
         }
 

@@ -22,10 +22,10 @@ class App extends CI_Controller
                 $this->phpdebug->debug('[LOAD] -> Cargando el controlador de la aplicación');
                 //Cargando la librería de sesiones
                 $this->phpdebug->debug('[LOAD] -> Cargando la sesión');
-                $this->load->library('session');
+                //$this->load->library('session');
                 //Cargando ayudante de redirecciones
                 $this->phpdebug->debug('[LOAD] -> Cargando ayudantes de la aplicación');
-                $this->load->helper('url');
+                //$this->load->helper('url');
                 //Cargando el archivo de idioma correspondiente
                 $this->phpdebug->debug('[LOAD] -> Determinando el lenguaje para el usuario');
                 $lang = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);

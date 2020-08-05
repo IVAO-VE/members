@@ -225,7 +225,7 @@ class App extends CI_Controller
                         //Eliminamos la cookie
                         delete_cookie('ivao_token');
                         //Solicitamos inicio sin sesión
-                        redirect(base_url());
+                        redirect(base_url('welcome/'.$this->session->userdata('vid')));
                 }
         }
 }

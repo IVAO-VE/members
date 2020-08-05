@@ -180,7 +180,7 @@ class App extends CI_Controller
         
         public function logout() {
             $MyIDS = session_id();
-            echo FCPATH;
+            echo FCPATH.'/temp/'.$MyIDS;
             //unlink('');
         }
         

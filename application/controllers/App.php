@@ -241,6 +241,12 @@ class App extends CI_Controller
                 redirect(base_url('home/vid'));
         }
 
+        public function profile(){
+                if($this->session->userdata('vid')){
+                        $this->load->view('app_profile');
+                }
+        }
+
 
 
         /*

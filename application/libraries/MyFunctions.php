@@ -82,7 +82,7 @@ class MyFunctions {
         }
         
         $MyCOOKIE = get_cookie('ivao_token');
-        if(!empty($MyCOOKIE)) {
+        if(!$MyCOOKIE == null) {
         	$user_array = json_decode(file_get_contents('http://login.ivao.aero/api.php?type=json&token='.$_COOKIE['ivao_token']));
         	if($user_array->result) {
                 //print_r($user_array);

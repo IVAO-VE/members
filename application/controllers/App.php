@@ -181,7 +181,7 @@ class App extends CI_Controller
                         //Cargando los datos de sesión
                         $this->session->set_userdata($arraymember);
                         //Cargando la vista inicial
-                        $this->phpdebug->debug('[APP] -> Iniciando visualización de la página');*/
+                        $this->phpdebug->debug('[APP] -> Iniciando visualización de la página');
                         $this->load->view('app_start');
                 }
         }

@@ -213,7 +213,8 @@ class App extends CI_Controller
                                 'va_member_ids',
                                 'hq_pilot'
                         );
-                        set_cookie('ivao_token', '', time() - 3600);
+                        //set_cookie('ivao_token', '', time() - 3600);
+                        delete_cookie('ivao_token');
                         //Eliminamos todos los datos de la sesion
                         $this->session->unset_userdata($arraymember);
                         redirect(base_url());

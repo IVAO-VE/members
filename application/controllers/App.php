@@ -21,10 +21,10 @@ class App extends CI_Controller
                 parent::__construct();
                 $this->phpdebug->debug('[LOAD] -> Cargando el controlador de la aplicación');
                 //Cargando la librería de sesiones
-                //$this->phpdebug->debug('[LOAD] -> Cargando la sesión');
+                $this->phpdebug->debug('[LOAD] -> Cargando la sesión');
                 //$this->load->library('session');
                 //Cargando ayudante de redirecciones
-                //$this->phpdebug->debug('[LOAD] -> Cargando ayudantes de la aplicación');
+                $this->phpdebug->debug('[LOAD] -> Cargando ayudantes de la aplicación');
                 //$this->load->helper('url');
                 //Cargando el archivo de idioma correspondiente
                 $this->phpdebug->debug('[LOAD] -> Determinando el lenguaje para el usuario');
@@ -36,18 +36,17 @@ class App extends CI_Controller
                 }
         }
 
+        public function inicio()
+        {
+                $this->load->view('app_start');
+        }
+
         public function index()
         {
                 if ($this->session->userdata('vid')) {
-                        $this->phpdebug->debug('[APP] -> Iniciando visualización de la página');
-                        $this->load->view('app_start');
-                } else {
-                        redirect(base_url('app/login'));
+                        redirect(base_url() . 'app/inicio');
                 }
-        }
 
-        public function login()
-        {
                 //Validando el acceso en IVAO
                 $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de IVAO');
                 $xMIEMBRO = $this->myfunctions->valida_API();
@@ -181,11 +180,9 @@ class App extends CI_Controller
                         );
                         //print_r($arraymember);
                         //Cargando los datos de sesión
-                        $s = $this->session->set_userdata($arraymember);
+                        $this->session->set_userdata($arraymember);
                         //Cargando la vista inicial
-                        if ($s) {
-                                $this->load->view('app_start');
-                        }
+                        redirect(base_url() . 'app/inicio');
                 }
         }
 

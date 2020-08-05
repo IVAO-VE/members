@@ -181,6 +181,7 @@ class App extends CI_Controller
         public function logout() {
                 //Verificamos que haya una sesion creada
                 if ($this->session->userdata('vid')) {
+                        unset($_GET['IVAOTOKEN']);
                         //Anulando la cookie
                         $cookie= array(
                             'name'   => 'ivao_token',
@@ -225,7 +226,7 @@ class App extends CI_Controller
                         //Eliminamos la cookie
                         delete_cookie('ivao_token');
                         //Solicitamos inicio sin sesión
-                        redirect(base_url('welcome/'.$this->session->userdata('vid')));
+                        redirect(base_url());
                 }
         }
 }

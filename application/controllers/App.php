@@ -181,7 +181,7 @@ class App extends CI_Controller
         public function logout()
         {
                 $MyIDS = session_id();
-                unlink(FCPATH . '/temp/ci_session' . $MyIDS); // Elimino el archivo fisico de la sesión
+                //unlink(FCPATH . '/temp/ci_session' . $MyIDS); // Elimino el archivo fisico de la sesión
                 unset($_COOKIE['__cfduid']); //Elimina cookies
                 unset($_COOKIE['ivao_token']);
                 unset($_COOKIE['ci_session']);
@@ -189,7 +189,39 @@ class App extends CI_Controller
                 delete_cookie('remember');
                 delete_cookie('ivao_token');
                 delete_cookie('ci_session');
-                $this->session->sess_destroy();
+                $arraymember = array(
+                        'result',
+                        'vid',
+                        'firstname',
+                        'lastname',
+                        'fullname',
+                        'member_img',
+                        'rating',
+                        'ratingatc',
+                        'ratingatc_name',
+                        'ratingatc_img',
+                        'ratingpilot',
+                        'ratingpilot_name',
+                        'ratingpilot_img',
+                        'division_code',
+                        'division_name',
+                        'country_code',
+                        'country_name',
+                        'skype',
+                        'hours_atc',
+                        'hours_pilot',
+                        'fullhours',
+                        'staff',
+                        'va_staff_ids',
+                        'va_staff',
+                        'va_staff_icaos',
+                        'isNpoMember',
+                        'va_member_ids',
+                        'hq_pilot'
+                );  
+                
+                $this->session->unset_userdata($arraymember);
+                //$this->session->sess_destroy();
                 unset($_GET['IVAOTOKEN']); //Elimina TOKEN de ivao
                 redirect(base_url('home/vid'));
         }

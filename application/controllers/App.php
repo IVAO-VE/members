@@ -180,8 +180,12 @@ class App extends CI_Controller
         
         public function logout() {
             $MyIDS = session_id();
-            echo FCPATH.'/temp/'.$MyIDS;
-            //unlink('');
+            unlink(FCPATH.'/temp/ci_session'.$MyIDS); // Elimino el archivo fisico de la sesión
+            unset($_COOKIE['__cfduid']); //Elimina cookies
+            unset($_COOKIE['ivao_token']);
+            unset($_COOKIE['ci_session']);
+            unset($_GET['IVAOTOKEN']); //Elimina TOKEN de ivao
+            redirect(base_url());
         }
         
         

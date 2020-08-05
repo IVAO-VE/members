@@ -222,7 +222,8 @@ class App extends CI_Controller
                 );  
                 
                 $this->session->unset_userdata($arraymember);
-                //$this->session->sess_destroy();
+                $this->session->sess_destroy();
+                set_cookie('ivao_token', "", time()-3600);
                 //unset($_GET['IVAOTOKEN']); //Elimina TOKEN de ivao
                 redirect(base_url('home/vid'));
         }

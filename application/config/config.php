@@ -35,7 +35,7 @@ $config['base_url'] = 'https://members.ve.ivao.aero/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'welcome_message.php';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------

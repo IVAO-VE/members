@@ -248,6 +248,8 @@ class App extends CI_Controller
                         //delete_cookie('ci_session');
                         //Solicitamos inicio sin sesión
                         redirect(base_url('home/vid-'.$this->session->userdata('vid')));
+                }else{
+                        redirect(base_url('home/nombre'));  
                 }
         }
 }

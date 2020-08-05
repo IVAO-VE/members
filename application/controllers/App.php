@@ -178,12 +178,18 @@ class App extends CI_Controller
                 }
         }
 
-        public function logout()
-        {
+        public function logout() {
                 //Verificamos que haya una sesion creada
                 if ($this->session->userdata('vid')) {
-
-                        $arraymember = array(
+                        //Anulando la cookie
+                        $cookie= array(
+                            'name'   => 'ivao_token',
+                            'value'  => '',
+                            'expire' => time()-3600,
+                        );                
+                	   set_cookie($cookie);
+                       //Eliminamos todos los datos de la sesion
+                       $arraymember = array(
                                 'result',
                                 'vid',
                                 'firstname',
@@ -213,10 +219,12 @@ class App extends CI_Controller
                                 'va_member_ids',
                                 'hq_pilot'
                         );
-                        //set_cookie('ivao_token', '', time() - 3600);
-                        delete_cookie('ivao_token');
-                        //Eliminamos todos los datos de la sesion
                         $this->session->unset_userdata($arraymember);
+                        //Destruyendo la sesión
+                        $this->session->sess_destroy();
+                        //Eliminamos la cookie
+                        delete_cookie('ivao_token');
+                        //Solicitamos inicio sin sesión
                         redirect(base_url());
                 }
         }

@@ -90,11 +90,13 @@ class MyFunctions {
                 exit;
         	}else{
             	set_cookie('ivao_token', '', time()-3600);
+                delete_cookie('ivao_token');
             	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
             	exit;
             }
         }else{
         	set_cookie('ivao_token', '', time()-3600);
+            delete_cookie('ivao_token');
         	header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
         	exit;
         }        

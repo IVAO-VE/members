@@ -185,7 +185,7 @@ class App extends CI_Controller
             unset($_COOKIE['ivao_token']);
             unset($_COOKIE['ci_session']);
             unset($_GET['IVAOTOKEN']); //Elimina TOKEN de ivao
-            redirect(base_url());
+            redirect(base_url('home/vid'));
         }
         
         

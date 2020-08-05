@@ -197,9 +197,42 @@ class App extends CI_Controller
                             'name'   => 'ivao_token',
                             'value'  => '',
                             'expire' => time()-3600,
-                        );                
+                        );
+
+                        $arraymember = array(
+                                'result',
+                                'vid',
+                                'firstname',
+                                'lastname',
+                                'fullname',
+                                'member_img',
+                                'rating',
+                                'ratingatc',
+                                'ratingatc_name',
+                                'ratingatc_img',
+                                'ratingpilot',
+                                'ratingpilot_name',
+                                'ratingpilot_img',
+                                'division_code',
+                                'division_name',
+                                'country_code',
+                                'country_name',
+                                'skype',
+                                'hours_atc',
+                                'hours_pilot',
+                                'fullhours',
+                                'staff',
+                                'va_staff_ids',
+                                'va_staff',
+                                'va_staff_icaos',
+                                'isNpoMember',
+                                'va_member_ids',
+                                'hq_pilot'
+                        );  
+                        
+                        $this->session->unset_userdata($arraymember);
                                         
-                	    set_cookie($cookie1);
+                	set_cookie($cookie1);
                         set_cookie($cookie2);
                         set_cookie($cookie3);
                         //Destruyendo la sesión

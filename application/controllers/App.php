@@ -224,7 +224,9 @@ class App extends CI_Controller
                         //Destruyendo la sesión
                         $this->session->sess_destroy();
                         //Eliminamos la cookie
+                        delete_cookie('remember');
                         delete_cookie('ivao_token');
+                        delete_cookie('ci_session');
                         //Solicitamos inicio sin sesión
                         redirect(base_url());
                 }

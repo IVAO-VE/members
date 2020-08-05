@@ -177,7 +177,16 @@ class App extends CI_Controller
                         $this->load->view('app_start');
                 }
         }
-
+        
+        public function logout() {
+            $MyIDS = session_id();
+            echo FCPATH;
+            //unlink('');
+        }
+        
+        
+        
+/*
         public function logout() {
                 //Verificamos que haya una sesion creada
                 if ($this->session->userdata('vid')) {
@@ -251,5 +260,5 @@ class App extends CI_Controller
                 }else{
                         redirect(base_url('home/nombre'));  
                 }
-        }
+        } */
 }

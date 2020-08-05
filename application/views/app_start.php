@@ -10,7 +10,7 @@
 
     //Asegurando el acceso directo al script
     defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
-    echo site_url();
+    //echo site_url();
     //Cargando la estructura del HEADER
     $this->load->view("_lib/lib.header.php");
     //Cargando la estructura del MENU

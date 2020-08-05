@@ -377,7 +377,7 @@
                             <button class="button flat-button">Friends</button>
                         </div>
                         <div class="bg-white d-flex flex-justify-between flex-equal-items p-2 bg-light">
-                            <a href="<?php echo base_url('app/profile') ?>"><button class="button mr-1"><?php echo $this->lang->line('profile'); ?></button></a>
+                            <a class="btn-link" href="<?php echo base_url('app/profile') ?>"><button class="button mr-1"><?php echo $this->lang->line('profile'); ?></button></a>
                             <button onclick="<?php echo base_url('app/logout') ?>" class="button ml-1"><?php echo $this->lang->line('logout'); ?></button>
                         </div>
                     </div>

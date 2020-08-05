@@ -41,8 +41,6 @@ class App extends CI_Controller
                 if ($this->session->userdata('vid')) {
                         $this->phpdebug->debug('[APP] -> Iniciando visualización de la página');
                         $this->load->view('app_start');
-                } else {
-                        redirect(base_url('app/login'));
                 }
         }
 

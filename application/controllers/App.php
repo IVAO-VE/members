@@ -49,15 +49,15 @@ class App extends CI_Controller
                 //Validando el acceso en IVAO
                 $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de IVAO');
                 $xMIEMBRO = $this->myfunctions->valida_API();
-               if (($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))) {
-                      $this->phpdebug->debug('[APP] -> Miembro detactado y validado');
+                if (($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))) {
+                        $this->phpdebug->debug('[APP] -> Miembro detactado y validado');
                         //Verificando los permisos de usuario
                         $this->phpdebug->debug('[APP] -> Determinando el nivel de acceso');
                         if (!$this->model_access->get_access($xMIEMBRO->vid, 'pages_HQ')) {
                                 exit('Usted no tiene permisos para acceder a este sitio.');
                         }
                         //Consultado con la DB
-                      $this->phpdebug->debug('[APP] -> Traduciendo su ubicación');
+                        $this->phpdebug->debug('[APP] -> Traduciendo su ubicación');
                         $query  = $this->db->select('*')
                                 ->from('paises')
                                 ->where('code', $xMIEMBRO->country) //Código de país 
@@ -69,7 +69,7 @@ class App extends CI_Controller
                                 ->get();
                         $division_name = $query->row_array();
                         //Analizando el rango del miembro piloto 
-                       $this->phpdebug->debug('[APP] -> Validando el rango de piloto');
+                        $this->phpdebug->debug('[APP] -> Validando el rango de piloto');
                         switch ($xMIEMBRO->ratingpilot) {
                                 case 1: //
                                         $pilot_rating = 'Newbie Pilot';
@@ -104,7 +104,7 @@ class App extends CI_Controller
                         }
                         $pilot_rating_image = 'https://ivao.aero/data/images/ratings/atc/' . $xMIEMBRO->ratingpilot . '.gif';
                         //Analizando el rango del miembro controlador
-                                $this->phpdebug->debug('[APP] -> Validando el rango de controlador');
+                        $this->phpdebug->debug('[APP] -> Validando el rango de controlador');
                         switch ($xMIEMBRO->ratingatc) {
                                 case 1: //
                                         $atc_rating = 'Newbie Controller';
@@ -186,9 +186,10 @@ class App extends CI_Controller
                 }
         }
 
-        public function logout(){
+        public function logout()
+        {
                 //Verificamos que haya una sesion creada
-                if($this->session->userdata('vid')){
+                if ($this->session->userdata('vid')) {
 
                         $arraymember = array(
                                 'result',
@@ -223,7 +224,6 @@ class App extends CI_Controller
                         //Eliminamos todos los datos de la sesion
                         $this->session->unset_userdata($arraymember);
                         redirect(base_url());
-
                 }
-
+        }
 }

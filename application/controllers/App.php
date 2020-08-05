@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 class App extends CI_Controller
 {
 
-        public function __construct()
+       /* public function __construct()
         {
                 parent::__construct();
                 $this->phpdebug->debug('[LOAD] -> Cargando el controlador de la aplicación');
@@ -34,7 +34,7 @@ class App extends CI_Controller
                 } else {
                         $this->lang->load('website', 'english');
                 }
-        }
+        }*/
 
         public function logout(){
             $this->phpdebug->debug("Entré a LOGOUT", null, ERROR);

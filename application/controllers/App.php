@@ -48,7 +48,7 @@ class App extends CI_Controller
                 //Validando el acceso en IVAO
                // $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de IVAO');
                 $xMIEMBRO = $this->myfunctions->valida_API();
-                if (($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))) {
+                /*if (($xMIEMBRO->result == 1) && (!empty($xMIEMBRO->vid))) {
                  //       $this->phpdebug->debug('[APP] -> Miembro detactado y validado');
                         //Verificando los permisos de usuario
                    //     $this->phpdebug->debug('[APP] -> Determinando el nivel de acceso');
@@ -180,7 +180,7 @@ class App extends CI_Controller
                         //Cargando los datos de sesión
                         $this->session->set_userdata($arraymember);
                         //Cargando la vista inicial
-                       // $this->phpdebug->debug('[APP] -> Iniciando visualización de la página');
+                       // $this->phpdebug->debug('[APP] -> Iniciando visualización de la página');*/
                         $this->load->view('app_start');
                 }
         }

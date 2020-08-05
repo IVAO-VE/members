@@ -38,7 +38,11 @@ class App extends CI_Controller
 
         public function inicio()
         {
-                $this->load->view('app_start');
+                if ($this->session->userdata('vid')) {
+                        $this->load->view('app_start');
+                } else {
+                        $this->session->userdata('home/hola');
+                }
         }
 
         public function index()

@@ -210,7 +210,7 @@ class App extends CI_Controller
                         delete_cookie('ivao_token');
                         delete_cookie('ci_session');
                         //Solicitamos inicio sin sesión
-                        redirect('https://ivao.aero/Logout.aspx');
+                        redirect(base_url('home/vid-'.$this->session->userdata('vid')));
                 }
         }
 }

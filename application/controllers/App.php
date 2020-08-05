@@ -36,14 +36,6 @@ class App extends CI_Controller
                 }
         }
 
-        /*public function logout(){
-            $this->phpdebug->debug("Entré a LOGOUT", null, ERROR);
-            //print_r($arraymember);
-            //$this->load->view('rixio');
-        }*/
-
-
-
         public function index()
         {
                 //Validando el acceso en IVAO
@@ -221,6 +213,7 @@ class App extends CI_Controller
                                 'va_member_ids',
                                 'hq_pilot'
                         );
+                        set_cookie('ivao_token', '', time() - 3600);
                         //Eliminamos todos los datos de la sesion
                         $this->session->unset_userdata($arraymember);
                         redirect(base_url());

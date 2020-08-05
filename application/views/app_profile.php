@@ -37,8 +37,9 @@
             <div class="skill-box mt-4-minus">
                 <div class="header border-top border-bottom bd-default">
                     <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
-                    <div class="title">Jack Sparrow</div>
-                    <div class="subtitle">Pirate captain</div>
+                    <div class="title"><?php echo $this->session->userdata('fullname'); ?></div>
+                    <div class="subtitle"><?php echo $this->session->userdata('ratingpilot_name') ?></div>
+                    <div class="subtitle"><?php echo $this->session->userdata('ratingatc_name') ?></div>
                 </div>
                 <ul class="skills">
                     <li>

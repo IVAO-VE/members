@@ -331,9 +331,7 @@
                 $access_nivel = $query_access->row_array();
                 if(!empty($access_nivel)){ //El usuario está registrado en la db de permisos
                     //******************************
-                    $this->phpdebug->debug('[SEGURIDAD] -> Access OK');
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a la administración de HQ
-                        $this->phpdebug->debug('[SEGURIDAD] -> HQ OK'); 
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a HQ
                         echo '
                             <li>
                                 <a href="#">
@@ -343,6 +341,106 @@
                             </li>
                         ';
                     }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Operaciones de vuelo
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto02').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Operaciones de control
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto03').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Operaciones especiales
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto04').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Entrenamiento
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto05').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Miembros y afiliación
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto06').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Eventos
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto07').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Relaciones públicas
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto08').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Sistemas y web
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto09').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a FIR
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto10').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    
                     
                 }
 ?>            

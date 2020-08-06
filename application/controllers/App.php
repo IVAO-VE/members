@@ -225,7 +225,7 @@ class App extends CI_Controller
                 $this->session->sess_destroy();
                 set_cookie('ivao_token', "", time() - 3600);
                 unset($_GET['IVAOTOKEN']); //Elimina TOKEN de ivao
-                redirect(base_url('home/vid'));
+                redirect('https://ve.ivao.aero');
         }
 
         public function profile(){

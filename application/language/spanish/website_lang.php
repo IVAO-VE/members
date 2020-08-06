@@ -42,8 +42,7 @@ $lang['dpto07'] = 'Eventos';
 $lang['dpto08'] = 'Relaciones públicas';
 $lang['dpto09'] = 'Sistemas y web';
 $lang['dpto10'] = 'FIR'; 
-$lang['admin'] = 'Administración';
-$lang['of'] = 'de';
+$lang['staff'] = 'Staff';
 
 //Opciones del STAFF
 $lang['staff_title'] = 'OPCIONES DE ADMINISTRÁCION';

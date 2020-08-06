@@ -39,7 +39,7 @@ class App extends CI_Controller
 
         public function index()
         {
-                //if (!$this->session->userdata('vid')) {
+                if ($this->session->userdata('vid') == "") {
                         //Validando el acceso en IVAO
                         $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de IVAO');
                         $xMIEMBRO = $this->myfunctions->valida_API();
@@ -177,7 +177,10 @@ class App extends CI_Controller
                                 //Cargando la vista inicial
                                 $this->load->view('app_start');
                         }
-                //}
+                }else{
+                    //Cargando la vista inicial
+                    $this->load->view('app_start');
+                }
         }
 
         public function logout()

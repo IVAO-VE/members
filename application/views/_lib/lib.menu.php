@@ -332,7 +332,7 @@
                 if(!empty($access_nivel)){ //El usuario está registrado en la db de permisos
                     //******************************
                     $this->phpdebug->debug('[SEGURIDAD] -> Access OK');
-                    if($access_nivel['pages_HQ'] == true){ //Tiene acceso a la administración de HQ
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a la administración de HQ
                         $this->phpdebug->debug('[SEGURIDAD] -> HQ OK'); 
                         echo '
                             <li>

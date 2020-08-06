@@ -342,7 +342,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Operaciones de vuelo
+                    if($access_nivel['pages_FO'] == 'true'){ //Tiene acceso a Operaciones de vuelo
                         echo '
                             <li>
                                 <a href="#">
@@ -353,7 +353,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Operaciones de control
+                    if($access_nivel['pages_AO'] == 'true'){ //Tiene acceso a Operaciones de control
                         echo '
                             <li>
                                 <a href="#">
@@ -364,7 +364,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Operaciones especiales
+                    if($access_nivel['pages_SO'] == 'true'){ //Tiene acceso a Operaciones especiales
                         echo '
                             <li>
                                 <a href="#">
@@ -375,7 +375,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Entrenamiento
+                    if($access_nivel['pages_TR'] == 'true'){ //Tiene acceso a Entrenamiento
                         echo '
                             <li>
                                 <a href="#">
@@ -386,7 +386,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Miembros y afiliación
+                    if($access_nivel['pages_ME'] == 'true'){ //Tiene acceso a Miembros y afiliación
                         echo '
                             <li>
                                 <a href="#">
@@ -397,7 +397,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Eventos
+                    if($access_nivel['pages_EV'] == 'true'){ //Tiene acceso a Eventos
                         echo '
                             <li>
                                 <a href="#">
@@ -408,7 +408,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Relaciones públicas
+                    if($access_nivel['pages_PR'] == 'true'){ //Tiene acceso a Relaciones públicas
                         echo '
                             <li>
                                 <a href="#">
@@ -419,7 +419,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a Sistemas y web
+                    if($access_nivel['pages_WE'] == 'true'){ //Tiene acceso a Sistemas y web
                         echo '
                             <li>
                                 <a href="#">
@@ -430,7 +430,7 @@
                         ';
                     }
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a FIR
+                    if($access_nivel['pages_FR'] == 'true'){ //Tiene acceso a FIR
                         echo '
                             <li>
                                 <a href="#">

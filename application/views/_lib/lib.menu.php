@@ -336,7 +336,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto01').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto01').'</span>
                                 </a>
                             </li>
                         ';
@@ -347,7 +347,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto02').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto02').'</span>
                                 </a>
                             </li>
                         ';
@@ -358,7 +358,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto03').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto03').'</span>
                                 </a>
                             </li>
                         ';
@@ -369,7 +369,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto04').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto04').'</span>
                                 </a>
                             </li>
                         ';
@@ -380,7 +380,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto05').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto05').'</span>
                                 </a>
                             </li>
                         ';
@@ -391,7 +391,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto06').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto06').'</span>
                                 </a>
                             </li>
                         ';
@@ -402,7 +402,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto07').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto07').'</span>
                                 </a>
                             </li>
                         ';
@@ -413,7 +413,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto08').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto08').'</span>
                                 </a>
                             </li>
                         ';
@@ -424,7 +424,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto09').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto09').'</span>
                                 </a>
                             </li>
                         ';
@@ -435,7 +435,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('staff').' '.$this->lang->line('dpto10').'</span>
+                                    <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto10').'</span>
                                 </a>
                             </li>
                         ';

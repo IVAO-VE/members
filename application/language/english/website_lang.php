@@ -55,6 +55,8 @@ $lang['main_tcontrol'] = 'Controller estimated time';
 $lang['main_country'] = 'Registred in';
 $lang['main_division'] = 'Your division';
 $lang['main_reportFL'] = 'Flight report';
+$lang['main_activityFL'] = 'Your flight activities';
 $lang['main_reportCT'] = 'ATC report';
+$lang['main_activityCT'] = 'Your atc activities';
     
 ?>

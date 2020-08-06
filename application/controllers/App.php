@@ -234,7 +234,7 @@ class App extends CI_Controller
             if($this->session->userdata('vid') != ""){
                 $this->load->view('app_profile');
             }else{
-                $this->load->view('app_start');
+                reditect(base_url());
             }
         }
 

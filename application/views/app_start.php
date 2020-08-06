@@ -202,7 +202,7 @@
                        data-rows="5"
                        data-rows-steps="5, 10"
                        data-show-activity="false"
-                       data-source="data/table.json"
+                       data-source=<?php echo base_url('_include/'); ?>"data/table.json"
                        data-horizontal-scroll="true"
                 >
                 </table>

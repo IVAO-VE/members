@@ -17,15 +17,16 @@
 //Traducciones para Perfil
 $lang['connected'] = 'conectado';
 $lang['online'] = 'en línea';
+$lang['perfilmember'] = 'Datos del perfil';
 $lang['membersarea'] = 'Área de miembros';
-$lang['renderpage'] = 'Página generada en';
-$lang['seconds'] = 'segundos';
 $lang['range_FL'] = 'Rango piloto';
 $lang['range_CL'] = 'Rango controlador';
 $lang['logout'] = 'Cerrar sesión';
 $lang['profile'] = 'Perfil';
 
 //Traducciones para MENU
+$lang['renderpage'] = 'Página generada en';
+$lang['seconds'] = 'segundos';
 $lang['selectlang'] = 'Idioma';
 $lang['lang_ES'] = 'Español';
 $lang['lang_EN'] = 'Ingles';

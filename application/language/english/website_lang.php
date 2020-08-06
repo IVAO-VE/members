@@ -17,15 +17,16 @@
 //Perfil traslator
 $lang['connected'] = 'connected';
 $lang['online'] = 'online';
+$lang['perfilmember'] = 'Perfil data';
 $lang['membersarea'] = 'Members area';
-$lang['renderpage'] = 'Page rendered in';
-$lang['seconds'] = 'seconds';
 $lang['range_FL'] = 'Flight range';
 $lang['range_CL'] = 'Controller range';
 $lang['logout'] = 'Logout';
 $lang['profile'] = 'Profile';
 
 //Menu traslators
+$lang['renderpage'] = 'Page rendered in';
+$lang['seconds'] = 'seconds';
 $lang['selectlang'] = 'Languaje';
 $lang['lang_ES'] = 'Spanish';
 $lang['lang_EN'] = 'English';

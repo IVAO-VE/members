@@ -336,7 +336,7 @@
                             <li>
                                 <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                                    <span class="caption">'.$this->lang->line('admin').' '.$this->lang->line('of').' '.$this->lang->line('dpto01').'</span>
+                                    <span class="caption">'.$this->lang->line('dpto01').'</span>
                                 </a>
                             </li>
                         ';

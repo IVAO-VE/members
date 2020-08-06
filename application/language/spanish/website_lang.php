@@ -32,7 +32,7 @@ $lang['lang_ES'] = 'Español';
 $lang['lang_EN'] = 'Ingles';
 $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
 $lang['dpto00'] = 'Estado general';
-$lang['dpto01'] = 'Dirección';
+$lang['dpto01'] = 'Dirección HQ';
 $lang['dpto02'] = 'Operaciones de vuelo';
 $lang['dpto03'] = 'Operaciones de control';
 $lang['dpto04'] = 'Operaciones especiales';
@@ -42,6 +42,8 @@ $lang['dpto07'] = 'Eventos';
 $lang['dpto08'] = 'Relaciones públicas';
 $lang['dpto09'] = 'Sistemas y web';
 $lang['dpto10'] = 'FIR'; 
+$lang['admin'] = 'Administración';
+$lang['of'] = 'de';
 
 //Opciones del STAFF
 $lang['staff_title'] = 'OPCIONES DE ADMINISTRÁCION';

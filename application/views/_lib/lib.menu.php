@@ -321,12 +321,29 @@
             </li>
 
             <li class="item-header"><?php echo $this->lang->line('staff_title'); ?></li>
-            <li>
-                <a href="https://metroui.org.ua/intro.html">
-                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
-                    <span class="caption">Metro 4</span>
-                </a>
-            </li>
+<?php
+                //Consultado con la DB
+                $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
+                $query_access  = $this->db->select('*')
+                    ->from('permisos')
+                    ->where('vid', $this->session->userdata('vid')) //VID de usuario 
+                    ->get();
+                $access_nivel = $query_access->row_array();
+                if(!empty($access_nivel)){ //El usuario está registrado en la db de permisos
+                    //******************************
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a la administración de HQ 
+                        echo '
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
+                                    <span class="caption">'.$this->lang->line('admin').' '.$this->lang->line('of').' '.$this->lang->line('dpto01').'</span>
+                                </a>
+                            </li>
+                        ';
+                    }
+                    
+                }
+?>            
         </ul>
 
         <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">

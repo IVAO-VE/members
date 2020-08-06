@@ -16,7 +16,7 @@
         <ul class="navview-menu mt-4" id="side-menu">
             <li class="item-header"><?php echo $this->lang->line('menutitle'); ?></li>
             <li>
-                <a href="app/index">
+                <a href="/app/index">
                     <span class="icon"><span class="mif-meter"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto00'); ?></span>
                 </a>

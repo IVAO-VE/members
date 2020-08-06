@@ -54,6 +54,7 @@ $lang['main_tflight'] = 'Tiempo estimado de vuelo';
 $lang['main_tcontrol'] = 'Tiempo estimado de control';
 $lang['main_country'] = 'Registrado en';
 $lang['main_division'] = 'Tú división';
-
+$lang['main_reportFL'] = 'Reportar un vuelo';
+$lang['main_reportCT'] = 'Reportar control';
     
 ?>

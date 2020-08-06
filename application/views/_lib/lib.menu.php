@@ -331,7 +331,9 @@
                 $access_nivel = $query_access->row_array();
                 if(!empty($access_nivel)){ //El usuario está registrado en la db de permisos
                     //******************************
-                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a la administración de HQ 
+                    $this->phpdebug->debug('[SEGURIDAD] -> Access OK');
+                    if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a la administración de HQ
+                        $this->phpdebug->debug('[SEGURIDAD] -> HQ OK'); 
                         echo '
                             <li>
                                 <a href="#">

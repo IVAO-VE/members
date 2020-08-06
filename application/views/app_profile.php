@@ -223,7 +223,7 @@
     </div>
 </div>
 
-<script src="./js/charts.js"></script>
+<script src="<?php echo base_url('_include/'); ?>js/charts.js"></script>
 
 <?php
 	$this->load->view("_lib/lib.footer.php");

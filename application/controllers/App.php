@@ -36,21 +36,9 @@ class App extends CI_Controller
                 }
         }
 
-        public function inicio()
-        {
-                if ($this->session->userdata('vid')) {
-                        $this->load->view('app_start');
-                } else {
-                        $this->session->userdata('home/hola');
-                }
-        }
-
         public function index()
         {
-                if ($this->session->userdata('vid')) {
-                        redirect(base_url() . 'app/inicio');
-                } else {
-
+                if ((!$this->session->userdata('vid')) || (empty($this->session->userdata('vid')))) {
                         //Validando el acceso en IVAO
                         $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de IVAO');
                         $xMIEMBRO = $this->myfunctions->valida_API();
@@ -247,81 +235,4 @@ class App extends CI_Controller
                 }
         }
 
-
-
-        /*
-        public function logout() {
-                //Verificamos que haya una sesion creada
-                if ($this->session->userdata('vid')) {
-                        unset($_GET['IVAOTOKEN']);
-                        //Anulando la cookie
-                        $cookie1 = array(
-                            'name'   => '__cfduid',
-                            'value'  => '',
-                            'expire' => time()-3600,
-                        );
-                        $cookie2 = array(
-                            'name'   => 'ci_session',
-                            'value'  => '',
-                            'expire' => time()-3600,
-                        );                
-                        $cookie3 = array(
-                            'name'   => 'ivao_token',
-                            'value'  => '',
-                            'expire' => time()-3600,
-                        );
-
-                        $arraymember = array(
-                                'result',
-                                'vid',
-                                'firstname',
-                                'lastname',
-                                'fullname',
-                                'member_img',
-                                'rating',
-                                'ratingatc',
-                                'ratingatc_name',
-                                'ratingatc_img',
-                                'ratingpilot',
-                                'ratingpilot_name',
-                                'ratingpilot_img',
-                                'division_code',
-                                'division_name',
-                                'country_code',
-                                'country_name',
-                                'skype',
-                                'hours_atc',
-                                'hours_pilot',
-                                'fullhours',
-                                'staff',
-                                'va_staff_ids',
-                                'va_staff',
-                                'va_staff_icaos',
-                                'isNpoMember',
-                                'va_member_ids',
-                                'hq_pilot'
-                        );  
-                        
-                        $this->session->unset_userdata($arraymember);
-                                        
-                	set_cookie($cookie1);
-                        set_cookie($cookie2);
-                        set_cookie($cookie3);
-                        //Destruyendo la sesión
-                        //$this->session->sess_destroy();
-                        session_destroy();
-                        //Eliminamos la cookie
-                        unset($_COOKIE['__cfduid']);
-                        unset($_COOKIE['ivao_token']);
-                        unset($_COOKIE['ci_session']);
-                        //delete_cookie('__cfduid');
-                        //delete_cookie('remember');
-                        //delete_cookie('ivao_token');
-                        //delete_cookie('ci_session');
-                        //Solicitamos inicio sin sesión
-                        redirect(base_url('home/vid-'.$this->session->userdata('vid')));
-                }else{
-                        redirect(base_url('home/nombre'));  
-                }
-        } */
 }

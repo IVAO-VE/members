@@ -231,9 +231,11 @@ class App extends CI_Controller
         }
 
         public function profile(){
-                if($this->session->userdata('vid')){
-                        $this->load->view('app_profile');
-                }
+            if($this->session->userdata('vid') != ""){
+                $this->load->view('app_profile');
+            }else{
+                $this->load->view('app_start');
+            }
         }
 
 }

@@ -175,7 +175,7 @@ class App extends CI_Controller
                                 //Cargando los datos de sesión
                                 $this->session->set_userdata($arraymember);
                                 //Cargando la vista inicial
-                                redirect(base_url() . 'app_start');
+                                $this->load->view('app_start');
                         }
                 }
         }

@@ -36,9 +36,10 @@ class App extends CI_Controller
                 }
         }
 
+
         public function index()
         {
-                if ((!$this->session->userdata('vid')) || (empty($this->session->userdata('vid')))) {
+                if (!$this->session->userdata('vid')) {
                         //Validando el acceso en IVAO
                         $this->phpdebug->debug('[APP] -> Validando la seguridad dentro de IVAO');
                         $xMIEMBRO = $this->myfunctions->valida_API();
@@ -174,15 +175,13 @@ class App extends CI_Controller
                                 //Cargando los datos de sesión
                                 $this->session->set_userdata($arraymember);
                                 //Cargando la vista inicial
-                                redirect(base_url() . 'app/inicio');
+                                redirect(base_url() . 'app_start');
                         }
                 }
         }
 
         public function logout()
         {
-                //$MyIDS = session_id();
-                //unlink(FCPATH . '/temp/ci_session' . $MyIDS); // Elimino el archivo fisico de la sesión
                 unset($_COOKIE['__cfduid']); //Elimina cookies
                 unset($_COOKIE['ivao_token']);
                 unset($_COOKIE['ci_session']);

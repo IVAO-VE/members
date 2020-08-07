@@ -42,7 +42,7 @@ class App extends CI_Controller
                     if($access_nivel['pages_HQ'] != 'true'){ //NO TIENE ACCESO A LA ZONA
                         redirect(base_url());
                     }else{
-                        
+                        $this->load->view("pages_HQ/staff_index");
                     }
                 }
         }

@@ -16,7 +16,7 @@
     //Cargando la estructura del MENU
     $this->load->view("_lib/lib.menu.php");
 ?>
-<div class="bg-dark fg-white container-fluid align-self-center start-screen h-100">
+<div class="fg-dark container-fluid start-screen h-100">
         <h1 class="mb-15 start-screen-title"><?php echo $this->lang->line('staff_dpto01_index'); ?></h1>
 
         <div class="tiles-area clear">

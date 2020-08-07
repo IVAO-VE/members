@@ -84,7 +84,7 @@ $this->load->view("_lib/lib.menu.php");
                     </li>
                     <li>
                         <div class="text-bold"><?php echo $this->session->userdata('fullhours'); ?></div>
-                        <div>Horas totales</div><button class="button" data-role="popover" data-popover-text="Numero total de horas de vuelo y control" data-popover-position="right"><span class="mif-info mif-lg"></span></button>
+                        <div>Horas totales &nbsp; <button class="button" data-role="popover" data-popover-text="Numero total de horas de vuelo y control" data-popover-position="right"><span class="mif-info mif-lg"></span></button></div>
                     </li>
                 </ul>
             </div>

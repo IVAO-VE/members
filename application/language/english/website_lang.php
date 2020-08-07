@@ -23,6 +23,8 @@ $lang['range_FL'] = 'Flight range';
 $lang['range_CL'] = 'Controller range';
 $lang['logout'] = 'Logout';
 $lang['profile'] = 'Profile';
+$lang['hours'] = 'Total hours';
+$lang['fullhours'] = ''
 
 //Menu traslators
 $lang['renderpage'] = 'Page rendered in';

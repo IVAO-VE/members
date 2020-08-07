@@ -35,39 +35,6 @@ $this->load->view("_lib/lib.menu.php");
 <div class="row m-3">
     <div class="cell-lg-4 cell-md-6">
         <div class="bg-white p-4">
-            <!-- <div class="skill-box mt-4-minus">
-                <div class="header border-top border-bottom bd-default">
-                    <img src="" class="avatar">
-                    <div class="title"></div>
-                    <div class="subtitle"><?php echo $this->session->userdata('ratingpilot_name') ?></div>
-                    <div class="subtitle"><?php echo $this->session->userdata('ratingatc_name') ?></div>
-                </div>
-                <ul class="skills">
-                    <li>
-                        <span>Projects</span>
-                        <span class="badge bg-orange fg-white">25</span>
-                    </li>
-                    <li>
-                        <span>Tasks</span>
-                        <span class="badge bg-cyan fg-white">5</span>
-                    </li>
-                    <li>
-                        <span>Completed Projects</span>
-                        <span class="badge bg-green fg-white">21</span>
-                    </li>
-                    <li>
-                        <span>Followers</span>
-                        <span class="badge bg-red fg-white">1024</span>
-                    </li>
-                </ul>
-
-                <div class="d-flex flex-justify-start flex-align-center p-4">
-                    <button class="button info">Follow</button>
-                    <button class="button dark ml-1">Message</button>
-                    <button class="button square ml-1"><span class="mif-cog"></span></button>
-                </div>
-            </div>-->
-
             <div class="social-box">
                 <div style="background-image: ('https://cdn.airplane-pictures.net/images/uploaded-images/2017/6/1/910061as.jpg');" class="header bg-cyan fg-white">
                     <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
@@ -84,7 +51,7 @@ $this->load->view("_lib/lib.menu.php");
                     </li>
                     <li>
                         <div class="text-bold"><?php echo $this->myfunctions->segundos_a_horas($this->session->userdata('fullhours')); ?></div>
-                        <div>Horas totales &nbsp; <a data-role="popover" data-popover-text="Numero total de horas de vuelo y control" data-popover-position="right"><span class="mif-info mif-lg"></span></a></div>
+                        <div><?php echo $this->lang->line('hours'); ?>  &nbsp; <a data-role="popover" data-popover-text="<?php echo $this->lang->line('fullhours'); ?>" data-popover-position="right"><span class="mif-info mif-lg"></span></a></div>
                     </li>
                 </ul>
             </div>

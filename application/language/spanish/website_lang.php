@@ -24,7 +24,7 @@ $lang['range_CL'] = 'Rango controlador';
 $lang['logout'] = 'Cerrar sesión';
 $lang['profile'] = 'Perfil';
 $lang['hours'] = 'Horas totales';
-$lang['fullhours'] = 'Total number of flight and control hours';
+$lang['fullhours'] = 'Numero total de horas de vuelo y control';
 
 //Traducciones para MENU
 $lang['renderpage'] = 'Página generada en';

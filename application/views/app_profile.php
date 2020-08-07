@@ -74,16 +74,12 @@
                 </div>
                 <ul class="skills">
                     <li>
-                        <img src="<?php echo $this->session->userdata('ratingpilot_img'); ?>" alt="<?php echo $this->session->userdata('member_img'); ?>">
-                        <div>AWARDS</div>
+                        <img src="<?php echo $this->session->userdata('ratingpilot_img'); ?>" alt="<?php echo $this->session->userdata('ratingpilot_name'); ?>">
+                        <div><?php echo $this->session->userdata('ratingpilot_name'); ?></div>
                     </li>
                     <li>
-                        <div class="text-bold">4</div>
-                        <div>NOMINATIONS</div>
-                    </li>
-                    <li>
-                        <div class="text-bold">36</div>
-                        <div>FILMS</div>
+                    <img src="<?php echo $this->session->userdata('ratingatc_img'); ?>" alt="<?php echo $this->session->userdata('ratingatc_name'); ?>">
+                        <div><?php echo $this->session->userdata('ratingatc_name'); ?></div>
                     </li>
                 </ul>
             </div>

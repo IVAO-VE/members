@@ -16,7 +16,7 @@
     //Cargando la estructura del MENU
     $this->load->view("_lib/lib.menu.php");
 ?>
-<div class="container-fluid start-screen h-100">
+<div class="bg-dark fg-white container-fluid start-screen h-100">
         <h1 class="start-screen-title">Start</h1>
 
         <div class="tiles-area clear">

@@ -46,6 +46,18 @@ $lang['staff'] = 'Staff';
 
 //Opciones del STAFF
 $lang['staff_title'] = 'OPCIONES DE ADMINISTRÁCION';
+$lang['staff_dpto01_index'] = 'Opciones de administración para HQ';
+$lang['staff_dpto02_index'] = 'Opciones de administración para operaciones de vuelo';
+$lang['staff_dpto03_index'] = 'Opciones de administración para operaciones de control';
+$lang['staff_dpto04_index'] = 'Opciones de administración para operaciones especiales';
+$lang['staff_dpto05_index'] = 'Opciones de administración para entrenamiento';
+$lang['staff_dpto06_index'] = 'Opciones de administración para miembros y afiliación';
+$lang['staff_dpto07_index'] = 'Opciones de administración para eventos';
+$lang['staff_dpto08_index'] = 'Opciones de administración para relaciones públicas';
+$lang['staff_dpto09_index'] = 'Opciones de administración para sistemas y web';
+$lang['staff_dpto10_index'] = 'Opciones de administración para FIR'; 
+
+
 
 //Traducciones del contenido principal
 $lang['mainpage'] = 'Zona de miembros';

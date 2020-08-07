@@ -83,8 +83,8 @@ $this->load->view("_lib/lib.menu.php");
                         <div><?php echo $this->session->userdata('ratingatc_name'); ?></div>
                     </li>
                     <li>
-                        <div class="text-bold"><?php echo $this->session->userdata('fullhours'); ?></div>
-                        <div>Horas totales &nbsp; <button class="button" data-role="popover" data-popover-text="Numero total de horas de vuelo y control" data-popover-position="right"><span class="mif-info mif-lg"></span></button></div>
+                        <div class="text-bold"><?php echo $this->myfunctions->segundos_a_horas($this->session->userdata('fullhours')); ?></div>
+                        <div>Horas totales &nbsp; <a class="button" data-role="popover" data-popover-text="Numero total de horas de vuelo y control" data-popover-position="right"><span class="mif-info mif-lg"></span></a></div>
                     </li>
                 </ul>
             </div>

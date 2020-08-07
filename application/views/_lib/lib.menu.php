@@ -334,7 +334,7 @@
                     if($access_nivel['pages_HQ'] == 'true'){ //Tiene acceso a HQ
                         echo '
                             <li>
-                                <a href="#">
+                                <a href="/staff/HQaccess">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto01').'</span>
                                 </a>

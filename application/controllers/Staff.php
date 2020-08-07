@@ -28,6 +28,11 @@ class App extends CI_Controller
             }
         }
 
+	public function index()
+	{
+		$this->load->view('welcome_message');
+	}
+
 
         public function HQaccess() {
                 //Consultado con la DB

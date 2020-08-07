@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @autor Rixio Iguarán y Simón Cardona.
  * @Departamento Sistemas y Webmaster
@@ -8,13 +9,13 @@
  * 
  **/
 
-    //Asegurando el acceso directo al script
-    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
-    //echo BASEPATH; 
-    //Cargando la estructura del HEADER
-    $this->load->view("_lib/lib.header.php");
-    //Cargando la estructura del MENU
-    $this->load->view("_lib/lib.menu.php");
+//Asegurando el acceso directo al script
+defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
+//echo BASEPATH; 
+//Cargando la estructura del HEADER
+$this->load->view("_lib/lib.header.php");
+//Cargando la estructura del MENU
+$this->load->view("_lib/lib.menu.php");
 ?>
 
 <div class="row border-bottom bd-lightGray m-3">
@@ -34,7 +35,7 @@
 <div class="row m-3">
     <div class="cell-lg-4 cell-md-6">
         <div class="bg-white p-4">
-           <!-- <div class="skill-box mt-4-minus">
+            <!-- <div class="skill-box mt-4-minus">
                 <div class="header border-top border-bottom bd-default">
                     <img src="" class="avatar">
                     <div class="title"></div>
@@ -78,8 +79,12 @@
                         <div><?php echo $this->session->userdata('ratingpilot_name'); ?></div>
                     </li>
                     <li>
-                    <img src="<?php echo $this->session->userdata('ratingatc_img'); ?>" alt="<?php echo $this->session->userdata('ratingatc_name'); ?>">
+                        <img src="<?php echo $this->session->userdata('ratingatc_img'); ?>" alt="<?php echo $this->session->userdata('ratingatc_name'); ?>">
                         <div><?php echo $this->session->userdata('ratingatc_name'); ?></div>
+                    </li>
+                    <li>
+                        <div class="text-bold"><?php echo $this->session->userdata('fullhours'); ?></div>
+                        <div>Horas totales</div><button class="button" data-role="popover" data-popover-text="Numero total de horas de vuelo y control" data-popover-position="right"><span class="mif-info mif-lg"></span></button>
                     </li>
                 </ul>
             </div>
@@ -169,7 +174,7 @@
             <div id="user-profile-tabs-content">
                 <div id="profile-about">
                     <br>
-                    <div data-role="panel" data-title-caption="General information" data-title-icon="<span class='mif-info'>"  data-collapsible="true">
+                    <div data-role="panel" data-title-caption="General information" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <div class="text-bold">Gender</div>
                         <div>Male</div>
 
@@ -187,7 +192,7 @@
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.</div>
                     </div>
                     <br>
-                    <div data-role="panel" data-title-caption="Work info" data-title-icon="<span class='mif-library'>"  data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Work info" data-title-icon="<span class='mif-library'>" data-collapsible="true">
                         <div class="text-bold">Occupation</div>
                         <div>Developer</div>
 
@@ -216,22 +221,12 @@
                 </div>
                 <div id="profile-activity">
                     <br>
-                    <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>"  data-collapsible="true">
+                    <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
                         <canvas id="profileChart1"></canvas>
                     </div>
                     <br>
                     <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
-                        <table class="table striped table-border mt-4"
-                               data-role="table"
-                               data-cls-table-top="row"
-                               data-cls-search="cell-md-6"
-                               data-cls-rows-count="cell-md-6"
-                               data-rows="5"
-                               data-rows-steps="5, 10"
-                               data-show-activity="false"
-                               data-source="<?php echo base_url('_include/'); ?>data/table.json"
-                               data-horizontal-scroll="true"
-                        >
+                        <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
                         </table>
                     </div>
                 </div>
@@ -241,5 +236,5 @@
 </div>
 
 <?php
-	$this->load->view("_lib/lib.footer.php");
+$this->load->view("_lib/lib.footer.php");
 ?>

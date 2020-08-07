@@ -17,7 +17,7 @@
     $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="bg-dark fg-white container-fluid start-screen h-100">
-        <h1 class="start-screen-title">Start</h1>
+        <h1 class="mb-6 start-screen-title">Start</h1>
 
         <div class="tiles-area clear">
             <div class="tiles-grid tiles-group size-2 fg-white" data-group-title="General">

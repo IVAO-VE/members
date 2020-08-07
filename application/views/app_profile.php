@@ -34,10 +34,10 @@
 <div class="row m-3">
     <div class="cell-lg-4 cell-md-6">
         <div class="bg-white p-4">
-            <div class="skill-box mt-4-minus">
+           <!-- <div class="skill-box mt-4-minus">
                 <div class="header border-top border-bottom bd-default">
-                    <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
-                    <div class="title"><?php echo $this->session->userdata('fullname'); ?></div>
+                    <img src="" class="avatar">
+                    <div class="title"></div>
                     <div class="subtitle"><?php echo $this->session->userdata('ratingpilot_name') ?></div>
                     <div class="subtitle"><?php echo $this->session->userdata('ratingatc_name') ?></div>
                 </div>
@@ -65,6 +65,28 @@
                     <button class="button dark ml-1">Message</button>
                     <button class="button square ml-1"><span class="mif-cog"></span></button>
                 </div>
+            </div>-->
+
+            <div class="social-box">
+                <div class="header bg-cyan fg-white">
+                    <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
+                    <div class="title"><?php echo $this->session->userdata('fullname'); ?></div>
+                    <div class="subtitle">Terminator</div>
+                </div>
+                <ul class="skills">
+                    <li>
+                        <div class="text-bold">6</div>
+                        <div>AWARDS</div>
+                    </li>
+                    <li>
+                        <div class="text-bold">4</div>
+                        <div>NOMINATIONS</div>
+                    </li>
+                    <li>
+                        <div class="text-bold">36</div>
+                        <div>FILMS</div>
+                    </li>
+                </ul>
             </div>
         </div>
         <br>

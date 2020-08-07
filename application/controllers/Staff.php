@@ -13,7 +13,7 @@
 defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 
 
-class App extends CI_Controller
+class Staff extends CI_Controller
 {
 
         public function __construct() {

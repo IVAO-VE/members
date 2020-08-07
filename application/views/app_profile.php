@@ -74,7 +74,7 @@
                 </div>
                 <ul class="skills">
                     <li>
-                        <img src="<?php echo $this->session->userdata('ratingpilot_img'); ?>" alt="<?php echo $this->session->userdata('ratingpilot_name'); ?>"> class="text-bold">6</div>
+                        <img src="<?php echo $this->session->userdata('ratingpilot_img'); ?>" alt="<?php echo $this->session->userdata('member_img'); ?>">
                         <div>AWARDS</div>
                     </li>
                     <li>

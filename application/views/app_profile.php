@@ -70,11 +70,11 @@
             <div class="social-box">
                 <div style="background-image: ('https://cdn.airplane-pictures.net/images/uploaded-images/2017/6/1/910061as.jpg');" class="header bg-cyan fg-white">
                     <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
-                    <div class="title d-flex flex-justify-center mb-3"><?php echo $this->session->userdata('fullname'); ?></div>
+                    <div class="title d-flex flex-justify-center mb-5"><?php echo $this->session->userdata('fullname'); ?></div>
                 </div>
                 <ul class="skills">
                     <li>
-                        <div class="text-bold">6</div>
+                        <img src="<?php echo $this->session->userdata('ratingpilot_img'); ?>" alt="<?php echo $this->session->userdata('ratingpilot_name'); ?>"> class="text-bold">6</div>
                         <div>AWARDS</div>
                     </li>
                     <li>

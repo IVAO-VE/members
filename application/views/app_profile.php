@@ -135,7 +135,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
     <div class="cell-lg-8 cell-md-6">
         <div class="bg-white p-4">
             <ul data-role="tabs" data-expand="true">
-                <li><a href="#profile-about">About</a></li>
+                <li><a href="#profile-about"><?php echo $this->lang->line('about'); ?></a></li>
                 <li><a href="#profile-activity">Activity</a></li>
                 <li><a href="#">Timeline</a></li>
                 <li><a href="#">Projects</a></li>
@@ -144,11 +144,11 @@ $CouCode = strtolower($this->session->userdata('country_code'));
             <div id="user-profile-tabs-content">
                 <div id="profile-about">
                     <br>
-                    <div data-role="panel" data-title-caption="General information" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-                        <div class="text-bold">Division</div>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('ginfo'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                        <div class="text-bold"><?php echo $this->lang->line('division'); ?></div>
                         <div><?php echo $this->session->userdata('division_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $DivCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
-                        <div class="text-bold mt-2">Pais</div>
+                        <div class="text-bold mt-2"><?php echo $this->lang->line('country'); ?></div>
                         <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $CouCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
                         <div class="text-bold mt-2">Locations</div>

@@ -232,6 +232,8 @@ class App extends CI_Controller
 
         public function profile(){
             if($this->session->userdata('vid') != ""){
+                $DivCode = $this->session->userdata('division_code');
+                $CouCode = $this->session->userdata('country_code');
                 $this->load->view('app_profile');
             }else{
                 redirect(base_url());

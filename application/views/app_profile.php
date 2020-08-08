@@ -38,8 +38,8 @@ $this->load->view("_lib/lib.menu.php");
             <div class="social-box">
                 <div style="background-image: ('https://cdn.airplane-pictures.net/images/uploaded-images/2017/6/1/910061as.jpg');" class="header bg-cyan fg-white">
                     <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
-                    <div class="title d-flex flex-justify-center mb-5"><?php echo $this->session->userdata('fullname'); ?></div>
-                    <div class="subtitle d-flex flex-justify-center"><?php echo $this->session->userdata('vid'); ?></div>
+                    <div class="title d-flex flex-justify-center mb-1"><?php echo $this->session->userdata('fullname'); ?></div>
+                    <div class="subtitle d-flex flex-justify-center mb-3"><?php echo $this->session->userdata('vid'); ?></div>
                 </div>
                 <ul class="skills">
                     <li>
@@ -144,10 +144,10 @@ $this->load->view("_lib/lib.menu.php");
                     <br>
                     <div data-role="panel" data-title-caption="General information" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <div class="text-bold">Division</div>
-                        <div><?php echo $this->session->userdata('division_name') ?></div>
+                        <div><?php echo $this->session->userdata('division_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/'.$this->session->userdata('country_code').'.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
                         <div class="text-bold mt-2">Pais</div>
-                        <div><?php echo $this->session->userdata('country_name') ?></div>
+                        <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/'.$this->session->userdata('division_code').'.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
                         <div class="text-bold mt-2">Locations</div>
                         <address>

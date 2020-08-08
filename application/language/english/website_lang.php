@@ -62,6 +62,7 @@ $lang['staff_dpto07_index'] = 'Staff options for events';
 $lang['staff_dpto08_index'] = 'Staff options for public relations';
 $lang['staff_dpto09_index'] = 'Staff options for web and systems';
 $lang['staff_dpto10_index'] = 'Staff options for FIR';
+$lang['staff_HQ_0001'] = 'Access levels'; 
 
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';

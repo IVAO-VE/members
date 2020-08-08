@@ -62,7 +62,7 @@ $lang['staff_dpto07_index'] = 'Opciones de administración para eventos';
 $lang['staff_dpto08_index'] = 'Opciones de administración para relaciones públicas';
 $lang['staff_dpto09_index'] = 'Opciones de administración para sistemas y web';
 $lang['staff_dpto10_index'] = 'Opciones de administración para FIR'; 
-
+$lang['staff_HQ_0001'] = 'Niveles de acceso'; 
 
 
 //Traducciones del contenido principal

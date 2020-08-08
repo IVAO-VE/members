@@ -23,9 +23,9 @@
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto01_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
             <ul data-role="tabs" data-expand="true" data-tabs-position="vertical left" class="w-25">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Links</a></li>
+                <li><a href="#"><?php echo $this->lang->line('staff_HQ_0001'); ?></a></li>
+                <li><a href="#">[ModuloX]</a></li>
+                <li><a href="#">[ModuloX]</a></li>
             </ul>
         </div>
     </div>

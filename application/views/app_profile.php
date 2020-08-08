@@ -16,6 +16,8 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
+$DivCode = strtolower($this->session->userdata('division_code'));
+$CouCode = strtolower($this->session->userdata('country_code'));
 ?>
 
 <div class="row border-bottom bd-lightGray m-3">
@@ -38,7 +40,8 @@ $this->load->view("_lib/lib.menu.php");
             <div class="social-box">
                 <div style="background-image: ('https://cdn.airplane-pictures.net/images/uploaded-images/2017/6/1/910061as.jpg');" class="header bg-cyan fg-white">
                     <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
-                    <div class="title d-flex flex-justify-center mb-5"><?php echo $this->session->userdata('fullname'); ?></div>
+                    <div class="title d-flex flex-justify-center mb-1"><?php echo $this->session->userdata('fullname'); ?></div>
+                    <div class="subtitle d-flex flex-justify-center mb-3"><?php echo $this->session->userdata('vid'); ?></div>
                 </div>
                 <ul class="skills">
                     <li>
@@ -51,7 +54,7 @@ $this->load->view("_lib/lib.menu.php");
                     </li>
                     <li>
                         <div class="text-bold"><?php echo $this->myfunctions->segundos_a_horas($this->session->userdata('fullhours')); ?></div>
-                        <div><?php echo $this->lang->line('hours'); ?>  &nbsp; <a data-role="popover" data-popover-text="<?php echo $this->lang->line('fullhours'); ?>" data-popover-position="right"><span class="mif-info mif-lg"></span></a></div>
+                        <div><?php echo $this->lang->line('hours'); ?> &nbsp; <a data-role="popover" data-popover-text="<?php echo $this->lang->line('fullhours'); ?>" data-popover-position="right"><span class="mif-info mif-lg"></span></a></div>
                     </li>
                 </ul>
             </div>
@@ -132,7 +135,7 @@ $this->load->view("_lib/lib.menu.php");
     <div class="cell-lg-8 cell-md-6">
         <div class="bg-white p-4">
             <ul data-role="tabs" data-expand="true">
-                <li><a href="#profile-about">About</a></li>
+                <li><a href="#profile-about"><?php echo $this->lang->line('about'); ?></a></li>
                 <li><a href="#profile-activity">Activity</a></li>
                 <li><a href="#">Timeline</a></li>
                 <li><a href="#">Projects</a></li>
@@ -141,12 +144,12 @@ $this->load->view("_lib/lib.menu.php");
             <div id="user-profile-tabs-content">
                 <div id="profile-about">
                     <br>
-                    <div data-role="panel" data-title-caption="General information" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-                        <div class="text-bold">Gender</div>
-                        <div>Male</div>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('ginfo'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                        <div class="text-bold"><?php echo $this->lang->line('division'); ?></div>
+                        <div><?php echo $this->session->userdata('division_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $DivCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
-                        <div class="text-bold mt-2">Birthday</div>
-                        <div>February 30th, 1974</div>
+                        <div class="text-bold mt-2"><?php echo $this->lang->line('country'); ?></div>
+                        <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $CouCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
                         <div class="text-bold mt-2">Locations</div>
                         <address>

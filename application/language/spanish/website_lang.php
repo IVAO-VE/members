@@ -25,6 +25,10 @@ $lang['logout'] = 'Cerrar sesión';
 $lang['profile'] = 'Perfil';
 $lang['hours'] = 'Horas totales';
 $lang['fullhours'] = 'Numero total de horas de vuelo y control';
+$lang['about'] = 'Sobre';
+$lang['ginfo'] = 'Información general';
+$lang['country'] = 'Pais';
+$lang['division'] = 'Division';
 
 //Traducciones para MENU
 $lang['renderpage'] = 'Página generada en';

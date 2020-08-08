@@ -16,6 +16,8 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
+$DivCode = strtolower($this->session->userdata('division_code'));
+$CouCode = strtolower($this->session->userdata('country_code'));
 ?>
 
 <div class="row border-bottom bd-lightGray m-3">
@@ -52,7 +54,7 @@ $this->load->view("_lib/lib.menu.php");
                     </li>
                     <li>
                         <div class="text-bold"><?php echo $this->myfunctions->segundos_a_horas($this->session->userdata('fullhours')); ?></div>
-                        <div><?php echo $this->lang->line('hours'); ?>  &nbsp; <a data-role="popover" data-popover-text="<?php echo $this->lang->line('fullhours'); ?>" data-popover-position="right"><span class="mif-info mif-lg"></span></a></div>
+                        <div><?php echo $this->lang->line('hours'); ?> &nbsp; <a data-role="popover" data-popover-text="<?php echo $this->lang->line('fullhours'); ?>" data-popover-position="right"><span class="mif-info mif-lg"></span></a></div>
                     </li>
                 </ul>
             </div>
@@ -144,10 +146,10 @@ $this->load->view("_lib/lib.menu.php");
                     <br>
                     <div data-role="panel" data-title-caption="General information" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <div class="text-bold">Division</div>
-                        <div><?php echo $this->session->userdata('division_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/'.$DivCode.'.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
+                        <div><?php echo $this->session->userdata('division_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $DivCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
                         <div class="text-bold mt-2">Pais</div>
-                        <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/'.$CouCode.'.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
+                        <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $CouCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
                         <div class="text-bold mt-2">Locations</div>
                         <address>

@@ -32,12 +32,8 @@
             <div id="user-profile-tabs-content">
                 <div id="profile-about">
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('ginfo'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-                        <div class="text-bold"><?php echo $this->lang->line('division'); ?></div>
-                        <div><?php echo $this->session->userdata('division_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $DivCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
-
-                        <div class="text-bold mt-2"><?php echo $this->lang->line('country'); ?></div>
-                        <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $CouCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
+                    <div data-role="panel" data-title-caption="##" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                        <div class="text-bold">dd</div>
 
                         <div class="text-bold mt-2">Locations</div>
                         <address>
@@ -50,32 +46,6 @@
                         <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.</div>
                     </div>
                     <br>
-                    <div data-role="panel" data-title-caption="Work info" data-title-icon="<span class='mif-library'>" data-collapsible="true">
-                        <div class="text-bold">Occupation</div>
-                        <div>Developer</div>
-
-                        <div class="text-bold mt-2">Skills</div>
-                        <code>C#</code>, <code>PHP</code>, <code>Javascript</code>, <code>Angular</code>, <code>JS</code>, <code>HTML</code>, <code>CSS</code>
-
-                        <div class="text-bold mt-2">Jobs</div>
-                        <table class="table striped">
-                            <tr>
-                                <td>Self-Employed</td>
-                                <td>2010 - Now</td>
-                                <td><span class="mif-more-horiz"></span></td>
-                            </tr>
-                            <tr>
-                                <td>Google</td>
-                                <td>2008 - 2010</td>
-                                <td><span class="mif-done fg-green"></span></td>
-                            </tr>
-                            <tr>
-                                <td>Facebook</td>
-                                <td>2006 - 2008</td>
-                                <td><span class="mif-done fg-green"></span></td>
-                            </tr>
-                        </table>
-                    </div>
                 </div>
                 <div id="profile-activity">
                     <br>

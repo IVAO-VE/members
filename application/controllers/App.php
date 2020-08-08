@@ -96,7 +96,7 @@ class App extends CI_Controller
                                                 $pilot_rating = 'Chief Flight Instructor';
                                                 break;
                                 }
-                                $pilot_rating_image = 'https://ivao.aero/data/images/ratings/atc/' . $xMIEMBRO->ratingpilot . '.gif';
+                                $pilot_rating_image = 'https://ivao.aero/data/images/ratings/pilot/' . $xMIEMBRO->ratingpilot . '.gif';
                                 //Analizando el rango del miembro controlador
                                 $this->phpdebug->debug('[APP] -> Validando el rango de controlador');
                                 switch ($xMIEMBRO->ratingatc) {

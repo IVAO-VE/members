@@ -18,9 +18,9 @@
 ?>
 
 <div class="fg-dark container-fluid start-screen h-100">
-    <h1 class="mb-15 start-screen-title"><?php echo $this->lang->line('staff_dpto01_index'); ?></h1>   
+    <div class="mb-15"></div>   
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto01_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
-        <div class="mt-10 bg-white h-100">
+        <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#permisos"><?php echo $this->lang->line('staff_HQ_0001'); ?></a></li>

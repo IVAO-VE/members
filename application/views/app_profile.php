@@ -75,11 +75,11 @@ $CouCode = strtolower($this->session->userdata('country_code'));
         <div class="bg-white p-4">
             <div data-role="panel" data-title-caption="Aerolineas virtuales">
                 <ul class="items-list">
-                    <li><a href="#" class="link dropdown-toggle no-marker">
-                            <span class="avatar">A</span>
-                            <span class="label">Google</span>
-                            <span class="second-label">1.226.546 people</span>
-                            <span class="second-action mif-more-vert"></span>
+                    <li>
+                        <span class="avatar">A</span>
+                        <span class="label">Google</span>
+                        <span class="second-label">1.226.546 people</span>
+                        <a href="#" class="link dropdown-toggle no-marker"> <span class="second-action mif-more-vert"></span>
                         </a>
                         <ul class="t-menu horizontal" data-role="dropdown">
                             <li><a href="#">One</a></li>

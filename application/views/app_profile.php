@@ -112,7 +112,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
 
                     </div>
                     <br>
-                    <div data-role="panel" data-title-caption="Work info" data-title-icon="<span class='mif-library'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Eventos reportados" data-title-icon="<span class='mif-airplane'>" data-collapsible="true">
                         <div class="text-bold">Occupation</div>
                         <div>Developer</div>
 

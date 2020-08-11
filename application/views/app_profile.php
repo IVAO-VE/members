@@ -76,9 +76,9 @@ $CouCode = strtolower($this->session->userdata('country_code'));
             <div data-role="panel" data-title-caption="Aerolineas virtuales">
                 <ul class="items-list">
                     <li><a href="#" class="link dropdown-toggle no-marker" style="text-decoration: none;">
-                            <span class="avatar"><img src="https://www.ivao.aero/data/images/logo2/L-VCV.gif" alt="CONVIASA VIRTUAL"></span>
+                            <span class="avatar">C</span>
                             <span class="label">CONVIASA VIRTUAL</span>
-                            <span class="second-label"20 miembros</span>
+                            <span class="second-label">10 pilotos</span>
                             <span class="second-action mif-more-vert"></span>
                         </a>
                         <ul class="h-menu horizontal" data-role="dropdown">

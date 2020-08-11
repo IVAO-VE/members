@@ -77,6 +77,9 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                 <ul class="items-list">
                     <li><a href="#" class="dropdown-toggle no-marker">
                             <span class="avatar">A</span>
+                            <span class="label">Google</span>
+                            <span class="second-label">1.226.546 people</span>
+                            <span class="second-action mif-more-vert"></span>
                         </a>
                         <ul class="t-menu horizontal" data-role="dropdown">
                             <li><a href="#">One</a></li>

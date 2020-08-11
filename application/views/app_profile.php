@@ -151,15 +151,6 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         <div class="text-bold mt-2"><?php echo $this->lang->line('country'); ?></div>
                         <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $CouCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
 
-                        <div class="text-bold mt-2">Locations</div>
-                        <address>
-                            Khreschatyk str, Suite 1<br>
-                            Kiev, Ukraine 01001<br>
-                            <abbr title="primary phone number">Phone:</abbr> (123) 456-7890
-                        </address>
-
-                        <div class="text-bold mt-2">About Me</div>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.</div>
                     </div>
                     <br>
                     <div data-role="panel" data-title-caption="Work info" data-title-icon="<span class='mif-library'>" data-collapsible="true">

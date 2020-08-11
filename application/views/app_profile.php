@@ -61,47 +61,12 @@ $CouCode = strtolower($this->session->userdata('country_code'));
         </div>
         <br>
         <div class="bg-white p-4">
-            <div data-role="panel" data-title-caption="Friends  <span class='place-right text-bold'>new 3</span>">
+            <div data-role="panel" data-title-caption="Medallas divisionales">
                 <ul class="user-list flex-justify-start">
                     <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user1-128x128.jpg" class="avatar">
-                        <div class="text-ellipsis">Sergey</div>
-                        <div class="text-small text-muted">Today</div>
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user2-160x160.jpg" class="avatar">
-                        <div class="text-ellipsis">Alex</div>
-                        <div class="text-small text-muted">Yesterday</div>
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user3-128x128.jpg" class="avatar">
-                        <div class="text-ellipsis">Norma</div>
-                        <div class="text-small text-muted">Yesterday</div>
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user4-128x128.jpg" class="avatar">
-                        <div class="text-ellipsis">Katty</div>
-                        <div class="text-small text-muted">11 Jan</div>
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user5-128x128.jpg" class="avatar">
-                        <div class="text-ellipsis">Julia</div>
-                        <div class="text-small text-muted">11 Jan</div>
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user6-128x128.jpg" class="avatar">
-                        <div class="text-ellipsis">Mark</div>
-                        <div class="text-small text-muted">11 Jan</div>
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user7-128x128.jpg" class="avatar">
-                        <div class="text-ellipsis">Marta</div>
-                        <div class="text-small text-muted">11 Jan</div>
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('_include/'); ?>images/user8-128x128.jpg" class="avatar">
-                        <div class="text-ellipsis">Ustas</div>
-                        <div class="text-small text-muted">11 Jan</div>
+                        <img src="https://www.ivao.aero/data/images/awardsdiv/DS.gif">
+                        <div class="text-ellipsis">Division Spirit</div>
+                        <div class="text-small text-muted">8/11/2020</div>
                     </li>
                 </ul>
             </div>

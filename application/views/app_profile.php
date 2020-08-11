@@ -113,29 +113,24 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     </div>
                     <br>
                     <div data-role="panel" data-title-caption="Eventos reportados" data-title-icon="<span class='mif-airplane'>" data-collapsible="true">
-                        <div class="text-bold">Occupation</div>
-                        <div>Developer</div>
-
-                        <div class="text-bold mt-2">Skills</div>
-                        <code>C#</code>, <code>PHP</code>, <code>Javascript</code>, <code>Angular</code>, <code>JS</code>, <code>HTML</code>, <code>CSS</code>
-
-                        <div class="text-bold mt-2">Jobs</div>
-                        <table class="table striped">
-                            <tr>
-                                <td>Self-Employed</td>
-                                <td>2010 - Now</td>
-                                <td><span class="mif-more-horiz"></span></td>
-                            </tr>
-                            <tr>
-                                <td>Google</td>
-                                <td>2008 - 2010</td>
-                                <td><span class="mif-done fg-green"></span></td>
-                            </tr>
-                            <tr>
-                                <td>Facebook</td>
-                                <td>2006 - 2008</td>
-                                <td><span class="mif-done fg-green"></span></td>
-                            </tr>
+                        <table class="table table-strip">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Numero de vuelo</th>
+                                    <th>Origen</th>
+                                    <th>Destino</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>VCV002</td>
+                                    <td>SVMI</td>
+                                    <td>SKBO</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

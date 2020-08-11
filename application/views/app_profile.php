@@ -75,29 +75,17 @@ $CouCode = strtolower($this->session->userdata('country_code'));
         <div class="bg-white p-4">
             <div data-role="panel" data-title-caption="Aerolineas virtuales">
                 <ul class="items-list">
-                    <li><a href="#" class="link dropdown-toggle no-marker">
+                    <li><a href="#" class="link dropdown-toggle no-marker" style="text-decoration: none;">
                             <span class="avatar">A</span>
                             <span class="label">Google</span>
                             <span class="second-label">1.226.546 people</span>
                             <span class="second-action mif-more-vert"></span>
                         </a>
                         <ul class="t-menu horizontal" data-role="dropdown">
-                            <li><a href="#">One</a></li>
-                            <li><a href="#">Two</a></li>
-                            <li><a href="#">Three</a></li>
+                            <li><a href="#">Reportar</a></li>
+                            <li><a href="#">Web</a></li>
+                            <li><a href="#" class="fg-red">Abandonar</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <span class="avatar">G</span>
-                        <span class="label">Google</span>
-                        <span class="second-label">1.226.546 people</span>
-                        <span class="second-action mif-more-vert"></span>
-                    </li>
-                    <li>
-                        <span class="avatar">F</span>
-                        <span class="label">Fallout</span>
-                        <span class="second-label">856.546 people</span>
-                        <span class="second-action mif-more-vert"></span>
                     </li>
                 </ul>
             </div>

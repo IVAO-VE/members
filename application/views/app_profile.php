@@ -79,12 +79,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         <span class="avatar">A</span>
                         <span class="label">Android</span>
                         <span class="second-label">1.856.546 people</span>
-                        <a><span class="second-action mif-more-vert"></span></a>
-                        <ul class="h-menu" data-role="dropdown" data-role-dropdown="true" style="display: none;">
-                            <li><a href="#">Web</a></li>
-                            <li><a href="#">Reportar</a></li>
-                            <li class="fg-red"><a href="#">Abandonar</a></li>
-                        </ul>
+                        <span class="second-action mif-more-vert"></span>
                     </li>
                     <li>
                         <span class="avatar">G</span>

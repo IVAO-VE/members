@@ -43,7 +43,7 @@ $this->load->view("_lib/lib.menu.php");
             eventClick: function(info) {
                     Metro.dialog.create({
                         title: info.event.title,
-                        content: '',
+                        content: '<div class="gird"><div class="row"><div class="cell-6"><input type="text" data-role="input" data-prepend="Fehca inicio: " disabled></div><div class="cell-6"><input type="text" data-role="input" data-prepend="Fecha final: " disabled></div></div></div>',
                         actions: [{
                                 caption: "Agree",
                                 cls: "js-dialog-close alert",

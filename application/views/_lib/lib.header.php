@@ -25,9 +25,9 @@ defined('BASEPATH') or exit('El acceso directo al c�digo no est� permitido.'
     <link rel="stylesheet" href="<?php echo base_url('_include/vendors/metro4/css/metro-all.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('_include/css/index.css'); ?>">
 
-    <!-- FullCalendar -->
+    <!-- FullCalendar 
     <link rel="stylesheet" href="<?php echo base_url('_include/fullcalendar/main.css') ?>" />
-    <script src="<?php echo base_url('_include/fullcalendar/main.js') ?>"></script>
+    <script src="<?php echo base_url('_include/fullcalendar/main.js') ?>"></script> -->
 
 
 

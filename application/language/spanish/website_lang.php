@@ -40,6 +40,7 @@ $lang['menutitle'] = 'OPCIONES DE NAVEGACIÓN';
 $lang['dpto00'] = 'Estado general';
 $lang['dpto01'] = 'Dirección HQ';
 $lang['dpto02'] = 'Operaciones de vuelo';
+$lang['dpto02_VAS'] = 'Aerolineas virtuales';
 $lang['dpto03'] = 'Operaciones de control';
 $lang['dpto04'] = 'Operaciones especiales';
 $lang['dpto05'] = 'Entrenamiento';
@@ -64,7 +65,6 @@ $lang['staff_dpto09_index'] = 'Opciones de administración para sistemas y web';
 $lang['staff_dpto10_index'] = 'Opciones de administración para FIR'; 
 $lang['staff_HQ_0001'] = 'Niveles de acceso'; 
 
-
 //Traducciones del contenido principal
 $lang['mainpage'] = 'Zona de miembros';
 $lang['mainversion'] = 'Versión v2.0';
@@ -76,4 +76,5 @@ $lang['main_reportFL'] = 'Reportar un vuelo';
 $lang['main_activityFL'] = 'Actividad de tus vuelos';
 $lang['main_reportCT'] = 'Reportar control';
 $lang['main_activityCT'] = 'Actividad de tus controles';    
+
 ?>

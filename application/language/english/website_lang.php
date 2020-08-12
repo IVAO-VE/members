@@ -40,6 +40,7 @@ $lang['menutitle'] = 'MAIN NAVIGATION';
 $lang['dpto00'] = 'General status';
 $lang['dpto01'] = 'Directive HQ';
 $lang['dpto02'] = 'Flight operations';
+$lang['dpto02_VAS'] = 'Virtual airlines';
 $lang['dpto03'] = 'Controller operations';
 $lang['dpto04'] = 'Special operations';
 $lang['dpto05'] = 'Training';

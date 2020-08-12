@@ -9,7 +9,7 @@
  **/
 
     //Asegurando el acceso directo al script
-    defined('BASEPATH') OR exit('El acceso directo al c�digo no est� permitido.');
+    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
 
 ?>
         <!-- INICIO DEL MENU DE OPCIONES -->
@@ -34,72 +34,10 @@
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown">
                     <li class="item-header">Pages</li>
-                    <li><a href="login.html">
+                    <li><a href="/app/airlines">
                         <span class="icon"><span class="mif-lock"></span></span>
-                        <span class="caption">Login</span>
+                        <span class="caption"><?php echo $this->lang->line('dpto02_VAS'); ?></span>
                     </a></li>
-                    <li><a href="register.html">
-                        <span class="icon"><span class="mif-user-plus"></span></span>
-                        <span class="caption">Register</span>
-                    </a></li>
-                    <li><a href="lockscreen.html">
-                        <span class="icon"><span class="mif-key"></span></span>
-                        <span class="caption">Lock screen</span>
-                    </a></li>
-                    <li><a href="#profile">
-                        <span class="icon"><span class="mif-profile"></span></span>
-                        <span class="caption">Profile</span>
-                    </a></li>
-                    <li><a href="preloader.html">
-                        <span class="icon"><span class="mif-spinner"></span></span>
-                        <span class="caption">Preloader</span>
-                    </a></li>
-                    <li><a href="404.html">
-                        <span class="icon"><span class="mif-cancel"></span></span>
-                        <span class="caption">404 Page</span>
-                    </a></li>
-                    <li><a href="500.html">
-                        <span class="icon"><span class="mif-warning"></span></span>
-                        <span class="caption">500 Page</span>
-                    </a></li>
-                    <li><a href="#product-list">
-                        <span class="icon"><span class="mif-featured-play-list"></span></span>
-                        <span class="caption">Product list</span>
-                    </a></li>
-                    <li><a href="#product">
-                        <span class="icon"><span class="mif-rocket"></span></span>
-                        <span class="caption">Product page</span>
-                    </a></li>
-                    <li><a href="#invoice">
-                        <span class="icon"><span class="mif-open-book"></span></span>
-                        <span class="caption">Invoice</span>
-                    </a></li>
-                    <li><a href="#orders">
-                        <span class="icon"><span class="mif-table"></span></span>
-                        <span class="caption">Orders</span>
-                    </a></li>
-                    <li><a href="#order-details">
-                        <span class="icon"><span class="mif-library"></span></span>
-                        <span class="caption">Order details</span>
-                    </a></li>
-                    <li><a href="#price-table">
-                        <span class="icon"><span class="mif-table"></span></span>
-                        <span class="caption">Price table</span>
-                    </a></li>
-                    <li><a href="maintenance.html">
-                        <span class="icon"><span class="mif-cogs"></span></span>
-                        <span class="caption">Maintenance</span>
-                    </a></li>
-                    <li><a href="coming-soon.html">
-                        <span class="icon"><span class="mif-watch"></span></span>
-                        <span class="caption">Coming soon</span>
-                    </a></li>
-                    <li>
-                        <a href="help-center.html">
-                            <span class="icon"><span class="mif-help"></span></span>
-                            <span class="caption">Help center</span>
-                        </a>
-                    </li>
                 </ul>
             </li>
             <li>

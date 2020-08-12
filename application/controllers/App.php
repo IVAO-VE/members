@@ -255,4 +255,13 @@ class App extends CI_Controller
                         redirect(base_url());
                 }
         }
+
+        public function airlines()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('app_profile');
+                } else {
+                        redirect(base_url());
+                }
+        }        
 }

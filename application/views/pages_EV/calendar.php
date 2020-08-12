@@ -43,7 +43,7 @@ $this->load->view("_lib/lib.menu.php");
             eventClick: function(info) {
                     Metro.dialog.create({
                         title: info.event.title,
-                        content: "<div>Bassus abactors ducunt ad triticum...</div>",
+                        content: info.event.start,
                         actions: [{
                                 caption: "Agree",
                                 cls: "js-dialog-close alert",

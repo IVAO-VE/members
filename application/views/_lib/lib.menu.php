@@ -53,19 +53,19 @@
                 <ul class="navview-menu stay-open" data-role="dropdown" >
                     <li class="item-header"><?php echo $this->lang->line('dpto03'); ?></li>
                     <li><a href="/app/sectors">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
+                        <span class="icon"><span class="mif-file-text"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto03_SEC'); ?></span>
                     </a></li>
                     <li><a href="/app/transponders">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
+                        <span class="icon"><span class="mif-qrcode"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto03_TSP'); ?></span>
                     </a></li>
                     <li><a href="/app/guests">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
+                        <span class="icon"><span class="mif-users"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto03_GCA'); ?></span>
                     </a></li>
                     <li><a href="/app/facilitys">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
+                        <span class="icon"><span class="mif-calendar"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto03_FRA'); ?></span>
                     </a></li>
                 </ul>

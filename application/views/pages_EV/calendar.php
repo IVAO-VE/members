@@ -39,14 +39,14 @@ $this->load->view("_lib/lib.menu.php");
             },
             selectable: true,
             dayMaxEvents: true, // allow "more" link when too many events
-            //events: events,
-            events: [
+            events: events,
+            /*events: [
                 {
                     title: 'Manual Test',
                     start: '2020-08-14',
                     end: '2020-08-16'
                 }
-            ],
+            ],*/
             eventClick: function(info) {
                     Metro.dialog.create({
                         title: info.event.title,

@@ -90,4 +90,20 @@ $lang['airlines_system'] = 'VA systems';
 $lang['sceneries_title'] = 'Escenarios virtuales';
 $lang['sceneries_system'] = 'Escenarios venezolanos';
 
+//Sector files
+$lang['sectors_title'] = 'Archivos de sector';
+$lang['sectors_system'] = 'Personalizar sectores';
+
+//Transponders codes
+$lang['transponders_title'] = 'Códigos transponders';
+$lang['transponders_system'] = 'Modo C';
+
+//Guest controllers
+$lang['guests_title'] = 'Controladores invitados';
+$lang['guests_system'] = 'Control extranjero';
+
+//Facility ratings
+$lang['facility_title'] = 'Asignaciones de factivilidades';
+$lang['facility_system'] = 'Accesos FRA';
+
 ?>

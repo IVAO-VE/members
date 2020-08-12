@@ -39,18 +39,19 @@ $this->load->view("_lib/lib.menu.php");
             },
             selectable: true,
             dayMaxEvents: true, // allow "more" link when too many events
-            events: events,
-            /*events: [
+            //events: events,
+            events: [
                 {
                     title: 'Manual Test',
                     start: '2020-08-14',
-                    end: '2020-08-16'
+                    end: '2020-08-16',
+                    description: 'Descripcion manual'
                 }
-            ],*/
+            ],
             eventClick: function(info) {
                     Metro.dialog.create({
                         title: info.event.title,
-                        content: '<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.description + ' disabled></div></div><div class="row"><div class="cell"><input type="text" data-role="input" value=' + info.event.description + ' disabled></div></div></div>',
+                        content: '<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><input type="text" data-role="input" value=' + info.event.description + ' disabled></div></div></div>',
                         actions: [{
                                 caption: "Cerrar",
                                 cls: "js-dialog-close",

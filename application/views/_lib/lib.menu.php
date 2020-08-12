@@ -35,11 +35,11 @@
                 <ul class="navview-menu stay-open" data-role="dropdown">
                     <li class="item-header">Pages</li>
                     <li><a href="/app/airlines">
-                        <span class="icon"><span class="mif-lock"></span></span>
+                        <span class="icon"><span class="mif-airplane"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_VAS'); ?></span>
                     </a></li>
                     <li><a href="/app/sceneries">
-                        <span class="icon"><span class="mif-lock"></span></span>
+                        <span class="icon"><span class="mif-file-picture"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_VSC'); ?></span>
                     </a></li>
 

@@ -24,10 +24,10 @@
 
     <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md flex-align-center">
         <ul class="breadcrumbs bg-transparent">
-            <li class="page-item"><a href="#" class="page-link"><span class="mif-meter"></span></a></li>
-            <li class="page-item"><a href="#" class="page-link"><?php echo $this->lang->line('membersarea'); ?></a></li>
-            <li class="page-item"><a href="#" class="page-link"><?php echo $this->lang->line('dpto02'); ?></a></li>
-            <li class="page-item"><a href="#" class="page-link"><?php echo $this->lang->line('airlines_system'); ?></a></li>
+            <li class="page-item"><a href="/app/index" class="page-link"><span class="mif-meter"></span></a></li>
+            <li class="page-item"><a href="/app/profile" class="page-link"><?php echo $this->lang->line('membersarea'); ?></a></li>
+            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('dpto02'); ?></a></li>
+            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('airlines_system'); ?></a></li>
         </ul>
     </div>
 </div>

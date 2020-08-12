@@ -23,7 +23,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function hola(){
-		$this->load->view('hola');
-	}
+	public function event(){
+		$this->load->view('pages_EV/event');
+}
 }

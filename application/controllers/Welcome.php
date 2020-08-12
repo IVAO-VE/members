@@ -24,11 +24,6 @@ class Welcome extends CI_Controller
 		$this->load->view('welcome_message');
 	}
 
-	public function event()
-	{
-		$this->load->view('pages_EV/event');
-	}
-
 	public function getEvents(){
 		$r = $this->db->get('events'); 
 

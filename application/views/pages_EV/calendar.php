@@ -19,36 +19,31 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
 
-        $.post('<?php echo base_url('welcome/getEvents') ?>',
-            function(data) {
-                alert(data);
-                var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            timeZone: 'UTC',
+            locale: 'es',
+            headerToolbar: {
+                start: 'prev,next',
+                center: 'title',
+                end: 'today,dayGridMonth,listWeek'
+            },
+            buttonText: {
+                today: 'Hoy',
+                month: 'Mes',
+                week: 'Semana',
+                day: 'Dia',
+                list: 'Lista'
+            },
+            editable: true,
+            selectable: true,
+            businessHours: true,
+            dayMaxEvents: true, // allow "more" link when too many events
+            events: 'https://members.ve.ivao.aero/welcome/getevents'
+        });
 
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-                    timeZone: 'UTC',
-                    locale: 'es',
-                    headerToolbar: {
-                        start: 'prev,next',
-                        center: 'title',
-                        end: 'today,dayGridMonth,listWeek'
-                    },
-                    buttonText: {
-                        today: 'Hoy',
-                        month: 'Mes',
-                        week: 'Semana',
-                        day: 'Dia',
-                        list: 'Lista'
-                    },
-                    editable: true,
-                    selectable: true,
-                    businessHours: true,
-                    dayMaxEvents: true, // allow "more" link when too many events
-                    events: $.parseJSON(data)
-                });
-
-                calendar.render();
-            });
+        calendar.render();
     });
 </script>
 <style>

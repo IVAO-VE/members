@@ -42,9 +42,10 @@ $this->load->view("_lib/lib.menu.php");
             events: events,
             eventClick: function(info) {
                 FechaHora = info.start._i.split(" "); 
+                HoraFecha = FechaHora[0] + ' ' + FechaHora[1];
                     Metro.dialog.create({
                         title: info.event.title,
-                        content: '<div class="gird"><div class="row"><div class="cell-6"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= "' + FechaHora[0] + ' ' + FechaHora[1] + '" disabled></div><div class="cell-6"><input type="text" data-role="input" data-prepend="Fecha final: " disabled></div></div></div>',
+                        content: '<div class="gird"><div class="row"><div class="cell-6"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + HoraFecha + ' disabled></div><div class="cell-6"><input type="text" data-role="input" data-prepend="Fecha final: " disabled></div></div></div>',
                         actions: [{
                                 caption: "Cerrar",
                                 cls: "js-dialog-close",

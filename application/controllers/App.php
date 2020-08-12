@@ -246,4 +246,8 @@ class App extends CI_Controller
                 }
         }
 
+        public function event(){
+                $this->load->view('pages_EV/event');
+        }
+
 }

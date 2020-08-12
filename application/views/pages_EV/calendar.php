@@ -40,7 +40,7 @@ $this->load->view("_lib/lib.menu.php");
             selectable: true,
             businessHours: true,
             dayMaxEvents: true, // allow "more" link when too many events
-            events: "<?php $this->load->view('pages_EV/event') ?>"
+            events: 'https://members.ve.ivao.aero/app/event'
         });
 
         calendar.render();

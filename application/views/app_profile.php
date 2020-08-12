@@ -112,7 +112,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
 
                     </div>
                     <br>
-                    <!-- Modal Eventos -->
+                    <!-- Inicio Modal Eventos -->
                     <div class="dialog" data-role="dialog">
                         <div class="dialog-title">Use Windows location service?</div>
                         <div class="dialog-content">
@@ -124,7 +124,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             <button class="button primary js-dialog-close">Agree</button>
                         </div>
                     </div>
-                    <!-- Modal ATC -->
+                    <!-- Fin Modal Eventos -->
                     <div data-role="panel" data-title-caption="Eventos reportados" data-title-icon="<span class='mif-airplane'>" data-collapsible="true">
                         <table class="table table-strip">
                             <thead>

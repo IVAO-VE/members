@@ -247,6 +247,8 @@ class App extends CI_Controller
                         foreach ($data['result'] as $key => $value) {
                                 $data['data'][$key]['title'] = $value->title;
                                 $data['data'][$key]['start'] = $value->start;
+                                $data['data'][$key]['end'] = $value->end;
+                                $data['data'][$key]['description'] = $value->description;
                         }
                         $this->load->view('pages_EV/calendar', $data);
                 } else {

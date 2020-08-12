@@ -238,4 +238,12 @@ class App extends CI_Controller
             }
         }
 
+        public function calendar(){
+                if($this->session->userdata('vid') != ""){
+                   $this->load->view('pages_EV/calendar');
+                }else{
+                        redirect(base_url());
+                }
+        }
+
 }

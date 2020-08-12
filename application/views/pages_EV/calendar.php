@@ -45,11 +45,7 @@ $this->load->view("_lib/lib.menu.php");
                         title: info.event.title,
                         content: '<div class="gird"><div class="row"><div class="cell-6"><input type="text" data-role="input" data-prepend="Fehca inicio: " disabled></div><div class="cell-6"><input type="text" data-role="input" data-prepend="Fecha final: " disabled></div></div></div>',
                         actions: [{
-                                caption: "Agree",
-                                cls: "js-dialog-close",
-                            },
-                            {
-                                caption: "Disagree",
+                                caption: "Cerrar",
                                 cls: "js-dialog-close",
                             }
                         ]
@@ -74,3 +70,5 @@ $this->load->view("_lib/lib.menu.php");
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>
+
+<div class="gird"><div class="row"><div class="cell-6"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= info.event.start disabled></div><div class="cell-6"><input type="text" data-role="input" data-prepend="Fecha final: " disabled></div></div></div>

@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-[{
+{
     title: 'All Day Event',
     start: '2020-08-01'
 },
@@ -55,6 +55,5 @@ header('Content-Type: application/json');
     url: 'http://google.com/',
     start: '2020-06-28'
 }
-]
 
 ?>

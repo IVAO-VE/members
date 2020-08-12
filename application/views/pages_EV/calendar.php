@@ -35,7 +35,7 @@ $this->load->view("_lib/lib.menu.php");
                 week: 'Semana',
                 day: 'Dia',
                 list: 'Lista'
-            }
+            },
             editable: true,
             selectable: true,
             businessHours: true,

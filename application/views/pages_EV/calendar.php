@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     timeZone: 'UTC',
     locale: 'es',
     header: {
-        left:'prev, next',
+        start:'prev, next',
         center:'title',
-        right:'today'
+        end:'today'
     },
     editable: true,
     selectable: true,

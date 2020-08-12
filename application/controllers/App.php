@@ -259,7 +259,7 @@ class App extends CI_Controller
         public function airlines()
         {
                 if ($this->session->userdata('vid') != "") {
-                        $this->load->view('app_profile');
+                        $this->load->view('pages_FO/airlines');
                 } else {
                         redirect(base_url());
                 }

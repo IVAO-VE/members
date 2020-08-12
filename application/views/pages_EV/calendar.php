@@ -41,12 +41,27 @@ $this->load->view("_lib/lib.menu.php");
             dayMaxEvents: true, // allow "more" link when too many events
             events: events,
             eventClick: function(info) {
-                alert('Event: ' + info.event.title);
-                alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-                alert('View: ' + info.view.type);
-
-                // change the border color just for fun
-                info.el.style.borderColor = 'red';
+                function openDemoDialogActions() {
+                    Metro.dialog.create({
+                        title: "Use Windows location service?",
+                        content: "<div>Bassus abactors ducunt ad triticum...</div>",
+                        actions: [{
+                                caption: "Agree",
+                                cls: "js-dialog-close alert",
+                                onclick: function() {
+                                    alert("You clicked Agree action");
+                                }
+                            },
+                            {
+                                caption: "Disagree",
+                                cls: "js-dialog-close",
+                                onclick: function() {
+                                    alert("You clicked Disagree action");
+                                }
+                            }
+                        ]
+                    });
+                }
             }
         });
 

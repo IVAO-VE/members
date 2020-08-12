@@ -41,26 +41,41 @@ $this->load->view("_lib/lib.menu.php");
             dayMaxEvents: true, // allow "more" link when too many events
             events: events,
             eventClick: function(info) {
-                    Metro.dialog.create({
-                        title: info.event.title,
-                        content: '',
-                        actions: [{
-                                caption: "Agree",
-                                cls: "js-dialog-close alert",
-                                onclick: function() {
-                                    alert("You clicked Agree action");
-                                }
-                            },
-                            {
-                                caption: "Disagree",
-                                cls: "js-dialog-close",
-                                onclick: function() {
-                                    alert("You clicked Disagree action");
-                                }
+                Metro.dialog.create({
+                    title: info.event.title,
+                    content: '<div></div> <
+                        div class = "gird" >
+                        <div class = "row" >
+                        <div class = "cell-6" >
+                        <input type = "text" data - role = "input" data - prepend = "Fehca inicio: " disabled >
+                    </div> <
+                    div class = "cell-6" >
+                    <
+                    input type = "text"
+                    data - role = "input"
+                    data - prepend = "Fecha final: "
+                    disabled >
+                    <
+                    /div> <
+                    /div> <
+                    /div>',
+                    actions: [{
+                            caption: "Agree",
+                            cls: "js-dialog-close alert",
+                            onclick: function() {
+                                alert("You clicked Agree action");
                             }
-                        ]
-                    });
-                
+                        },
+                        {
+                            caption: "Disagree",
+                            cls: "js-dialog-close",
+                            onclick: function() {
+                                alert("You clicked Disagree action");
+                            }
+                        }
+                    ]
+                });
+
             }
         });
 
@@ -80,14 +95,3 @@ $this->load->view("_lib/lib.menu.php");
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>
-<div></div>
-<div class="gird">
-    <div class="row">
-        <div class="cell-6">
-            <input type="text" data-role="input" data-prepend="Fehca inicio: ">
-        </div>
-        <div class="cell-6">
-            <input type="text" data-role="input" data-prepend="Fecha final: ">
-        </div>
-    </div>
-</div>

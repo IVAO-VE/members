@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initialDate: 'dayGridMonth',
     editable: true,
     selectable: true,
+    businessHours: true,
     dayMaxEvents: true, // allow "more" link when too many events
     events: [
       {

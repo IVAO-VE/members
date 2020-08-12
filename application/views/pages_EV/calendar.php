@@ -39,7 +39,15 @@ $this->load->view("_lib/lib.menu.php");
             },
             selectable: true,
             dayMaxEvents: true, // allow "more" link when too many events
-            events: events
+            events: events,
+            eventClick: function(info) {
+                alert('Event: ' + info.event.title);
+                alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+                alert('View: ' + info.view.type);
+
+                // change the border color just for fun
+                info.el.style.borderColor = 'red';
+            }
         });
 
         calendar.render();
@@ -48,7 +56,7 @@ $this->load->view("_lib/lib.menu.php");
 <style>
     #calendar {
         max-width: 1100px;
-        margin: 0 auto;
+        margin: 3 auto;
     }
 </style>
 

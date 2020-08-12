@@ -238,22 +238,22 @@ class App extends CI_Controller
             }
         }
 
-        public function calendar(){
+        /*public function calendar(){
                 if($this->session->userdata('vid') != ""){
                    $this->load->view('pages_EV/calendar');
                 }else{
                         redirect(base_url());
                 }
-        }
+        }*/
 
-        public function event(){
+        public function calendar(){
                 $data['result'] = $this->db->get('events')->result();
 
                 foreach($data['result'] as $key => $value){
                         $data['data'][$key]['title'] = $value->title;
                         $data['data'][$key]['start'] = $value->start;
                 }
-                $this->load->view('pages_EV/event', $data);
+                $this->load->view('pages_EV/calendar', $data);
         }
 
 }

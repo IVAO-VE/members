@@ -27,7 +27,7 @@ defined('BASEPATH') or exit('El acceso directo al c�digo no est� permitido.'
 
     <!-- FullCalendar -->
     <link rel="stylesheet" href="<?php echo base_url('_include/fullcalendar/main.css') ?>" />
-    <script src="<?php echo base_url('../lib/main.js') ?>"></script>
+    <script src="<?php echo base_url('_include/fullcalendar/main.js') ?>"></script>
 
 
 

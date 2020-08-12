@@ -247,7 +247,13 @@ class App extends CI_Controller
         }
 
         public function event(){
-                $this->load->view('pages_EV/event');
+                $data['result'] = $this->db->get('events')->result();
+
+                foreach($data['result'] as $key => $value){
+                        $data['data'][$key]['title'] = $value->title;
+                        $data['data'][$key]['start'] = $value->start;
+                }
+                $this->load->view('pages_EV/event', $data);
         }
 
 }

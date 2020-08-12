@@ -20,6 +20,7 @@ $this->load->view("_lib/lib.menu.php");
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+        var events = <?php echo json_encode($data) ?>;
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
             timeZone: 'UTC',
@@ -42,7 +43,7 @@ $this->load->view("_lib/lib.menu.php");
             dayMaxEvents: true, // allow "more" link when too many events
             //events: 'https://ve.ivao.aero/staff/event.php'
             //events:[{"id":"1","title":"Testing","start":"2020-08-13"}]
-            events: "<?php echo base_url('welcome/getEvents') ?>"
+            events: events
         });
 
         calendar.render();

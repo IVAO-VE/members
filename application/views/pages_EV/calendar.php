@@ -40,7 +40,7 @@ $this->load->view("_lib/lib.menu.php");
             selectable: true,
             businessHours: true,
             dayMaxEvents: true, // allow "more" link when too many events
-            events: 'https://members.ve.ivao.aero/welcome/getevents'
+            events: 'https://ve.ivao.aero/staff/event.php'
         });
 
         calendar.render();

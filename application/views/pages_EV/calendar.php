@@ -40,10 +40,10 @@ $this->load->view("_lib/lib.menu.php");
             selectable: true,
             dayMaxEvents: true, // allow "more" link when too many events
             events: events,
-            eventClick: function(calEvent,jsEvent,view) {
+            eventClick: function(info) {
                     Metro.dialog.create({
-                        title: calEvent.title,
-                        content: '<div class="gird"><div class="row"><div class="cell-6"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + calEvent.start + '  disabled></div><div class="cell-6"><input type="text" data-role="input" data-prepend="Fecha final: " disabled></div></div></div>',
+                        title: info.event.title,
+                        content: '<div class="gird"><div class="row"><div class="cell-6"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell-6"><input type="text" data-role="input" data-prepend="Fecha final: " disabled></div></div></div>',
                         actions: [{
                                 caption: "Cerrar",
                                 cls: "js-dialog-close",

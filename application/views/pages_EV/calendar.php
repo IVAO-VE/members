@@ -24,11 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     timeZone: 'UTC',
-    header:{
-        left:'prev, next',
-        center:'title',
-        right:'today'
-    },
     initialDate: 'dayGridMonth',
     editable: true,
     selectable: true,

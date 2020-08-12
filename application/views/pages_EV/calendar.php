@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
-    timeZone: 'UTC',
     initialDate: 'dayGridMonth',
     editable: true,
     selectable: true,

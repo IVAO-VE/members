@@ -19,15 +19,15 @@ class App extends CI_Controller
         public function __construct()
         {
                 parent::__construct();
-                $this->phpdebug->debug('[LOAD] -> Cargando el controlador de la aplicación');
+                //$this->phpdebug->debug('[LOAD] -> Cargando el controlador de la aplicación');
                 //Cargando la librería de sesiones
-                $this->phpdebug->debug('[LOAD] -> Cargando la sesión');
+                //$this->phpdebug->debug('[LOAD] -> Cargando la sesión');
                 //$this->load->library('session');
                 //Cargando ayudante de redirecciones
-                $this->phpdebug->debug('[LOAD] -> Cargando ayudantes de la aplicación');
+                //$this->phpdebug->debug('[LOAD] -> Cargando ayudantes de la aplicación');
                 //$this->load->helper('url');
                 //Cargando el archivo de idioma correspondiente
-                $this->phpdebug->debug('[LOAD] -> Determinando el lenguaje para el usuario');
+                //$this->phpdebug->debug('[LOAD] -> Determinando el lenguaje para el usuario');
                 $lang = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
                 if (strtoupper(substr($lang, 0, 2)) == 'ES') { //es_ES, en_US
                         $this->lang->load('website', 'spanish');

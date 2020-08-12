@@ -23,10 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialDate: '2020-06-12',
+    timeZone: 'UTC',
+    header:{
+        left:'prev, next',
+        center:'title',
+        right:'today'
+    },
+    initialDate: 'dayGridMonth',
     editable: true,
     selectable: true,
-    businessHours: true,
     dayMaxEvents: true, // allow "more" link when too many events
     events: [
       {

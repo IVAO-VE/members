@@ -71,6 +71,8 @@ $this->load->view("_lib/lib.menu.php");
     }
 </style>
 
+<?php echo json_encode($data); ?>
+
 <div id='calendar'></div>
 
 

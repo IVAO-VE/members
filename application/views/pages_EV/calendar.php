@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     timeZone: 'UTC',
     locale: 'es',
     headerToolbar: {
-        start:'prev, next',
+        start:'prev,next',
         center:'title',
-        end:'today'
+        end:'today,listWeek'
     },
     editable: true,
     selectable: true,

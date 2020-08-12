@@ -44,7 +44,7 @@ $this->load->view("_lib/lib.menu.php");
                     selectable: true,
                     businessHours: true,
                     dayMaxEvents: true, // allow "more" link when too many events
-                    events: data
+                    events: $.parseJSON(data)
                 });
 
                 calendar.render();

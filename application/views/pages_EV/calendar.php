@@ -42,23 +42,7 @@ $this->load->view("_lib/lib.menu.php");
             dayMaxEvents: true, // allow "more" link when too many events
             //events: 'https://ve.ivao.aero/staff/event.php'
             //events:[{"id":"1","title":"Testing","start":"2020-08-13"}]
-            eventSources: [{
-                events: function() {
-                    $.ajax({
-                        url: '<?php echo base_url() ?>welcome/getEvents',
-                        dataType: 'json',
-                        data: {
-                            // our hypothetical feed requires UNIX timestamps
-                            start: start.unix(),
-                            end: end.unix()
-                        },
-                        success: function(msg) {
-                            var events = msg.events;
-                            callback(events);
-                        }
-                    });
-                }
-            }, ]
+            events: "<?php echo base_url('welcome/getEvents') ?>"
         });
 
         calendar.render();

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     timeZone: 'UTC',
-    initialDate: '2020-06-12',
+    locale: 'es',
     editable: true,
     selectable: true,
     businessHours: true,

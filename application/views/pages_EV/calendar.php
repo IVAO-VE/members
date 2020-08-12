@@ -19,6 +19,12 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+        $.post('<?php echo base_url('welcome/getEvents')?>',
+        function(data){
+            alert(data);
+        });
+
         var calendarEl = document.getElementById('calendar');
 
         var calendar = new FullCalendar.Calendar(calendarEl, {

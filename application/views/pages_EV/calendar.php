@@ -42,21 +42,12 @@ $this->load->view("_lib/lib.menu.php");
             events: events,
             eventClick: function(info) {
                     Metro.dialog.create({
-                        title: "Use Windows location service?",
-                        content: "<div>Bassus abactors ducunt ad triticum...</div>",
-                        actions: [{
-                                caption: "Agree",
-                                cls: "js-dialog-close alert",
-                                onclick: function() {
-                                    alert("You clicked Agree action");
-                                }
-                            },
+                        title: info.event.title,
+                        content: info.event.start,
+                        actions: [
                             {
-                                caption: "Disagree",
+                                caption: "Cerrar",
                                 cls: "js-dialog-close",
-                                onclick: function() {
-                                    alert("You clicked Disagree action");
-                                }
                             }
                         ]
                     });

@@ -41,6 +41,7 @@ $lang['dpto00'] = 'Estado general';
 $lang['dpto01'] = 'Dirección HQ';
 $lang['dpto02'] = 'Operaciones de vuelo';
 $lang['dpto02_VAS'] = 'Aerolineas virtuales';
+$lang['dpto02_VSC'] = 'Escenarios virtuales';
 $lang['dpto03'] = 'Operaciones de control';
 $lang['dpto04'] = 'Operaciones especiales';
 $lang['dpto05'] = 'Entrenamiento';

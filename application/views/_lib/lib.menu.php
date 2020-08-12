@@ -38,6 +38,11 @@
                         <span class="icon"><span class="mif-lock"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_VAS'); ?></span>
                     </a></li>
+                    <li><a href="/app/sceneries">
+                        <span class="icon"><span class="mif-lock"></span></span>
+                        <span class="caption"><?php echo $this->lang->line('dpto02_VSC'); ?></span>
+                    </a></li>
+
                 </ul>
             </li>
             <li>

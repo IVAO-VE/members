@@ -239,29 +239,47 @@ class App extends CI_Controller
                 }
         }
 
-        public function calendar()
-        {
-                if ($this->session->userdata('vid') != "") {
-                        $data['result'] = $this->db->get('events')->result();
+        /** ************************************************************************
+         *  Funciones de control para el departamento de Eventos
+         */
 
-                        foreach ($data['result'] as $key => $value) {
-                                $data['data'][$key]['title'] = $value->title;
-                                $data['data'][$key]['start'] = $value->start;
-                                $data['data'][$key]['end'] = $value->end;
-                                $data['data'][$key]['description'] = $value->description;
+                public function calendar()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $data['result'] = $this->db->get('events')->result();
+
+                                foreach ($data['result'] as $key => $value) {
+                                        $data['data'][$key]['title'] = $value->title;
+                                        $data['data'][$key]['start'] = $value->start;
+                                        $data['data'][$key]['end'] = $value->end;
+                                        $data['data'][$key]['description'] = $value->description;
+                                }
+                                $this->load->view('pages_EV/calendar', $data);
+                        } else {
+                                redirect(base_url());
                         }
-                        $this->load->view('pages_EV/calendar', $data);
-                } else {
-                        redirect(base_url());
                 }
-        }
+        /** ************************************************************************/
+        
+        /** ************************************************************************
+         *  Funciones de control para el departamento de Operaciones de Vuelo
+         */
+                public function airlines()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_FO/airlines_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }        
 
-        public function airlines()
-        {
-                if ($this->session->userdata('vid') != "") {
-                        $this->load->view('pages_FO/airlines_index');
-                } else {
-                        redirect(base_url());
-                }
-        }        
+                public function sceneries()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_FO/sceneries_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }        
+        /** *************************************************************************/
 }

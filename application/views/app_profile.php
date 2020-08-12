@@ -105,10 +105,10 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('ginfo'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <div class="text-bold"><?php echo $this->lang->line('division'); ?></div>
-                        <div><?php echo $this->session->userdata('division_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $DivCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
+                        <div><img src="<?php echo base_url('_include/images/flags/' . $DivCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>">&nbsp;<?php echo $this->session->userdata('division_name') ?></div>
 
                         <div class="text-bold mt-2"><?php echo $this->lang->line('country'); ?></div>
-                        <div><?php echo $this->session->userdata('country_name') ?>&nbsp;<img src="<?php echo base_url('_include/images/flags/' . $CouCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>"></div>
+                        <div><img src="<?php echo base_url('_include/images/flags/' . $CouCode . '.png') ?>" alt="<?php echo $this->session->userdata('division_name') ?>">&nbsp;<?php echo $this->session->userdata('country_name') ?></div>
 
                     </div>
                     <br>

@@ -282,4 +282,45 @@ class App extends CI_Controller
                         }
                 }        
         /** *************************************************************************/
+
+        /** ************************************************************************
+         *  Funciones de control para el departamento de Operaciones de Control
+         */
+                public function sectors()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_AO/sectors_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }        
+
+                public function transponders()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_AO/transponders_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                } 
+                
+                public function guests()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_AO/guests_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }        
+
+                public function facilitys()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_AO/facilitys_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }                        
+        /** *************************************************************************/
+
 }

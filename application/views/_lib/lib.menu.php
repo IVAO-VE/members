@@ -33,7 +33,7 @@
                     <span class="caption"><?php echo $this->lang->line('dpto02'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown">
-                    <li class="item-header">Pages</li>
+                    <li class="item-header"><?php echo $this->lang->line('dpto02'); ?></li>
                     <li><a href="/app/airlines">
                         <span class="icon"><span class="mif-airplane"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_VAS'); ?></span>
@@ -51,22 +51,22 @@
                     <span class="caption"><?php echo $this->lang->line('dpto03'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
-                    <li class="item-header">Forms</li>
-                    <li><a href="#forms-basic">
+                    <li class="item-header"><?php echo $this->lang->line('dpto03'); ?></li>
+                    <li><a href="/app/sectors">
                         <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">Basic elements</span>
+                        <span class="caption"><?php echo $this->lang->line('dpto03_SEC'); ?></span>
                     </a></li>
-                    <li><a href="#forms-extended">
+                    <li><a href="/app/transponders">
                         <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">Extended elements</span>
+                        <span class="caption"><?php echo $this->lang->line('dpto03_TSP'); ?></span>
                     </a></li>
-                    <li><a href="#forms-layouts">
+                    <li><a href="/app/guests">
                         <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">Layouts</span>
+                        <span class="caption"><?php echo $this->lang->line('dpto03_GCA'); ?></span>
                     </a></li>
-                    <li><a href="#forms-validating">
+                    <li><a href="/app/facilitys">
                         <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">Validating</span>
+                        <span class="caption"><?php echo $this->lang->line('dpto03_FRA'); ?></span>
                     </a></li>
                 </ul>
             </li>

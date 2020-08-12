@@ -1,9 +1,8 @@
 <?php
 header('Content-Type: application/json');
 
-{
-    title: 'All Day Event',
-    start: '2020-08-01'
-}
+$query = $this->db->get('event'); 
+
+echo json_encode($query->result());
 
 ?>

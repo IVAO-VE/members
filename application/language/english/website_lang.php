@@ -77,5 +77,13 @@ $lang['main_reportFL'] = 'Flight report';
 $lang['main_activityFL'] = 'Your flight activities';
 $lang['main_reportCT'] = 'ATC report';
 $lang['main_activityCT'] = 'Your atc activities';
-    
+
+//Virtual airlines
+$lang['airlines_title'] = 'Virtual airlines';
+$lang['airlines_system'] = 'VA systems';
+
+//Virtual sceneries
+$lang['sceneries_title'] = 'Virtual sceneries';
+$lang['sceneries_system'] = 'Venezuelans sceneries';
+
 ?>

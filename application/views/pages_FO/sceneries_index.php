@@ -16,6 +16,19 @@
     //Cargando la estructura del MENU
     $this->load->view("_lib/lib.menu.php");
 ?>
+<div class="row border-bottom bd-lightGray m-3">
+    <div class="cell-md-4 d-flex flex-align-center">
+        <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo $this->lang->line('sceneries_title'); ?></h3>
+    </div>
+
+    <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md flex-align-center">
+        <ul class="breadcrumbs bg-transparent">
+            <li class="page-item"><a href="#" class="page-link"><span class="mif-meter"></span></a></li>
+            <li class="page-item"><a href="#" class="page-link"><?php echo $this->lang->line('membersarea'); ?></a></li>
+            <li class="page-item"><a href="#" class="page-link"><?php echo $this->lang->line('sceneries_system'); ?></a></li>
+        </ul>
+    </div>
+</div>
 
 
 

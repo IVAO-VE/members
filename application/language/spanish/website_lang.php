@@ -78,4 +78,12 @@ $lang['main_activityFL'] = 'Actividad de tus vuelos';
 $lang['main_reportCT'] = 'Reportar control';
 $lang['main_activityCT'] = 'Actividad de tus controles';    
 
+//Virtual airlines
+$lang['airlines_title'] = 'Aerolineas virtuales';
+$lang['airlines_system'] = 'VA systems';
+
+//Virtual sceneries
+$lang['sceneries_title'] = 'Escenarios virtuales';
+$lang['sceneries_system'] = 'Escenarios venezolanos';
+
 ?>

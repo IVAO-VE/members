@@ -41,7 +41,6 @@ $this->load->view("_lib/lib.menu.php");
             dayMaxEvents: true, // allow "more" link when too many events
             events: events,
             eventClick: function(info) {
-                function openDemoDialogActions() {
                     Metro.dialog.create({
                         title: "Use Windows location service?",
                         content: "<div>Bassus abactors ducunt ad triticum...</div>",
@@ -61,7 +60,7 @@ $this->load->view("_lib/lib.menu.php");
                             }
                         ]
                     });
-                }
+                
             }
         });
 

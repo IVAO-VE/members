@@ -140,7 +140,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     <div data-role="panel" data-title-caption="Eventos reportados" data-title-icon="<span class='mif-airplane'>" data-collapsible="true">
                         <table class="table table-strip">
                             <thead>
-                                <tr onclick="openDemoDialogActions()">
+                                <tr>
                                     <th>ID</th>
                                     <th>Numero de vuelo</th>
                                     <th>Origen</th>
@@ -149,7 +149,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr onclick="openDemoDialogActions()">
                                     <td>1</td>
                                     <td>VCV002</td>
                                     <td>SVMI</td>

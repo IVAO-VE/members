@@ -37,9 +37,7 @@ $this->load->view("_lib/lib.menu.php");
                 day: 'Dia',
                 list: 'Lista'
             },
-            editable: true,
             selectable: true,
-            businessHours: true,
             dayMaxEvents: true, // allow "more" link when too many events
             events: events
         });

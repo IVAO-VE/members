@@ -23,10 +23,4 @@ class Welcome extends CI_Controller
 	{
 		$this->load->view('welcome_message');
 	}
-
-	public function getEvents(){
-		$r = $this->db->get('events'); 
-
-		echo json_encode($r->result());
-	}
 }

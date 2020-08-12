@@ -41,8 +41,6 @@ $this->load->view("_lib/lib.menu.php");
             selectable: true,
             businessHours: true,
             dayMaxEvents: true, // allow "more" link when too many events
-            //events: 'https://ve.ivao.aero/staff/event.php'
-            //events:[{"id":"1","title":"Testing","start":"2020-08-13"}]
             events: events
         });
 

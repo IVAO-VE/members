@@ -25,6 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     timeZone: 'UTC',
     locale: 'es',
+    header: {
+        left:'prev, next',
+        center:'title',
+        right:'today'
+    }
     editable: true,
     selectable: true,
     businessHours: true,

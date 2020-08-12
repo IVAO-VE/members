@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
+    timeZone: 'UTC',
     initialDate: '2020-06-12',
     editable: true,
     selectable: true,

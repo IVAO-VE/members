@@ -140,13 +140,13 @@ $this->load->view("_lib/lib.menu.php");
 <div id='calendar'></div>
 
 <script>
-    function LimpiarForm() {
+    /*function LimpiarForm() {
         $('#txtStart').val('');
         $('#txtEnd').val('');
         $('#txtDescription').val('');
         $('#URLimg').val('');
         $('#URLforo').val('');
-    }
+    }*/
 </script>
 <?php
 $this->load->view("_lib/lib.footer.php");

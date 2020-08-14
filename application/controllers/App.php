@@ -254,6 +254,7 @@ class App extends CI_Controller
                                         $data['data'][$key]['end'] = $value->end;
                                         $data['data'][$key]['description'] = $value->description;
                                         $data['data'][$key]['img'] = $value->img;
+                                        $data['data'][$key]['foro'] = $value->foro;
                                 }
                                 $this->load->view('pages_EV/calendar', $data);
                         } else {

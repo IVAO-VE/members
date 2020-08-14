@@ -54,6 +54,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);
                 $('#img').attr('src', info.event.extendedProps.img);
+                $('#foro').attr('href', info.event.extendedProps.foro);
                 Metro.dialog.open('#click');
 
             }
@@ -68,8 +69,6 @@ $this->load->view("_lib/lib.menu.php");
         margin: 3 auto;
     }
 </style>
-
-<?php echo json_encode($data); ?>
 <!-- Dialog Eventclick -->
 <div class="dialog" data-role="dialog" id="click">
     <div class="dialog-title text-center" id="tituloEvento">Event 1</div>
@@ -106,6 +105,7 @@ $this->load->view("_lib/lib.menu.php");
     </div>
     <div class="dialog-actions">
         <button class="button js-dialog-close">Cerrar</button>
+        <a id="foro" href="" class="button primary"></a>
     </div>
 </div>
 
@@ -113,6 +113,7 @@ $this->load->view("_lib/lib.menu.php");
 
 <div id='calendar'></div>
 <button class="button primary" onclick="">Open dialog</button>
+<a href="" class="button primary"></a>
 
 <?php
 $this->load->view("_lib/lib.footer.php");

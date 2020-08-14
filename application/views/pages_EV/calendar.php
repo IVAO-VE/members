@@ -53,6 +53,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);
+                $*'#img').attr('src', info.event.extendedProps.img);
                 Metro.dialog.open('#click');
 
             }
@@ -75,6 +76,11 @@ $this->load->view("_lib/lib.menu.php");
     <div class="dialog-content">
         <div class="grid">
             <div class="row">
+                <div class="cell d-flex flex-justify-center">
+                    <img id="img" src="https://ve.ivao.aero/images/Banner/img4.png" width="350px" height="200px">
+                </div>
+            </div>
+            <div class="row">
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha inicio</label>
@@ -91,6 +97,7 @@ $this->load->view("_lib/lib.menu.php");
             <div class="row">
                 <div class="cell">
                     <div class="form-group">
+                        <label>Descripcion</label>
                         <input type="text" class="fg-black" id="txtDescription" disabled>
                     </div>
                 </div>

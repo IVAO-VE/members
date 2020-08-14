@@ -62,12 +62,12 @@ $this->load->view("_lib/lib.menu.php");
                 Metro.dialog.open('#click');
 
             },
-            /*dateClick: function(info) {
+            dateClick: function(info) {
                 $('#btnModificar').hide();
                 $('#btnEliminar').hide();
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
-            }*/
+            }
         });
 
         calendar.render();
@@ -140,13 +140,13 @@ $this->load->view("_lib/lib.menu.php");
 <div id='calendar'></div>
 
 <script>
-    /*function LimpiarForm() {
+    function LimpiarForm() {
         $('#txtStart').val('');
         $('#txtEnd').val('');
         $('#txtDescription').val('');
         $('#URLimg').val('');
         $('#URLforo').val('');
-    }*/
+    }
 </script>
 <?php
 $this->load->view("_lib/lib.footer.php");

@@ -55,6 +55,9 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtDescription').val(info.event.extendedProps.description);
                 $('#img').attr('src', info.event.extendedProps.img);
                 $('#foro').attr('href', info.event.extendedProps.foro);
+                $('#btnNuevo').hide();
+                $('#URLimg').val(info.event.extendedProps.img);
+                $('#URLforo').val(info.event.extendedProps.foro);
                 Metro.dialog.open('#click');
 
             }
@@ -83,13 +86,13 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha inicio</label>
-                        <input type="text" class="fg-black" id="txtStart" disabled>
+                        <input type="text" class="fg-black" id="txtStart">
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha final</label>
-                        <input type="text" class="fg-black" id="txtEnd" disabled>
+                        <input type="text" class="fg-black" id="txtEnd">
                     </div> 
                 </div>
             </div>
@@ -97,14 +100,30 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell">
                     <div class="form-group">
                         <label>Descripcion</label>
-                        <input type="text" class="fg-black" id="txtDescription" disabled>
+                        <input type="text" class="fg-black" id="txtDescription">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Url Imagen</label>
+                        <input id="URLimg" class="fg-black" type="text">
+                    </div>
+                </div>
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Url Foro</label>
+                        <input type="text" class="fg-black" id="URLforo">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="dialog-actions">
-        <a id="foro" href="" class="button primary">Foro</a>
+        <a id="btnNuevo" href="" class="button primary">Agregar</a>
+        <a href="" class="button primary">Modificar</a>
+        <a href="" class="button danger">Eliminar</a>
         <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>

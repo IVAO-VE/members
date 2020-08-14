@@ -50,6 +50,8 @@ $this->load->view("_lib/lib.menu.php");
             ],*/
             eventClick: function(info) {
                 $('#tituloEvento').html(info.event.title);
+                $('#txtStart').val(info.event.start);
+                $('#txtEnd').val(info.event.end);
                 Metro.dialog.open('#click');
 
             }
@@ -70,8 +72,22 @@ $this->load->view("_lib/lib.menu.php");
 <div class="dialog" data-role="dialog" id="click">
     <div class="dialog-title" id="tituloEvento">Event 1</div>
     <div class="dialog-content">
-        Bassus abactors ducunt ad triticum.
-        A fraternal form of manifestation is the bliss.
+        <div class="grid">
+            <div class="row">
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Fecha inicio</label>
+                        <input type="text" id="txtStart" disabled>
+                    </div>
+                </div>
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Fecha final</label>
+                        <input type="text" id="txtEnd" disabled>
+                    </div> 
+                </div>
+            </div>
+        </div>
     </div>
     <div class="dialog-actions">
         <button class="button js-dialog-close">Disagree</button>

@@ -25,6 +25,7 @@ $this->load->view("_lib/lib.menu.php");
         var calendar = new FullCalendar.Calendar(calendarEl, {
             timeZone: 'UTC',
             locale: 'es',
+            selectable: true,
             headerToolbar: {
                 start: 'prev,next',
                 center: 'title',
@@ -60,6 +61,12 @@ $this->load->view("_lib/lib.menu.php");
                 $('#URLforo').val(info.event.extendedProps.foro);
                 Metro.dialog.open('#click');
 
+            },
+            dateClick: function(info){
+                $('#btnModificar').hide();
+                $('#btnEliminar').hide();
+                $('#tituloEvento').html(info.dateStr);
+                Metro.dialog.open('#click');
             }
         });
 
@@ -122,8 +129,8 @@ $this->load->view("_lib/lib.menu.php");
     </div>
     <div class="dialog-actions">
         <a id="btnNuevo" href="" class="button primary">Agregar</a>
-        <a href="" class="button primary">Modificar</a>
-        <a href="" class="button danger">Eliminar</a>
+        <a id="btnModificar" href="" class="button primary">Modificar</a>
+        <a id="btnEliminar" href="" class="button danger">Eliminar</a>
         <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>
@@ -132,6 +139,15 @@ $this->load->view("_lib/lib.menu.php");
 
 <div id='calendar'></div>
 
+<script>
+    function LimpiarForm(){
+        $('#txtStart').val('');
+        $('#txtEnd').val('');
+        $('#txtDescription').val('');
+        $('#URLimg').val('');
+        $('#URLforo').val('');
+    }
+</script>
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>

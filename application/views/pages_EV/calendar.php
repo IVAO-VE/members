@@ -52,7 +52,7 @@ $this->load->view("_lib/lib.menu.php");
                 console.log(info.event.extendedProps.description);
                     Metro.dialog.create({
                         title: info.event.title,
-                        content: '<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><input type="text" value=' + info.event.extendedProps.description + ' disabled></div></div></div>',
+                        content: '<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><textarea cols="30" rows="10">'  + info.event.extendedProps.description + '</textarea></div></div></div>',
                         actions: [{
                                 caption: "Cerrar",
                                 cls: "js-dialog-close",

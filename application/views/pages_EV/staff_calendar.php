@@ -62,12 +62,12 @@ $this->load->view("_lib/lib.menu.php");
                 Metro.dialog.open('#click');
 
             },
-            dateClick: function(info){
+            /*dateClick: function(info) {
                 $('#btnModificar').hide();
                 $('#btnEliminar').hide();
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
-            }
+            }*/
         });
 
         calendar.render();
@@ -100,7 +100,7 @@ $this->load->view("_lib/lib.menu.php");
                     <div class="form-group">
                         <label>Fecha final</label>
                         <input type="text" class="fg-black" id="txtEnd">
-                    </div> 
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -140,7 +140,7 @@ $this->load->view("_lib/lib.menu.php");
 <div id='calendar'></div>
 
 <script>
-    function LimpiarForm(){
+    function LimpiarForm() {
         $('#txtStart').val('');
         $('#txtEnd').val('');
         $('#txtDescription').val('');

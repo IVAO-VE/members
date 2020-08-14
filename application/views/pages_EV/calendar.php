@@ -104,8 +104,8 @@ $this->load->view("_lib/lib.menu.php");
         </div>
     </div>
     <div class="dialog-actions">
+        <a id="foro" href="" class="button primary">Foro</a>
         <button class="button js-dialog-close">Cerrar</button>
-        <a id="foro" href="" class="button primary"></a>
     </div>
 </div>
 

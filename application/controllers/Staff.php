@@ -59,7 +59,17 @@ class Staff extends CI_Controller
                 if($access_nivel['pages_EV'] != 'true'){ //NO TIENE ACCESO A LA ZONA
                     redirect(base_url());
                 }else{
-                    $this->load->view("pages_EV/staff_calendar");
+                    $data['result'] = $this->db->get('events')->result();
+
+                                foreach ($data['result'] as $key => $value) {
+                                        $data['data'][$key]['title'] = $value->title;
+                                        $data['data'][$key]['start'] = $value->start;
+                                        $data['data'][$key]['end'] = $value->end;
+                                        $data['data'][$key]['description'] = $value->description;
+                                        $data['data'][$key]['img'] = $value->img;
+                                        $data['data'][$key]['foro'] = $value->foro;
+                                }
+                    $this->load->view("pages_EV/staff_calendar", $data);
                 }
             }
         }

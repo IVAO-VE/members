@@ -53,7 +53,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);
-                $*'#img').attr('src', info.event.extendedProps.img);
+                $('#img').attr('src', info.event.extendedProps.img);
                 Metro.dialog.open('#click');
 
             }

@@ -49,17 +49,9 @@ $this->load->view("_lib/lib.menu.php");
                 }
             ],*/
             eventClick: function(info) {
-                console.log(info.event.extendedProps.description);
-                    Metro.dialog.create({
-                        title: info.event.title,
-                        content: '<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><textarea cols="30" rows="10" data-role="textarea">'  + info.event.extendedProps.description + '</textarea></div></div></div>',
-                        actions: [{
-                                caption: "Cerrar",
-                                cls: "js-dialog-close",
-                            }
-                        ]
-                    });
-                
+                $('#tituloEvento').html(info.event.title);
+                Metro.dialog.open('#click');
+
             }
         });
 
@@ -74,11 +66,9 @@ $this->load->view("_lib/lib.menu.php");
 </style>
 
 <?php echo json_encode($data); ?>
-
-<div id='calendar'></div>
-
-<div class="dialog" data-role="dialog" id="demoDialog1">
-    <div class="dialog-title">Use Windows location service?</div>
+<!-- Dialog Eventclick -->
+<div class="dialog" data-role="dialog" id="click">
+    <div class="dialog-title" id="tituloEvento">Event 1</div>
     <div class="dialog-content">
         Bassus abactors ducunt ad triticum.
         A fraternal form of manifestation is the bliss.
@@ -88,9 +78,14 @@ $this->load->view("_lib/lib.menu.php");
         <button class="button primary js-dialog-close">Agree</button>
     </div>
 </div>
-<button class="button primary"
-    onclick="Metro.dialog.open('#demoDialog1')">Open dialog</button>
+
+<!-- Fin Dialog eventclick -->
+
+<div id='calendar'></div>
+<button class="button primary" onclick="">Open dialog</button>
 
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>
+
+<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><textarea cols="30" rows="10" data-role="textarea">' + info.event.extendedProps.description + '</textarea></div></div></div>

@@ -52,7 +52,7 @@ $this->load->view("_lib/lib.menu.php");
                 console.log(info.event.extendedProps.description);
                     Metro.dialog.create({
                         title: info.event.title,
-                        content: '<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><textarea cols="30" rows="10">'  + info.event.extendedProps.description + '</textarea></div></div></div>',
+                        content: '<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><textarea cols="30" rows="10" data-role="textarea">'  + info.event.extendedProps.description + '</textarea></div></div></div>',
                         actions: [{
                                 caption: "Cerrar",
                                 cls: "js-dialog-close",
@@ -77,6 +77,19 @@ $this->load->view("_lib/lib.menu.php");
 
 <div id='calendar'></div>
 
+<div class="dialog" data-role="dialog" id="demoDialog1">
+    <div class="dialog-title">Use Windows location service?</div>
+    <div class="dialog-content">
+        Bassus abactors ducunt ad triticum.
+        A fraternal form of manifestation is the bliss.
+    </div>
+    <div class="dialog-actions">
+        <button class="button js-dialog-close">Disagree</button>
+        <button class="button primary js-dialog-close">Agree</button>
+    </div>
+</div>
+<button class="button primary"
+    onclick="Metro.dialog.open('#demoDialog1')">Open dialog</button>
 
 <?php
 $this->load->view("_lib/lib.footer.php");

@@ -50,8 +50,8 @@ $this->load->view("_lib/lib.menu.php");
             ],*/
             eventClick: function(info) {
                 $('#tituloEvento').html(info.event.title);
-                $('#txtStart').val(info.event.start);
-                $('#txtEnd').val(info.event.end);
+                $('#txtStart').val(info.event.startStr);
+                $('#txtEnd').val(info.event.endStr);
                 Metro.dialog.open('#click');
 
             }

@@ -65,6 +65,7 @@ $this->load->view("_lib/lib.menu.php");
             dateClick: function(info) {
                 $('#btnModificar').hide();
                 $('#btnEliminar').hide();
+                LimpiarForm()
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
             }

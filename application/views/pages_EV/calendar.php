@@ -52,6 +52,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#tituloEvento').html(info.event.title);
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
+                $('#txtDescription').val(info.event.extendedProps.description);
                 Metro.dialog.open('#click');
 
             }
@@ -70,21 +71,28 @@ $this->load->view("_lib/lib.menu.php");
 <?php echo json_encode($data); ?>
 <!-- Dialog Eventclick -->
 <div class="dialog" data-role="dialog" id="click">
-    <div class="dialog-title" id="tituloEvento">Event 1</div>
+    <div class="dialog-title text-center" id="tituloEvento">Event 1</div>
     <div class="dialog-content">
         <div class="grid">
             <div class="row">
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha inicio</label>
-                        <input type="text" id="txtStart" disabled>
+                        <input type="text" class="fg-black" id="txtStart" disabled>
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha final</label>
-                        <input type="text" id="txtEnd" disabled>
+                        <input type="text" class="fg-black" id="txtEnd" disabled>
                     </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <div class="form-group">
+                        <input type="text" class="fg-black" id="txtDescription" disabled>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,5 +111,3 @@ $this->load->view("_lib/lib.menu.php");
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>
-
-<div class="gird"><div class="row"><div class="cell"><input type="text" data-role="input" data-prepend="Fehca inicio: " value= ' + info.event.startStr + '  disabled></div><div class="cell"><input type="text" data-role="input" data-prepend="Fecha final: " value= ' + info.event.endStr + ' disabled></div></div><div class="row"><div class="cell"><textarea cols="30" rows="10" data-role="textarea">' + info.event.extendedProps.description + '</textarea></div></div></div>

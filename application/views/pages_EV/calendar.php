@@ -77,7 +77,7 @@ $this->load->view("_lib/lib.menu.php");
         <div class="grid">
             <div class="row">
                 <div class="cell d-flex flex-justify-center">
-                    <img id="img" src="https://ve.ivao.aero/images/Banner/img4.png" width="350px" height="200px">
+                    <img id="img" src="https://ve.ivao.aero/images/Banner/img4.png" width="350px" height="150px">
                 </div>
             </div>
             <div class="row">
@@ -105,8 +105,7 @@ $this->load->view("_lib/lib.menu.php");
         </div>
     </div>
     <div class="dialog-actions">
-        <button class="button js-dialog-close">Disagree</button>
-        <button class="button primary js-dialog-close">Agree</button>
+        <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>
 

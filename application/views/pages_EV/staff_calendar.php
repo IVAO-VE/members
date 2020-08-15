@@ -65,7 +65,7 @@ $this->load->view("_lib/lib.menu.php");
             dateClick: function(info) {
                 $('#btnModificar').hide();
                 $('#btnEliminar').hide();
-                //LimpiarForm()
+                LimpiarForm()
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
             }
@@ -147,10 +147,10 @@ $this->load->view("_lib/lib.menu.php");
     });
     function LimpiarForm() {
         $('#txtStart').val('');
-        $('#txtEnd').val('');
-        $('#txtDescription').val('');
-        $('#URLimg').val('');
-        $('#URLforo').val('');
+    //    $('#txtEnd').val('');
+    //    $('#txtDescription').val('');
+    //    $('#URLimg').val('');
+    //    $('#URLforo').val('');
     }
 
     function RecolectarDatosGUI(){

@@ -49,10 +49,10 @@ $this->load->view("_lib/lib.menu.php");
 
         function LimpiarForm() {
             $('#txtStart').val(' ');
-            $('#txtEnd').val('');
-            $('#txtDescription').val('');
-            $('#URLimg').val('');
-            $('#URLforo').val('');
+            //    $('#txtEnd').val('');
+            //    $('#txtDescription').val('');
+            //    $('#URLimg').val('');
+            //    $('#URLforo').val('');
         }
 
         var calendar = new FullCalendar.Calendar(calendarEl, {

@@ -147,7 +147,7 @@ $this->load->view("_lib/lib.menu.php");
         RecolectarDatosGUI();
     });
     function LimpiarForm() {
-        $('#img').attr('src', '');
+       // $('#img').attr('src', '');
         $('#txtStart').val('');
         $('#txtEnd').val('');
         $('#txtDescription').val('');

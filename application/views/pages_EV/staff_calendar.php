@@ -18,6 +18,40 @@ $this->load->view("_lib/lib.header.php");
 $this->load->view("_lib/lib.menu.php");
 ?>
 <script>
+    var NuevoEvento;
+    $('#btnNuevo').click(function(){
+        RecolectarDatosGUI();
+    });
+    function LimpiarForm() {
+        $('#txtStart').val(' ');
+    //    $('#txtEnd').val('');
+    //    $('#txtDescription').val('');
+    //    $('#URLimg').val('');
+    //    $('#URLforo').val('');
+    }
+
+    function RecolectarDatosGUI(){
+        NuevoEvento={
+            title:$('#tituloEvento').val();
+            start:$('#txtStart').val();
+            end:$('#end').val();
+        };
+    }
+
+    function EnviarInformacion(accion, ObjEvento){
+        $.ajax({
+            type: 'POST',
+            url: "<?php echo base_url('staff/EVinsert') ?>",
+            data: ObjEvento,
+            success:function()
+            {
+                calendar.fullCalendar('refetchEvents');
+                alert("Evento agregado correctamente");
+            }
+        });
+    }
+</script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
@@ -140,40 +174,6 @@ $this->load->view("_lib/lib.menu.php");
 
 <div id='calendar'></div>
 
-<script>
-    var NuevoEvento;
-    $('#btnNuevo').click(function(){
-        RecolectarDatosGUI();
-    });
-    function LimpiarForm() {
-        $('#txtStart').val('');
-    //    $('#txtEnd').val('');
-    //    $('#txtDescription').val('');
-    //    $('#URLimg').val('');
-    //    $('#URLforo').val('');
-    }
-
-    function RecolectarDatosGUI(){
-        NuevoEvento={
-            title:$('#tituloEvento').val();
-            start:$('#txtStart').val();
-            end:$('#end').val();
-        };
-    }
-
-    function EnviarInformacion(accion, ObjEvento){
-        $.ajax({
-            type: 'POST',
-            url: "<?php echo base_url('staff/EVinsert') ?>",
-            data: ObjEvento,
-            success:function()
-            {
-                calendar.fullCalendar('refetchEvents');
-                alert("Evento agregado correctamente");
-            }
-        });
-    }
-</script>
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>

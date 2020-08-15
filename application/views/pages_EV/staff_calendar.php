@@ -65,6 +65,7 @@ $this->load->view("_lib/lib.menu.php");
             dateClick: function(info) {
                 $('#btnModificar').hide();
                 $('#btnEliminar').hide();
+                $('#btnNuevo').show();
                 LimpiarForm()
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
@@ -146,13 +147,12 @@ $this->load->view("_lib/lib.menu.php");
         RecolectarDatosGUI();
     });
     function LimpiarForm() {
-        $('#img').attr('src', 'https://ve.ivao.aero/images/Banner/img4.png');
+        $('#img').attr('src', '');
         $('#txtStart').val('');
         $('#txtEnd').val('');
         $('#txtDescription').val('');
         $('#URLimg').val('');
         $('#URLforo').val('');
-        $('#btnNuevo').show();
     }
 
     function RecolectarDatosGUI(){

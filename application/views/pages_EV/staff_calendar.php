@@ -65,7 +65,6 @@ $this->load->view("_lib/lib.menu.php");
             dateClick: function(info) {
                 $('#btnModificar').hide();
                 $('#btnEliminar').hide();
-               // $('#btnNuevo').show();
                 LimpiarForm()
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
@@ -147,7 +146,6 @@ $this->load->view("_lib/lib.menu.php");
         RecolectarDatosGUI();
     });
     function LimpiarForm() {
-       // $('#img').attr('src', '');
         $('#txtStart').val('');
         $('#txtEnd').val('');
         $('#txtDescription').val('');

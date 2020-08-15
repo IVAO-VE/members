@@ -19,32 +19,24 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <script>
     var NuevoEvento;
-    $('#btnNuevo').click(function(){
+    $('#btnNuevo').click(function() {
         RecolectarDatosGUI();
     });
-    function LimpiarForm() {
-        $('#txtStart').val(' ');
-    //    $('#txtEnd').val('');
-    //    $('#txtDescription').val('');
-    //    $('#URLimg').val('');
-    //    $('#URLforo').val('');
-    }
 
-    function RecolectarDatosGUI(){
-        NuevoEvento={
-            title:$('#tituloEvento').val();
-            start:$('#txtStart').val();
-            end:$('#end').val();
+    function RecolectarDatosGUI() {
+        NuevoEvento = {
+            title: $('#tituloEvento').val();
+            start: $('#txtStart').val();
+            end: $('#end').val();
         };
     }
 
-    function EnviarInformacion(accion, ObjEvento){
+    function EnviarInformacion(accion, ObjEvento) {
         $.ajax({
             type: 'POST',
             url: "<?php echo base_url('staff/EVinsert') ?>",
             data: ObjEvento,
-            success:function()
-            {
+            success: function() {
                 calendar.fullCalendar('refetchEvents');
                 alert("Evento agregado correctamente");
             }
@@ -55,6 +47,14 @@ $this->load->view("_lib/lib.menu.php");
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
+
+        function LimpiarForm() {
+            $('#txtStart').val(' ');
+            //    $('#txtEnd').val('');
+            //    $('#txtDescription').val('');
+            //    $('#URLimg').val('');
+            //    $('#URLforo').val('');
+        }
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
             timeZone: 'UTC',
@@ -102,7 +102,7 @@ $this->load->view("_lib/lib.menu.php");
                 LimpiarForm();
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
-            }
+            },
         });
 
         calendar.render();

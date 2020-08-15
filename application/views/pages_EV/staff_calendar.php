@@ -141,12 +141,39 @@ $this->load->view("_lib/lib.menu.php");
 <div id='calendar'></div>
 
 <script>
+    var NuevoEvento;
+    $('#btnNuevo').click(function(){
+        RecolectarDatosGUI();
+    });
     function LimpiarForm() {
+        $('#img').attr('src', 'https://ve.ivao.aero/images/Banner/img4.png');
         $('#txtStart').val('');
         $('#txtEnd').val('');
         $('#txtDescription').val('');
         $('#URLimg').val('');
         $('#URLforo').val('');
+        $('#btnNuevo').show();
+    }
+
+    function RecolectarDatosGUI(){
+        NuevoEvento={
+            title:$('#tituloEvento').val();
+            start:$('#txtStart').val();
+            end:$('#end').val();
+        };
+    }
+
+    function EnviarInformacion(accion, ObjEvento){
+        $.ajax({
+            type: 'POST',
+            url: "<?php echo base_url('staff/EVinsert') ?>",
+            data: ObjEvento,
+            success:function()
+            {
+                calendar.fullCalendar('refetchEvents');
+                alert("Evento agregado correctamente");
+            }
+        });
     }
 </script>
 <?php

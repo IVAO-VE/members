@@ -83,7 +83,7 @@ class Staff extends CI_Controller
         $start = $this->input->post('start');
         $startTime = $this->input->post('startTime');
         $end = $this->input->post('end');
-        $endTime = $this - input->post('endTime');
+        $endTime = $this->input->post('endTime');
         $Description = $this->input->post('Description');
         $img = $this->input->post('img');
         $foro = $this->input->post('foro');

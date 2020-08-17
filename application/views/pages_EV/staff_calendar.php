@@ -25,7 +25,7 @@ $this->load->view("_lib/lib.menu.php");
         var NuevoEvento;
         $('#btnNuevo').click(function() {
             RecolectarDatosGUI();
-            EnviarInformacion('insert',NuevoEvento)
+            EnviarInformacion(NuevoEvento)
         });
 
         function RecolectarDatosGUI() {
@@ -36,10 +36,10 @@ $this->load->view("_lib/lib.menu.php");
             };
         }
 
-        function EnviarInformacion(accion, ObjEvento) {
+        function EnviarInformacion(ObjEvento) {
             $.ajax({
                 type: 'POST',
-                url: "<?php echo base_url('staff/EV') ?>"+accion,
+                url: "<?php echo base_url('staff/EVinsert') ?>",
                 data: ObjEvento,
                 success: function() {
                     calendar.fullCalendar('refetchEvents');

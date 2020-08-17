@@ -102,7 +102,7 @@ $this->load->view("_lib/lib.menu.php");
                         url: "<?php echo base_url(); ?>staff/EVinsert",
                         data: {start:start},
                         success: function() {
-                            calendar.fullCalendar('refetchEvents');
+                            $('#calendar').fullCalendar('refetchEvents');
                             alert("Evento agregado correctamente");
                         },
                         error: function() {

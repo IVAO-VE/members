@@ -28,6 +28,7 @@ $this->load->view("_lib/lib.menu.php");
             $('#txtDescription').val(' ');
             $('#URLimg').val(' ');
             $('#URLforo').val(' ');
+            $('#img').hide();
         }
 
         var calendar = new FullCalendar.Calendar(calendarEl, {

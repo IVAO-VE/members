@@ -181,7 +181,7 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha inicio</label>
-                        <input type="text" class="fg-black" data-role="calendarpicker" id="start" name="start">
+                        <input type="text" class="fg-black" data-role="calendarpicker" id="start" name="start" required>
                     </div>
                 </div>
                 <div class="cell-6">
@@ -192,10 +192,20 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
             </div>
             <div class="row">
+                <div class="cell-6">
+                    <label>Fecha final</label>
+                    <input type="text" data-role="calendarpicker" name="end" class="fg-black">
+                </div>
+                <div class="cell-6">
+                    <label>Hora final</label>
+                    <input class="fg-black" data-role="timepicker" data-value="0" name="endTime">
+                </div>
+            </div>
+            <div class="row">
                 <div class="cell">
                     <div class="form-group">
                         <label>Descripcion</label>
-                        <input type="text" class="fg-black" name="txtDescription">
+                        <input type="text" class="fg-black" name="Description" required>
                     </div>
                 </div>
             </div>
@@ -203,13 +213,13 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Url Imagen</label>
-                        <input name="URLimg" class="fg-black" type="text">
+                        <input name="img" class="fg-black" type="text">
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Url Foro</label>
-                        <input type="text" class="fg-black" name="URLforo">
+                        <input type="text" class="fg-black" name="foro">
                     </div>
                 </div>
             </div>

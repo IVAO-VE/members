@@ -82,13 +82,22 @@ class Staff extends CI_Controller
         $title = $this->input->post('title');
         $start = $this->input->post('start');
         $startTime = $this->input->post('startTime');
+        $end = $this->input->post('end');
+        $endTime = $this - input->post('endTime');
+        $Description = $this->input->post('Description');
+        $img = $this->input->post('img');
+        $foro = $this->input->post('foro');
 
+        $FinalEnd = $end . ' ' . $endTime;
         $FinalStart = $start . ' ' . $startTime;
 
         $data = array(
             "title" => $title,
             "start" => $FinalStart,
-
+            "end" => $FinalEnd,
+            "description" => $Description,
+            "img" => $img,
+            "foro" => $foro
         );
 
         $query = $this->db->insert('events', $data);

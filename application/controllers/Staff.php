@@ -65,7 +65,7 @@ class Staff extends CI_Controller
                 $data['result'] = $this->db->get('events')->result();
 
                 foreach ($data['result'] as $key => $value) {
-                    $data['date'][$key]['eid'] = $value->eid;
+                    $data['date'][$key]['id'] = $value->id;
                     $data['data'][$key]['title'] = $value->title;
                     $data['data'][$key]['start'] = $value->start;
                     $data['data'][$key]['end'] = $value->end;

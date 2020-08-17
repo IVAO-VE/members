@@ -90,8 +90,8 @@ $this->load->view("_lib/lib.menu.php");
                 $('#btnNuevo').show();
                 LimpiarForm();
                 $('#txtStart').prop('disabled', true);
-                $('#txtStart').val(info.dateStr);
-                $('#tituloEvento').html(info.dateStr);
+                $('#Start').val(info.dateStr);
+                $('#tituloDate').html(info.dateStr);
                 Metro.dialog.open('#date');
             },
         });
@@ -107,7 +107,7 @@ $this->load->view("_lib/lib.menu.php");
 </style>
 <!-- Dialog Eventclick -->
 <div class="dialog" data-role="dialog" id="click">
-    <div class="dialog-title text-center" id="tituloEvento">Event 1</div>
+    <div class="dialog-title text-center" id="tituloDate">Event 1</div>
     <div class="dialog-content">
         <div class="grid">
             <div class="row">
@@ -179,7 +179,7 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Hora inicio</label>
-                        <input class="fg-black" data-role="timepicker" data-value="0" name="time">
+                        <input class="fg-black" data-role="timepicker" data-value="0" name="startTime">
                     </div>
                 </div>
             </div>

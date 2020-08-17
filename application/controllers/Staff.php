@@ -79,12 +79,14 @@ class Staff extends CI_Controller
 
     public function EVinsert()
     {
+        $title = $this->input->post('title');
         $start = $this->input->post('start');
         $startTime = $this->input->post('startTime');
 
         $FinalStart = $start . ' ' . $startTime;
 
         $data = array(
+            "title" => $title,
             "start" => $FinalStart,
 
         );

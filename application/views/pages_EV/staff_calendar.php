@@ -94,7 +94,8 @@ $this->load->view("_lib/lib.menu.php");
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
                 $('#btnNuevo').on('click', function() {
-                    var start = $('#txtStart').val();
+                    //var start = $('#txtStart').val();
+                    var start = '1';
                     var end = $('#end').val();
                     $.ajax({
                         type: 'POST',

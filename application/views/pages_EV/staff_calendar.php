@@ -44,6 +44,9 @@ $this->load->view("_lib/lib.menu.php");
                 success: function() {
                     calendar.fullCalendar('refetchEvents');
                     alert("Evento agregado correctamente");
+                },
+                error:function() {
+                    alert("la has cagado");
                 }
             });
         }

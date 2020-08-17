@@ -75,7 +75,8 @@ class Staff extends CI_Controller
         }
 
         public function EVinsert(){
-            if($this->input->post('title')){
+            $this->phpdebug->debug('[DEBUG] -> Ingresando a la funcion');
+            if($this->input->post('start')){
                 $this->phpdebug->debug('[DEBUG] -> Ingresando al array');
                 $data = array(
                     'title' => $this->input->post('title'),

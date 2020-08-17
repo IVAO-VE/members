@@ -173,13 +173,13 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha inicio</label>
-                        <input type="text" class="fg-black" name="start">
+                        <input type="text" class="fg-black" data-role="calendarpicker" name="start">
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
-                        <label>Fecha final</label>
-                        <input type="text" class="fg-black" name="txtEnd">
+                        <label>Hora inicio</label>
+                        <input class="fg-black" data-role="timepicker" data-value="0" name="time">
                     </div>
                 </div>
             </div>

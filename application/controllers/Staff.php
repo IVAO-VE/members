@@ -75,12 +75,14 @@ class Staff extends CI_Controller
         }
 
         public function EVinsert(){
-            if($this->input->post('id')){
+            if($this->input->post('title')){
+                $this->phpdebug->debug('[DEBUG] -> Ingresando al array');
                 $data = array(
                     'title' => $this->input->post('title'),
                     'start' => $this->input->post('start'),
                     'end' => $this->input->post('end'),
                 );
+                $this->phpdebug->debug('[DEBIG] -> Saliendo del array');
 
                 $this->db->insert('events', $data);
             }

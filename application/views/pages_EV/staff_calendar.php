@@ -22,6 +22,32 @@ $this->load->view("_lib/lib.menu.php");
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
 
+        var NuevoEvento;
+        $('#btnNuevo').click(function() {
+            RecolectarDatosGUI();
+            EnviarInformacion('insert',NuevoEvento)
+        });
+
+        function RecolectarDatosGUI() {
+            NuevoEvento = {
+                title: $('#tituloEvento').val(),
+                start: $('#txtStart').val(),
+                end: $('#end').val(),
+            };
+        }
+
+        function EnviarInformacion(accion, ObjEvento) {
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo base_url('staff/EV') ?>"+accion,
+                data: ObjEvento,
+                success: function() {
+                    calendar.fullCalendar('refetchEvents');
+                    alert("Evento agregado correctamente");
+                }
+            });
+        }
+
         function LimpiarForm() {
             $('#txtStart').val(' ');
             $('#txtEnd').val(' ');

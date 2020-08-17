@@ -23,31 +23,16 @@ $this->load->view("_lib/lib.menu.php");
         var events = <?php echo json_encode($data) ?>;
 
         var NuevoEvento;
-        $('#btnNuevo').click(function() {
-            RecolectarDatosGUI();
-            EnviarInformacion(NuevoEvento)
-        });
+        //  $('#btnNuevo').click(function() {
+        //    RecolectarDatosGUI();
+        // EnviarInformacion(NuevoEvento)
+        //});
 
         function RecolectarDatosGUI() {
             NuevoEvento = {
                 start: $('#txtStart').val(),
                 end: $('#end').val(),
             };
-        }
-
-        function EnviarInformacion(ObjEvento) {
-            $.ajax({
-                type: 'POST',
-                url: "<?php echo base_url(); ?>staff/EVinsert",
-                data: ObjEvento,
-                success: function() {
-                    calendar.fullCalendar('refetchEvents');
-                    alert("Evento agregado correctamente");
-                },
-                error:function() {
-                    alert("la has cagado");
-                }
-            });
         }
 
         function LimpiarForm() {
@@ -108,6 +93,22 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtStart').val(info.dateStr);
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');
+                $('#btnNuevo').on('click', function() {
+                    var start = $('#txtStart').val();
+                    var end = $('#end').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: "<?php echo base_url(); ?>staff/EVinsert",
+                        data: {start:start},
+                        success: function() {
+                            calendar.fullCalendar('refetchEvents');
+                            alert("Evento agregado correctamente");
+                        },
+                        error: function() {
+                            alert("la has cagado");
+                        }
+                    });
+                });
             },
         });
 

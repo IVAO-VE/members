@@ -30,7 +30,6 @@ $this->load->view("_lib/lib.menu.php");
 
         function RecolectarDatosGUI() {
             NuevoEvento = {
-                title: $('#tituloEvento').val(),
                 start: $('#txtStart').val(),
                 end: $('#end').val(),
             };
@@ -39,7 +38,7 @@ $this->load->view("_lib/lib.menu.php");
         function EnviarInformacion(ObjEvento) {
             $.ajax({
                 type: 'POST',
-                url: "<?php echo base_url('staff/EVinsert') ?>",
+                url: "<?php echo base_url(); ?>staff/EVinsert",
                 data: ObjEvento,
                 success: function() {
                     calendar.fullCalendar('refetchEvents');

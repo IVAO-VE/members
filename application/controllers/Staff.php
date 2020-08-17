@@ -79,7 +79,6 @@ class Staff extends CI_Controller
             if($this->input->post('start')){
                 $this->phpdebug->debug('[DEBUG] -> Ingresando al array');
                 $data = array(
-                    'title' => $this->input->post('title'),
                     'start' => $this->input->post('start'),
                     'end' => $this->input->post('end'),
                 );

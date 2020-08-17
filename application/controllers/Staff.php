@@ -73,6 +73,18 @@ class Staff extends CI_Controller
                 }
             }
         }
+
+        public function EVinsert(){
+            if($this->input->post('id')){
+                $data = array(
+                    'title' => $this->input->post('title'),
+                    'start' => $this->input->post('start'),
+                    'end' => $this->input->post('end'),
+                );
+
+                $this->db->insert('events', $data);
+            }
+        }
         
         
 

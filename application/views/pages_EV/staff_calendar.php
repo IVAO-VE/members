@@ -76,6 +76,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#btnEliminar').hide();
                 $('#btnNuevo').show();
                 LimpiarForm();
+                $('#txtStart').prop('disabled', true);
                 $('#txtStart').val(info.dateStr);
                 $('#tituloEvento').html(info.dateStr);
                 Metro.dialog.open('#click');

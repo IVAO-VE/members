@@ -65,13 +65,13 @@ class Staff extends CI_Controller
                 $data['result'] = $this->db->get('events')->result();
 
                 foreach ($data['result'] as $key => $value) {
-                    $data['date'][$key]['id'] = $value->id;
                     $data['data'][$key]['title'] = $value->title;
                     $data['data'][$key]['start'] = $value->start;
                     $data['data'][$key]['end'] = $value->end;
                     $data['data'][$key]['description'] = $value->description;
                     $data['data'][$key]['img'] = $value->img;
                     $data['data'][$key]['foro'] = $value->foro;
+                    $data['date'][$key]['id'] = $value->id;
                 }
                 $this->load->view("pages_EV/staff_calendar", $data);
             }

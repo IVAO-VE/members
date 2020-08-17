@@ -121,7 +121,8 @@ $this->load->view("_lib/lib.menu.php");
             </div>
             <div class="row">
                 <div class="cell">
-                    <input type="text" name="txtTitle" class="fg-black">
+                    <label>Titulo</label>
+                    <input type="text" name="txtTitle" id="txtTitle" class="fg-black">
                 </div>
             </div>
             <div class="row">

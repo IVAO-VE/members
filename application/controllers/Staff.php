@@ -75,17 +75,20 @@ class Staff extends CI_Controller
         }
 
         public function EVinsert(){
-            $this->phpdebug->debug('[DEBUG] -> Ingresando a la funcion');
-            if($this->input->post('start')){
-                $this->phpdebug->debug('[DEBUG] -> Ingresando al array');
-                $data = array(
-                    'start' => $this->input->post('start'),
-                    'end' => $this->input->post('end'),
-                );
-                $this->phpdebug->debug('[DEBIG] -> Saliendo del array');
+            $start = $this->input->post('start');
 
-                $this->db->insert('events', $data);
+            $data = array(
+                "start" => $start
+            );
+
+            $query = $this->db->insert('events', $data);
+
+            if($query){
+                redirect(base_url('staff/EVcalendar'));
+            }else{
+                redirect(base_url('staff/calendarEV'));
             }
+
         }
         
         

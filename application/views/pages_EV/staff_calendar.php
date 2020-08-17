@@ -92,24 +92,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtStart').prop('disabled', true);
                 $('#txtStart').val(info.dateStr);
                 $('#tituloEvento').html(info.dateStr);
-                Metro.dialog.open('#click');
-                $('#btnNuevo').on('click', function() {
-                    //var start = $('#txtStart').val();
-                    var start = '1';
-                    var end = $('#end').val();
-                    $.ajax({
-                        type: 'POST',
-                        url: "<?php echo base_url(); ?>staff/EVinsert",
-                        data: {start:start},
-                        success: function() {
-                            $('#calendar').fullCalendar('refetchEvents');
-                            alert("Evento agregado correctamente");
-                        },
-                        error: function() {
-                            alert("la has cagado");
-                        }
-                    });
-                });
+                Metro.dialog.open('#date');
             },
         });
 
@@ -179,6 +162,58 @@ $this->load->view("_lib/lib.menu.php");
 </div>
 
 <!-- Fin Dialog eventclick -->
+
+<!-- Inicio Dialog DateClick -->
+<div class="dialog" data-role="dialog" id="date">
+    <div class="dialog-title text-center" id="tituloEvento">Event 1</div>
+    <div class="dialog-content">
+        <?php echo form_open(base_url('staff/EVinsert'))?>
+        <div class="grid">
+            <div class="row">
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Fecha inicio</label>
+                        <input type="text" class="fg-black" name="start">
+                    </div>
+                </div>
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Fecha final</label>
+                        <input type="text" class="fg-black" name="txtEnd">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <div class="form-group">
+                        <label>Descripcion</label>
+                        <input type="text" class="fg-black" name="txtDescription">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Url Imagen</label>
+                        <input name="URLimg" class="fg-black" type="text">
+                    </div>
+                </div>
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Url Foro</label>
+                        <input type="text" class="fg-black" name="URLforo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-actions">
+        <input type="submit" value="Agregar" class="button primary">
+        <button class="button js-dialog-close">Cerrar</button>
+        <?php echo form_close() ?>
+    </div>
+</div>
+<!-- Fin Dialog DateClick -->
 
 <div id='calendar'></div>
 

@@ -108,4 +108,9 @@ class Staff extends CI_Controller
             redirect(base_url('staff/calendarEV'));
         }
     }
+
+    public function EVedit(){
+        $id = $this->input->post('id');
+        
+    }
 }

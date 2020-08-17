@@ -73,6 +73,7 @@ $this->load->view("_lib/lib.menu.php");
             ],*/
             eventClick: function(info) {
                 $('#tituloEvento').html(info.event.title);
+                $('#id').val(info.event.extendedProps.id);
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);
@@ -109,11 +110,13 @@ $this->load->view("_lib/lib.menu.php");
 <div class="dialog" data-role="dialog" id="click">
     <div class="dialog-title text-center" id="tituloDate">Event 1</div>
     <div class="dialog-content">
+        <?php echo form_open('staff/EVedit') ?>
         <div class="grid">
             <div class="row">
                 <div class="cell d-flex flex-justify-center">
                     <img id="img" src="https://ve.ivao.aero/images/Banner/img4.png" width="350px" height="150px">
                 </div>
+                <input type="hidden" id="id" name="id" readonly>
             </div>
             <div class="row">
                 <div class="cell-6">
@@ -154,8 +157,8 @@ $this->load->view("_lib/lib.menu.php");
         </div>
     </div>
     <div class="dialog-actions">
-        <a id="btnNuevo" href="" class="button primary">Agregar</a>
-        <a id="btnModificar" href="" class="button primary">Modificar</a>
+        <input type="submit" id="btnModificar" value="Modificar" class="button primary">
+        <?php echo form_close() ?>
         <a id="btnEliminar" href="" class="button danger">Eliminar</a>
         <button class="button js-dialog-close">Cerrar</button>
     </div>

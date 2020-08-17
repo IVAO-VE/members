@@ -111,6 +111,23 @@ class Staff extends CI_Controller
 
     public function EVedit(){
         $id = $this->input->post('id');
-        
+        $txtTitle = $this->input->post('txtTitle');
+        $txtStart = $this->input->post('txtStart');
+        $txtEnd = $this->input->post('txtEnd');
+        $txtDescription = $this->input->post('txtDescription');
+        $URLimg = $this->input->post('URLimg');
+        $URLforo = $this->input->post('URLforo');
+
+        $data = array(
+            'title' => $txtTitle,
+            'start' => $txtStart,
+            'end' => $txtEnd
+        );
+
+        $this->db->where('id', $id);
+        $query = $this->db->update('events', $data);
+        if($query){
+            redirect(base_url('staff/EVcalendar'));
+        }
     }
 }

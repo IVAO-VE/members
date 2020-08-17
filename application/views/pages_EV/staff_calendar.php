@@ -73,6 +73,7 @@ $this->load->view("_lib/lib.menu.php");
             ],*/
             eventClick: function(info) {
                 $('#tituloEvento').html(info.event.title);
+                $('#txtTitle').val(info.event.title);
                 $('#id').val(info.event.extendedProps.id);
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
@@ -119,16 +120,21 @@ $this->load->view("_lib/lib.menu.php");
                 <input type="hidden" id="id" name="id" readonly>
             </div>
             <div class="row">
+                <div class="cell">
+                    <input type="text" name="txtTitle" class="fg-black">
+                </div>
+            </div>
+            <div class="row">
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha inicio</label>
-                        <input type="text" class="fg-black" id="txtStart">
+                        <input type="text" class="fg-black" name="txtStart" id="txtStart">
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha final</label>
-                        <input type="text" class="fg-black" id="txtEnd">
+                        <input type="text" class="fg-black" name="txtEnd" id="txtEnd">
                     </div>
                 </div>
             </div>
@@ -136,7 +142,7 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell">
                     <div class="form-group">
                         <label>Descripcion</label>
-                        <input type="text" class="fg-black" id="txtDescription">
+                        <input type="text" class="fg-black" name="txtDescription" id="txtDescription">
                     </div>
                 </div>
             </div>
@@ -144,13 +150,13 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Url Imagen</label>
-                        <input id="URLimg" class="fg-black" type="text">
+                        <input id="URLimg" name="URLimg" class="fg-black" type="text">
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Url Foro</label>
-                        <input type="text" class="fg-black" id="URLforo">
+                        <input type="text" class="fg-black" name="URLforo" id="URLforo">
                     </div>
                 </div>
             </div>

@@ -74,7 +74,7 @@ $this->load->view("_lib/lib.menu.php");
             eventClick: function(info) {
                 $('#tituloEvento').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
-                $('#id').val(info.event.extendedProps.id);
+                $('#id').val(info.event.id);
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);

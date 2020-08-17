@@ -167,8 +167,16 @@ $this->load->view("_lib/lib.menu.php");
 <div class="dialog" data-role="dialog" id="date">
     <div class="dialog-title text-center" id="tituloDate">Event 1</div>
     <div class="dialog-content">
-        <?php echo form_open(base_url('staff/EVinsert'))?>
+        <?php echo form_open(base_url('staff/EVinsert')) ?>
         <div class="grid">
+            <div class="row">
+                <div class="cell">
+                    <div class="form-group">
+                        <label>Titulo evento</label>
+                        <input type="text" name="title" class="fg-black" required>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="cell-6">
                     <div class="form-group">
@@ -209,8 +217,8 @@ $this->load->view("_lib/lib.menu.php");
     </div>
     <div class="dialog-actions">
         <input type="submit" value="Agregar" class="button primary">
-        <button class="button js-dialog-close">Cerrar</button>
         <?php echo form_close() ?>
+        <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>
 <!-- Fin Dialog DateClick -->

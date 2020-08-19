@@ -74,7 +74,8 @@ $this->load->view("_lib/lib.menu.php");
                 $('#URLimg').val(info.event.extendedProps.img);
                 $('#URLforo').val(info.event.extendedProps.foro);
                 var DelUrl = <?php echo base_url('staff/EVdelete') ?>;
-                $('#btnEliminar').attr('href', DelUrl + ' ' + info.event.extendedProps.event);
+                var FUrl = DelUrl + ' ' + info.event.extendedProps.event;
+                $('#btnEliminar').attr('href', FUrl);
                 Metro.dialog.open('#click');
 
             },

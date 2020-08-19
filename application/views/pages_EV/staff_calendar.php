@@ -21,6 +21,7 @@ $this->load->view("_lib/lib.menu.php");
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
+        var DelUrl = <?php echo base_url('staff/EVdelete') ?>;
 
         function LimpiarForm() {
             $('#txtStart').val(' ');
@@ -73,7 +74,6 @@ $this->load->view("_lib/lib.menu.php");
                 $('#btnNuevo').hide();
                 $('#URLimg').val(info.event.extendedProps.img);
                 $('#URLforo').val(info.event.extendedProps.foro);
-                //var DelUrl = <?php echo base_url('staff/EVdelete') ?>;
                 //var FUrl = DelUrl + ' ' + info.event.extendedProps.event;
                 //$('#btnEliminar').attr('href', FUrl);
                 Metro.dialog.open('#click');

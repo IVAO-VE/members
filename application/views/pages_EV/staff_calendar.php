@@ -91,12 +91,6 @@ $this->load->view("_lib/lib.menu.php");
         calendar.render();
     });
 </script>
-<style>
-    #calendar {
-        max-width: 1100px;
-        margin: 3 auto;
-    }
-</style>
 <!-- Dialog Eventclick -->
 <div class="dialog" data-role="dialog" id="click">
     <div class="dialog-title text-center" id="tituloDate">Event 1</div>

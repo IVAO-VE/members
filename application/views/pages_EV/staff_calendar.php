@@ -73,7 +73,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#btnNuevo').hide();
                 $('#URLimg').val(info.event.extendedProps.img);
                 $('#URLforo').val(info.event.extendedProps.foro);
-                $('#btnEliminar').attr('href', <?php echo base_url('staff/test2') ?>);
+                $('#btnEliminar').attr('href', "<?php echo base_url('staff/test2') ?>");
                 Metro.dialog.open('#click');
 
             },

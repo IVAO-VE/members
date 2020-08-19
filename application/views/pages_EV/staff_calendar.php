@@ -177,7 +177,7 @@ $this->load->view("_lib/lib.menu.php");
 <!-- Fin Dialog eventclick -->
 
 <!-- Inicio Dialog DateClick -->
-<div class="dialog" data-role="dialog" id="date">
+<div class="dialog" data-role="dialog" onclick="<?php echo base_url('staff/EVdelete') ?>" id="date">
     <div class="dialog-title text-center" id="tituloDate">Event 1</div>
     <div class="dialog-content">
         <?php echo form_open(base_url('staff/EVinsert')) ?>

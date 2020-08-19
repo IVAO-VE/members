@@ -125,7 +125,7 @@ class Staff extends CI_Controller
             'end' => $txtEnd
         );
 
-        $this->db->where('id', $id);
+        $this->db->where('event', $id);
         $query = $this->db->update('events', $data);
         if($query){
             redirect(base_url('staff/EVcalendar'));

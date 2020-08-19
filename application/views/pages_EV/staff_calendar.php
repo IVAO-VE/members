@@ -28,6 +28,10 @@ $this->load->view("_lib/lib.menu.php");
         // EnviarInformacion(NuevoEvento)
         //});
 
+        $('#btnEliminar').click(function(){
+            <?php redirect(base_url('staff/test')) ?>
+        });
+
         function RecolectarDatosGUI() {
             NuevoEvento = {
                 start: $('#txtStart').val(),
@@ -169,7 +173,7 @@ $this->load->view("_lib/lib.menu.php");
     <div class="dialog-actions">
         <input type="submit" id="btnModificar" value="Modificar" class="button primary">
         <?php echo form_close() ?>
-        <a id="btnEliminar" onclick="<?php echo base_url() ?>staff/EVdelete" href="" class="button danger">Eliminar</a>
+        <a id="btnEliminar" class="button danger">Eliminar</a>
         <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>

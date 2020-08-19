@@ -155,17 +155,13 @@ $this->load->view("_lib/lib.menu.php");
         </div>
     </div>
     <div class="dialog-actions">
-        <div class="gird">
-            <div class="row">
-                <input type="submit" id="btnModificar" value="Modificar" class="button primary">
-                <?php echo form_close() ?>
-                <?php echo form_open('staff/EVdelete') ?>
-                <input type="hidden" id="eventid" name="id" readonly>
-                <input type="submit" value="Eliminar" class="button alert">
-                <?php form_close() ?>
-                <button class="button js-dialog-close">Cerrar</button>
-            </div>
-        </div>
+        <input type="submit" id="btnModificar" value="Modificar" class="button primary">
+        <?php echo form_close() ?>
+        <?php echo form_open('staff/EVdelete') ?>
+        <input type="hidden" id="eventid" name="id" readonly>
+        <input type="submit" value="Eliminar" class="button alert">
+        <?php form_close() ?>
+        <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>
 

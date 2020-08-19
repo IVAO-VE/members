@@ -22,6 +22,19 @@ $this->load->view("_lib/lib.menu.php");
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
 
+        var NuevoEvento;
+        //  $('#btnNuevo').click(function() {
+        //    RecolectarDatosGUI();
+        // EnviarInformacion(NuevoEvento)
+        //});
+
+        function RecolectarDatosGUI() {
+            NuevoEvento = {
+                start: $('#txtStart').val(),
+                end: $('#end').val(),
+            };
+        }
+
         function LimpiarForm() {
             $('#txtStart').val(' ');
             $('#txtEnd').val(' ');
@@ -91,6 +104,12 @@ $this->load->view("_lib/lib.menu.php");
         calendar.render();
     });
 </script>
+<style>
+    #calendar {
+        max-width: 1100px;
+        margin: 3 auto;
+    }
+</style>
 <!-- Dialog Eventclick -->
 <div class="dialog" data-role="dialog" id="click">
     <div class="dialog-title text-center" id="tituloDate">Event 1</div>
@@ -150,9 +169,6 @@ $this->load->view("_lib/lib.menu.php");
     <div class="dialog-actions">
         <input type="submit" id="btnModificar" value="Modificar" class="button primary">
         <?php echo form_close() ?>
-        <?php echo form_open('staff/EVdelete') ?>
-        <input type="hidden" id="" name="id" readonly>
-        <a id="btnEliminar" class="button danger">Eliminar</a>
         <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>

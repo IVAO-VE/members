@@ -22,23 +22,6 @@ $this->load->view("_lib/lib.menu.php");
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
 
-        var NuevoEvento;
-        //  $('#btnNuevo').click(function() {
-        //    RecolectarDatosGUI();
-        // EnviarInformacion(NuevoEvento)
-        //});
-
-        $('#btnEliminar').click(function(){
-            window.location.href="<?php echo base_url('staff/test') ?>";
-        });
-
-        function RecolectarDatosGUI() {
-            NuevoEvento = {
-                start: $('#txtStart').val(),
-                end: $('#end').val(),
-            };
-        }
-
         function LimpiarForm() {
             $('#txtStart').val(' ');
             $('#txtEnd').val(' ');

@@ -21,7 +21,7 @@ $this->load->view("_lib/lib.menu.php");
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
-        var DelUrl = <?php base_url('staff/EVdelete') ?>;
+        //var DelUrl = <?php base_url('staff/EVdelete') ?>;
 
         function LimpiarForm() {
             $('#txtStart').val(' ');

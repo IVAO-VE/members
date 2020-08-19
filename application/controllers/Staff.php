@@ -131,5 +131,4 @@ class Staff extends CI_Controller
             redirect(base_url('staff/EVcalendar'));
         }
     }
-    
 }

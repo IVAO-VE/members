@@ -17,7 +17,6 @@ $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
 ?>
-<?php echo json_encode($data) ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -78,7 +77,7 @@ $this->load->view("_lib/lib.menu.php");
                 console.log(info.event.id);
                 $('#tituloEvento').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
-                $('#id').val(info.event.id);
+                $('#id').val(info.event.extendedProps.event);
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);

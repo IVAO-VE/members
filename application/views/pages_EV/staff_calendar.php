@@ -159,7 +159,7 @@ $this->load->view("_lib/lib.menu.php");
         <?php echo form_close() ?>
         <?php echo form_open('staff/EVdelete') ?>
         <input type="hidden" id="eventid" name="id" readonly>
-        <a id="btnEliminar" class="button danger">Eliminar</a>
+        <input type="submit" value="Eliminar" class="button alert">
         <?php form_close() ?>
         <button class="button js-dialog-close">Cerrar</button>
     </div>

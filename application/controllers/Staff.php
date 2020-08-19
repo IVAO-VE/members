@@ -110,7 +110,8 @@ class Staff extends CI_Controller
         }
     }
 
-    public function EVedit(){
+    public function EVedit()
+    {
         $id = $this->input->post('id');
         $txtTitle = $this->input->post('txtTitle');
         $txtStart = $this->input->post('txtStart');
@@ -127,6 +128,17 @@ class Staff extends CI_Controller
 
         $this->db->where('event', $id);
         $query = $this->db->update('events', $data);
+        if ($query) {
+            redirect(base_url('staff/EVcalendar'));
+        }
+    }
+
+    public function EVdelete()
+    {
+        $id = $this->input->post('id');
+
+        $this->db->where('event', $id);
+        $query = $this->db->delete('events');
         if($query){
             redirect(base_url('staff/EVcalendar'));
         }

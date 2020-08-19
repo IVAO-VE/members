@@ -21,7 +21,6 @@ $this->load->view("_lib/lib.menu.php");
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var events = <?php echo json_encode($data) ?>;
-        //var DelUrl = <?php base_url('staff/EVdelete') ?>;
 
         function LimpiarForm() {
             $('#txtStart').val(' ');
@@ -66,6 +65,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#tituloEvento').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
                 $('#id').val(info.event.extendedProps.event);
+                $('#eventid').val(info.event.extendedProps.event);
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);
@@ -74,8 +74,6 @@ $this->load->view("_lib/lib.menu.php");
                 $('#btnNuevo').hide();
                 $('#URLimg').val(info.event.extendedProps.img);
                 $('#URLforo').val(info.event.extendedProps.foro);
-                //var FUrl = DelUrl + ' ' + info.event.extendedProps.event;
-                //$('#btnEliminar').attr('href', FUrl);
                 Metro.dialog.open('#click');
 
             },
@@ -159,7 +157,10 @@ $this->load->view("_lib/lib.menu.php");
     <div class="dialog-actions">
         <input type="submit" id="btnModificar" value="Modificar" class="button primary">
         <?php echo form_close() ?>
+        <?php echo form_open('staff/EVdelete') ?>
+        <input type="hidden" id="eventid" name="id" readonly>
         <a id="btnEliminar" class="button danger">Eliminar</a>
+        <?php form_close() ?>
         <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>

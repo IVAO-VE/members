@@ -29,7 +29,7 @@ $this->load->view("_lib/lib.menu.php");
         //});
 
         $('#btnEliminar').click(function(){
-            window.location.href="<?php echo redirect(base_url('staff/test')) ?>";
+            window.location.href="<?php echo base_url('staff/test') ?>";
         });
 
         function RecolectarDatosGUI() {

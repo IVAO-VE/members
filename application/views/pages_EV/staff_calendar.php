@@ -169,7 +169,7 @@ $this->load->view("_lib/lib.menu.php");
     <div class="dialog-actions">
         <input type="submit" id="btnModificar" value="Modificar" class="button primary">
         <?php echo form_close() ?>
-        <a id="btnEliminar" href="" class="button danger">Eliminar</a>
+        <a id="btnEliminar" onclick="<?php echo base_url() ?>staff/EVdelete" href="" class="button danger">Eliminar</a>
         <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>
@@ -177,7 +177,7 @@ $this->load->view("_lib/lib.menu.php");
 <!-- Fin Dialog eventclick -->
 
 <!-- Inicio Dialog DateClick -->
-<div class="dialog" data-role="dialog" onclick="<?php echo base_url('staff/EVdelete') ?>" id="date">
+<div class="dialog" data-role="dialog" id="date">
     <div class="dialog-title text-center" id="tituloDate">Event 1</div>
     <div class="dialog-content">
         <?php echo form_open(base_url('staff/EVinsert')) ?>

@@ -172,7 +172,7 @@ $this->load->view("_lib/lib.menu.php");
                 <input type="submit" id="btnModificar" value="Modificar" class="button primary">
                 <?php echo form_close() ?>
                 <?php echo form_open('staff/testing') ?>
-                <a id="btnEliminar" onclick="<?php echo base_url() ?>staff/EVdelete" href="" class="button danger">Eliminar</a>
+                <input type="submit" value="Eliminar" class="button alert">
                 <?php echo form_close() ?>
                 <button class="button js-dialog-close">Cerrar</button>
             </div>

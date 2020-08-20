@@ -80,33 +80,67 @@ class Staff extends CI_Controller
 
     public function EVinsert()
     {
-        $title = $this->input->post('title');
-        $start = $this->input->post('start');
-        $startTime = $this->input->post('startTime');
-        $end = $this->input->post('end');
-        $endTime = $this->input->post('endTime');
-        $Description = $this->input->post('Description');
-        $img = $this->input->post('img');
-        $foro = $this->input->post('foro');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('title', 'Titulo evento', 'required');
+        $this->form_validation->set_rules('start', 'Fecha inicio', 'required');
+        $this->form_validation->set_rules('end', 'Fecha final', 'required');
+        $this->form_validation->set_rules('Description', 'Descripcion', 'required');
+        $this->form_validation->set_rules('img', 'Url Imagen', 'required');
+        $this->form_validation->set_rules('foro', 'Url Foro', 'required');
 
-        $FinalEnd = $end . ' ' . $endTime;
-        $FinalStart = $start . ' ' . $startTime;
-
-        $data = array(
-            "title" => $title,
-            "start" => $FinalStart,
-            "end" => $FinalEnd,
-            "description" => $Description,
-            "img" => $img,
-            "foro" => $foro
-        );
-
-        $query = $this->db->insert('events', $data);
-
-        if ($query) {
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
             redirect(base_url('staff/EVcalendar'));
         } else {
-            redirect(base_url('staff/calendarEV'));
+
+            $title = $this->input->post('title');
+            $start = $this->input->post('start');
+            $startTime = $this->input->post('startTime');
+            $end = $this->input->post('end');
+            $endTime = $this->input->post('endTime');
+            $Description = $this->input->post('Description');
+            $img = $this->input->post('img');
+            $foro = $this->input->post('foro');
+
+            $FinalEnd = $end . ' ' . $endTime;
+            $FinalStart = $start . ' ' . $startTime;
+            
+            $this->load->model('discord');
+
+            $url = "https://discordapp.com/api/webhooks/746101048921292850/40HJt1yE2saIYBXNVA0U1r10c4zuKO9TjlraAAL7-ME8eIcZUH24mMydcLMTQ3lO9Kws";
+            $this->discord->enviarEmbed($url, "", [
+                [
+                    "title" => $title."(".$FinalStart.")",
+                    "description" => $Description,
+                    "type" => "rich",
+                    "color" => hexdec('58FF0F'),
+                    "url" => $foro,
+                    "footer" => [
+                        "icon_url" => "https://cdn.discordapp.com/embed/avatars/0.png",
+                        "text" => "IVAO Venezuela || Departamento de Eventos"
+                    ],
+                    "image" => [
+                        "url" => $img
+                    ],
+                ]
+            ]);
+
+            $data = array(
+                "title" => $title,
+                "start" => $FinalStart,
+                "end" => $FinalEnd,
+                "description" => $Description,
+                "img" => $img,
+                "foro" => $foro
+            );
+
+            $query = $this->db->insert('events', $data);
+
+            if ($query) {
+                redirect(base_url('staff/EVcalendar'));
+            } else {
+                redirect(base_url('staff/calendarEV'));
+            }
         }
     }
 
@@ -141,7 +175,7 @@ class Staff extends CI_Controller
             $this->db->where('event', $event);
             $query = $this->db->delete('events');
 
-            if($query){
+            if ($query) {
                 redirect(base_url('staff/EVcalendar'));
             }
         }

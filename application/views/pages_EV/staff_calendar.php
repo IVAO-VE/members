@@ -252,6 +252,11 @@ $this->load->view("_lib/lib.menu.php");
     </div>
 </div>
 <!-- Fin Dialog DateClick -->
+<?php if ($this->session->flashdata('error')) : ?>
+    <div class="alert alert-danger mt-3" role="alert">
+        <?php echo $this->session->flashdata('error'); ?>
+    </div>
+<?php endif; ?>
 
 <div id='calendar'></div>
 

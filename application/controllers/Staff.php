@@ -102,13 +102,13 @@ class Staff extends CI_Controller
             $img = $this->input->post('img');
             $foro = $this->input->post('foro');
 
-            if ($startTime == '0000-00-00') {
+            if ($startTime == '00-00-00') {
                 $FinalStart = $start;
             } else {
                 $FinalStart = $start . ' ' . $startTime;
             }
 
-            if ($endTime == '0000-00-00') {
+            if ($endTime == '00-00-00') {
                 $FinalEnd = $end;
             } else {
                 $FinalEnd = $end . ' ' . $endTime;

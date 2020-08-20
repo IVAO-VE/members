@@ -148,6 +148,7 @@ class Staff extends CI_Controller
             $query = $this->db->insert('events', $data);
 
             if ($query) {
+                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.'. $startTime);
                 redirect(base_url('staff/EVcalendar'));
             } else {
                 $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.'. $startTime);

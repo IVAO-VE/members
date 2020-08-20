@@ -103,13 +103,13 @@ class Staff extends CI_Controller
             $foro = $this->input->post('foro');
             
 
-            if ($startTime == '00-00-00') {
+            if ($startTime == '00:00:00') {
                 $FinalStart = $start;
             } else {
                 $FinalStart = $start . ' ' . $startTime;
             }
 
-            if ($endTime == '00-00-00') {
+            if ($endTime == '00:00:00') {
                 $FinalEnd = $end;
             } else {
                 $FinalEnd = $end . ' ' . $endTime;
@@ -148,10 +148,10 @@ class Staff extends CI_Controller
             $query = $this->db->insert('events', $data);
 
             if ($query) {
-                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.'. $startTime);
+                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.');
                 redirect(base_url('staff/EVcalendar'));
             } else {
-                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.'. $startTime);
+                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.');
                 redirect(base_url('staff/calendarEV'));
             }
         }

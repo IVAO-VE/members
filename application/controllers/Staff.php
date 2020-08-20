@@ -102,15 +102,25 @@ class Staff extends CI_Controller
             $img = $this->input->post('img');
             $foro = $this->input->post('foro');
 
-            $FinalEnd = $end . ' ' . $endTime;
-            $FinalStart = $start . ' ' . $startTime;
-            
+            if ($startTime == '0000-00-00') {
+                $FinalStart = $start;
+            } else {
+                $FinalStart = $start . ' ' . $startTime;
+            }
+
+            if ($endTime == '0000-00-00') {
+                $FinalEnd = $end;
+            } else {
+                $FinalEnd = $end . ' ' . $endTime;
+            }
+
+
             $this->load->model('discord');
 
             $url = "https://discordapp.com/api/webhooks/746101048921292850/40HJt1yE2saIYBXNVA0U1r10c4zuKO9TjlraAAL7-ME8eIcZUH24mMydcLMTQ3lO9Kws";
             $this->discord->enviarEmbed($url, "", [
                 [
-                    "title" => $title."(".$FinalStart.")",
+                    "title" => $title . "(" . $FinalStart . ")",
                     "description" => $Description,
                     "type" => "rich",
                     "color" => hexdec('58FF0F'),

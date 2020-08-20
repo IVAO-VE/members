@@ -101,6 +101,7 @@ class Staff extends CI_Controller
             $Description = $this->input->post('Description');
             $img = $this->input->post('img');
             $foro = $this->input->post('foro');
+            
 
             if ($startTime == '00-00-00') {
                 $FinalStart = $start;
@@ -149,6 +150,7 @@ class Staff extends CI_Controller
             if ($query) {
                 redirect(base_url('staff/EVcalendar'));
             } else {
+                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.'. $startTime);
                 redirect(base_url('staff/calendarEV'));
             }
         }

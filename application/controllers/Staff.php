@@ -131,4 +131,14 @@ class Staff extends CI_Controller
             redirect(base_url('staff/EVcalendar'));
         }
     }
+
+    public function EVdelete(){
+        $event = $this->input->post('eventID');
+
+        if($event){
+            redirect(base_url('staff/gotit'));
+        }else{
+            redirect(base_url('staff/looser'));
+        }
+    }
 }

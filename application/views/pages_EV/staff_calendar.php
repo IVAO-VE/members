@@ -77,7 +77,7 @@ $this->load->view("_lib/lib.menu.php");
                 console.log(info.event.id);
                 $('#tituloEvento').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
-                $('#id').val(info.event.extendedProps.event);
+                $('#eventID').val(info.event.extendedProps.event);
                 $('#txtStart').val(info.event.startStr);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);
@@ -171,7 +171,8 @@ $this->load->view("_lib/lib.menu.php");
             <div class="row">
                 <input type="submit" id="btnModificar" value="Modificar" class="button primary">
                 <?php echo form_close() ?>
-                <?php echo form_open('staff/testing') ?>
+                <?php echo form_open('staff/EVdelete') ?>
+                <input type="hidden" id="eventID" name="eventID" readonly>
                 <input type="submit" value="Eliminar" class="button alert">
                 <?php echo form_close() ?>
                 <button class="button js-dialog-close">Cerrar</button>

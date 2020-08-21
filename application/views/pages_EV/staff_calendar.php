@@ -150,11 +150,11 @@ $this->load->view("_lib/lib.menu.php");
                             <label>Fecha final</label>
                             <input type="text" class="fg-black" name="txtEnd" id="txtEnd">
                         </div>
-                        <div class="cell-6">
-                            <div class="form-group">
-                                <label>Hora final</label>
-                                <input type="text" name="TimeEnd" id="TimeEnd" class="fg-black">
-                            </div>
+                    </div>
+                    <div class="cell-6">
+                        <div class="form-group">
+                            <label>Hora final</label>
+                            <input type="text" name="TimeEnd" id="TimeEnd" class="fg-black">
                         </div>
                     </div>
                 </div>

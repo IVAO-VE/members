@@ -78,7 +78,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#tituloDate').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
                 $('#eventID').val(info.event.extendedProps.event);
-                var Start = info.event.starStr.split("T")
+                var Start = info.event.starStr.split("T");
                 $('#txtStart').val(Start[0]);
                 $('#TimeStart').val(Start[1]);
                 $('#txtEnd').val(info.event.endStr);

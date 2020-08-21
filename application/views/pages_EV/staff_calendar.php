@@ -143,7 +143,7 @@ echo json_encode($data);
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Hora inicio</label>
-                        <input type="text" name="TimeStart" id="TimeStart" class="fg-black" data-role="timepicker" data-value="13:01:23">
+                        <input type="text" name="TimeStart" id="TimeStart" class="fg-black" data-role="timepicker">
                     </div>
                 </div>
                 <div class="row">

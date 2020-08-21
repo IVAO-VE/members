@@ -72,10 +72,11 @@ $this->load->view("_lib/lib.menu.php");
                 }
             ],*/
             eventClick: function(info) {
-                console.log(info.event.extendedProps);
-                console.log(info.event.extendedProps.eid);
-                console.log(info.event.id);
-                $('#tituloEvento').html(info.event.title);
+                //console.log(info.event.extendedProps);
+                //console.log(info.event.extendedProps.eid);
+                //console.log(info.event.id);
+                LimpiarForm();
+                $('#tituloDate').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
                 $('#eventID').val(info.event.extendedProps.event);
                 $('#txtStart').val(info.event.startStr);
@@ -83,7 +84,6 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtDescription').val(info.event.extendedProps.description);
                 $('#img').attr('src', info.event.extendedProps.img);
                 $('#foro').attr('href', info.event.extendedProps.foro);
-                $('#btnNuevo').hide();
                 $('#URLimg').val(info.event.extendedProps.img);
                 $('#URLforo').val(info.event.extendedProps.foro);
                 Metro.dialog.open('#click');

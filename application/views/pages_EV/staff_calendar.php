@@ -16,6 +16,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
+echo json_encode($data);
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -118,7 +118,7 @@ $this->load->view("_lib/lib.menu.php");
         <div class="grid">
             <div class="row">
                 <div class="cell d-flex flex-justify-center">
-                    <img id="img" src="https://ve.ivao.aero/images/Banner/img4.png" width="350px" height="150px">
+                    <img id="img" src="https://ve.ivao.aero/images/Banner/img4.png" width="350px" height="150px" style="display: block;">
                 </div>
                 <input type="hidden" id="id" name="id" readonly>
             </div>

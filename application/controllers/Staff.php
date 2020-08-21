@@ -116,7 +116,9 @@ class Staff extends CI_Controller
             }
 
 
-            $this->load->model('discord');
+            /* Webhook Discord conectado al Modelo */
+
+/*            $this->load->model('discord');
 
             $url = "https://discordapp.com/api/webhooks/746101048921292850/40HJt1yE2saIYBXNVA0U1r10c4zuKO9TjlraAAL7-ME8eIcZUH24mMydcLMTQ3lO9Kws";
             $this->discord->enviarEmbed($url, "", [
@@ -134,7 +136,7 @@ class Staff extends CI_Controller
                         "url" => $img
                     ],
                 ]
-            ]);
+            ]); */
 
             $data = array(
                 "title" => $title,
@@ -162,15 +164,32 @@ class Staff extends CI_Controller
         $id = $this->input->post('id');
         $txtTitle = $this->input->post('txtTitle');
         $txtStart = $this->input->post('txtStart');
+        $timeStart = $this->input->post('TimeStart');
         $txtEnd = $this->input->post('txtEnd');
+        $timeEnd = $this->input->post('TimeEnd');
         $txtDescription = $this->input->post('txtDescription');
         $URLimg = $this->input->post('URLimg');
         $URLforo = $this->input->post('URLforo');
 
+        if($timeStart == ''){
+            $Start = $txtStart;
+        }else{
+            $Start = $txtStart.'T'.$timeStart;
+        }
+
+        if($timeEnd == ''){
+            $End = $txtEnd;
+        }else{
+            $End = $txtEnd.'T'.$timeEnd;
+        }
+
         $data = array(
             'title' => $txtTitle,
-            'start' => $txtStart,
-            'end' => $txtEnd
+            'start' => $Start,
+            'end' => $End,
+            'description' => $txtDescription,
+            'img' => $URLimg,
+            'foro' => $URLforo
         );
 
         $this->db->where('event', $id);

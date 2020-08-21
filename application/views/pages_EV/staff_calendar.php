@@ -76,6 +76,7 @@ echo json_encode($data);
                 $('#tituloDate').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
                 $('#eventID').val(info.event.extendedProps.event);
+                $('#id').val(info.event.extendedProps.event);
                 var FechaCompleta = info.event.startStr;
                 //console.log(FechaCompleta);
                 var Start = FechaCompleta.split("T");

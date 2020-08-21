@@ -83,7 +83,7 @@ $this->load->view("_lib/lib.menu.php");
                 var Start = FechaCompleta.split("T");
                 $('#txtStart').val(Start[0]);
                 $('#TimeStart').val(Start[1]);
-                var EndCompleto = info.eventendStr;
+                var EndCompleto = info.event.endStr;
                 var End = EndCompleto.split("T");
                 $('#txtEnd').val(End[0]);
                 $('#TimeEnd').val(End[1]);

@@ -78,7 +78,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#tituloDate').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
                 $('#eventID').val(info.event.extendedProps.event);
-                var FechaCompleta = info.event.start.format();
+                var FechaCompleta = formatDate(info.event.start)
                 console.log(FechaCompleta);
                 var Start = FechaCompleta.split("T");
                 $('#txtStart').val(Start[0]);

@@ -80,7 +80,6 @@ echo json_encode($data);
                 //console.log(FechaCompleta);
                 var Start = FechaCompleta.split("T");
                 $('#txtStart').val(Start[0]);
-                //$('#TimeStart').val(Start[1]);
                 $('#TimeStart').val(Start[1]);
                 var EndCompleto = info.event.endStr;
                 var End = EndCompleto.split("T");
@@ -143,7 +142,7 @@ echo json_encode($data);
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Hora inicio</label>
-                        <input type="text" name="TimeStart" id="TimeStart" class="fg-black" data-role="timepicker">
+                        <input type="text" name="TimeStart" id="TimeStart" class="fg-black">
                     </div>
                 </div>
                 <div class="row">

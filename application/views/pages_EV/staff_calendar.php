@@ -79,6 +79,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtTitle').val(info.event.title);
                 $('#eventID').val(info.event.extendedProps.event);
                 var FechaCompleta = info.event.starStr;
+                console.log(FechaCompleta);
                 var Start = FechaCompleta.split("T");
                 $('#txtStart').val(Start[0]);
                 $('#TimeStart').val(Start[1]);

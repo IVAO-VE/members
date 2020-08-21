@@ -72,9 +72,6 @@ echo json_encode($data);
                 }
             ],*/
             eventClick: function(info) {
-                //console.log(info.event.extendedProps);
-                //console.log(info.event.extendedProps.eid);
-                //console.log(info.event.id);
                 LimpiarForm();
                 $('#tituloDate').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
@@ -83,11 +80,9 @@ echo json_encode($data);
                 //console.log(FechaCompleta);
                 var Start = FechaCompleta.split("T");
                 $('#txtStart').val(Start[0]);
-                $('#TimeStart').val(Start[1]);
+                //$('#TimeStart').val(Start[1]);
+                $('#TimeStart').data("value", Start[1]);
                 var EndCompleto = info.event.endStr;
-                //console.log(EndCompleto);                
-                console.log(info.event.startTime);
-                //console.log(info.event.end);
                 var End = EndCompleto.split("T");
                 $('#txtEnd').val(End[0]);
                 $('#TimeEnd').val(End[1]);
@@ -148,7 +143,7 @@ echo json_encode($data);
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Hora inicio</label>
-                        <input type="text" name="TimeStart" id="TimeStart" class="fg-black">
+                        <input type="text" name="TimeStart" id="TimeStart" class="fg-black" data-role="timepicker" data-value="13:01:23">
                     </div>
                 </div>
                 <div class="row">

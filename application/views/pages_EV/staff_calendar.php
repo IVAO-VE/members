@@ -81,7 +81,7 @@ echo json_encode($data);
                 var Start = FechaCompleta.split("T");
                 $('#txtStart').val(Start[0]);
                 //$('#TimeStart').val(Start[1]);
-                $('#TimeStart').data("value", Start[1]);
+                $('#TimeStart').val(Start[1]);
                 var EndCompleto = info.event.endStr;
                 var End = EndCompleto.split("T");
                 $('#txtEnd').val(End[0]);

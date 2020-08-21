@@ -78,7 +78,9 @@ $this->load->view("_lib/lib.menu.php");
                 $('#tituloDate').html(info.event.title);
                 $('#txtTitle').val(info.event.title);
                 $('#eventID').val(info.event.extendedProps.event);
-                $('#txtStart').val(info.event.startStr);
+                var Start = info.event.starStr.split("T")
+                $('#txtStart').val(Start[0]);
+                $('#TimeStart').val(Start[1]);
                 $('#txtEnd').val(info.event.endStr);
                 $('#txtDescription').val(info.event.extendedProps.description);
                 $('#img').attr('src', info.event.extendedProps.img);
@@ -136,8 +138,22 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
-                        <label>Fecha final</label>
-                        <input type="text" class="fg-black" name="txtEnd" id="txtEnd">
+                        <label>Hora inicio</label>
+                        <input type="text" name="TimeStart" id="TimeStart" class="fg-black">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell-6">
+                        <div class="form-group">
+                            <label>Fecha final</label>
+                            <input type="text" class="fg-black" name="txtEnd" id="txtEnd">
+                        </div>
+                        <div class="cell-6">
+                            <div class="form-group">
+                                <label>Hora final</label>
+                                <input type="text" name="TimeEnd" id="TimeEnd" class="fg-black">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

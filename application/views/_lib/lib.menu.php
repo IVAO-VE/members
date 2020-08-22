@@ -39,15 +39,15 @@
                         <span class="caption"><?php echo $this->lang->line('dpto02_VAS'); ?></span>
                     </a></li>
                     <li><a href="/app/charts">
-                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="icon"><span class="mif-map"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_CHR'); ?></span>
                     </a></li>
                     <li><a href="/app/meteorologic">
-                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="icon"><span class="mif-windy3"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_MET'); ?></span>
                     </a></li>
                     <li><a href="/app/information">
-                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="icon"><span class="mif-info"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_INF'); ?></span>
                     </a></li>
                     <li><a href="/app/sceneries">
@@ -55,7 +55,7 @@
                         <span class="caption"><?php echo $this->lang->line('dpto02_VSC'); ?></span>
                     </a></li>
                     <li><a href="/app/notams">
-                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="icon"><span class="mif-infinite"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_NTM'); ?></span>
                     </a></li>
 

@@ -155,10 +155,6 @@
                         <span class="icon"><span class="mif-table"></span></span>
                         <span class="caption">Splitter</span>
                     </a></li>
-                    <li><a href="#calendar">
-                        <span class="icon"><span class="mif-calendar"></span></span>
-                        <span class="caption">Calendar</span>
-                    </a></li>
                     <li><a href="#countdown">
                         <span class="icon"><span class="mif-watch"></span></span>
                         <span class="caption">Countdown</span>
@@ -190,22 +186,10 @@
                     <span class="caption"><?php echo $this->lang->line('dpto07'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
-                    <li class="item-header">Information</li>
-                    <li><a href="#windows">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">Windows</span>
-                    </a></li>
-                    <li><a href="#dialogs">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">Dialogs</span>
-                    </a></li>
-                    <li><a href="#info-boxes">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">InfoBox</span>
-                    </a></li>
-                    <li><a href="#hints">
-                        <span class="icon"><span class="mif-spinner2"></span></span>
-                        <span class="caption">Hints</span>
+                    <li class="item-header">..</li>
+                    <li><a href="/app/calendar">
+                        <span class="icon"><span class="mif-calendar"></span></span>
+                        <span class="caption"><?php echo $this->lang->line('dpto07_CAL'); ?></span>
                     </a></li>
                 </ul>
             </li>

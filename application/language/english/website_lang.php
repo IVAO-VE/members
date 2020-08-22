@@ -55,6 +55,7 @@ $lang['dpto04'] = 'Special operations';
 $lang['dpto05'] = 'Training';
 $lang['dpto06'] = 'Members and affiliation';
 $lang['dpto07'] = 'Events';
+$lang['dpto07_CAL'] = 'Events calendar';
 $lang['dpto08'] = 'Public relations';
 $lang['dpto09'] = 'Web and systems';
 $lang['dpto10'] = 'FIR'; 

@@ -29,7 +29,7 @@
             </li>
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-versions"></span></span>
+                    <span class="icon"><span class="mif-airplane"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto02'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown">
@@ -90,7 +90,7 @@
 
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-table"></span></span>
+                    <span class="icon"><span class="mif-satellite"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto04'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >

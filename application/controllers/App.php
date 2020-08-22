@@ -363,6 +363,19 @@ class App extends CI_Controller
         /** *************************************************************************/
 
         /** ************************************************************************
+         *  Funciones de control para el departamento de Entrenamiento
+         */
+        public function documents()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_TR/documents_index');
+                } else {
+                        redirect(base_url());
+                }
+        }        
+        /** *************************************************************************/
+
+        /** ************************************************************************
          *  Funciones de control para el departamento de Relaciones Publicas
          */
         public function discord()
@@ -373,6 +386,6 @@ class App extends CI_Controller
                         redirect(base_url());
                 }
         }        
-
+        /** *************************************************************************/
 
 }

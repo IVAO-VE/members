@@ -53,6 +53,7 @@ $lang['dpto03_GCA'] = 'Guest controllers';
 $lang['dpto03_FRA'] = 'Facility ratings';
 $lang['dpto04'] = 'Special operations';
 $lang['dpto05'] = 'Training';
+$lang['dpto05_DOC'] = 'Training documents';
 $lang['dpto06'] = 'Members and affiliation';
 $lang['dpto07'] = 'Events';
 $lang['dpto07_CAL'] = 'Events calendar';
@@ -136,5 +137,9 @@ $lang['facility_system'] = 'FRAs access';
 //Discord
 $lang['discord_title'] = 'Venezuelan discord voice server';
 $lang['discord_system'] = 'Discord';
+
+//Training
+$lang['training_title'] = 'Training documents';
+$lang['training_system'] = 'Training';
 
 ?>

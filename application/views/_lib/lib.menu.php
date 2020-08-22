@@ -112,53 +112,13 @@
                     <span class="caption"><?php echo $this->lang->line('dpto05'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown">
-                    <li class="item-header">UI Elements</li>
+                    <li class="item-header">..</li>
                     <li>
-                        <a href="#colors">
+                        <a href="/app/documents">
                             <span class="icon"><span class="mif-paint"></span></span>
-                            <span class="caption">Colors</span>
+                            <span class="caption"><?php echo $this->lang->line('dpto05_DOC'); ?></span>
                         </a>
                     </li>
-                    <li><a href="#typography">
-                        <span class="icon"><span class="mif-bold"></span></span>
-                        <span class="caption">Typography</span>
-                    </a></li>
-                    <li><a href="#buttons">
-                        <span class="icon"><span class="mif-apps"></span></span>
-                        <span class="caption">Buttons</span>
-                    </a></li>
-                    <li><a href="#tabs">
-                        <span class="icon"><span class="mif-open-book"></span></span>
-                        <span class="caption">Accordion &amp; Tabs</span>
-                    </a></li>
-                    <li><a href="#tiles">
-                        <span class="icon"><span class="mif-dashboard"></span></span>
-                        <span class="caption">Tiles</span>
-                    </a></li>
-                    <li><a href="#treeview">
-                        <span class="icon"><span class="mif-tree"></span></span>
-                        <span class="caption">TreeView</span>
-                    </a></li>
-                    <li><a href="#listview">
-                        <span class="icon"><span class="mif-list"></span></span>
-                        <span class="caption">ListView</span>
-                    </a></li>
-                    <li><a href="#progress">
-                        <span class="icon"><span class="mif-spinner5"></span></span>
-                        <span class="caption">Progress & activities</span>
-                    </a></li>
-                    <li><a href="#list">
-                        <span class="icon"><span class="mif-list2"></span></span>
-                        <span class="caption">List component</span>
-                    </a></li>
-                    <li><a href="#splitter">
-                        <span class="icon"><span class="mif-table"></span></span>
-                        <span class="caption">Splitter</span>
-                    </a></li>
-                    <li><a href="#countdown">
-                        <span class="icon"><span class="mif-watch"></span></span>
-                        <span class="caption">Countdown</span>
-                    </a></li>
                 </ul>
             </li>
 

@@ -124,7 +124,7 @@
 
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-play"></span></span>
+                    <span class="icon"><span class="mif-profile"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto06'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
@@ -142,7 +142,7 @@
 
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-comment"></span></span>
+                    <span class="icon"><span class="mif-calendar"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto07'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
@@ -208,7 +208,7 @@
 
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-bubbles"></span></span>
+                    <span class="icon"><span class="mif-flow-tree"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto09'); ?></span>
                     <span class="badges ml-auto mr-3">
                         <span class="badge inline bg-red fg-white">0</span>

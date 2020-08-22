@@ -100,7 +100,7 @@ $lang['meteorologic_system'] = 'Metars';
 
 //Information
 $lang['information_title'] = 'Información general';
-$lang['information_system'] = 'Information';
+$lang['information_system'] = 'Información';
 
 //Virtual sceneries
 $lang['sceneries_title'] = 'Escenarios virtuales';

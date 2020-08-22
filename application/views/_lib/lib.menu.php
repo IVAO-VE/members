@@ -207,7 +207,7 @@
             </li>
 
             <li>
-                <a href="#chat">
+                <a href="#" class="dropdown-toggle">
                     <span class="icon"><span class="mif-bubbles"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto09'); ?></span>
                     <span class="badges ml-auto mr-3">
@@ -216,6 +216,13 @@
                         <span class="badge inline bg-orange fg-white">0</span>
                     </span>
                 </a>
+                <ul class="navview-menu stay-open" data-role="dropdown" >
+                    <li class="item-header">..</li>
+                    <li><a href="/app/support">
+                        <span class="icon"><span class="mif-help"></span></span>
+                        <span class="caption"><?php echo $this->lang->line('dpto09_SUP'); ?></span>
+                    </a></li>
+                </ul>
             </li>
 
             <li>

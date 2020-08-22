@@ -65,6 +65,7 @@ $lang['dpto08_TWI'] = 'Social Twitter';
 $lang['dpto08_YOU'] = 'Social Youtube';
 $lang['dpto08_DIS'] = 'Voice for Discord';
 $lang['dpto09'] = 'Web and systems';
+$lang['dpto09_SUP'] = 'Support request';
 $lang['dpto10'] = 'FIR'; 
 $lang['staff'] = 'Staff';
 
@@ -141,5 +142,9 @@ $lang['discord_system'] = 'Discord';
 //Training
 $lang['training_title'] = 'Training documents';
 $lang['training_system'] = 'Training';
+
+//Support tickets
+$lang['support_title'] = 'Support tickets';
+$lang['support_system'] = 'Help';
 
 ?>

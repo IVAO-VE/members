@@ -388,4 +388,17 @@ class App extends CI_Controller
         }        
         /** *************************************************************************/
 
+        /** ************************************************************************
+         *  Funciones de control para el departamento de Web y Sistemas
+         */
+        public function support()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_WM/support_index');
+                } else {
+                        redirect(base_url());
+                }
+        }        
+        /** *************************************************************************/
+
 }

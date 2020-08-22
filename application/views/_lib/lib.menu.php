@@ -108,14 +108,14 @@
 
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-air"></span></span>
+                    <span class="icon"><span class="mif-train"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto05'); ?></span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown">
                     <li class="item-header">..</li>
                     <li>
                         <a href="/app/documents">
-                            <span class="icon"><span class="mif-paint"></span></span>
+                            <span class="icon"><span class="mif-document-file-pdf"></span></span>
                             <span class="caption"><?php echo $this->lang->line('dpto05_DOC'); ?></span>
                         </a>
                     </li>

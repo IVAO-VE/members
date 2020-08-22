@@ -206,29 +206,41 @@
                     </span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
-                    <li class="item-header">Mailbox</li>
+                    <li class="item-header">..</li>
                     <li>
-                        <a href="#inbox">
-                            <span class="icon"><span class="mif-mail"></span></span>
-                            <span class="caption">Inbox</span>
+                        <a href="http://ve.forum.ivao.aero/index.php">
+                            <span class="icon"><span class="mif-chat"></span></span>
+                            <span class="caption"><?php echo $this->lang->line('dpto08_FOR'); ?></span>
                         </a>
                     </li>
                     <li>
-                        <a href="#inbox2">
-                            <span class="icon"><span class="mif-mail"></span></span>
-                            <span class="caption">Inbox2</span>
+                        <a href="https://www.facebook.com/IVAOVenezuela/">
+                            <span class="icon"><span class="mif-facebook2"></span></span>
+                            <span class="caption"><?php echo $this->lang->line('dpto08_FAC'); ?></span>
                         </a>
                     </li>
                     <li>
-                        <a href="#compose">
-                            <span class="icon"><span class="mif-mail-read"></span></span>
-                            <span class="caption">Compose</span>
+                        <a href="https://www.instagram.com/ivaove/">
+                            <span class="icon"><span class="mif-instagram"></span></span>
+                            <span class="caption"><?php echo $this->lang->line('dpto08_INS'); ?></span>
                         </a>
                     </li>
                     <li>
-                        <a href="#read-email">
-                            <span class="icon"><span class="mif-mail-read"></span></span>
-                            <span class="caption">Read email</span>
+                        <a href="https://twitter.com/ivaove">
+                            <span class="icon"><span class="mif-twitter"></span></span>
+                            <span class="caption"><?php echo $this->lang->line('dpto08_TWI'); ?></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCqwcrgHWvLdvhuJdVEQBWZQ">
+                            <span class="icon"><span class="mif-youtube"></span></span>
+                            <span class="caption"><?php echo $this->lang->line('dpto08_YOU'); ?></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/app/discord">
+                            <span class="icon"><span class="mif-phone-in-talk"></span></span>
+                            <span class="caption"><?php echo $this->lang->line('dpto08_DIS'); ?></span>
                         </a>
                     </li>
                 </ul>

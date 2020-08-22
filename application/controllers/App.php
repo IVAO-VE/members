@@ -362,4 +362,17 @@ class App extends CI_Controller
                 }                        
         /** *************************************************************************/
 
+        /** ************************************************************************
+         *  Funciones de control para el departamento de Relaciones Publicas
+         */
+        public function discord()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_PR/discord_index');
+                } else {
+                        redirect(base_url());
+                }
+        }        
+
+
 }

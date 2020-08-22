@@ -57,6 +57,12 @@ $lang['dpto06'] = 'Members and affiliation';
 $lang['dpto07'] = 'Events';
 $lang['dpto07_CAL'] = 'Events calendar';
 $lang['dpto08'] = 'Public relations';
+$lang['dpto08_FOR'] = 'Venezuelan forums';
+$lang['dpto08_FAC'] = 'Social Facebook';
+$lang['dpto08_INS'] = 'Social Instagram';
+$lang['dpto08_TWI'] = 'Social Twitter';
+$lang['dpto08_YOU'] = 'Social Youtube';
+$lang['dpto08_DIS'] = 'Voice for Discord';
 $lang['dpto09'] = 'Web and systems';
 $lang['dpto10'] = 'FIR'; 
 $lang['staff'] = 'Staff';
@@ -126,5 +132,9 @@ $lang['guests_system'] = 'Foreigner controllers';
 //Facility ratings
 $lang['facility_title'] = 'Facility rating assignments';
 $lang['facility_system'] = 'FRAs access';
+
+//Discord
+$lang['discord_title'] = 'Venezuelan discord voice server';
+$lang['discord_system'] = 'Discord';
 
 ?>

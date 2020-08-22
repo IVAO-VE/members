@@ -1,9 +1,9 @@
 <?php
 /**
- * @autor Rixio Iguar�n y Sim�n Cardona.
+ * @autor Rixio Iguarán y Simón Cardona.
  * @Departamento Sistemas y Webmaster
  * @Licencia Exclusivo sistemas IVAO.AERO
- * @Licencia Divisi�n Venezuela.
+ * @Licencia División Venezuela.
  * @Correo ve-web@ivao.aero
  * 
  **/
@@ -38,10 +38,27 @@
                         <span class="icon"><span class="mif-airplane"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_VAS'); ?></span>
                     </a></li>
+                    <li><a href="/app/charts">
+                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="caption"><?php echo $this->lang->line('dpto02_CHR'); ?></span>
+                    </a></li>
+                    <li><a href="/app/meteorologic">
+                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="caption"><?php echo $this->lang->line('dpto02_MET'); ?></span>
+                    </a></li>
+                    <li><a href="/app/information">
+                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="caption"><?php echo $this->lang->line('dpto02_INF'); ?></span>
+                    </a></li>
                     <li><a href="/app/sceneries">
                         <span class="icon"><span class="mif-file-picture"></span></span>
                         <span class="caption"><?php echo $this->lang->line('dpto02_VSC'); ?></span>
                     </a></li>
+                    <li><a href="/app/notams">
+                        <span class="icon"><span class="mif-airplane"></span></span>
+                        <span class="caption"><?php echo $this->lang->line('dpto02_NTM'); ?></span>
+                    </a></li>
+
 
                 </ul>
             </li>

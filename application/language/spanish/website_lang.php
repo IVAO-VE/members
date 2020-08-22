@@ -41,7 +41,11 @@ $lang['dpto00'] = 'Estado general';
 $lang['dpto01'] = 'Dirección HQ';
 $lang['dpto02'] = 'Operaciones de vuelo';
 $lang['dpto02_VAS'] = 'Aerolineas virtuales';
+$lang['dpto02_CHR'] = 'Cartas de navegación';
+$lang['dpto02_MET'] = 'Sistema meteorológico';
+$lang['dpto02_INF'] = 'Información aeronautica';
 $lang['dpto02_VSC'] = 'Escenarios virtuales';
+$lang['dpto02_NTM'] = 'Notams';
 $lang['dpto03'] = 'Operaciones de control';
 $lang['dpto03_SEC'] = 'Archivos de sector';
 $lang['dpto03_TSP'] = 'Códigos transponders';
@@ -86,9 +90,25 @@ $lang['main_activityCT'] = 'Actividad de tus controles';
 $lang['airlines_title'] = 'Aerolineas virtuales';
 $lang['airlines_system'] = 'VA systems';
 
+//Charts
+$lang['charts_title'] = 'Cartas de navegación';
+$lang['charts_system'] = 'Cartas';
+
+//Meteorologic
+$lang['meteorologic_title'] = 'Información meteorológica';
+$lang['meteorologic_system'] = 'Metars';
+
+//Information
+$lang['information_title'] = 'Información general';
+$lang['information_system'] = 'Information';
+
 //Virtual sceneries
 $lang['sceneries_title'] = 'Escenarios virtuales';
 $lang['sceneries_system'] = 'Escenarios venezolanos';
+
+//Notams
+$lang['notams_title'] = 'Notams';
+$lang['notams_system'] = 'Notams';
 
 //Sector files
 $lang['sectors_title'] = 'Archivos de sector';

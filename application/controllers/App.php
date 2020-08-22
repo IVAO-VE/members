@@ -275,10 +275,47 @@ class App extends CI_Controller
                         }
                 }        
 
+                public function charts()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_FO/charts_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }        
+
+                public function meteorologic()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_FO/meteorologic_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }        
+
+                public function information()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_FO/information_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }        
+
+
                 public function sceneries()
                 {
                         if ($this->session->userdata('vid') != "") {
                                 $this->load->view('pages_FO/sceneries_index');
+                        } else {
+                                redirect(base_url());
+                        }
+                }   
+
+                public function notams()
+                {
+                        if ($this->session->userdata('vid') != "") {
+                                $this->load->view('pages_FO/notams_index');
                         } else {
                                 redirect(base_url());
                         }

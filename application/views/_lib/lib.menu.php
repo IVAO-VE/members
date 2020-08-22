@@ -196,13 +196,13 @@
 
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-envelop"></span></span>
+                    <span class="icon"><span class="mif-users"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto08'); ?></span>
                     <span class="badges ml-auto mr-3">
-                        <span class="badge inline bg-cyan fg-white">17</span>
-                        <span class="badge inline bg-red fg-white">7</span>
-                        <span class="badge inline bg-green fg-white">4</span>
-                        <span class="badge inline bg-orange fg-white">3</span>
+                        <span class="badge inline bg-cyan fg-white">0</span>
+                        <span class="badge inline bg-red fg-white">0</span>
+                        <span class="badge inline bg-green fg-white">0</span>
+                        <span class="badge inline bg-orange fg-white">0</span>
                     </span>
                 </a>
                 <ul class="navview-menu stay-open" data-role="dropdown" >
@@ -251,9 +251,9 @@
                     <span class="icon"><span class="mif-bubbles"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto09'); ?></span>
                     <span class="badges ml-auto mr-3">
-                        <span class="badge inline bg-red fg-white">7</span>
-                        <span class="badge inline bg-green fg-white">4</span>
-                        <span class="badge inline bg-orange fg-white">3</span>
+                        <span class="badge inline bg-red fg-white">0</span>
+                        <span class="badge inline bg-green fg-white">0</span>
+                        <span class="badge inline bg-orange fg-white">0</span>
                     </span>
                 </a>
             </li>

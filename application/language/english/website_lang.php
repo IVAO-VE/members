@@ -30,6 +30,7 @@ $lang['ginfo'] = 'General information';
 $lang['country'] = 'Country';
 $lang['division'] = 'Division';
 $lang['flights'] = 'Flights';
+$lang['radars'] = 'Radars';
 
 //Menu traslators
 $lang['renderpage'] = 'Page rendered in';

@@ -90,7 +90,10 @@
     <div class="cell-lg-3 cell-md-6 mt-2">
         <div class="more-info-box bg-green fg-white">
             <div class="content">
-                <h2 class="text-bold mb-0">00</h2>
+                <?php
+                    $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='ATC' AND vid=".$this->session->userdata('vid'));
+                    echo '<h2 class="text-bold mb-0">'.$query->num_rows().' '.$this->lang->line('radars').'</h2>';
+                ?>            
                 <div><?php echo $this->lang->line('main_activityCT'); ?></div>
             </div>
             <div class="icon">

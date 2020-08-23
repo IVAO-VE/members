@@ -117,8 +117,11 @@
     <div class="cell-lg-3 cell-md-6 mt-2">
         <div class="more-info-box bg-red fg-white">
             <div class="content">
-                <h2 class="text-bold mb-0">10,000</h2>
-                <div>Unique Visitors</div>
+                <?php
+                    $query = $this->db->query("SELECT * FROM whazzup_log");
+                    echo '<h2 class="text-bold mb-0">'.$query->num_rows().'</h2>';
+                ?>            
+                <div><?php echo $this->lang->line('main_activityG'); ?></div>
             </div>
             <div class="icon">
                 <span class="mif-user-check"></span>

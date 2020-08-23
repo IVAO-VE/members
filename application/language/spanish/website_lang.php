@@ -29,7 +29,7 @@ $lang['about'] = 'Sobre';
 $lang['ginfo'] = 'Información general';
 $lang['country'] = 'Pais';
 $lang['division'] = 'Division';
-$lang['flights'] = 'Flights';
+$lang['flights'] = 'Vuelos';
 
 //Traducciones para MENU
 $lang['renderpage'] = 'Página generada en';

@@ -77,7 +77,7 @@
             <div class="content">
                 <?php
                     $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='PILOT' AND vid=".$this->session->userdata('vid'));
-                    echo '<h2 class="text-bold mb-0">'.$query->num_fields().'</h2>';
+                    echo '<h2 class="text-bold mb-0">'.$query->$query->num_rows().' '.$this->lang->line('flights').'</h2>';
                 ?>            
                 <div><?php echo $this->lang->line('main_activityFL'); ?></div>
             </div>

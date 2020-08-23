@@ -29,6 +29,7 @@ $lang['about'] = 'About';
 $lang['ginfo'] = 'General information';
 $lang['country'] = 'Country';
 $lang['division'] = 'Division';
+$lang['flights'] = 'Vuelos';
 
 //Menu traslators
 $lang['renderpage'] = 'Page rendered in';

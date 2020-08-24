@@ -32,6 +32,46 @@
 </div>
 
 
+<div class="m-3">
+    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('support_title'); ?>" data-collapsible="true" data-title-icon="<span class='mif-help'></span>" class="mt-4">
+        <div class="row">
+            <div class="bg-white p-4">
+                <div>
+                    <button class="shortcut mt-1">
+                        <span class="caption">Rocket</span>
+                        <span class="mif-rocket icon"></span>
+                    </button>
+                    <button class="shortcut mt-1">
+                        <span class="tag">10</span>
+                        <span class="caption">Rocket</span>
+                        <span class="mif-rocket icon"></span>
+                    </button>
+                    <button class="shortcut primary mt-1">
+                        <span class="tag">10</span>
+                        <span class="caption">Rocket</span>
+                        <span class="mif-rocket icon"></span>
+                    </button>
+                    <button class="shortcut secondary outline mt-1">
+                        <span class="tag">10</span>
+                        <span class="caption">Rocket</span>
+                        <span class="mif-rocket icon"></span>
+                    </button>
+                    <button class="shortcut alert rounded mt-1">
+                        <span class="tag">10</span>
+                        <span class="caption">Rocket</span>
+                        <img src="images/checkmark.png" class="icon">
+                    </button>
+                    <button class="shortcut info outline rounded no-caption mt-1">
+                        <span class="tag">10</span>
+                        <span class="mif-rocket icon"></span>
+                    </button>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+
+
 
 <?php
 	$this->load->view("_lib/lib.footer.php");

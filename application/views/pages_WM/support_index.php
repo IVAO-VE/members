@@ -1,7 +1,4 @@
 <?php
-header("X-Frame-Options: ALLOW-FROM https://support.ve.ivao.aero/");
-header("Content-Security-Policy: frame-ancestors 'self' https://support.ve.ivao.aero/");
-
 /**
  * @autor Rixio Iguarán y Simón Cardona.
  * @Departamento Sistemas y Webmaster

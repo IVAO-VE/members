@@ -40,7 +40,7 @@
                     <?php
                         $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
                         foreach ($query->result() as $row) {
-                            echo '<button class="shortcut mt-2 mr-2">
+                            echo '<button class="shortcut info outline rounded mt-2 mr-2">
                                     <span class="caption">'.$row->icao.'</span>
                                     <span class="mif-airplane icon"></span>
                                 </button>';

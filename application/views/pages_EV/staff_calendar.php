@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
-echo json_encode($data);
+//echo json_encode($data);
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -199,7 +199,6 @@ echo json_encode($data);
         </div>
     </div>
 </div>
-
 <!-- Fin Dialog eventclick -->
 
 <!-- Inicio Dialog DateClick -->
@@ -259,6 +258,16 @@ echo json_encode($data);
                     <div class="form-group">
                         <label>Url Foro</label>
                         <input type="text" class="fg-black" name="foro">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button class="button" id="collapse_toggle_1">Collapse block</button>
+                <div class="pos-relative">
+                    <div class="bg-red fg-white" data-role="collapse" data-toggle-element="#collapse_toggle_1">
+                        <p class="p-10 text-center">
+                            In Metro 4 you can transform any element to collapsible.
+                        </p>
                     </div>
                 </div>
             </div>

@@ -59,7 +59,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="avatar">
-                        <img src="https://lorempixel.com/68/68/people/">
+                        <img src="http://images.intellicast.com/WxImages/SatelliteLoop/hicbsat_None_anim.gif">
                     </div>
                     <div class="name">John Doe</div>
                     <div class="date">Monday at 3:47 PM</div>
@@ -68,7 +68,7 @@
                     What a nice photo i took yesterday!
                 </div>
                 <div class="card-content">
-                    <img src="https://lorempixel.com/1000/600/animals/" style="width: 100%">
+                    <img src="http://images.intellicast.com/WxImages/CustomGraphic/tgsfc24.gif">
                 </div>
                 <div class="card-content fg-gray p-2">
                     <span><small>Likes: </small>112</span>

@@ -101,6 +101,7 @@ $this->load->view("_lib/lib.menu.php");
                 LimpiarForm();
                 $('#txtStart').prop('disabled', true);
                 $('#start').val(info.dateStr);
+                $('#end').val(info.dateStr);
                 $('#tituloDate').html(info.dateStr);
                 Metro.dialog.open('#date');
             },
@@ -203,7 +204,7 @@ $this->load->view("_lib/lib.menu.php");
 
 <!-- Inicio Dialog DateClick -->
 <div class="dialog" data-role="dialog" id="date">
-    <div class="dialog-title text-center" id="tituloDate">Event 1</div>
+    <div class="dialog-title text-center" id="tituloDate">Nuevo evento</div>
     <div class="dialog-content">
         <?php echo form_open(base_url('staff/EVinsert')) ?>
         <div class="grid">
@@ -262,14 +263,7 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
             </div>
             <div class="row">
-                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia" data-caption-position="left" id="collapse_toggle_1">
-                <div class="pos-relative">
-                    <div class="fg-black" data-role="collapse" data-toggle-element="#collapse_toggle_1" data-collapsed="true">
-                        <p class="p-10 text-center">
-                            In Metro 4 you can transform any element to collapsible.
-                        </p>
-                    </div>
-                </div>
+                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
             </div>
         </div>
     </div>

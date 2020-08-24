@@ -34,7 +34,7 @@
 <div class="m-3">
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('support_title'); ?>" data-collapsible="true" data-title-icon="<span class='mif-help'></span>" class="mt-4">
         <div class="row">
-            <iframe src="https://support.ve.ivao.aero/open.php" style="border:none;" width="100%" height="100%"></iframe>
+            <iframe src="/support.ve.ivao.aero/open.php" style="border:none;" width="100%" height="100%"></iframe>
         </div>
     </div>
 </div>

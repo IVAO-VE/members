@@ -95,10 +95,6 @@ $this->load->view("_lib/lib.menu.php");
 
             },
             dateClick: function(info) {
-                $('#btnModificar').hide();
-                $('#btnEliminar').hide();
-                $('#btnNuevo').show();
-                LimpiarForm();
                 $('#txtStart').prop('disabled', true);
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);

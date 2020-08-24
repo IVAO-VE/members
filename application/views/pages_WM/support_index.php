@@ -34,7 +34,7 @@
 <div class="m-3">
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('support_title'); ?>" data-collapsible="true" data-title-icon="<span class='mif-help'></span>" class="mt-4">
         <div class="row">
-            <?php echo file_get_contents("https://support.ve.ivao.aero/open.php"); ?>
+            
         </div>
     </div>
 </div>

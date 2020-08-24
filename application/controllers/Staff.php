@@ -87,7 +87,6 @@ class Staff extends CI_Controller
         $this->form_validation->set_rules('Description', 'Descripcion', 'required');
         $this->form_validation->set_rules('img', 'Url Imagen', 'required');
         $this->form_validation->set_rules('foro', 'Url Foro', 'required');
-        $this->form_validation->set_rules('noticia', 'noticia', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
@@ -102,6 +101,7 @@ class Staff extends CI_Controller
             $Description = $this->input->post('Description');
             $img = $this->input->post('img');
             $foro = $this->input->post('foro');
+            $noticia = $this->input->post('noticia');
             
 
             if ($startTime == '00:00:00') {
@@ -147,6 +147,16 @@ class Staff extends CI_Controller
                 "img" => $img,
                 "foro" => $foro
             );
+
+            if($noticia){
+                $Ndata = array(
+                    "title" => $title,
+                    "description" => $Description,
+                    "author" => $this->session->userdata('vid'),
+                );
+
+                $this->db->insert('news', $Ndata);
+            }
 
             $query = $this->db->insert('events', $data);
 

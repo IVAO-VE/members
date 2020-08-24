@@ -31,6 +31,58 @@
     </div>
 </div>
 
+<div class="row">
+        <div class="cell-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="avatar">
+                        <img src="https://lorempixel.com/68/68/people/">
+                    </div>
+                    <div class="name">John Doe</div>
+                    <div class="date">Monday at 3:47 PM</div>
+                </div>
+                <div class="card-content p-2">
+                    <img src="https://lorempixel.com/1000/600/nature/" style="width: 100%">
+                    <div class="p-2">
+                        Unearthly, indeed, pattern! For a gooey springy sauce, add some vinaigrette and radish sprouts. Avast, black sail. you won't trade the bikini atoll.
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="flat-button mif-thumbs-up mif-2x"></button>
+                    <button class="flat-button mif-tag mif-2x"></button>
+                    <button class="flat-button mif-share mif-2x"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cell-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="avatar">
+                        <img src="https://lorempixel.com/68/68/people/">
+                    </div>
+                    <div class="name">John Doe</div>
+                    <div class="date">Monday at 3:47 PM</div>
+                </div>
+                <div class="card-content p-2">
+                    What a nice photo i took yesterday!
+                </div>
+                <div class="card-content">
+                    <img src="https://lorempixel.com/1000/600/animals/" style="width: 100%">
+                </div>
+                <div class="card-content fg-gray p-2">
+                    <span><small>Likes: </small>112</span>
+                    <span><small>Comments: </small>43</span>
+                </div>
+                <div class="card-footer">
+                    <button class="flat-button mif-thumbs-up mif-2x"></button>
+                    <button class="flat-button mif-tag mif-2x"></button>
+                    <button class="flat-button mif-share mif-2x"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 <?php

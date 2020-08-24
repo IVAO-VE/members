@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="avatar">
-                        <img src="<?php echo base_url('include/images/perfiles')."/ve.png"; ?>">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
                     </div>
                     <div class="name">IVAO Venezuela</div>
                     <div class="date">Monday at 3:47 PM</div>
@@ -56,12 +56,12 @@
             <div class="card">
                 <div class="card-header">
                     <div class="avatar">
-                        <img src="<?php echo base_url('include/images/perfiles')."/ve.png"; ?>">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
                     </div>
                     <div class="name">IVAO Venezuela</div>
                     <div class="date">Monday at 3:47 PM</div>
                 </div>
-                <div class="card-content">
+                <div class="card-content  p-2">
                     <img src="http://images.intellicast.com/WxImages/CustomGraphic/tgsfc24.gif"  style="width: 100%">
                 </div>
                 <div class="card-footer">

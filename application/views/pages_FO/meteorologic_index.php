@@ -73,6 +73,47 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="cell-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="avatar">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
+                    </div>
+                    <div class="name">IVAO Venezuela</div>
+                    <div class="date"><?php echo $this->lang->line('meteorologic_CAR'); ?></div>
+                </div>
+                <div class="card-content p-2">
+                    <img src="http://images.intellicast.com/WxImages/SatelliteLoop/hisasat_None_anim.gif" style="width: 100%">
+                </div>
+                <div class="card-footer">
+                    <button class="flat-button mif-thumbs-up mif-2x"></button>
+                    <button class="flat-button mif-tag mif-2x"></button>
+                    <button class="flat-button mif-share mif-2x"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cell-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="avatar">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
+                    </div>
+                    <div class="name">IVAO Venezuela</div>
+                    <div class="date"><?php echo $this->lang->line('meteorologic_WX'); ?></div>
+                </div>
+                <div class="card-content  p-2">
+                    <img src="http://images.intellicast.com/WxImages/CustomGraphic/tgsfc24.gif"  style="width: 100%">
+                </div>
+                <div class="card-footer">
+                    <button class="flat-button mif-thumbs-up mif-2x"></button>
+                    <button class="flat-button mif-tag mif-2x"></button>
+                    <button class="flat-button mif-share mif-2x"></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <?php

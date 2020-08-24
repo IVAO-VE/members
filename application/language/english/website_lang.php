@@ -113,6 +113,8 @@ $lang['meteorologic_title'] = 'Meteorologic information';
 $lang['meteorologic_system'] = 'Metars';
 $lang['meteorologic_CAR'] = 'Infrared Satellite CAR';
 $lang['meteorologic_WX'] = 'Tropical Surface WX chart';
+$lang['meteorologic_SAM'] = 'Infrared Satellite SAM';
+$lang['meteorologic_WIND'] = 'Interactive winds';
 
 //Information
 $lang['information_title'] = 'General information';

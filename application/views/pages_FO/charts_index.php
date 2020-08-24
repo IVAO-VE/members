@@ -46,13 +46,26 @@
                                 </button>';
                         }
                     ?>
-               
                 </div>
             </div>            
         </div>
     </div>
 </div>
 
+<div class="m-3">
+    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('charts_VFR'); ?>" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
+        <div class="row">
+            <div class="bg-white p-4">
+                <div>
+                    <button class="shortcut info outline rounded mt-2 mr-2">
+                        <span class="caption">ZONE</span>
+                        <span class="mif-document-file-pdf icon"></span>
+                    </button>';
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
 
 
 <?php

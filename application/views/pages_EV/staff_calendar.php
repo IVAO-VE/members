@@ -262,7 +262,7 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
             </div>
             <div class="row">
-                <input type="checkbox" data-role="switch" data-caption="Switch" data-caption-position="left" id="collapse_toggle_1">
+                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia" data-caption-position="left" id="collapse_toggle_1">
                 <div class="pos-relative">
                     <div class="fg-black" data-role="collapse" data-toggle-element="#collapse_toggle_1" data-collapsed="true">
                         <p class="p-10 text-center">

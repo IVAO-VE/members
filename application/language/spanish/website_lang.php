@@ -105,6 +105,8 @@ $lang['airlines_system'] = 'VA systems';
 //Charts
 $lang['charts_title'] = 'Cartas de navegación';
 $lang['charts_system'] = 'Cartas';
+$lang['charts_IFR'] = 'Cartas de navegación por instrumentos';
+$lang['charts_VFR'] = 'Cartas de navegación visual';
 
 //Meteorologic
 $lang['meteorologic_title'] = 'Información meteorológica';

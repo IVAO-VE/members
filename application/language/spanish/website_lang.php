@@ -111,6 +111,8 @@ $lang['charts_VFR'] = 'Cartas de navegación visual';
 //Meteorologic
 $lang['meteorologic_title'] = 'Información meteorológica';
 $lang['meteorologic_system'] = 'Metars';
+$lang['meteorologic_CAR'] = 'Satelite Infrarojo CAR';
+$lang['meteorologic_WX'] = 'Gráfico WX de superficie tropical';
 
 //Information
 $lang['information_title'] = 'Información general';

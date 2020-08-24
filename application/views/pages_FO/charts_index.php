@@ -38,7 +38,7 @@
             <div class="bg-white p-4">
                 <div>
                     <button class="shortcut mt-1">
-                        <span class="caption">Rocket</span>
+                        <span class="caption">ICAO</span>
                         <span class="mif-airplane icon"></span>
                     </button>
                 </div>

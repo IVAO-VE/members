@@ -39,31 +39,7 @@
                 <div>
                     <button class="shortcut mt-1">
                         <span class="caption">Rocket</span>
-                        <span class="mif-rocket icon"></span>
-                    </button>
-                    <button class="shortcut mt-1">
-                        <span class="tag">10</span>
-                        <span class="caption">Rocket</span>
-                        <span class="mif-rocket icon"></span>
-                    </button>
-                    <button class="shortcut primary mt-1">
-                        <span class="tag">10</span>
-                        <span class="caption">Rocket</span>
-                        <span class="mif-rocket icon"></span>
-                    </button>
-                    <button class="shortcut secondary outline mt-1">
-                        <span class="tag">10</span>
-                        <span class="caption">Rocket</span>
-                        <span class="mif-rocket icon"></span>
-                    </button>
-                    <button class="shortcut alert rounded mt-1">
-                        <span class="tag">10</span>
-                        <span class="caption">Rocket</span>
-                        <img src="images/checkmark.png" class="icon">
-                    </button>
-                    <button class="shortcut info outline rounded no-caption mt-1">
-                        <span class="tag">10</span>
-                        <span class="mif-rocket icon"></span>
+                        <span class="mif-airplane icon"></span>
                     </button>
                 </div>
             </div>            

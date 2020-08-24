@@ -60,7 +60,7 @@
                     <button class="shortcut info outline rounded mt-2 mr-2">
                         <span class="caption">ZONE</span>
                         <span class="mif-document-file-pdf icon"></span>
-                    </button>';
+                    </button>
                 </div>
             </div>            
         </div>

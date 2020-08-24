@@ -102,7 +102,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtStart').prop('disabled', true);
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);
-                $('#tituloDate').html(info.dateStr);
+                $('#tituloDates').html(info.dateStr);
                 Metro.dialog.open('#date');
             },
         });
@@ -204,7 +204,7 @@ $this->load->view("_lib/lib.menu.php");
 
 <!-- Inicio Dialog DateClick -->
 <div class="dialog" data-role="dialog" id="date">
-    <div class="dialog-title text-center" id="tituloDate">Nuevo evento</div>
+    <div class="dialog-title text-center" id="tituloDates">Nuevo evento</div>
     <div class="dialog-content">
         <?php echo form_open(base_url('staff/EVinsert')) ?>
         <div class="grid">
@@ -233,7 +233,7 @@ $this->load->view("_lib/lib.menu.php");
             <div class="row">
                 <div class="cell-6">
                     <label>Fecha final</label>
-                    <input type="text" data-role="calendarpicker" name="end" class="fg-black">
+                    <input type="text" data-role="calendarpicker" id="end" name="end" class="fg-black">
                 </div>
                 <div class="cell-6">
                     <label>Hora final</label>

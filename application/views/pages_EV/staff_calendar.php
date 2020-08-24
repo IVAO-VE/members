@@ -264,7 +264,7 @@ $this->load->view("_lib/lib.menu.php");
             <div class="row">
                 <button class="button" id="collapse_toggle_1">Collapse block</button>
                 <div class="pos-relative">
-                    <div class="bg-red fg-white" data-role="collapse" data-toggle-element="#collapse_toggle_1">
+                    <div class="bg-red fg-white" data-role="collapse" data-toggle-element="#collapse_toggle_1" data-collapsed="true">
                         <p class="p-10 text-center">
                             In Metro 4 you can transform any element to collapsible.
                         </p>

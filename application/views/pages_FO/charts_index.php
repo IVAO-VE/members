@@ -42,7 +42,7 @@
                         foreach ($query->result() as $row) {
                             echo '<button class="shortcut info outline rounded mt-2 mr-2">
                                     <span class="caption">'.$row->icao.'</span>
-                                    <span class="mif-airplane icon"></span>
+                                    <span class="mif-document-file-pdf icon"></span>
                                 </button>';
                         }
                     ?>

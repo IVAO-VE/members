@@ -36,16 +36,13 @@
             <div class="card">
                 <div class="card-header">
                     <div class="avatar">
-                        <img src="https://lorempixel.com/68/68/people/">
+                        <img src="<?php echo base_url('include/images/perfiles')."/ve.png"; ?>">
                     </div>
-                    <div class="name">John Doe</div>
+                    <div class="name">IVAO Venezuela</div>
                     <div class="date">Monday at 3:47 PM</div>
                 </div>
                 <div class="card-content p-2">
-                    <img src="https://lorempixel.com/1000/600/nature/" style="width: 100%">
-                    <div class="p-2">
-                        Unearthly, indeed, pattern! For a gooey springy sauce, add some vinaigrette and radish sprouts. Avast, black sail. you won't trade the bikini atoll.
-                    </div>
+                    <img src="http://images.intellicast.com/WxImages/SatelliteLoop/hicbsat_None_anim.gif" style="width: 100%">
                 </div>
                 <div class="card-footer">
                     <button class="flat-button mif-thumbs-up mif-2x"></button>
@@ -59,20 +56,13 @@
             <div class="card">
                 <div class="card-header">
                     <div class="avatar">
-                        <img src="http://images.intellicast.com/WxImages/SatelliteLoop/hicbsat_None_anim.gif">
+                        <img src="<?php echo base_url('include/images/perfiles')."/ve.png"; ?>">
                     </div>
-                    <div class="name">John Doe</div>
+                    <div class="name">IVAO Venezuela</div>
                     <div class="date">Monday at 3:47 PM</div>
                 </div>
-                <div class="card-content p-2">
-                    What a nice photo i took yesterday!
-                </div>
                 <div class="card-content">
-                    <img src="http://images.intellicast.com/WxImages/CustomGraphic/tgsfc24.gif">
-                </div>
-                <div class="card-content fg-gray p-2">
-                    <span><small>Likes: </small>112</span>
-                    <span><small>Comments: </small>43</span>
+                    <img src="http://images.intellicast.com/WxImages/CustomGraphic/tgsfc24.gif"  style="width: 100%">
                 </div>
                 <div class="card-footer">
                     <button class="flat-button mif-thumbs-up mif-2x"></button>

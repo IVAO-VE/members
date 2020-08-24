@@ -101,10 +101,10 @@
                         <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
                     </div>
                     <div class="name">IVAO Venezuela</div>
-                    <div class="date"><?php echo $this->lang->line('meteorologic_WIND'); ?></div>
+                    <div class="date"><?php echo $this->lang->line('meteorologic_PRES'); ?></div>
                 </div>
                 <div class="card-content  p-2">
-                    <img src="http://images.intellicast.com/WxImages/CustomGraphic/tgsfc24.gif"  style="width: 100%">
+                    <img src="https://www.nhc.noaa.gov/tafb_latest/WATL_latest.gif"  style="width: 100%">
                 </div>
                 <div class="card-footer">
                     <button class="flat-button mif-thumbs-up mif-2x"></button>

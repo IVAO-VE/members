@@ -115,6 +115,7 @@ $lang['meteorologic_CAR'] = 'Infrared Satellite CAR';
 $lang['meteorologic_WX'] = 'Tropical Surface WX chart';
 $lang['meteorologic_SAM'] = 'Infrared Satellite SAM';
 $lang['meteorologic_WIND'] = 'Interactive winds';
+$lang['meteorologic_PRES'] = 'Atmospheric pressure';
 
 //Information
 $lang['information_title'] = 'General information';

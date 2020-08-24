@@ -37,10 +37,16 @@
         <div class="row">
             <div class="bg-white p-4">
                 <div>
-                    <button class="shortcut mt-1">
-                        <span class="caption">ICAO</span>
-                        <span class="mif-airplane icon"></span>
-                    </button>
+                    <?php
+                        $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
+                        foreach ($query->result() as $row) {
+                            echo '<button class="shortcut mt-1">
+                                    <span class="caption">'.$row->title.'</span>
+                                    <span class="mif-airplane icon"></span>
+                                </button>';
+                        }
+                    ?>
+               
                 </div>
             </div>            
         </div>

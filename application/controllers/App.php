@@ -174,6 +174,10 @@ class App extends CI_Controller
                                 //print_r($arraymember);
                                 //Cargando los datos de sesión
                                 $this->session->set_userdata($arraymember);
+                                //Atualizando datos del miembro en la DB
+                                if($this->db->simple_query('SELECT * FROM members_data WHERE vid='.$this->session->userdata('vid'))) { //El usuario es de la división
+                                        $query = $this->db->query("UPDATE members_data SET name='".$this->session->userdata('fullname')."', ip_access='".$this->myfunctions->get_cliente_ip()."', time_access='".time()."'");
+                                }                                
                                 //Cargando la vista inicial
                                 $this->load->view('app_start');
                         }

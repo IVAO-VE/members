@@ -130,6 +130,7 @@ $lang['information_system'] = 'Information';
 //Virtual sceneries
 $lang['sceneries_title'] = 'Virtual sceneries';
 $lang['sceneries_system'] = 'Venezuelans sceneries';
+$lang['sceneries_download'] = 'Download scenery';
 
 //Notams
 $lang['notams_title'] = 'Notams';

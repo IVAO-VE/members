@@ -39,7 +39,7 @@
                 <div class="card-header fg-white" style="background-image: url(http://lorempixel.com/1000/600/abstract/)">
 
                     <div class="avatar">
-                        <img src="https://lorempixel.com/68/68/people/">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
                     </div>
 
                     Journey To Mountains
@@ -51,7 +51,7 @@
                     hendrerit...
                 </div>
                 <div class="card-footer">
-                    <button class="button secondary">Read More</button>
+                    <button class="button secondary"><?php echo $this->lang->line('sceneries_download'); ?></button>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                 <div class="card-header fg-white" style="background-image: url(http://lorempixel.com/1000/600/abstract/)">
 
                     <div class="avatar">
-                        <img src="https://lorempixel.com/68/68/people/">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
                     </div>
 
                     Journey To Mountains
@@ -73,7 +73,7 @@
                     hendrerit...
                 </div>
                 <div class="card-footer">
-                    <button class="button secondary">Read More</button>
+                    <button class="button secondary"><?php echo $this->lang->line('sceneries_download'); ?></button>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                 <div class="card-header fg-white" style="background-image: url(http://lorempixel.com/1000/600/abstract/)">
 
                     <div class="avatar">
-                        <img src="https://lorempixel.com/68/68/people/">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
                     </div>
 
                     Journey To Mountains
@@ -95,7 +95,7 @@
                     hendrerit...
                 </div>
                 <div class="card-footer">
-                    <button class="button secondary">Read More</button>
+                    <button class="button secondary"><?php echo $this->lang->line('sceneries_download'); ?></button>
                 </div>
             </div>
         </div>

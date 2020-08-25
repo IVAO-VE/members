@@ -21,27 +21,7 @@
 
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
-<?php
-    //Consultando datos del miembro en la DB
-    $query = $this->db->query('SELECT * FROM members_data WHERE vid='.$this->session->userdata('vid'));
-    $row = $query->row();
-    if(isset($row)){ //El miembro está en la lista de la división
-        if(($row->mail == null) || ($row->mail == null)){
-            /** NO TIENE EL CORREO ELECTRONICO ASIGNADO HAY QUE PEDIRLO **/
-        }
-        if(!isset($row->ip_access)){
-            /** NO TIENE EL CORREO ELECTRONICO ASIGNADO HAY QUE PEDIRLO **/
-        }
-        if((isset($row->ip_access)) && (isset($row->time_access))){
-            /** MOSTRAMOS FECHA Y HORA + IP DE CONEXION **/
-            echo '<h3 class="dashboard-section-title  text-center text-left-md w-100">'.$this->lang->line('mainpage').'</br><small>'.$this->lang->line('mainversion').' | '.$this->lang->line('main_lastaccess').' '.date("d/m/Y H:m:s", $row->time_access).' '.$this->lang->line('main_lastfrom').' '.$row->ip_access.'</small></h3>';
-        }else{
-            /** MOSTRAMOS SOLO VERSION **/
-            echo '<h3 class="dashboard-section-title  text-center text-left-md w-100">'.$this->lang->line('mainpage').'</br><small>'.$this->lang->line('mainversion').'</small></h3>';
-        }
-    }
-
-?>    
+        <h3 class="dashboard-section-title  text-center text-left-md w-100">'.$this->lang->line('mainpage').'</br><small>'.$this->lang->line('mainversion').'</small></h3>
     </div>
 
     <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md flex-align-center">

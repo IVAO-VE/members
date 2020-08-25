@@ -153,10 +153,11 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             <?php
                                 $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='PILOT' AND vid=".$this->session->userdata('vid')." ORDER BY connection_time DESC");
                                 foreach ($query->result() as $row) {
+                                    if($row->fl_rules=='I'){ $Ty='IFR'; }else{ $Ty='VFR'; }
                                     echo '
                                     <tr onclick="openDemoDialogActions()">
                                         <td>'.$row->callsign.'</td>
-                                        <td>'.$row->fl_rules=='I' ? 'IFR' : 'VFR'.'</td>
+                                        <td>'.$Ty.'</td>
                                         <td>'.$row->fl_departure.'</td>
                                         <td>'.$row->fl_destination.'</td>
                                         <td>'.$row->server.'</td>

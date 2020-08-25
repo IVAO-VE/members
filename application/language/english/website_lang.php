@@ -103,6 +103,8 @@ $lang['main_activityFL'] = 'Your flight activities';
 $lang['main_reportCT'] = 'ATC report';
 $lang['main_activityCT'] = 'Your atc activities';
 $lang['main_activityG'] = 'Venezuelan activities register';
+$lang['main_lastaccess'] = 'Your last access';
+$lang['main_lastfrom'] = 'from the ip';
 
 //Virtual airlines
 $lang['airlines_title'] = 'Virtual airlines';

@@ -267,11 +267,35 @@
                     //******************************
                     if($access_nivel['pages_FO'] == 'true'){ //Tiene acceso a Operaciones de vuelo
                         echo '
-                            <li>
-                                <a href="#">
+                                <li>
+                                <a href="#" class="dropdown-toggle">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ '.$this->lang->line('staff').' ] '.$this->lang->line('dpto02').'</span>
                                 </a>
+                                <ul class="navview-menu stay-open" data-role="dropdown" >
+                                    <li class="item-header">STAFF</li>
+                                    
+                                    <li><a href="/staff/airlines">
+                                        <span class="icon"><span class="mif-spinner2"></span></span>
+                                        <span class="caption">'.ucfirst(strtolower($this->lang->line('staf_option').' '.$this->lang->line('airlines_title'))).'</span>
+                                    </a></li>
+
+                                    <li><a href="/staff/charts">
+                                        <span class="icon"><span class="mif-spinner2"></span></span>
+                                        <span class="caption">'.ucfirst(strtolower($this->lang->line('staf_option').' '.$this->lang->line('charts_title'))).'</span>
+                                    </a></li>
+
+                                    <li><a href="/staff/notams">
+                                        <span class="icon"><span class="mif-spinner2"></span></span>
+                                        <span class="caption">'.ucfirst(strtolower($this->lang->line('staf_option').' '.$this->lang->line('notams_title'))).'</span>
+                                    </a></li>
+                                    
+                                    <li><a href="/staff/sceneries">
+                                        <span class="icon"><span class="mif-spinner2"></span></span>
+                                        <span class="caption">'.ucfirst(strtolower($this->lang->line('staf_option').' '.$this->lang->line('sceneries_title'))).'</span>
+                                    </a></li>
+
+                                </ul>
                             </li>
                         ';
                     }

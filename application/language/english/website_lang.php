@@ -90,7 +90,8 @@ $lang['staff_dpto08_index'] = 'Staff options for public relations';
 $lang['staff_dpto09_index'] = 'Staff options for web and systems';
 $lang['staff_dpto10_index'] = 'Staff options for FIR';
 $lang['staff_HQ_0001'] = 'Access levels';
-$lang['staffarea'] = 'Staff zone'; 
+$lang['staffarea'] = 'Staff zone';
+$lang['staf_option'] = 'Manage '; 
 
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';

@@ -119,7 +119,7 @@
 <div class="m-3">
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('meteorologic_WIND'); ?>" data-collapsible="true" data-title-icon="<span class='mif-help'></span>" class="mt-4">
         <div class="row">
-            <iframe class="" width="100%" height="100%" src="https://earth.nullschool.net/#current/wind/surface/level/orthographic=-64.19,11.10,1008/loc=-66.502,10.491"></iframe>
+            <iframe class="m-2" width="100%" height="800px" src="https://earth.nullschool.net/#current/wind/surface/level/orthographic=-64.19,11.10,1008/loc=-66.502,10.491"></iframe>
         </div>
     </div>
 </div>

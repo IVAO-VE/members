@@ -56,10 +56,22 @@
                         <span class="caption">FS2004</span>
                         <span class="mif-document-file-zip icon"></span>
                     </button>
-                    <button class="button secondary">FSX</button>
-                    <button class="button secondary">Prepar3D</button>
-                    <button class="button secondary">X-Plane</button>
-                    <button class="button secondary">FS2020</button>
+                    <button class="shortcut info outline rounded mt-1">
+                        <span class="caption">FSX</span>
+                        <span class="mif-document-file-zip icon"></span>
+                    </button>
+                    <button class="shortcut info outline rounded mt-1">
+                        <span class="caption">Prepar3D</span>
+                        <span class="mif-document-file-zip icon"></span>
+                    </button>
+                    <button class="shortcut info outline rounded mt-1">
+                        <span class="caption">X-Plane</span>
+                        <span class="mif-document-file-zip icon"></span>
+                    </button>
+                    <button class="shortcut info outline rounded mt-1">
+                        <span class="caption">FS2020</span>
+                        <span class="mif-document-file-zip icon"></span>
+                    </button>
                 </div>
             </div>
         </div>

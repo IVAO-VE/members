@@ -403,22 +403,7 @@
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
                         <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
-<?php
-    //Consultando datos del miembro en la DB
-    $query = $this->db->query('SELECT * FROM members_data WHERE vid='.$this->session->userdata('vid'));
-    $row = $query->row();
-    if(isset($row)){ //El miembro está en la lista de la división
-        if((isset($row->ip_access)) && (isset($row->time_access))){
-            /** MOSTRAMOS FECHA Y HORA + IP DE CONEXION **/
-            echo '<span class="ml-2 app-bar-name">'.$this->session->userdata("fullname")."\n".$this->lang->line("main_lastaccess").' '.date("d/m/Y H:m:s", $row->time_access).' '.$this->lang->line("main_lastfrom").' '.$row->ip_access.'</span>';
-        }else{
-            /** MOSTRAMOS SOLO VERSION **/
-            echo '<span class="ml-2 app-bar-name">'.$this->session->userdata("fullname").'</span>';
-        }
-    }
-
-?>                          
-                        
+                        <span class="ml-2 app-bar-name"><?php echo $this->session->userdata("fullname"); ?></span>';
                     </a>
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">

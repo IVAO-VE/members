@@ -111,6 +111,33 @@
                 </div>
             </div>
         </div>
+
+        <div class="cell-lg-4">
+            <div class="card image-header">
+                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 9).".jpg"; ?>)">
+
+                    <div class="avatar">
+                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
+                    </div>
+
+                    Journey To Mountains
+                </div>
+                <div class="card-content p-2">
+                    <p class="fg-gray">Posted on January 21, 2015</p>
+                    Quisque eget vestibulum nulla. Quisque quis dui quis ex
+                    ultricies efficitur vitae non felis. Phasellus quis nibh
+                    hendrerit...
+                </div>
+                <div class="card-footer">
+                <button class="button secondary">FS2004</button>
+                    <button class="button secondary">FSX</button>
+                    <button class="button secondary">Prepar3D</button>
+                    <button class="button secondary">X-Plane</button>
+                    <button class="button secondary">FS2020</button>
+                </div>
+            </div>
+        </div>
+
 </div>
 
 

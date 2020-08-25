@@ -116,6 +116,32 @@
     </div>
 
 
+<div class="m-3">
+    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('meteorologic_WIND'); ?>" data-collapsible="true" data-title-icon="<span class='mif-help'></span>" class="mt-4">
+        <div class="row">
+
+<p>
+ </p><h4><b>Viento de altura</b></h4>
+ <a href="http://aviationweather.gov/data/iffdp/2306.gif" target="_blank"><button type="button" class="btn btn-info"><b>FL050</b></button></a>
+<a href="http://aviationweather.gov/data/iffdp/2305.gif" target="_blank"><button type="button" class="btn btn-info"><b>FL100</b></button></a>
+<a href="http://aviationweather.gov/data/iffdp/2304.gif" target="_blank"><button type="button" class="btn btn-info"><b>FL180</b></button></a>
+<a href="http://aviationweather.gov/data/iffdp/2303.gif" target="_blank"><button type="button" class="btn btn-info"><b>FL240</b></button></a>
+<a href="http://aviationweather.gov/data/iffdp/2302.gif" target="_blank"><button type="button" class="btn btn-info"><b>FL300</b></button></a>
+<a href="http://aviationweather.gov/data/iffdp/2301.gif" target="_blank"><button type="button" class="btn btn-info"><b>FL340</b></button></a>
+<a href="http://aviationweather.gov/data/iffdp/2300.gif" target="_blank"><button type="button" class="btn btn-info"><b>FL390</b></button></a>
+<br>       
+<h4><b>Viento interactivo</b></h4>
+<iframe class="" width="100%" height="800px" src="https://earth.nullschool.net/#current/wind/surface/level/orthographic=-64.19,11.10,1008/loc=-66.502,10.491"></iframe>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
 <?php
 	$this->load->view("_lib/lib.footer.php");
 ?>

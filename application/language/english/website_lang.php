@@ -104,7 +104,10 @@ $lang['main_reportCT'] = 'ATC report';
 $lang['main_activityCT'] = 'Your atc activities';
 $lang['main_activityG'] = 'Venezuelan activities register';
 $lang['main_lastaccess'] = 'Last access';
-$lang['main_lastfrom'] = 'from ip';
+$lang['main_DATE'] = 'Date';
+$lang['main_IP'] = 'IP';
+$lang['main_NODATA'] = 'Out of login information';
+
 
 //Virtual airlines
 $lang['airlines_title'] = 'Virtual airlines';

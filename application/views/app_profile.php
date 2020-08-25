@@ -151,7 +151,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             </thead>
                             <tbody>
                             <?php
-                                $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='PILOT' AND vid=".$this->session->userdata('vid')." ORDER BY connection_time DESC");
+                                $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='PILOT' AND vid=".$this->session->userdata('vid')." ORDER BY connection_time DESC LIMIT 15");
                                 foreach ($query->result() as $row) {
                                     if($row->fl_rules=='I'){ $Ty='IFR'; }else{ $Ty='VFR'; }
                                     echo '

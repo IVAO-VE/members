@@ -54,10 +54,7 @@
                     <button class="button secondary">FS2004</button>
                     <button class="button secondary">FSX</button>
                     <button class="button secondary">Prepar3D v3</button>
-                    <button class="button secondary">Prepar3D v4</button>
                     <button class="button secondary">X-Plane</button>
-                    <button class="button secondary">Fly!</button>
-                    <button class="button secondary">FlightGear</button>
                     <button class="button secondary">FS2020</button>
                 </div>
             </div>
@@ -83,10 +80,7 @@
                 <button class="button secondary">FS2004</button>
                     <button class="button secondary">FSX</button>
                     <button class="button secondary">Prepar3D v3</button>
-                    <button class="button secondary">Prepar3D v4</button>
                     <button class="button secondary">X-Plane</button>
-                    <button class="button secondary">Fly!</button>
-                    <button class="button secondary">FlightGear</button>
                     <button class="button secondary">FS2020</button>
                 </div>
             </div>
@@ -112,10 +106,7 @@
                 <button class="button secondary">FS2004</button>
                     <button class="button secondary">FSX</button>
                     <button class="button secondary">Prepar3D v3</button>
-                    <button class="button secondary">Prepar3D v4</button>
                     <button class="button secondary">X-Plane</button>
-                    <button class="button secondary">Fly!</button>
-                    <button class="button secondary">FlightGear</button>
                     <button class="button secondary">FS2020</button>
                 </div>
             </div>

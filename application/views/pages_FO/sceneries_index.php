@@ -53,7 +53,7 @@
                 <div class="card-footer">
                     <button class="button secondary">FS2004</button>
                     <button class="button secondary">FSX</button>
-                    <button class="button secondary">Prepar3D v3</button>
+                    <button class="button secondary">Prepar3D</button>
                     <button class="button secondary">X-Plane</button>
                     <button class="button secondary">FS2020</button>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="card-footer">
                 <button class="button secondary">FS2004</button>
                     <button class="button secondary">FSX</button>
-                    <button class="button secondary">Prepar3D v3</button>
+                    <button class="button secondary">Prepar3D</button>
                     <button class="button secondary">X-Plane</button>
                     <button class="button secondary">FS2020</button>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="card-footer">
                 <button class="button secondary">FS2004</button>
                     <button class="button secondary">FSX</button>
-                    <button class="button secondary">Prepar3D v3</button>
+                    <button class="button secondary">Prepar3D</button>
                     <button class="button secondary">X-Plane</button>
                     <button class="button secondary">FS2020</button>
                 </div>

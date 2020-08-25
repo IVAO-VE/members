@@ -403,7 +403,7 @@
                 <div class="app-bar-container">
                     <a href="#" class="app-bar-item">
                         <img src="<?php echo $this->session->userdata('member_img'); ?>" class="avatar">
-                        <span class="ml-2 app-bar-name"><?php echo $this->session->userdata("fullname"); ?></span>';
+                        <span class="ml-2 app-bar-name"><?php echo $this->session->userdata("fullname"); ?></span>
                     </a>
                     <div class="user-block shadow-1" data-role="collapse" data-collapsed="true">
                         <div class="bg-darkCyan fg-white p-2 text-center">

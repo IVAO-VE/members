@@ -107,22 +107,21 @@
         <div class="more-info-box bg-orange fg-white">
             <div class="content">
                 <h2 class="text-bold mb-0"><?php echo $this->lang->line('main_lastaccess'); ?></h2>
-<?php
-    //Consultando datos del miembro en la DB
-    $query = $this->db->query('SELECT * FROM members_data WHERE vid='.$this->session->userdata('vid'));
-    $row = $query->row();
-    if(isset($row)){ //El miembro está en la lista de la división
-        if((isset($row->ip_access)) && (isset($row->time_access))){
-            /** MOSTRAMOS FECHA Y HORA + IP DE CONEXION **/
-            echo ' <div>'.$this->lang->line("main_DATE").': '.date("d/m/Y H:m:s", $row->time_access).' '.$this->lang->line("main_IP").': '.$row->ip_access.'</div>';
-        }else{
-            /** MOSTRAMOS SOLO VERSION **/
-            echo '<div>'.$this->lang->line("main_NODATA").'</div>';
-        }
-    }
+                <?php
+                    //Consultando datos del miembro en la DB
+                    $query = $this->db->query('SELECT * FROM members_data WHERE vid='.$this->session->userdata('vid'));
+                    $row = $query->row();
+                    if(isset($row)){ //El miembro está en la lista de la división
+                        if((isset($row->ip_access)) && (isset($row->time_access))){
+                            /** MOSTRAMOS FECHA Y HORA + IP DE CONEXION **/
+                            echo ' <div>'.$this->lang->line("main_DATE").' '.date("d/m/Y H:m:s", $row->time_access).'</br>'.$this->lang->line("main_IP").' '.$row->ip_access.'</div>';
+                        }else{
+                            /** MOSTRAMOS SOLO VERSION **/
+                            echo '<div>'.$this->lang->line("main_NODATA").'</div>';
+                        }
+                    }
 
-?>  
-                
+                ?>  
             </div>
             <div class="icon">
                 <span class="mif-user-plus"></span>

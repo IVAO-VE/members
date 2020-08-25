@@ -141,20 +141,31 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         <table class="table table-strip">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Numero de vuelo</th>
-                                    <th>Origen</th>
-                                    <th>Destino</th>
-                                    <th>Opciones</th>
+                                    <th><?php echo $this->lang->line('callsing'); ?></th>
+                                    <th><?php echo $this->lang->line('type'); ?></th>
+                                    <th><?php echo $this->lang->line('from'); ?></th>
+                                    <th><?php echo $this->lang->line('to'); ?></th>
+                                    <th><?php echo $this->lang->line('server'); ?></th>
+                                    <th><?php echo $this->lang->line('transponder'); ?></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr onclick="openDemoDialogActions()">
-                                    <td>1</td>
-                                    <td>VCV002</td>
-                                    <td>SVMI</td>
-                                    <td>SKBO</td>
-                                </tr>
+                            <?php
+                                $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='PILOT' AND vid=".$this->session->userdata('vid')." ORDER BY connection_time DESC");
+                                foreach ($query->result() as $row) {
+                                    echo '
+                                    <tr onclick="openDemoDialogActions()">
+                                        <td>'.$row.callsign.'</td>
+                                        <td>'.$row.fl_rules=='I' ? 'IFR' : 'VFR'.'</td>
+                                        <td>'.$row.fl_departure.'</td>
+                                        <td>'.$row.fl_destination.'</td>
+                                        <td>'.$row.server.'</td>
+                                        <td>'.$row.transponder_code.'</td>
+                                    </tr>
+                                    
+                                    ';
+                                }
+                            ?>
                             </tbody>
                         </table>
                     </div>

@@ -31,6 +31,12 @@ $lang['country'] = 'Country';
 $lang['division'] = 'Division';
 $lang['flights'] = 'Flights';
 $lang['radars'] = 'Radars';
+$lang['callsing'] = 'Callsing';
+$lang['type'] = 'Type';
+$lang['from'] = 'From';
+$lang['to'] = 'To';
+$lang['server'] = 'Server';
+$lang['transponder'] = 'Transponder';
 
 //Menu traslators
 $lang['renderpage'] = 'Page rendered in';

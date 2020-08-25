@@ -410,7 +410,7 @@
     if(isset($row)){ //El miembro está en la lista de la división
         if((isset($row->ip_access)) && (isset($row->time_access))){
             /** MOSTRAMOS FECHA Y HORA + IP DE CONEXION **/
-            echo '<span class="ml-2 app-bar-name">'.$this->session->userdata("fullname").'</br>'.$this->lang->line("main_lastaccess").' '.date("d/m/Y H:m:s", $row->time_access).' '.$this->lang->line("main_lastfrom").' '.$row->ip_access.'</span>';
+            echo '<span class="ml-2 app-bar-name">'.$this->session->userdata("fullname")."\n".$this->lang->line("main_lastaccess").' '.date("d/m/Y H:m:s", $row->time_access).' '.$this->lang->line("main_lastfrom").' '.$row->ip_access.'</span>';
         }else{
             /** MOSTRAMOS SOLO VERSION **/
             echo '<span class="ml-2 app-bar-name">'.$this->session->userdata("fullname").'</span>';

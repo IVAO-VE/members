@@ -155,12 +155,12 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                 foreach ($query->result() as $row) {
                                     echo '
                                     <tr onclick="openDemoDialogActions()">
-                                        <td>'.$row.callsign.'</td>
-                                        <td>'.$row.fl_rules=='I' ? 'IFR' : 'VFR'.'</td>
-                                        <td>'.$row.fl_departure.'</td>
-                                        <td>'.$row.fl_destination.'</td>
-                                        <td>'.$row.server.'</td>
-                                        <td>'.$row.transponder_code.'</td>
+                                        <td>'.$row->callsign.'</td>
+                                        <td>'.$row->fl_rules=='I' ? 'IFR' : 'VFR'.'</td>
+                                        <td>'.$row->fl_departure.'</td>
+                                        <td>'.$row->fl_destination.'</td>
+                                        <td>'.$row->server.'</td>
+                                        <td>'.$row->transponder_code.'</td>
                                     </tr>
                                     
                                     ';

@@ -52,12 +52,12 @@ echo "<pre>";
                         /** Marcamos la conexión nuevamente como activa **/
                         $MyACTIVE = EjecutarSQL("UPDATE whazzup_log SET log_status=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array("A", trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
                         echo date("d-m-Y H:i:s\t")."ACTIVADO: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
-                        if(trim($xPARTS[46]) == 0){ //El avion está volando (EN AIRE)
+                        if(($MyQueryC[0]['log_status'] == 'A') && (trim($xPARTS[46]) == 0)){ //El avion está activo y volando (EN AIRE)
                             if(($MyQueryC[0]['takeoff_time'] == null) || ($MyQueryC[0]['takeoff_time'] == '')){ //Hay que asignar tiempo de despegue
                                 $MyAIRBORNE = EjecutarSQL("UPDATE whazzup_log SET takeoff_time=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array(time(), trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
                                 echo date("d-m-Y H:i:s\t")."ASIGNANDO DESPEGUE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
                             }
-                        }else{ //El avion está en superficie (EN TIERRA)
+                        }else if(($MyQueryC[0]['log_status'] == 'A') && (trim($xPARTS[46]) == 1)){ //El avion está activo y en superficie (EN TIERRA)
                             if(($MyQueryC[0]['takeoff_time'] != null) || ($MyQueryC[0]['takeoff_time'] != '')){ //Ya había despegado y hay que asignar tiempo de aterrizaje
                                 $MyLANDING = EjecutarSQL("UPDATE whazzup_log SET landing_time=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array(time(), trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
                                 echo date("d-m-Y H:i:s\t")."ASIGNANDO ATERRIZAJE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";

@@ -52,6 +52,17 @@ echo "<pre>";
                         /** Marcamos la conexión nuevamente como activa **/
                         $MyACTIVE = EjecutarSQL("UPDATE whazzup_log SET log_status=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array("A", trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
                         echo date("d-m-Y H:i:s\t")."ACTIVADO: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
+                        if(trim($xPARTS[46]) == 0){ //El avion está volando (EN AIRE)
+                            if(($MyQueryC[0]['takeoff_time'] == null) || ($MyQueryC[0]['takeoff_time'] == '')){ //Hay que asignar tiempo de despegue
+                                $MyAIRBORNE = EjecutarSQL("UPDATE whazzup_log SET takeoff_time=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array(time(), trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
+                                echo date("d-m-Y H:i:s\t")."ASIGNANDO DESPEGUE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
+                            }
+                        }else{ //El avion está en superficie (EN TIERRA)
+                            if(($MyQueryC[0]['takeoff_time'] != null) || ($MyQueryC[0]['takeoff_time'] != '')){ //Ya había despegado y hay que asignar tiempo de aterrizaje
+                                $MyLANDING = EjecutarSQL("UPDATE whazzup_log SET landing_time=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array(time(), trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
+                                echo date("d-m-Y H:i:s\t")."ASIGNANDO ATERRIZAJE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
+                            }
+                        }
                     }else{ //La conexion no existe y hay que agregarla al LOG
                         $MyINSERT = "INSERT INTO whazzup_log(callsign,vid,client_type,frequency,latitude,longitude,altitude,ground_speed,fl_aircraft,fl_speed,fl_departure,fl_level,fl_destination,fl_revision,fl_rules,fl_dep_time,fl_actual_dep_time,fl_eet_hours,fl_eet_minutes,fl_endurance_hours,fl_endurance_min,fl_alternate,fl_other_info,fl_route,fl_2nd_alternate,fl_type_flight,fl_persons,server,protocol,combined_rating,transponder_code,facility_type,visual_range,atis,atis_time,connection_time,software_name,software_version,administrative_version,atc_pilot_version,heading,on_ground,simulator,plane,log_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
                         $MyQuery = EjecutarSQL($MyINSERT, "sisssssssssssssssssssssssssssssssssssssssssss", array(

@@ -51,7 +51,14 @@
                     hendrerit...
                 </div>
                 <div class="card-footer">
-                    <button class="button secondary"><?php echo $this->lang->line('sceneries_download'); ?></button>
+                    <button class="button secondary">FS2004</button>
+                    <button class="button secondary">FSX</button>
+                    <button class="button secondary">Prepar3D v3</button>
+                    <button class="button secondary">Prepar3D v4</button>
+                    <button class="button secondary">X-Plane</button>
+                    <button class="button secondary">Fly!</button>
+                    <button class="button secondary">FlightGear</button>
+                    <button class="button secondary">FS2020</button>
                 </div>
             </div>
         </div>
@@ -73,7 +80,14 @@
                     hendrerit...
                 </div>
                 <div class="card-footer">
-                    <button class="button secondary"><?php echo $this->lang->line('sceneries_download'); ?></button>
+                <button class="button secondary">FS2004</button>
+                    <button class="button secondary">FSX</button>
+                    <button class="button secondary">Prepar3D v3</button>
+                    <button class="button secondary">Prepar3D v4</button>
+                    <button class="button secondary">X-Plane</button>
+                    <button class="button secondary">Fly!</button>
+                    <button class="button secondary">FlightGear</button>
+                    <button class="button secondary">FS2020</button>
                 </div>
             </div>
         </div>
@@ -95,7 +109,14 @@
                     hendrerit...
                 </div>
                 <div class="card-footer">
-                    <button class="button secondary"><?php echo $this->lang->line('sceneries_download'); ?></button>
+                <button class="button secondary">FS2004</button>
+                    <button class="button secondary">FSX</button>
+                    <button class="button secondary">Prepar3D v3</button>
+                    <button class="button secondary">Prepar3D v4</button>
+                    <button class="button secondary">X-Plane</button>
+                    <button class="button secondary">Fly!</button>
+                    <button class="button secondary">FlightGear</button>
+                    <button class="button secondary">FS2020</button>
                 </div>
             </div>
         </div>

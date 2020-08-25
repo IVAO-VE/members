@@ -124,7 +124,7 @@
                 ?>  
             </div>
             <div class="icon">
-                <span class="mif-user-plus"></span>
+                <span class="mif-security"></span>
             </div>
             <a href="#" class="more"> More info <span class="mif-arrow-right"></span></a>
         </div>

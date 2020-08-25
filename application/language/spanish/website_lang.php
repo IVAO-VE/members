@@ -103,8 +103,8 @@ $lang['main_activityFL'] = 'Actividad de tus vuelos';
 $lang['main_reportCT'] = 'Reportar control';
 $lang['main_activityCT'] = 'Actividad de tus controles';    
 $lang['main_activityG'] = 'Actividades venezolanas registradas';
-$lang['main_lastaccess'] = 'Último acceso el';
-$lang['main_lastfrom'] = 'desde la ip';
+$lang['main_lastaccess'] = 'Último acceso';
+$lang['main_lastfrom'] = ' con IP';
 
 //Virtual airlines
 $lang['airlines_title'] = 'Aerolineas virtuales';

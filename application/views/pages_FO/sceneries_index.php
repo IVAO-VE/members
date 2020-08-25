@@ -36,7 +36,7 @@
 <div class="row">
         <div class="cell-lg-4">
             <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 9).".jpg"; ?>)">
+                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 30).".jpg"; ?>)">
 
                     <div class="avatar">
                         <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
@@ -62,7 +62,7 @@
 
         <div class="cell-lg-4">
             <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 9).".jpg"; ?>)">
+                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 30).".jpg"; ?>)">
 
                     <div class="avatar">
                         <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
@@ -88,7 +88,7 @@
 
         <div class="cell-lg-4">
             <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 9).".jpg"; ?>)">
+                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 30).".jpg"; ?>)">
 
                     <div class="avatar">
                         <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
@@ -114,7 +114,7 @@
 
         <div class="cell-lg-4">
             <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 9).".jpg"; ?>)">
+                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 30).".jpg"; ?>)">
 
                     <div class="avatar">
                         <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
@@ -140,7 +140,7 @@
 
         <div class="cell-lg-4">
             <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 9).".jpg"; ?>)">
+                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 30).".jpg"; ?>)">
 
                     <div class="avatar">
                         <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
@@ -166,7 +166,7 @@
 
         <div class="cell-lg-4">
             <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 9).".jpg"; ?>)">
+                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 30).".jpg"; ?>)">
 
                     <div class="avatar">
                         <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">

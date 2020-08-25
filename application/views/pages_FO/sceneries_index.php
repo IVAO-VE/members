@@ -33,6 +33,77 @@
 
 
 
+<div class="row">
+        <div class="cell-lg-4">
+            <div class="card image-header">
+                <div class="card-header fg-white" style="background-image: url(http://lorempixel.com/1000/600/abstract/)">
+
+                    <div class="avatar">
+                        <img src="https://lorempixel.com/68/68/people/">
+                    </div>
+
+                    Journey To Mountains
+                </div>
+                <div class="card-content p-2">
+                    <p class="fg-gray">Posted on January 21, 2015</p>
+                    Quisque eget vestibulum nulla. Quisque quis dui quis ex
+                    ultricies efficitur vitae non felis. Phasellus quis nibh
+                    hendrerit...
+                </div>
+                <div class="card-footer">
+                    <button class="button secondary">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cell-lg-4">
+            <div class="card image-header">
+                <div class="card-header fg-white" style="background-image: url(http://lorempixel.com/1000/600/abstract/)">
+
+                    <div class="avatar">
+                        <img src="https://lorempixel.com/68/68/people/">
+                    </div>
+
+                    Journey To Mountains
+                </div>
+                <div class="card-content p-2">
+                    <p class="fg-gray">Posted on January 21, 2015</p>
+                    Quisque eget vestibulum nulla. Quisque quis dui quis ex
+                    ultricies efficitur vitae non felis. Phasellus quis nibh
+                    hendrerit...
+                </div>
+                <div class="card-footer">
+                    <button class="button secondary">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cell-lg-4">
+            <div class="card image-header">
+                <div class="card-header fg-white" style="background-image: url(http://lorempixel.com/1000/600/abstract/)">
+
+                    <div class="avatar">
+                        <img src="https://lorempixel.com/68/68/people/">
+                    </div>
+
+                    Journey To Mountains
+                </div>
+                <div class="card-content p-2">
+                    <p class="fg-gray">Posted on January 21, 2015</p>
+                    Quisque eget vestibulum nulla. Quisque quis dui quis ex
+                    ultricies efficitur vitae non felis. Phasellus quis nibh
+                    hendrerit...
+                </div>
+                <div class="card-footer">
+                    <button class="button secondary">Read More</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
 <?php
 	$this->load->view("_lib/lib.footer.php");
 ?>

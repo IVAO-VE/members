@@ -181,7 +181,10 @@
                     hendrerit...
                 </div>
                 <div class="card-footer">
-                <button class="button secondary">FS2004</button>
+                    <button class="shortcut info outline rounded mt-1">
+                        <span class="caption">FS2004</span>
+                        <span class="mif-document-file-zip icon"></span>
+                    </button>
                     <button class="button secondary">FSX</button>
                     <button class="button secondary">Prepar3D</button>
                     <button class="button secondary">X-Plane</button>

@@ -44,22 +44,7 @@ $this->load->view("_lib/lib.menu.php");
                     <th>Acciones</th>
                 </tr>
             <tbody>
-                <?php
-                $q = $this->db->get("news");
-                if ($q->result() > 0) {
-                    foreach ($q->result() as $fila) {
-                ?>
-                        <tr>
-                            <td><?php echo $fila->id; ?></td>
-                            <td><?php echo $fila->title; ?></td>
-                            <td><?php echo $fila->description; ?></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                <?php
-                    }
-                }
-                ?>
+                
             </tbody>
             </thead>
         </table>
@@ -70,37 +55,26 @@ $this->load->view("_lib/lib.menu.php");
                     <th data-sortable="true">Titulo</th>
                     <th data-sortable="true">Descripcion</th>
                     <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
-                    <th data-sortable="true" data-format="int">Age</th>
-                    <th data-sortable="true" data-format="money">Salary</th>
+                    <th data-sortable="true">Creado por</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Tiger Nixon</td>
-                    <td>Edinburgh</td>
-                    <td>25/04/2011</td>
-                    <td>61</td>
-                    <td>$320,800</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Tiger Nixon</td>
-                    <td>Edinburgh</td>
-                    <td>25/04/2011</td>
-                    <td>61</td>
-                    <td>$320,800</td>
-                    
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Simon Nixon</td>
-                    <td>Edinburgh</td>
-                    <td>25/04/2011</td>
-                    <td>61</td>
-                    <td>$320,800</td>
-                </tr>
-                ...
+            <?php
+                $q = $this->db->get("news");
+                if ($q->result() > 0) {
+                    foreach ($q->result() as $fila) {
+                ?>
+                        <tr>
+                            <td><?php echo $fila->id; ?></td>
+                            <td><?php echo $fila->title; ?></td>
+                            <td><?php echo $fila->description; ?></td>
+                            <td><?php echo $fila->author ?></td>
+                            <td></td>
+                        </tr>
+                <?php
+                    }
+                }
+                ?>
             </tbody>
         </table>
         <div class="d-flex flex-column flex-justify-center">

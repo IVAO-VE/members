@@ -21,7 +21,7 @@ $this->load->view("_lib/lib.menu.php");
     <div class="bg-white p-6 text-center text-leader">
         Metro 4 InMemory table
         <p class="text-leader2">
-            Turn your table interactive  with search, sorting, filtering, rows counting, pagination and table inspector features with a single attribute <code>data-role="table"</code>
+            Turn your table interactive with search, sorting, filtering, rows counting, pagination and table inspector features with a single attribute <code>data-role="table"</code>
         </p>
     </div>
     <br>
@@ -36,31 +36,31 @@ $this->load->view("_lib/lib.menu.php");
         <table id="t1" class="table table-border cell-border">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Titulo</th>
-                    <th>Descripcion</th>
+                    <th class="sortable-column">ID</th>
+                    <th class="sortable-column">Titulo</th>
+                    <th class="sortable-column">Descripcion</th>
                     <th>URL Foro</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
-                <tbody>
-                    <?php
-                        $q = $this->db->get("news");
-                        if($q->result() > 0){
-                            foreach($q->result() as $fila){
-                                ?>
-                                <tr>
-                                    <td><?php echo $fila->id ?></td>
-                                    <td><?php echo $fila->title ?></td>
-                                    <td><?php echo $fila->description ?></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <?php
-                            }
-                        }
-                    ?>
-                </tbody>
+            <tbody>
+                <?php
+                $q = $this->db->get("news");
+                if ($q->result() > 0) {
+                    foreach ($q->result() as $fila) {
+                ?>
+                        <tr>
+                            <td><?php echo $fila->id; ?></td>
+                            <td><?php echo $fila->title; ?></td>
+                            <td><?php echo $fila->description; ?></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                <?php
+                    }
+                }
+                ?>
+            </tbody>
             </thead>
         </table>
         <div class="d-flex flex-column flex-justify-center">

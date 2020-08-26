@@ -19,13 +19,35 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="">
     <div class="bg-white p-6 text-center text-leader">
-        Noticias
+        Metro 4 InMemory table
         <p class="text-leader2">
-            Estas seran las noticias publicadas en nuestro sistema, se pondran crear desde el sistema de eventos en calendario o individual desde este panel.
+            Turn your table interactive with search, sorting, filtering, rows counting, pagination and table inspector features with a single attribute <code>data-role="table"</code>
         </p>
     </div>
     <br>
     <div class="bg-white p-4">
+        <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
+            <div class="w-100 mb-2 mb-0-lg" id="t1_search"></div>
+            <div class="ml-2 mr-2" id="t1_rows"></div>
+            <div class="" id="t1_actions">
+                <button class="button square" onclick="$('#t1').data('table').toggleInspector()"><span class="mif-cog"></span></button>
+            </div>
+        </div>
+        <table id="t1" class="table table-border cell-border">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th=>
+                    <th>Descripcion</th>
+                    <th>URL Foro</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            <tbody>
+                
+            </tbody>
+            </thead>
+        </table>
         <table class="table" data-role="table">
             <thead>
                 <tr>
@@ -37,7 +59,7 @@ $this->load->view("_lib/lib.menu.php");
                 </tr>
             </thead>
             <tbody>
-                <?php
+            <?php
                 $q = $this->db->get("news");
                 if ($q->result() > 0) {
                     foreach ($q->result() as $fila) {
@@ -46,12 +68,8 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php echo $fila->id; ?></td>
                             <td><?php echo $fila->title; ?></td>
                             <td><?php echo $fila->description; ?></td>
-                            <td><?php echo $fila->date ?></td>
-                            <td><a href="https://www.ivao.aero/Member.aspx?ID=.'<?php echo $fila->author ?>'."><?php echo $fila->author ?></a></td>
-                            <td>
-                                <a href=""><span class="mif-bin"></span></a>
-                                <a href=""><span class="mif-pencil"></span></a>
-                            </td>
+                            <td><?php echo $fila->author ?></td>
+                            <td></td>
                         </tr>
                 <?php
                     }

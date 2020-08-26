@@ -43,7 +43,7 @@ $this->load->view("_lib/lib.menu.php");
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
-            <tbody>
+            <tbody data-role="sorter">
                 <?php
                 $q = $this->db->get("news");
                 if ($q->result() > 0) {

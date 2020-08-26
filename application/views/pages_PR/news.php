@@ -83,6 +83,23 @@ $this->load->view("_lib/lib.menu.php");
                     <td>61</td>
                     <td>$320,800</td>
                 </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tiger Nixon</td>
+                    <td>Edinburgh</td>
+                    <td>25/04/2011</td>
+                    <td>61</td>
+                    <td>$320,800</td>
+                    
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Simon Nixon</td>
+                    <td>Edinburgh</td>
+                    <td>25/04/2011</td>
+                    <td>61</td>
+                    <td>$320,800</td>
+                </tr>
                 ...
             </tbody>
         </table>

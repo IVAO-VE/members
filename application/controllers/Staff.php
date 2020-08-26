@@ -178,7 +178,7 @@ class Staff extends CI_Controller
             $img = $this->input->post('img');
             $foro = $this->input->post('foro');
             $noticia = $this->input->post('noticia');
-            
+
 
             if ($startTime == '00:00:00') {
                 $FinalStart = $start;
@@ -195,7 +195,7 @@ class Staff extends CI_Controller
 
             /* Webhook Discord conectado al Modelo */
 
-/*            $this->load->model('discord');
+            /*            $this->load->model('discord');
 
             $url = "https://discordapp.com/api/webhooks/746101048921292850/40HJt1yE2saIYBXNVA0U1r10c4zuKO9TjlraAAL7-ME8eIcZUH24mMydcLMTQ3lO9Kws";
             $this->discord->enviarEmbed($url, "", [
@@ -224,7 +224,7 @@ class Staff extends CI_Controller
                 "foro" => $foro
             );
 
-            if($noticia){
+            if ($noticia) {
                 $Ndata = array(
                     "title" => $title,
                     "description" => $Description,
@@ -258,16 +258,16 @@ class Staff extends CI_Controller
         $URLimg = $this->input->post('URLimg');
         $URLforo = $this->input->post('URLforo');
 
-        if($timeStart == ''){
+        if ($timeStart == '') {
             $Start = $txtStart;
-        }else{
-            $Start = $txtStart.'T'.$timeStart;
+        } else {
+            $Start = $txtStart . 'T' . $timeStart;
         }
 
-        if($timeEnd == ''){
+        if ($timeEnd == '') {
             $End = $txtEnd;
-        }else{
-            $End = $txtEnd.'T'.$timeEnd;
+        } else {
+            $End = $txtEnd . 'T' . $timeEnd;
         }
 
         $data = array(
@@ -300,6 +300,22 @@ class Staff extends CI_Controller
         }
     }
 
-
-
+    public function News()
+    {
+        //Consultado con la DB
+        $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
+        $query_access  = $this->db->select('*')
+            ->from('permisos')
+            ->where('vid', $this->session->userdata('vid')) //VID de usuario 
+            ->get();
+        $access_nivel = $query_access->row_array();
+        if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
+            //******************************
+            if ($access_nivel['pages_PR'] != 'true') { //NO TIENE ACCESO A LA ZONA
+                redirect(base_url());
+            } else {
+                $this->load->view("pages_PR/news");
+            }
+        }
+    }
 }

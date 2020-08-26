@@ -36,14 +36,14 @@ $this->load->view("_lib/lib.menu.php");
         <table id="t1" class="table table-border cell-border">
             <thead>
                 <tr>
-                    <th class="sortable-column">ID</th>
-                    <th class="sortable-column">Titulo</th>
-                    <th class="sortable-column">Descripcion</th>
+                    <th>ID</th>
+                    <th>Titulo</th=>
+                    <th>Descripcion</th>
                     <th>URL Foro</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
-            <tbody data-role="sorter">
+            <tbody>
                 <?php
                 $q = $this->db->get("news");
                 if ($q->result() > 0) {
@@ -62,6 +62,29 @@ $this->load->view("_lib/lib.menu.php");
                 ?>
             </tbody>
             </thead>
+        </table>
+        <table class="table" data-role="table">
+            <thead>
+                <tr>
+                    <th data-sortable="true" data-sort-dir="asc">ID</th>
+                    <th data-sortable="true">Titulo</th>
+                    <th data-sortable="true">Descripcion</th>
+                    <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
+                    <th data-sortable="true" data-format="int">Age</th>
+                    <th data-sortable="true" data-format="money">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Tiger Nixon</td>
+                    <td>Edinburgh</td>
+                    <td>25/04/2011</td>
+                    <td>61</td>
+                    <td>$320,800</td>
+                </tr>
+                ...
+            </tbody>
         </table>
         <div class="d-flex flex-column flex-justify-center">
             <div id="t1_info"></div>

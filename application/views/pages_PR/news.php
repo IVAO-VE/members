@@ -33,14 +33,35 @@ $this->load->view("_lib/lib.menu.php");
                 <button class="button square" onclick="$('#t1').data('table').toggleInspector()"><span class="mif-cog"></span></button>
             </div>
         </div>
-        <table id="t1" class="table table-border cell-border"
-               data-role="table"
-               data-source="data/table.json"
-               data-search-wrapper="#t1_search"
-               data-rows-wrapper="#t1_rows"
-               data-info-wrapper="#t1_info"
-               data-pagination-wrapper="#t1_pagination"
-               data-horizontal-scroll="true">
+        <table id="t1" class="table table-border cell-border">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>URL Foro</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+                <tbody>
+                    <?php
+                        $q = $this->db->get("news");
+                        if($q->result() > 0){
+                            foreach($q->result() as $fila){
+                                ?>
+                                <tr>
+                                    <td><?php echo $fila->id ?></td>
+                                    <td><?php echo $fila->title ?></td>
+                                    <td><?php echo $fila->description ?></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                    ?>
+                </tbody>
+            </thead>
         </table>
         <div class="d-flex flex-column flex-justify-center">
             <div id="t1_info"></div>

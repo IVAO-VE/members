@@ -48,7 +48,7 @@ class Staff extends CI_Controller
         }
     }
 
-    public function airlines()
+    public function flights()
     {
         //Consultado con la DB
         $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
@@ -62,7 +62,7 @@ class Staff extends CI_Controller
             if ($access_nivel['pages_FO'] != 'true') { //NO TIENE ACCESO A LA ZONA
                 redirect(base_url());
             } else {
-                $this->load->view("pages_FO/airlines_staff");
+                $this->load->view("pages_FO/staff_index");
             }
         }
     }

@@ -68,7 +68,7 @@ $this->load->view("_lib/lib.menu.php");
                                 }
                                 ?></td>
                             <td>
-                                <span class="mif-delete"></span>
+                                <span class="mif-bin"></span>
                                 <span class="mif-pencil"></span>
                             </td>
                         </tr>
@@ -87,7 +87,9 @@ $this->load->view("_lib/lib.menu.php");
         <div class="row">
             <div class="cell-11"></div>
             <div class="cell-1">
-                <a href="" class="button primary cycle "></a>
+                <a href="" class="button primary cycle ">
+                    <span class="mif-plus"></span>
+                </a>
             </div>
         </div>
     </div>

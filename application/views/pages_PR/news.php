@@ -137,8 +137,8 @@ $this->load->view("_lib/lib.menu.php");
 <!-- Inicio Modal Editar Noticia -->
 <div id="Edit" class="dialog" data-role="dialog">
     <script>
-        var id = $('#BtnEdit').data('id');
-
+        id = $('#BtnEdit').data('id');
+        alert(id);
         if(id == 2){
             $('#hola').show();
         }else{

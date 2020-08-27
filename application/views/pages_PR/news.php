@@ -73,13 +73,8 @@ $this->load->view("_lib/lib.menu.php");
                                 ?></td>
                             <td>
                                 <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
-                                <a onclick="Metro.dialog.open('#edit')" data-id="<?php echo $fila->id ?>" id="BtnEdit"><span class="mif-pencil"></span></a>
+                                <a href=""><span class="mif-pencil"></span></a>
                             </td>
-                            <script>
-                                $(document).ready(function() {
-                                    $('#Titulo').val(<?php echo $fila->id ?>)
-                                        }
-                            </script>
                         </tr>
                 <?php
                     }

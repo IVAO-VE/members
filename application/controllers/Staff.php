@@ -337,7 +337,7 @@ class Staff extends CI_Controller
             if($this->input->post('status')){
                 $status = 1;
             }else{
-                $status = 2;
+                $status = 0;
             }
 
             $data = array(

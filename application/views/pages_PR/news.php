@@ -19,16 +19,20 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="">
     <?php if ($this->session->flashdata('info')) : ?>
-        <div class="alert alert-info mt-3" role="alert">
-            <?php echo $this->session->flashdata('info'); ?>
-        </div>
+        <script>
+            $(document).ready(function() {
+                function showNotify() {
+                    Metro.notify.create("<?php echo $this->session->flashdata('info'); ?>", null, {});
+                }
+            });
+        </script>
     <?php endif; ?>
     <?php if ($this->session->flashdata('error')) : ?>
         <div class="alert alert-danger mt-3" role="alert">
             <?php echo $this->session->flashdata('error'); ?>
         </div>
     <?php endif; ?>
-    
+
     <div class="bg-white p-6 text-center text-leader">
         Panel de noticias
         <p class="text-leader2">

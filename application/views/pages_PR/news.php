@@ -99,7 +99,8 @@ $this->load->view("_lib/lib.menu.php");
         <?php if (isset($New)) :
             if ($New != false) : ?>
                 <div class="row">
-                    <div class="cell">
+                    <div class="cell-4"></div>
+                    <div class="cell-4">
                         <?php foreach ($New as $News) { ?>
                             <?php echo form_open('staff/EditNew') ?>
                             <div class="card">
@@ -112,13 +113,13 @@ $this->load->view("_lib/lib.menu.php");
                                             <div class="cell-6">
                                                 <div class="form-group">
                                                     <label>Titulo</label>
-                                                    <input type="text" class="fg-black" name="title" required>
+                                                    <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
                                                 </div>
                                             </div>
                                             <div class="cell-6">
                                                 <div class="form-group">
                                                     <label>Descripcion</label>
-                                                    <textarea name="descripcion" data-role="textarea" cols="10" rows="10"></textarea>
+                                                    <textarea name="descripcion" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,6 +132,7 @@ $this->load->view("_lib/lib.menu.php");
                             <?php echo form_close() ?>
                         <?php } ?>
                     </div>
+                    <div class="cell-4"></div>
                 </div>
             <?php else : ?>
                 <div class="row">

@@ -26,13 +26,6 @@ $this->load->view("_lib/lib.menu.php");
     </div>
     <br>
     <div class="bg-white p-4">
-        <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
-            <div class="w-100 mb-2 mb-0-lg" id="t1_search"></div>
-            <div class="ml-2 mr-2" id="t1_rows"></div>
-            <div class="" id="t1_actions">
-                <button class="button square" onclick="$('#t1').data('table').toggleInspector()"><span class="mif-cog"></span></button>
-            </div>
-        </div>
         <table class="table" data-role="table">
             <thead>
                 <tr>

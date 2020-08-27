@@ -62,7 +62,8 @@ $this->load->view("_lib/lib.menu.php");
                                         echo '<span class="mif-home fg-red"></span> Oculto';
                                     break;
                                     case '1':
-                                        echo '<span class="mif-checkmark fg-green"></span> Publicado'
+                                        echo '<span class="mif-checkmark fg-green"></span> Publicado';
+                                    break;
                                 }
                             ?></td>
                         </tr>

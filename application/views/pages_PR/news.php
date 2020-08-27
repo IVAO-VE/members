@@ -100,7 +100,7 @@ $this->load->view("_lib/lib.menu.php");
             if ($New != false) : ?>
                 <div class="row">
                     <div class="cell">
-                        <?php echo $New->id; ?>
+                        <?php echo $New ?>
                     </div>
                 </div>
             <?php else : ?>

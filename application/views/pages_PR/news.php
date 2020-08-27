@@ -61,8 +61,8 @@ $this->load->view("_lib/lib.menu.php");
                                 }
                                 ?></td>
                             <td>
-                                <span class="mif-bin"></span>
-                                <span class="mif-pencil"></span>
+                                <a href=""><span class="mif-bin"></span></a>
+                                <a href=""><span class="mif-pencil"></span></a>
                             </td>
                         </tr>
                 <?php
@@ -80,11 +80,22 @@ $this->load->view("_lib/lib.menu.php");
         <div class="row">
             <div class="cell-11"></div>
             <div class="cell-1">
-                <a href="" class="button primary cycle ">
+                <a class="button primary cycle " onclick="Metro.dialog.open('#add')">
                     <span class="mif-plus"></span>
                 </a>
             </div>
         </div>
+    </div>
+</div>
+<div id="add" class="dialog" data-role="dialog">
+    <div class="dialog-title">Use Windows location service?</div>
+    <div class="dialog-content">
+        Bassus abactors ducunt ad triticum.
+        A fraternal form of manifestation is the bliss.
+    </div>
+    <div class="dialog-actions">
+        <button class="button js-dialog-close">Disagree</button>
+        <button class="button primary js-dialog-close">Agree</button>
     </div>
 </div>
 <?php

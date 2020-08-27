@@ -73,7 +73,7 @@ $this->load->view("_lib/lib.menu.php");
                                 ?></td>
                             <td>
                                 <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
-                                <a onclick="Metro.dialog.open('#Edit')" data-id="<?php echo $fila->id ?>"><span class="mif-pencil"></span></a>
+                                <a onclick="Metro.dialog.open('#Edit')" id="BtnEdit" data-id="<?php echo $fila->id ?>"><span class="mif-pencil"></span></a>
                             </td>
                         </tr>
                 <?php
@@ -136,10 +136,20 @@ $this->load->view("_lib/lib.menu.php");
 <!-- Fin Modal Agregar Noticia -->
 <!-- Inicio Modal Editar Noticia -->
 <div id="Edit" class="dialog" data-role="dialog">
+    <script>
+        var id = $('#BtnEdit').data('id');
+
+        if(id == 2){
+            $('#hola').show();
+        }else{
+            $('#hola').hide();
+            $('#adios').show();
+        }
+    </script>
     <div class="dialog-title">Use Windows location service?</div>
     <div class="dialog-content">
-        Bassus abactors ducunt ad triticum.
-        A fraternal form of manifestation is the bliss.
+        <p id="hola">Hola</p>
+        <p id="adios">A fraternal form of manifestation is the bliss.</p>
     </div>
     <div class="dialog-actions">
         <button class="button js-dialog-close">Disagree</button>

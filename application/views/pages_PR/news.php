@@ -106,17 +106,6 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="dialog" data-role="dialog" data-show="true">
                     <div class="dialog-title">Use Windows location service?</div>
                     <div class="dialog-content">
-                        Bassus abactors ducunt ad triticum.
-                        A fraternal form of manifestation is the bliss.
-                    </div>
-                    <div class="dialog-actions">
-                        <button class="button">Disagree</button>
-                        <button class="button primary">Agree</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="cell-4"></div>
-                    <div class="cell-4">
                         <?php foreach ($New as $News) { ?>
                             <?php echo form_open('staff/EditNew') ?>
                             <div class="card">
@@ -148,12 +137,9 @@ $this->load->view("_lib/lib.menu.php");
                             <?php echo form_close() ?>
                         <?php } ?>
                     </div>
-                    <div class="cell-4"></div>
-                </div>
-            <?php else : ?>
-                <div class="row">
-                    <div class="cel">
-                        <h2>No se ha encontrado resultados disponibles.</h2>
+                    <div class="dialog-actions">
+                        <button class="button">Disagree</button>
+                        <button class="button primary">Agree</button>
                     </div>
                 </div>
             <?php endif; ?>

@@ -365,7 +365,7 @@ class Staff extends CI_Controller
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
             redirect(base_url('staff/News'));
         } else {
-            $query = $this->db->delete('realtors', array('id' => $id));
+            $query = $this->db->delete('news', array('id' => $id));
             if ($query) {
                 $this->session->set_flashdata('info', 'La noticia se elimino correctamente.');
                 redirect(base_url('staff/News'));

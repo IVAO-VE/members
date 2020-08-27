@@ -54,7 +54,7 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php echo $fila->title; ?></td>
                             <td><?php echo $fila->description; ?></td>
                             <td><?php echo $fila->date; ?></td>
-                            <td><a href="https://www.ivao.aero/Member.aspx?Id=.'<?php echo $fila->author ?>'."><?php echo $fila->author ?></a></td>
+                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id='.$fila->author.'">'.$fila->author.'</a>' ?></td>
                         </tr>
                 <?php
                     }

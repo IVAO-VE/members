@@ -237,11 +237,11 @@ class Staff extends CI_Controller
             $query = $this->db->insert('events', $data);
 
             if ($query) {
-                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.');
+                $this->session->set_flashdata('info', 'El evento se registro correctamente.');
                 redirect(base_url('staff/EVcalendar'));
             } else {
-                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.');
-                redirect(base_url('staff/calendarEV'));
+                $this->session->set_flashdata('error', 'Tenemos problemas registrando el evento.');
+                redirect(base_url('staff/EVcalendar'));
             }
         }
     }
@@ -316,6 +316,47 @@ class Staff extends CI_Controller
             } else {
                 $this->load->view("pages_PR/news");
             }
+        }
+    }
+
+    public function AddNew()
+    {
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('title', 'Titulo noticia', 'required');
+        $this->form_validation->set_rules('description', 'Descripcion noticia', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
+            redirect(base_url('staff/News'));
+        } else {
+
+            $title = $this->input->post('title');
+            $description = $this->input->post('description');
+
+            if($this->input->post('status')){
+                $status = 1;
+            }else{
+                $status = 2;
+            }
+
+            $data = array(
+                "title" => $title,
+                "description" => $description,
+                "author" => $this->session->userdata('vid'),
+                "status" => $status
+            );
+
+            $q = $this->db->insert('news', $data);
+            
+            if ($q) {
+                $this->session->set_flashdata('info', 'La noticia se registro correctamente.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas registrando la noticia.');
+                redirect(base_url('staff/News'));
+            }
+
         }
     }
 }

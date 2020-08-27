@@ -18,6 +18,17 @@ $this->load->view("_lib/lib.header.php");
 $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="">
+    <?php if ($this->session->flashdata('info')) : ?>
+        <div class="alert alert-info mt-3" role="alert">
+            <?php echo $this->session->flashdata('info'); ?>
+        </div>
+    <?php endif; ?>
+    <?php if ($this->session->flashdata('error')) : ?>
+        <div class="alert alert-danger mt-3" role="alert">
+            <?php echo $this->session->flashdata('error'); ?>
+        </div>
+    <?php endif; ?>
+    
     <div class="bg-white p-6 text-center text-leader">
         Panel de noticias
         <p class="text-leader2">
@@ -110,7 +121,7 @@ $this->load->view("_lib/lib.menu.php");
             </div>
             <div class="row">
                 <div class="form-group">
-                    <input type="checkbox" data-role="switch" data-caption="Publicar" data-caption-position="left">
+                    <input type="checkbox" data-role="switch" data-caption="Publicar" name="status" data-caption-position="left">
                 </div>
             </div>
         </div>
@@ -118,7 +129,7 @@ $this->load->view("_lib/lib.menu.php");
     <div class="dialog-actions">
         <input type="submit" class="button success" value="Agregar">
         <?php echo form_close() ?>
-        <button class="button js-dialog-close">Disagree</button>
+        <button class="button js-dialog-close">Cerrar</button>
     </div>
 </div>
 <?php

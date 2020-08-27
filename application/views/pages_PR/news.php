@@ -73,21 +73,13 @@ $this->load->view("_lib/lib.menu.php");
                                 ?></td>
                             <td>
                                 <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
-                                <a onclick="Metro.dialog.open('#Edit')" id="BtnEdit"><span class="mif-pencil"></span></a>
-                                <!-- Inicio Modal Editar Noticia -->
-                                <div id="Edit" class="dialog" data-role="dialog">
-                                    <div class="dialog-title"><?php echo $fila->id; ?></div>
-                                    <div class="dialog-content">
-                                        <p id="hola">Hola</p>
-                                        <p id="adios">A fraternal form of manifestation is the bliss.</p>
-                                    </div>
-                                    <div class="dialog-actions">
-                                        <button class="button js-dialog-close">Disagree</button>
-                                        <button class="button primary js-dialog-close">Agree</button>
-                                    </div>
-                                </div>
-                                <!-- Fin Modal Editar Noticia -->
+                                <a data-id="<?php echo $fila->id ?>" id="BtnEdit"><span class="mif-pencil"></span></a>
                             </td>
+                            <script>
+                                $(document).ready(function() {
+                                    $('#Titulo').val(<?php echo $fila->id ?>)
+                                        }
+                            </script>
                         </tr>
                 <?php
                     }
@@ -95,6 +87,17 @@ $this->load->view("_lib/lib.menu.php");
                 ?>
             </tbody>
         </table>
+        <div id="edit" class="dialog">
+            <div class="dialog-title" id="Titulo">Use Windows location service?</div>
+            <div class="dialog-content">
+                Bassus abactors ducunt ad triticum.
+                A fraternal form of manifestation is the bliss.
+            </div>
+            <div class="dialog-actions">
+                <button class="button">Disagree</button>
+                <button class="button primary">Agree</button>
+            </div>
+        </div>
         <div class="d-flex flex-column flex-justify-center">
             <div id="t1_info"></div>
             <div id="t1_pagination"></div>

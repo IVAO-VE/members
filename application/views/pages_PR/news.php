@@ -33,21 +33,6 @@ $this->load->view("_lib/lib.menu.php");
                 <button class="button square" onclick="$('#t1').data('table').toggleInspector()"><span class="mif-cog"></span></button>
             </div>
         </div>
-        <table id="t1" class="table table-border cell-border">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Titulo</th=>
-                    <th>Descripcion</th>
-                    <th>URL Foro</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            <tbody>
-                
-            </tbody>
-            </thead>
-        </table>
         <table class="table" data-role="table">
             <thead>
                 <tr>

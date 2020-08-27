@@ -87,7 +87,7 @@ $this->load->view("_lib/lib.menu.php");
             <div id="t1_pagination"></div>
         </div>
     </div>
-    <div class="gird">
+    <div id="Buttons" class="gird">
         <div class="row">
             <div class="cell-11"></div>
             <div class="cell-1">
@@ -98,6 +98,11 @@ $this->load->view("_lib/lib.menu.php");
         </div>
         <?php if (isset($New)) :
             if ($New != false) : ?>
+            <script>
+                $(document).ready(function() {
+                    $('#Buttons').hide();
+                }
+            </script>
                 <div class="row">
                     <div class="cell-4"></div>
                     <div class="cell-4">

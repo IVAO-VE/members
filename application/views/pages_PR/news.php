@@ -41,6 +41,7 @@ $this->load->view("_lib/lib.menu.php");
                     <th data-sortable="true">Descripcion</th>
                     <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
                     <th data-sortable="true">Creado por</th>
+                    <th data-sortable="true">Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,6 +56,7 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php echo $fila->description; ?></td>
                             <td><?php echo $fila->date; ?></td>
                             <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id='.$fila->author.'">'.$fila->author.'</a>' ?></td>
+                            <td><?php echo $fila->status; ?></td>
                         </tr>
                 <?php
                     }

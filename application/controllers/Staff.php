@@ -334,9 +334,9 @@ class Staff extends CI_Controller
             $title = $this->input->post('title');
             $description = $this->input->post('description');
 
-            if($this->input->post('status')){
+            if ($this->input->post('status')) {
                 $status = 1;
-            }else{
+            } else {
                 $status = 0;
             }
 
@@ -348,7 +348,7 @@ class Staff extends CI_Controller
             );
 
             $q = $this->db->insert('news', $data);
-            
+
             if ($q) {
                 $this->session->set_flashdata('info', 'La noticia se registro correctamente.');
                 redirect(base_url('staff/News'));
@@ -356,16 +356,23 @@ class Staff extends CI_Controller
                 $this->session->set_flashdata('error', 'Tenemos problemas registrando la noticia.');
                 redirect(base_url('staff/News'));
             }
-
         }
     }
 
-    public function DeleteNews($id){
-        if($id == NULL){
-            redirect(base_url('staff/Nada'));
-        }else{
-            redirect(base_url('staff/YesSr'));
+    public function DeleteNews($id)
+    {
+        if ($id == NULL) {
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('staff/News'));
+        } else {
+            $query = $this->db->delete('realtors', array('id' => $id));
+            if ($query) {
+                $this->session->set_flashdata('info', 'La noticia se elimino correctamente.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas eliminando la noticia.');
+                redirect(base_url('staff/News'));
+            }
         }
-        
     }
 }

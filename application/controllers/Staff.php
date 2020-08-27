@@ -122,7 +122,7 @@ class Staff extends CI_Controller
             $img = $this->input->post('img');
             $foro = $this->input->post('foro');
             $noticia = $this->input->post('noticia');
-            
+
 
             if ($startTime == '00:00:00') {
                 $FinalStart = $start;
@@ -139,7 +139,7 @@ class Staff extends CI_Controller
 
             /* Webhook Discord conectado al Modelo */
 
-/*            $this->load->model('discord');
+            /*            $this->load->model('discord');
 
             $url = "https://discordapp.com/api/webhooks/746101048921292850/40HJt1yE2saIYBXNVA0U1r10c4zuKO9TjlraAAL7-ME8eIcZUH24mMydcLMTQ3lO9Kws";
             $this->discord->enviarEmbed($url, "", [
@@ -168,7 +168,7 @@ class Staff extends CI_Controller
                 "foro" => $foro
             );
 
-            if($noticia){
+            if ($noticia) {
                 $Ndata = array(
                     "title" => $title,
                     "description" => $Description,
@@ -181,11 +181,11 @@ class Staff extends CI_Controller
             $query = $this->db->insert('events', $data);
 
             if ($query) {
-                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.');
+                $this->session->set_flashdata('info', 'El evento se registro correctamente.');
                 redirect(base_url('staff/EVcalendar'));
             } else {
-                $this->session->set_flashdata('info', 'La aeronave se ha registrado correctamente.');
-                redirect(base_url('staff/calendarEV'));
+                $this->session->set_flashdata('error', 'Tenemos problemas registrando el evento.');
+                redirect(base_url('staff/EVcalendar'));
             }
         }
     }
@@ -202,16 +202,16 @@ class Staff extends CI_Controller
         $URLimg = $this->input->post('URLimg');
         $URLforo = $this->input->post('URLforo');
 
-        if($timeStart == ''){
+        if ($timeStart == '') {
             $Start = $txtStart;
-        }else{
-            $Start = $txtStart.'T'.$timeStart;
+        } else {
+            $Start = $txtStart . 'T' . $timeStart;
         }
 
-        if($timeEnd == ''){
+        if ($timeEnd == '') {
             $End = $txtEnd;
-        }else{
-            $End = $txtEnd.'T'.$timeEnd;
+        } else {
+            $End = $txtEnd . 'T' . $timeEnd;
         }
 
         $data = array(
@@ -244,6 +244,79 @@ class Staff extends CI_Controller
         }
     }
 
+    public function News()
+    {
+        //Consultado con la DB
+        $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
+        $query_access  = $this->db->select('*')
+            ->from('permisos')
+            ->where('vid', $this->session->userdata('vid')) //VID de usuario 
+            ->get();
+        $access_nivel = $query_access->row_array();
+        if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
+            //******************************
+            if ($access_nivel['pages_PR'] != 'true') { //NO TIENE ACCESO A LA ZONA
+                redirect(base_url());
+            } else {
+                $this->load->view("pages_PR/news");
+            }
+        }
+    }
 
+    public function AddNew()
+    {
 
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('title', 'Titulo noticia', 'required');
+        $this->form_validation->set_rules('description', 'Descripcion noticia', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
+            redirect(base_url('staff/News'));
+        } else {
+
+            $title = $this->input->post('title');
+            $description = $this->input->post('description');
+
+            if ($this->input->post('status')) {
+                $status = 1;
+            } else {
+                $status = 0;
+            }
+
+            $data = array(
+                "title" => $title,
+                "description" => $description,
+                "author" => $this->session->userdata('vid'),
+                "status" => $status
+            );
+
+            $q = $this->db->insert('news', $data);
+
+            if ($q) {
+                $this->session->set_flashdata('info', 'La noticia se registro correctamente.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas registrando la noticia.');
+                redirect(base_url('staff/News'));
+            }
+        }
+    }
+
+    public function DeleteNews($id)
+    {
+        if ($id == NULL) {
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('staff/News'));
+        } else {
+            $query = $this->db->delete('news', array('id' => $id));
+            if ($query) {
+                $this->session->set_flashdata('info', 'La noticia se elimino correctamente.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas eliminando la noticia.');
+                redirect(base_url('staff/News'));
+            }
+        }
+    }
 }

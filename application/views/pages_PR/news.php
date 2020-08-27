@@ -73,7 +73,7 @@ $this->load->view("_lib/lib.menu.php");
                                 ?></td>
                             <td>
                                 <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
-                                <a href=""><span class="mif-pencil"></span></a>
+                                <a href="<?php echo base_url("staff/NewEdit/$fila->id") ?>"><span class="mif-pencil"></span></a>
                             </td>
                         </tr>
                 <?php
@@ -82,17 +82,6 @@ $this->load->view("_lib/lib.menu.php");
                 ?>
             </tbody>
         </table>
-        <div id="edit" class="dialog">
-            <div class="dialog-title" id="Titulo">Use Windows location service?</div>
-            <div class="dialog-content">
-                Bassus abactors ducunt ad triticum.
-                A fraternal form of manifestation is the bliss.
-            </div>
-            <div class="dialog-actions">
-                <button class="button">Disagree</button>
-                <button class="button primary">Agree</button>
-            </div>
-        </div>
         <div class="d-flex flex-column flex-justify-center">
             <div id="t1_info"></div>
             <div id="t1_pagination"></div>
@@ -107,6 +96,22 @@ $this->load->view("_lib/lib.menu.php");
                 </a>
             </div>
         </div>
+        <?php if (isset($New)) :
+            if ($New != false) : ?>
+                <div class="row">
+                    <div class="cell">
+                        <?php echo $stock->id; ?>
+                    </div>
+                </div>
+            <?php else : ?>
+                <div class="row">
+                    <div class="cel">
+                        <h2>No se ha encontrado resultados disponibles.</h2>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+
     </div>
 </div>
 <!-- Modal Agregar Noticia -->

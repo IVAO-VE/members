@@ -319,4 +319,20 @@ class Staff extends CI_Controller
             }
         }
     }
+
+    public function NewEdit($id){
+        if($id == NULL){
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('staff/News'));
+        }else{
+            $this->db->where('id', $id);
+            $q = $this->db->get('news');
+            if($q->num_rows() > 0){
+                $data['New'] = $q->result();
+            }else{
+                $data['New'] = false;
+            }
+            $this->load->view('staff/News', $data);
+        }
+    }
 }

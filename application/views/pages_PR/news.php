@@ -45,7 +45,7 @@ $this->load->view("_lib/lib.menu.php");
                 </tr>
             </thead>
             <tbody>
-            <?php
+                <?php
                 $q = $this->db->get("news");
                 if ($q->result() > 0) {
                     foreach ($q->result() as $fila) {
@@ -55,17 +55,17 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php echo $fila->title; ?></td>
                             <td><?php echo $fila->description; ?></td>
                             <td><?php echo $fila->date; ?></td>
-                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id='.$fila->author.'">'.$fila->author.'</a>' ?></td>
-                            <td><?php 
-                                switch($fila->status){
+                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
+                            <td><?php
+                                switch ($fila->status) {
                                     case '0':
-                                        echo '<span class="mif-home fg-red"></span> Oculto';
-                                    break;
+                                        echo '<span class="mif-not fg-red"></span> Oculto';
+                                        break;
                                     case '1':
                                         echo '<span class="mif-checkmark fg-green"></span> Publicado';
-                                    break;
+                                        break;
                                 }
-                            ?></td>
+                                ?></td>
                         </tr>
                 <?php
                     }
@@ -76,6 +76,16 @@ $this->load->view("_lib/lib.menu.php");
         <div class="d-flex flex-column flex-justify-center">
             <div id="t1_info"></div>
             <div id="t1_pagination"></div>
+        </div>
+    </div>
+    <div class="gird">
+        <div class="row">
+            <div class="cell-11"></div>
+            <div class="cell-1">
+                <button class="action-button">
+                    <span class="icon"><span class="mif-plus"></span></span>
+                </button>
+            </div>
         </div>
     </div>
 </div>

@@ -359,4 +359,13 @@ class Staff extends CI_Controller
 
         }
     }
+
+    public function DeleteNews($id){
+        if($id == NULL){
+            redirect(base_url('staff/Nada'));
+        }else{
+            redirect(base_url('staff/YesSr'));
+        }
+        
+    }
 }

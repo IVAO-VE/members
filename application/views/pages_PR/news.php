@@ -101,7 +101,7 @@ $this->load->view("_lib/lib.menu.php");
             <script>
                 $(document).ready(function() {
                     $('#Buttons').hide();
-                }
+                });
             </script>
                 <div class="row">
                     <div class="cell-4"></div>

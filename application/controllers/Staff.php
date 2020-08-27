@@ -323,7 +323,7 @@ class Staff extends CI_Controller
     public function NewEdit($id){
         if($id == NULL){
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('staff/News'));
+            redirect(base_url('pages_PR/news'));
         }else{
             $this->db->where('id', $id);
             $q = $this->db->get('news');
@@ -332,7 +332,7 @@ class Staff extends CI_Controller
             }else{
                 $data['New'] = false;
             }
-            $this->load->view('staff/News', $data);
+            $this->load->view('pages_PR/news', $data);
         }
     }
 }

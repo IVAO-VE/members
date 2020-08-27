@@ -20,11 +20,7 @@ $this->load->view("_lib/lib.menu.php");
 <div class="">
     <?php if ($this->session->flashdata('info')) : ?>
         <script>
-            $(document).ready(function() {
-                function showNotify() {
-                    Metro.notify.create("<?php echo $this->session->flashdata('info'); ?>", null, {});
-                }
-            });
+            Metro.notify.create("<?php echo $this->session->flashdata('info'); ?>", null, {});
         </script>
     <?php endif; ?>
     <?php if ($this->session->flashdata('error')) : ?>

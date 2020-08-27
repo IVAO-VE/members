@@ -335,4 +335,46 @@ class Staff extends CI_Controller
             $this->load->view('pages_PR/news', $data);
         }
     }
+
+    public function EditNew(){
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('title', 'Titulo noticia', 'required');
+        $this->form_validation->set_rules('description', 'Descripcion noticia', 'required');
+        $this->form_validation->set_rules('id', 'Identificador', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
+            redirect(base_url('staff/News'));
+        } else {
+
+            $title = $this->input->post('title');
+            $description = $this->input->post('description');
+            $id = $this->input->post('id');
+
+            if ($this->input->post('status')) {
+                $status = 1;
+            } else {
+                $status = 0;
+            }
+
+            $data = array(
+                "title" => $title,
+                "description" => $description,
+                "status" => $status
+            );
+
+            $this->db->where('id', $id);
+            $q = $this->db->update('news', $data);
+
+            if ($q) {
+                $this->session->set_flashdata('info', 'La noticia se edito correctamente.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas editando la noticia.');
+                redirect(base_url('staff/News'));
+            }
+        }
+
+    }
 }

@@ -99,10 +99,11 @@ $this->load->view("_lib/lib.menu.php");
         <?php if (isset($New)) :
             if ($New != false) : ?>
                 <div class="dialog" data-role="dialog" data-show="true">
-                    <div class="dialog-title">Use Windows location service?</div>
+                    <div class="dialog-title text-center">Editar Noticia</div>
                     <div class="dialog-content">
                         <?php foreach ($New as $News) { ?>
                             <?php echo form_open('staff/EditNew') ?>
+                            <input type="hidden" name="id" value="<?php echo $News->id; ?>">
                             <div class="gird">
                                 <div class="row">
                                     <div class="cell-6">
@@ -114,8 +115,13 @@ $this->load->view("_lib/lib.menu.php");
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <label>Descripcion</label>
-                                            <textarea name="descripcion" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
+                                            <textarea name="description" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+                                        <input type="checkbox" data-role="switch" name="status" data-caption="Estado" data-caption-position="left">
                                     </div>
                                 </div>
                             </div>

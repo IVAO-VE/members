@@ -72,7 +72,7 @@ $this->load->view("_lib/lib.menu.php");
                                 }
                                 ?></td>
                             <td>
-                                <a href="<?php echo base_url("staff/DeleteNews/' . $fila->id . '") ?>"><span class="mif-bin"></span></a>
+                                <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
                                 <a href=""><span class="mif-pencil"></span></a>
                             </td>
                         </tr>

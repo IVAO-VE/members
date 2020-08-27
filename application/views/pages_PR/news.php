@@ -103,7 +103,7 @@ $this->load->view("_lib/lib.menu.php");
                         $('#Buttons').hide();
                     });
                 </script>
-                <div class="dialog">
+                <div class="dialog" data-show="true">
                     <div class="dialog-title">Use Windows location service?</div>
                     <div class="dialog-content">
                         Bassus abactors ducunt ad triticum.

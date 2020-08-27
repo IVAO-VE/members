@@ -82,9 +82,7 @@ $this->load->view("_lib/lib.menu.php");
         <div class="row">
             <div class="cell-11"></div>
             <div class="cell-1">
-                <button class="action-button">
-                    <span class="icon"><span class="mif-plus"></span></span>
-                </button>
+                <a href="" class="button primary cycle "></a>
             </div>
         </div>
     </div>

@@ -56,7 +56,15 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php echo $fila->description; ?></td>
                             <td><?php echo $fila->date; ?></td>
                             <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id='.$fila->author.'">'.$fila->author.'</a>' ?></td>
-                            <td><?php echo $fila->status; ?></td>
+                            <td><?php 
+                                switch($fila->status){
+                                    case '0':
+                                        echo '<span class="mif-home fg-red"></span> Oculto';
+                                    break;
+                                    case '1':
+                                        echo '<span class="mif-checkmark fg-green"></span> Publicado'
+                                }
+                            ?></td>
                         </tr>
                 <?php
                     }

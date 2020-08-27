@@ -55,7 +55,6 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php echo $fila->description; ?></td>
                             <td><?php echo $fila->date; ?></td>
                             <td><?php echo $fila->author ?></td>
-                            <td></td>
                         </tr>
                 <?php
                     }

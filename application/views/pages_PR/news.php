@@ -101,6 +101,9 @@ $this->load->view("_lib/lib.menu.php");
                 <div class="row">
                     <div class="cell">
                         <?php print_r($New) ?>
+                        <?php foreach($New as $News){ ?>
+                            <?php echo $News->id; ?>
+                        <?php } ?>
                     </div>
                 </div>
             <?php else : ?>

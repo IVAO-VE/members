@@ -98,11 +98,22 @@ $this->load->view("_lib/lib.menu.php");
         </div>
         <?php if (isset($New)) :
             if ($New != false) : ?>
-            <script>
-                $(document).ready(function() {
-                    $('#Buttons').hide();
-                });
-            </script>
+                <script>
+                    $(document).ready(function() {
+                        $('#Buttons').hide();
+                    });
+                </script>
+                <div class="dialog">
+                    <div class="dialog-title">Use Windows location service?</div>
+                    <div class="dialog-content">
+                        Bassus abactors ducunt ad triticum.
+                        A fraternal form of manifestation is the bliss.
+                    </div>
+                    <div class="dialog-actions">
+                        <button class="button">Disagree</button>
+                        <button class="button primary">Agree</button>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="cell-4"></div>
                     <div class="cell-4">

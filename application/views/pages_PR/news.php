@@ -19,9 +19,9 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="">
     <div class="bg-white p-6 text-center text-leader">
-        Metro 4 InMemory table
+        Panel de noticias
         <p class="text-leader2">
-            Turn your table interactive with search, sorting, filtering, rows counting, pagination and table inspector features with a single attribute <code>data-role="table"</code>
+            En este panel podras ver las noticias creadas y publicadas.
         </p>
     </div>
     <br>

@@ -98,48 +98,33 @@ $this->load->view("_lib/lib.menu.php");
         </div>
         <?php if (isset($New)) :
             if ($New != false) : ?>
-                <script>
-                    $(document).ready(function() {
-                        $('#Buttons').hide();
-                    });
-                </script>
                 <div class="dialog" data-role="dialog" data-show="true">
                     <div class="dialog-title">Use Windows location service?</div>
                     <div class="dialog-content">
                         <?php foreach ($New as $News) { ?>
                             <?php echo form_open('staff/EditNew') ?>
-                            <div class="card">
-                                <div class="card-header">
-                                    Editar Noticia
-                                </div>
-                                <div class="card-content p-2">
-                                    <div class="gird">
-                                        <div class="row">
-                                            <div class="cell-6">
-                                                <div class="form-group">
-                                                    <label>Titulo</label>
-                                                    <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
-                                                </div>
-                                            </div>
-                                            <div class="cell-6">
-                                                <div class="form-group">
-                                                    <label>Descripcion</label>
-                                                    <textarea name="descripcion" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
-                                                </div>
-                                            </div>
+                            <div class="gird">
+                                <div class="row">
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Titulo</label>
+                                            <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
+                                        </div>
+                                    </div>
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Descripcion</label>
+                                            <textarea name="descripcion" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <input type="submit" class="button primary" value="Editar">
-                                </div>
                             </div>
-                            <?php echo form_close() ?>
                         <?php } ?>
                     </div>
                     <div class="dialog-actions">
-                        <button class="button">Disagree</button>
-                        <button class="button primary">Agree</button>
+                        <input type="submit" class="button primary" value="Editar">
+                        <?php echo form_close() ?>
+                        <a href="<?php echo base_url('staff/News') ?>" class="button">Cerrar</a>
                     </div>
                 </div>
             <?php endif; ?>

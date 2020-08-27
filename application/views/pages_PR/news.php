@@ -19,14 +19,12 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="">
     <?php if ($this->session->flashdata('info')) : ?>
-        <script>
-            $(document).ready(function() {
-                    Metro.notify.create("<?php echo $this->session->flashdata('info'); ?>", null, {});     
-            });
-        </script>
+        <div class="remark primary">
+            <?php echo $this->session->flashdata('info'); ?>
+        </div>
     <?php endif; ?>
     <?php if ($this->session->flashdata('error')) : ?>
-        <div class="alert alert-danger mt-3" role="alert">
+        <div class="remark primary">
             <?php echo $this->session->flashdata('error'); ?>
         </div>
     <?php endif; ?>

@@ -100,9 +100,35 @@ $this->load->view("_lib/lib.menu.php");
             if ($New != false) : ?>
                 <div class="row">
                     <div class="cell">
-                        <?php print_r($New) ?>
-                        <?php foreach($New as $News){ ?>
-                            <?php echo $News->id; ?>
+                        <?php foreach ($New as $News) { ?>
+                            <?php echo form_open('staff/EditNew') ?>
+                            <div class="card">
+                                <div class="card-header">
+                                    Editar Noticia
+                                </div>
+                                <div class="card-content p-2">
+                                    <div class="gird">
+                                        <div class="row">
+                                            <div class="cell-6">
+                                                <div class="form-group">
+                                                    <label>Titulo</label>
+                                                    <input type="text" class="fg-black" name="title" required>
+                                                </div>
+                                            </div>
+                                            <div class="cell-6">
+                                                <div class="form-group">
+                                                    <label>Descripcion</label>
+                                                    <textarea name="descripcion" data-role="textarea" cols="10" rows="10"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="submit" class="button primary" value="Editar">
+                                </div>
+                            </div>
+                            <?php echo form_close() ?>
                         <?php } ?>
                     </div>
                 </div>

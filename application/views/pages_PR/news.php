@@ -42,6 +42,7 @@ $this->load->view("_lib/lib.menu.php");
                     <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
                     <th data-sortable="true">Creado por</th>
                     <th data-sortable="true">Estado</th>
+                    <th data-sortable="true">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,6 +67,10 @@ $this->load->view("_lib/lib.menu.php");
                                         break;
                                 }
                                 ?></td>
+                            <td>
+                                <span class="mif-delete"></span>
+                                <span class="mif-pencil"></span>
+                            </td>
                         </tr>
                 <?php
                     }

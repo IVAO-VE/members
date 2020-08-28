@@ -352,16 +352,10 @@ class Staff extends CI_Controller
             $description = $this->input->post('description');
             $id = $this->input->post('id');
 
-            if ($this->input->post('status')) {
-                $status = 1;
-            } else {
-                $status = 0;
-            }
 
             $data = array(
                 "title" => $title,
-                "description" => $description,
-                "status" => $status
+                "description" => $description
             );
 
             $this->db->where('id', $id);

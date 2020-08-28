@@ -64,7 +64,7 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php
                                 switch ($fila->status) {
                                     case '0':
-                                        echo '<span class="mif-not fg-red"></span> Oculto';
+                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
                                         break;
                                     case '1':
                                         echo '<span class="mif-checkmark fg-green"></span> Publicado';
@@ -123,12 +123,6 @@ $this->load->view("_lib/lib.menu.php");
                                     <div class="cell">
                                         <input type="checkbox" data-role="switch" id="status" name="status" data-caption="Estado" data-caption-position="left">
                                     </div>
-                                    <script>
-                                        $(document).ready(function() {
-                                            $("#status").prop("checked", true);
-                                            console.log("ready!");
-                                        });
-                                    </script>
                                 </div>
                             </div>
                         <?php } ?>

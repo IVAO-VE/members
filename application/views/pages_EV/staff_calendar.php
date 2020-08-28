@@ -48,10 +48,18 @@ $this->load->view("_lib/lib.menu.php");
             timeZone: 'UTC',
             locale: 'es',
             selectable: true,
+            customButtons: {
+                EventAdmin: {
+                    text: 'Administrador Eventos',
+                    click: function() {
+                        alert('clicked the custom button!');
+                    }
+                }
+            },
             headerToolbar: {
                 start: 'prev,next',
                 center: 'title',
-                end: 'today,dayGridMonth,listWeek'
+                end: 'EventAdmin,today,dayGridMonth,listWeek'
             },
             buttonText: {
                 today: 'Hoy',

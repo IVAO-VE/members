@@ -258,13 +258,8 @@ echo json_encode($data);
                     </div>
                 </div>
             </div>
-            <script>
-                $(document).ready(function() {
-                    $("#Te").prop("checked", true)
-                });
-            </script>
             <div class="row">
-                <input type="checkbox" id="Te" name="noticia">
+                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
             </div>
         </div>
     </div>

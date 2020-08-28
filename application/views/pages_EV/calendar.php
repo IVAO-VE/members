@@ -109,8 +109,22 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
+                        <label>Hora inicio</label>
+                        <input type="text" class="fg-black" id="TimeStart" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell-6">
+                    <div class="form-group">
                         <label>Fecha final</label>
                         <input type="text" class="fg-black" id="txtEnd" disabled>
+                    </div>
+                </div>
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Hora Final</label>
+                        <input type="text" class="fg-black" id="TimeEnd" disabled>
                     </div>
                 </div>
             </div>

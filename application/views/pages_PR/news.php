@@ -16,6 +16,14 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
+function GetName($vid){
+            $this->db->where('vid', $vid);
+            $this->db->select('vid, name');
+            $query = $this->db->get('members_data'); 
+
+            $Name = $query->result_array()[0]['name'];
+            echo $Name;
+}
 ?>
 <div class="">
     <?php if ($this->session->flashdata('info')) : ?>
@@ -60,7 +68,7 @@ $this->load->view("_lib/lib.menu.php");
                             <td><?php echo $fila->title; ?></td>
                             <td><?php echo $fila->description; ?></td>
                             <td><?php echo $fila->date; ?></td>
-                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
+                            <td><?php GetName($fila->author); ?><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
                             <td><?php
                                 switch ($fila->status) {
                                     case '0':

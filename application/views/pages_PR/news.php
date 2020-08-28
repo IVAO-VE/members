@@ -17,12 +17,14 @@ $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
 function GetName($vid){
+    if($vid){
             $this->db->where('vid', $vid);
             $this->db->select('vid, name');
             $query = $this->db->get('members_data'); 
 
             $Name = $query->result_array()[0]['name'];
             echo $Name;
+    }
 }
 ?>
 <div class="">

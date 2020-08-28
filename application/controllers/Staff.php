@@ -139,15 +139,15 @@ class Staff extends CI_Controller
                 $FinalEnd = $end . ' ' . $endTime;
             }
 
-            if($reportable == 1){
+            if ($reportable == 1) {
                 $report = 1;
-            }else{
+            } else {
                 $report = 0;
             }
 
-            if($publico == 1){
+            if ($publico == 1) {
                 $pub = 1;
-            }else{
+            } else {
                 $pub = 0;
             }
 
@@ -341,7 +341,7 @@ class Staff extends CI_Controller
     {
         if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('pages_PR/news'));
+            redirect(base_url('staff/News'));
         } else {
             $this->db->where('id', $id);
             $q = $this->db->get('news');
@@ -394,7 +394,7 @@ class Staff extends CI_Controller
     {
         if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('pages_PR/news'));
+            redirect(base_url('staff/News'));
         } else {
             $this->db->where('id', $id);
             $this->db->select('id, status');
@@ -402,14 +402,14 @@ class Staff extends CI_Controller
 
             $CurrentStatus = $query->result_array()[0]['status'];
 
-            if($CurrentStatus == 0){
+            if ($CurrentStatus == 0) {
                 $status = 1;
-            }else{
+            } else {
                 $status = 0;
             }
 
             $data = array(
-               "status" => $status
+                "status" => $status
             );
             $this->db->where('id', $id);
             $q = $this->db->update('news', $data);
@@ -439,6 +439,73 @@ class Staff extends CI_Controller
                 redirect(base_url());
             } else {
                 $this->load->view("pages_EV/staff_events");
+            }
+        }
+    }
+
+    public function ReportStatus($id)
+    {
+        if ($id == NULL) {
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('staff/Events'));
+        } else {
+            $this->db->where('event', $id);
+            $this->db->select('id, reportable');
+            $query = $this->db->get('events');
+
+            $CurrentStatus = $query->result_array()[0]['reportable'];
+
+            if ($CurrentStatus == 0) {
+                $status = 1;
+            } else {
+                $status = 0;
+            }
+
+            $data = array(
+                "reportable" => $status
+            );
+            $this->db->where('event', $id);
+            $q = $this->db->update('events', $data);
+
+            if ($q) {
+                $this->session->set_flashdata('info', 'Ahora es un evento reportable.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas Houston.');
+                redirect(base_url('staff/News'));
+            }
+        }
+    }
+
+    public function EvStatus($id){
+        if($id == NULL){
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('staff/Events')); 
+        }else{
+            $this->db->where('event', $id);
+            $this->db->select('id, status');
+            $query = $this->db->get('events');
+
+            $CurrentStatus = $query->result_array()[0]['status'];
+
+            if ($CurrentStatus == 0) {
+                $status = 1;
+            } else {
+                $status = 0;
+            }
+
+            $data = array(
+                "status" => $status
+            );
+            $this->db->where('event', $id);
+            $q = $this->db->update('events', $data);
+
+            if ($q) {
+                $this->session->set_flashdata('info', 'Ahora es un evento publicado.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas Houston.');
+                redirect(base_url('staff/News'));
             }
         }
     }

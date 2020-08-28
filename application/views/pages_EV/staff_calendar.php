@@ -99,6 +99,7 @@ echo json_encode($data);
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);
                 $('#tituloDates').html(info.dateStr);
+                $('#reportable').val('0');
                 Metro.dialog.open('#date');
             },
         });
@@ -259,7 +260,18 @@ echo json_encode($data);
                 </div>
             </div>
             <div class="row">
-                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
+                <div class="cell-6">
+                    <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
+                </div>
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Tipo de evento</label>
+                        <select data-role="select" name="reportable" id="reportable">
+                            <option value="1">Reportable</option>
+                            <option value="0">No reportable</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -283,10 +295,6 @@ echo json_encode($data);
 
 <div id='calendar'></div>
 
-<input type="checkbox" id="test" data-role="checkbox">
-<script>
-    $('#test').prop('checked', true);
-</script>
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>

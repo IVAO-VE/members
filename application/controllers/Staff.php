@@ -92,6 +92,7 @@ class Staff extends CI_Controller
                     $data['data'][$key]['img'] = $value->img;
                     $data['data'][$key]['foro'] = $value->foro;
                     $data['data'][$key]['event'] = $value->event;
+                    $data['data'][$key]['reportable'] = $value->reportable;
                 }
                 $this->load->view("pages_EV/staff_calendar", $data);
             }

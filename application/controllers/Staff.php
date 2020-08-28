@@ -383,7 +383,7 @@ class Staff extends CI_Controller
             $this->db->select('id, status');
             $query = $this->db->get('news');
 
-            $CurrentStatus = $query->result()[0]['status'];
+            $CurrentStatus = $query->result_array()[0]['status'];
 
             if($CurrentStatus == 0){
                 $status = 1;

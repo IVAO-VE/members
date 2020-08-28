@@ -52,7 +52,7 @@ $this->load->view("_lib/lib.menu.php");
                 EventAdmin: {
                     text: 'Administrador Eventos',
                     click: function() {
-                        alert('clicked the custom button!');
+                        <?php base_url('staff/test') ?>;
                     }
                 }
             },

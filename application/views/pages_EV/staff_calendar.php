@@ -283,10 +283,10 @@ echo json_encode($data);
 
 <div id='calendar'></div>
 
-<input type="checkbox" data-role="checkbox" >
+<input type="checkbox" data-role="checkbox">
 <script>
     var checkbox = $(el).data('checkbox');
-checkbox.toggleState();
+    checkbox.enable();
 </script>
 <?php
 $this->load->view("_lib/lib.footer.php");

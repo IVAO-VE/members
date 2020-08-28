@@ -119,11 +119,6 @@ $this->load->view("_lib/lib.menu.php");
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="cell">
-                                        <input type="checkbox" data-role="switch" id="status" name="status" data-caption="Estado" data-caption-position="left">
-                                    </div>
-                                </div>
                             </div>
                         <?php } ?>
                     </div>

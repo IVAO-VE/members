@@ -64,8 +64,15 @@ $this->load->view("_lib/lib.menu.php");
             ],*/
             eventClick: function(info) {
                 $('#tituloEvento').html(info.event.title);
-                $('#txtStart').val(info.event.startStr);
-                $('#txtEnd').val(info.event.endStr);
+                var FechaCompleta = info.event.startStr;
+                //console.log(FechaCompleta);
+                var Start = FechaCompleta.split("T");
+                $('#txtStart').val(Start[0]);
+                $('#TimeStart').val(Start[1]);
+                var EndCompleto = info.event.endStr;
+                var End = EndCompleto.split("T");
+                $('#txtEnd').val(End[0]);
+                $('#TimeEnd').val(End[1]);
                 $('#txtDescription').val(info.event.extendedProps.description);
                 $('#img').attr('src', info.event.extendedProps.img);
                 $('#foro').attr('href', info.event.extendedProps.foro);
@@ -102,25 +109,40 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
-                        <label>Fecha final</label>
-                        <input type="text" class="fg-black" id="txtEnd" disabled>
+                        <label>Hora inicio</label>
+                        <input type="text" class="fg-black" id="TimeStart" disabled>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="cell">
+                <div class="cell-6">
                     <div class="form-group">
-                        <label>Descripcion</label>
-                        <input type="text" class="fg-black" id="txtDescription" disabled>
+                        <label>Fecha final</label>
+                        <input type="text" class="fg-black" id="txtEnd" disabled>
+                    </div>
+                </div>
+                <div class="cell-6">
+                    <div class="form-group">
+                        <label>Hora Final</label>
+                        <input type="text" class="fg-black" id="TimeEnd" disabled>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="cell">
+                <div class="form-group">
+                    <label>Descripcion</label>
+                    <input type="text" class="fg-black" id="txtDescription" disabled>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="dialog-actions">
-        <a id="foro" href="" class="button primary">Foro</a>
-        <button class="button js-dialog-close">Cerrar</button>
-    </div>
+</div>
+<div class="dialog-actions">
+    <a id="foro" href="" class="button primary">Foro</a>
+    <button class="button js-dialog-close">Cerrar</button>
+</div>
 </div>
 
 <!-- Fin Dialog eventclick -->

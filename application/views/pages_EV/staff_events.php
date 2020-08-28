@@ -36,7 +36,7 @@ $this->load->view("_lib/lib.menu.php");
         </div>
     </div>
 </div>
-<table class="table" data-role="table">
+<table class="table striped" data-role="table">
     <thead>
         <tr>
             <th>ID</th>

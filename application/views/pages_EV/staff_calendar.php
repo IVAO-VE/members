@@ -99,7 +99,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);
                 $('#tituloDates').html(info.dateStr);
-                $('#btn').prop('checked', true);
+                $('#btn').attr('checked');
                 Metro.dialog.open('#date');
             },
         });

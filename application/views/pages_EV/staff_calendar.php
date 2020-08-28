@@ -95,6 +95,7 @@ echo json_encode($data);
 
             },
             dateClick: function(info) {
+                LimpiarForm();
                 $('#txtStart').prop('disabled', true);
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);

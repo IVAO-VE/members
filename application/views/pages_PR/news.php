@@ -67,7 +67,7 @@ $this->load->view("_lib/lib.menu.php");
                                         echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
                                         break;
                                     case '1':
-                                        echo '<span class="mif-checkmark fg-green"></span> Publicado';
+                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
                                         break;
                                 }
                                 ?></td>

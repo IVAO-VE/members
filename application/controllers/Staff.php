@@ -320,23 +320,25 @@ class Staff extends CI_Controller
         }
     }
 
-    public function NewEdit($id){
-        if($id == NULL){
+    public function NewEdit($id)
+    {
+        if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
             redirect(base_url('pages_PR/news'));
-        }else{
+        } else {
             $this->db->where('id', $id);
             $q = $this->db->get('news');
-            if($q->num_rows() > 0){
+            if ($q->num_rows() > 0) {
                 $data['New'] = $q->result();
-            }else{
+            } else {
                 $data['New'] = false;
             }
             $this->load->view('pages_PR/news', $data);
         }
     }
 
-    public function EditNew(){
+    public function EditNew()
+    {
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('title', 'Titulo noticia', 'required');
@@ -369,6 +371,39 @@ class Staff extends CI_Controller
                 redirect(base_url('staff/News'));
             }
         }
+    }
 
+    public function NewStatus($id)
+    {
+        if ($id == NULL) {
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('pages_PR/news'));
+        } else {
+            $this->db->where('id', $id);
+            $this->db->select('id, status');
+            $query = $this->db->get('news');
+
+            $CurrentStatus = $query->result()[0]['status'];
+
+            if($CurrentStatus == 0){
+                $status = 1;
+            }else{
+                $status = 0;
+            }
+
+            $data = array(
+               "status" => $status
+            );
+            $this->db->where('id', $id);
+            $q = $this->db->update('news', $data);
+
+            if ($q) {
+                $this->session->set_flashdata('info', 'El estado se edito correctamente.');
+                redirect(base_url('staff/News'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas editando el estado.');
+                redirect(base_url('staff/News'));
+            }
+        }
     }
 }

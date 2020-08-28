@@ -124,7 +124,10 @@ $this->load->view("_lib/lib.menu.php");
                                         <input type="checkbox" data-role="switch" id="status" name="status" data-caption="Estado" data-caption-position="left">
                                     </div>
                                     <script>
-                                        $( "#status" ).prop( "checked", true );
+                                        $(document).ready(function() {
+                                            $("#status").prop("checked", true);
+                                            console.log("ready!");
+                                        });
                                     </script>
                                 </div>
                             </div>

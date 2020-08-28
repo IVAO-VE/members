@@ -70,6 +70,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtStart').val(Start[0]);
                 $('#TimeStart').val(Start[1]);
                 var EndCompleto = info.event.endStr;
+                console.log(EndCompleto);
                 var End = EndCompleto.split("T");
                 $('#txtEnd').val(End[0]);
                 $('#TimeEnd').val(End[1]);

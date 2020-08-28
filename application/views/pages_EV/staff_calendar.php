@@ -259,7 +259,7 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
             </div>
             <div class="row">
-                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
+                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia" checked>
             </div>
         </div>
     </div>

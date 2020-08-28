@@ -99,6 +99,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);
                 $('#tituloDates').html(info.dateStr);
+                $('#btn').prop('checked', true);
                 Metro.dialog.open('#date');
             },
         });
@@ -258,11 +259,6 @@ $this->load->view("_lib/lib.menu.php");
                     </div>
                 </div>
             </div>
-            <script>
-                $(document).ready(function() {
-                    $('#btn').prop('checked', true)
-                });
-            </script>
             <div class="row">
                 <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
             </div>

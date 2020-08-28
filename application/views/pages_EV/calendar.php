@@ -70,7 +70,7 @@ $this->load->view("_lib/lib.menu.php");
                 $('#txtStart').val(Start[0]);
                 $('#TimeStart').val(Start[1]);
                 var EndCompleto = info.event.endStr;
-                console.log(EndCompleto);
+                console.log(info.event.endStr);
                 var End = EndCompleto.split("T");
                 $('#txtEnd').val(End[0]);
                 $('#TimeEnd').val(End[1]);
@@ -104,13 +104,13 @@ $this->load->view("_lib/lib.menu.php");
             <div class="row">
                 <div class="cell-6">
                     <div class="form-group">
-                        <label>Fecha inicio</label>
+                        <label><?php echo $this->lang->line('event_startd'); ?></label>
                         <input type="text" class="fg-black" id="txtStart" disabled>
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
-                        <label>Hora inicio</label>
+                        <label><?php echo $this->lang->line('event_startt'); ?></label>
                         <input type="text" class="fg-black" id="TimeStart" disabled>
                     </div>
                 </div>
@@ -118,13 +118,13 @@ $this->load->view("_lib/lib.menu.php");
             <div class="row">
                 <div class="cell-6">
                     <div class="form-group">
-                        <label>Fecha final</label>
+                        <label><?php echo $this->lang->line('event_endd'); ?></label>
                         <input type="text" class="fg-black" id="txtEnd" disabled>
                     </div>
                 </div>
                 <div class="cell-6">
                     <div class="form-group">
-                        <label>Hora Final</label>
+                        <label><?php echo $this->lang->line('event_endt'); ?></label>
                         <input type="text" class="fg-black" id="TimeEnd" disabled>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ $this->load->view("_lib/lib.menu.php");
             <div class="row">
                 <div class="cell">
                     <div class="form-group">
-                        <label>Descripcion</label>
+                        <label><?php echo $this->lang->line('event_des'); ?></label>
                         <input type="text" class="fg-black" id="txtDescription" disabled>
                     </div>
                 </div>
@@ -140,8 +140,8 @@ $this->load->view("_lib/lib.menu.php");
         </div>
     </div>
     <div class="dialog-actions">
-        <a id="foro" href="" class="button primary">Foro</a>
-        <button class="button js-dialog-close">Cerrar</button>
+        <a id="foro" href="" class="button primary"><?php echo $this->lang->line('event_forum'); ?></a>
+        <button class="button js-dialog-close"><?php echo $this->lang->line('event_close'); ?></button>
     </div>
 </div>
 

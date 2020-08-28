@@ -171,4 +171,13 @@ $lang['training_system'] = 'Entrenamientos';
 $lang['support_title'] = 'Solicitudes de ayuda';
 $lang['support_system'] = 'Ayuda';
 
+//Eventos
+$lang['event_startd'] = 'Fecha inicio';
+$lang['event_startt'] = 'Hora inicio';
+$lang['event_endd'] = 'Fecha final';
+$lang['event_endt'] = 'Hora final';
+$lang['event_des'] = 'Descripción';
+$lang['event_close'] = 'Cerrar';
+$lang['event_forum'] = 'Foro';
+
 ?>

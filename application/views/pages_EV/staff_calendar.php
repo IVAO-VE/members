@@ -99,7 +99,6 @@ echo json_encode($data);
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);
                 $('#tituloDates').html(info.dateStr);
-                $( "#btn" ).is( ":checked" );
                 Metro.dialog.open('#date');
             },
         });
@@ -259,8 +258,13 @@ echo json_encode($data);
                     </div>
                 </div>
             </div>
+            <script>
+                $(document).ready(function() {
+                    $("#Te").prop("checked", true)
+                });
+            </script>
             <div class="row">
-                <input type="checkbox" id="btn" name="noticia" data-role="switch" data-caption="Noticia">
+                <input type="checkbox" id="Te" name="noticia" data-role="switch" data-caption="Noticia">
             </div>
         </div>
     </div>

@@ -17,6 +17,7 @@ $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
 ?>
+<div class="bg-white p-4">
 <?php if ($this->session->flashdata('info')) : ?>
     <div class="remark primary">
         <?php echo $this->session->flashdata('info'); ?>
@@ -83,6 +84,7 @@ $this->load->view("_lib/lib.menu.php");
         } ?>
     </tbody>
 </table>
+</div>
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>

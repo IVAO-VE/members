@@ -275,7 +275,7 @@ class Staff extends CI_Controller
             if ($access_nivel['pages_PR'] != 'true') { //NO TIENE ACCESO A LA ZONA
                 redirect(base_url());
             } else {
-                $this->load->view("pages_PR/news");
+                $this->load->view("pages_PR/staff_news");
             }
         }
     }
@@ -350,7 +350,7 @@ class Staff extends CI_Controller
             } else {
                 $data['New'] = false;
             }
-            $this->load->view('pages_PR/news', $data);
+            $this->load->view('pages_PR/staff_news', $data);
         }
     }
 
@@ -420,6 +420,25 @@ class Staff extends CI_Controller
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas editando el estado.');
                 redirect(base_url('staff/News'));
+            }
+        }
+    }
+
+    public function Events()
+    {
+        //Consultado con la DB
+        $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
+        $query_access  = $this->db->select('*')
+            ->from('permisos')
+            ->where('vid', $this->session->userdata('vid')) //VID de usuario 
+            ->get();
+        $access_nivel = $query_access->row_array();
+        if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
+            //******************************
+            if ($access_nivel['pages_EV'] != 'true') { //NO TIENE ACCESO A LA ZONA
+                redirect(base_url());
+            } else {
+                $this->load->view("pages_EV/staff_events");
             }
         }
     }

@@ -450,7 +450,7 @@ class Staff extends CI_Controller
             redirect(base_url('staff/Events'));
         } else {
             $this->db->where('event', $id);
-            $this->db->select('id, reportable');
+            $this->db->select('event, reportable');
             $query = $this->db->get('events');
 
             $CurrentStatus = $query->result_array()[0]['reportable'];
@@ -483,7 +483,7 @@ class Staff extends CI_Controller
             redirect(base_url('staff/Events')); 
         }else{
             $this->db->where('event', $id);
-            $this->db->select('id, status');
+            $this->db->select('event, status');
             $query = $this->db->get('events');
 
             $CurrentStatus = $query->result_array()[0]['status'];

@@ -264,7 +264,7 @@ echo json_encode($data);
                     <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
                 </div>
                 <div class="cell-4">
-                    <input type="checkbox" name="reportable" data-role="switch" data-caption="Reportable">
+                    <input type="checkbox" name="reportable" value="1" data-role="switch" data-caption="Reportable">
                 </div>
                 <div class="cell-4">
                     <input type="checkbox" name="publico" data-role="switch" data-caption="Publico">

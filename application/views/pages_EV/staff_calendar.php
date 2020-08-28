@@ -297,6 +297,7 @@ $this->load->view("_lib/lib.menu.php");
         <?php echo $this->session->flashdata('error'); ?>
     </div>
 <?php endif; ?>
+<div class="bg-white p-4">
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title text-center text-left-md w-100">Calendario staff </br><small>Versión v2.0</small></h3>
@@ -312,7 +313,7 @@ $this->load->view("_lib/lib.menu.php");
     </div>
 </div>
 <div id='calendar'></div>
-
+</div>
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>

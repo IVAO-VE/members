@@ -17,6 +17,7 @@ $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
 ?>
+<div class="bg-white p-4">
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title text-center text-left-md w-100">Administración de eventos</br><small>Versión v2.0</small></h3>
@@ -31,7 +32,6 @@ $this->load->view("_lib/lib.menu.php");
         </ul>
     </div>
 </div>
-<div class="bg-white p-4">
 <?php if ($this->session->flashdata('info')) : ?>
     <div class="remark primary">
         <?php echo $this->session->flashdata('info'); ?>

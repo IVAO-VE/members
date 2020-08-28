@@ -260,17 +260,14 @@ echo json_encode($data);
                 </div>
             </div>
             <div class="row">
-                <div class="cell-6">
-                    <input type="checkbox" id="New1"  name="noticia" data-role="switch" data-caption="Noticia">
+                <div class="cell-4">
+                    <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
                 </div>
-                <div class="cell-6">
-                    <div class="form-group">
-                        <label>Tipo de evento</label>
-                        <select data-role="select" name="reportable" id="reportable">
-                            <option value="1">Reportable</option>
-                            <option value="0">No reportable</option>
-                        </select>
-                    </div>
+                <div class="cell-4">
+                    <input type="checkbox" name="reportable" data-role="switch" data-caption="Reportable">
+                </div>
+                <div class="cell-4">
+                    <input type="checkbox" name="publico" data-role="switch" data-caption="Publico">
                 </div>
             </div>
         </div>

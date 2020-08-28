@@ -123,6 +123,8 @@ class Staff extends CI_Controller
             $img = $this->input->post('img');
             $foro = $this->input->post('foro');
             $noticia = $this->input->post('noticia');
+            $reportable = $this->input->post('reportable');
+            $publico = $this->input->post('publico');
 
 
             if ($startTime == '00:00:00') {
@@ -166,7 +168,8 @@ class Staff extends CI_Controller
                 "end" => $FinalEnd,
                 "description" => $Description,
                 "img" => $img,
-                "foro" => $foro
+                "foro" => $foro,
+                "reportable" => $reportable
             );
 
             if ($noticia) {

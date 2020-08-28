@@ -16,7 +16,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
-//echo json_encode($data);
+echo json_encode($data);
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -99,7 +99,6 @@ $this->load->view("_lib/lib.menu.php");
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);
                 $('#tituloDates').html(info.dateStr);
-                $('#btn').is(':checked', true);
                 Metro.dialog.open('#date');
             },
         });

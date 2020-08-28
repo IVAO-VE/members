@@ -68,7 +68,7 @@ function GetName($vid){
                             <td><?php echo $fila->title; ?></td>
                             <td><?php echo $fila->description; ?></td>
                             <td><?php echo $fila->date; ?></td>
-                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
+                            <td><?php echo GetName($fila->author) ?><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
                             <td><?php
                                 switch ($fila->status) {
                                     case '0':

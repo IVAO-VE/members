@@ -99,7 +99,7 @@ echo json_encode($data);
                 $('#start').val(info.dateStr);
                 $('#end').val(info.dateStr);
                 $('#tituloDates').html(info.dateStr);
-                $( "#btn" ).prop( "checked", true );
+                $( "#btn" ).attr( "checked" );
                 Metro.dialog.open('#date');
             },
         });

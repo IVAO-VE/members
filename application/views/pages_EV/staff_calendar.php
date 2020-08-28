@@ -52,7 +52,7 @@ $this->load->view("_lib/lib.menu.php");
                 EventAdmin: {
                     text: 'Administrador Eventos',
                     click: function() {
-                        <?php redirect(base_url('staff/test')) ?>;
+                        <?php echo base_url('staff/test') ?>;
                     }
                 }
             },

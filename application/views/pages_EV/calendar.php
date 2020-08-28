@@ -107,8 +107,6 @@ $this->load->view("_lib/lib.menu.php");
                         <input type="text" class="fg-black" id="txtStart" disabled>
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="cell-6">
                     <div class="form-group">
                         <label>Fecha final</label>
@@ -116,21 +114,20 @@ $this->load->view("_lib/lib.menu.php");
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="cell">
-                <div class="form-group">
-                    <label>Descripcion</label>
-                    <input type="text" class="fg-black" id="txtDescription" disabled>
+            <div class="row">
+                <div class="cell">
+                    <div class="form-group">
+                        <label>Descripcion</label>
+                        <input type="text" class="fg-black" id="txtDescription" disabled>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="dialog-actions">
-    <a id="foro" href="" class="button primary">Foro</a>
-    <button class="button js-dialog-close">Cerrar</button>
-</div>
+    <div class="dialog-actions">
+        <a id="foro" href="" class="button primary">Foro</a>
+        <button class="button js-dialog-close">Cerrar</button>
+    </div>
 </div>
 
 <!-- Fin Dialog eventclick -->

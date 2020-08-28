@@ -52,7 +52,7 @@ $this->load->view("_lib/lib.menu.php");
                 EventAdmin: {
                     text: 'Administrador Eventos',
                     click: function() {
-                        <?php echo base_url('staff/test') ?>;
+                        window.location.href = "<?php echo base_url('staff/test') ?>";
                     }
                 }
             },

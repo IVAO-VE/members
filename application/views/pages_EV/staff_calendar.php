@@ -101,6 +101,8 @@ echo json_encode($data);
                 $('#end').val(info.dateStr);
                 $('#tituloDates').html(info.dateStr);
                 $('#New1').hide();
+                var checkbox = $(el).data('checkbox');
+                checkbox.disable();
                 Metro.dialog.open('#date');
             },
         });
@@ -262,7 +264,7 @@ echo json_encode($data);
             </div>
             <div class="row">
                 <div class="cell-6">
-                    <input type="checkbox" id="New1"  name="noticia" data-role="switch" data-caption="Noticia">
+                    <input type="checkbox" id="New1" name="noticia" data-role="switch" data-caption="Noticia">
                     <input type="checkbox" id="New2" name="noticia" data-role="switch" data-caption="Noticia" checked>
                 </div>
                 <div class="cell-6">

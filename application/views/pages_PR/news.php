@@ -16,14 +16,14 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
-/*function GetName($vid){
+function GetName($vid){
             $this->db->where('vid', $vid);
             $this->db->select('vid, name');
             $query = $this->db->get('members_data'); 
 
             $Name = $query->result_array()[0]['name'];
             echo $Name;
-}*/
+}
 ?>
 <div class="">
     <?php if ($this->session->flashdata('info')) : ?>

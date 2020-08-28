@@ -139,6 +139,18 @@ class Staff extends CI_Controller
                 $FinalEnd = $end . ' ' . $endTime;
             }
 
+            if($reportable == 1){
+                $report = 1;
+            }else{
+                $report = 0;
+            }
+
+            if($publico == 1){
+                $pub = 1;
+            }else{
+                $pub = 0;
+            }
+
 
             /* Webhook Discord conectado al Modelo */
 
@@ -169,7 +181,8 @@ class Staff extends CI_Controller
                 "description" => $Description,
                 "img" => $img,
                 "foro" => $foro,
-                "reportable" => $reportable
+                "reportable" => $report,
+                "publico" => $pub
             );
 
             if ($noticia) {

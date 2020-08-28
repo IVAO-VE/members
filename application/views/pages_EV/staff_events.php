@@ -59,10 +59,10 @@ $this->load->view("_lib/lib.menu.php");
                         <?php 
                             switch($fila->reportable){
                                 case '0':
-                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> No reportable</a>';
+                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->event) . '"><span class="mif-not fg-red"></span> No reportable</a>';
                                 break;
                                 case '1':
-                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Reportable</a>';
+                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->event) . '"><span class="mif-checkmark fg-green"></span> Reportable</a>';
                             };
                         ?>
                     </td>
@@ -70,10 +70,10 @@ $this->load->view("_lib/lib.menu.php");
                         <?php 
                             switch($fila->status){
                                 case '0':
-                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
+                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->event) . '"><span class="mif-not fg-red"></span> Oculto</a>';
                                 break;
                                 case '1':
-                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
+                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->event) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
                                 break;
                             }
                         ?>

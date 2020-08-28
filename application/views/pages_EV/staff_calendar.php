@@ -258,8 +258,13 @@ $this->load->view("_lib/lib.menu.php");
                     </div>
                 </div>
             </div>
+            <script>
+                $(document).ready(function() {
+                    $('#btn').prop('checked', true)
+                });
+            </script>
             <div class="row">
-                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia" checked>
+                <input type="checkbox" name="noticia" data-role="switch" data-caption="Noticia">
             </div>
         </div>
     </div>

@@ -27,6 +27,21 @@ function GetName($vid){
     }
 }
 ?>
+<div class="bg-white p-4">
+<div class="row border-bottom bd-lightGray m-3">
+    <div class="cell-md-4 d-flex flex-align-center">
+        <h3 class="dashboard-section-title text-center text-left-md w-100">Administración de noticias</br><small>Versión v2.0</small></h3>
+    </div>
+
+    <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md flex-align-center">
+        <ul class="breadcrumbs bg-transparent">
+            <li class="page-item"><a href="/app/index" class="page-link"><span class="mif-meter"></span></a></li>
+            <li class="page-item"><a href="/app/profile" class="page-link">Área de miembros</a></li>
+            <li class="page-item"><a href="" class="page-link">Relaciones publicas</a></li>
+            <li class="page-item"><a href="" class="page-link">Administración de noticias</a></li>
+        </ul>
+    </div>
+</div>
 <div class="">
     <?php if ($this->session->flashdata('info')) : ?>
         <div class="remark primary">
@@ -46,7 +61,6 @@ function GetName($vid){
         </p>
     </div>
     <br>
-    <div class="bg-white p-4">
         <table class="table" data-role="table">
             <thead>
                 <tr>

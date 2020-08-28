@@ -17,6 +17,20 @@ $this->load->view("_lib/lib.header.php");
 //Cargando la estructura del MENU
 $this->load->view("_lib/lib.menu.php");
 ?>
+<div class="row border-bottom bd-lightGray m-3">
+    <div class="cell-md-4 d-flex flex-align-center">
+        <h3 class="dashboard-section-title text-center text-left-md w-100">Administración de eventos</br><small>Versión v2.0</small></h3>
+    </div>
+
+    <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md flex-align-center">
+        <ul class="breadcrumbs bg-transparent">
+            <li class="page-item"><a href="/app/index" class="page-link"><span class="mif-meter"></span></a></li>
+            <li class="page-item"><a href="/app/profile" class="page-link">Área de miembros</a></li>
+            <li class="page-item"><a href="" class="page-link">Operaciones de eventos</a></li>
+            <li class="page-item"><a href="" class="page-link">Administración de eventos</a></li>
+        </ul>
+    </div>
+</div>
 <div class="bg-white p-4">
 <?php if ($this->session->flashdata('info')) : ?>
     <div class="remark primary">
@@ -30,8 +44,8 @@ $this->load->view("_lib/lib.menu.php");
 <?php endif; ?>
 <div class="gird">
     <div class="row">
-        <div class="cell-10"></div>
-        <div class="cell-2">
+        <div class="cell-11"></div>
+        <div class="cell-1">
             <a href="<?php echo base_url('staff/EVcalendar') ?>" class="button success">Calendario</a>
         </div>
     </div>

@@ -39,7 +39,7 @@ $this->load->view("_lib/lib.menu.php");
         if ($q->result() > 0) {
             foreach ($q->result() as $fila) {
         ?>
-                <div class="cell">
+                <div class="cell-4">
                     <div class="card image-header">
                         <div class="card-header fg-white" style="background-image: url(<?php echo $fila->img; ?>)">
                             <?php echo $fila->title ?>

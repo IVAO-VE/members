@@ -36,6 +36,7 @@ $this->load->view("_lib/lib.menu.php");
         <div class="row">
             <?php
             $this->db->where('reportable', 1);
+            $this->db->where('status', 1);
             $q = $this->db->get('events');
             if ($q->result() > 0) {
                 foreach ($q->result() as $fila) {

@@ -32,27 +32,31 @@ $this->load->view("_lib/lib.menu.php");
     </div>
 </div>
 <div class="bg-white p-4">
-    <?php
-    $this->db->where('reportable', 1);
-    $q = $this->db->get('events');
-    if ($q->result() > 0) {
-        foreach ($q->result() as $fila) {
-    ?>
-            <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo $fila->img; ?>)">
-                    <?php echo $fila->title ?>
+    <div class="gird">
+        <?php
+        $this->db->where('reportable', 1);
+        $q = $this->db->get('events');
+        if ($q->result() > 0) {
+            foreach ($q->result() as $fila) {
+        ?>
+                <div class="cell">
+                    <div class="card image-header">
+                        <div class="card-header fg-white" style="background-image: url(<?php echo $fila->img; ?>)">
+                            <?php echo $fila->title ?>
+                        </div>
+                        <div class="card-content p-2">
+                            <?php echo $fila->description ?>
+                        </div>
+                        <div class="card-footer">
+                            <a href="<?php echo $fila->foro ?>" class="button secondary">Foro</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-content p-2">
-                    <?php echo $fila->description ?>
-                </div>
-                <div class="card-footer">
-                    <a href="<?php echo $fila->foro ?>" class="button secondary">Foro</a>
-                </div>
-            </div>
-    <?php
+        <?php
+            }
         }
-    }
-    ?>
+        ?>
+    </div>
 </div>
 <?php
 $this->load->view("_lib/lib.footer.php");

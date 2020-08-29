@@ -254,7 +254,7 @@ class App extends CI_Controller
                         $q = $this->db->get('events');
                         if ($q->num_rows() > 0) {
                                 $data['result'] =    $q->result();
-                        }else{
+                        } else {
                                 $data['result'] = false;
                         }
 
@@ -268,6 +268,15 @@ class App extends CI_Controller
                                 $data['data'][$key]['foro'] = $value->foro;
                         }
                         $this->load->view('pages_EV/calendar', $data);
+                } else {
+                        redirect(base_url());
+                }
+        }
+
+        public function events()
+        {
+                if ($this->session->userdata('vid') != "") {
+                     $this->load->view('staff/events');
                 } else {
                         redirect(base_url());
                 }

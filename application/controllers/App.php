@@ -276,7 +276,7 @@ class App extends CI_Controller
         public function events()
         {
                 if ($this->session->userdata('vid') != "") {
-                     $this->load->view('staff/events');
+                     $this->load->view('pages_EV/events');
                 } else {
                         redirect(base_url());
                 }

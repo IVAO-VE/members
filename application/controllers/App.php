@@ -175,9 +175,9 @@ class App extends CI_Controller
                                 //Cargando los datos de sesión
                                 $this->session->set_userdata($arraymember);
                                 //Atualizando datos del miembro en la DB
-                                if($this->db->simple_query('SELECT * FROM members_data WHERE vid='.$this->session->userdata('vid'))) { //El usuario es de la división
-                                        $query = $this->db->query("UPDATE members_data SET name='".$this->session->userdata('fullname')."', ip_access='".$this->myfunctions->get_cliente_ip()."', time_access='".time()."'  WHERE vid=".$this->session->userdata('vid'));
-                                }                                
+                                if ($this->db->simple_query('SELECT * FROM members_data WHERE vid=' . $this->session->userdata('vid'))) { //El usuario es de la división
+                                        $query = $this->db->query("UPDATE members_data SET name='" . $this->session->userdata('fullname') . "', ip_access='" . $this->myfunctions->get_cliente_ip() . "', time_access='" . time() . "'  WHERE vid=" . $this->session->userdata('vid'));
+                                }
                                 //Cargando la vista inicial
                                 $this->load->view('app_start');
                         }
@@ -247,123 +247,130 @@ class App extends CI_Controller
          *  Funciones de control para el departamento de Eventos
          */
 
-                public function calendar()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $data['result'] = $this->db->get('events')->result();
-
-                                foreach ($data['result'] as $key => $value) {
-                                        $data['data'][$key]['title'] = $value->title;
-                                        $data['data'][$key]['start'] = $value->start;
-                                        $data['data'][$key]['end'] = $value->end;
-                                        $data['data'][$key]['description'] = $value->description;
-                                        $data['data'][$key]['img'] = $value->img;
-                                        $data['data'][$key]['foro'] = $value->foro;
-                                }
-                                $this->load->view('pages_EV/calendar', $data);
-                        } else {
-                                redirect(base_url());
+        public function calendar()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->db->where('status', 1);
+                        $q = $this->db->get('events');
+                        if ($q->num_rows() > 0) {
+                                $data['result'] =    $q->result();
+                        }else{
+                                $data['result'] = false;
                         }
+
+
+                        foreach ($data['result'] as $key => $value) {
+                                $data['data'][$key]['title'] = $value->title;
+                                $data['data'][$key]['start'] = $value->start;
+                                $data['data'][$key]['end'] = $value->end;
+                                $data['data'][$key]['description'] = $value->description;
+                                $data['data'][$key]['img'] = $value->img;
+                                $data['data'][$key]['foro'] = $value->foro;
+                        }
+                        $this->load->view('pages_EV/calendar', $data);
+                } else {
+                        redirect(base_url());
                 }
+        }
         /** ************************************************************************/
-        
+
         /** ************************************************************************
          *  Funciones de control para el departamento de Operaciones de Vuelo
          */
-                public function airlines()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_FO/airlines_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }        
+        public function airlines()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_FO/airlines_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
 
-                public function charts()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_FO/charts_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }        
+        public function charts()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_FO/charts_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
 
-                public function meteorologic()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_FO/meteorologic_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }        
+        public function meteorologic()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_FO/meteorologic_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
 
-                public function information()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_FO/information_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }        
+        public function information()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_FO/information_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
 
 
-                public function sceneries()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_FO/sceneries_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }   
+        public function sceneries()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_FO/sceneries_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
 
-                public function notams()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_FO/notams_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }        
+        public function notams()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_FO/notams_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
         /** *************************************************************************/
 
         /** ************************************************************************
          *  Funciones de control para el departamento de Operaciones de Control
          */
-                public function sectors()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_AO/sectors_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }        
+        public function sectors()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_AO/sectors_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
 
-                public function transponders()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_AO/transponders_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                } 
-                
-                public function guests()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_AO/guests_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }        
+        public function transponders()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_AO/transponders_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
 
-                public function facilitys()
-                {
-                        if ($this->session->userdata('vid') != "") {
-                                $this->load->view('pages_AO/facilitys_index');
-                        } else {
-                                redirect(base_url());
-                        }
-                }                        
+        public function guests()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_AO/guests_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
+
+        public function facilitys()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $this->load->view('pages_AO/facilitys_index');
+                } else {
+                        redirect(base_url());
+                }
+        }
         /** *************************************************************************/
 
         /** ************************************************************************
@@ -376,7 +383,7 @@ class App extends CI_Controller
                 } else {
                         redirect(base_url());
                 }
-        }        
+        }
         /** *************************************************************************/
 
         /** ************************************************************************
@@ -389,7 +396,7 @@ class App extends CI_Controller
                 } else {
                         redirect(base_url());
                 }
-        }        
+        }
         /** *************************************************************************/
 
         /** ************************************************************************
@@ -402,7 +409,6 @@ class App extends CI_Controller
                 } else {
                         redirect(base_url());
                 }
-        }        
+        }
         /** *************************************************************************/
-
 }

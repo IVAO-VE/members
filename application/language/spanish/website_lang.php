@@ -91,7 +91,8 @@ $lang['staff_dpto09_index'] = 'Opciones de administración para sistemas y web';
 $lang['staff_dpto10_index'] = 'Opciones de administración para FIR'; 
 $lang['staff_HQ_0001'] = 'Niveles de acceso';
 $lang['staffarea'] = 'Área administrativa'; 
-$lang['staf_option'] = 'Gestionar '; 
+$lang['staf_option'] = 'Gestionar ';
+$lang['staff_PR_0001'] = 'Noticias';
 
 
 //Traducciones del contenido principal

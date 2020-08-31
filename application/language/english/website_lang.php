@@ -92,6 +92,7 @@ $lang['staff_dpto10_index'] = 'Staff options for FIR';
 $lang['staff_HQ_0001'] = 'Access levels';
 $lang['staffarea'] = 'Staff zone';
 $lang['staf_option'] = 'Manage '; 
+$lang['staff_PR_0001'] = 'News';
 
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';

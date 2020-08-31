@@ -93,6 +93,7 @@ $lang['staff_HQ_0001'] = 'Niveles de acceso';
 $lang['staffarea'] = 'Área administrativa'; 
 $lang['staf_option'] = 'Gestionar ';
 $lang['staff_PR_0001'] = 'Noticias';
+$lang['staff_EV_0001'] = 'Calendario';
 
 
 //Traducciones del contenido principal

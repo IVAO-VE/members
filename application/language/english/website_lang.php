@@ -93,6 +93,7 @@ $lang['staff_HQ_0001'] = 'Access levels';
 $lang['staffarea'] = 'Staff zone';
 $lang['staf_option'] = 'Manage '; 
 $lang['staff_PR_0001'] = 'News';
+$lang['staff_EV_0001'] = 'Calendar';
 
 //Main conten traslator
 $lang['mainpage'] = 'Members zone';

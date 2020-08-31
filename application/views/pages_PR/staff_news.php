@@ -27,7 +27,6 @@ function GetName($vid){
     }
 }
 ?>
-<div class="bg-white p-4">
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title text-center text-left-md w-100">Administración de noticias</br><small>Versión v2.0</small></h3>
@@ -42,6 +41,7 @@ function GetName($vid){
         </ul>
     </div>
 </div>
+<div class="bg-white p-4">
 <div class="">
     <?php if ($this->session->flashdata('info')) : ?>
         <div class="remark primary">

@@ -345,7 +345,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto08') . '</span>
                                 </a>
-                                <ul class="navview-menu stay-open" data-role="dropdown">
+                                <ul class="navview-menu stay-open" data-role"dropdown">
                                     <li><a href="' . base_url('staff/News') . '">
                                         <span class="icon"><span class="mif-spinner2"></span></span>
                                         <span class="caption">['. $this->lang->line('staff') .'] ' . $this->lang->line('staff_PR_0001') . ' </span>

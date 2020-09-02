@@ -78,7 +78,7 @@ $this->load->view("_lib/lib.menu.php");
                                            $CI->load->model('Model_access');
                                            $Model = $CI->Model_access->getname($fila->encargado);
                                            foreach($Model as $row){
-                                               echo $row->name;
+                                               echo $row->name .'('.$fila->encargado.')' ;
                                            }
                                         }
                                     ?>

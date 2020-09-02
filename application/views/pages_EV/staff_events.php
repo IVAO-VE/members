@@ -52,7 +52,7 @@ $this->load->view("_lib/lib.menu.php");
                     <br>
                 </div>
                 <div id="profile-activity">
-                    <?php $this->load->view('pages_EV/staff_calendar') ?>
+                    <?php $this->load->view('staff/EVcalendar') ?>
                 </div>
             </div>
 

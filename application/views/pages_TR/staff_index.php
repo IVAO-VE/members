@@ -76,7 +76,7 @@ $this->load->view("_lib/lib.menu.php");
                                         }else{
                                             $CI =& get_instance();
                                            $CI->load->model('Model_access');
-                                           $Model = $CI->Model_access->getname($fila->encargado)->result();
+                                           $Model = $CI->Model_access->getname($fila->encargado);
                                            foreach($Model as $row){
                                                echo $row->name;
                                            }

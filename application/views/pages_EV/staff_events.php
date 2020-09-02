@@ -39,6 +39,8 @@ $this->load->view("_lib/lib.menu.php");
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#ViewCalendar">Calendario</a></li>
                 <li><a href="#EventsMang">Administrador de eventos</a></li>
+                <li><a href="#">Timeline</a></li>
+                <li><a href="#">Projects</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">

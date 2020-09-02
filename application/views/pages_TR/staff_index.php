@@ -104,8 +104,8 @@ $this->load->view("_lib/lib.menu.php");
                                 </td>
                                 <td>
                                     <a href="<?php echo base_url("staff/pendientegca/" . $fila->id  ) ?>"><i class="fa fa-flag-o" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-check" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-ban" aria-hidden="true"></i></a>
+                                    <a href="<?php echo base_url("staff/aceptadogca/" . $fila->id  ) ?>"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                    <a href="<?php echo base_url("staff/pendientegca/" . $fila->id  ) ?>"><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php }

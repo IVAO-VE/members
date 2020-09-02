@@ -549,4 +549,24 @@ class Staff extends CI_Controller
             }
         }
     }
+
+    public function aceptadogca($id){
+        if($id == NULL){
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('staff/Training'));
+        }else{
+            $data = array(
+                "status" => 2;
+            );
+            $this->db->where('id', $id);
+            $q = $this->db->update('gca', $data);
+            if ($q) {
+                $this->session->set_flashdata('info', 'Cambio estado correctamente.');
+                redirect(base_url('staff/Training'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas cambiando de estado.');
+                redirect(base_url('staff/Training'));
+            }
+        }
+    }
 }

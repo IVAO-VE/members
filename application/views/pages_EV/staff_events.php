@@ -33,7 +33,7 @@ $this->load->view("_lib/lib.menu.php");
 </div>
 <div class="fg-dark container-fluid start-screen h-100">
     <div class="mb-15"></div>
-    <div data-role="panel" data-title-caption="Administracion eventos" data-title-icon="<span class='mif-apps'></span>">
+    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto01_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">

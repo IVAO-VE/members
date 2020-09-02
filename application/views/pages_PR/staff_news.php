@@ -57,11 +57,11 @@ function GetName($vid)
 
         <div class="fg-dark container-fluid start-screen h-100">
             <div class="mb-15"></div>
-            <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto01_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
+            <div data-role="panel" data-title-caption="Administracion relaciones publicas" data-title-icon="<span class='mif-apps'></span>">
                 <div class="bg-white h-100">
 
                     <ul data-role="tabs" data-expand="true">
-                        <li><a href="#permisos"><?php echo $this->lang->line('staff_HQ_0001'); ?></a></li>
+                        <li><a href="#permisos">Administracion de noticias</a></li>
                         <li><a href="#profile-activity">Activity</a></li>
                         <li><a href="#">Timeline</a></li>
                         <li><a href="#">Projects</a></li>

@@ -243,7 +243,7 @@ class Staff extends CI_Controller
         $this->db->where('event', $id);
         $query = $this->db->update('events', $data);
         if ($query) {
-            redirect(base_url('staff/EVcalendar'));
+            redirect(base_url('staff/Events'));
         }
     }
 

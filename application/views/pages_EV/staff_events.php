@@ -38,19 +38,12 @@ $this->load->view("_lib/lib.menu.php");
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#ViewCalendar">Calendario</a></li>
-                <li><a href="#profile-activity">Administrador de eventos</a></li>
+                <li><a href="#EventsMang">Administrador de eventos</a></li>
                 <li><a href="#">Timeline</a></li>
                 <li><a href="#">Projects</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
-                <div id="permisos">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
                 <div id="ViewCalendar">
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
@@ -113,7 +106,7 @@ $this->load->view("_lib/lib.menu.php");
                                         description: 'Descripcion manual'
                                     }
                                 ],*/
-                               eventClick: function(info) {
+                                eventClick: function(info) {
                                     LimpiarForm();
                                     $('#tituloDate').html(info.event.title);
                                     $('#txtTitle').val(info.event.title);
@@ -325,12 +318,66 @@ $this->load->view("_lib/lib.menu.php");
                         <div id='calendar'></div>
                     </div>
                 </div>
+                <div id="EventsMang">
+                    <br>
+                    <table class="table striped" data-role="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Titulo</th>
+                                <th>Inicio</th>
+                                <th>Reportable</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $q = $this->db->get("events");
+                            if ($q->result() > 0) {
+                                foreach ($q->result() as $fila) {
+                            ?>
+                                    <tr>
+                                        <td><?php echo $fila->event; ?></td>
+                                        <td><?php echo $fila->title; ?></td>
+                                        <td><?php echo $fila->start; ?></td>
+                                        <td>
+                                            <?php
+                                            switch ($fila->reportable) {
+                                                case '0':
+                                                    echo '<a href="' . base_url("staff/ReportStatus/" . $fila->event) . '"><span class="mif-not fg-red"></span> No reportable</a>';
+                                                    break;
+                                                case '1':
+                                                    echo '<a href="' . base_url("staff/ReportStatus/" . $fila->event) . '"><span class="mif-checkmark fg-green"></span> Reportable</a>';
+                                            };
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            switch ($fila->status) {
+                                                case '0':
+                                                    echo '<a href="' . base_url("staff/EvStatus/" . $fila->event) . '"><span class="mif-not fg-red"></span> Oculto</a>';
+                                                    break;
+                                                case '1':
+                                                    echo '<a href="' . base_url("staff/EvStatus/" . $fila->event) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
+                                                    break;
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
+                            <?php }
+                            } ?>
+                        </tbody>
+                    </table>
+
+                </div>
+                <br>
             </div>
-
-
-
         </div>
+
+
+
     </div>
+</div>
 </div>
 
 <div class="bg-white p-4">
@@ -352,54 +399,6 @@ $this->load->view("_lib/lib.menu.php");
             </div>
         </div>
     </div>
-    <table class="table striped" data-role="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Titulo</th>
-                <th>Inicio</th>
-                <th>Reportable</th>
-                <th>Estado</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $q = $this->db->get("events");
-            if ($q->result() > 0) {
-                foreach ($q->result() as $fila) {
-            ?>
-                    <tr>
-                        <td><?php echo $fila->event; ?></td>
-                        <td><?php echo $fila->title; ?></td>
-                        <td><?php echo $fila->start; ?></td>
-                        <td>
-                            <?php
-                            switch ($fila->reportable) {
-                                case '0':
-                                    echo '<a href="' . base_url("staff/ReportStatus/" . $fila->event) . '"><span class="mif-not fg-red"></span> No reportable</a>';
-                                    break;
-                                case '1':
-                                    echo '<a href="' . base_url("staff/ReportStatus/" . $fila->event) . '"><span class="mif-checkmark fg-green"></span> Reportable</a>';
-                            };
-                            ?>
-                        </td>
-                        <td>
-                            <?php
-                            switch ($fila->status) {
-                                case '0':
-                                    echo '<a href="' . base_url("staff/EvStatus/" . $fila->event) . '"><span class="mif-not fg-red"></span> Oculto</a>';
-                                    break;
-                                case '1':
-                                    echo '<a href="' . base_url("staff/EvStatus/" . $fila->event) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
-                                    break;
-                            }
-                            ?>
-                        </td>
-                    </tr>
-            <?php }
-            } ?>
-        </tbody>
-    </table>
 </div>
 <?php
 $this->load->view("_lib/lib.footer.php");

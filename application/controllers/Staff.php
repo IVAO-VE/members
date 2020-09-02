@@ -556,7 +556,7 @@ class Staff extends CI_Controller
             redirect(base_url('staff/Training'));
         }else{
             $data = array(
-                "status" => 2;
+                "status" => 2
             );
             $this->db->where('id', $id);
             $q = $this->db->update('gca', $data);

@@ -74,10 +74,11 @@ $this->load->view("_lib/lib.menu.php");
                                         if($fila->encargado == NULL){
                                             echo 'No asignado';
                                         }else{
-                                           $this->load->model('Model_access');
-                                           $Model = $this->Model_access->getname($fila->encargado)->result_array();
+                                            $CI =& get_instance();
+                                           $CI->load->model('Model_access');
+                                           $Model = $CI->Model_access->getname($fila->encargado)->result_array();
                                            foreach($Model as $row){
-                                               echo $row['name'];
+                                               echo $row->name;
                                            }
                                         }
                                     ?>

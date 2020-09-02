@@ -55,7 +55,7 @@ $this->load->view("_lib/lib.menu.php");
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
                             var calendarEl = document.getElementById('calendar');
-                            //var events = <?php echo json_encode($data) ?>;
+                            var events = <?php echo json_encode($data) ?>;
 
                             var NuevoEvento;
                             //  $('#btnNuevo').click(function() {
@@ -104,16 +104,16 @@ $this->load->view("_lib/lib.menu.php");
                                 },
                                 selectable: true,
                                 dayMaxEvents: true, // allow "more" link when too many events
-                                //events: events,
-                                events: [
+                                events: events,
+                                /*events: [
                                     {
                                         title: 'Manual Test',
                                         start: '2020-08-14',
                                         end: '2020-08-16',
                                         description: 'Descripcion manual'
                                     }
-                                ],
-                               /* eventClick: function(info) {
+                                ],*/
+                               eventClick: function(info) {
                                     LimpiarForm();
                                     $('#tituloDate').html(info.event.title);
                                     $('#txtTitle').val(info.event.title);
@@ -143,7 +143,7 @@ $this->load->view("_lib/lib.menu.php");
                                     $('#end').val(info.dateStr);
                                     $('#tituloDates').html(info.dateStr);
                                     Metro.dialog.open('#date');
-                                },*/
+                                },
                             });
 
                             calendar.render();

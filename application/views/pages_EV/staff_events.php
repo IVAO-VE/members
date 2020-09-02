@@ -37,14 +37,21 @@ $this->load->view("_lib/lib.menu.php");
         <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">
-                <li><a href="#permisos">Calendario</a></li>
+                <li><a href="#ViewCalendar">Calendario</a></li>
                 <li><a href="#profile-activity">Administrador de eventos</a></li>
                 <li><a href="#">Timeline</a></li>
                 <li><a href="#">Projects</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
-                <div id="calendar">
+                <div id="permisos">
+                    <br>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
+                    </div>
+                    <br>
+                </div>
+                <div id="ViewCalendar">
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
                             var calendarEl = document.getElementById('calendar');

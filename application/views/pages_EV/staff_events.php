@@ -55,7 +55,7 @@ $this->load->view("_lib/lib.menu.php");
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
                             var calendarEl = document.getElementById('calendar');
-                            
+                            //var events = <?php echo json_encode($data) ?>;
 
                             var NuevoEvento;
                             //  $('#btnNuevo').click(function() {

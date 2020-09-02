@@ -256,7 +256,7 @@ class Staff extends CI_Controller
             $query = $this->db->delete('events');
 
             if ($query) {
-                redirect(base_url('staff/EVcalendar'));
+                redirect(base_url('staff/Events'));
             }
         }
     }

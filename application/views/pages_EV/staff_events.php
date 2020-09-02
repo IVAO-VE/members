@@ -75,18 +75,10 @@ $this->load->view("_lib/lib.menu.php");
                                 timeZone: 'UTC',
                                 locale: 'es',
                                 selectable: true,
-                                customButtons: {
-                                    EventAdmin: {
-                                        text: 'Administrador Eventos',
-                                        click: function() {
-                                            window.location.href = "<?php echo base_url('staff/Events') ?>";
-                                        }
-                                    }
-                                },
                                 headerToolbar: {
                                     start: 'prev,next',
                                     center: 'title',
-                                    end: 'EventAdmin,today,dayGridMonth,listWeek'
+                                    end: 'today,dayGridMonth,listWeek'
                                 },
                                 buttonText: {
                                     today: 'Hoy',

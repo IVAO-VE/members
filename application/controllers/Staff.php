@@ -521,10 +521,10 @@ class Staff extends CI_Controller
             $q = $this->db->update('gca', $data);
             if ($q) {
                 $this->session->set_flashdata('info', 'Se asigno correctamente.');
-                redirect(base_url('staff/Treining'));
+                redirect(base_url('staff/Training'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas asignando.');
-                redirect(base_url('staff/Treining'));
+                redirect(base_url('staff/Training'));
             }
         }
     }

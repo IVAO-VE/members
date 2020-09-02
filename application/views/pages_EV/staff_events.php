@@ -52,7 +52,16 @@ $this->load->view("_lib/lib.menu.php");
                     <br>
                 </div>
                 <div id="profile-activity">
-                    <script>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<script>
                         document.addEventListener('DOMContentLoaded', function() {
                             var calendarEl = document.getElementById('calendar');
                             var events = <?php echo json_encode($data) ?>;
@@ -321,14 +330,6 @@ $this->load->view("_lib/lib.menu.php");
                     </div>
                     <!-- Fin Dialog DateClick -->
                         <div id='calendar'></div>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-</div>
 <div class="bg-white p-4">
     <?php if ($this->session->flashdata('info')) : ?>
         <div class="remark primary">

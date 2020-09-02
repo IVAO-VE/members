@@ -324,16 +324,10 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         if ($access_nivel['pages_EV'] == 'true') { //Tiene acceso a Eventos
             echo '
                             <li>
-                                <a href="#" class="dropdown-toggle>
+                                <a href="'. base_url('staff/Events') .'">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto07') . '</span>
                                 </a>
-                                <ul class="navview-menu stay-open" data-role"dropdown">
-                                    <li?><a href="'. base_url('staff/EValendar') . '">
-                                        <span class="icon"><span class="mif-spinner2"></span></span>
-                                        <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('staff_EV_0001') . '</span>
-                                    </a></li>
-                                </ul>
                             </li>
                         ';
         }
@@ -341,16 +335,10 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         if ($access_nivel['pages_PR'] == 'true') { //Tiene acceso a Relaciones públicas
             echo '
                             <li>
-                                <a href="#" class="dropdown-toggle">
+                                <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto08') . '</span>
                                 </a>
-                                <ul class="navview-menu stay-open" data-role"dropdown">
-                                    <li><a href="' . base_url('staff/News') . '">
-                                        <span class="icon"><span class="mif-spinner2"></span></span>
-                                        <span class="caption">['. $this->lang->line('staff') .'] ' . $this->lang->line('staff_PR_0001') . ' </span>
-                                    </a></li>
-                                </ul>
                             </li>
                         ';
         }

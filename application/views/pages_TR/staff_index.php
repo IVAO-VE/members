@@ -83,7 +83,25 @@ $this->load->view("_lib/lib.menu.php");
                                         }
                                     ?>
                                 </td>
-                                <td><?php echo $fila->status; ?></td>
+                                <td>
+                                    <?php
+                                        switch($fila->status){
+                                            case '0':
+                                                echo 'Pendiente';
+                                            break;
+                                            case '1':
+                                                echo 'En proceso';
+                                            break;
+                                            case '2':
+                                                echo 'Aceptado';
+                                            break;
+                                            case '3':
+                                                echo 'Denegado';
+                                            break;
+                                        }
+                                    ?>
+
+                                </td>
                                 <td>
                                     <a href=""><i class="fa fa-flag-o" aria-hidden="true"></i></a>
                                     <a href=""><i class="fa fa-check" aria-hidden="true"></i></a>

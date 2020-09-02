@@ -318,13 +318,6 @@ $this->load->view("_lib/lib.menu.php");
                         <div id='calendar'></div>
                     </div>
                 </div>
-                <div id="admin">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
             </div>
 
 

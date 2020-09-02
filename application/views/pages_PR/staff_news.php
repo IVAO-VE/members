@@ -70,132 +70,131 @@ function GetName($vid)
                     <div id="user-profile-tabs-content">
                         <div id="permisos">
                             <br>
-                            <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
+                            <table class="table" data-role="table">
+                                <thead>
+                                    <tr>
+                                        <th data-sortable="true" data-sort-dir="asc">ID</th>
+                                        <th data-sortable="true">Titulo</th>
+                                        <th data-sortable="true">Descripcion</th>
+                                        <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
+                                        <th data-sortable="true">Creado por</th>
+                                        <th data-sortable="true">Estado</th>
+                                        <th data-sortable="true">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $q = $this->db->get("news");
+                                    if ($q->result() > 0) {
+                                        foreach ($q->result() as $fila) {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $fila->id; ?></td>
+                                                <td><?php echo $fila->title; ?></td>
+                                                <td><?php echo $fila->description; ?></td>
+                                                <td><?php echo $fila->date; ?></td>
+                                                <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
+                                                <td><?php
+                                                    switch ($fila->status) {
+                                                        case '0':
+                                                            echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
+                                                            break;
+                                                        case '1':
+                                                            echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
+                                                            break;
+                                                    }
+                                                    ?></td>
+                                                <td>
+                                                    <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
+                                                    <a href="<?php echo base_url("staff/NewEdit/$fila->id") ?>"><span class="mif-pencil"></span></a>
+                                                </td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                            <div class="d-flex flex-column flex-justify-center">
+                                <div id="t1_info"></div>
+                                <div id="t1_pagination"></div>
                             </div>
-                            <br>
-                        </div>
-                        <div id="profile-activity">
-                            <br>
-                            <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
-                                <canvas id="profileChart1"></canvas>
-                            </div>
-                            <br>
-                            <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
-                                <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white p-6 text-center text-leader">
-            Panel de noticias
-            <p class="text-leader2">
-                En este panel podras ver las noticias creadas y publicadas.
-            </p>
-        </div>
-        <br>
-        <table class="table" data-role="table">
-            <thead>
-                <tr>
-                    <th data-sortable="true" data-sort-dir="asc">ID</th>
-                    <th data-sortable="true">Titulo</th>
-                    <th data-sortable="true">Descripcion</th>
-                    <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
-                    <th data-sortable="true">Creado por</th>
-                    <th data-sortable="true">Estado</th>
-                    <th data-sortable="true">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $q = $this->db->get("news");
-                if ($q->result() > 0) {
-                    foreach ($q->result() as $fila) {
-                ?>
-                        <tr>
-                            <td><?php echo $fila->id; ?></td>
-                            <td><?php echo $fila->title; ?></td>
-                            <td><?php echo $fila->description; ?></td>
-                            <td><?php echo $fila->date; ?></td>
-                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
-                            <td><?php
-                                switch ($fila->status) {
-                                    case '0':
-                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
-                                        break;
-                                    case '1':
-                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
-                                        break;
-                                }
-                                ?></td>
-                            <td>
-                                <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
-                                <a href="<?php echo base_url("staff/NewEdit/$fila->id") ?>"><span class="mif-pencil"></span></a>
-                            </td>
-                        </tr>
-                <?php
-                    }
-                }
-                ?>
-            </tbody>
-        </table>
-        <div class="d-flex flex-column flex-justify-center">
-            <div id="t1_info"></div>
-            <div id="t1_pagination"></div>
-        </div>
-    </div>
-    <div id="Buttons" class="gird">
-        <div class="row">
-            <div class="cell-11"></div>
-            <div class="cell-1">
-                <a class="button primary cycle " onclick="Metro.dialog.open('#add')">
-                    <span class="mif-plus"></span>
-                </a>
-            </div>
-        </div>
-        <?php if (isset($New)) :
-            if ($New != false) : ?>
-                <div class="dialog" data-role="dialog" data-show="true">
-                    <div class="dialog-title text-center">Editar Noticia</div>
-                    <div class="dialog-content">
-                        <?php foreach ($New as $News) { ?>
-                            <?php echo form_open('staff/EditNew') ?>
-                            <input type="hidden" name="id" value="<?php echo $News->id; ?>">
-                            <div class="gird">
+                            <div id="Buttons" class="gird">
                                 <div class="row">
-                                    <div class="cell-6">
-                                        <div class="form-group">
-                                            <label>Titulo</label>
-                                            <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
-                                        </div>
-                                    </div>
-                                    <div class="cell-6">
-                                        <div class="form-group">
-                                            <label>Descripcion</label>
-                                            <textarea name="description" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
-                                        </div>
+                                    <div class="cell-11"></div>
+                                    <div class="cell-1">
+                                        <a class="button primary cycle " onclick="Metro.dialog.open('#add')">
+                                            <span class="mif-plus"></span>
+                                        </a>
                                     </div>
                                 </div>
+                                <?php if (isset($New)) :
+                                    if ($New != false) : ?>
+                                        <div class="dialog" data-role="dialog" data-show="true">
+                                            <div class="dialog-title text-center">Editar Noticia</div>
+                                            <div class="dialog-content">
+                                                <?php foreach ($New as $News) { ?>
+                                                    <?php echo form_open('staff/EditNew') ?>
+                                                    <input type="hidden" name="id" value="<?php echo $News->id; ?>">
+                                                    <div class="gird">
+                                                        <div class="row">
+                                                            <div class="cell-6">
+                                                                <div class="form-group">
+                                                                    <label>Titulo</label>
+                                                                    <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="cell-6">
+                                                                <div class="form-group">
+                                                                    <label>Descripcion</label>
+                                                                    <textarea name="description" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="dialog-actions">
+                                                <input type="submit" class="button primary" value="Editar">
+                                                <?php echo form_close() ?>
+                                                <a href="<?php echo base_url('staff/News') ?>" class="button">Cerrar</a>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+
                             </div>
-                        <?php } ?>
+                        </div>
+                        <br>
                     </div>
-                    <div class="dialog-actions">
-                        <input type="submit" class="button primary" value="Editar">
-                        <?php echo form_close() ?>
-                        <a href="<?php echo base_url('staff/News') ?>" class="button">Cerrar</a>
+                    <div id="profile-activity">
+                        <br>
+                        <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
+                            <canvas id="profileChart1"></canvas>
+                        </div>
+                        <br>
+                        <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
+                            <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
+                            </table>
+                        </div>
                     </div>
                 </div>
-            <?php endif; ?>
-        <?php endif; ?>
 
+
+
+            </div>
+        </div>
     </div>
+
+    <div class="bg-white p-6 text-center text-leader">
+        Panel de noticias
+        <p class="text-leader2">
+            En este panel podras ver las noticias creadas y publicadas.
+        </p>
+    </div>
+    <br>
+
+</div>
 </div>
 <!-- Modal Agregar Noticia -->
 <div id="add" class="dialog" data-role="dialog">

@@ -66,7 +66,7 @@ $this->load->view("_lib/lib.menu.php");
                                 foreach ($q->result() as $fila) {
                             ?>
                             <tr>
-                                <td><?php echo $fila->id; ?></td>
+                                <td><a href="<?php echo base_url("staff/asignargca/" . $fila-id  ) ?>"><?php echo $fila->id; ?></a></td>
                                 <td><a href="https://www.ivao.aero/Member.aspx?Id=<?php echo $fila->vid; ?>"><?php echo $fila->vid; ?></a></td>
                                 <td><?php echo $fila->date; ?></td>
                                 <td>

@@ -85,8 +85,9 @@ $this->load->view("_lib/lib.menu.php");
                                 </td>
                                 <td><?php echo $fila->status; ?></td>
                                 <td>
-                                    <a href=""><i class="fas fa-spinner"></i></a>
-                                    <a href=""><span class="mif-apps"></span></a>
+                                    <a href=""><i class="fa fa-flag-o" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-check" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             <?php }

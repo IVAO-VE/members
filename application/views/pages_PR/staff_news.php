@@ -61,14 +61,11 @@ function GetName($vid)
                 <div class="bg-white h-100">
 
                     <ul data-role="tabs" data-expand="true">
-                        <li><a href="#permisos">Administracion de noticias</a></li>
-                        <li><a href="#profile-activity">Activity</a></li>
-                        <li><a href="#">Timeline</a></li>
-                        <li><a href="#">Projects</a></li>
+                        <li><a href="#news">Administracion de noticias</a></li>
                     </ul>
 
                     <div id="user-profile-tabs-content">
-                        <div id="permisos">
+                        <div id="news">
                             <br>
                             <table class="table" data-role="table">
                                 <thead>

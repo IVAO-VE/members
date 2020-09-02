@@ -182,7 +182,7 @@ class Staff extends CI_Controller
                 "img" => $img,
                 "foro" => $foro,
                 "reportable" => $report,
-                "publico" => $pub
+                "status" => $pub
             );
 
             if ($noticia) {

@@ -113,7 +113,7 @@ $this->load->view("_lib/lib.menu.php");
                                         description: 'Descripcion manual'
                                     }
                                 ],
-                                eventClick: function(info) {
+                               /* eventClick: function(info) {
                                     LimpiarForm();
                                     $('#tituloDate').html(info.event.title);
                                     $('#txtTitle').val(info.event.title);
@@ -143,7 +143,7 @@ $this->load->view("_lib/lib.menu.php");
                                     $('#end').val(info.dateStr);
                                     $('#tituloDates').html(info.dateStr);
                                     Metro.dialog.open('#date');
-                                },
+                                },*/
                             });
 
                             calendar.render();

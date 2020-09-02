@@ -60,7 +60,7 @@ $this->load->view("_lib/lib.menu.php");
                         </thead>
                         <tbody>
                         <?php
-                            $q = $this->db->get("events");
+                            $q = $this->db->get("gca");
                             if ($q->result() > 0) {
                                 foreach ($q->result() as $fila) {
                             ?>

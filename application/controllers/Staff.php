@@ -481,10 +481,10 @@ class Staff extends CI_Controller
 
             if ($q) {
                 $this->session->set_flashdata('info', 'Ahora es un evento reportable.');
-                redirect(base_url('staff/Events#EventsMang'));
+                redirect(base_url('staff/Events'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas Houston.');
-                redirect(base_url('staff/Events#EventsMang'));
+                redirect(base_url('staff/Events'));
             }
         }
     }

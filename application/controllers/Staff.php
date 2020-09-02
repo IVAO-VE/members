@@ -199,10 +199,10 @@ class Staff extends CI_Controller
 
             if ($query) {
                 $this->session->set_flashdata('info', 'El evento se registro correctamente.');
-                redirect(base_url('staff/EVcalendar'));
+                redirect(base_url('staff/Events'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas registrando el evento.');
-                redirect(base_url('staff/EVcalendar'));
+                redirect(base_url('staff/Events'));
             }
         }
     }

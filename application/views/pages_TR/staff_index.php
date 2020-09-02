@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -35,7 +34,7 @@ $this->load->view("_lib/lib.menu.php");
 
 
 <div class="fg-dark container-fluid start-screen h-100">
-    <div class="mb-15"></div>   
+    <div class="mb-15"></div>
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto01_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
 
@@ -60,39 +59,55 @@ $this->load->view("_lib/lib.menu.php");
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                            $q = $this->db->get("events");
+                            if ($q->result() > 0) {
+                                foreach ($q->result() as $fila) {
+                            ?>
                             <tr>
-                                <td>1</td>
-                                <td>528508</td>
-                                <td>2020-09-02T17:50</td>
-                                <td>No asignado</td>
+                                <td><?php echo $fila->id; ?></td>
+                                <td><?php echo $fila->vid; ?></td>
+                                <td><?php echo $fila->date; ?></td>
+                                <td>
+                                    <?php
+                                        if($fila->encargado == NULL){
+                                            echo 'No asignado';
+                                        }else{
+                                            echo $fila->encargado;
+                                        }
+                                    ?>
+                                </td>
                                 <td>
                                     <a href=""><span class="mif-apps"></span></a>
                                     <a href=""><span class="mif-apps"></span></a>
                                 </td>
                             </tr>
+                            <?php }
+                            }
+                            ?>
                         </tbody>
                     </table>
 
-                    </div>
-                    <br>
                 </div>
-                <div id="profile-activity">
-                    <br>
-                    <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
-                        <canvas id="profileChart1"></canvas>
-                    </div>
-                    <br>
-                    <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
-                        <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
-                        </table>
-                    </div>
+                <br>
+            </div>
+            <div id="profile-activity">
+                <br>
+                <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
+                    <canvas id="profileChart1"></canvas>
+                </div>
+                <br>
+                <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
+                    <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
+                    </table>
                 </div>
             </div>
-
-
-
         </div>
+
+
+
     </div>
+</div>
 </div>
 <?php
 $this->load->view("_lib/lib.footer.php");

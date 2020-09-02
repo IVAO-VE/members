@@ -67,38 +67,6 @@ class Staff extends CI_Controller
         }
     }
 
-
-    public function EVcalendar()
-    {
-        //Consultado con la DB
-        $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
-        $query_access  = $this->db->select('*')
-            ->from('permisos')
-            ->where('vid', $this->session->userdata('vid')) //VID de usuario 
-            ->get();
-        $access_nivel = $query_access->row_array();
-        if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
-            //******************************
-            if ($access_nivel['pages_EV'] != 'true') { //NO TIENE ACCESO A LA ZONA
-                redirect(base_url());
-            } else {
-                $data['result'] = $this->db->get('events')->result();
-
-                foreach ($data['result'] as $key => $value) {
-                    $data['data'][$key]['title'] = $value->title;
-                    $data['data'][$key]['start'] = $value->start;
-                    $data['data'][$key]['end'] = $value->end;
-                    $data['data'][$key]['description'] = $value->description;
-                    $data['data'][$key]['img'] = $value->img;
-                    $data['data'][$key]['foro'] = $value->foro;
-                    $data['data'][$key]['event'] = $value->event;
-                    $data['data'][$key]['reportable'] = $value->reportable;
-                }
-                $this->load->view("pages_EV/staff_calendar", $data);
-            }
-        }
-    }
-
     public function EVinsert()
     {
         $this->load->library('form_validation');

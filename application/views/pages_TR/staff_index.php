@@ -55,6 +55,7 @@ $this->load->view("_lib/lib.menu.php");
                                 <th>VID</th>
                                 <th>Fecha solicitud</th>
                                 <th>Encargado</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -77,6 +78,7 @@ $this->load->view("_lib/lib.menu.php");
                                         }
                                     ?>
                                 </td>
+                                <td><?php echo $fila->date; ?></td>
                                 <td>
                                     <a href=""><span class="mif-apps"></span></a>
                                     <a href=""><span class="mif-apps"></span></a>

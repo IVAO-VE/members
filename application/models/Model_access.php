@@ -39,5 +39,16 @@ class Model_access extends CI_Model {
             
         }
 
+        public function getname($MyVID){
+            $this->db->where('vid', $MyVID);
+            $q = $this->db->get('members_data');
+
+            if($q->num_rows() > 0){
+                return $q->result();
+            }else{
+                return false;
+            }
+        }
+
 }	
 ?>

@@ -74,11 +74,15 @@ $this->load->view("_lib/lib.menu.php");
                                         if($fila->encargado == NULL){
                                             echo 'No asignado';
                                         }else{
-                                            echo $fila->encargado;
+                                           $this->load->model('Model_access');
+                                           $Model = $this->Model_access->getname($fila->encargado)->result_array();
+                                           foreach($Model as $row){
+                                               echo $row['name'];
+                                           }
                                         }
                                     ?>
                                 </td>
-                                <td><?php echo $fila->date; ?></td>
+                                <td><?php echo $fila->status; ?></td>
                                 <td>
                                     <a href=""><span class="mif-apps"></span></a>
                                     <a href=""><span class="mif-apps"></span></a>

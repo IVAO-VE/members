@@ -67,7 +67,7 @@ $this->load->view("_lib/lib.menu.php");
                             ?>
                             <tr>
                                 <td><?php echo $fila->id; ?></td>
-                                <td><?php echo $fila->vid; ?></td>
+                                <td><a href="https://www.ivao.aero/Member.aspx?Id=<?php echo $fila->vid; ?>"><?php echo $fila->vid; ?></a></td>
                                 <td><?php echo $fila->date; ?></td>
                                 <td>
                                     <?php
@@ -78,7 +78,7 @@ $this->load->view("_lib/lib.menu.php");
                                            $CI->load->model('Model_access');
                                            $Model = $CI->Model_access->getname($fila->encargado);
                                            foreach($Model as $row){
-                                               echo $row->name .'('.$fila->encargado.')' ;
+                                               echo $row->name .' ('.$fila->encargado.')' ;
                                            }
                                         }
                                     ?>

@@ -29,6 +29,9 @@ defined('BASEPATH') or exit('El acceso directo al c�digo no est� permitido.'
     <link rel="stylesheet" href="<?php echo base_url('_include/fullcalendar/main.css') ?>" />
     <script src="<?php echo base_url('_include/fullcalendar/main.js') ?>"></script>
 
+    <!-- FontAwesome-->
+    <script src="https://use.fontawesome.com/6a6ba32d23.js"></script>
+
 
 
     <title>IVAO Venezuela | <?php echo $this->lang->line('membersarea'); ?></title>

@@ -44,14 +44,7 @@ $this->load->view("_lib/lib.menu.php");
             </ul>
 
             <div id="user-profile-tabs-content">
-                <div id="permisos">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
-                <div id="profile-activity">
+                <div id="calendar">
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
                             var calendarEl = document.getElementById('calendar');
@@ -324,6 +317,13 @@ $this->load->view("_lib/lib.menu.php");
                     <div class="bg-white p-4">
                         <div id='calendar'></div>
                     </div>
+                </div>
+                <div id="admin">
+                    <br>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
+                    </div>
+                    <br>
                 </div>
             </div>
 

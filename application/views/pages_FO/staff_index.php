@@ -26,7 +26,7 @@
             <li class="page-item"><a href="/app/index" class="page-link"><span class="mif-meter"></span></a></li>
             <li class="page-item"><a href="/app/profile" class="page-link"><?php echo $this->lang->line('staffarea'); ?></a></li>
             <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('dpto02'); ?></a></li>
-            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('staff_HQ_0001'); ?></a></li>
+            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('airlines_title'); ?></a></li>
         </ul>
     </div>
 </div>
@@ -34,7 +34,7 @@
 
 <div class="fg-dark container-fluid start-screen h-100">
     <div class="mb-15"></div>   
-    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto01_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
+    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto02_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">

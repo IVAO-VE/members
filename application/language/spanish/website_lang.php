@@ -79,16 +79,16 @@ $lang['staff'] = 'Staff';
 
 //Opciones del STAFF
 $lang['staff_title'] = 'OPCIONES DE ADMINISTRÁCION';
-$lang['staff_dpto01_index'] = 'Opciones de administración para HQ';
-$lang['staff_dpto02_index'] = 'Opciones de administración para operaciones de vuelo';
-$lang['staff_dpto03_index'] = 'Opciones de administración para operaciones de control';
-$lang['staff_dpto04_index'] = 'Opciones de administración para operaciones especiales';
-$lang['staff_dpto05_index'] = 'Opciones de administración para entrenamiento';
-$lang['staff_dpto06_index'] = 'Opciones de administración para miembros y afiliación';
-$lang['staff_dpto07_index'] = 'Opciones de administración para eventos';
-$lang['staff_dpto08_index'] = 'Opciones de administración para relaciones públicas';
-$lang['staff_dpto09_index'] = 'Opciones de administración para sistemas y web';
-$lang['staff_dpto10_index'] = 'Opciones de administración para FIR'; 
+$lang['staff_dpto01_index'] = 'Administración de HQ';
+$lang['staff_dpto02_index'] = 'Administración de operaciones de vuelo';
+$lang['staff_dpto03_index'] = 'Administración de operaciones de control';
+$lang['staff_dpto04_index'] = 'Administración de operaciones especiales';
+$lang['staff_dpto05_index'] = 'Administración de entrenamiento';
+$lang['staff_dpto06_index'] = 'Administración de miembros y afiliación';
+$lang['staff_dpto07_index'] = 'Administración de eventos';
+$lang['staff_dpto08_index'] = 'Administración de relaciones públicas';
+$lang['staff_dpto09_index'] = 'Administración de sistemas y web';
+$lang['staff_dpto10_index'] = 'Administración de FIR'; 
 $lang['staff_HQ_0001'] = 'Niveles de acceso';
 $lang['staffarea'] = 'Área administrativa'; 
 $lang['staf_option'] = 'Gestionar ';

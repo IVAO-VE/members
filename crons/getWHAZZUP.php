@@ -25,7 +25,7 @@ echo "<pre>";
 
     $whazzupLINES = explode("\n", $fileWHAZZUP);
     echo date("d-m-Y H:i:s\t")."Normalizando datos del WHAZZUP</br>";
-    echo $whazzupLINES;
+    print_r($whazzupLINES);
 
     /** Marcamos todos los registros almacenados como inactivos **/
     echo date("d-m-Y H:i:s\t")."Normalizando datos de la base de datos</br>";

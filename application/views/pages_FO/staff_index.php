@@ -42,6 +42,8 @@
                 <li><a href="#charts"><?php echo $this->lang->line('charts_title'); ?></a></li>
                 <li><a href="#meteorologic"><?php echo $this->lang->line('meteorologic_title'); ?></a></li>
                 <li><a href="#information"><?php echo $this->lang->line('information_title'); ?></a></li>
+                <li><a href="#sceneries"><?php echo $this->lang->line('sceneries_title'); ?></a></li>
+                <li><a href="#notams"><?php echo $this->lang->line('notams_title'); ?></a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
@@ -67,6 +69,20 @@
                     <br>
                 </div>
                 <div id="information">
+                    <br>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
+                    </div>
+                    <br>
+                </div>
+                <div id="sceneries">
+                    <br>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
+                    </div>
+                    <br>
+                </div>
+                <div id="notams">
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 

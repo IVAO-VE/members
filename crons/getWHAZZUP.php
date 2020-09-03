@@ -14,13 +14,15 @@ echo "<pre>";
     $MyQuery = EjecutarSQL("SELECT * FROM whazzup_status WHERE id=?", "i", array(0));
     $xURL = $MyQuery[0]["data"];
     
-    echo date("d-m-Y H:i:s\t")."Conectando con WHAZZUP en ".$xURL."</br>";
+ /*   echo date("d-m-Y H:i:s\t")."Conectando con WHAZZUP en ".$xURL."</br>";
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $xURL);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_HEADER, false);
     $fileWHAZZUP = curl_exec($curl);
     curl_close($curl);
+*/    
+    $fileWHAZZUP = file_get_contents($xURL);
     echo date("d-m-Y H:i:s\t")."Datos transferidos desde WHAZZUP</br>";
 
     $whazzupLINES = explode("\n", $fileWHAZZUP);

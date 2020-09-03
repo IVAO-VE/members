@@ -2,19 +2,21 @@
 error_reporting(E_ALL ^ E_NOTICE);
 require_once "lib.functions.php";
 /**
- * @author Rixio Danilo Iguaran Chourio
+ * @author Rixio Danilo Iguaran Chourio.
+ * @author Simón Cardona.
  * @copyright 2020
  */
-echo "<pre>";
+echo "<pre>".PHP_EOL;
 
-    echo date("d-m-Y H:i:s\t")."Se ha iniciado la tarea programada para rastreo de conexiones</br>";
-    echo date("d-m-Y H:i:s\t")."Iniciando el trackeo de las conexiones</br>";
+    echo date("d-m-Y H:i:s\t")."Se ha iniciado la tarea programada para rastreo de conexiones".PHP_EOL;
+    echo date("d-m-Y H:i:s\t")."Iniciando el trackeo de las conexiones".PHP_EOL;
     
-    echo date("d-m-Y H:i:s\t")."Buscando la dirección del archivo de datos...</br>";
+    echo date("d-m-Y H:i:s\t")."Buscando la dirección del archivo de datos...".PHP_EOL;
     $MyQuery = EjecutarSQL("SELECT * FROM whazzup_status WHERE id=?", "i", array(0));
     $xURL = $MyQuery[0]["data"];
     
- /*   echo date("d-m-Y H:i:s\t")."Conectando con WHAZZUP en ".$xURL."</br>";
+    echo date("d-m-Y H:i:s\t")."Conectando con WHAZZUP en ".$xURL.PHP_EOL;
+/*
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $xURL);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -23,18 +25,18 @@ echo "<pre>";
     curl_close($curl);
 */    
     $fileWHAZZUP = file_get_contents($xURL);
-    echo date("d-m-Y H:i:s\t")."Datos transferidos desde WHAZZUP</br>";
+    echo date("d-m-Y H:i:s\t")."Datos transferidos desde WHAZZUP.".PHP_EOL;
 
     $whazzupLINES = explode("\n", $fileWHAZZUP);
-    echo date("d-m-Y H:i:s\t")."Normalizando datos del WHAZZUP</br>";
-    print_r($whazzupLINES);
+    echo date("d-m-Y H:i:s\t")."Normalizando datos del WHAZZUP.".PHP_EOL;
+    //print_r($whazzupLINES);
 
     /** Marcamos todos los registros almacenados como inactivos **/
-    echo date("d-m-Y H:i:s\t")."Normalizando datos de la base de datos</br>";
+    echo date("d-m-Y H:i:s\t")."Normalizando datos de la base de datos.".PHP_EOL;
     $MyNORMALIZE = EjecutarSQL("UPDATE whazzup_log SET log_status=?", "s", array("I"));
 
     /** Revisamos los datos linea por linea **/
-    echo date("d-m-Y H:i:s\t")."Recorriendo conexiones de WHAZZUP</br>";
+    echo date("d-m-Y H:i:s\t")."Recorriendo conexiones de WHAZZUP".PHP_EOL;
     foreach ($whazzupLINES as &$xLINE) {
         $xPARTS = explode(":", $xLINE);
         if(isset($xPARTS[3])){ //Leemos una linea de datos y no un encabesado
@@ -54,16 +56,16 @@ echo "<pre>";
                     if($MyQueryC){ //Ya habíamos registrado esta conexión en la DB
                         /** Marcamos la conexión nuevamente como activa **/
                         $MyACTIVE = EjecutarSQL("UPDATE whazzup_log SET log_status=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array("A", trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
-                        echo date("d-m-Y H:i:s\t")."ACTIVADO: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
+                        echo date("d-m-Y H:i:s\t")."ACTIVADO: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")".PHP_EOL;
                         if(($MyQueryC[0]['log_status'] == 'A') && (trim($xPARTS[46]) == 0)){ //El avion está activo y volando (EN AIRE)
                             if(($MyQueryC[0]['takeoff_time'] == null) || ($MyQueryC[0]['takeoff_time'] == '')){ //Hay que asignar tiempo de despegue
                                 $MyAIRBORNE = EjecutarSQL("UPDATE whazzup_log SET takeoff_time=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array(time(), trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
-                                echo date("d-m-Y H:i:s\t")."ASIGNANDO DESPEGUE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
+                                echo date("d-m-Y H:i:s\t")."ASIGNANDO DESPEGUE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")".PHP_EOL;
                             }
                         }else if(($MyQueryC[0]['log_status'] == 'A') && (trim($xPARTS[46]) == 1)){ //El avion está activo y en superficie (EN TIERRA)
                             if(($MyQueryC[0]['takeoff_time'] != null) || ($MyQueryC[0]['takeoff_time'] != '')){ //Ya había despegado y hay que asignar tiempo de aterrizaje
                                 $MyLANDING = EjecutarSQL("UPDATE whazzup_log SET landing_time=? WHERE vid=? AND callsign=? AND connection_time=?", "siss", array(time(), trim($xPARTS[1]), trim($xPARTS[0]), trim($xPARTS[37])));
-                                echo date("d-m-Y H:i:s\t")."ASIGNANDO ATERRIZAJE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
+                                echo date("d-m-Y H:i:s\t")."ASIGNANDO ATERRIZAJE: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")".PHP_EOL;
                             }
                         }
                     }else{ //La conexion no existe y hay que agregarla al LOG
@@ -115,15 +117,15 @@ echo "<pre>";
                                                                                                                 trim($xPARTS[48]),
                                                                                                                 "A"
                                                                                                     ));
-                        echo date("d-m-Y H:i:s\t")."INSERTADO: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")</br>";
+                        echo date("d-m-Y H:i:s\t")."INSERTADO: ".trim($xPARTS[1])." (".trim($xPARTS[0]).")".PHP_EOL;
                     }
                 }
             } catch (Exception $e) {
-                echo(date("d-m-Y H:i:s\t").'Excepción capturada: '.$e->getMessage(). "\n");
+                echo(date("d-m-Y H:i:s\t").'Excepción capturada: '.$e->getMessage().PHP_EOL);
             }
         }
     }
-    echo date("d-m-Y H:i:s\t")."Finalizado el trackeo de las conexiones.</br>";
-    echo date("d-m-Y H:i:s\t")."La tarea programada para rastreo de conexiones ha finalizado.</br>";
+    echo date("d-m-Y H:i:s\t")."Finalizado el trackeo de las conexiones.".PHP_EOL;
+    echo date("d-m-Y H:i:s\t")."La tarea programada para rastreo de conexiones ha finalizado.".PHP_EOL;
 echo "</pre>";
 ?>

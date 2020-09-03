@@ -39,9 +39,9 @@
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#permisos"><?php echo $this->lang->line('airlines_title'); ?></a></li>
-                <li><a href="#profile-activity">Activity</a></li>
-                <li><a href="#">Timeline</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#profile-activity"><?php echo $this->lang->line('charts_title'); ?></a></li>
+                <li><a href="#"><?php echo $this->lang->line('meteorologic_title'); ?></a></li>
+                <li><a href="#"><?php echo $this->lang->line('information_title'); ?></a></li>
             </ul>
 
             <div id="user-profile-tabs-content">

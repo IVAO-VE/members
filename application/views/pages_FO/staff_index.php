@@ -38,31 +38,43 @@
         <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">
-                <li><a href="#permisos"><?php echo $this->lang->line('airlines_title'); ?></a></li>
-                <li><a href="#profile-activity"><?php echo $this->lang->line('charts_title'); ?></a></li>
-                <li><a href="#"><?php echo $this->lang->line('meteorologic_title'); ?></a></li>
-                <li><a href="#"><?php echo $this->lang->line('information_title'); ?></a></li>
+                <li><a href="#airlines"><?php echo $this->lang->line('airlines_title'); ?></a></li>
+                <li><a href="#charts"><?php echo $this->lang->line('charts_title'); ?></a></li>
+                <li><a href="#meteorologic"><?php echo $this->lang->line('meteorologic_title'); ?></a></li>
+                <li><a href="#information"><?php echo $this->lang->line('information_title'); ?></a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
-                <div id="permisos">
+                <div id="airlines">
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
                     </div>
                     <br>
                 </div>
-                <div id="profile-activity">
+                <div id="charts">
                     <br>
-                    <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
-                        <canvas id="profileChart1"></canvas>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
                     </div>
                     <br>
-                    <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
-                        <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
-                        </table>
-                    </div>
                 </div>
+                <div id="meteorologic">
+                    <br>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
+                    </div>
+                    <br>
+                </div>
+                <div id="information">
+                    <br>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
+                    </div>
+                    <br>
+                </div>
+
+
             </div>
 
 

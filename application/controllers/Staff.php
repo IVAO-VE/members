@@ -87,6 +87,24 @@ class Staff extends CI_Controller
         }
     }
 
+    public function military()
+    {
+        //Consultado con la DB
+        $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
+        $query_access  = $this->db->select('*')
+            ->from('permisos')
+            ->where('vid', $this->session->userdata('vid')) //VID de usuario 
+            ->get();
+        $access_nivel = $query_access->row_array();
+        if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
+            //******************************
+            if ($access_nivel['pages_SO'] != 'true') { //NO TIENE ACCESO A LA ZONA
+                redirect(base_url());
+            } else {
+                $this->load->view("pages_SO/staff_index");
+            }
+        }
+    }
 
 
     public function EVinsert()

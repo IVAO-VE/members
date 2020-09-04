@@ -19,6 +19,8 @@
 ?>
 
 
+
+
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title  text-center text-left-md w-100"><?php echo $this->lang->line('mainpage'); ?></br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @autor Rixio Iguar�n y Sim�n Cardona.
+ * @autor Rixio Iguarán y Simón Cardona.
  * @Departamento Sistemas y Webmaster
  * @Licencia Exclusivo sistemas IVAO.AERO
- * @Licencia Divisi�n Venezuela.
+ * @Licencia División Venezuela.
  * @Correo ve-web@ivao.aero
  * 
  **/
 
 //Asegurando el acceso directo al script
-defined('BASEPATH') or exit('El acceso directo al c�digo no est� permitido.');
+defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
 
 ?>
 <!DOCTYPE html>

@@ -302,7 +302,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         if ($access_nivel['pages_TR'] == 'true') { //Tiene acceso a Entrenamiento
             echo '
                             <li>
-                                <a href="/staff/members">
+                                <a href="#">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto05') . '</span>
                                 </a>
@@ -313,7 +313,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         if ($access_nivel['pages_ME'] == 'true') { //Tiene acceso a Miembros y afiliación
             echo '
                             <li>
-                                <a href="#">
+                                <a href="/staff/members">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto06') . '</span>
                                 </a>

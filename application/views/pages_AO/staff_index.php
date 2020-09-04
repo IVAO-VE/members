@@ -18,15 +18,15 @@
 ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
-        <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto02_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
+        <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto03_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
     </div>
 
     <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md flex-align-center">
         <ul class="breadcrumbs bg-transparent">
             <li class="page-item"><a href="/app/index" class="page-link"><span class="mif-meter"></span></a></li>
             <li class="page-item"><a href="/app/profile" class="page-link"><?php echo $this->lang->line('staffarea'); ?></a></li>
-            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('dpto02'); ?></a></li>
-            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('airlines_title'); ?></a></li>
+            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('dpto03'); ?></a></li>
+            <li class="page-item"><a href="" class="page-link"><?php echo $this->lang->line('staff'); ?></a></li>
         </ul>
     </div>
 </div>
@@ -38,12 +38,10 @@
         <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">
-                <li><a href="#airlines"><?php echo $this->lang->line('airlines_title'); ?></a></li>
-                <li><a href="#charts"><?php echo $this->lang->line('charts_title'); ?></a></li>
-                <li><a href="#meteorologic"><?php echo $this->lang->line('meteorologic_title'); ?></a></li>
-                <li><a href="#information"><?php echo $this->lang->line('information_title'); ?></a></li>
-                <li><a href="#sceneries"><?php echo $this->lang->line('sceneries_title'); ?></a></li>
-                <li><a href="#notams"><?php echo $this->lang->line('notams_title'); ?></a></li>
+                <li><a href="#airlines"><?php echo $this->lang->line('dpto03_SEC'); ?></a></li>
+                <li><a href="#charts"><?php echo $this->lang->line('dpto03_TSP'); ?></a></li>
+                <li><a href="#meteorologic"><?php echo $this->lang->line('dpto03_GCA'); ?></a></li>
+                <li><a href="#information"><?php echo $this->lang->line('dpto03_FRA'); ?></a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
@@ -54,18 +52,15 @@
                     </div>
                     <br>
                 </div>
+
                 <div id="charts">
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
-
-
-
-
-
                     </div>
                     <br>
                 </div>
+
                 <div id="meteorologic">
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
@@ -73,6 +68,7 @@
                     </div>
                     <br>
                 </div>
+
                 <div id="information">
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
@@ -80,21 +76,6 @@
                     </div>
                     <br>
                 </div>
-                <div id="sceneries">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
-                <div id="notams">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
-
 
             </div>
 

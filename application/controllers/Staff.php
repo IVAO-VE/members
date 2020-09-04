@@ -68,7 +68,7 @@ class Staff extends CI_Controller
     }
 
 
-    public function controlles()
+    public function controllers()
     {
         //Consultado con la DB
         $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');

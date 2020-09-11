@@ -250,12 +250,16 @@
                         foreach ($query->result() as $row) {
                             $xVUELOS++;
                             $strAIRCRAFT = explode("/", $row->fl_aircraft);
-                            $query_model = $this->db->query('SELECT * FROM nav_aircraft WHERE icao="'.$strAIRCRAFT[1].'"');
-                            $row_model = $query_model->row();
-                            if(isset($row_model)){ //Tenemos el modelo de aeronave
-                                $xMODEL = $row_model->model;
-                            }else{ //No tenemos el modelo y mostramos el ICAO
-                                $xMODEL = $strAIRCRAFT[1];
+                            if(isset($strAIRCRAFT[1])){
+                                $query_model = $this->db->query('SELECT * FROM nav_aircraft WHERE icao="'.$strAIRCRAFT[1].'"');
+                                $row_model = $query_model->row();
+                                if(isset($row_model)){ //Tenemos el modelo de aeronave
+                                    $xMODEL = $row_model->model;
+                                }else{ //No tenemos el modelo y mostramos el ICAO
+                                    $xMODEL = $strAIRCRAFT[1];
+                                }
+                            }else{
+                                $xMODEL = "N/A"
                             }
                             if($row->fl_rules == "I"){
                                 $xRULES = "IFR";

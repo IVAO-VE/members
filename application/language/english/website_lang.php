@@ -114,6 +114,16 @@ $lang['main_NODATA'] = 'Out of login information';
 $lang['main_yourflights'] = 'Last flights in the network';
 $lang['main_yourcontrols'] = 'Last controls in the network';
 
+//Facility IVAO
+$lang['facility_0'] = 'Observer';
+$lang['facility_1'] = 'Flight Information';
+$lang['facility_2'] = 'Delivery';
+$lang['facility_3'] = 'Ground';
+$lang['facility_4'] = 'Tower';
+$lang['facility_5'] = 'Approach';
+$lang['facility_6'] = 'ACC';
+$lang['facility_7'] = 'Departure';
+
 //Virtual airlines
 $lang['airlines_title'] = 'Virtual airlines';
 $lang['airlines_system'] = 'VA systems';

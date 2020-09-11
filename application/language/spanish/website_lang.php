@@ -114,6 +114,16 @@ $lang['main_NODATA'] = 'Sin información de acceso';
 $lang['main_yourflights'] = 'Últimos vuelos en la red';
 $lang['main_yourcontrols'] = 'Últimos controles en la red';
 
+//Facility IVAO
+$lang['facility_0'] = 'Observador';
+$lang['facility_1'] = 'Información';
+$lang['facility_2'] = 'Autorizaciones';
+$lang['facility_3'] = 'Superficie';
+$lang['facility_4'] = 'Torre';
+$lang['facility_5'] = 'Aproximación';
+$lang['facility_6'] = 'ACC';
+$lang['facility_7'] = 'Salidas';
+
 //Virtual airlines
 $lang['airlines_title'] = 'Aerolineas virtuales';
 $lang['airlines_system'] = 'VA systems';

@@ -318,27 +318,26 @@
                         $xVUELOS = 0;
                         $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="ATC" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC LIMIT 15');
                         foreach ($query->result() as $row) {
+                            switch ($row->frequency){ 
+                                case 0:
+                                break;
+                                case 1:
+                                break;
+                                case 2:
+                                break;
+                                case 3:
+                                break;
+                                case 4:
+                                break;
+                                case 5:
+                                break;
+                                case 6:
+                                break;
+                                case 7:
+                                break;
 
-
-                            $strAIRCRAFT = explode("/", $row->fl_aircraft);
-                            if(isset($strAIRCRAFT[1])){
-                                $query_model = $this->db->query('SELECT * FROM nav_aircraft WHERE icao="'.$strAIRCRAFT[1].'"');
-                                $row_model = $query_model->row();
-                                if(isset($row_model)){ //Tenemos el modelo de aeronave
-                                    $xMODEL = $row_model->model;
-                                }else{ //No tenemos el modelo y mostramos el ICAO
-                                    $xMODEL = $strAIRCRAFT[1];
-                                }
-                            }else{
-                                $xMODEL = "N/A";
-                            }
-
-                            if($row->fl_rules == "I"){
-                                $xRULES = "IFR";
-                            }else{
-                                $xRULES = "VFR";
-                            }
-                            
+                            }    
+                                                        
                             echo '
                                 <tr>
                                     <td>'.$row->callsign.'</td>

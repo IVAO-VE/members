@@ -289,7 +289,7 @@
     </div>
 
     <div class="cell-md-6">
-    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourflights'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourcontrols'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
             <div class="p-4">
                 <table class="table striped table-border mt-4"
                        data-role="table"
@@ -304,9 +304,9 @@
 
                     <thead>
                     <tr>
-                        <th >Callsing</th>
+                        <th >Estación</th>
                         <th >Fecha</th>
-                        <th data-cls-column="fg-green" >Origen</th>
+                        <th data-cls-column="fg-green" >Frec.</th>
                         <th data-cls-column="fg-green" >Destino</th>
                         <th >Tipo</th>
                         <th >Equipo</th>
@@ -316,10 +316,10 @@
                     <?php
                         //Consultando datos de vuelos realizados
                         $xVUELOS = 0;
-                        $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="PILOT" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC LIMIT 15');
+                        $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="ATC" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC LIMIT 15');
                         foreach ($query->result() as $row) {
-                            $xVUELOS++;
-                            
+
+
                             $strAIRCRAFT = explode("/", $row->fl_aircraft);
                             if(isset($strAIRCRAFT[1])){
                                 $query_model = $this->db->query('SELECT * FROM nav_aircraft WHERE icao="'.$strAIRCRAFT[1].'"');

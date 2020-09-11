@@ -257,7 +257,11 @@
                             }else{ //No tenemos el modelo y mostramos el ICAO
                                 $xMODEL = $strAIRCRAFT[1];
                             }
-        
+                            if($row->$fl_rules == "I"){
+                                $xRULES = "IFR";
+                            }else{
+                                $xRULES = "VFR";
+                            }
                             echo '
                                 <tr>
                                     <td>'.$xVUELOS.'</td>
@@ -265,7 +269,7 @@
                                     <td>'.date("d/m/Y H:m:s", $row->connection_time).'</td>
                                     <td>'.$row->fl_departure.'</td>
                                     <td>'.$row->fl_destination.'</td>
-                                    <td>'.($row->$fl_rules == "I" ? "IFR" : "VFR").'</td>
+                                    <td>'.$xRULES.'</td>
                                     <td>'.$xMODEL.'</td>
                                 </tr>
                             ';

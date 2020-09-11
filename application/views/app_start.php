@@ -231,6 +231,26 @@
                        data-source="<?php echo base_url('_include/'); ?>data/table.json"
                        data-horizontal-scroll="true"
                 >
+
+                    <thead>
+                    <tr>
+                        <th data-cls-column="text-center">N°</th>
+                        <th data-cls-column="text-center">Callsing</th>
+                        <th data-cls-column="text-center">Fecha</th>
+                        <th data-cls-column="fg-green text-center" >Origen</th>
+                        <th data-cls-column="fg-green text-center" >Destino</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>XXX0000</td>
+                        <td>00/00/0000 00:00</td>
+                        <td>XXXX</td>
+                        <td>XXXX</td>
+                    </tr>
+                    </tbody>
+
                 </table>
             </div>
         </div>

@@ -95,7 +95,6 @@ $lang['staf_option'] = 'Gestionar ';
 $lang['staff_PR_0001'] = 'Noticias';
 $lang['staff_EV_0001'] = 'Calendario';
 
-
 //Traducciones del contenido principal
 $lang['mainpage'] = 'Zona de miembros';
 $lang['mainversion'] = 'Versión v2.0';
@@ -112,6 +111,8 @@ $lang['main_lastaccess'] = 'Último acceso';
 $lang['main_DATE'] = 'El día';
 $lang['main_IP'] = 'IP';
 $lang['main_NODATA'] = 'Sin información de acceso';
+$lang['main_yourflights'] = 'Últimos vuelos en la red';
+$lang['main_yourcontrols'] = 'Últimos controles en la red';
 
 //Virtual airlines
 $lang['airlines_title'] = 'Aerolineas virtuales';

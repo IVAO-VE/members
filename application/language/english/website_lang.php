@@ -111,7 +111,8 @@ $lang['main_lastaccess'] = 'Last access';
 $lang['main_DATE'] = 'Date';
 $lang['main_IP'] = 'IP';
 $lang['main_NODATA'] = 'Out of login information';
-
+$lang['main_yourflights'] = 'Last flights in the network';
+$lang['main_yourcontrols'] = 'Last controls in the network';
 
 //Virtual airlines
 $lang['airlines_title'] = 'Virtual airlines';

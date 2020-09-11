@@ -290,6 +290,81 @@
         </div>
     </div>
 
+    <div class="cell-md-7">
+        <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourflights'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+            <div class="p-4">
+                <table class="table striped table-border mt-4"
+                       data-role="table"
+                       data-cls-table-top="row"
+                       data-cls-search="cell-md-6"
+                       data-cls-rows-count="cell-md-6"
+                       data-rows="5"
+                       data-rows-steps="5, 10"
+                       data-show-activity="false"
+                       data-horizontal-scroll="true"
+                >
+
+                    <thead>
+                    <tr>
+                        <th >N°</th>
+                        <th >Callsing</th>
+                        <th >Fecha</th>
+                        <th data-cls-column="fg-green" >Origen</th>
+                        <th data-cls-column="fg-green" >Destino</th>
+                        <th >Tipo</th>
+                        <th >Aeronave</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        //Consultando datos de vuelos realizados
+                        $xVUELOS = 0;
+                        $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="PILOT" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC LIMIT 15');
+                        foreach ($query->result() as $row) {
+                            $xVUELOS++;
+                            
+                            $strAIRCRAFT = explode("/", $row->fl_aircraft);
+                            if(isset($strAIRCRAFT[1])){
+                                $query_model = $this->db->query('SELECT * FROM nav_aircraft WHERE icao="'.$strAIRCRAFT[1].'"');
+                                $row_model = $query_model->row();
+                                if(isset($row_model)){ //Tenemos el modelo de aeronave
+                                    $xMODEL = $row_model->model;
+                                }else{ //No tenemos el modelo y mostramos el ICAO
+                                    $xMODEL = $strAIRCRAFT[1];
+                                }
+                            }else{
+                                $xMODEL = "N/A";
+                            }
+
+                            if($row->fl_rules == "I"){
+                                $xRULES = "IFR";
+                            }else{
+                                $xRULES = "VFR";
+                            }
+                            
+                            echo '
+                                <tr>
+                                    <td>'.$xVUELOS.'</td>
+                                    <td>'.$row->callsign.'</td>
+                                    <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
+                                    <td>'.$row->fl_departure.'</td>
+                                    <td>'.$row->fl_destination.'</td>
+                                    <td>'.$xRULES.'</td>
+                                    <td>'.$xMODEL.'</td>
+                                </tr>
+                            ';
+                        }
+                    ?>  
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
 </div>
 </div>
 

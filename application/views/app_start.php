@@ -238,7 +238,7 @@
                         <th data-cls-column="fg-green" >Origen</th>
                         <th data-cls-column="fg-green" >Destino</th>
                         <th >Tipo</th>
-                        <th >Aeronave</th>
+                        <th >Equipo</th>
                     </tr>
                     </thead>
                     <tbody>

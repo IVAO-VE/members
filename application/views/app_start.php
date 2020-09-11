@@ -243,15 +243,35 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>XXX0000</td>
-                        <td>00/00/0000 00:00</td>
-                        <td>XXXX</td>
-                        <td>XXXX</td>
-                        <td>XXX</td>
-                        <td>XXX xxx XXX xxx</td>
-                    </tr>
+                    <?php
+                        //Consultando datos de vuelos realizados
+                        $xVUELOS = 0;
+                        $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="PILOT" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC');
+                        foreach ($query->result() as $row) {
+                            $xVUELOS++;
+                            $strAIRCRAFT = explode("/", $row->fl_aircraft);
+                            $query_model = $this->db->query('SELECT * FROM nav_aircraft WHERE icao='.$strAIRCRAFT[1]);
+                            $row_model = $query_model->row();
+                            if(isset($row_model)){ //Tenemos el modelo de aeronave
+                                $xMODEL = $row_model->model;
+                            }else{ //No tenemos el modelo y mostramos el ICAO
+                                $xMODEL = $strAIRCRAFT[1];
+                            }
+        
+                            echo '
+                                <tr>
+                                    <td>'.$xVUELOS.'</td>
+                                    <td>'.$row->callsign.'</td>
+                                    <td>'.date("d/m/Y H:m:s", $row->connection_time).'</td>
+                                    <td>'.$row->fl_departure.'</td>
+                                    <td>'.$row->fl_destination.'</td>
+                                    <td>'.($row->$fl_rules == "I" ? "IFR" : "VFR").'</td>
+                                    <td>'.$xMODEL.'</td>
+                                </tr>
+                            ';
+                        }
+                    ?>  
+
                     </tbody>
 
                 </table>

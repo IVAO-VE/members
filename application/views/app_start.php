@@ -259,7 +259,7 @@
                                     $xMODEL = $strAIRCRAFT[1];
                                 }
                             }else{
-                                $xMODEL = "N/A"
+                                $xMODEL = "N/A";
                             }
                             if($row->fl_rules == "I"){
                                 $xRULES = "IFR";

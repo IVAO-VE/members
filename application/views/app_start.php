@@ -343,7 +343,7 @@
                                 <tr>
                                     <td>'.$row->callsign.'</td>
                                     <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
-                                    <td>'.$row->fl_departure.'</td>
+                                    <td>'.$row->frequency.'</td>
                                     <td>'.$row->fl_destination.'</td>
                                     <td>'.$xRULES.'</td>
                                     <td>'.$xMODEL.'</td>

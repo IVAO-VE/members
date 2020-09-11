@@ -246,7 +246,7 @@
                     <?php
                         //Consultando datos de vuelos realizados
                         $xVUELOS = 0;
-                        $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="PILOT" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC');
+                        $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="PILOT" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC LIMIT 15');
                         foreach ($query->result() as $row) {
                             $xVUELOS++;
                             

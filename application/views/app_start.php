@@ -233,7 +233,6 @@
 
                     <thead>
                     <tr>
-                        <th >N°</th>
                         <th >Callsing</th>
                         <th >Fecha</th>
                         <th data-cls-column="fg-green" >Origen</th>
@@ -271,7 +270,6 @@
                             
                             echo '
                                 <tr>
-                                    <td>'.$xVUELOS.'</td>
                                     <td>'.$row->callsign.'</td>
                                     <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
                                     <td>'.$row->fl_departure.'</td>

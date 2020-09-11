@@ -289,7 +289,8 @@
             </div>
         </div>
     </div>
-</div>
+
+
 </div>
 
 <div class="row">
@@ -367,8 +368,7 @@
     </div>
 </div>
 
-
-
+</div>
 
 <?php
 	$this->load->view("_lib/lib.footer.php");

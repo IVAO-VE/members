@@ -218,7 +218,7 @@
 
 <div class="row">
     <div class="cell-md-7">
-        <div data-role="panel" data-title-caption="Staff salary" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+        <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourflights'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
             <div class="p-4">
                 <table class="table striped table-border mt-4"
                        data-role="table"

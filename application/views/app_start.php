@@ -273,7 +273,7 @@
                                 <tr>
                                     <td>'.$xVUELOS.'</td>
                                     <td>'.$row->callsign.'</td>
-                                    <td>'.date("d/m/Y H:m:s", $row->connection_time).'</td>
+                                    <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
                                     <td>'.$row->fl_departure.'</td>
                                     <td>'.$row->fl_destination.'</td>
                                     <td>'.$xRULES.'</td>

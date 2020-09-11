@@ -233,11 +233,13 @@
 
                     <thead>
                     <tr>
-                        <th data-cls-column="text-center">N°</th>
-                        <th data-cls-column="text-center">Callsing</th>
-                        <th data-cls-column="text-center">Fecha</th>
-                        <th data-cls-column="fg-green text-center" >Origen</th>
-                        <th data-cls-column="fg-green text-center" >Destino</th>
+                        <th >N°</th>
+                        <th >Callsing</th>
+                        <th >Fecha</th>
+                        <th data-cls-column="fg-green" >Origen</th>
+                        <th data-cls-column="fg-green" >Destino</th>
+                        <th >Tipo</th>
+                        <th >Aeronave</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -247,6 +249,8 @@
                         <td>00/00/0000 00:00</td>
                         <td>XXXX</td>
                         <td>XXXX</td>
+                        <td>XXX</td>
+                        <td>XXX xxx XXX xxx</td>
                     </tr>
                     </tbody>
 

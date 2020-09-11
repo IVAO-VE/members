@@ -249,6 +249,7 @@
                         $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="PILOT" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC');
                         foreach ($query->result() as $row) {
                             $xVUELOS++;
+                            
                             $strAIRCRAFT = explode("/", $row->fl_aircraft);
                             if(isset($strAIRCRAFT[1])){
                                 $query_model = $this->db->query('SELECT * FROM nav_aircraft WHERE icao="'.$strAIRCRAFT[1].'"');
@@ -261,11 +262,13 @@
                             }else{
                                 $xMODEL = "N/A";
                             }
+
                             if($row->fl_rules == "I"){
                                 $xRULES = "IFR";
                             }else{
                                 $xRULES = "VFR";
                             }
+                            
                             echo '
                                 <tr>
                                     <td>'.$xVUELOS.'</td>

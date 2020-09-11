@@ -290,10 +290,7 @@
         </div>
     </div>
 
-
-</div>
-
-<div class="row">
+    <div class="row">
     <div class="cell-md-7">
         <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourflights'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
             <div class="p-4">
@@ -368,6 +365,7 @@
     </div>
 </div>
 
+</div>
 </div>
 
 <?php

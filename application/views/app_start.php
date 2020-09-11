@@ -307,7 +307,6 @@
                         <th >Estación</th>
                         <th >Fecha</th>
                         <th data-cls-column="fg-green" >Frec.</th>
-                        <th data-cls-column="fg-green" >Destino</th>
                         <th >Tipo</th>
                         <th >Equipo</th>
                     </tr>
@@ -320,20 +319,28 @@
                         foreach ($query->result() as $row) {
                             switch ($row->frequency){ 
                                 case 0:
+                                    $xTYPE = $this->lang->line('facility_0');
                                 break;
                                 case 1:
+                                    $xTYPE = $this->lang->line('facility_1');
                                 break;
                                 case 2:
+                                    $xTYPE = $this->lang->line('facility_2');
                                 break;
                                 case 3:
+                                    $xTYPE = $this->lang->line('facility_3');
                                 break;
                                 case 4:
+                                    $xTYPE = $this->lang->line('facility_4');
                                 break;
                                 case 5:
+                                    $xTYPE = $this->lang->line('facility_5');
                                 break;
                                 case 6:
+                                    $xTYPE = $this->lang->line('facility_6');
                                 break;
                                 case 7:
+                                    $xTYPE = $this->lang->line('facility_7');
                                 break;
 
                             }    
@@ -343,8 +350,7 @@
                                     <td>'.$row->callsign.'</td>
                                     <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
                                     <td>'.$row->frequency.'</td>
-                                    <td>'.$row->fl_destination.'</td>
-                                    <td>'.$xRULES.'</td>
+                                    <td>'.$xTYPE.'</td>
                                     <td>'.$xMODEL.'</td>
                                 </tr>
                             ';

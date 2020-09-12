@@ -308,7 +308,7 @@
                         <th >Fecha</th>
                         <th data-cls-column="fg-green" >Frec.</th>
                         <th >Tipo</th>
-                        <th >Equipo</th>
+                        <th >Servidor</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -318,28 +318,28 @@
                         $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="ATC" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC LIMIT 15');
                         foreach ($query->result() as $row) {
                             switch ($row->frequency){ 
-                                case 0:
+                                case "0":
                                     $xTYPE = $this->lang->line('facility_0');
                                 break;
-                                case 1:
+                                case "1":
                                     $xTYPE = $this->lang->line('facility_1');
                                 break;
-                                case 2:
+                                case "2":
                                     $xTYPE = $this->lang->line('facility_2');
                                 break;
-                                case 3:
+                                case "3":
                                     $xTYPE = $this->lang->line('facility_3');
                                 break;
-                                case 4:
+                                case "4":
                                     $xTYPE = $this->lang->line('facility_4');
                                 break;
-                                case 5:
+                                case "5":
                                     $xTYPE = $this->lang->line('facility_5');
                                 break;
-                                case 6:
+                                case "6":
                                     $xTYPE = $this->lang->line('facility_6');
                                 break;
-                                case 7:
+                                case "7":
                                     $xTYPE = $this->lang->line('facility_7');
                                 break;
 

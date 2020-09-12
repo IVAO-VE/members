@@ -353,7 +353,7 @@
                                     <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
                                     <td>'.$row->frequency.'</td>
                                     <td>'.$xTYPE.'</td>
-                                    <td>'.$xMODEL.'</td>
+                                    <td>'.$row->server.'</td>
                                 </tr>
                             ';
                         }

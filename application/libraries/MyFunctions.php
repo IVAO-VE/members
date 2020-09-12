@@ -60,7 +60,7 @@ class MyFunctions
                     'expire' => time() + 3600,
                 );
                 set_cookie($cookie);
-                header('Location: '.$this->get_HOSTPROTOCOL.'://'.$_SERVER['SERVER_NAME']);
+                header('Location: '.$this->get_HOSTPROTOCOL().'://'.$_SERVER['SERVER_NAME']);
                 exit;
             } else {
                 echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
@@ -81,7 +81,7 @@ class MyFunctions
                 unset($_COOKIE['__cfduid']);
                 unset($_COOKIE['ivao_token']);
                 unset($_COOKIE['ci_session']);
-                header('Location: http://login.ivao.aero/index.php?url='.$this->get_HOSTPROTOCOL.'://'.$_SERVER['SERVER_NAME']);
+                header('Location: http://login.ivao.aero/index.php?url='.$this->get_HOSTPROTOCOL().'://'.$_SERVER['SERVER_NAME']);
                 exit;
             }
         } else {
@@ -90,7 +90,7 @@ class MyFunctions
             unset($_COOKIE['__cfduid']);
             unset($_COOKIE['ivao_token']);
             unset($_COOKIE['ci_session']);
-            header('Location: http://login.ivao.aero/index.php?url='.$this->get_HOSTPROTOCOL.'://'.$_SERVER['SERVER_NAME']);
+            header('Location: http://login.ivao.aero/index.php?url='.$this->get_HOSTPROTOCOL().'://'.$_SERVER['SERVER_NAME']);
             exit;
         }
     }

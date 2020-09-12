@@ -51,10 +51,6 @@ class MyFunctions
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null)
     {
-        $MyIP = $this->get_cliente_ip();
-        if(($MyIP == "187.189.83.65") || ($MyIP == "0.0.0.0")){ //Maquina Rixio ó Simon
-            exit(); //maquinas del equipo WEBMASTER no validamos API de IVAO
-        }
         
         if (isset($_GET['IVAOTOKEN'])) {
             if ($_GET['IVAOTOKEN'] !== 'error') {
@@ -64,7 +60,7 @@ class MyFunctions
                     'expire' => time() + 3600,
                 );
                 set_cookie($cookie);
-                header('Location: http://members.ve.ivao.aero/');
+                header('Location: '.$_SERVER['SERVER_NAME']);
                 exit;
             } else {
                 echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
@@ -85,7 +81,7 @@ class MyFunctions
                 unset($_COOKIE['__cfduid']);
                 unset($_COOKIE['ivao_token']);
                 unset($_COOKIE['ci_session']);
-                header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
+                header('Location: http://login.ivao.aero/index.php?url='.$_SERVER['SERVER_NAME']);
                 exit;
             }
         } else {
@@ -94,7 +90,7 @@ class MyFunctions
             unset($_COOKIE['__cfduid']);
             unset($_COOKIE['ivao_token']);
             unset($_COOKIE['ci_session']);
-            header('Location: http://login.ivao.aero/index.php?url=http://members.ve.ivao.aero/');
+            header('Location: http://login.ivao.aero/index.php?url='.$_SERVER['SERVER_NAME']);
             exit;
         }
     }

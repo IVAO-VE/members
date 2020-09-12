@@ -63,7 +63,18 @@ class MyFunctions
                 header('Location: '.$this->get_HOSTPROTOCOL());
                 exit;
             } else {
-                echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
+                if(($this->get_cliente_ip() == "187.189.83.65") || ($this->get_cliente_ip() == "0.0.0.0")){
+                    $cookie = array(
+                        'name'   => 'ivao_token',
+                        'value'  => $_GET['IVAOTOKEN'],
+                        'expire' => time() + 3600,
+                    );
+                    set_cookie($cookie);
+                    header('Location: '.$this->get_HOSTPROTOCOL());
+                    exit;
+                }else{
+                    echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
+                }
                 exit;
             }
         }

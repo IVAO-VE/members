@@ -233,12 +233,12 @@
 
                     <thead>
                     <tr>
-                        <th >Callsing</th>
-                        <th >Fecha</th>
-                        <th data-cls-column="fg-green" >Origen</th>
-                        <th data-cls-column="fg-green" >Destino</th>
-                        <th >Tipo</th>
-                        <th >Equipo</th>
+                        <th ><?php echo $this->lang->line('TBL001_colum1'); ?></th>
+                        <th ><?php echo $this->lang->line('TBL001_colum2'); ?></th>
+                        <th data-cls-column="fg-green" ><?php echo $this->lang->line('TBL001_colum3'); ?></th>
+                        <th data-cls-column="fg-green" ><?php echo $this->lang->line('TBL001_colum4'); ?></th>
+                        <th ><?php echo $this->lang->line('TBL001_colum5'); ?></th>
+                        <th ><?php echo $this->lang->line('TBL001_colum6'); ?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -304,11 +304,11 @@
 
                     <thead>
                     <tr>
-                        <th >Estación</th>
-                        <th >Fecha</th>
-                        <th data-cls-column="fg-green" >Frec.</th>
-                        <th >Tipo</th>
-                        <th >Servidor</th>
+                        <th ><?php echo $this->lang->line('TBL002_colum1'); ?></th>
+                        <th ><?php echo $this->lang->line('TBL002_colum2'); ?></th>
+                        <th data-cls-column="fg-green" ><?php echo $this->lang->line('TBL002_colum3'); ?></th>
+                        <th ><?php echo $this->lang->line('TBL002_colum4'); ?></th>
+                        <th ><?php echo $this->lang->line('TBL002_colum5'); ?></th>
                     </tr>
                     </thead>
                     <tbody>

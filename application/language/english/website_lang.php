@@ -192,4 +192,21 @@ $lang['event_endt'] = 'End time';
 $lang['event_des'] = 'Description';
 $lang['event_close'] = 'Close';
 $lang['event_forum'] = 'Forum';
+
+/**
+ * TABLE HEADER SECTION
+ *  **/
+$lang['TBL001_colum1'] = 'Callsing';
+$lang['TBL001_colum2'] = 'Date';
+$lang['TBL001_colum3'] = 'From';
+$lang['TBL001_colum4'] = 'To';
+$lang['TBL001_colum5'] = 'Type';
+$lang['TBL001_colum6'] = 'Aircraft';
+
+$lang['TBL002_colum1'] = 'Station';
+$lang['TBL002_colum2'] = 'Date';
+$lang['TBL002_colum3'] = 'Frec.';
+$lang['TBL002_colum4'] = 'Type';
+$lang['TBL002_colum5'] = 'Server';
+
 ?>

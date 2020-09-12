@@ -71,6 +71,11 @@ class MyFunctions
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null)
     {
+        $MyIP = get_cliente_ip();
+        if(($MyIP == "187.189.83.65") || ($MyIP == "0.0.0.0")){ //Maquina Rixio ó Simon
+            exit(); //maquinas del equipo WEBMASTER no validamos API de IVAO
+        }
+        
         if (isset($_GET['IVAOTOKEN'])) {
             if ($_GET['IVAOTOKEN'] !== 'error') {
                 $cookie = array(

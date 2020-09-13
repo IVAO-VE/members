@@ -382,15 +382,15 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         <div class="app-bar-container ml-auto">
             <a href="#" class="app-bar-item">
                 <span class="mif-envelop"></span>
-                <span class="badge bg-green fg-white mt-2 mr-1">4</span>
+                <span class="badge bg-green fg-white mt-2 mr-1">0</span>
             </a>
             <a href="#" class="app-bar-item">
                 <span class="mif-bell"></span>
-                <span class="badge bg-orange fg-white mt-2 mr-1">10</span>
+                <span class="badge bg-orange fg-white mt-2 mr-1">0</span>
             </a>
             <a href="#" class="app-bar-item">
                 <span class="mif-flag"></span>
-                <span class="badge bg-red fg-white mt-2 mr-1">9</span>
+                <span class="badge bg-red fg-white mt-2 mr-1">0</span>
             </a>
             <!--             
                 <select onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">

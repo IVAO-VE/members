@@ -18,8 +18,27 @@
 
     $query_member = $this->db->query("SELECT * FROM members_data WHERE vid=".$this->session->userdata('vid'));
     $row_member = $query_member->row();
+    $this->phpdebug->debug('[DEBUG] -> '.$row_member->mail);
 
 ?>
+
+<script type="text/javascript">
+<!--
+
+window.onload = function() {
+    var member_emal = '<?php $row_member->mail; ?>';
+    if(member_emal == ''){
+        Metro.dialog.create({
+            title: "Use Windows location service?",
+            content: "<div>Bassus abactors ducunt ad triticum...</div>",
+            closeButton: true
+        });        
+    }
+};
+
+-->
+</script>
+
 
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
@@ -371,24 +390,6 @@
 
 </div>
 </div>
-
-
-<script type="text/javascript">
-<!--
-
-window.onload = function() {
-    var member_emal = '<?php $row_member->mail; ?>';
-    if(member_emal == ''){
-        Metro.dialog.create({
-            title: "Use Windows location service?",
-            content: "<div>Bassus abactors ducunt ad triticum...</div>",
-            closeButton: true
-        });        
-    }
-};
-
--->
-</script>
 
 
 <?php

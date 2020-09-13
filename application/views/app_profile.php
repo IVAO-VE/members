@@ -112,31 +112,6 @@ $CouCode = strtolower($this->session->userdata('country_code'));
 
                     </div>
                     <br>
-                    <!-- Inicio Modal Eventos -->
-                    <script>
-                        function openDemoDialogActions() {
-                            Metro.dialog.create({
-                                title: "Use Windows location service?",
-                                content: "<div>Bassus abactors ducunt ad triticum...</div>",
-                                actions: [{
-                                        caption: "Agree",
-                                        cls: "js-dialog-close alert",
-                                        onclick: function() {
-                                            alert("You clicked Agree action");
-                                        }
-                                    },
-                                    {
-                                        caption: "Disagree",
-                                        cls: "js-dialog-close",
-                                        onclick: function() {
-                                            alert("You clicked Disagree action");
-                                        }
-                                    }
-                                ]
-                            });
-                        }
-                    </script>
-                    <!-- Fin Modal Eventos -->
                     <div data-role="panel" data-title-caption="Eventos reportados" data-title-icon="<span class='mif-airplane'>" data-collapsible="true">
                         <table class="table table-strip">
                             <thead>
@@ -159,7 +134,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                         $Ty = 'VFR';
                                     }
                                     echo '
-                                    <tr onclick="openDemoDialogActions()">
+                                    <tr>
                                         <td>' . $row->callsign . '</td>
                                         <td>' . $Ty . '</td>
                                         <td>' . $row->fl_departure . '</td>

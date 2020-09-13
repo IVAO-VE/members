@@ -201,16 +201,18 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                         </tr>
                                     <?php
                                     }
-                                } else {
                                     ?>
-                                    <tr>
-                                        <h4>Ningún vuelo registrado.</h4>
-                                    </tr>
-                                <?php
-                                }
-                                ?>
                             </tbody>
                         </table>
+                    <?php
+                                } else {
+                    ?>
+                        <div class="remark alert">
+                            Ningún vuelo registrado.
+                        </div>
+                    <?php
+                                }
+                    ?>
                     </div>
                     <br>
                     <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">

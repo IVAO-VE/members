@@ -16,10 +16,18 @@
     //Cargando la estructura del MENU
     $this->load->view("_lib/lib.menu.php");
 
+    $query_member = $this->db->query("SELECT * FROM members_data WHERE vid=".$this->session->userdata('vid'));
+
 ?>
 
-
-
+<script type="text/javascript">
+<!--
+	var member_emal = '<?php $query_member->mail; ?>';
+    if(member_emal == ''){
+        alert('sin email');
+    }
+-->
+</script>
 
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">

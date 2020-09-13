@@ -215,9 +215,41 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     ?>
                     </div>
                     <br>
-                    <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
-                        <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
+                    <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class=" fa fa-headphones" aria-hidden="true"></i>" data-collapsible="true">
+                        <table class="table stripped">
+                            <thead>
+                                <tr>
+                                    <th>Callsign</th>
+                                    <th>Fecha</th>
+                                    <th>Frecuencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid')), 10);
+                                if ($aQ->num_rows() > 0) {
+                                    foreach ($aQ->result() as $atc) {
+                                ?>
+                                        <tr>
+                                            <td><?php echo $atc->callsign ?></td>
+                                            <td><?php echo date("d-m-Y H:i:s", $atc->connection_time) ?></td>
+                                            <td><?php echo $atc->frequency ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                            </tbody>
                         </table>
+                    <?php
+                                } else {
+                    ?>
+                        <div class="remark alert">
+                            Ningún control registrado.
+                        </div>
+                    <?php
+                                }
+                    ?>
+
                     </div>
                 </div>
             </div>

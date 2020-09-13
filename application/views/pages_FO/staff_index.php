@@ -162,7 +162,7 @@
                                         </div>
 
                                         <div class="row mb-2">
-
+                                            <input type="file" data-role="file" data-mode="drop">
                                         </div>
 
                                         <button class="button primary">Agregar documento</button>

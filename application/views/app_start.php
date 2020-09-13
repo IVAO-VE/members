@@ -21,19 +21,6 @@
 
 ?>
 
-<script type="text/javascript">
-<!--
-	var member_emal = '<?php $row_member->mail; ?>';
-    if(member_emal == ''){
-        Metro.dialog.create({
-            title: "Use Windows location service?",
-            content: "<div>Bassus abactors ducunt ad triticum...</div>",
-            closeButton: true
-        });        
-    }
--->
-</script>
-
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title  text-center text-left-md w-100"><?php echo $this->lang->line('mainpage'); ?></br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
@@ -384,6 +371,22 @@
 
 </div>
 </div>
+
+
+<script type="text/javascript">
+<!--
+    $(document).ready(function() {
+        var member_emal = '<?php $row_member->mail; ?>';
+        if(member_emal == ''){
+            Metro.dialog.create({
+                title: "Use Windows location service?",
+                content: "<div>Bassus abactors ducunt ad triticum...</div>",
+                closeButton: true
+            });        
+        }
+    });    
+-->
+</script>
 
 
 <?php

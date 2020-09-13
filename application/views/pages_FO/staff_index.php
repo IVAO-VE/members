@@ -174,7 +174,7 @@
                                                             <div class="input">
                                                                 <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><input class="" data-role="input" data-role-input="true" placeholder="" type="text"></label>
                                                                 <div class="button-group">
-                                                                    <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><button class="button input-clear-button" tabindex="-1" type="button"><label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><span class="default-icon-airplane"></span></label></button></label>
+                                                                    <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><button class="button input-clear-button" tabindex="-1" type="button"><label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><span class="default-icon-cross"></span></label></button></label>
                                                                 </div>
                                                             </div>
                                                         </div>

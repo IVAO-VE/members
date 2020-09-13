@@ -216,6 +216,10 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     </div>
                     <br>
                     <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
+                    <?php
+                        $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
+                        if ($aQ->num_rows() > 0) {
+                    ?>
                         <table class="table stripped">
                             <thead>
                                 <tr>
@@ -226,8 +230,6 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             </thead>
                             <tbody>
                                 <?php
-                                $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
-                                if ($aQ->num_rows() > 0) {
                                     foreach ($aQ->result() as $atc) {
                                 ?>
                                         <tr>
@@ -249,7 +251,6 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     <?php
                                 }
                     ?>
-
                     </div>
                 </div>
             </div>

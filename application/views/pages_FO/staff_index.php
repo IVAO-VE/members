@@ -143,12 +143,22 @@
 
                             <div class="cell-md-6">
                                 <div class="bg-white p-4 m-2">
-                                    <h4>Default validating</h4>
+                                    <h4>Agregar nueva carta</h4>
                                     <form class="custom-validation need-validation" novalidate="">
                                         <div class="row mb-3">
                                             <div class="cell-md-6">
-                                                <label>First name</label>
-                                                <input type="text" required="" value="Billy" title="">
+                                                <label>ICAO</label>
+                                                <label class="select input-normal" id="select-1599960366994508" for="select-focus-trigger-1599960366994484"><span class="dropdown-toggle"></span>
+                                                <select data-role="select" data-role-select="true">
+                                                    <option>Value 1</option>
+                                                    <option>Value 2</option>
+                                                    <option>Value 3</option>
+                                                    <option>Value 4</option>
+                                                    <option>Value 5</option>
+                                                </select>
+                                                <div class="button-group d-none"></div>
+
+
                                             </div>
                                             <div class="cell-md-6">
                                                 <label>Last name</label>

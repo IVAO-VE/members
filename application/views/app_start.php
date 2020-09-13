@@ -36,8 +36,7 @@ window.onload = function() {
                     caption: "Confirmar",
                     cls: "js-dialog-close alert",
                     onclick: function(){
-                        $("mail_form").submit();
-                        alert('submit');
+                        $("cmdMAIL").click()();
                     }
                 }
             ]

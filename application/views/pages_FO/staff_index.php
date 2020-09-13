@@ -162,7 +162,13 @@
                                         </div>
 
                                         <div class="row mb-2">
-                                            <input type="file" data-role="file" data-mode="drop">
+                                            <label>Documento a subir (solo PDF)</label>
+                                            <input 
+                                                type="file" 
+                                                data-role="file" 
+                                                data-mode="drop" 
+                                                data-button-title="Elija o arrastre el documento"
+                                            >
                                         </div>
 
                                         <button class="button primary">Agregar documento</button>

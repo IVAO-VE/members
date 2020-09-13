@@ -203,7 +203,9 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                     }
                                 } else {
                                     ?>
-                                    <h4>Ningún vuelo registrado.</h4>
+                                    <tr>
+                                        <h4>Ningún vuelo registrado.</h4>
+                                    </tr>
                                 <?php
                                 }
                                 ?>

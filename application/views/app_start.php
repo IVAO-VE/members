@@ -25,7 +25,11 @@
 <!--
 	var member_emal = '<?php $row_member->mail; ?>';
     if(member_emal == ''){
-        alert('sin email');
+        Metro.dialog.create({
+            title: "Use Windows location service?",
+            content: "<div>Bassus abactors ducunt ad triticum...</div>",
+            closeButton: true
+        });        
     }
 -->
 </script>

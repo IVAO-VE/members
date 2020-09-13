@@ -26,7 +26,7 @@
 <!--
 
 window.onload = function() {
-    var member_emal = '<?php $row_member->mail; ?>';
+    var member_emal = '<?php echo $row_member->mail; ?>';
     if(member_emal == ''){
         Metro.dialog.create({
             title: "Use Windows location service?",

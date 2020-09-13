@@ -173,8 +173,17 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                 </div>
                 <div id="profile-activity">
                     <br>
-                    <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
-                        <canvas id="profileChart1"></canvas>
+                    <div data-role="panel" data-title-caption="Ultimos 10 vuelos" data-title-icon="<i class='fa fa-plane' aria-hidden='true'></i>" data-collapsible="true">
+                        <table class="table stripped">
+                                <thead>
+                                    <tr>
+                                        <th>Callsign</th>
+                                        <th>Tipo</th>
+                                        <th>Origen</th>
+                                        <th>Destino</th>
+                                    </tr>
+                                </thead>
+                        </table>
                     </div>
                     <br>
                     <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">

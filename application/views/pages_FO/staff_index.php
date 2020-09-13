@@ -146,26 +146,6 @@
                                     <h4>Agregar nueva carta</h4>
 
                                     <form data-role="validator" action="javascript:">
-                                        <div class="row mb-2">
-                                            <div class="cell-md-6">
-                                                <label>First name</label>
-                                                <input type="text"
-                                                    data-validate="required minlength=6"
-                                                    placeholder="Enter first name">
-                                                <span class="invalid_feedback">
-                                            Input correct name with min length 6 symbols
-                                        </span>
-                                            </div>
-                                            <div class="cell-md-6">
-                                                <label>Email</label>
-                                                <input type="email"
-                                                    data-validate="required email"
-                                                    placeholder="Enter email" data-role="input">
-                                                <span class="invalid_feedback">
-                                            Input correct email address
-                                        </span>
-                                            </div>
-                                        </div>
 
                                         <div class="mt-2 mb-2">
                                             <label>Select option</label>
@@ -175,9 +155,7 @@
                                                 <option value="2">Value 2</option>
                                                 <option value="3">Value 3</option>
                                             </select>
-                                            <span class="invalid_feedback">
-                                        You must select a option!
-                                    </span>
+                                            <span class="invalid_feedback">You must select a option!</span>
                                         </div>
 
                                         <div class="row mb-2">
@@ -186,9 +164,7 @@
                                                     data-role="checkbox"
                                                     data-caption="I accept the terms"
                                                     data-validate="required">
-                                                <span class="invalid_feedback">
-                                            You must accept this!
-                                        </span>
+                                                <span class="invalid_feedback">You must accept this!</span>
                                             </div>
                                             <div class="cell-md-6">
                                                 <input type="radio" name="__r1"
@@ -200,9 +176,7 @@
                                                 <input type="radio" name="__r1"
                                                     data-role="radio" value="3"
                                                     data-validate="required" data-caption="Type 3">
-                                                <span class="invalid_feedback"
-                                                >You must select a option!
-                                        </span>
+                                                <span class="invalid_feedback">You must select a option!</span>
                                             </div>
                                         </div>
 

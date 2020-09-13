@@ -58,10 +58,88 @@
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
+                        <div class="row">
+                            <div class="cell-md-6">
+
+                                <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourcontrols'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+                                    <div class="p-4">
+                                        <table class="table striped table-border mt-4"
+                                            data-role="table"
+                                            data-cls-table-top="row"
+                                            data-cls-search="cell-md-6"
+                                            data-cls-rows-count="cell-md-6"
+                                            data-rows="5"
+                                            data-rows-steps="5, 10"
+                                            data-show-activity="false"
+                                            data-horizontal-scroll="true"
+                                        >
+
+                                            <thead>
+                                            <tr>
+                                                <th ><?php echo $this->lang->line('TBL002_colum1'); ?></th>
+                                                <th ><?php echo $this->lang->line('TBL002_colum2'); ?></th>
+                                                <th data-cls-column="fg-green" ><?php echo $this->lang->line('TBL002_colum3'); ?></th>
+                                                <th ><?php echo $this->lang->line('TBL002_colum4'); ?></th>
+                                                <th ><?php echo $this->lang->line('TBL002_colum5'); ?></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php
+                                                //Consultando datos de vuelos realizados
+                                                $xVUELOS = 0;
+                                                $query = $this->db->query('SELECT * FROM whazzup_log WHERE client_type="ATC" AND vid='.$this->session->userdata('vid').' ORDER BY connection_time DESC LIMIT 15');
+                                                foreach ($query->result() as $row) {
+                                                    switch ($row->facility_type){ 
+                                                        case "0":
+                                                            $xTYPE = $this->lang->line('facility_0');
+                                                        break;
+                                                        case "1":
+                                                            $xTYPE = $this->lang->line('facility_1');
+                                                        break;
+                                                        case "2":
+                                                            $xTYPE = $this->lang->line('facility_2');
+                                                        break;
+                                                        case "3":
+                                                            $xTYPE = $this->lang->line('facility_3');
+                                                        break;
+                                                        case "4":
+                                                            $xTYPE = $this->lang->line('facility_4');
+                                                        break;
+                                                        case "5":
+                                                            $xTYPE = $this->lang->line('facility_5');
+                                                        break;
+                                                        case "6":
+                                                            $xTYPE = $this->lang->line('facility_6');
+                                                        break;
+                                                        case "7":
+                                                            $xTYPE = $this->lang->line('facility_7');
+                                                        break;
+                                                        default :
+                                                            $xTYPE = "";
+
+                                                    }    
+                                                                                
+                                                    echo '
+                                                        <tr>
+                                                            <td>'.$row->callsign.'</td>
+                                                            <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
+                                                            <td>'.$row->frequency.'</td>
+                                                            <td>'.$xTYPE.'</td>
+                                                            <td>'.$row->server.'</td>
+                                                        </tr>
+                                                    ';
+                                                }
+                                            ?>  
+
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
 
 
-
-
+                            </div>
+                        </div>
 
                     </div>
                     <br>

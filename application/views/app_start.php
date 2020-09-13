@@ -289,7 +289,7 @@
     </div>
 
     <div class="cell-md-6">
-    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourcontrols'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+        <div data-role="panel" data-title-caption="<?php echo $this->lang->line('main_yourcontrols'); ?>" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
             <div class="p-4">
                 <table class="table striped table-border mt-4"
                        data-role="table"
@@ -364,6 +364,8 @@
                 </table>
             </div>
         </div>
+    
+    
     </div>
 
 

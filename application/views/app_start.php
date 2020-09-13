@@ -28,8 +28,11 @@ window.onload = function() {
     var member_emal = '<?php echo $row_member->mail; ?>';
     if(member_emal == ''){
         Metro.infobox.create(
-            "<h3><?php echo $row_member->name; ?></h3><p>El sistema solicita que confirmes tu correo electrónico oficial, éste paso es necesario para asegurar una buena comunicación</p><label>Ingresa tu correo oficial</label><form id='mail_form' action='javascript:' data-role='validator'><input type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span><button id='cmdMAIL' class='button mt-2'>Confirmar</button></form>",
-            "info"
+            "<h3><?php echo $row_member->name; ?></h3><p>El sistema solicita que confirmes tu correo electrónico oficial, éste paso es necesario para asegurar una buena comunicación</p></br><label>Ingresa tu correo oficial</label><form id='mail_form' action='javascript:' data-role='validator'><input type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span><button id='cmdMAIL' class='button mt-2'>Confirmar</button></form>",
+            "info",
+            {
+                closeButton: false
+            }
         );
     }
 };

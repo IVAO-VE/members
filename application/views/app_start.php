@@ -23,7 +23,7 @@
 
 <script type="text/javascript">
 <!--
-	var member_emal = '<?php $row_member->mail; ?>';
+	var member_emal = 'xx@mm.com'; //'<?php $row_member->mail; ?>';
     if(member_emal == ''){
         alert('sin email');
     }

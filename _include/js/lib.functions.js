@@ -8,4 +8,6 @@
  **/
 
 
- 
+function member_addEMAL(vid, email){
+    
+}

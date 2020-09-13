@@ -215,7 +215,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     ?>
                     </div>
                     <br>
-                    <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class=" fa fa-headphones" aria-hidden="true"></i>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
                         <table class="table stripped">
                             <thead>
                                 <tr>

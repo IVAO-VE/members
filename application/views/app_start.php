@@ -29,8 +29,19 @@ window.onload = function() {
     var member_emal = '<?php echo $row_member->mail; ?>';
     if(member_emal == ''){
         Metro.dialog.create({
-            title: "Use Windows location service?",
-            content: "<div>Bassus abactors ducunt ad triticum...</div>",
+            title: "Email para <?php echo $row_member->name; ?>",
+            content: '
+                        <div class="cell-lg-4 cell-md-6 mt-2">
+                        <div class="bg-white p-4">
+                            <label>Min length</label>
+                            <form action="javascript:" data-role="validator">
+                                <input type="text" data-validate="email">
+                                <span class="invalid_feedback">Debes de introducir un correo válido</span>
+                                <button class="button mt-2">Confirmar</button>
+                            </form>
+                        </div>
+                    </div>
+            ',
             closeButton: true
         });        
     }

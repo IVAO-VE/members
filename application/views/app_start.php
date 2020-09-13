@@ -29,7 +29,7 @@ window.onload = function() {
     if(member_emal == ''){
         Metro.dialog.create({
             title: "Email para <?php echo $row_member->name; ?>",
-            content: "<label>Ingresa tu correo oficial</label><form id='mail_form' action='javascript:' data-role='validator'><input type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span></form>",
+            content: "<label>Ingresa tu correo oficial</label><form id='mail_form' action='javascript:' data-role='validator'><input type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span><button id='cmdMAIL' style='display: none;' class='button mt-2'>Confirmar</button></form>",
             closeButton: false,
             actions: [
                 {

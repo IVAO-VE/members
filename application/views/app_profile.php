@@ -216,49 +216,48 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         }
                         ?>
                     </div>
-                </div>
-                <br>
-                <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
-                    <?php
-                    $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
-                    if ($aQ->num_rows() > 0) {
-                    ?>
-                        <table class="table stripped">
-                            <thead>
-                                <tr>
-                                    <th>Callsign</th>
-                                    <th>Fecha</th>
-                                    <th>Frecuencia</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($aQ->result() as $atc) {
-                                ?>
+                    <br>
+                    <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
+                        <?php
+                        $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
+                        if ($aQ->num_rows() > 0) {
+                        ?>
+                            <table class="table stripped">
+                                <thead>
                                     <tr>
-                                        <td><?php echo $atc->callsign ?></td>
-                                        <td><?php echo date("d-m-Y H:i:s", $atc->connection_time) ?></td>
-                                        <td><?php echo $atc->frequency ?></td>
+                                        <th>Callsign</th>
+                                        <th>Fecha</th>
+                                        <th>Frecuencia</th>
                                     </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    <?php
-                    } else {
-                    ?>
-                        <div class="remark alert">
-                            Ningún control registrado.
-                        </div>
-                    <?php
-                    }
-                    ?>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($aQ->result() as $atc) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $atc->callsign ?></td>
+                                            <td><?php echo date("d-m-Y H:i:s", $atc->connection_time) ?></td>
+                                            <td><?php echo $atc->frequency ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        <?php
+                        } else {
+                        ?>
+                            <div class="remark alert">
+                                Ningún control registrado.
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <?php

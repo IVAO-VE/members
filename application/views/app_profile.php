@@ -226,7 +226,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             </thead>
                             <tbody>
                                 <?php
-                                $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid')), 10);
+                                $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
                                 if ($aQ->num_rows() > 0) {
                                     foreach ($aQ->result() as $atc) {
                                 ?>

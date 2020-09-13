@@ -138,7 +138,46 @@
                                 </div>
 
 
+                            
                             </div>
+
+                            <div class="cell-md-6">
+                                <div class="bg-white p-4 m-2">
+                                    <h4>Default validating</h4>
+                                    <form class="custom-validation need-validation" novalidate="">
+                                        <div class="row mb-3">
+                                            <div class="cell-md-6">
+                                                <label>First name</label>
+                                                <input type="text" required="" value="Billy" title="">
+                                            </div>
+                                            <div class="cell-md-6">
+                                                <label>Last name</label>
+                                                <input type="text" required="" value="Gates" title="">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <div class="cell-md-6">
+                                                <label>City</label>
+                                                <input type="text" required="" placeholder="City" title="">
+                                                <div class="invalid_feedback">Please provide a valid city.</div>
+                                            </div>
+                                            <div class="cell-md-3">
+                                                <label>State</label>
+                                                <input type="text" required="" placeholder="State" title="">
+                                                <div class="invalid_feedback">Please provide a valid state.</div>
+                                            </div>
+                                            <div class="cell-md-3">
+                                                <label>Zip</label>
+                                                <input type="text" required="" placeholder="Zip" title="">
+                                                <div class="invalid_feedback">Please provide a valid zip.</div>
+                                            </div>
+                                        </div>
+                                        <button class="button primary">Submit form</button>
+                                    </form>
+                                </div>
+                            </div>
+
+
                         </div>
 
                     </div>

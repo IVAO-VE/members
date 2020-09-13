@@ -154,7 +154,7 @@
                                                 <?php
                                                     $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
                                                     foreach ($query->result() as $row) {
-                                                        echo '<option value="'.$row->icao.'">'.$row->icao.'</option>';
+                                                        echo '<option value="'.$row->icao.'">'.$row->icao.' - '.$row->name.'</option>';
                                                     }
                                                 ?>
                                             </select>

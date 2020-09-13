@@ -148,39 +148,21 @@
                                     <form data-role="validator" action="javascript:">
 
                                         <div class="mt-2 mb-2">
-                                            <label>Select option</label>
+                                            <label>Selecciona el aeropuerto</label>
                                             <select data-role="select" data-validate="required not=-1">
                                                 <option value="-1" class="d-none"></option>
                                                 <option value="1">Value 1</option>
                                                 <option value="2">Value 2</option>
                                                 <option value="3">Value 3</option>
                                             </select>
-                                            <span class="invalid_feedback">You must select a option!</span>
+                                            <span class="invalid_feedback">Debes de seleccionar un aeropuerto!</span>
                                         </div>
 
                                         <div class="row mb-2">
-                                            <div class="cell-md-6">
-                                                <input type="checkbox"
-                                                    data-role="checkbox"
-                                                    data-caption="I accept the terms"
-                                                    data-validate="required">
-                                                <span class="invalid_feedback">You must accept this!</span>
-                                            </div>
-                                            <div class="cell-md-6">
-                                                <input type="radio" name="__r1"
-                                                    data-role="radio" value="1"
-                                                    data-validate="required" data-caption="Type 1">
-                                                <input type="radio" name="__r1"
-                                                    data-role="radio" value="2"
-                                                    data-validate="required" data-caption="Type 2">
-                                                <input type="radio" name="__r1"
-                                                    data-role="radio" value="3"
-                                                    data-validate="required" data-caption="Type 3">
-                                                <span class="invalid_feedback">You must select a option!</span>
-                                            </div>
+
                                         </div>
 
-                                        <button class="button primary">Submit</button>
+                                        <button class="button primary">Agregar documento</button>
                                     </form>
 
 

@@ -157,6 +157,8 @@
                                                     <option>Value 5</option>
                                                 </select>
                                                 <div class="button-group d-none"></div>
+                                                <input type="checkbox" class="select-focus-trigger" id="select-focus-trigger-1599960366994484">
+                                                <div class="select-input" name="__select-1599960366994508__">Value 1</div><div class="drop-container" data-role-dropdown="true" data-role="dropdown" style="display: none;"><div><div class="input"><input type="text" data-role="input" placeholder="" data-role-input="true" class=""><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button></div></div></div><ul class="option-list" style="max-height: 200px;"><li data-text="Value 1" data-value="Value 1" class="active"><a>Value 1</a></li><li data-text="Value 2" data-value="Value 2"><a>Value 2</a></li><li data-text="Value 3" data-value="Value 3"><a>Value 3</a></li><li data-text="Value 4" data-value="Value 4"><a>Value 4</a></li><li data-text="Value 5" data-value="Value 5"><a>Value 5</a></li></ul></div></label>
 
 
                                             </div>

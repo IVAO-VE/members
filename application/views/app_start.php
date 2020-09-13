@@ -18,7 +18,6 @@
 
     $query_member = $this->db->query("SELECT * FROM members_data WHERE vid=".$this->session->userdata('vid'));
     $row_member = $query_member->row();
-    $this->phpdebug->debug('[DEBUG] -> '.$row_member->mail);
 
 ?>
 
@@ -38,6 +37,7 @@ window.onload = function() {
                     cls: "js-dialog-close alert",
                     onclick: function(){
                         $("mail_form").submit();
+                        $this->phpdebug->debug('[DEBUG] -> SubmiT');
                     }
                 }
             ]

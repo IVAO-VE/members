@@ -148,17 +148,62 @@
                                         <div class="row mb-3">
                                             <div class="cell-md-6">
                                                 <label>ICAO</label>
-                                                <label class="select input-normal" id="select-1599960366994508" for="select-focus-trigger-1599960366994484"><span class="dropdown-toggle"></span>
-                                                <select data-role="select" data-role-select="true">
-                                                    <option>Value 1</option>
-                                                    <option>Value 2</option>
-                                                    <option>Value 3</option>
-                                                    <option>Value 4</option>
-                                                    <option>Value 5</option>
-                                                </select>
-                                                <div class="button-group d-none"></div>
-                                                <input type="checkbox" class="select-focus-trigger" id="select-focus-trigger-1599960366994484">
-                                                <div class="select-input" name="__select-1599960366994508__">Value 1</div><div class="drop-container" data-role-dropdown="true" data-role="dropdown" style="display: none;"><div><div class="input"><input type="text" data-role="input" placeholder="" data-role-input="true" class=""><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button></div></div></div><ul class="option-list" style="max-height: 200px;"><li data-text="Value 1" data-value="Value 1" class="active"><a>Value 1</a></li><li data-text="Value 2" data-value="Value 2"><a>Value 2</a></li><li data-text="Value 3" data-value="Value 3"><a>Value 3</a></li><li data-text="Value 4" data-value="Value 4"><a>Value 4</a></li><li data-text="Value 5" data-value="Value 5"><a>Value 5</a></li></ul></div></label>
+
+                                                <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"><span class="dropdown-toggle"></span><select data-role="select" data-role-select="true">
+                                                    <option>
+                                                        Value 1
+                                                    </option>
+                                                    <option>
+                                                        Value 2
+                                                    </option>
+                                                    <option>
+                                                        Value 3
+                                                    </option>
+                                                    <option>
+                                                        Value 4
+                                                    </option>
+                                                    <option>
+                                                        Value 5
+                                                    </option>
+                                                </select></label>
+                                                <div class="button-group d-none">
+                                                    <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"></label>
+                                                </div>
+                                                <form>
+                                                    <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"><input class="select-focus-trigger" id="select-focus-trigger-1599960366994484" type="checkbox"></label>
+                                                </form>
+                                                <div class="select-input">
+                                                    <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508">Value 4</label>
+                                                </div>
+                                                <div class="drop-container" data-role="dropdown" data-role-dropdown="true" style="display: none;">
+                                                    <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"></label>
+                                                    <div>
+                                                        <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"></label>
+                                                        <div class="input">
+                                                            <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"><input class="" data-role="input" data-role-input="true" placeholder="" type="text"></label>
+                                                            <div class="button-group">
+                                                                <label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"><button class="button input-clear-button" tabindex="-1" type="button"><label class="select input-normal" for="select-focus-trigger-1599960366994484" id="select-1599960366994508"><span class="default-icon-cross"></span></label></button></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="option-list" style="max-height: 200px;">
+                                                        <li class="" data-text="Value 1" data-value="Value 1" style="display: none;">
+                                                            <a>Value 1</a>
+                                                        </li>
+                                                        <li data-text="Value 2" data-value="Value 2" style="display: none;">
+                                                            <a>Value 2</a>
+                                                        </li>
+                                                        <li data-text="Value 3" data-value="Value 3">
+                                                            <a>Value 3</a>
+                                                        </li>
+                                                        <li class="active" data-text="Value 4" data-value="Value 4" style="display: none;">
+                                                            <a>Value 4</a>
+                                                        </li>
+                                                        <li data-text="Value 5" data-value="Value 5" style="display: none;">
+                                                            <a>Value 5</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
 
 
                                             </div>

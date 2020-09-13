@@ -150,23 +150,27 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
-                                $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='PILOT' AND vid=".$this->session->userdata('vid')." ORDER BY connection_time DESC LIMIT 15");
+                                <?php
+                                $query = $this->db->query("SELECT * FROM whazzup_log WHERE client_type='PILOT' AND vid=" . $this->session->userdata('vid') . " ORDER BY connection_time DESC LIMIT 15");
                                 foreach ($query->result() as $row) {
-                                    if($row->fl_rules=='I'){ $Ty='IFR'; }else{ $Ty='VFR'; }
+                                    if ($row->fl_rules == 'I') {
+                                        $Ty = 'IFR';
+                                    } else {
+                                        $Ty = 'VFR';
+                                    }
                                     echo '
                                     <tr onclick="openDemoDialogActions()">
-                                        <td>'.$row->callsign.'</td>
-                                        <td>'.$Ty.'</td>
-                                        <td>'.$row->fl_departure.'</td>
-                                        <td>'.$row->fl_destination.'</td>
-                                        <td>'.$row->server.'</td>
-                                        <td>'.$row->transponder_code.'</td>
+                                        <td>' . $row->callsign . '</td>
+                                        <td>' . $Ty . '</td>
+                                        <td>' . $row->fl_departure . '</td>
+                                        <td>' . $row->fl_destination . '</td>
+                                        <td>' . $row->server . '</td>
+                                        <td>' . $row->transponder_code . '</td>
                                     </tr>
                                     
                                     ';
                                 }
-                            ?>
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -175,14 +179,35 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                     <br>
                     <div data-role="panel" data-title-caption="Ultimos 10 vuelos" data-title-icon="<i class='fa fa-plane' aria-hidden='true'></i>" data-collapsible="true">
                         <table class="table stripped">
-                                <thead>
-                                    <tr>
-                                        <th>Callsign</th>
-                                        <th>Tipo</th>
-                                        <th>Origen</th>
-                                        <th>Destino</th>
-                                    </tr>
-                                </thead>
+                            <thead>
+                                <tr>
+                                    <th>Callsign</th>
+                                    <th>Tipo</th>
+                                    <th>Origen</th>
+                                    <th>Destino</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $q = $this->db->get_where('whazzup_log', array('client_type' => 'PILOT', 'vid' => $this->session->userdata('vid')), 10);
+                                if ($q->num_rows() > 0) {
+                                    foreach ($q->result() as $flight) {
+                                ?>
+                                        <tr>
+                                            <td><?php echo $flight->callsign ?></td>
+                                            <td><?php echo $flight->fl_rules ?></td>
+                                            <td><?php echo $flight->fl_departure ?></td>
+                                            <td><?php echo $flight->fl_destination ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                } else {
+                                    ?>
+                                    <h4>Ningún vuelo registrado.</h4>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
                         </table>
                     </div>
                     <br>

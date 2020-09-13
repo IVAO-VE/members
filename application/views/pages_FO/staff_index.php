@@ -149,52 +149,7 @@
                                             <div class="cell-md-6">
                                                 <label>ICAO</label>
 
-                                                <div class="list-rows-block cell-sm-3">
-                                                    <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><span class="dropdown-toggle"></span><select data-role="select" data-role-select="true">
-                                                        <option value="-1">
-                                                            Show all
-                                                        </option>
-                                                        <option selected="selected" value="12">
-                                                            12
-                                                        </option>
-                                                        <option value="24">
-                                                            24
-                                                        </option>
-                                                    </select></label>
-                                                    <div class="button-group d-none">
-                                                        <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"></label>
-                                                    </div><label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><input class="select-focus-trigger" id="select-focus-trigger-1599962438152912" type="checkbox"></label>
-                                                    <div class="select-input">
-                                                        <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499">12</label>
-                                                    </div>
-                                                    <div class="drop-container" data-role="dropdown" data-role-dropdown="true" style="display: none;">
-                                                        <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"></label>
-                                                        <div style="display: none;">
-                                                            <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"></label>
-                                                            <div class="input">
-                                                                <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><input class="" data-role="input" data-role-input="true" placeholder="" type="text"></label>
-                                                                <div class="button-group">
-                                                                    <label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><button class="button input-clear-button" tabindex="-1" type="button"><label class="select input-normal focused" for="select-focus-trigger-1599962438152912" id="select-1599962438152499"><span class="default-icon-cross"></span></label></button></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="option-list" style="max-height: 200px;">
-                                                            <li data-text="Show all" data-value="-1">
-                                                                <a>Show all</a>
-                                                            </li>
-                                                            <li class="active" data-text="12" data-value="12">
-                                                                <a>12</a>
-                                                            </li>
-                                                            <li data-text="24" data-value="24">
-                                                                <a>24</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="prepend">
-                                                        <span class="mif-eye"></span>
-                                                    </div>
-                                                </div>
-
+                                                <div class="list-rows-block cell-sm-3"><label class="select input-normal focused" id="select-1599962438152499" for="select-focus-trigger-1599962438152912"><span class="dropdown-toggle"></span><select data-role-select="true" data-role="select"><option value="-1">Show all</option><option value="12" selected="selected">12</option><option value="24">24</option></select><div class="button-group d-none"></div><input type="checkbox" class="select-focus-trigger" id="select-focus-trigger-1599962438152912"><div class="select-input" name="__select-1599962438152499__">12</div><div class="drop-container" data-role-dropdown="true" data-role="dropdown" style="display: none;"><div style="display: none;"><div class="input"><input type="text" data-role="input" placeholder="" data-role-input="true" class=""><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button></div></div></div><ul class="option-list" style="max-height: 200px;"><li data-text="Show all" data-value="-1"><a>Show all</a></li><li data-text="12" data-value="12" class="active"><a>12</a></li><li data-text="24" data-value="24"><a>24</a></li></ul></div><div class="prepend"><span class="mif-eye"></span></div></label></div>
 
                                             </div>
                                             <div class="cell-md-6">

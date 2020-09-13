@@ -178,21 +178,23 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                 <div id="profile-activity">
                     <br>
                     <div data-role="panel" data-title-caption="Ultimos 10 vuelos" data-title-icon="<i class='fa fa-plane' aria-hidden='true'></i>" data-collapsible="true">
-                        <table class="table stripped">
-                            <thead>
-                                <tr>
-                                    <th>Callsign</th>
-                                    <th>Tipo</th>
-                                    <th>Origen</th>
-                                    <th>Destino</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $q = $this->db->get_where('whazzup_log', array('client_type' => 'PILOT', 'vid' => $this->session->userdata('vid')), 10);
-                                if ($q->num_rows() > 0) {
+                        <?php
+                        $q = $this->db->get_where('whazzup_log', array('client_type' => 'PILOT', 'vid' => $this->session->userdata('vid')), 10);
+                        if ($q->num_rows() > 0) {
+                        ?>
+                            <table class="table stripped">
+                                <thead>
+                                    <tr>
+                                        <th>Callsign</th>
+                                        <th>Tipo</th>
+                                        <th>Origen</th>
+                                        <th>Destino</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
                                     foreach ($q->result() as $flight) {
-                                ?>
+                                    ?>
                                         <tr>
                                             <td><?php echo $flight->callsign ?></td>
                                             <td><?php echo $flight->fl_rules ?></td>
@@ -202,23 +204,24 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                     <?php
                                     }
                                     ?>
-                            </tbody>
-                        </table>
-                    <?php
-                                } else {
-                    ?>
-                        <div class="remark alert">
-                            Ningún vuelo registrado.
-                        </div>
-                    <?php
-                                }
-                    ?>
+                                </tbody>
+                            </table>
+                        <?php
+                        } else {
+                        ?>
+                            <div class="remark alert">
+                                Ningún vuelo registrado.
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
-                    <br>
-                    <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
+                </div>
+                <br>
+                <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
                     <?php
-                        $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
-                        if ($aQ->num_rows() > 0) {
+                    $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
+                    if ($aQ->num_rows() > 0) {
                     ?>
                         <table class="table stripped">
                             <thead>
@@ -230,32 +233,32 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach ($aQ->result() as $atc) {
+                                foreach ($aQ->result() as $atc) {
                                 ?>
-                                        <tr>
-                                            <td><?php echo $atc->callsign ?></td>
-                                            <td><?php echo date("d-m-Y H:i:s", $atc->connection_time) ?></td>
-                                            <td><?php echo $atc->frequency ?></td>
-                                        </tr>
-                                    <?php
-                                    }
-                                    ?>
+                                    <tr>
+                                        <td><?php echo $atc->callsign ?></td>
+                                        <td><?php echo date("d-m-Y H:i:s", $atc->connection_time) ?></td>
+                                        <td><?php echo $atc->frequency ?></td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
                             </tbody>
                         </table>
                     <?php
-                                } else {
+                    } else {
                     ?>
                         <div class="remark alert">
                             Ningún control registrado.
                         </div>
                     <?php
-                                }
+                    }
                     ?>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <?php

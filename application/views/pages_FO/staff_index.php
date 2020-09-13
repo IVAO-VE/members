@@ -151,9 +151,12 @@
                                             <label>Selecciona el aeropuerto</label>
                                             <select data-role="select" data-validate="required not=-1">
                                                 <option value="-1" class="d-none"></option>
-                                                <option value="1">Value 1</option>
-                                                <option value="2">Value 2</option>
-                                                <option value="3">Value 3</option>
+                                                <?php
+                                                    $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
+                                                    foreach ($query->result() as $row) {
+                                                        echo '<option value="'.$row->icao.'">'.$row->icao.'</option>';
+                                                    }
+                                                ?>
                                             </select>
                                             <span class="invalid_feedback">Debes de seleccionar un aeropuerto!</span>
                                         </div>

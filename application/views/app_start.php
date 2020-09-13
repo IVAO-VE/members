@@ -17,12 +17,13 @@
     $this->load->view("_lib/lib.menu.php");
 
     $query_member = $this->db->query("SELECT * FROM members_data WHERE vid=".$this->session->userdata('vid'));
+    $row_member = $query_member->row();
 
 ?>
 
 <script type="text/javascript">
 <!--
-	var member_emal = '<?php $query_member->mail; ?>';
+	var member_emal = '<?php $row_member->mail; ?>';
     if(member_emal == ''){
         alert('sin email');
     }

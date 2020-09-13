@@ -194,10 +194,15 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                 <tbody>
                                     <?php
                                     foreach ($q->result() as $flight) {
+                                        if($flight->fl_rules == 'I'){
+                                            $FLrul = 'IFR';
+                                        }else{
+                                            $FLrul = 'VFR';
+                                        }
                                     ?>
                                         <tr>
                                             <td><?php echo $flight->callsign ?></td>
-                                            <td><?php echo $flight->fl_rules ?></td>
+                                            <td><?php echo $FLrul ?></td>
                                             <td><?php echo $flight->fl_departure ?></td>
                                             <td><?php echo $flight->fl_destination ?></td>
                                         </tr>

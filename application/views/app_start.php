@@ -27,19 +27,12 @@
 window.onload = function() {
     var member_emal = '<?php echo $row_member->mail; ?>';
     if(member_emal == ''){
-        Metro.dialog.create({
-            title: "Email para <?php echo $row_member->name; ?>",
-            content: "<label>Ingresa tu correo oficial</label><form id='mail_form' action='javascript:' data-role='validator'><input type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span><button id='cmdMAIL' style='display: none;' class='button mt-2'>Confirmar</button></form>",
-            closeButton: false,
-            actions: [
-                {
-                    caption: "Confirmar",
-                    cls: "js-dialog-close alert",
-                    onclick: function(){
-                        $("cmdMAIL").click();
-                    }
-                }
-            ]
+        Metro.infobox.create({
+            "Email para <?php echo $row_member->name; ?>",
+            "<label>Ingresa tu correo oficial</label><form id='mail_form' action='javascript:' data-role='validator'><input type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span><button id='cmdMAIL' class='button mt-2'>Confirmar</button></form>",
+            {
+                closeButton: false
+            }
         });        
     }
 };

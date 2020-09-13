@@ -145,18 +145,22 @@
                                 <div class="bg-white p-4 m-2">
                                     <h4>Agregar nueva carta</h4>
 
-                                    <form data-role="Validator" action="javascript:" data-role-validator="true" novalidate="novalidate">
+                                    <form data-role="validator" action="javascript:">
                                         <div class="row mb-2">
                                             <div class="cell-md-6">
                                                 <label>First name</label>
-                                                <input type="text" data-validate="required minlength=6" placeholder="Enter first name" class="required invalid">
+                                                <input type="text"
+                                                    data-validate="required minlength=6"
+                                                    placeholder="Enter first name">
                                                 <span class="invalid_feedback">
                                             Input correct name with min length 6 symbols
                                         </span>
                                             </div>
                                             <div class="cell-md-6">
                                                 <label>Email</label>
-                                                <div class="input required invalid"><input type="email" data-validate="required email" placeholder="Enter email" data-role="input" class="" data-role-input="true"><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button></div></div>
+                                                <input type="email"
+                                                    data-validate="required email"
+                                                    placeholder="Enter email" data-role="input">
                                                 <span class="invalid_feedback">
                                             Input correct email address
                                         </span>
@@ -165,12 +169,12 @@
 
                                         <div class="mt-2 mb-2">
                                             <label>Select option</label>
-                                            <label class="select required input-normal invalid" id="select-1599964182288248" for="select-focus-trigger-1599964182288978"><span class="dropdown-toggle"></span><select data-role="select" data-validate="required not=-1" class="required" data-role-select="true">
+                                            <select data-role="select" data-validate="required not=-1">
                                                 <option value="-1" class="d-none"></option>
                                                 <option value="1">Value 1</option>
                                                 <option value="2">Value 2</option>
                                                 <option value="3">Value 3</option>
-                                            </select><div class="button-group d-none"></div><input type="checkbox" class="select-focus-trigger" id="select-focus-trigger-1599964182288978"><div class="select-input" name="__select-1599964182288248__"></div><div class="drop-container" data-role-dropdown="true" data-role="dropdown" style="display: none;"><div><div class="input"><input type="text" data-role="input" placeholder="" data-role-input="true" class=""><div class="button-group"><button class="button input-clear-button" tabindex="-1" type="button"><span class="default-icon-cross"></span></button></div></div></div><ul class="option-list" style="max-height: 200px;"><li data-text="" data-value="-1" class="d-none active"><a></a></li><li data-text="Value 1" data-value="1"><a>Value 1</a></li><li data-text="Value 2" data-value="2"><a>Value 2</a></li><li data-text="Value 3" data-value="3"><a>Value 3</a></li></ul></div></label>
+                                            </select>
                                             <span class="invalid_feedback">
                                         You must select a option!
                                     </span>
@@ -178,22 +182,33 @@
 
                                         <div class="row mb-2">
                                             <div class="cell-md-6">
-                                                <label class="checkbox required transition-on invalid" for="checkbox-1599964182314487"><input type="checkbox" data-role="checkbox" data-caption="I accept the terms" data-validate="required" class="" data-role-checkbox="true" id="checkbox-1599964182314487"><span class="check"></span><span class="caption">I accept the terms</span></label>
+                                                <input type="checkbox"
+                                                    data-role="checkbox"
+                                                    data-caption="I accept the terms"
+                                                    data-validate="required">
                                                 <span class="invalid_feedback">
                                             You must accept this!
                                         </span>
                                             </div>
                                             <div class="cell-md-6">
-                                                <label class="radio required transition-on invalid"><input type="radio" name="__r1" data-role="radio" value="1" data-validate="required" data-caption="Type 1" class="" data-role-radio="true"><span class="check"></span><span class="caption">Type 1</span></label>
-                                                <label class="radio required transition-on invalid"><input type="radio" name="__r1" data-role="radio" value="2" data-validate="required" data-caption="Type 2" class="" data-role-radio="true"><span class="check"></span><span class="caption">Type 2</span></label>
-                                                <label class="radio required transition-on invalid"><input type="radio" name="__r1" data-role="radio" value="3" data-validate="required" data-caption="Type 3" class="" data-role-radio="true"><span class="check"></span><span class="caption">Type 3</span></label>
-                                                <span class="invalid_feedback">You must select a option!
+                                                <input type="radio" name="__r1"
+                                                    data-role="radio" value="1"
+                                                    data-validate="required" data-caption="Type 1">
+                                                <input type="radio" name="__r1"
+                                                    data-role="radio" value="2"
+                                                    data-validate="required" data-caption="Type 2">
+                                                <input type="radio" name="__r1"
+                                                    data-role="radio" value="3"
+                                                    data-validate="required" data-caption="Type 3">
+                                                <span class="invalid_feedback"
+                                                >You must select a option!
                                         </span>
                                             </div>
                                         </div>
 
                                         <button class="button primary">Submit</button>
                                     </form>
+
 
                                 </div>
                             </div>

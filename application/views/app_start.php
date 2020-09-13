@@ -375,16 +375,18 @@
 
 <script type="text/javascript">
 <!--
-    $(document).ready(function() {
-        var member_emal = '<?php $row_member->mail; ?>';
-        if(member_emal == ''){
-            Metro.dialog.create({
-                title: "Use Windows location service?",
-                content: "<div>Bassus abactors ducunt ad triticum...</div>",
-                closeButton: true
-            });        
-        }
-    });    
+
+window.onload = function() {
+    var member_emal = '<?php $row_member->mail; ?>';
+    if(member_emal == ''){
+        Metro.dialog.create({
+            title: "Use Windows location service?",
+            content: "<div>Bassus abactors ducunt ad triticum...</div>",
+            closeButton: true
+        });        
+    }
+};
+
 -->
 </script>
 

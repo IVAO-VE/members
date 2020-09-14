@@ -89,7 +89,7 @@ $this->load->view("_lib/lib.menu.php");
                                     $q = $this->db->get('awards');
                                     if ($q->num_rows() > 0) {
                                     ?>
-                                    <table class="table stripped">
+                                    <table class="table stripped" data-role="table">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>

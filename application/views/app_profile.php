@@ -160,10 +160,10 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             <table class="table stripped">
                                 <thead>
                                     <tr>
-                                        <th>Callsign</th>
-                                        <th>Tipo</th>
-                                        <th>Origen</th>
-                                        <th>Destino</th>
+                                        <th><?php echo $this->lang->line('callsing'); ?></th>
+                                        <th><?php echo $this->lang->line('type'); ?></th>
+                                        <th><?php echo $this->lang->line('from'); ?></th>
+                                        <th><?php echo $this->lang->line('to'); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -214,9 +214,9 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                             <table class="table stripped">
                                 <thead>
                                     <tr>
-                                        <th>Callsign</th>
-                                        <th>Fecha</th>
-                                        <th>Frecuencia</th>
+                                        <th><?php echo $this->lang->line('callsing'); ?></th>
+                                        <th><?php echo $this->lang->line('TBL002_colum2'); ?></th>
+                                        <th><?php echo $this->lang->line('TBL002_colum3'); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>

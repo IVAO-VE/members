@@ -152,7 +152,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                 </div>
                 <div id="profile-activity">
                     <br>
-                    <div data-role="panel" data-title-caption="Ultimos 10 vuelos" data-title-icon="<i class='fa fa-plane' aria-hidden='true'></i>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('10Flights'); ?>" data-title-icon="<i class='fa fa-plane' aria-hidden='true'></i>" data-collapsible="true">
                         <?php
                         $q = $this->db->get_where('whazzup_log', array('client_type' => 'PILOT', 'vid' => $this->session->userdata('vid')), 10);
                         if ($q->num_rows() > 0) {
@@ -199,14 +199,14 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         } else {
                         ?>
                             <div class="remark alert">
-                                Ningún vuelo registrado.
+                            <?php echo $this->lang->line('Noflights'); ?>
                             </div>
                         <?php
                         }
                         ?>
                     </div>
                     <br>
-                    <div data-role="panel" data-title-caption="Ultimos 10 ATC" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('10Atc'); ?>" data-title-icon="<i class='fa fa-headphones' aria-hidden='true'></i>" data-collapsible="true">
                         <?php
                         $aQ = $this->db->get_where('whazzup_log', array('client_type' => 'ATC', 'vid' => $this->session->userdata('vid'), 'facility_type' => '> 0'), 10);
                         if ($aQ->num_rows() > 0) {
@@ -237,7 +237,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         } else {
                         ?>
                             <div class="remark alert">
-                                Ningún control registrado.
+                            <?php echo $this->lang->line('NoAtc'); ?>
                             </div>
                         <?php
                         }

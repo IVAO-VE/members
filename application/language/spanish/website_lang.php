@@ -37,6 +37,10 @@ $lang['from'] = 'Origen';
 $lang['to'] = 'Destino';
 $lang['server'] = 'Servidor';
 $lang['transponder'] = 'Transponder';
+$lang['10Flights'] = 'Ultimos 10 vuelos';
+$lang['10Atc'] = 'Ultimos 10 controles';
+$lang['Noflights'] = 'No vuelos registrados';
+$lang['NoAtc'] = 'No ATC registrados';
 
 //Traducciones para MENU
 $lang['renderpage'] = 'Página generada en';

@@ -37,6 +37,10 @@ $lang['from'] = 'From';
 $lang['to'] = 'To';
 $lang['server'] = 'Server';
 $lang['transponder'] = 'Transponder';
+$lang['10Flights'] = 'Last 10 flights';
+$lang['10Atc'] = 'Last 10 radars';
+$lang['Noflights'] = 'No flights recorded';
+$lang['NoAtc'] = 'No ATC recorded';
 
 //Menu traslators
 $lang['renderpage'] = 'Page rendered in';

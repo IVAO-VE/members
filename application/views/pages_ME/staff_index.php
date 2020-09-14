@@ -42,6 +42,7 @@
                 <li><a href="#charts"><?php echo $this->lang->line('dpto03_TSP'); ?></a></li>
                 <li><a href="#meteorologic"><?php echo $this->lang->line('dpto03_GCA'); ?></a></li>
                 <li><a href="#information"><?php echo $this->lang->line('dpto03_FRA'); ?></a></li>
+                <li><a href="#medallas">Medallas</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
@@ -73,6 +74,53 @@
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
+                    </div>
+                    <br>
+                </div>
+
+                <div id="medallas">
+                    <br>
+                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                        <div class="gird">
+                            <div class="row">
+                                <div class="cell-6">
+                                    <table class="table stripped">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Corto</th>
+                                                <th>Nombre</th>
+                                                <th>Maximos puntos</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $q = $this->db->get('awards');
+                                                if($q->num_rows() > 0){
+                                                    foreach($q-result() as $row){
+                                                        ?>
+                                                        <tr>
+                                                            <td><?php echo $row->id; ?></td>
+                                                            <td><?php echo $row->short; ?></td>
+                                                            <td><?php echo $row->name; ?></td>
+                                                            <td><?php echo $row->max; ?></td>
+                                                        </tr>
+                                                        <?php
+                                                    }
+                                                }else{
+                                                    ?>
+                                                    <div class="remark alert">
+                                                        Ninguna medalla creada.
+                                                    </div>
+                                                    <?php
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="cell-6"></div>
+                            </div>
+                        </div>
                     </div>
                     <br>
                 </div>

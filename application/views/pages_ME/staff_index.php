@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @autor Rixio Iguarán y Simón Cardona.
  * @Departamento Sistemas y Webmaster
@@ -8,13 +9,13 @@
  * 
  **/
 
-    //Asegurando el acceso directo al script
-    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
-    //echo BASEPATH; 
-    //Cargando la estructura del HEADER
-    $this->load->view("_lib/lib.header.php");
-    //Cargando la estructura del MENU
-    $this->load->view("_lib/lib.menu.php");
+//Asegurando el acceso directo al script
+defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
+//echo BASEPATH; 
+//Cargando la estructura del HEADER
+$this->load->view("_lib/lib.header.php");
+//Cargando la estructura del MENU
+$this->load->view("_lib/lib.menu.php");
 ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
@@ -33,7 +34,7 @@
 
 
 <div class="fg-dark container-fluid start-screen h-100">
-    <div class="mb-15"></div>   
+    <div class="mb-15"></div>
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto06_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
 
@@ -84,6 +85,10 @@
                         <div class="gird">
                             <div class="row">
                                 <div class="cell-6">
+                                    <?php
+                                    $q = $this->db->get('awards');
+                                    if ($q->num_rows() > 0) {
+                                    ?>
                                     <table class="table stripped">
                                         <thead>
                                             <tr>
@@ -95,25 +100,23 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $q = $this->db->get('awards');
-                                                if($q->num_rows() > 0){
-                                                    foreach($q-result() as $row){
-                                                        ?>
-                                                        <tr>
-                                                            <td><?php echo $row->id; ?></td>
-                                                            <td><?php echo $row->short; ?></td>
-                                                            <td><?php echo $row->name; ?></td>
-                                                            <td><?php echo $row->max; ?></td>
-                                                        </tr>
-                                                        <?php
-                                                    }
-                                                }else{
-                                                    ?>
-                                                    <div class="remark alert">
-                                                        Ninguna medalla creada.
-                                                    </div>
-                                                    <?php
+                                                foreach ($q->result() as $row) {
+                                            ?>
+                                                    <tr>
+                                                        <td><?php echo $row->id; ?></td>
+                                                        <td><?php echo $row->short; ?></td>
+                                                        <td><?php echo $row->name; ?></td>
+                                                        <td><?php echo $row->max; ?></td>
+                                                    </tr>
+                                                <?php
                                                 }
+                                            } else {
+                                                ?>
+                                                <div class="remark alert">
+                                                    Ninguna medalla creada.
+                                                </div>
+                                            <?php
+                                            }
                                             ?>
                                         </tbody>
                                     </table>
@@ -134,5 +137,5 @@
 </div>
 
 <?php
-	$this->load->view("_lib/lib.footer.php");
+$this->load->view("_lib/lib.footer.php");
 ?>

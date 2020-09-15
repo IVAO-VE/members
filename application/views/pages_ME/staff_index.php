@@ -84,8 +84,8 @@ $this->load->view("_lib/lib.menu.php");
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <div class="gird">
                             <div class="row">
-                                <div data-role="panel" data-title-caption="Medallas creadas" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-                                    <div class="cell-6">
+                                <div class="cell-6">
+                                    <div data-role="panel" data-title-caption="Medallas creadas" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                                         <?php
                                         $q = $this->db->get('awards');
                                         if ($q->num_rows() > 0) {
@@ -123,8 +123,8 @@ $this->load->view("_lib/lib.menu.php");
                                             </table>
                                     </div>
                                 </div>
-                                <div data-role="panel" data-title-caption="Agregar nueva medalla" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-                                    <div class="cell-6">
+                                <div class="cell-6">
+                                    <div data-role="panel" data-title-caption="Agregar nueva medalla" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                                         <?php echo form_open('staff/addAward'); ?>
                                         <div class="row">
                                             <div class="cell">

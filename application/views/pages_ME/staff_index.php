@@ -121,7 +121,35 @@ $this->load->view("_lib/lib.menu.php");
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="cell-6"></div>
+                                <div class="cell-6">
+                                <?php echo form_open('staff/addAward'); ?>
+                                    <div class="row">
+                                            <div class="cell-6">
+                                                <div class="form-group">
+                                                    <label>Corto</label>
+                                                    <input type="text" name="short" required>
+                                                </div>
+                                            </div>
+                                            <div class="cell-6">
+                                                <div class="form-group">
+                                                    <label>Nombre</label>
+                                                    <input type="text" name="name" required>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="cell-6">
+                                                <div class="form-group">
+                                                    <label>Maximo puntos</label>
+                                                    <input type="text" name="max" required>
+                                                </div>
+                                            </div>
+                                            <div class="cell-6">
+                                                <input type="submit" class="button primary" value="Agregar">
+                                            </div>
+                                    </div>
+                                <?php echo form_close() ?>
+                                </div>
                             </div>
                         </div>
                     </div>

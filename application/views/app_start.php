@@ -37,13 +37,16 @@ window.onload = function() {
     }
 };
 
-
-$("#mail_form").submit(function(e){
-    if(isValid){
-        e.preventDefault();    //stop form from submitting
-        alert('go save');
-    }
+$("#mail_form").submit(function(){
+  alert("Submitted");
 });
+
+//$("#").submit(function(e){
+//    if(isValid){
+//        e.preventDefault();    //stop form from submitting
+//        alert('go save');
+//    }
+//});
 
 
 -->

@@ -9,5 +9,5 @@
 
 
 function member_addEMAL(vid, email){
-    
+    alert("sip");
 }

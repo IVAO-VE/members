@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿VE-WM, commit automático.
+=======
+﻿VE-WM commit.
+>>>>>>> 88f03d28cb0473b23d77f5f468df2258ee82d18f

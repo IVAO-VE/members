@@ -117,10 +117,10 @@ class Staff extends CI_Controller
         $access_nivel = $query_access->row_array();
         if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
             //******************************
-            if ($access_nivel['pages_SO'] != 'true') { //NO TIENE ACCESO A LA ZONA
+            if ($access_nivel['pages_ME'] != 'true') { //NO TIENE ACCESO A LA ZONA
                 redirect(base_url());
             } else {
-                $this->load->view("pages_SO/staff_index");
+                $this->load->view("pages_ME/staff_index");
             }
         }
     }

@@ -8,6 +8,6 @@
  **/
 
 
-function member_addEMAL(vid, email){
-    
+function member_addEMAL(){
+    alert("sip");
 }

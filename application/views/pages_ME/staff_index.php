@@ -84,71 +84,79 @@ $this->load->view("_lib/lib.menu.php");
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <div class="gird">
                             <div class="row">
-                                <div class="cell-6">
-                                    <?php
-                                    $q = $this->db->get('awards');
-                                    if ($q->num_rows() > 0) {
-                                    ?>
-                                    <table class="table stripped" data-role="table">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Corto</th>
-                                                <th>Nombre</th>
-                                                <th>Maximos puntos</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                                foreach ($q->result() as $row) {
-                                            ?>
+                                <div data-role="panel" data-title-caption="Medallas creadas" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                                    <div class="cell-6">
+                                        <?php
+                                        $q = $this->db->get('awards');
+                                        if ($q->num_rows() > 0) {
+                                        ?>
+                                            <table class="table stripped" data-role="table">
+                                                <thead>
                                                     <tr>
-                                                        <td><?php echo $row->id; ?></td>
-                                                        <td><?php echo $row->short; ?></td>
-                                                        <td><?php echo $row->name; ?></td>
-                                                        <td><?php echo $row->max; ?></td>
+                                                        <th>ID</th>
+                                                        <th>Corto</th>
+                                                        <th>Nombre</th>
+                                                        <th>Maximos puntos</th>
                                                     </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                    foreach ($q->result() as $row) {
+                                                    ?>
+                                                        <tr>
+                                                            <td><?php echo $row->id; ?></td>
+                                                            <td><?php echo $row->short; ?></td>
+                                                            <td><?php echo $row->name; ?></td>
+                                                            <td><?php echo $row->max; ?></td>
+                                                        </tr>
+                                                    <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                    <div class="remark alert">
+                                                        Ninguna medalla creada.
+                                                    </div>
                                                 <?php
                                                 }
-                                            } else {
                                                 ?>
-                                                <div class="remark alert">
-                                                    Ninguna medalla creada.
-                                                </div>
-                                            <?php
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
+                                                </tbody>
+                                            </table>
+                                    </div>
                                 </div>
-                                <div class="cell-6">
-                                <?php echo form_open('staff/addAward'); ?>
-                                    <div class="row">
-                                            <div class="cell-6">
+                                <div data-role="panel" data-title-caption="Agregar nueva medalla" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                                    <div class="cell-6">
+                                        <?php echo form_open('staff/addAward'); ?>
+                                        <div class="row">
+                                            <div class="cell">
                                                 <div class="form-group">
                                                     <label>Corto</label>
                                                     <input type="text" name="short" required>
                                                 </div>
                                             </div>
-                                            <div class="cell-6">
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
                                                 <div class="form-group">
                                                     <label>Nombre</label>
                                                     <input type="text" name="name" required>
                                                 </div>
                                             </div>
-                                    </div>
-                                    <div class="row">
-                                            <div class="cell-6">
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
                                                 <div class="form-group">
                                                     <label>Maximo puntos</label>
                                                     <input type="text" name="max" required>
                                                 </div>
                                             </div>
-                                            <div class="cell-6">
+                                        </div>
+                                        <div class="row">
+                                            <div class="cell">
                                                 <input type="submit" class="button primary" value="Agregar">
                                             </div>
+                                        </div>
+                                        <?php echo form_close() ?>
                                     </div>
-                                <?php echo form_close() ?>
                                 </div>
                             </div>
                         </div>

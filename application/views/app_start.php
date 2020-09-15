@@ -38,12 +38,13 @@ window.onload = function() {
 };
 
 
-document.querySelector("#mail_form").addEventListener("submit", function(e){
+$("#mail_form").submit(function(e){
     if(isValid){
         e.preventDefault();    //stop form from submitting
         alert('go save');
     }
 });
+
 
 -->
 </script>

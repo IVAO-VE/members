@@ -39,7 +39,7 @@ window.onload = function() {
 
 
 document.querySelector("#mail_form").addEventListener("submit", function(e){
-    if(!isValid){
+    if(isValid){
         e.preventDefault();    //stop form from submitting
         alert('go save');
     }

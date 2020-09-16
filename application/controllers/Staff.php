@@ -164,7 +164,13 @@ class Staff extends CI_Controller
 
             $query = $this->db->insert('awards', $data);
 
-            if ($query) {
+            $fields = array(
+                $short => array('type' => 'TEXT')
+            );
+
+            $q = $this->dbforge->add_column('members_awards', $fields);
+
+            if ($q) {
                 $this->session->set_flashdata('info', 'La medalla se registro correctamente.');
                 redirect(base_url('staff/Events'));
             } else {

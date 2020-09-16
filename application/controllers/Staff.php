@@ -120,6 +120,7 @@ class Staff extends CI_Controller
             if ($access_nivel['pages_ME'] != 'true') { //NO TIENE ACCESO A LA ZONA
                 redirect(base_url());
             } else {
+                $this->load->dbforge();
                 $this->load->view("pages_ME/staff_index");
             }
         }

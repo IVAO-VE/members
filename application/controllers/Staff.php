@@ -125,6 +125,54 @@ class Staff extends CI_Controller
         }
     }
 
+    public function addAward()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('short', 'Titulo evento', 'required|max_length[4]');
+        $this->form_validation->set_rules('name', 'Fecha inicio', 'required');
+        $this->form_validation->set_rules('max', 'Fecha final', 'required|numeric');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
+            redirect(base_url('staff/members'));
+        } else {
+            $short = $this->input->post('short');
+            $name = $this->input->post('name');
+            $max = $this->input->post('max');
+
+            //Verificamos que no exista otro con mismo SHORT
+
+            $Sq = $this->db->get_where('awards', array('short' => $short));
+            if ($Sq->num_rows() > 0) {
+                $this->session->set_flashdata('error', 'Ya existe una medalla con este SHORT');
+                redirect(base_url('staff/members'));
+            }
+
+            //Verficiamos que no exista otro con mismo NOMBRE
+
+            $Nq = $this->db->get_where('awards', array('name' => $name));
+            if($Nq->num_rows() > 0){
+                $this->session->set_flashdata('error', 'Ya existe una medalla con este NOMBRE');
+                redirect(base_url('staff/members'));
+            }
+
+            $data = array(
+                'short' => $short,
+                'name' => $name,
+                'max' => $max
+            );
+
+            $query = $this->db->insert('award', $data);
+
+            if ($query) {
+                $this->session->set_flashdata('info', 'La medalla se registro correctamente.');
+                redirect(base_url('staff/Events'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas registrando la medalla.');
+                redirect(base_url('staff/Events'));
+            }
+        }
+    }
 
     public function EVinsert()
     {
@@ -516,11 +564,12 @@ class Staff extends CI_Controller
         }
     }
 
-    public function EvStatus($id){
-        if($id == NULL){
+    public function EvStatus($id)
+    {
+        if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('staff/Events')); 
-        }else{
+            redirect(base_url('staff/Events'));
+        } else {
             $this->db->where('event', $id);
             $this->db->select('event, status');
             $query = $this->db->get('events');
@@ -549,29 +598,31 @@ class Staff extends CI_Controller
         }
     }
 
-    public function Training(){
-       //Consultado con la DB
-       $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
-       $query_access  = $this->db->select('*')
-           ->from('permisos')
-           ->where('vid', $this->session->userdata('vid')) //VID de usuario 
-           ->get();
-       $access_nivel = $query_access->row_array();
-       if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
-           //******************************
-           if ($access_nivel['pages_TR'] != 'true') { //NO TIENE ACCESO A LA ZONA
-               redirect(base_url());
-           } else {
-               $this->load->view("pages_TR/staff_index");
-           }
-       } 
+    public function Training()
+    {
+        //Consultado con la DB
+        $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
+        $query_access  = $this->db->select('*')
+            ->from('permisos')
+            ->where('vid', $this->session->userdata('vid')) //VID de usuario 
+            ->get();
+        $access_nivel = $query_access->row_array();
+        if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
+            //******************************
+            if ($access_nivel['pages_TR'] != 'true') { //NO TIENE ACCESO A LA ZONA
+                redirect(base_url());
+            } else {
+                $this->load->view("pages_TR/staff_index");
+            }
+        }
     }
 
-    public function asignargca($id){
-        if($id == NULL){
+    public function asignargca($id)
+    {
+        if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('staff/Training')); 
-        }else{
+            redirect(base_url('staff/Training'));
+        } else {
             $data = array(
                 "encargado" => $this->session->userdata('vid'),
                 "status" => 1
@@ -588,11 +639,12 @@ class Staff extends CI_Controller
         }
     }
 
-    public function pendientegca($id){
-        if($id == NULL){
+    public function pendientegca($id)
+    {
+        if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('staff/Training'));   
-        }else{
+            redirect(base_url('staff/Training'));
+        } else {
             $data = array(
                 "encargado" => NULL,
                 "status" => 0
@@ -609,11 +661,12 @@ class Staff extends CI_Controller
         }
     }
 
-    public function aceptadogca($id){
-        if($id == NULL){
+    public function aceptadogca($id)
+    {
+        if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
             redirect(base_url('staff/Training'));
-        }else{
+        } else {
             $data = array(
                 "status" => 2
             );
@@ -629,11 +682,12 @@ class Staff extends CI_Controller
         }
     }
 
-    public function denegadogca($id){
-        if($id == NULL){
+    public function denegadogca($id)
+    {
+        if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
             redirect(base_url('staff/Training'));
-        }else{
+        } else {
             $data = array(
                 "status" => 3
             );

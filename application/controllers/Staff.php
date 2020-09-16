@@ -162,7 +162,7 @@ class Staff extends CI_Controller
                 'max' => $max
             );
 
-            $query = $this->db->insert('award', $data);
+            $query = $this->db->insert('awards', $data);
 
             if ($query) {
                 $this->session->set_flashdata('info', 'La medalla se registro correctamente.');

@@ -176,10 +176,10 @@ class Staff extends CI_Controller
 
             if ($q) {
                 $this->session->set_flashdata('info', 'La medalla se registro correctamente.');
-                redirect(base_url('staff/Events'));
+                redirect(base_url('staff/members'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas registrando la medalla.');
-                redirect(base_url('staff/Events'));
+                redirect(base_url('staff/members'));
             }
         }
     }

@@ -18,6 +18,16 @@ $this->load->view("_lib/lib.header.php");
 $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="row border-bottom bd-lightGray m-3">
+<?php if ($this->session->flashdata('info')) : ?>
+        <div class="remark primary">
+            <?php echo $this->session->flashdata('info'); ?>
+        </div>
+    <?php endif; ?>
+    <?php if ($this->session->flashdata('error')) : ?>
+        <div class="remark primary">
+            <?php echo $this->session->flashdata('error'); ?>
+        </div>
+    <?php endif; ?>
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto06_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
     </div>

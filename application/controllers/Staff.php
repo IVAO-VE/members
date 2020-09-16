@@ -166,7 +166,8 @@ class Staff extends CI_Controller
             $query = $this->db->insert('awards', $data);
 
             $fields = array(
-                $short => array('type' => 'TEXT')
+                $short => array('type' => 'VARCHAR',
+                                'constraint' => '100')
             );
 
             $this->load->dbforge();

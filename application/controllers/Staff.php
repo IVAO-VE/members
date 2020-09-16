@@ -169,6 +169,8 @@ class Staff extends CI_Controller
                 $short => array('type' => 'TEXT')
             );
 
+            $this->load->dbforge();
+
             $q = $this->dbforge->add_column('members_awards', $fields);
 
             if ($q) {

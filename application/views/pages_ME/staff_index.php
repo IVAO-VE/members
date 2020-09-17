@@ -107,6 +107,7 @@ $this->load->view("_lib/lib.menu.php");
                                                         <th>Corto</th>
                                                         <th>Nombre</th>
                                                         <th>Maximos puntos</th>
+                                                        <th>Acciones</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -118,6 +119,9 @@ $this->load->view("_lib/lib.menu.php");
                                                             <td><?php echo $row->short; ?></td>
                                                             <td><?php echo $row->name; ?></td>
                                                             <td><?php echo $row->max; ?></td>
+                                                            <td>
+                                                            <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                            </td>
                                                         </tr>
                                                     <?php
                                                     }

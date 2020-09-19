@@ -106,8 +106,8 @@
                                                 $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
                                                 while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
                                                     if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
-/*                                                        if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
-                                                            $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
+                                                        if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
+/*                                                            $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                                             $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                             $MyREGLA = array_key_last($MyFILE_PART);
                                                             switch (strtoupper($MyREGLA)){ 
@@ -125,8 +125,8 @@
                                                                     <td>'.date('F d Y H:i:s.', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
                                                                     <td>xx</td>
                                                                 </tr>
-                                                            ';
-                                                        }*/
+                                                            ';*/
+                                                        }
                                                     }
                                                 }                                                
                                             ?>  

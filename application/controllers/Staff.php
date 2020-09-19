@@ -69,6 +69,8 @@ class Staff extends CI_Controller
 
     public function FO_addCharts(){
         $this->phpdebug->debug('[DEBUG] -> addCharts');
+        
+        redirect($_SERVER['HTTP_REFERER']);
     }    
 
     public function controllers()

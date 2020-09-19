@@ -83,6 +83,8 @@ class Staff extends CI_Controller
             chmod($dirCHARTS, 0777);
         }
 
+        $this->phpdebug->debug($dirCHARTS);
+
         $config['upload_path'] = $dirCHARTS;
         $config['file_name'] = strtoupper($MyICAO).".pdf";
         $config['allowed_types'] = "pdf";

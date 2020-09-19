@@ -149,7 +149,7 @@
 
                                         <div class="mt-2 mb-2">
                                             <label>Selecciona el aeropuerto</label>
-                                            <select data-role="select" data-validate="required not=-1">
+                                            <select id="icao" name="icao" data-role="select" data-validate="required not=-1">
                                                 <option value="-1" class="d-none"></option>
                                                 <?php
                                                     $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
@@ -164,6 +164,8 @@
                                         <div class="row mb-2">
                                             <label>Documento a subir (solo PDF)</label>
                                             <input 
+                                                id="filePDF" 
+                                                name="filePDF" 
                                                 type="file" 
                                                 data-role="file" 
                                                 data-mode="drop" 

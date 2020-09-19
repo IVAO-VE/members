@@ -68,8 +68,11 @@ class Staff extends CI_Controller
     }
 
     public function FO_addCharts(){
-        $this->phpdebug->debug('[DEBUG] -> addCharts');
-        
+        $MyICAO = $_POST['icao'];
+        $MyPDF = $_POST['filePDF'];
+
+        $this->phpdebug->debug('[DEBUG] -> Añadiendo cata de vuelo para'.$MyICAO);
+
         redirect($_SERVER['HTTP_REFERER']);
     }    
 

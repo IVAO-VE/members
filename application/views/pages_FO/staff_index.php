@@ -111,19 +111,19 @@
                                                                 $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                                                 $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                 $MyREGLA = array_key_last($MyFILE_PART);
-                                                                /*switch (strtoupper($MyREGLA)){ 
+                                                                switch (strtoupper($MyREGLA)){ 
                                                                     case "I": //es una carta por instrumentos
                                                                         $xREGLA = "Instrumental";
                                                                     break;
                                                                     case "V": //es una carta visual
                                                                         $xREGLA = "Visual";
                                                                     break;
-                                                                } */   
+                                                                }
                                                                 echo '
                                                                     <tr>
                                                                         <td>'.array_key_first($MyFILE_PART).'</td>
                                                                         <td>'.$xREGLA.'</td>
-                                                                        <td>'.date('F d Y H:i:s.', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
+                                                                        <td></td>
                                                                         <td>xx</td>
                                                                     </tr>
                                                                 ';

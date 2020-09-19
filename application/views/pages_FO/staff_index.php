@@ -123,7 +123,7 @@
                                                                     <tr>
                                                                         <td>'.$MyFILE_PART[0].'</td>
                                                                         <td>'.$xREGLA.'</td>
-                                                                        <td>'.date('F d Y H:i:s.', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
+                                                                        <td>'.date('d/m/Y H:i:s.', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
                                                                         <td>xx</td>
                                                                     </tr>
                                                                 ';

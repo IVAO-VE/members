@@ -95,7 +95,7 @@ class Staff extends CI_Controller
                                                    'message'    => 'Éxito, carta aérea registrada correctamente.');
         }
 
-        //redirect($_SERVER['HTTP_REFERER']);
+        $this->load->view('staff_index', $data);
     }    
 
     public function controllers()

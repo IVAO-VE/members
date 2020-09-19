@@ -22,7 +22,7 @@
 
 <script type="text/javascript">
 <!--
-    $(document).ready(function() {
+    window.onload = function() {
         <?php
             if(isset($showNOTIFY)){
                 foreach ($showNOTIFY as $xNOTIFY) {
@@ -30,7 +30,7 @@
                 }        
             }
         ?>
-    });
+    };
 -->
 </script>
 

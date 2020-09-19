@@ -15,6 +15,14 @@
     $this->load->view("_lib/lib.header.php");
     //Cargando la estructura del MENU
     $this->load->view("_lib/lib.menu.php");
+
+    if(isset($showNOTIFY)){
+        foreach ($showNOTIFY as $xNOTIFY) {
+            $this->myfunctions->showNOTIFY($xNOTIFY['message'], $xNOTIFY['title']);
+        }        
+    }
+
+    
 ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">

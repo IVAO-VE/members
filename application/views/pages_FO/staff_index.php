@@ -133,7 +133,14 @@
                                                 } catch (Exception $e) {
                                                     //Problema detetado
                                                     $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
-
+                                                    echo '
+                                                        <script type="text/javascript">
+                                                        <!--
+                                                            '.$this->myfunctions->showDIALOG("Control de errores", $e->getMessage(), 5).'
+                                                        -->
+                                                        </script>                
+                                                ';
+                                
                                                 }                                                    
                                             ?>  
 

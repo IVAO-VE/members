@@ -68,35 +68,43 @@ class Staff extends CI_Controller
     }
 
     public function FO_addCharts(){
-        $this->phpdebug->debug(strtoupper(end(explode(".", $_FILES['filePDF']['name']))));
-        $dirUPLOAD = FCPATH.'uploads/';
-        $dirCHARTS = FCPATH.'uploads/charts/';
-        $MyICAO = $_POST['icao'];
-        $MyPDF = $_FILES['filePDF']['name'];
-        $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
-        
-        if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
-            mkdir($dirUPLOAD);
-            chmod($dirUPLOAD, 0777);
-        }
-        if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
-            mkdir($dirCHARTS);
-            chmod($dirCHARTS, 0777);
-        }
-        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'.pdf')){
-            //Problemas al sibir el archivo.
-            $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-            $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
-                                          'message' => 'Fallo al intentar registrar ésta carta aérea.', 
+        //$this->phpdebug->debug(strtoupper(end(explode(".", $_FILES['filePDF']['name']))));
+        if(strtoupper(end(explode(".", $_FILES['filePDF']['name']))) != "PDF"){
+            $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
+                                          'message' => 'El archivo no es PDF válido.', 
                                           'type' => 4);
+            $this->load->view('pages_FO/staff_index', $data);
+            exit();
         }else{
-            //Archivo subido con éxito
-            $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-            $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
-                                          'message' => 'Éxito, carta aérea registrada correctamente.', 
-                                          'type' => 2);
+            $dirUPLOAD = FCPATH.'uploads/';
+            $dirCHARTS = FCPATH.'uploads/charts/';
+            $MyICAO = $_POST['icao'];
+            $MyPDF = $_FILES['filePDF']['name'];
+            $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
+            
+            if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+                mkdir($dirUPLOAD);
+                chmod($dirUPLOAD, 0777);
+            }
+            if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
+                mkdir($dirCHARTS);
+                chmod($dirCHARTS, 0777);
+            }
+            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'.pdf')){
+                //Problemas al sibir el archivo.
+                $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
+                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
+                                            'message' => 'Fallo al intentar registrar ésta carta aérea.', 
+                                            'type' => 4);
+            }else{
+                //Archivo subido con éxito
+                $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
+                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
+                                            'message' => 'Éxito, carta aérea registrada correctamente.', 
+                                            'type' => 2);
+            }
+            $this->load->view('pages_FO/staff_index', $data);
         }
-        $this->load->view('pages_FO/staff_index', $data);
     }    
 
     public function controllers()

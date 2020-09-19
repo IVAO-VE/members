@@ -122,8 +122,8 @@
                                                                 <tr>
                                                                     <td>'.array_key_first($MyFILE_PART).'</td>
                                                                     <td>'.$xREGLA.'</td>
-                                                                    <td>'.date("F d Y H:i:s.", filectime(FCPATH.'uploads/charts/'.$elemento).'</td>
-                                                                    <td>'xx'</td>
+                                                                    <td>'.date('F d Y H:i:s.', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
+                                                                    <td>xx</td>
                                                                 </tr>
                                                             ';
                                                         }

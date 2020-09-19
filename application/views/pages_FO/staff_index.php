@@ -166,7 +166,7 @@
                                     <form data-role="validator" action="/staff/FO_addCharts" method="POST" enctype="multipart/form-data">
 
                                         <div class="mt-2 mb-2">
-                                            <label>Selecciona el aeropuerto</label>
+                                            <label>Selecciona el aeropuerto.</label>
                                             <select id="icao" name="icao" data-role="select" data-validate="required not=-1">
                                                 <option value="-1" class="d-none"></option>
                                                 <?php
@@ -179,8 +179,19 @@
                                             <span class="invalid_feedback">Debes de seleccionar un aeropuerto!</span>
                                         </div>
 
+                                        <div class="mt-2 mb-2">
+                                            <label>Selecciona la regla de navegación.</label>
+                                            <select id="regla" name="regla" data-role="select" data-validate="required not=-1">
+                                                <option value="-1" class="d-none"></option>
+                                                <option value="0">I - Navegación por instrumentos</option>
+                                                <option value="1">V - Navegación visual</option>
+                                            </select>
+                                            <span class="invalid_feedback">Debes de seleccionar un aeropuerto!</span>
+                                        </div>
+
+
                                         <div class="row mb-2">
-                                            <label>Documento a subir (solo PDF)</label>
+                                            <label>Documento a subir (solo PDF).</label>
                                             <input 
                                                 id="filePDF" 
                                                 name="filePDF" 

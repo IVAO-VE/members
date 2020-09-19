@@ -73,12 +73,12 @@ class Staff extends CI_Controller
         //$MyLAST = end($MyEXPLODE);
         $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
+        $this->phpdebug->debug($MyEXT);        
         if($MyEXT != "PDF"){
             $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
                                           'message' => 'El archivo no es PDF válido.', 
                                           'type' => 4);
             $this->load->view('pages_FO/staff_index', $data);
-            exit();
         }else{
             $dirUPLOAD = FCPATH.'uploads/';
             $dirCHARTS = FCPATH.'uploads/charts/';

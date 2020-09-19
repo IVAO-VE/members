@@ -102,44 +102,33 @@
                                             </thead>
                                             <tbody>
                                             <?php
-                                                //Consultando datos de vuelos realizados
-                                                switch ($row->facility_type){ 
-                                                    case "0":
-                                                        $xTYPE = $this->lang->line('facility_0');
-                                                    break;
-                                                    case "1":
-                                                        $xTYPE = $this->lang->line('facility_1');
-                                                    break;
-                                                    case "2":
-                                                        $xTYPE = $this->lang->line('facility_2');
-                                                    break;
-                                                    case "3":
-                                                        $xTYPE = $this->lang->line('facility_3');
-                                                    break;
-                                                    case "4":
-                                                        $xTYPE = $this->lang->line('facility_4');
-                                                    break;
-                                                    case "5":
-                                                        $xTYPE = $this->lang->line('facility_5');
-                                                    break;
-                                                    case "6":
-                                                        $xTYPE = $this->lang->line('facility_6');
-                                                    break;
-                                                    case "7":
-                                                        $xTYPE = $this->lang->line('facility_7');
-                                                    break;
-                                                    default :
-                                                        $xTYPE = "";
-                                                }    
-                                                echo '
-                                                    <tr>
-                                                        <td>'.$row->callsign.'</td>
-                                                        <td>'.date("d-m-Y H:i:s", $row->connection_time).'</td>
-                                                        <td>'.$row->frequency.'</td>
-                                                        <td>'.$xTYPE.'</td>
-                                                        <td>'.$row->server.'</td>
-                                                    </tr>
-                                                ';
+                                                //Consultando datos de cartas en el directorio
+                                                $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
+                                                while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
+                                                    if( $elemento != "." && $elemento != ".."){ //no es control de directorios
+                                                        if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
+                                                            $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
+                                                            $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                                            $MyREGLA = array_key_last($MyFILE_PART);
+                                                            switch (strtoupper($MyREGLA)){ 
+                                                                case "I": //es una carta por instrumentos
+                                                                    $xREGLA = "Instrumental";
+                                                                break;
+                                                                case "V": //es una carta visual
+                                                                    $xREGLA = "Visual";
+                                                                break;
+                                                            }    
+                                                            echo '
+                                                                <tr>
+                                                                    <td>'.array_key_first($MyFILE_PART).'</td>
+                                                                    <td>'.$xREGLA.'</td>
+                                                                    <td>'.date("F d Y H:i:s.", filectime(FCPATH.'uploads/charts/'.$elemento).'</td>
+                                                                    <td>'xx'</td>
+                                                                </tr>
+                                                            ';
+                                                        }
+                                                    }                                                    
+                                                }                                                
                                             ?>  
 
                                             </tbody>

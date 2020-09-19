@@ -82,17 +82,19 @@ class Staff extends CI_Controller
             mkdir($dirCHARTS);
             chmod($dirCHARTS, 0777);
         }
-
         if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'.pdf')){
             //Problemas al sibir el archivo.
             $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-            $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 'message' => 'Fallo al intentar registrar ésta carta aérea.');
+            $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
+                                          'message' => 'Fallo al intentar registrar ésta carta aérea.', 
+                                          'type' => 4);
         }else{
             //Archivo subido con éxito
             $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-            $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 'message' => 'Éxito, carta aérea registrada correctamente.');
+            $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
+                                          'message' => 'Éxito, carta aérea registrada correctamente.', 
+                                          'type' => 2);
         }
-
         $this->load->view('pages_FO/staff_index', $data);
     }    
 

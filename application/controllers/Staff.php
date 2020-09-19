@@ -69,7 +69,6 @@ class Staff extends CI_Controller
 
     public function FO_addCharts(){
         $this->phpdebug->debug(APPPATH);
-        $dirUPLOAD = APPPATH.'../uploads/';
         $dirCHARTS = $dirUPLOAD.'charts/';
         $MyICAO = $_POST['icao'];
         $MyPDF = $_FILES['filePDF']['name'];
@@ -78,12 +77,17 @@ class Staff extends CI_Controller
         if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
             mkdir($dirUPLOAD);
         }
-
         if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
             mkdir($dirCHARTS);
         }
 
-        move_uploaded_file($_FILES['filePDF']['tmp_name'], strtoupper($MyICAO).'.pdf');
+        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], strtoupper($MyICAO).'.pdf')){
+            //Problemas al sibir el archivo.
+
+        }else{
+            //Archivo subido con éxito
+            
+        }
 
         //redirect($_SERVER['HTTP_REFERER']);
     }    

@@ -68,8 +68,8 @@ class Staff extends CI_Controller
     }
 
     public function FO_addCharts(){
-        $dirUPLOAD = APPPATH.'../uploads/';
-        $dirCHARTS = APPPATH.'charts/';
+        $dirUPLOAD = FCPATH.'uploads/';
+        $dirCHARTS = FCPATH.'uploads/charts/';
         $MyICAO = $_POST['icao'];
         $MyPDF = $_FILES['filePDF']['name'];
         $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
@@ -86,7 +86,7 @@ class Staff extends CI_Controller
         chdir($dirCHARTS);
         $this->phpdebug->debug(FCPATH);
         
-        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], strtoupper($MyICAO).'.pdf')){
+        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'.pdf')){
             //Problemas al sibir el archivo.
             $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
 

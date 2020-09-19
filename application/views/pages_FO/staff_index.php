@@ -161,7 +161,7 @@
 
                             <div class="cell-md-6">
                                 <div class="bg-white p-4 m-2">
-                                    <h4>Agregar nueva carta</h4>
+                                    <h4>Agregar ó actualizar cartas aéreas</h4>
 
                                     <form data-role="validator" action="/staff/FO_addCharts" method="POST" enctype="multipart/form-data">
 

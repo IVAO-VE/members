@@ -68,7 +68,6 @@ class Staff extends CI_Controller
     }
 
     public function FO_addCharts(){
-        $this->phpdebug->debug(APPPATH);
         $dirUPLOAD = APPPATH.'../uploads/';
         $dirCHARTS = $dirUPLOAD.'charts/';
         $MyICAO = $_POST['icao'];

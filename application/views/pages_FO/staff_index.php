@@ -110,7 +110,7 @@
                                                             if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
                                                                 $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                                                 $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
-                                                                //$MyREGLA = array_key_last($MyFILE_PART);
+                                                                $MyREGLA = $MyFILE_PART[0];
                                                                 /*switch (strtoupper($MyREGLA)){ 
                                                                     case "I": //es una carta por instrumentos
                                                                         $xREGLA = "Instrumental";

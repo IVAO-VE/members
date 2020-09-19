@@ -111,7 +111,7 @@
                                                                 $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                                                 $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                 $MyREGLA = array_key_last($MyFILE_PART);
-                                                                /*switch (strtoupper($MyREGLA)){ 
+                                                                switch (strtoupper($MyREGLA)){ 
                                                                     case "I": //es una carta por instrumentos
                                                                         $xREGLA = "Instrumental";
                                                                     break;
@@ -119,7 +119,7 @@
                                                                         $xREGLA = "Visual";
                                                                     break;
                                                                 }
-                                                                echo '
+                                                                /*echo '
                                                                     <tr>
                                                                         <td>'.array_key_first($MyFILE_PART).'</td>
                                                                         <td>'.$xREGLA.'</td>

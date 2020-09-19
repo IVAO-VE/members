@@ -68,10 +68,16 @@ class Staff extends CI_Controller
     }
 
     public function FO_addCharts(){
+        $dirCHARTS = APPPATH.'../_uploads/charts/';
         $MyICAO = $_POST['icao'];
         $MyPDF = $_FILES['filePDF']['name'];
-
         $this->phpdebug->debug('[DEBUG] -> Añadiendo cata de vuelo para '.$MyICAO);
+        
+        if(!is_dir($dirCHARTS)){ //Directorio no existe (hay que crearlo)
+            mkdir($dirCHARTS);
+        }
+
+        move_uploaded_file($_FILES['filePDF']['tmp_name'], strtoupper($MyICAO).'.pdf');
 
         //redirect($_SERVER['HTTP_REFERER']);
     }    

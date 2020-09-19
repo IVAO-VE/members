@@ -167,6 +167,7 @@
                                                 id="filePDF" 
                                                 name="filePDF" 
                                                 type="file" 
+                                                accept=".pdf"
                                                 data-role="file" 
                                                 data-mode="drop" 
                                                 data-button-title="Elija o arrastre el documento" 

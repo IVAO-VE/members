@@ -72,7 +72,7 @@ class Staff extends CI_Controller
         $dirCHARTS = $dirUPLOAD.'charts/';
         $MyICAO = $_POST['icao'];
         $MyPDF = $_FILES['filePDF']['name'];
-        $this->phpdebug->debug('[DEBUG] -> Añadiendo cata de vuelo para '.$MyICAO);
+        $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
         
         if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
             mkdir($dirUPLOAD);
@@ -83,10 +83,12 @@ class Staff extends CI_Controller
 
         if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], strtoupper($MyICAO).'.pdf')){
             //Problemas al sibir el archivo.
+            $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
 
         }else{
             //Archivo subido con éxito
-            
+            $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
+
         }
 
         //redirect($_SERVER['HTTP_REFERER']);

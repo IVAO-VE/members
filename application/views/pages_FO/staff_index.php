@@ -169,8 +169,10 @@
                                                 type="file" 
                                                 data-role="file" 
                                                 data-mode="drop" 
-                                                data-button-title="Elija o arrastre el documento"
+                                                data-button-title="Elija o arrastre el documento" 
+                                                data-validate="required not=-1" 
                                             >
+                                            <span class="invalid_feedback">Debes de cargar una carta de vuelo!</span>
                                         </div>
 
                                         <button class="button primary">Agregar documento</button>

@@ -84,9 +84,9 @@ class Staff extends CI_Controller
             chmod($dirCHARTS, 0777);
         }
         chdir($dirCHARTS);
-        $this->phpdebug->debug($_FILES['filePDF']['tmp_name']);
+        $this->phpdebug->debug(FCPATH);
         
-        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirUPLOAD.$dirCHARTS.strtoupper($MyICAO).'.pdf')){
+        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], .strtoupper($MyICAO).'.pdf')){
             //Problemas al sibir el archivo.
             $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
 

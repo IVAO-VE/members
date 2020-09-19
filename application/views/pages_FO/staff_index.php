@@ -16,14 +16,24 @@
     //Cargando la estructura del MENU
     $this->load->view("_lib/lib.menu.php");
 
-    if(isset($showNOTIFY)){
-        foreach ($showNOTIFY as $xNOTIFY) {
-            $this->myfunctions->showNOTIFY($xNOTIFY['message'], $xNOTIFY['title']);
-        }        
-    }
 
     
 ?>
+
+<script type="text/javascript">
+<!--
+    $(document).ready(function() {
+        <?php
+            if(isset($showNOTIFY)){
+                foreach ($showNOTIFY as $xNOTIFY) {
+                    $this->myfunctions->showNOTIFY($xNOTIFY['message'], $xNOTIFY['title']);
+                }        
+            }
+        ?>
+    });
+-->
+</script>
+
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto02_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>

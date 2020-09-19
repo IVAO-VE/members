@@ -78,22 +78,19 @@ class Staff extends CI_Controller
             mkdir($dirUPLOAD);
             chmod($dirUPLOAD, 0777);
         }
-        chdir($dirUPLOAD);
         if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
             mkdir($dirCHARTS);
             chmod($dirCHARTS, 0777);
         }
-        chdir($dirCHARTS);
-        $this->phpdebug->debug(FCPATH);
-        
+
         if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'.pdf')){
             //Problemas al sibir el archivo.
             $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-
+            $this->myfunctions->showNOTIFY("Fallo al intentar registrar ésta carta aérea.", "Cartas aéreas");
         }else{
             //Archivo subido con éxito
             $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-
+            $this->myfunctions->showNOTIFY("Éxito, carta aérea registrada.", "Cartas aéreas");
         }
 
         //redirect($_SERVER['HTTP_REFERER']);

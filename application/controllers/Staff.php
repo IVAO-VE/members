@@ -71,7 +71,7 @@ class Staff extends CI_Controller
         $MyICAO = $_POST['icao'];
         $MyPDF = $_FILES['filePDF']['name'];
 
-        $this->phpdebug->debug('[DEBUG] -> Añadiendo cata de vuelo para'.$MyICAO);
+        $this->phpdebug->debug('[DEBUG] -> Añadiendo cata de vuelo para '.$MyICAO);
 
         //redirect($_SERVER['HTTP_REFERER']);
     }    

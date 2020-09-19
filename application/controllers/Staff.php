@@ -73,7 +73,7 @@ class Staff extends CI_Controller
 
         $this->phpdebug->debug('[DEBUG] -> Añadiendo cata de vuelo para'.$MyICAO);
 
-        redirect($_SERVER['HTTP_REFERER']);
+        //redirect($_SERVER['HTTP_REFERER']);
     }    
 
     public function controllers()

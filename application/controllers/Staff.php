@@ -84,11 +84,9 @@ class Staff extends CI_Controller
             
             if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
-                chmod($dirUPLOAD, 0777);
             }
             if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
                 mkdir($dirCHARTS);
-                chmod($dirCHARTS, 0777);
             }
             if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'.pdf')){
                 //Problemas al sibir el archivo.

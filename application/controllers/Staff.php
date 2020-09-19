@@ -83,17 +83,20 @@ class Staff extends CI_Controller
             chmod($dirCHARTS, 0777);
         }
 
-        $this->phpdebug->debug($_FILES['filePDF']['tmp_name']);
-        
-        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], strtoupper($MyICAO).'.pdf')){
-            //Problemas al sibir el archivo.
-            $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
+        $config['upload_path'] = $dirCHARTS;
+        $config['file_name'] = strtoupper($MyICAO).".pdf";
+        $config['allowed_types'] = "pdf";
+        $config['max_size'] = "50000";
+        $config['max_width'] = "2000";
+        $config['max_height'] = "2000";
+        $this->load->library('upload', $config);
 
-        }else{
-            //Archivo subido con éxito
-            $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-
-        }
+        if (!$this->upload->do_upload($MyPDF)) {
+            //*** ocurrio un error
+            $data['uploadError'] = $this->upload->display_errors();
+            echo $this->upload->display_errors();
+            //return;
+        }        
 
         //redirect($_SERVER['HTTP_REFERER']);
     }    

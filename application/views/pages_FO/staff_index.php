@@ -118,7 +118,7 @@
                                                                     case "V": //es una carta visual
                                                                         $xREGLA = "Visual";
                                                                     break;
-                                                                }*/
+                                                                }
                                                                 echo '
                                                                     <tr>
                                                                         <td>'.array_key_first($MyFILE_PART).'</td>
@@ -126,7 +126,7 @@
                                                                         <td>'.date('F d Y H:i:s.', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
                                                                         <td>xx</td>
                                                                     </tr>
-                                                                ';
+                                                                ';*/
                                                             }
                                                         }
                                                     }

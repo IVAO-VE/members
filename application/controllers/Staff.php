@@ -83,6 +83,7 @@ class Staff extends CI_Controller
             $dirUPLOAD = FCPATH.'uploads/';
             $dirCHARTS = FCPATH.'uploads/charts/';
             $MyICAO = $_POST['icao'];
+            $MyREGLA = $_POST['regla'];
             $MyPDF = $_FILES['filePDF']['name'];
             $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
             
@@ -92,7 +93,7 @@ class Staff extends CI_Controller
             if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
                 mkdir($dirCHARTS);
             }
-            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'.pdf')){
+            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'_'.$MyREGLA.'.pdf')){
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
                 $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 

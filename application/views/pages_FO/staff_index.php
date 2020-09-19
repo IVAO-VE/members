@@ -183,8 +183,8 @@
                                             <label>Selecciona la regla de navegación.</label>
                                             <select id="regla" name="regla" data-role="select" data-validate="required not=-1">
                                                 <option value="-1" class="d-none"></option>
-                                                <option value="0">I - Navegación por instrumentos</option>
-                                                <option value="1">V - Navegación visual</option>
+                                                <option value="I">I - Navegación por instrumentos</option>
+                                                <option value="V">V - Navegación visual</option>
                                             </select>
                                             <span class="invalid_feedback">Debes de seleccionar una regla!</span>
                                         </div>

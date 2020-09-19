@@ -138,8 +138,31 @@ class MyFunctions
         return $ipaddress;
     }
     /** ***************************************************************************************************************************** **/
-    public function showNOTIFY($xTITLE, $xMESSAGE){
-        echo 'Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {});';
+    public function showNOTIFY($xTITLE, $xMESSAGE, $xTYPE){
+        switch ($xTYPE){ 
+            case 1:
+                $xTYPE_STR = 'cls: "default"';
+            break;
+        
+            case 2:
+                $xTYPE_STR = 'cls: "success"';
+            break;
+        
+            case 3:
+                $xTYPE_STR = 'cls: "info"';
+            break;
+
+            case 4:
+                $xTYPE_STR = 'cls: "alert"';
+            break;
+
+            case 5:
+                $xTYPE_STR = 'cls: "warning"';
+            break;
+
+            
+        }
+        echo 'Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {'.$xTYPE_STR.'});';
     }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

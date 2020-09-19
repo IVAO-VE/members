@@ -67,6 +67,9 @@ class Staff extends CI_Controller
         }
     }
 
+    public function FO_addCharts(){
+
+    }    
 
     public function controllers()
     {

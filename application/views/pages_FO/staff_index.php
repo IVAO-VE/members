@@ -105,7 +105,7 @@
                                                 //Consultando datos de cartas en el directorio
                                                 $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
                                                 while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
-                                                    if( $elemento != "." && $elemento != ".."){ //no es control de directorios
+/*                                                    if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                         if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
                                                             $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                                             $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
@@ -126,7 +126,7 @@
                                                                     <td>xx</td>
                                                                 </tr>
                                                             ';
-                                                        }
+                                                        }*/
                                                     }                                                    
                                                 }                                                
                                             ?>  

@@ -109,7 +109,7 @@
                                                         if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                             if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
                                                                 $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
-                                                                //$MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                                                $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                 //$MyREGLA = array_key_last($MyFILE_PART);
                                                                 /*switch (strtoupper($MyREGLA)){ 
                                                                     case "I": //es una carta por instrumentos

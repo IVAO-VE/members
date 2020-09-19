@@ -69,7 +69,9 @@ class Staff extends CI_Controller
 
     public function FO_addCharts(){
         //$this->phpdebug->debug(strtoupper(end(explode(".", $_FILES['filePDF']['name']))));
-        $MyEXT = strtoupper(end(explode(".", $_FILES['filePDF']['name'])));
+        $MyEXPLODE = explode(".", $_FILES['filePDF']['name']);
+        $MyLAST = end($MyEXPLODE);
+        $MyEXT = strtoupper($MyLAST);
         if($MyEXT != "PDF"){
             $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
                                           'message' => 'El archivo no es PDF válido.', 

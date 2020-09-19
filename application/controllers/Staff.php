@@ -69,7 +69,7 @@ class Staff extends CI_Controller
 
     public function FO_addCharts(){
         $dirUPLOAD = APPPATH.'../uploads/';
-        $dirCHARTS = $dirUPLOAD.'charts/';
+        $dirCHARTS = APPPATH.'charts/';
         $MyICAO = $_POST['icao'];
         $MyPDF = $_FILES['filePDF']['name'];
         $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
@@ -78,27 +78,23 @@ class Staff extends CI_Controller
             mkdir($dirUPLOAD);
             chmod($dirUPLOAD, 0777);
         }
+        chdir($dirUPLOAD);
         if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
             mkdir($dirCHARTS);
             chmod($dirCHARTS, 0777);
         }
+        chdir($dirCHARTS);
+        $this->phpdebug->debug($_FILES['filePDF']['tmp_name']);
+        
+        if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirUPLOAD.$dirCHARTS.strtoupper($MyICAO).'.pdf')){
+            //Problemas al sibir el archivo.
+            $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
 
-        $this->phpdebug->debug($dirCHARTS);
+        }else{
+            //Archivo subido con éxito
+            $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
 
-        $config['upload_path'] = $dirCHARTS;
-        $config['file_name'] = strtoupper($MyICAO).".pdf";
-        $config['allowed_types'] = "pdf";
-        $config['max_size'] = "50000";
-        $config['max_width'] = "2000";
-        $config['max_height'] = "2000";
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload($MyPDF)) {
-            //*** ocurrio un error
-            $data['uploadError'] = $this->upload->display_errors();
-            echo $this->upload->display_errors();
-            //return;
-        }        
+        }
 
         //redirect($_SERVER['HTTP_REFERER']);
     }    

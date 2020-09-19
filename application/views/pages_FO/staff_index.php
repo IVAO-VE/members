@@ -186,7 +186,7 @@
                                                 <option value="0">I - Navegación por instrumentos</option>
                                                 <option value="1">V - Navegación visual</option>
                                             </select>
-                                            <span class="invalid_feedback">Debes de seleccionar un aeropuerto!</span>
+                                            <span class="invalid_feedback">Debes de seleccionar una regla!</span>
                                         </div>
 
 

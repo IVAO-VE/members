@@ -145,7 +145,7 @@
                                 <div class="bg-white p-4 m-2">
                                     <h4>Agregar nueva carta</h4>
 
-                                    <form data-role="validator" action="/FO_addCharts" method="POST" enctype="multipart/form-data">
+                                    <form data-role="validator" action="/staff/FO_addCharts" method="POST" enctype="multipart/form-data">
 
                                         <div class="mt-2 mb-2">
                                             <label>Selecciona el aeropuerto</label>

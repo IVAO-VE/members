@@ -69,12 +69,17 @@ class Staff extends CI_Controller
 
     public function FO_addCharts(){
         $this->phpdebug->debug(APPPATH);
-        $dirCHARTS = APPPATH.'/uploads/charts/';
+        $dirUPLOAD = APPPATH.'../uploads/';
+        $dirCHARTS = $dirUPLOAD.'charts/';
         $MyICAO = $_POST['icao'];
         $MyPDF = $_FILES['filePDF']['name'];
         $this->phpdebug->debug('[DEBUG] -> Añadiendo cata de vuelo para '.$MyICAO);
         
-        if(!is_dir($dirCHARTS)){ //Directorio no existe (hay que crearlo)
+        if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+            mkdir($dirUPLOAD);
+        }
+
+        if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
             mkdir($dirCHARTS);
         }
 

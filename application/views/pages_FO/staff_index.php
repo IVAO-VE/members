@@ -342,15 +342,18 @@ foreach($lista_archivos as $archivo) {
                                                 <label>Selecciona el sistema de simulación.</label>
                                                 <select id="regla" name="regla" data-role="select" data-validate="required not=-1">
                                                     <option value="-1" class="d-none"></option>
-                                                    <option value="I">I - Navegación por instrumentos</option>
-                                                    <option value="V">V - Navegación visual</option>
+                                                    <option value="FS2004">Microsoft Flight Simulator 2004</option>
+                                                    <option value="FSX">Microsoft Flight Simulator X</option>
+                                                    <option value="P3D">Lockheed Martin Prepar3D</option>
+                                                    <option value="XPLANE">X-Plane Flight Simulator</option>
+                                                    <option value="FS2020">Microsoft Flight Simulator 2020</option>
                                                 </select>
                                                 <span class="invalid_feedback">Debes de seleccionar una regla!</span>
                                             </div>
 
 
                                             <div class="row mb-2">
-                                                <label>Archivos a subir (solo ZIP).</label>
+                                                <label>Archivo de escenario a subir (solo ZIP).</label>
                                                 <input 
                                                     id="fileZIP" 
                                                     name="fileZIP" 
@@ -364,7 +367,7 @@ foreach($lista_archivos as $archivo) {
                                                 <span class="invalid_feedback">Debes de cargar un escenario!</span>
                                             </div>
 
-                                            <button class="button primary">Agregar documento</button>
+                                            <button class="button primary">Agregar archivo</button>
                                         </form>
 
 

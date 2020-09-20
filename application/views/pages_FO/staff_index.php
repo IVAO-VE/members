@@ -352,10 +352,10 @@ foreach($lista_archivos as $archivo) {
                                             <div class="row w-25 h-25 mb-2">
                                                 <label>Documento a subir (solo PDF).</label>
                                                 <input 
-                                                    id="filePDF" 
-                                                    name="filePDF" 
+                                                    id="fileZIP" 
+                                                    name="fileZIP" 
                                                     type="file" 
-                                                    accept=".pdf"
+                                                    accept=".zip"
                                                     data-role="file" 
                                                     data-mode="drop" 
                                                     data-button-title="Elija o arrastre el documento" 

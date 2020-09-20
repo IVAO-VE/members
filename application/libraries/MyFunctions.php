@@ -138,7 +138,7 @@ class MyFunctions
         return $ipaddress;
     }
     /** ***************************************************************************************************************************** **/
-    public function showNOTIFY($xTITLE, $xMESSAGE, $xTYPE){
+    public function showNOTIFY($inLOAD, $xTITLE, $xMESSAGE, $xTYPE){
         switch ($xTYPE){ 
             case 1:
                 $xTYPE_STR = 'cls: "default"';
@@ -162,7 +162,18 @@ class MyFunctions
 
             
         }
-        echo 'Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {'.$xTYPE_STR.'});';
+        if($inLOAD == true){
+            echo 'Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {'.$xTYPE_STR.'});';
+        }else{
+            echo '
+                <script type="text/javascript">
+                <!--
+                    Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {'.$xTYPE_STR.'});
+                -->
+                </script>                
+            ';
+        }
+        
     }
     /** ***************************************************************************************************************************** **/
     public function showDIALOG($inLOAD, $xTITLE, $xMESSAGE, $xTYPE){

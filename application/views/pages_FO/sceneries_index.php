@@ -93,7 +93,7 @@
                                     <span class="caption">P3D</span>
                                     <span class="mif-document-file-zip icon"></span>
                                 </button>
-                                <button class="shortcut info outline rounded mt-1">
+                                <button class="shortcut info outline rounded mt-1" disable>
                                     <span class="caption">X-Plane</span>
                                     <span class="mif-document-file-zip icon"></span>
                                 </button>

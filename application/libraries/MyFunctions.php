@@ -204,7 +204,7 @@ class MyFunctions
                 Metro.dialog.create({
                     title: "'.$xTITLE.'",
                     content: "<div>'.$xMESSAGE.'</div>",
-                    closeButton: true, 
+                    closeButton: false, 
                     clsDialog: "'.$xTYPE_STR.'"
                 });        
             ';
@@ -215,7 +215,7 @@ class MyFunctions
                     Metro.dialog.create({
                         title: "'.$xTITLE.'",
                         content: "<div>'.$xMESSAGE.'</div>",
-                        closeButton: true, 
+                        closeButton: false, 
                         clsDialog: "'.$xTYPE_STR.'"
                     });        
                 -->

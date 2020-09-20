@@ -76,9 +76,9 @@
                             </div>
                             <div class="card-content p-2">
                                 <p class="fg-gray">'.$row->name.'</p>
-                                Quisque eget vestibulum nulla. Quisque quis dui quis ex
-                                ultricies efficitur vitae non felis. Phasellus quis nibh
-                                hendrerit...
+                                Quisque '.$row->latitude.' eget '.$row->longitude.' vestibulum nulla.
+                                Quisque '.$row->elevation.' quis dui quis exultricies efficitur vitae non felis.
+                                Phasellus quis nibh hendrerit...
                             </div>
                             <div class="card-footer">
                                 <button class="shortcut info outline rounded mt-1">

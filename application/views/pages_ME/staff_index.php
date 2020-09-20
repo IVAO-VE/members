@@ -141,15 +141,13 @@ $this->load->view("_lib/lib.menu.php");
                                     <div data-role="panel" data-title-caption="Agregar nueva medalla" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                                         <?php echo form_open('staff/addAward'); ?>
                                         <div class="row">
-                                            <div class="cell">
+                                            <div class="cell-3">
                                                 <div class="form-group">
                                                     <label>Corto</label>
                                                     <input type="text" name="short" required>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="cell">
+                                            <div class="cell-9">
                                                 <div class="form-group">
                                                     <label>Nombre</label>
                                                     <input type="text" name="name" required>
@@ -157,11 +155,15 @@ $this->load->view("_lib/lib.menu.php");
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="cell">
+                                            <div class="cell-3">
                                                 <div class="form-group">
                                                     <label>Maximo puntos</label>
-                                                    <input type="text" name="max" required>
+                                                    <input type="number" name="max" required>
                                                 </div>
+                                            </div>
+                                            <div class="cell-9">
+                                                <label>URL Imagen</label>
+                                                <input type="text" name="img" required>
                                             </div>
                                         </div>
                                         <div class="row">

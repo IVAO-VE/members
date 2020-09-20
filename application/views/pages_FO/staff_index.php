@@ -258,7 +258,37 @@
                                                             if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                                 if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
-                                                                    array_push($xARRAY_FILES, $MyFILE_INFO['basename']);
+                                                                    //array_push($xARRAY_FILES, $MyFILE_INFO['basename']);
+                                                                    $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
+                                                                    $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                                                    $MySIM = end($MyFILE_PART);
+                                                                    switch (strtoupper($MySIM)){ 
+                                                                        case "FS2004": //es una carta por instrumentos
+                                                                            $xSIM = "FS2004";
+                                                                        break;
+                                                                        case "FSX": //es una carta visual
+                                                                            $xSIM = "FSX";
+                                                                        break;
+                                                                        case "P3D": //es una carta visual
+                                                                            $xSIM = "Prepar3D";
+                                                                        break;
+                                                                        case "XPLANE": //es una carta visual
+                                                                            $xSIM = "X-Plane";
+                                                                        break;
+                                                                        case "FS2020": //es una carta visual
+                                                                            $xSIM = "FS2020";
+                                                                        break;
+
+                                                                    }
+                                                                    echo '
+                                                                        <tr>
+                                                                            <td>'.$MyFILE_PART[0].'</td>
+                                                                            <td>'.$xSIM.'</td>
+                                                                            <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/sceneries/'.$elemento)).'</td>
+                                                                            <td>xx</td>
+                                                                        </tr>
+                                                                    ';
+
                                                                 }
                                                             }
                                                         }

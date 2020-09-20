@@ -117,36 +117,36 @@ class Staff extends CI_Controller
         $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
         $this->phpdebug->debug($MyEXT);        
-        if($MyEXT != "PDF"){
+        if($MyEXT != "ZIP"){
             $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
-                                          'message' => 'El archivo no es PDF válido.', 
+                                          'message' => 'El archivo no es ZIP válido.', 
                                           'type' => 4);
             $this->load->view('pages_FO/staff_index', $data);
         }else{
             $dirUPLOAD = FCPATH.'uploads/';
-            $dirCHARTS = FCPATH.'uploads/charts/';
+            $dirCHARTS = FCPATH.'uploads/sceneries/';
             $MyICAO = $_POST['icao'];
             $MyREGLA = $_POST['regla'];
             $MyPDF = $_FILES['filePDF']['name'];
-            $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
+            $this->phpdebug->debug('[DEBUG] -> Intentando escenario para '.$MyICAO);
             
             if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
             }
-            if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
+            if(!is_dir($dirCHARTS)){ //Directorio ESCENARIOS no existe (hay que crearlo)
                 mkdir($dirCHARTS);
             }
             if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'_'.$MyREGLA.'.pdf')){
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
-                                            'message' => 'Fallo al intentar registrar ésta carta aérea.', 
+                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
+                                            'message' => 'Fallo al intentar registrar éste escenario.', 
                                             'type' => 4);
             }else{
                 //Archivo subido con éxito
                 $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
-                                            'message' => 'Éxito, carta aérea registrada correctamente.', 
+                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
+                                            'message' => 'Éxito, escenario registrado correctamente.', 
                                             'type' => 2);
             }
             $this->load->view('pages_FO/staff_index', $data);

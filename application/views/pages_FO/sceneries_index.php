@@ -72,7 +72,7 @@
                                     <img src="'.base_url('_include/images/perfiles').'/ve.png">
                                 </div>
             
-                                '.$row["name"].'
+                                '.$row->name.'
                             </div>
                             <div class="card-content p-2">
                                 <p class="fg-gray">Posted on January 21, 2015</p>

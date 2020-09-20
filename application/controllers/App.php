@@ -420,4 +420,21 @@ class App extends CI_Controller
                 }
         }
         /** *************************************************************************/
+
+        /** ************************************************************************
+         *  Funciones de control para actualizar el correo del miembro
+         */
+        public function email_up()
+        {
+                if ($this->session->userdata('vid') != "") {
+                        $MyMAIL = trim($_POST['email']);
+                        $this->db->query('UPDATE members_data SET mail='.$MyMAIL.' WHERE vid='.$this->session->userdata('vid'));
+                        $this->load->view('app/index');
+                } else {
+                        redirect(base_url());
+                }
+        }
+        /** *************************************************************************/
+
+        
 }

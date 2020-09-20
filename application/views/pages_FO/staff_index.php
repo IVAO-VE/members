@@ -123,13 +123,14 @@
                                                                     <tr>
                                                                         <td>'.$MyFILE_PART[0].'</td>
                                                                         <td>'.$xREGLA.'</td>
-                                                                        <td>'.date('d/m/Y H:i:s.', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
+                                                                        <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
                                                                         <td>xx</td>
                                                                     </tr>
                                                                 ';
                                                             }
                                                         }
                                                     }
+                                                    $this->myfunctions->showDIALOG("Control de errores", "mensaje", 5);
                                                 } catch (Exception $e) {
                                                     //Problema detetado
                                                     $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());

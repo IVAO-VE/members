@@ -165,7 +165,7 @@ class MyFunctions
         echo 'Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {'.$xTYPE_STR.'});';
     }
     /** ***************************************************************************************************************************** **/
-    public function showDIALOG($xTITLE, $xMESSAGE, $xTYPE){
+    public function showDIALOG($inLOAD, $xTITLE, $xMESSAGE, $xTYPE){
         switch ($xTYPE){ 
             case 1:
                 $xTYPE_STR = 'primary';
@@ -199,14 +199,29 @@ class MyFunctions
                 $xTYPE_STR = 'info';
             break;
         }
-        echo '
-            Metro.dialog.create({
-                title: "'.$xTITLE.'",
-                content: "<div>'.$xMESSAGE.'</div>",
-                closeButton: true, 
-                clsDialog: "'.$xTYPE_STR.'"
-            });        
-        ';
+        if($inLOAD == true){
+            echo '
+                Metro.dialog.create({
+                    title: "'.$xTITLE.'",
+                    content: "<div>'.$xMESSAGE.'</div>",
+                    closeButton: true, 
+                    clsDialog: "'.$xTYPE_STR.'"
+                });        
+            ';
+        }else{
+            echo '
+                <script type="text/javascript">
+                <!--
+                    Metro.dialog.create({
+                        title: "'.$xTITLE.'",
+                        content: "<div>'.$xMESSAGE.'</div>",
+                        closeButton: true, 
+                        clsDialog: "'.$xTYPE_STR.'"
+                    });        
+                -->
+                </script>                
+            ';
+        }
     }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

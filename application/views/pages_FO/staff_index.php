@@ -222,7 +222,7 @@
                 </div>
                 <div id="sceneries">
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Administración de escenarios virtuales." data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
                         <div class="row">
                                 <div class="cell-md-6">

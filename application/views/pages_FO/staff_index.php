@@ -252,11 +252,11 @@
                                                 <?php
                                                     //Consultando datos de escenarios en el directorio
                                                     try {
-                                                        $dir = opendir(FCPATH.'uploads/sceneries/'); //creamos el objeto directorio
+                                                        /*$dir = opendir(FCPATH.'uploads/sceneries/'); //creamos el objeto directorio
                                                         while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
                                                             if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                                 if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
-                                                                    /*
+                                                                    
                                                                     
 $lista_archivos[0] = 'SVMI_FS2004.zip';
 $lista_archivos[1] = 'SVMI_FS2010.zip';
@@ -297,10 +297,10 @@ foreach($lista_archivos as $archivo) {
                                                                             <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
                                                                             <td>xx</td>
                                                                         </tr>
-                                                                    ';*/
+                                                                    ';
                                                                 }
                                                             }
-                                                        }
+                                                        }*/
                                                     } catch (Exception $e) {
                                                         //Problema detetado
                                                         $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());

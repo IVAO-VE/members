@@ -59,8 +59,9 @@
             }
 
             foreach($xESCENARIOS_J as $MyEscenario) {
-                $this->phpdebug->debug('[DEBUG]: '.$MyEscenario[0]);
-                $query = $this->db->query("SELECT * FROM nav_airports WHERE icao = '".$MyEscenario[0]."'");
+                $xICAO = key($MyEscenario);
+                $this->phpdebug->debug('[DEBUG]: '.$xICAO);
+                $query = $this->db->query("SELECT * FROM nav_airports WHERE icao = '".$xICAO."'");
                 if($row = $query->result()){ //El escenario existe en la base de datos
 
                 }

@@ -37,11 +37,6 @@ window.onload = function() {
     }
 };
 
-function member_addEMAL(){
-    alert("sip 2");
-}
-
-
 -->
 </script>
 

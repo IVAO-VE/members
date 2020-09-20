@@ -227,7 +227,7 @@
                         <div class="row">
                                 <div class="cell-md-6">
 
-                                    <div data-role="panel" data-title-caption="Cartas aéreas existentes" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+                                    <div data-role="panel" data-title-caption="Escenarios existentes" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
                                         <div class="p-4">
                                             <table class="table striped table-border mt-4"
                                                 data-role="table"
@@ -243,7 +243,7 @@
                                                 <thead>
                                                 <tr>
                                                     <th >ICAO</th>
-                                                    <th data-cls-column="fg-green" >REGLA</th>
+                                                    <th data-cls-column="fg-green" >SIM</th>
                                                     <th >FECHA</th>
                                                     <th >OPCIÓN</th>
                                                 </tr>
@@ -252,10 +252,26 @@
                                                 <?php
                                                     //Consultando datos de cartas en el directorio
                                                     try {
-                                                        $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
+                                                        $dir = opendir(FCPATH.'uploads/sceneries/'); //creamos el objeto directorio
                                                         while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
                                                             if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
-                                                                if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
+                                                                if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
+                                                                    /*
+                                                                    
+
+$archivos_juntos=[];
+
+foreach($lista_archivos as $archivo) {
+    //$ext = strstr($archivo, '.');
+    $nom = substr($archivo, 0, strrpos($archivo, '_'));
+    isset($archivos_juntos[$nom]) ? 
+      $archivos_juntos[$nom].= '-'.$archivo 
+      : $archivos_juntos[$nom]=$archivo;
+}
+                                                                    
+                                                                    
+                                                                    
+                                                                    
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MyREGLA = end($MyFILE_PART);
@@ -274,7 +290,7 @@
                                                                             <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
                                                                             <td>xx</td>
                                                                         </tr>
-                                                                    ';
+                                                                    ';*/
                                                                 }
                                                             }
                                                         }

@@ -330,7 +330,7 @@
 
                                             <div class="mt-2 mb-2">
                                                 <label>Selecciona el sistema de simulación.</label>
-                                                <select id="regla" name="regla" data-role="select" data-validate="required not=-1">
+                                                <select id="sim" name="sim" data-role="select" data-validate="required not=-1">
                                                     <option value="-1" class="d-none"></option>
                                                     <option value="FS2004">Microsoft Flight Simulator 2004</option>
                                                     <option value="FSX">Microsoft Flight Simulator X</option>
@@ -338,7 +338,7 @@
                                                     <option value="XPLANE">X-Plane Flight Simulator</option>
                                                     <option value="FS2020">Microsoft Flight Simulator 2020</option>
                                                 </select>
-                                                <span class="invalid_feedback">Debes de seleccionar una regla!</span>
+                                                <span class="invalid_feedback">Debes de seleccionar un simulador!</span>
                                             </div>
 
 

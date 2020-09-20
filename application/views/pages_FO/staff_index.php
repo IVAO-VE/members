@@ -258,7 +258,6 @@
                                                             if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                                 if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
-                                                                    $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MySIM = end($MyFILE_PART);
                                                                     switch (strtoupper($MySIM)){ 

@@ -38,6 +38,7 @@
     <?php
         //Consultando datos de escenarios en el directorio
         try {
+            $xARRAY_FILES = array();
             $dir = opendir(FCPATH.'uploads/sceneries/'); //creamos el objeto directorio
             while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
                 if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios

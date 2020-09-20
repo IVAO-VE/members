@@ -258,7 +258,7 @@
                                                             if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                                 if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
-                                                                    array_push($xARRAY_FILES, $MyFILE_INFO['filename']);
+                                                                    array_push($xARRAY_FILES, $MyFILE_INFO['basename']);
                                                                 }
                                                             }
                                                         }

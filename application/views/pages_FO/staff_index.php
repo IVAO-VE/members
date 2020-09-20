@@ -348,82 +348,22 @@ foreach($lista_archivos as $archivo) {
                                                 <span class="invalid_feedback">Debes de seleccionar una regla!</span>
                                             </div>
 
-                                            <div class="row">
-                                                <div class="mb-2">
-                                                    <label>FS2004.</label>
-                                                    <input 
-                                                        id="fileFS2004" 
-                                                        name="fileFS2004" 
-                                                        type="file" 
-                                                        accept=".zip"
-                                                        data-role="file" 
-                                                        data-mode="drop" 
-                                                        data-button-title="Elija o arrastre el archivo" 
-                                                        data-validate="required not=-1" 
-                                                    >
-                                                    <span class="invalid_feedback">Debes de cargar un escenario!</span>
-                                                </div>
 
-                                                <div class="mb-2">
-                                                    <label>FSX.</label>
-                                                    <input 
-                                                        id="fileFS2004" 
-                                                        name="fileFS2004" 
-                                                        type="file" 
-                                                        accept=".zip"
-                                                        data-role="file" 
-                                                        data-mode="drop" 
-                                                        data-button-title="Elija o arrastre el archivo" 
-                                                        data-validate="required not=-1" 
-                                                    >
-                                                    <span class="invalid_feedback">Debes de cargar un escenario!</span>
-                                                </div>
-
-                                                <div class="mb-2">
-                                                    <label>FSX.</label>
-                                                    <input 
-                                                        id="fileFS2004" 
-                                                        name="fileFS2004" 
-                                                        type="file" 
-                                                        accept=".zip"
-                                                        data-role="file" 
-                                                        data-mode="drop" 
-                                                        data-button-title="Elija o arrastre el archivo" 
-                                                        data-validate="required not=-1" 
-                                                    >
-                                                    <span class="invalid_feedback">Debes de cargar un escenario!</span>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <label>FSX.</label>
-                                                    <input 
-                                                        id="fileFS2004" 
-                                                        name="fileFS2004" 
-                                                        type="file" 
-                                                        accept=".zip"
-                                                        data-role="file" 
-                                                        data-mode="drop" 
-                                                        data-button-title="Elija o arrastre el archivo" 
-                                                        data-validate="required not=-1" 
-                                                    >
-                                                    <span class="invalid_feedback">Debes de cargar un escenario!</span>
-                                                </div>
-                                                <div class="mb-2">
-                                                    <label>FSX.</label>
-                                                    <input 
-                                                        id="fileFS2004" 
-                                                        name="fileFS2004" 
-                                                        type="file" 
-                                                        accept=".zip"
-                                                        data-role="file" 
-                                                        data-mode="drop" 
-                                                        data-button-title="Elija o arrastre el archivo" 
-                                                        data-validate="required not=-1" 
-                                                    >
-                                                    <span class="invalid_feedback">Debes de cargar un escenario!</span>
-                                                </div>
-
-
+                                            <div class="row mb-2">
+                                                <label>Archivos a subir (solo ZIP).</label>
+                                                <input 
+                                                    id="fileZIP" 
+                                                    name="fileZIP" 
+                                                    type="file" 
+                                                    accept=".zip"
+                                                    data-role="file" 
+                                                    data-mode="drop" 
+                                                    data-button-title="Elija o arrastre el archivo" 
+                                                    data-validate="required not=-1" 
+                                                >
+                                                <span class="invalid_feedback">Debes de cargar un escenario!</span>
                                             </div>
+
                                             <button class="button primary">Agregar documento</button>
                                         </form>
 

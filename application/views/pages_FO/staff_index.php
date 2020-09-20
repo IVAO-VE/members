@@ -349,19 +349,32 @@ foreach($lista_archivos as $archivo) {
                                             </div>
 
 
-                                            <div class="row w-20 h-20 mb-2">
-                                                <label>Documento a subir (solo PDF).</label>
+                                            <div class="row mb-2">
+                                                <label>Archivos a subir (solo ZIP).</label>
                                                 <input 
-                                                    id="fileZIP" 
-                                                    name="fileZIP" 
+                                                    id="fileFS2004" 
+                                                    name="fileFS2004" 
                                                     type="file" 
                                                     accept=".zip"
                                                     data-role="file" 
                                                     data-mode="drop" 
-                                                    data-button-title="Elija o arrastre el documento" 
+                                                    data-button-title="Elija o arrastre el archivo" 
                                                     data-validate="required not=-1" 
                                                 >
-                                                <span class="invalid_feedback">Debes de cargar una carta de vuelo!</span>
+
+                                                <input 
+                                                    id="fileFS2004" 
+                                                    name="fileFS2004" 
+                                                    type="file" 
+                                                    accept=".zip"
+                                                    data-role="file" 
+                                                    data-mode="drop" 
+                                                    data-button-title="Elija o arrastre el archivo" 
+                                                    data-validate="required not=-1" 
+                                                >
+
+
+                                                <span class="invalid_feedback">Debes de cargar un escenario!</span>
                                             </div>
 
                                             <button class="button primary">Agregar documento</button>

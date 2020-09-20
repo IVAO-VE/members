@@ -68,9 +68,6 @@ class Staff extends CI_Controller
     }
 
     public function FO_addCharts(){
-        //$this->phpdebug->debug(strtoupper(end(explode(".", $_FILES['filePDF']['name']))));
-        //$MyEXPLODE = explode(".", $_FILES['filePDF']['name']);
-        //$MyLAST = end($MyEXPLODE);
         $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
         $this->phpdebug->debug($MyEXT);        
@@ -111,9 +108,6 @@ class Staff extends CI_Controller
     }    
 
     public function FO_addSceneries(){
-        //$this->phpdebug->debug(strtoupper(end(explode(".", $_FILES['filePDF']['name']))));
-        //$MyEXPLODE = explode(".", $_FILES['filePDF']['name']);
-        //$MyLAST = end($MyEXPLODE);
         $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
         $this->phpdebug->debug($MyEXT);        

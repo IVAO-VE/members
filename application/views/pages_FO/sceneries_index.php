@@ -58,8 +58,8 @@
                   : $xESCENARIOS_J[$nom]=$archivo;
             }
 
-            foreach($xESCENARIOS_J as $MyEscenario) {
-                $xICAO = key($xESCENARIOS_J);
+            foreach($xESCENARIOS_J as $MyEscenario -> $MyArchivos) {
+                $xICAO = $MyEscenario;
                 $this->phpdebug->debug('[DEBUG]: '.$xICAO);
                 $query = $this->db->query("SELECT * FROM nav_airports WHERE icao = '".$xICAO."'");
                 if($row = $query->result()){ //El escenario existe en la base de datos

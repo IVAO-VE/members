@@ -349,7 +349,7 @@ foreach($lista_archivos as $archivo) {
                                             </div>
 
 
-                                            <div class="row w-25 h-25 mb-2">
+                                            <div class="row w-20 h-20 mb-2">
                                                 <label>Documento a subir (solo PDF).</label>
                                                 <input 
                                                     id="fileZIP" 

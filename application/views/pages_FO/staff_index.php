@@ -258,6 +258,16 @@
                                                                 if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
                                                                     /*
                                                                     
+$lista_archivos[0] = 'SVMI_FS2004.zip';
+$lista_archivos[1] = 'SVMI_FS2010.zip';
+$lista_archivos[2] = 'SVMI_FS2020.zip';
+$lista_archivos[3] = 'SVMI_P3D.zip';
+$lista_archivos[4] = 'SVMI_XPLANE.zip';
+$lista_archivos[5] = 'SVMG_FS2004.zip';
+$lista_archivos[6] = 'SVMG_FS2010.zip';
+$lista_archivos[7] = 'SVMG_FS2020.zip';
+$lista_archivos[8] = 'SVMG_P3D.zip';
+$lista_archivos[9] = 'SVMG_XPLANE.zip';
 
 $archivos_juntos=[];
 

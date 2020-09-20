@@ -104,7 +104,7 @@
                                             <?php
                                                 //Consultando datos de cartas en el directorio
                                                 try {
-                                                    $dir = opendir(FCPATH.'uploads/charts/') //creamos el objeto directorio
+                                                    $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
                                                     while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
                                                         if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                             if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo

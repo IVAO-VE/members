@@ -130,18 +130,11 @@
                                                             }
                                                         }
                                                     }
-                                                    $this->myfunctions->showDIALOG("Control de errores", "mensaje", 5);
+                                                    $this->myfunctions->showDIALOG(false, "Control de errores", "mensaje", 5);
                                                 } catch (Exception $e) {
                                                     //Problema detetado
                                                     $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
-                                                    echo '
-                                                        <script type="text/javascript">
-                                                        <!--
-                                                            '.$this->myfunctions->showDIALOG("Control de errores", $e->getMessage(), 5).'
-                                                        -->
-                                                        </script>                
-                                                    ';
-                                
+                                                    $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
                                                 }                                                    
                                             ?>  
 

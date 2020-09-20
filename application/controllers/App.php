@@ -426,12 +426,19 @@ class App extends CI_Controller
          */
         public function email_up()
         {
-                if ($this->session->userdata('vid') != "") {
-                        $MyMAIL = trim($_POST['email']);
-                        $this->db->query('UPDATE members_data SET mail='.$MyMAIL.' WHERE vid='.$this->session->userdata('vid'));
-                        $this->load->view('app/index');
-                } else {
-                        redirect(base_url());
+                try{
+                        if ($this->session->userdata('vid') != "") {
+                                $MyMAIL = trim($_POST['email']);
+                                $this->db->query('UPDATE members_data SET mail='.$MyMAIL.' WHERE vid='.$this->session->userdata('vid'));
+                                $this->load->view('app/index');
+                        } else {
+                                redirect(base_url());
+                        }
+
+                } catch (Exception $e) {
+                    //Problema detetado
+                    $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
+                    $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
                 }
         }
         /** *************************************************************************/

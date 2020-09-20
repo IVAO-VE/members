@@ -18,15 +18,15 @@ $this->load->view("_lib/lib.header.php");
 $this->load->view("_lib/lib.menu.php");
 ?>
 <?php if ($this->session->flashdata('info')) : ?>
-        <div class="remark primary">
-            <?php echo $this->session->flashdata('info'); ?>
-        </div>
-    <?php endif; ?>
-    <?php if ($this->session->flashdata('error')) : ?>
-        <div class="remark primary">
-            <?php echo $this->session->flashdata('error'); ?>
-        </div>
-    <?php endif; ?>
+    <div class="remark primary">
+        <?php echo $this->session->flashdata('info'); ?>
+    </div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('error')) : ?>
+    <div class="remark primary">
+        <?php echo $this->session->flashdata('error'); ?>
+    </div>
+<?php endif; ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto06_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
@@ -120,7 +120,7 @@ $this->load->view("_lib/lib.menu.php");
                                                             <td><?php echo $row->name; ?></td>
                                                             <td><?php echo $row->max; ?></td>
                                                             <td>
-                                                            <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                                <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php
@@ -141,15 +141,13 @@ $this->load->view("_lib/lib.menu.php");
                                     <div data-role="panel" data-title-caption="Agregar nueva medalla" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                                         <?php echo form_open('staff/addAward'); ?>
                                         <div class="row">
-                                            <div class="cell">
+                                            <div class="cell-3">
                                                 <div class="form-group">
                                                     <label>Corto</label>
                                                     <input type="text" name="short" required>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="cell">
+                                            <div class="cell-9">
                                                 <div class="form-group">
                                                     <label>Nombre</label>
                                                     <input type="text" name="name" required>
@@ -157,11 +155,15 @@ $this->load->view("_lib/lib.menu.php");
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="cell">
+                                            <div class="cell-3">
                                                 <div class="form-group">
                                                     <label>Maximo puntos</label>
-                                                    <input type="text" name="max" required>
+                                                    <input type="text" name="max" required data-role="spinner" data-cls-spinner-value="text-bold bg-cyan fg-white" data-cls-spinner-button="info" data-plus-icon="<span class='mif-plus fg-white'></span>" data-minus-icon="<span class='mif-minus fg-white'></span>">
                                                 </div>
+                                            </div>
+                                            <div class="cell-9">
+                                                <label>URL Imagen</label>
+                                                <input type="text" name="img" required>
                                             </div>
                                         </div>
                                         <div class="row">

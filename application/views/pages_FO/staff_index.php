@@ -263,6 +263,9 @@
                                                             }
                                                         }
                                                         $this->phpdebug->debug('[DEBUG] -> '.print_r($xARRAY_FILES));
+                                                    
+                                                    
+                                                    
                                                     } catch (Exception $e) {
                                                         //Problema detetado
                                                         $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());

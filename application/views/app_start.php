@@ -28,7 +28,7 @@ window.onload = function() {
     var member_emal = '<?php echo $row_member->mail; ?>';
     if(member_emal == ''){
         Metro.infobox.create(
-            "<h3><?php echo $this->session->userdata('fullname'); ?></h3><p>El sistema solicita que confirmes tu correo electrónico oficial, éste paso es necesario para asegurar una buena comunicación</p></br><label>Ingresa tu correo oficial</label><form id='mail_form' action='/app/email_up' data-role='validator'><input type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span><button id='cmdMAIL' class='button mt-2'>Confirmar</button></form>",
+            "<h3><?php echo $this->session->userdata('fullname'); ?></h3><p>El sistema solicita que confirmes tu correo electrónico oficial, éste paso es necesario para asegurar una buena comunicación</p></br><label>Ingresa tu correo oficial</label><form id='mail_form' action='/app/email_up' data-role='validator'><input name='email' id='email' type='text' data-validate='email'><span class='invalid_feedback'>Debes de introducir un correo válido</span><button id='cmdMAIL' class='button mt-2'>Confirmar</button></form>",
             "info",
             {
                 closeButton: true //hay que cambiar a false para que sea mandatorio

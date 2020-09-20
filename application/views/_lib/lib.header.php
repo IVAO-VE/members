@@ -32,6 +32,8 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
     <!-- FontAwesome-->
     <script src="https://use.fontawesome.com/6a6ba32d23.js"></script>
 
+    <script src="<?php echo base_url('_include/vendors/jquery/jquery-3.4.1.min.js'); ?>"></script>
+    <script src="<?php echo base_url('_include/vendors/metro4/js/metro.js?ver=@@b-version'); ?>"></script>
 
 
     <title>IVAO Venezuela | <?php echo $this->lang->line('membersarea'); ?></title>

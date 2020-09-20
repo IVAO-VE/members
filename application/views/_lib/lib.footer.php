@@ -20,8 +20,6 @@
 
 
 <!-- jQuery first, then Metro UI JS -->
-<script src="<?php echo base_url('_include/vendors/jquery/jquery-3.4.1.min.js'); ?>"></script>
-<script src="<?php echo base_url('_include/vendors/metro4/js/metro.js?ver=@@b-version'); ?>"></script>
 <script src="<?php echo base_url('_include/js/charts.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/chartjs/Chart.bundle.min.js'); ?>"></script>
 <script src="<?php echo base_url('_include/vendors/qrcode/qrcode.min.js'); ?>"></script>

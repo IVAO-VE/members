@@ -269,9 +269,6 @@ foreach($lista_archivos as $archivo) {
       : $archivos_juntos[$nom]=$archivo;
 }
                                                                     
-                                                                    
-                                                                    
-                                                                    
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MyREGLA = end($MyFILE_PART);

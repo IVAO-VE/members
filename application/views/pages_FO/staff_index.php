@@ -339,7 +339,7 @@ foreach($lista_archivos as $archivo) {
                                             </div>
 
                                             <div class="mt-2 mb-2">
-                                                <label>Selecciona la regla de navegación.</label>
+                                                <label>Selecciona el sistema de simulación.</label>
                                                 <select id="regla" name="regla" data-role="select" data-validate="required not=-1">
                                                     <option value="-1" class="d-none"></option>
                                                     <option value="I">I - Navegación por instrumentos</option>

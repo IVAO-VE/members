@@ -26,7 +26,7 @@
         <?php
             if(isset($showNOTIFY)){
                 foreach ($showNOTIFY as $xNOTIFY) {
-                    $this->myfunctions->showNOTIFY($xNOTIFY['message'], $xNOTIFY['title'], $xNOTIFY['type']);
+                    $this->myfunctions->showNOTIFY(true, $xNOTIFY['message'], $xNOTIFY['title'], $xNOTIFY['type']);
                 }        
             }
         ?>

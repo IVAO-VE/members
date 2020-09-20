@@ -252,55 +252,17 @@
                                                 <?php
                                                     //Consultando datos de escenarios en el directorio
                                                     try {
-                                                        /*$dir = opendir(FCPATH.'uploads/sceneries/'); //creamos el objeto directorio
+                                                        $xARRAY_FILES = array();
+                                                        $dir = opendir(FCPATH.'uploads/sceneries/'); //creamos el objeto directorio
                                                         while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
                                                             if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                                 if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
-                                                                    
-                                                                    
-$lista_archivos[0] = 'SVMI_FS2004.zip';
-$lista_archivos[1] = 'SVMI_FS2010.zip';
-$lista_archivos[2] = 'SVMI_FS2020.zip';
-$lista_archivos[3] = 'SVMI_P3D.zip';
-$lista_archivos[4] = 'SVMI_XPLANE.zip';
-$lista_archivos[5] = 'SVMG_FS2004.zip';
-$lista_archivos[6] = 'SVMG_FS2010.zip';
-$lista_archivos[7] = 'SVMG_FS2020.zip';
-$lista_archivos[8] = 'SVMG_P3D.zip';
-$lista_archivos[9] = 'SVMG_XPLANE.zip';
-
-$archivos_juntos=[];
-
-foreach($lista_archivos as $archivo) {
-    //$ext = strstr($archivo, '.');
-    $nom = substr($archivo, 0, strrpos($archivo, '_'));
-    isset($archivos_juntos[$nom]) ? 
-      $archivos_juntos[$nom].= '-'.$archivo 
-      : $archivos_juntos[$nom]=$archivo;
-}
-                                                                    
-                                                                    $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
-                                                                    $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
-                                                                    $MyREGLA = end($MyFILE_PART);
-                                                                    switch (strtoupper($MyREGLA)){ 
-                                                                        case "I": //es una carta por instrumentos
-                                                                            $xREGLA = "Instrumental";
-                                                                        break;
-                                                                        case "V": //es una carta visual
-                                                                            $xREGLA = "Visual";
-                                                                        break;
-                                                                    }
-                                                                    echo '
-                                                                        <tr>
-                                                                            <td>'.$MyFILE_PART[0].'</td>
-                                                                            <td>'.$xREGLA.'</td>
-                                                                            <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
-                                                                            <td>xx</td>
-                                                                        </tr>
-                                                                    ';
+                                                                    $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
+                                                                    array_push($xARRAY_FILES, $MyFILE_INFO['filename']);
                                                                 }
                                                             }
-                                                        }*/
+                                                        }
+                                                        $this->phpdebug->debug('[DEBUG] -> '.print_r($xARRAY_FILES));
                                                     } catch (Exception $e) {
                                                         //Problema detetado
                                                         $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());

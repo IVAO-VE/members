@@ -258,7 +258,6 @@
                                                             if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
                                                                 if(!is_dir(FCPATH.'uploads/sceneries/'.$elemento)){ //es un archivo
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
-                                                                    //array_push($xARRAY_FILES, $MyFILE_INFO['basename']);
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/sceneries/'.$elemento);
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MySIM = end($MyFILE_PART);
@@ -292,10 +291,6 @@
                                                                 }
                                                             }
                                                         }
-                                                        $this->phpdebug->debug('[DEBUG] -> '.print_r($xARRAY_FILES));
-                                                    
-                                                    
-                                                    
                                                     } catch (Exception $e) {
                                                         //Problema detetado
                                                         $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());

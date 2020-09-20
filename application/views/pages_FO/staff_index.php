@@ -250,7 +250,7 @@
                                                 </thead>
                                                 <tbody>
                                                 <?php
-                                                    //Consultando datos de cartas en el directorio
+                                                    //Consultando datos de escenarios en el directorio
                                                     try {
                                                         $dir = opendir(FCPATH.'uploads/sceneries/'); //creamos el objeto directorio
                                                         while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
@@ -320,9 +320,9 @@ foreach($lista_archivos as $archivo) {
 
                                 <div class="cell-md-6">
                                     <div class="bg-white p-4 m-2">
-                                        <h4>Agregar ó actualizar cartas aéreas</h4>
+                                        <h4>Agregar ó actualizar escenarios</h4>
 
-                                        <form data-role="validator" action="/staff/FO_addCharts" method="POST" enctype="multipart/form-data">
+                                        <form data-role="validator" action="/staff/FO_addSceneries" method="POST" enctype="multipart/form-data">
 
                                             <div class="mt-2 mb-2">
                                                 <label>Selecciona el aeropuerto.</label>

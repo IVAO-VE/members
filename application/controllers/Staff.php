@@ -110,6 +110,49 @@ class Staff extends CI_Controller
         }
     }    
 
+    public function FO_addSceneries(){
+        //$this->phpdebug->debug(strtoupper(end(explode(".", $_FILES['filePDF']['name']))));
+        //$MyEXPLODE = explode(".", $_FILES['filePDF']['name']);
+        //$MyLAST = end($MyEXPLODE);
+        $MyFILE = pathinfo($_FILES['filePDF']['name']);
+        $MyEXT = strtoupper($MyFILE['extension']);
+        $this->phpdebug->debug($MyEXT);        
+        if($MyEXT != "PDF"){
+            $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
+                                          'message' => 'El archivo no es PDF válido.', 
+                                          'type' => 4);
+            $this->load->view('pages_FO/staff_index', $data);
+        }else{
+            $dirUPLOAD = FCPATH.'uploads/';
+            $dirCHARTS = FCPATH.'uploads/charts/';
+            $MyICAO = $_POST['icao'];
+            $MyREGLA = $_POST['regla'];
+            $MyPDF = $_FILES['filePDF']['name'];
+            $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
+            
+            if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+                mkdir($dirUPLOAD);
+            }
+            if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
+                mkdir($dirCHARTS);
+            }
+            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'_'.$MyREGLA.'.pdf')){
+                //Problemas al sibir el archivo.
+                $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
+                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
+                                            'message' => 'Fallo al intentar registrar ésta carta aérea.', 
+                                            'type' => 4);
+            }else{
+                //Archivo subido con éxito
+                $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
+                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
+                                            'message' => 'Éxito, carta aérea registrada correctamente.', 
+                                            'type' => 2);
+            }
+            $this->load->view('pages_FO/staff_index', $data);
+        }
+    }    
+    
     public function controllers()
     {
         //Consultado con la DB

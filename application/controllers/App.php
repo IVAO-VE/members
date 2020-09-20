@@ -429,7 +429,7 @@ class App extends CI_Controller
                 try{
                         if ($this->session->userdata('vid') != "") {
                                 $MyMAIL = trim($_POST['email']);
-                                $this->db->query('UPDATE members_data SET mail='.$MyMAIL.' WHERE vid='.$this->session->userdata('vid'));
+                                $this->db->query('UPDATE members_data SET mail="'.$MyMAIL.'" WHERE vid='.$this->session->userdata('vid'));
                                 $this->load->view('app/index');
                         } else {
                                 redirect(base_url());

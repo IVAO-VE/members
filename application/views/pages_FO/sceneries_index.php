@@ -63,7 +63,47 @@
                 $this->phpdebug->debug('[DEBUG]: '.$xICAO[$i]);
                 $query = $this->db->query('SELECT * FROM nav_airports WHERE icao = "'.$xICAO[$i].'"');
                 if($row = $query->result()){ //El escenario existe en la base de datos
-
+                    echo '
+                        <div class="cell-lg-4">
+                        <div class="card image-header">
+                            <div class="card-header fg-white" style="background-image: url('.base_url('_include/images/scenery')."/".rand(0, 30).'.jpg)">
+            
+                                <div class="avatar">
+                                    <img src="'.base_url('_include/images/perfiles').'/ve.png">
+                                </div>
+            
+                                '.$row["name"].'
+                            </div>
+                            <div class="card-content p-2">
+                                <p class="fg-gray">Posted on January 21, 2015</p>
+                                Quisque eget vestibulum nulla. Quisque quis dui quis ex
+                                ultricies efficitur vitae non felis. Phasellus quis nibh
+                                hendrerit...
+                            </div>
+                            <div class="card-footer">
+                                <button class="shortcut info outline rounded mt-1">
+                                    <span class="caption">FS2004</span>
+                                    <span class="mif-document-file-zip icon"></span>
+                                </button>
+                                <button class="shortcut info outline rounded mt-1">
+                                    <span class="caption">FSX</span>
+                                    <span class="mif-document-file-zip icon"></span>
+                                </button>
+                                <button class="shortcut info outline rounded mt-1">
+                                    <span class="caption">Prepar3D</span>
+                                    <span class="mif-document-file-zip icon"></span>
+                                </button>
+                                <button class="shortcut info outline rounded mt-1">
+                                    <span class="caption">X-Plane</span>
+                                    <span class="mif-document-file-zip icon"></span>
+                                </button>
+                                <button class="shortcut info outline rounded mt-1">
+                                    <span class="caption">FS2020</span>
+                                    <span class="mif-document-file-zip icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>';
                 }
             }
 
@@ -79,51 +119,6 @@
             $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
         }                                                    
     ?>  
-
-
-
-
-
-        <div class="cell-lg-4">
-            <div class="card image-header">
-                <div class="card-header fg-white" style="background-image: url(<?php echo base_url('_include/images/scenery')."/".rand(0, 30).".jpg"; ?>)">
-
-                    <div class="avatar">
-                        <img src="<?php echo base_url('_include/images/perfiles')."/ve.png"; ?>">
-                    </div>
-
-                    Journey To Mountains
-                </div>
-                <div class="card-content p-2">
-                    <p class="fg-gray">Posted on January 21, 2015</p>
-                    Quisque eget vestibulum nulla. Quisque quis dui quis ex
-                    ultricies efficitur vitae non felis. Phasellus quis nibh
-                    hendrerit...
-                </div>
-                <div class="card-footer">
-                    <button class="shortcut info outline rounded mt-1">
-                        <span class="caption">FS2004</span>
-                        <span class="mif-document-file-zip icon"></span>
-                    </button>
-                    <button class="shortcut info outline rounded mt-1">
-                        <span class="caption">FSX</span>
-                        <span class="mif-document-file-zip icon"></span>
-                    </button>
-                    <button class="shortcut info outline rounded mt-1">
-                        <span class="caption">Prepar3D</span>
-                        <span class="mif-document-file-zip icon"></span>
-                    </button>
-                    <button class="shortcut info outline rounded mt-1">
-                        <span class="caption">X-Plane</span>
-                        <span class="mif-document-file-zip icon"></span>
-                    </button>
-                    <button class="shortcut info outline rounded mt-1">
-                        <span class="caption">FS2020</span>
-                        <span class="mif-document-file-zip icon"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
 
 </div>
 

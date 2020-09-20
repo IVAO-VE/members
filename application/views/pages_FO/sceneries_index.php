@@ -72,10 +72,10 @@
                                     <img src="'.base_url('_include/images/perfiles').'/ve.png">
                                 </div>
             
-                                '.$row->name.'
+                                '.$row->icao.'
                             </div>
                             <div class="card-content p-2">
-                                <p class="fg-gray">Posted on January 21, 2015</p>
+                                <p class="fg-gray">'.$row->name.'</p>
                                 Quisque eget vestibulum nulla. Quisque quis dui quis ex
                                 ultricies efficitur vitae non felis. Phasellus quis nibh
                                 hendrerit...

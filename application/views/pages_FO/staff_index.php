@@ -224,8 +224,136 @@
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
-                    </div>
-                    <br>
+                        <div class="row">
+                                <div class="cell-md-6">
+
+                                    <div data-role="panel" data-title-caption="Cartas aéreas existentes" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+                                        <div class="p-4">
+                                            <table class="table striped table-border mt-4"
+                                                data-role="table"
+                                                data-cls-table-top="row"
+                                                data-cls-search="cell-md-6"
+                                                data-cls-rows-count="cell-md-6"
+                                                data-rows="5"
+                                                data-rows-steps="5, 10"
+                                                data-show-activity="false"
+                                                data-horizontal-scroll="true"
+                                            >
+
+                                                <thead>
+                                                <tr>
+                                                    <th >ICAO</th>
+                                                    <th data-cls-column="fg-green" >REGLA</th>
+                                                    <th >FECHA</th>
+                                                    <th >OPCIÓN</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                    //Consultando datos de cartas en el directorio
+                                                    try {
+                                                        $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
+                                                        while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
+                                                            if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
+                                                                if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
+                                                                    $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
+                                                                    $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                                                    $MyREGLA = end($MyFILE_PART);
+                                                                    switch (strtoupper($MyREGLA)){ 
+                                                                        case "I": //es una carta por instrumentos
+                                                                            $xREGLA = "Instrumental";
+                                                                        break;
+                                                                        case "V": //es una carta visual
+                                                                            $xREGLA = "Visual";
+                                                                        break;
+                                                                    }
+                                                                    echo '
+                                                                        <tr>
+                                                                            <td>'.$MyFILE_PART[0].'</td>
+                                                                            <td>'.$xREGLA.'</td>
+                                                                            <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
+                                                                            <td>xx</td>
+                                                                        </tr>
+                                                                    ';
+                                                                }
+                                                            }
+                                                        }
+                                                    } catch (Exception $e) {
+                                                        //Problema detetado
+                                                        $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
+                                                        $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
+                                                    }                                                    
+                                                ?>  
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                
+                                </div>
+
+                                <div class="cell-md-6">
+                                    <div class="bg-white p-4 m-2">
+                                        <h4>Agregar ó actualizar cartas aéreas</h4>
+
+                                        <form data-role="validator" action="/staff/FO_addCharts" method="POST" enctype="multipart/form-data">
+
+                                            <div class="mt-2 mb-2">
+                                                <label>Selecciona el aeropuerto.</label>
+                                                <select id="icao" name="icao" data-role="select" data-validate="required not=-1">
+                                                    <option value="-1" class="d-none"></option>
+                                                    <?php
+                                                        $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
+                                                        foreach ($query->result() as $row) {
+                                                            echo '<option value="'.$row->icao.'">'.$row->icao.' - '.$row->name.'</option>';
+                                                        }
+                                                    ?>
+                                                </select>
+                                                <span class="invalid_feedback">Debes de seleccionar un aeropuerto!</span>
+                                            </div>
+
+                                            <div class="mt-2 mb-2">
+                                                <label>Selecciona la regla de navegación.</label>
+                                                <select id="regla" name="regla" data-role="select" data-validate="required not=-1">
+                                                    <option value="-1" class="d-none"></option>
+                                                    <option value="I">I - Navegación por instrumentos</option>
+                                                    <option value="V">V - Navegación visual</option>
+                                                </select>
+                                                <span class="invalid_feedback">Debes de seleccionar una regla!</span>
+                                            </div>
+
+
+                                            <div class="row mb-2">
+                                                <label>Documento a subir (solo PDF).</label>
+                                                <input 
+                                                    id="filePDF" 
+                                                    name="filePDF" 
+                                                    type="file" 
+                                                    accept=".pdf"
+                                                    data-role="file" 
+                                                    data-mode="drop" 
+                                                    data-button-title="Elija o arrastre el documento" 
+                                                    data-validate="required not=-1" 
+                                                >
+                                                <span class="invalid_feedback">Debes de cargar una carta de vuelo!</span>
+                                            </div>
+
+                                            <button class="button primary">Agregar documento</button>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
                 </div>
                 <div id="notams">
                     <br>

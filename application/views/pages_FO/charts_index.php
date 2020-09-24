@@ -38,6 +38,63 @@
             <div class="bg-white p-4">
                 <div>
                     <?php
+                        //Consultando datos de cartas en el directorio
+                        try {
+                            $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
+                            while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
+                                if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
+                                    if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
+                                        $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
+                                        $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                        $MyREGLA = end($MyFILE_PART);
+                                        switch (strtoupper($MyREGLA)){ 
+                                            case "I": //es una carta por instrumentos
+                                                $xREGLA = "Instrumental";
+                                            break;
+                                            case "V": //es una carta visual
+                                                $xREGLA = "Visual";
+                                            break;
+                                        }
+                                        echo '
+                                            <tr>
+                                                <td>'.$MyFILE_PART[0].'</td>
+                                                <td>'.$xREGLA.'</td>
+                                                <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
+                                                <td>xx</td>
+                                            </tr>
+                                        ';
+                                    }
+                                }
+                            }
+                        } catch (Exception $e) {
+                            //Problema detetado
+                            $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
+                            $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
+                        }                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
                         foreach ($query->result() as $row) {
                             echo '<button class="shortcut info outline rounded mt-2 mr-2">

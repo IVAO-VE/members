@@ -71,6 +71,7 @@
                                     $this->lang->line('sceneries_descrip05')."\n";
                                     
                                     $pistas = $this->db->query('SELECT * FROM nav_runways WHERE icao = "'.$xICAO[$i].'"');
+                                    $this->phpdebug->debug('[DEBUG]: '.count($pistas->result()));
                                     $strDESCRIP += $this->lang->line('sceneries_descrip06').count($pistas->result()).$this->lang->line('sceneries_descrip07');
                                     foreach ($pistas->result() as $pista){
                                         $strDESCRIP +=  $this->lang->line('sceneries_descrip08').$pista->runway.
@@ -106,7 +107,6 @@
                             for($j = 0; $j < count($arr_files); $j++){
                                 $file_parts = pathinfo($arr_files[$j]);
                                 $name_parts = explode("_",$file_parts['filename']);
-                                $this->phpdebug->debug('[DEBUG]: '.$name_parts[1]);
                                 switch (strtoupper($name_parts[1])){ 
                                     case "FS2004":
                                         echo '

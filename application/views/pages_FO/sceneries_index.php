@@ -73,13 +73,18 @@
                                     $pistas = $this->db->query('SELECT * FROM nav_runways WHERE icao = "'.$xICAO[$i].'"');
                                     $strDESCRIP += $this->lang->line('sceneries_descrip06').count($pistas).$this->lang->line('sceneries_descrip07');
                                     foreach ($pistas->result() as $pista){
-                                        $strDESCRIP += $this->lang->line('sceneries_descrip06').count($pistas);
+                                        $strDESCRIP +=  $this->lang->line('sceneries_descrip08').$pista->runway.
+                                                        $this->lang->line('sceneries_descrip09').$pista->size_meters.
+                                                        $this->lang->line('sceneries_descrip10').$pista->heading.
+                                                        $this->lang->line('sceneries_descrip11');
+                                        if($pista->ils_frecuency != ""){ //Tiene soporte para ILS
+                                            $strDESCRIP +=  $this->lang->line('sceneries_descrip12').$pista->ils_frecuency.
+                                                            $this->lang->line('sceneries_descrip13').$pista->ils_headind.
+                                                            $this->lang->line('sceneries_descrip14');
+                                        }else{ //No tiene ILS
+                                            $strDESCRIP +=  ".";
+                                        }
                                     }
-                                    $this->lang->line('');
-                                    
-                                    $this->lang->line('')..
-
-
                     echo '
                         <div class="cell-lg-4">
                         <div class="card image-header">

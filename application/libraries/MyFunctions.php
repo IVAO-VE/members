@@ -238,31 +238,31 @@ class MyFunctions
     public function get_simulator($PARAM_simulator){
         switch($PARAM_simulator){
             case '0':
-                $Simulator = 'Desconocido';
+                $Simulador = 'Desconocido';
             break;
             case '1':
-                $Simulator = 'Microsoft Flight Simulator 95';
+                $Simulador = 'Microsoft Flight Simulator 95';
             break;
             case '2':
-                $Simulator = 'Microsoft Flight Simulator 98';
+                $Simulador = 'Microsoft Flight Simulator 98';
             break;
             case '3':
-                $Simulator = 'Microsoft Combat Flight Simulator';
+                $Simulador = 'Microsoft Combat Flight Simulator';
             break;
             case '4':
-                $Simulator = 'Microsoft Flight Simulator 2000';
+                $Simulador = 'Microsoft Flight Simulator 2000';
             break;
             case '5':
-                $Simulator = 'Microsoft Combat Flight Simulator 2';
+                $Simulador = 'Microsoft Combat Flight Simulator 2';
             break;
             case '6':
-                $Simulator = 'Microsoft Flight Simulator 2002';
+                $Simulador = 'Microsoft Flight Simulator 2002';
             break;
             case '40':
-                $Simulator = 'Microsoft Flight Simulator 2020';
+                $Simulador = 'Microsoft Flight Simulator 2020';
             break;
 
-            echo $Simulator;
+            echo $Simulador;
         }
     }
     /** ***************************************************************************************************************************** **/

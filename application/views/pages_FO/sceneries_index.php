@@ -109,46 +109,52 @@
                                 switch (strtoupper($name_parts[1])){ 
                                     case "FS2004":
                                         echo '
+                                        <a href="https://google.com" class="btn btn-primary">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">FS2004</span>
                                                 <span class="mif-document-file-zip icon"></span>
-                                            </button>';
+                                            </button>
+                                        </a>';
                                     break;
                                 
                                     case "FSX":
                                         echo '
+                                        <a href="https://google.com" class="btn btn-primary">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">FSX</span>
                                                 <span class="mif-document-file-zip icon"></span>
                                             </button>
-                                        ';
+                                        </a>';
                                     break;
                                 
                                     case "P3D":
                                         echo '
+                                        <a href="https://google.com" class="btn btn-primary">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">P3D</span>
                                                 <span class="mif-document-file-zip icon"></span>
                                             </button>
-                                        ';
+                                        </a>';
                                     break;
 
                                     case "XPLANE":
                                         echo '
+                                        <a href="https://google.com" class="btn btn-primary">
                                             <button class="disable shortcut info outline rounded mt-1">
                                                 <span class="caption">X-Plane</span>
                                                 <span class="mif-document-file-zip icon"></span>
                                             </button>
-                                        ';
+                                        </a>';
                                     break;
 
                                     case "FS2020":
                                         echo '
+                                        <a href="https://google.com" class="btn btn-primary">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">FS2020</span>
                                                 <span class="mif-document-file-zip icon"></span>
                                             </button>
-                                        ';
+                                        </a>';
                                     break;
                                 }                                
                             }

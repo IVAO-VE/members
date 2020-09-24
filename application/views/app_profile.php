@@ -193,7 +193,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                             <td><?php echo $FLrul ?></td>
                                             <td><?php echo $flight->fl_departure ?></td>
                                             <td><?php echo $flight->fl_destination ?></td>
-                                            <td><?php echo $this->myfunctions->get_simulator($simulator) ?></td>
+                                            <td><?php echo $simulator ?></td>
                                         </tr>
                                     <?php
                                     }

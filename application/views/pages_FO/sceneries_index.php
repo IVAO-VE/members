@@ -60,9 +60,31 @@
 
             $xICAO = array_keys($xESCENARIOS_J);
             for($i = 0; $i < count($xESCENARIOS_J); $i++) {
-                $this->phpdebug->debug('[DEBUG]: '.$xICAO[$i]);
+                //$this->phpdebug->debug('[DEBUG]: '.$xICAO[$i]);
                 $query = $this->db->query('SELECT * FROM nav_airports WHERE icao = "'.$xICAO[$i].'"');
+                
                 foreach ($query->result() as $row){ //El escenario existe en la base de datos
+                    $strDESCRIP =   $this->lang->line('sceneries_descrip01').ucwords($row->name).
+                                    $this->lang->line('sceneries_descrip02').$row->latitude.
+                                    $this->lang->line('sceneries_descrip03').$row->longitude.
+                                    $this->lang->line('sceneries_descrip04').$row->elevation.
+                                    $this->lang->line('sceneries_descrip05')."\n";
+                                    $pistas = $this->db->query('SELECT * FROM nav_runways WHERE icao = "'.$xICAO[$i].'"');
+                                    $contador = count($pistas->result_array());
+                                    $strDESCRIP .= $this->lang->line('sceneries_descrip06').$contador.$this->lang->line('sceneries_descrip07');
+                                    foreach ($pistas->result() as $pista){
+                                        $strDESCRIP .=  $this->lang->line('sceneries_descrip08').$pista->runway.
+                                                        $this->lang->line('sceneries_descrip09').$pista->size_meters.
+                                                        $this->lang->line('sceneries_descrip10').$pista->heading.
+                                                        $this->lang->line('sceneries_descrip11');
+                                        if($pista->ils_frecuency != ""){ //Tiene soporte para ILS
+                                            $strDESCRIP .=  $this->lang->line('sceneries_descrip12').$pista->ils_frecuency.
+                                                            $this->lang->line('sceneries_descrip13').$pista->ils_headind.
+                                                            $this->lang->line('sceneries_descrip14');
+                                        }else{ //No tiene ILS
+                                            $strDESCRIP .=  ".";
+                                        }
+                                    }
                     echo '
                         <div class="cell-lg-4">
                         <div class="card image-header">
@@ -75,32 +97,69 @@
                                 '.$row->icao.'
                             </div>
                             <div class="card-content p-2">
-                                <p class="fg-gray">'.$row->name.'</p>
-                                Quisque '.$row->latitude.' eget '.$row->longitude.' vestibulum nulla.
-                                Quisque '.$row->elevation.' quis dui quis exultricies efficitur vitae non felis.
-                                Phasellus quis nibh hendrerit...
+                                <p class="fg-gray">'.ucwords($row->name).'</p>
+                                '.$strDESCRIP.'
                             </div>
-                            <div class="card-footer">
-                                <button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">FS2004</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">FSX</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">P3D</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="disable shortcut info outline rounded mt-1">
-                                    <span class="caption">X-Plane</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">FS2020</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
+                            <div class="card-footer">';
+                            
+                            $arr_files = explode("-", $xESCENARIOS_J[$xICAO[$i]]);
+                            for($j = 0; $j < count($arr_files); $j++){
+                                $file_parts = pathinfo($arr_files[$j]);
+                                $file_name = $file_parts['basename'];
+                                $name_parts = explode("_",$file_parts['filename']);
+                                switch (strtoupper($name_parts[1])){ 
+                                    case "FS2004":
+                                        echo '
+                                        <a href="/uploads/sceneries/'.$file_name.'">
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">FS2004</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        </a>';
+                                    break;
+                                
+                                    case "FSX":
+                                        echo '
+                                        <a href="/uploads/sceneries/'.$file_name.'">
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">FSX</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        </a>';
+                                    break;
+                                
+                                    case "P3D":
+                                        echo '
+                                        <a href="/uploads/sceneries/'.$file_name.'">
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">P3D</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        </a>';
+                                    break;
+
+                                    case "XPLANE":
+                                        echo '
+                                        <a href="/uploads/sceneries/'.$file_name.'">
+                                            <button class="disable shortcut info outline rounded mt-1">
+                                                <span class="caption">X-Plane</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        </a>';
+                                    break;
+
+                                    case "FS2020":
+                                        echo '
+                                        <a href="/uploads/sceneries/'.$file_name.'">
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">FS2020</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        </a>';
+                                    break;
+                                }                                
+                            }
+                            echo '
                             </div>
                         </div>
                     </div>';

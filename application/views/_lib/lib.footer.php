@@ -19,13 +19,6 @@
 </div>
 
 
-<!-- jQuery first, then Metro UI JS -->
-<script src="<?php echo base_url('_include/js/charts.js'); ?>"></script>
-<script src="<?php echo base_url('_include/vendors/chartjs/Chart.bundle.min.js'); ?>"></script>
-<script src="<?php echo base_url('_include/vendors/qrcode/qrcode.min.js'); ?>"></script>
-<script src="<?php echo base_url('_include/vendors/jsbarcode/JsBarcode.all.min.js'); ?>"></script>
-<script src="<?php echo base_url('_include/vendors/ckeditor/ckeditor.js'); ?>"></script>
-<script src="<?php echo base_url('_include/js/index.js'); ?>"></script>
-<script src="<?php echo base_url('_include/js/start.js'); ?>"></script>
+
 </body>
 </html>

@@ -74,7 +74,7 @@
                 </div>
                 <div id="charts">
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Cartas de navegación aéreas." data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
                         <div class="row">
                             <div class="cell-md-6">
@@ -372,7 +372,41 @@
                 </div>
                 <div id="notams">
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Envío de NOTAMs a todos los usuarios" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+
+
+                        <div class="p-1 p-6-lg bg-white">
+                            <h4>Envíar nuevo correo NOTAM</h4>
+                            <form class="mt-3">
+                                <div class="row m-0">
+                                    <div class="cell-lg-8 bg-light p-1 p-6-lg">
+                                        <div class="form-group">
+                                            <input type="text" data-role="input" data-prepend="Título:">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea id="editor"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="cell-lg-4 d-none d-block-lg">
+                                        <input class="h-50" type="file" data-role="file" data-mode="drop" data-drop-icon="<span class='mif-attachment mif-4x text-center'>" data-on-select="
+                                                $('#selected-files').html('');
+                                                $.each(arguments[0], function(){
+                                                    $('#selected-files').append('<div>'+this.name+'</div>');
+                                                });
+                                            ">
+                                        <div id="selected-files" class="bg-light p-2 overflow reduce-1" style="height: 270px;"></div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-actions d-flex flex-wrap flex-justify-center flex-justify-start-lg">
+                                    <button class="button" type="button"><span class="mif-cancel"></span> Discard</button>
+                                    <div class="ml-auto-lg">
+                                        <button class="button info"><span class="mif-paper-plane"></span> Envíar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
 
                     </div>
                     <br>
@@ -386,6 +420,20 @@
         </div>
     </div>
 </div>
+
+<style>
+    .ck-editor__editable {
+        min-height: 400px;
+    }
+</style>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( function(error){
+            console.log(error)
+        });
+</script>
+
 
 <?php
 	$this->load->view("_lib/lib.footer.php");

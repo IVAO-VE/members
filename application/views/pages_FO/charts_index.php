@@ -38,13 +38,34 @@
             <div class="bg-white p-4">
                 <div>
                     <?php
-                        $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
-                        foreach ($query->result() as $row) {
-                            echo '<button class="shortcut info outline rounded mt-2 mr-2">
-                                    <span class="caption">'.$row->icao.'</span>
-                                    <span class="mif-document-file-pdf icon"></span>
-                                </button>';
-                        }
+                        //Consultando datos de cartas en el directorio
+                        try {
+                            $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
+                            while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
+                                if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
+                                    if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
+                                        $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
+                                        $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                        $MyREGLA = end($MyFILE_PART);
+                                        if(strtoupper($MyREGLA) == "I"){ //es una carta por instrumentos
+                                            echo '
+                                                <a href="/uploads/charts/'.$elemento.'">
+                                                    <button class="shortcut info outline rounded mt-2 mr-2">
+                                                        <span class="caption">'.$MyFILE_PART[0].'</span>
+                                                        <span class="mif-document-file-pdf icon"></span>
+                                                    </button>
+                                                </a>
+                                            ';
+        
+                                        }
+                                    }
+                                }
+                            }
+                        } catch (Exception $e) {
+                            //Problema detetado
+                            $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
+                            $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
+                        }                                                    
                     ?>
                 </div>
             </div>            
@@ -57,10 +78,36 @@
         <div class="row">
             <div class="bg-white p-4">
                 <div>
-                    <button class="shortcut info outline rounded mt-2 mr-2">
-                        <span class="caption">ZONE</span>
-                        <span class="mif-document-file-pdf icon"></span>
-                    </button>
+                    <?php
+                        //Consultando datos de cartas en el directorio
+                        try {
+                            $dir = opendir(FCPATH.'uploads/charts/'); //creamos el objeto directorio
+                            while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
+                                if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
+                                    if(!is_dir(FCPATH.'uploads/charts/'.$elemento)){ //es un archivo
+                                        $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
+                                        $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                        $MyREGLA = end($MyFILE_PART);
+                                        if(strtoupper($MyREGLA) == "V"){ //es una carta por instrumentos
+                                            echo '
+                                                <a href="/uploads/charts/'.$elemento.'">    
+                                                    <button class="shortcut info outline rounded mt-2 mr-2">
+                                                        <span class="caption">'.$MyFILE_PART[0].'</span>
+                                                        <span class="mif-document-file-pdf icon"></span>
+                                                    </button>
+                                                </a>
+                                            ';
+        
+                                        }
+                                    }
+                                }
+                            }
+                        } catch (Exception $e) {
+                            //Problema detetado
+                            $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
+                            $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
+                        }                                                    
+                    ?>
                 </div>
             </div>            
         </div>

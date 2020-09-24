@@ -155,6 +155,20 @@ $lang['information_system'] = 'Information';
 $lang['sceneries_title'] = 'Virtual sceneries';
 $lang['sceneries_system'] = 'Venezuelans sceneries';
 $lang['sceneries_download'] = 'Download scenery';
+$lang ['sceneries_descrip01'] = 'The airport ';
+$lang ['sceneries_descrip02'] = ', is located at latitude ';
+$lang ['sceneries_descrip03'] = ' and the longitude ';
+$lang ['sceneries_descrip04'] = ', having an elevation of ';
+$lang ['sceneries_descrip05'] = ' feet above sea level.';
+$lang ['sceneries_descrip06'] = 'Have ';
+$lang ['sceneries_descrip07'] = ' hints ';
+$lang ['sceneries_descrip08'] = ', the hint ';
+$lang ['sceneries_descrip09'] = ' has a length of ';
+$lang ['sceneries_descrip10'] = ' meters, with a heading of ';
+$lang ['sceneries_descrip11'] = ' degrees';
+$lang ['sceneries_descrip12'] = '; with support for ILS instrument arrivals on frequency ';
+$lang ['sceneries_descrip13'] = ' and a heading of ';
+$lang ['sceneries_descrip14'] = ' degrees.';
 
 //Notams
 $lang['notams_title'] = 'Notams';

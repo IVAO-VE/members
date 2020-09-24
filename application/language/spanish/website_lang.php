@@ -155,6 +155,20 @@ $lang['information_system'] = 'Información';
 $lang['sceneries_title'] = 'Escenarios virtuales';
 $lang['sceneries_system'] = 'Escenarios venezolanos';
 $lang['sceneries_download'] = 'Descargar escenario';
+$lang['sceneries_descrip01'] = 'El aeropuerto ';
+$lang['sceneries_descrip02'] = ', se encuentra ubicado en la latitud ';
+$lang['sceneries_descrip03'] = ' y la longitud ';
+$lang['sceneries_descrip04'] = ', teniendo una elevación de ';
+$lang['sceneries_descrip05'] = ' pies sobre el nivel del mar.';
+$lang['sceneries_descrip06'] = 'Posé ';
+$lang['sceneries_descrip07'] = ' pistas';
+$lang['sceneries_descrip08'] = ', la pista ';
+$lang['sceneries_descrip09'] = ' tiene una longitud de ';
+$lang['sceneries_descrip10'] = ' metros, con un rumbo de ';
+$lang['sceneries_descrip11'] = ' grados';
+$lang['sceneries_descrip12'] = '; con soporte para llegadas instrumentales ILS en la frecuencia ';
+$lang['sceneries_descrip13'] = ' y un rumbo de ';
+$lang['sceneries_descrip14'] = ' grados.';
 
 //Notams
 $lang['notams_title'] = 'Notams';

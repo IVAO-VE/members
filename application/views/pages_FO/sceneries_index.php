@@ -105,11 +105,12 @@
                             $arr_files = explode("-", $xESCENARIOS_J[$xICAO[$i]]);
                             for($j = 0; $j < count($arr_files); $j++){
                                 $file_parts = pathinfo($arr_files[$j]);
+                                $file_name = $file_parts['basename'];
                                 $name_parts = explode("_",$file_parts['filename']);
                                 switch (strtoupper($name_parts[1])){ 
                                     case "FS2004":
                                         echo '
-                                        <a href="https://google.com">
+                                        <a href="/uploads/sceneries/'.$file_name.'">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">FS2004</span>
                                                 <span class="mif-document-file-zip icon"></span>
@@ -119,7 +120,7 @@
                                 
                                     case "FSX":
                                         echo '
-                                        <a href="https://google.com">
+                                        <a href="/uploads/sceneries/'.$file_name.'">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">FSX</span>
                                                 <span class="mif-document-file-zip icon"></span>
@@ -129,7 +130,7 @@
                                 
                                     case "P3D":
                                         echo '
-                                        <a href="https://google.com">
+                                        <a href="/uploads/sceneries/'.$file_name.'">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">P3D</span>
                                                 <span class="mif-document-file-zip icon"></span>
@@ -139,7 +140,7 @@
 
                                     case "XPLANE":
                                         echo '
-                                        <a href="https://google.com">
+                                        <a href="/uploads/sceneries/'.$file_name.'">
                                             <button class="disable shortcut info outline rounded mt-1">
                                                 <span class="caption">X-Plane</span>
                                                 <span class="mif-document-file-zip icon"></span>
@@ -149,7 +150,7 @@
 
                                     case "FS2020":
                                         echo '
-                                        <a href="https://google.com">
+                                        <a href="/uploads/sceneries/'.$file_name.'">
                                             <button class="shortcut info outline rounded mt-1">
                                                 <span class="caption">FS2020</span>
                                                 <span class="mif-document-file-zip icon"></span>

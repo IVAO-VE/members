@@ -47,22 +47,15 @@
                                         $MyFILE_INFO = pathinfo(FCPATH.'uploads/charts/'.$elemento);
                                         $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                         $MyREGLA = end($MyFILE_PART);
-                                        switch (strtoupper($MyREGLA)){ 
-                                            case "I": //es una carta por instrumentos
-                                                $xREGLA = "Instrumental";
-                                            break;
-                                            case "V": //es una carta visual
-                                                $xREGLA = "Visual";
-                                            break;
+                                        if(strtoupper($MyREGLA) == "I"){ //es una carta por instrumentos
+                                            echo '
+                                                    <button class="shortcut info outline rounded mt-2 mr-2">
+                                                        <span class="caption">'.$row->icao.'</span>
+                                                        <span class="mif-document-file-pdf icon"></span>
+                                                    </button>
+                                            ';
+        
                                         }
-                                        echo '
-                                            <tr>
-                                                <td>'.$MyFILE_PART[0].'</td>
-                                                <td>'.$xREGLA.'</td>
-                                                <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/charts/'.$elemento)).'</td>
-                                                <td>xx</td>
-                                            </tr>
-                                        ';
                                     }
                                 }
                             }
@@ -71,16 +64,6 @@
                             $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
                             $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
                         }                                                    
-
-
-
-                        $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
-                        foreach ($query->result() as $row) {
-                            echo '<button class="shortcut info outline rounded mt-2 mr-2">
-                                    <span class="caption">'.$row->icao.'</span>
-                                    <span class="mif-document-file-pdf icon"></span>
-                                </button>';
-                        }
                     ?>
                 </div>
             </div>            

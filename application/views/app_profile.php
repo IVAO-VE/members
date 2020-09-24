@@ -169,19 +169,21 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                 <tbody>
                                     <?php
                                     foreach ($q->result() as $flight) {
-                                        switch($flight->fl_rules){
+                                        switch ($flight->fl_rules) {
                                             case 'I':
                                                 $FLrul = 'IFR';
-                                            break;
+                                                break;
                                             case 'V':
                                                 $FLrul = 'VFR';
-                                            break;
+                                                break;
                                             case 'Y':
                                                 $FLrul = 'IFR-VFR';
-                                            break;
+                                                break;
                                             case 'Z':
                                                 $FLrul = 'VFR-IFR';
-                                            break;
+                                                break;
+                                            default:
+                                                $FLrul = 'No definido';
                                         }
                                     ?>
                                         <tr>
@@ -199,7 +201,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         } else {
                         ?>
                             <div class="remark alert">
-                            <?php echo $this->lang->line('Noflights'); ?>
+                                <?php echo $this->lang->line('Noflights'); ?>
                             </div>
                         <?php
                         }
@@ -237,7 +239,7 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                         } else {
                         ?>
                             <div class="remark alert">
-                            <?php echo $this->lang->line('NoAtc'); ?>
+                                <?php echo $this->lang->line('NoAtc'); ?>
                             </div>
                         <?php
                         }

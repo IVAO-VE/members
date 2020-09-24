@@ -85,7 +85,9 @@
                             
                             $arr_files = explode("-", $xESCENARIOS_J[$xICAO[$i]]);
                             for($j = 0; $j < count($arr_files); $j++){
-                                $this->phpdebug->debug('[DEBUG]: '.$arr_files[$j]);
+                                $file_parts = pathinfo($arr_files[$j]);
+                                $name_parts = explode("_",$file_parts['filename']);
+                                $this->phpdebug->debug('[DEBUG]: '.$name_parts[1]);
                             }
 
                             echo '<button class="shortcut info outline rounded mt-1">

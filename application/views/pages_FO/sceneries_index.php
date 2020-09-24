@@ -64,6 +64,22 @@
                 $query = $this->db->query('SELECT * FROM nav_airports WHERE icao = "'.$xICAO[$i].'"');
                 
                 foreach ($query->result() as $row){ //El escenario existe en la base de datos
+                    $strDESCRIP =   $this->lang->line('sceneries_descrip01').ucwords($row->name).
+                                    $this->lang->line('sceneries_descrip02').$row->latitude.
+                                    $this->lang->line('sceneries_descrip03').$row->longitude.
+                                    $this->lang->line('sceneries_descrip04').$row->elevation.
+                                    $this->lang->line('sceneries_descrip05')."\n";
+                                    
+                                    $pistas = $this->db->query('SELECT * FROM nav_runways WHERE icao = "'.$xICAO[$i].'"');
+                                    $strDESCRIP += $this->lang->line('sceneries_descrip06').count($pistas).$this->lang->line('sceneries_descrip07');
+                                    foreach ($pistas->result() as $pista){
+                                        $strDESCRIP += $this->lang->line('sceneries_descrip06').count($pistas);
+                                    }
+                                    $this->lang->line('');
+                                    
+                                    $this->lang->line('')..
+
+
                     echo '
                         <div class="cell-lg-4">
                         <div class="card image-header">
@@ -76,7 +92,7 @@
                                 '.$row->icao.'
                             </div>
                             <div class="card-content p-2">
-                                <p class="fg-gray">'.$row->name.'</p>
+                                <p class="fg-gray">'.ucwords($row->name).'</p>
                                 Quisque '.$row->latitude.' eget '.$row->longitude.' vestibulum nulla.
                                 Quisque '.$row->elevation.' quis dui quis exultricies efficitur vitae non felis.
                                 Phasellus quis nibh hendrerit...

@@ -69,11 +69,8 @@
                                     $this->lang->line('sceneries_descrip03').$row->longitude.
                                     $this->lang->line('sceneries_descrip04').$row->elevation.
                                     $this->lang->line('sceneries_descrip05')."\n";
-                                    
                                     $pistas = $this->db->query('SELECT * FROM nav_runways WHERE icao = "'.$xICAO[$i].'"');
                                     $contador = count($pistas->result_array());
-                                    $this->phpdebug->debug('[DEBUG]: '.$contador);
-                                    
                                     $strDESCRIP .= $this->lang->line('sceneries_descrip06').$contador.$this->lang->line('sceneries_descrip07');
                                     foreach ($pistas->result() as $pista){
                                         $strDESCRIP .=  $this->lang->line('sceneries_descrip08').$pista->runway.

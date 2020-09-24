@@ -381,9 +381,6 @@
                                 <div class="row m-0">
                                     <div class="cell-lg-8 bg-light p-1 p-6-lg">
                                         <div class="form-group">
-                                            <input type="text" data-role="input" data-prepend="To:">
-                                        </div>
-                                        <div class="form-group">
                                             <input type="text" data-role="input" data-prepend="Subject:">
                                         </div>
                                         <div class="form-group">

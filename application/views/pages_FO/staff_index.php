@@ -376,12 +376,12 @@
 
 
                         <div class="p-1 p-6-lg bg-white">
-                            <h4>Compose new mail</h4>
+                            <h4>Envíar nuevo correo NOTAM</h4>
                             <form class="mt-3">
                                 <div class="row m-0">
                                     <div class="cell-lg-8 bg-light p-1 p-6-lg">
                                         <div class="form-group">
-                                            <input type="text" data-role="input" data-prepend="Subject:">
+                                            <input type="text" data-role="input" data-prepend="Título:">
                                         </div>
                                         <div class="form-group">
                                             <textarea id="editor"></textarea>
@@ -401,9 +401,7 @@
                                 <div class="form-actions d-flex flex-wrap flex-justify-center flex-justify-start-lg">
                                     <button class="button" type="button"><span class="mif-cancel"></span> Discard</button>
                                     <div class="ml-auto-lg">
-                                        <button class="button secondary" type="button"><span class="mif-pencil"></span> Draft</button>
-                                        <button class="button warning" type="button"><span class="mif-eye"></span> Preview</button>
-                                        <button class="button info"><span class="mif-paper-plane"></span> Send</button>
+                                        <button class="button info"><span class="mif-paper-plane"></span> Envíar</button>
                                     </div>
                                 </div>
                             </form>

@@ -32,9 +32,16 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
     <!-- FontAwesome-->
     <script src="https://use.fontawesome.com/6a6ba32d23.js"></script>
 
+    <!-- jQuery first, then Metro UI JS -->
     <script src="<?php echo base_url('_include/vendors/jquery/jquery-3.4.1.min.js'); ?>"></script>
     <script src="<?php echo base_url('_include/vendors/metro4/js/metro.js?ver=@@b-version'); ?>"></script>
-
+    <script src="<?php echo base_url('_include/js/charts.js'); ?>"></script>
+    <script src="<?php echo base_url('_include/vendors/chartjs/Chart.bundle.min.js'); ?>"></script>
+    <script src="<?php echo base_url('_include/vendors/qrcode/qrcode.min.js'); ?>"></script>
+    <script src="<?php echo base_url('_include/vendors/jsbarcode/JsBarcode.all.min.js'); ?>"></script>
+    <script src="<?php echo base_url('_include/vendors/ckeditor/ckeditor.js'); ?>"></script>
+    <script src="<?php echo base_url('_include/js/index.js'); ?>"></script>
+    <script src="<?php echo base_url('_include/js/start.js'); ?>"></script>
 
     <title>IVAO Venezuela | <?php echo $this->lang->line('membersarea'); ?></title>
 

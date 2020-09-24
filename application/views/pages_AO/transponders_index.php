@@ -35,17 +35,34 @@
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('charts_IFR'); ?>" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
         <div class="row">
             <div class="bg-white p-4">
- 
-
-
-
-
-
- 
+                <div class="container">
+                    <iframe class="responsive-iframe" src="https://www.scumari.nl/squawk/svzm-sq.php"></iframe>
+                </div>
             </div>            
         </div>
     </div>
 </div>
+
+<style>
+    .container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+
+    .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    }
+</style>
+
 
 <?php
 	$this->load->view("_lib/lib.footer.php");

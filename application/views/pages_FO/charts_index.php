@@ -49,10 +49,12 @@
                                         $MyREGLA = end($MyFILE_PART);
                                         if(strtoupper($MyREGLA) == "I"){ //es una carta por instrumentos
                                             echo '
+                                                <a href="/uploads/charts/'.$elemento.'">
                                                     <button class="shortcut info outline rounded mt-2 mr-2">
                                                         <span class="caption">'.$MyFILE_PART[0].'</span>
                                                         <span class="mif-document-file-pdf icon"></span>
                                                     </button>
+                                                </a>
                                             ';
         
                                         }
@@ -88,10 +90,12 @@
                                         $MyREGLA = end($MyFILE_PART);
                                         if(strtoupper($MyREGLA) == "V"){ //es una carta por instrumentos
                                             echo '
+                                                <a href="/uploads/charts/'.$elemento.'">    
                                                     <button class="shortcut info outline rounded mt-2 mr-2">
                                                         <span class="caption">'.$MyFILE_PART[0].'</span>
                                                         <span class="mif-document-file-pdf icon"></span>
                                                     </button>
+                                                </a>
                                             ';
         
                                         }

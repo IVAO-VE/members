@@ -74,18 +74,18 @@
                                     $contador = count($pistas->result_array());
                                     $this->phpdebug->debug('[DEBUG]: '.$contador);
                                     
-                                    $strDESCRIP += $this->lang->line('sceneries_descrip06').$contador.$this->lang->line('sceneries_descrip07');
+                                    $strDESCRIP .= $this->lang->line('sceneries_descrip06').$contador.$this->lang->line('sceneries_descrip07');
                                     foreach ($pistas->result() as $pista){
-                                        $strDESCRIP +=  $this->lang->line('sceneries_descrip08').$pista->runway.
+                                        $strDESCRIP .=  $this->lang->line('sceneries_descrip08').$pista->runway.
                                                         $this->lang->line('sceneries_descrip09').$pista->size_meters.
                                                         $this->lang->line('sceneries_descrip10').$pista->heading.
                                                         $this->lang->line('sceneries_descrip11');
                                         if($pista->ils_frecuency != ""){ //Tiene soporte para ILS
-                                            $strDESCRIP +=  $this->lang->line('sceneries_descrip12').$pista->ils_frecuency.
+                                            $strDESCRIP .=  $this->lang->line('sceneries_descrip12').$pista->ils_frecuency.
                                                             $this->lang->line('sceneries_descrip13').$pista->ils_headind.
                                                             $this->lang->line('sceneries_descrip14');
                                         }else{ //No tiene ILS
-                                            $strDESCRIP +=  ".";
+                                            $strDESCRIP .=  ".";
                                         }
                                     }
                     echo '

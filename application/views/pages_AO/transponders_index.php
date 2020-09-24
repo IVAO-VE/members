@@ -31,7 +31,21 @@
     </div>
 </div>
 
+<div class="m-3">
+    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('charts_IFR'); ?>" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
+        <div class="row">
+            <div class="bg-white p-4">
+ 
 
+
+
+
+
+ 
+            </div>            
+        </div>
+    </div>
+</div>
 
 <?php
 	$this->load->view("_lib/lib.footer.php");

@@ -71,7 +71,7 @@
                                     $this->lang->line('sceneries_descrip05')."\n";
                                     
                                     $pistas = $this->db->query('SELECT * FROM nav_runways WHERE icao = "'.$xICAO[$i].'"');
-                                    $strDESCRIP += $this->lang->line('sceneries_descrip06').count($pistas).$this->lang->line('sceneries_descrip07');
+                                    $strDESCRIP += $this->lang->line('sceneries_descrip06').count($pistas->result()).$this->lang->line('sceneries_descrip07');
                                     foreach ($pistas->result() as $pista){
                                         $strDESCRIP +=  $this->lang->line('sceneries_descrip08').$pista->runway.
                                                         $this->lang->line('sceneries_descrip09').$pista->size_meters.

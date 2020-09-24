@@ -74,27 +74,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         $query = $this->db->query("SELECT * FROM nav_airports WHERE icao LIKE 'SV%'");
                         foreach ($query->result() as $row) {
                             echo '<button class="shortcut info outline rounded mt-2 mr-2">

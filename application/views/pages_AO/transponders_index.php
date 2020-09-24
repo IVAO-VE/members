@@ -36,7 +36,7 @@
         <div class="row">
             <div class="bg-white p-4">
                 <div class="container">
-                    <iframe class="responsive-iframe" src="https://www.scumari.nl/squawk/svzm-sq.php"></iframe>
+                    <iframe class="responsive-iframe" src="https://squawk.scumari.nl/index.php"></iframe>
                 </div>
             </div>            
         </div>

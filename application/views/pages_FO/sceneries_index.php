@@ -88,28 +88,53 @@
                                 $file_parts = pathinfo($arr_files[$j]);
                                 $name_parts = explode("_",$file_parts['filename']);
                                 $this->phpdebug->debug('[DEBUG]: '.$name_parts[1]);
-                            }
+                                switch (strtoupper($name_parts[1])){ 
+                                    case "FS2004":
+                                        echo '
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">FS2004</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>';
+                                    break;
+                                
+                                    case "FSX":
+                                        echo '
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">FSX</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        ';
+                                    break;
+                                
+                                    case "P3D":
+                                        echo '
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">P3D</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        ';
+                                    break;
 
-                            echo '<button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">FS2004</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">FSX</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">P3D</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="disable shortcut info outline rounded mt-1">
-                                    <span class="caption">X-Plane</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
-                                <button class="shortcut info outline rounded mt-1">
-                                    <span class="caption">FS2020</span>
-                                    <span class="mif-document-file-zip icon"></span>
-                                </button>
+                                    case "XPLANE":
+                                        echo '
+                                            <button class="disable shortcut info outline rounded mt-1">
+                                                <span class="caption">X-Plane</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        ';
+                                    break;
+
+                                    case "FS2020":
+                                        echo '
+                                            <button class="shortcut info outline rounded mt-1">
+                                                <span class="caption">FS2020</span>
+                                                <span class="mif-document-file-zip icon"></span>
+                                            </button>
+                                        ';
+                                    break;
+                                }                                
+                            }
+                            echo '
                             </div>
                         </div>
                     </div>';

@@ -186,13 +186,14 @@ $CouCode = strtolower($this->session->userdata('country_code'));
                                             default:
                                                 $FLrul = 'No definido';
                                         }
+                                        $simulator = $flight->simulator;
                                     ?>
                                         <tr>
                                             <td><?php echo $flight->callsign ?></td>
                                             <td><?php echo $FLrul ?></td>
                                             <td><?php echo $flight->fl_departure ?></td>
                                             <td><?php echo $flight->fl_destination ?></td>
-                                            <td><?php echo $this->myfunctions->get_simulator($flight->simulator) ?></td>
+                                            <td><?php echo $this->myfunctions->get_simulator($simulator) ?></td>
                                         </tr>
                                     <?php
                                     }

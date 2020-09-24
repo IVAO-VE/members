@@ -50,7 +50,7 @@
                                         if(strtoupper($MyREGLA) == "I"){ //es una carta por instrumentos
                                             echo '
                                                     <button class="shortcut info outline rounded mt-2 mr-2">
-                                                        <span class="caption">'.$row->icao.'</span>
+                                                        <span class="caption">'.$MyFILE_PART[0].'</span>
                                                         <span class="mif-document-file-pdf icon"></span>
                                                     </button>
                                             ';

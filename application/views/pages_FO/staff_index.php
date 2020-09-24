@@ -74,7 +74,7 @@
                 </div>
                 <div id="charts">
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Cartas de navegación aéreas." data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
                         <div class="row">
                             <div class="cell-md-6">

@@ -372,7 +372,7 @@
                 </div>
                 <div id="notams">
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Envío de NOTAMs a todos los usuarios" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
 
                         <div class="p-1 p-6-lg bg-white">

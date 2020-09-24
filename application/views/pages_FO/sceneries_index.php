@@ -98,9 +98,7 @@
                             </div>
                             <div class="card-content p-2">
                                 <p class="fg-gray">'.ucwords($row->name).'</p>
-                                Quisque '.$row->latitude.' eget '.$row->longitude.' vestibulum nulla.
-                                Quisque '.$row->elevation.' quis dui quis exultricies efficitur vitae non felis.
-                                Phasellus quis nibh hendrerit...
+                                '.$strDESCRIP.'
                             </div>
                             <div class="card-footer">';
                             

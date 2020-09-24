@@ -374,6 +374,45 @@
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
+
+                        <div class="p-1 p-6-lg bg-white">
+                            <h4>Compose new mail</h4>
+                            <form class="mt-3">
+                                <div class="row m-0">
+                                    <div class="cell-lg-8 bg-light p-1 p-6-lg">
+                                        <div class="form-group">
+                                            <input type="text" data-role="input" data-prepend="To:">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" data-role="input" data-prepend="Subject:">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea id="editor"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="cell-lg-4 d-none d-block-lg">
+                                        <input class="h-50" type="file" data-role="file" data-mode="drop" data-drop-icon="<span class='mif-attachment mif-4x text-center'>" data-on-select="
+                                                $('#selected-files').html('');
+                                                $.each(arguments[0], function(){
+                                                    $('#selected-files').append('<div>'+this.name+'</div>');
+                                                });
+                                            ">
+                                        <div id="selected-files" class="bg-light p-2 overflow reduce-1" style="height: 270px;"></div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-actions d-flex flex-wrap flex-justify-center flex-justify-start-lg">
+                                    <button class="button" type="button"><span class="mif-cancel"></span> Discard</button>
+                                    <div class="ml-auto-lg">
+                                        <button class="button secondary" type="button"><span class="mif-pencil"></span> Draft</button>
+                                        <button class="button warning" type="button"><span class="mif-eye"></span> Preview</button>
+                                        <button class="button info"><span class="mif-paper-plane"></span> Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
                     </div>
                     <br>
                 </div>

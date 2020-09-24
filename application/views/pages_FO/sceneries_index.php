@@ -60,7 +60,7 @@
 
             $xICAO = array_keys($xESCENARIOS_J);
             for($i = 0; $i < count($xESCENARIOS_J); $i++) {
-                $this->phpdebug->debug('[DEBUG]: '.$xICAO[$i]);
+                //$this->phpdebug->debug('[DEBUG]: '.$xICAO[$i]);
                 $query = $this->db->query('SELECT * FROM nav_airports WHERE icao = "'.$xICAO[$i].'"');
                 
                 foreach ($query->result() as $row){ //El escenario existe en la base de datos
@@ -83,7 +83,10 @@
                             </div>
                             <div class="card-footer">';
                             
-                            print_r($xESCENARIOS_J[$xICAO[$i]]);
+                            $arr_files = explode("-", $xESCENARIOS_J[$xICAO[$i]]);
+                            for($j = 0; $j < count($arr_files); $j++){
+                                $this->phpdebug->debug('[DEBUG]: '.$arr_files[$j]);
+                            }
 
                             echo '<button class="shortcut info outline rounded mt-1">
                                     <span class="caption">FS2004</span>

@@ -262,7 +262,7 @@ class MyFunctions
                 $Simulator = 'Microsoft Flight Simulator 2020';
             break;
 
-            return $Simulator;
+            echo $Simulator;
         }
     }
     /** ***************************************************************************************************************************** **/

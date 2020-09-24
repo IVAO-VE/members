@@ -426,6 +426,20 @@
     </div>
 </div>
 
+<style>
+    .ck-editor__editable {
+        min-height: 400px;
+    }
+</style>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( function(error){
+            console.log(error)
+        });
+</script>
+
+
 <?php
 	$this->load->view("_lib/lib.footer.php");
 ?>

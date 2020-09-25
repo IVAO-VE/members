@@ -258,7 +258,7 @@ class MyFunctions
             case '6':
                 $Simulador = 'Microsoft Flight Simulator 2002';
             break;
-            case 40:
+            case '40':
                 //$Simulador = 'Microsoft Flight Simulator 2020';
                 return 'Microsoft Flight Simulator 2020';
             break;

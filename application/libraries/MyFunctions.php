@@ -19,7 +19,7 @@ class MyFunctions
     function __construct()
     {
         //Sección de constantes GLOBALES para todo el sistema
-        
+
 
     }
     /** ***************************************************************************************************************************** **/
@@ -54,7 +54,7 @@ class MyFunctions
     /** ***************************************************************************************************************************** **/
     public function valida_API($url_GOTO = null)
     {
-        
+
         if (isset($_GET['IVAOTOKEN'])) {
             if ($_GET['IVAOTOKEN'] !== 'error') {
                 $cookie = array(
@@ -63,19 +63,19 @@ class MyFunctions
                     'expire' => time() + 3600,
                 );
                 set_cookie($cookie);
-                header('Location: '.$this->get_HOSTPROTOCOL());
+                header('Location: ' . $this->get_HOSTPROTOCOL());
                 exit;
             } else {
-                if(($this->get_cliente_ip() == "187.189.83.65") || ($this->get_cliente_ip() == "0.0.0.0")){
+                if (($this->get_cliente_ip() == "187.189.83.65") || ($this->get_cliente_ip() == "0.0.0.0")) {
                     $cookie = array(
                         'name'   => 'ivao_token',
                         'value'  => $_GET['IVAOTOKEN'],
                         'expire' => time() + 3600,
                     );
                     set_cookie($cookie);
-                    header('Location: '.$this->get_HOSTPROTOCOL());
+                    header('Location: ' . $this->get_HOSTPROTOCOL());
                     exit;
-                }else{
+                } else {
                     echo 'This domain is not allowed to use the Login API! Contact the System Adminstrator!';
                 }
                 exit;
@@ -95,7 +95,7 @@ class MyFunctions
                 unset($_COOKIE['__cfduid']);
                 unset($_COOKIE['ivao_token']);
                 unset($_COOKIE['ci_session']);
-                header('Location: http://login.ivao.aero/index.php?url='.$this->get_HOSTPROTOCOL());
+                header('Location: http://login.ivao.aero/index.php?url=' . $this->get_HOSTPROTOCOL());
                 exit;
             }
         } else {
@@ -104,7 +104,7 @@ class MyFunctions
             unset($_COOKIE['__cfduid']);
             unset($_COOKIE['ivao_token']);
             unset($_COOKIE['ci_session']);
-            header('Location: http://login.ivao.aero/index.php?url='.$this->get_HOSTPROTOCOL());
+            header('Location: http://login.ivao.aero/index.php?url=' . $this->get_HOSTPROTOCOL());
             exit;
         }
     }
@@ -138,96 +138,95 @@ class MyFunctions
         return $ipaddress;
     }
     /** ***************************************************************************************************************************** **/
-    public function showNOTIFY($inLOAD, $xTITLE, $xMESSAGE, $xTYPE){
-        switch ($xTYPE){ 
+    public function showNOTIFY($inLOAD, $xTITLE, $xMESSAGE, $xTYPE)
+    {
+        switch ($xTYPE) {
             case 1:
                 $xTYPE_STR = 'cls: "default"';
-            break;
-        
+                break;
+
             case 2:
                 $xTYPE_STR = 'cls: "success"';
-            break;
-        
+                break;
+
             case 3:
                 $xTYPE_STR = 'cls: "info"';
-            break;
+                break;
 
             case 4:
                 $xTYPE_STR = 'cls: "alert"';
-            break;
+                break;
 
             case 5:
                 $xTYPE_STR = 'cls: "warning"';
-            break;
-
-            
+                break;
         }
-        if($inLOAD == true){
-            echo 'Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {'.$xTYPE_STR.'});';
-        }else{
+        if ($inLOAD == true) {
+            echo 'Metro.notify.create("' . $xMESSAGE . '", "' . $xTITLE . '", {' . $xTYPE_STR . '});';
+        } else {
             echo '
                 <script type="text/javascript">
                 <!--
-                    Metro.notify.create("'.$xMESSAGE.'", "'.$xTITLE.'", {'.$xTYPE_STR.'});
+                    Metro.notify.create("' . $xMESSAGE . '", "' . $xTITLE . '", {' . $xTYPE_STR . '});
                 -->
                 </script>                
             ';
         }
-        
     }
     /** ***************************************************************************************************************************** **/
-    public function showDIALOG($inLOAD, $xTITLE, $xMESSAGE, $xTYPE){
-        switch ($xTYPE){ 
+    public function showDIALOG($inLOAD, $xTITLE, $xMESSAGE, $xTYPE)
+    {
+        switch ($xTYPE) {
             case 1:
                 $xTYPE_STR = 'primary';
-            break;
-        
+                break;
+
             case 2:
                 $xTYPE_STR = 'secondary';
-            break;
-        
+                break;
+
             case 3:
                 $xTYPE_STR = 'light';
-            break;
+                break;
 
             case 4:
                 $xTYPE_STR = 'dark';
-            break;
+                break;
 
             case 5:
                 $xTYPE_STR = 'alert';
-            break;
+                break;
 
             case 6:
                 $xTYPE_STR = 'warning';
-            break;
+                break;
 
             case 7:
                 $xTYPE_STR = 'success';
-            break;
+                break;
 
             case 8:
                 $xTYPE_STR = 'info';
-            break;
+                break;
         }
-        if($inLOAD == true){
+        if ($inLOAD == true) {
             echo '
                 Metro.dialog.create({
-                    title: "'.$xTITLE.'",
-                    content: "<div>'.$xMESSAGE.'</div>",
+                    title: "' . $xTITLE . '",
+                    content: "<div>' . $xMESSAGE . '</div>",
                     closeButton: false, 
-                    clsDialog: "'.$xTYPE_STR.'"
+                    clsDialog: "' . $xTYPE_STR . '"
                 });        
             ';
-        }else{
+        } else {
             echo '
                 <script type="text/javascript">
                 <!--
                     Metro.dialog.create({
-                        title: "'.$xTITLE.'",
-                        content: "<div>'.$xMESSAGE.'</div>",
+                        title: "' . $xTITLE . '",
+                        content: "<div>' . $xMESSAGE . '</div>",
                         closeButton: false, 
-                        clsDialog: "'.$xTYPE_STR.'"
+                        clsDialog: "' . $xTYPE_STR . '"
                     });        
                 -->
                 </script>                
@@ -235,33 +234,75 @@ class MyFunctions
         }
     }
     /** ***************************************************************************************************************************** **/
-    public function get_simulator($PARAM_simulator){
-        switch($PARAM_simulator){
+    public function get_simulator($PARAM_simulator)
+    {
+        switch ($PARAM_simulator) {
             case '0':
                 return 'Desconocido';
-            break;
+                break;
             case '1':
                 return 'Microsoft Flight Simulator 95';
-            break;
+                break;
             case '2':
                 return 'Microsoft Flight Simulator 98';
-            break;
+                break;
             case '3':
                 return 'Microsoft Combat Flight Simulator';
-            break;
+                break;
             case '4':
                 return 'Microsoft Flight Simulator 2000';
-            break;
+                break;
             case '5':
                 return 'Microsoft Combat Flight Simulator 2';
-            break;
+                break;
             case '6':
                 return 'Microsoft Flight Simulator 2002';
-            break;
+                break;
+            case '7':
+                return 'Microsoft Combat Flight Simulator 3';
+                break;
+            case '8':
+                return 'Microsoft Flight Simulator 2004';
+                break;
+            case '9':
+                return 'Microsoft Flight Simulator X';
+                break;
+            case '11':
+                return 'X-Plane (Version desconocida)';
+                break;
+            case '12':
+                return 'X-Plane 8.x';
+                break;
+            case '13':
+                return 'X-Plane 9.x';
+                break;
+            case '14':
+                return 'X-Plane 10.x';
+                break;
+            case '15':
+                return 'PS1';
+                break;
+            case '16':
+                return 'X-Plane 11.x';
+                break;
+            case '17':
+                return 'X-Plane 12.x';
+                break;
+            case '20':
+                return 'Fly!';
+                break;
+            case '21':
+                return 'Fly! 2';
+                break;
+            case '25':
+                return 'FlightGear';
+                break;
+            case '30':
+                return 'Prepar3D 1.x';
+                break;
             case '40':
                 return 'Microsoft Flight Simulator 2020';
-            break;
-
+                break;
         }
     }
     /** ***************************************************************************************************************************** **/

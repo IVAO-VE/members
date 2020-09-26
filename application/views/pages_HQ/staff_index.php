@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @autor Rixio Iguarán y Simón Cardona.
  * @Departamento Sistemas y Webmaster
@@ -8,13 +9,13 @@
  * 
  **/
 
-    //Asegurando el acceso directo al script
-    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
-    //echo BASEPATH; 
-    //Cargando la estructura del HEADER
-    $this->load->view("_lib/lib.header.php");
-    //Cargando la estructura del MENU
-    $this->load->view("_lib/lib.menu.php");
+//Asegurando el acceso directo al script
+defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
+//echo BASEPATH; 
+//Cargando la estructura del HEADER
+$this->load->view("_lib/lib.header.php");
+//Cargando la estructura del MENU
+$this->load->view("_lib/lib.menu.php");
 ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
@@ -33,7 +34,7 @@
 
 
 <div class="fg-dark container-fluid start-screen h-100">
-    <div class="mb-15"></div>   
+    <div class="mb-15"></div>
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto01_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
 
@@ -48,7 +49,35 @@
                 <div id="permisos">
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
+                        <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-horizontal-scroll="true">
+                            <thead>
+                                <tr>
+                                    <th>VID</th>
+                                    <th>Posicion</th>
+                                    <th>HQ</th>
+                                    <th>SO</th>
+                                    <th>FO</th>
+                                    <th>AO</th>
+                                    <th>TR</th>
+                                    <th>ME</th>
+                                    <th>EV</th>
+                                    <th>PR</th>
+                                    <th>WE</th>
+                                    <th>FR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $rows = $this->db->get('permisos');
+                                foreach ($rows->result() as $row) {
+                                ?>
+                                <td><?php echo $row->vid ?></td>
+                                <td><?php echo $row->posicion ?></td>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
                     <br>
                 </div>
@@ -72,5 +101,5 @@
 </div>
 
 <?php
-	$this->load->view("_lib/lib.footer.php");
+$this->load->view("_lib/lib.footer.php");
 ?>

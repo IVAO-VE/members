@@ -77,7 +77,7 @@ $this->load->view("_lib/lib.menu.php");
                                         <td>
                                             <?php if ($row->pages_HQ == 'true') {
                                             ?>
-                                                <p><a href="" class="bg-green fg-white">Permitido</a></p>
+                                                <span class="tally success">Permitido</span>  
                                             <?php
                                             } else {
                                             ?>

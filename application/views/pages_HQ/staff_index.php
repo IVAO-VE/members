@@ -85,6 +85,105 @@ $this->load->view("_lib/lib.menu.php");
                                             <?php
                                             } ?>
                                         </td>
+                                        <td>
+                                            <?php if ($row->pages_SO == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_FO == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_AO == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_TR == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_ME == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_EV == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_PR == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_WE == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row->pages_FR == 'true') {
+                                            ?>
+                                                <span class="tally success">Permitido</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="tally alert">Denegado</span>
+                                            <?php
+                                            } ?>
+                                        </td>
                                     </tr>
                                 <?php
                                 }

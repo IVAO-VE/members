@@ -74,7 +74,16 @@ $this->load->view("_lib/lib.menu.php");
                                     <tr>
                                         <td><?php echo $row->vid ?></td>
                                         <td><?php echo $row->posicion ?></td>
-                                        
+                                        <td>
+                                            <?php if ($row->pages_HQ == 'true') {
+                                            ?>
+                                                <p>Hola</p>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <p>Adios</p>
+                                            <?php
+                                            } ?>
                                         </td>
                                     </tr>
                                 <?php

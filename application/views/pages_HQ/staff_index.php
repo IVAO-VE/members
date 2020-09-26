@@ -74,16 +74,7 @@ $this->load->view("_lib/lib.menu.php");
                                     <tr>
                                         <td><?php echo $row->vid ?></td>
                                         <td><?php echo $row->posicion ?></td>
-                                        <td>
-                                            <?php if ($row->pages_HQ == 'true') {
-                                            ?>
-                                                <span class="badge bg-green fg-white">Permitido</span>
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <span class="badge bg-red fg-white">Denegado</span>
-                                            <?php
-                                            } ?>
+                                        
                                         </td>
                                     </tr>
                                 <?php

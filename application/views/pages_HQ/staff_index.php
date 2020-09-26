@@ -77,11 +77,11 @@ $this->load->view("_lib/lib.menu.php");
                                         <td>
                                             <?php if ($row->pages_HQ == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>  
+                                                <span class="tally success">Permitido</span>
                                             <?php
                                             } else {
                                             ?>
-                                                <p>Adios</p>
+                                                <span class="tally alert">Denegado</span>
                                             <?php
                                             } ?>
                                         </td>

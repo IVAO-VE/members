@@ -65,13 +65,18 @@ class Staff extends CI_Controller
 
         $CurrentStatus = $query->result_array()[0][$Type];
 
-        switch($CurrentStatus){
+        /*switch($CurrentStatus){
             case 'true':
-                $New = 0;
+                $New = NULL;
             break;
             case '0':
                 $New = true;
-        };
+        };*/
+        if($CurrentStatus != 'true'){
+            $New = 'true';
+        }else{
+            $New = NULL;
+        }
         $data = array(
             $Type => $New
         );

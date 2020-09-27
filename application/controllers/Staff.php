@@ -59,7 +59,7 @@ class Staff extends CI_Controller
             redirect(base_url('staff/HQaccess'));
         }
 
-        $this->db->where('vid', $vid);
+        $this->db->where('vid', $VID);
         $this->db->select($Type);
         $query = $this->db->get('permisos');
 
@@ -74,7 +74,7 @@ class Staff extends CI_Controller
             $Type => $New
         );
 
-        $this->db->where('vid', $vid);
+        $this->db->where('vid', $VID);
         $q = $this->db->update('permisos', $data);
 
         if ($q) {

@@ -66,7 +66,7 @@ class Staff extends CI_Controller
         $CurrentStatus = $query->result_array()[0][$Type];
         if($CurrentStatus == true){
             $New = false;
-        }else{
+        }elseif($CurrentStatus == 0){
             $New = true;
         }
 

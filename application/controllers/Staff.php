@@ -48,6 +48,44 @@ class Staff extends CI_Controller
         }
     }
 
+    public function ChangeStatus($Type, $VID){
+        if($Type == NULL){
+            $this->session->set_flashdata('error', 'No se ha encontrado el Tipo, contacta con el departamento web.');
+            redirect(base_url('staff/HQaccess'));
+        }
+
+        if($VID == NULL){
+            $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
+            redirect(base_url('staff/HQaccess'));
+        }
+
+        $this->db->where('vid', $vid);
+        $this->db->select($Type);
+        $query = $this->db->get('permisos');
+
+        $CurrentStatus = $query->result_array()[0][$Type];
+        if($CurrentStatus == true){
+            $New = false;
+        }else{
+            $New = true;
+        }
+
+        $data = array(
+            $Type => $New
+        );
+
+        $this->db->where('vid', $vid);
+        $q = $this->db->update('permisos', $data);
+
+        if ($q) {
+            $this->session->set_flashdata('info', 'El estado se edito correctamente.');
+            redirect(base_url('staff/HQaccess'));
+        } else {
+            $this->session->set_flashdata('error', 'Tenemos problemas editando el estado.');
+            redirect(base_url('staff/HQaccess'));
+        }
+    }
+
     public function flights()
     {
         //Consultado con la DB

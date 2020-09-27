@@ -91,7 +91,7 @@ $this->load->view("_lib/lib.menu.php");
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_HQ/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>

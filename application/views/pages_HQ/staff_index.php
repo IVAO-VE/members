@@ -50,7 +50,7 @@ $this->load->view("_lib/lib.menu.php");
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-horizontal-scroll="true">
-                            <thead style="text-align:center;">
+                            <thead align="center">
                                 <tr>
                                     <th>VID</th>
                                     <th>Posicion</th>

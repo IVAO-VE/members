@@ -77,7 +77,7 @@ $this->load->view("_lib/lib.menu.php");
                                         <td>
                                             <?php if ($row->pages_HQ == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_HQ/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>

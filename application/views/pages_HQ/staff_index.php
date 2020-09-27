@@ -98,99 +98,99 @@ $this->load->view("_lib/lib.menu.php");
                                         <td>
                                             <?php if ($row->pages_SO == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_SO/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_SO/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_FO == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FO/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FO/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_AO == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_AO/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_AO/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_TR == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_TR/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_TR/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_ME == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_ME/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_ME/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_EV == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_EV/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_EV/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_PR == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_PR/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_PR/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_WE == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_WE/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_WE/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_FR == 'true') {
                                             ?>
-                                                <span class="tally success">Permitido</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FR/". $row->vid) ?><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <span class="tally alert">Denegado</span>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FR/". $row->vid) ?><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>

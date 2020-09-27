@@ -64,12 +64,14 @@ class Staff extends CI_Controller
         $query = $this->db->get('permisos');
 
         $CurrentStatus = $query->result_array()[0][$Type];
-        if($CurrentStatus == true){
-            $New = false;
-        }elseif($CurrentStatus == 0){
-            $New = true;
-        }
 
+        switch($CurrentStatus){
+            case 'true':
+                $New = false;
+            break;
+            case '0':
+                $New = true;
+        };
         $data = array(
             $Type => $New
         );

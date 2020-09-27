@@ -67,7 +67,7 @@ class Staff extends CI_Controller
 
         switch($CurrentStatus){
             case 'true':
-                $New = false;
+                $New = 0;
             break;
             case '0':
                 $New = true;

@@ -60,18 +60,18 @@ $this->load->view("_lib/lib.menu.php");
                     <div data-role="panel" data-title-caption="Agregar privilegios" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <div class="gird">
                             <div class="row">
-                                <div class="cel-4">
+                                <div class="cell-4">
                                     <?php echo form_open('staff/AddAccess') ?>
                                     <div class="form-group">
                                         <input type="text" name="vid" placeholder="VID">
                                     </div>
                                 </div>
-                                <div class="cel-4">
+                                <div class="cell-4">
                                     <div class="form-group">
                                         <input type="text" name="pos" placeholder="Posicion">
                                     </div>
                                 </div>
-                                <div class="cel-4">
+                                <div class="cell-4">
                                     <div class="form-group">
                                         <input type="submit" class="button primary" value="Agregar">
                                     </div>

@@ -18,15 +18,15 @@ $this->load->view("_lib/lib.header.php");
 $this->load->view("_lib/lib.menu.php");
 ?>
 <?php if ($this->session->flashdata('info')) : ?>
-        <div class="remark primary">
-            <?php echo $this->session->flashdata('info'); ?>
-        </div>
-    <?php endif; ?>
-    <?php if ($this->session->flashdata('error')) : ?>
-        <div class="remark primary">
-            <?php echo $this->session->flashdata('error'); ?>
-        </div>
-    <?php endif; ?>
+    <div class="remark primary">
+        <?php echo $this->session->flashdata('info'); ?>
+    </div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('error')) : ?>
+    <div class="remark primary">
+        <?php echo $this->session->flashdata('error'); ?>
+    </div>
+<?php endif; ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
         <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto01_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
@@ -57,8 +57,31 @@ $this->load->view("_lib/lib.menu.php");
 
             <div id="user-profile-tabs-content">
                 <div id="permisos">
+                    <div data-role="panel" data-title-caption="Agregar privilegios" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                        <div class="gird">
+                            <div class="row">
+                                <div class="cel-4">
+                                    <?php echo form_open('staff/AddAccess') ?>
+                                    <div class="form-group">
+                                        <input type="text" name="vid" placeholder="VID">
+                                    </div>
+                                </div>
+                                <div class="cel-4">
+                                    <div class="form-group">
+                                        <input type="text" name="pos" placeholder="Posicion">
+                                    </div>
+                                </div>
+                                <div class="cel-4">
+                                    <div class="form-group">
+                                        <input type="submit" class="button primary" value="Agregar">
+                                    </div>
+                                <?php echo form_close() ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Control de privilegios." data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-horizontal-scroll="true">
                             <thead>
                                 <tr class="flex-self-center">
@@ -87,110 +110,110 @@ $this->load->view("_lib/lib.menu.php");
                                         <td>
                                             <?php if ($row->pages_HQ == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_HQ/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_HQ/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_HQ/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_HQ/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_SO == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_SO/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_SO/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_SO/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_SO/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_FO == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FO/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FO/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FO/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FO/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_AO == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_AO/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_AO/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_AO/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_AO/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_TR == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_TR/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_TR/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_TR/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_TR/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_ME == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_ME/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_ME/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_ME/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_ME/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_EV == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_EV/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_EV/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_EV/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_EV/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_PR == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_PR/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_PR/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_PR/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_PR/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_WE == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_WE/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_WE/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_WE/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_WE/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>
                                         <td>
                                             <?php if ($row->pages_FR == 'true') {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FR/". $row->vid) ?>"><span class="tally success">Permitido</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FR/" . $row->vid) ?>"><span class="tally success">Permitido</span></a>
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FR/". $row->vid) ?>"><span class="tally alert">Denegado</span></a>
+                                                <a href="<?php echo base_url("staff/ChangeStatus/pages_FR/" . $row->vid) ?>"><span class="tally alert">Denegado</span></a>
                                             <?php
                                             } ?>
                                         </td>

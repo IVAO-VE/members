@@ -19,7 +19,7 @@ $this->load->view("_lib/lib.menu.php");
 ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
-        <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto01_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
+        <h3 class="dashboard-section-title text-center text-left-md w-100"><?php echo ucfirst(strtolower($this->lang->line('staff_dpto05_index'))); ?> </br><small><?php echo $this->lang->line('mainversion'); ?></small></h3>
     </div>
 
     <div class="cell-md-8 d-flex flex-justify-center flex-justify-end-md flex-align-center">
@@ -40,7 +40,7 @@ $this->load->view("_lib/lib.menu.php");
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#gca">GCA</a></li>
-                <li><a href="#profile-activity">Activity</a></li>
+                <li><a href="#profile-activity">Documentos de entrenamiento</a></li>
                 <li><a href="#">Timeline</a></li>
                 <li><a href="#">Projects</a></li>
             </ul>

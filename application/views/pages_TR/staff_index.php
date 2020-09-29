@@ -214,11 +214,14 @@ $this->load->view("_lib/lib.menu.php");
                                                 <label>Selecciona la categoría.</label>
                                                 <select id="sim" name="sim" data-role="select" data-validate="required not=-1">
                                                     <option value="-1" class="d-none"></option>
-                                                    <option value="FS2004">Microsoft Flight Simulator 2004</option>
-                                                    <option value="FSX">Microsoft Flight Simulator X</option>
-                                                    <option value="P3D">Lockheed Martin Prepar3D</option>
-                                                    <option value="XPLANE">X-Plane Flight Simulator</option>
-                                                    <option value="FS2020">Microsoft Flight Simulator 2020</option>
+                                                    <option value="FS2004">Conexión y red</option>
+                                                    <option value="FSX">Fraseología y radios</option>
+                                                    <option value="P3D">Aeronaves y equipos</option>
+                                                    <option value="XPLANE">Tiempo y meteorología</option>
+                                                    <option value="FS2020">Reglamentación y normatividad</option>
+                                                    <option value="FS2020">Otras categorías</option>
+                                                    <option value="FS2020">Software y herramientas</option>
+                                                    <option value="FS2020">Prácticas y ejercicios de vuelo</option>
                                                 </select>
                                                 <span class="invalid_feedback">Debes de seleccionar una categoría!</span>
                                             </div>

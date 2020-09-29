@@ -139,8 +139,8 @@ $this->load->view("_lib/lib.menu.php");
 
                                                 <thead>
                                                 <tr>
-                                                    <th >ICAO</th>
-                                                    <th data-cls-column="fg-green" >SIM</th>
+                                                    <th data-cls-column="fg-green" >CATEGORÍA</th>
+                                                    <th >TITULO</th>
                                                     <th >FECHA</th>
                                                     <th >OPCIÓN</th>
                                                 </tr>

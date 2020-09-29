@@ -72,7 +72,7 @@ $this->load->view("_lib/lib.menu.php");
                                     </div>
                                 </div>
                                 <div class="cell-4">
-                                    <div class="form-group">
+                                    <div align="right" class="form-group">
                                         <input type="submit" class="button primary" value="Agregar">
                                     </div>
                                 <?php echo form_close() ?>

@@ -116,7 +116,7 @@ class Staff extends CI_Controller
                 $this->session->set_flashdata('info', 'Se agrego correctamente.');
                 redirect(base_url('staff/members'));
             } else {
-                $this->session->set_flashdata('error', 'Tenemos problemas agregando la medalla.');
+                $this->session->set_flashdata('error', 'Tenemos problemas agregando los permisos.');
                 redirect(base_url('staff/members'));
             }
         }

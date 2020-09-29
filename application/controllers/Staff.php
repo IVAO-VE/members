@@ -95,8 +95,8 @@ class Staff extends CI_Controller
 
     public function AddAccess(){
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('vid', 'Titulo evento', 'required|max_length[6]|min_length[6]|numeric');
-        $this->form_validation->set_rules('pos', 'Fecha inicio', 'required');
+        $this->form_validation->set_rules('vid', 'VID', 'required|max_length[6]|min_length[6]|numeric');
+        $this->form_validation->set_rules('pos', 'Posicion', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());

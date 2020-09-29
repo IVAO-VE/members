@@ -93,6 +93,35 @@ class Staff extends CI_Controller
         }
     }
 
+    public function AddAccess(){
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('vid', 'Titulo evento', 'required|max_length[6]|numeric');
+        $this->form_validation->set_rules('pos', 'Fecha inicio', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
+            redirect(base_url('staff/HQaccess'));
+        } else {
+            $vid = $this->input->post('vid');
+            $pos = $this->input->post('pos'); 
+
+            $data = array(
+                "VID" => $vid,
+                "posicion" => $pos
+            );
+
+            $query = $this->db->insert('permisos', $data);
+
+            if ($query) {
+                $this->session->set_flashdata('info', 'Se agrego correctamente.');
+                redirect(base_url('staff/members'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas agregando la medalla.');
+                redirect(base_url('staff/members'));
+            }
+        }
+    }
+
     public function flights()
     {
         //Consultado con la DB

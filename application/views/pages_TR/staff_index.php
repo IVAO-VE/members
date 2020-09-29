@@ -124,7 +124,7 @@ $this->load->view("_lib/lib.menu.php");
                         <div class="row">
                                 <div class="cell-md-6">
 
-                                    <div data-role="panel" data-title-caption="Escenarios existentes" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+                                    <div data-role="panel" data-title-caption="Documentos existentes" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
                                         <div class="p-4">
                                             <table class="table striped table-border mt-4"
                                                 data-role="table"
@@ -206,7 +206,7 @@ $this->load->view("_lib/lib.menu.php");
 
                                 <div class="cell-md-6">
                                     <div class="bg-white p-4 m-2">
-                                        <h4>Agregar ó actualizar escenarios</h4>
+                                        <h4>Agregar ó actualizar documentos</h4>
 
                                         <form data-role="validator" action="/staff/FO_addSceneries" method="POST" enctype="multipart/form-data">
 

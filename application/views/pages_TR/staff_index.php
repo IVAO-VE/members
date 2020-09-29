@@ -119,13 +119,8 @@ $this->load->view("_lib/lib.menu.php");
             </div>
             <div id="profile-activity">
                 <br>
-                <div data-role="panel" data-title-caption="User activity" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
-                    <canvas id="profileChart1"></canvas>
-                </div>
-                <br>
-                <div data-role="panel" data-title-caption="Clients" data-title-icon="<span class='mif-users'>" data-collapsible="true">
-                    <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
-                    </table>
+                <div data-role="panel" data-title-caption="Documentos" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
+                   
                 </div>
             </div>
         </div>

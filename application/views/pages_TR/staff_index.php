@@ -119,9 +119,137 @@ $this->load->view("_lib/lib.menu.php");
             </div>
             <div id="profile-activity">
                 <br>
-                <div data-role="panel" data-title-caption="Documentos" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
-                   
-                </div>
+                <div data-role="panel" data-title-caption="Administración de documentos" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
+
+                        <div class="row">
+                                <div class="cell-md-6">
+
+                                    <div data-role="panel" data-title-caption="Escenarios existentes" data-collapsible="true" data-title-icon="<span class='mif-table'></span>" class="mt-4">
+                                        <div class="p-4">
+                                            <table class="table striped table-border mt-4"
+                                                data-role="table"
+                                                data-cls-table-top="row"
+                                                data-cls-search="cell-md-6"
+                                                data-cls-rows-count="cell-md-6"
+                                                data-rows="5"
+                                                data-rows-steps="5, 10"
+                                                data-show-activity="false"
+                                                data-horizontal-scroll="true"
+                                            >
+
+                                                <thead>
+                                                <tr>
+                                                    <th >ICAO</th>
+                                                    <th data-cls-column="fg-green" >SIM</th>
+                                                    <th >FECHA</th>
+                                                    <th >OPCIÓN</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                    //Consultando datos de escenarios en el directorio
+                                                    try {
+                                                        $xARRAY_FILES = array();
+                                                        $dir = opendir(FCPATH.'uploads/documents/'); //creamos el objeto directorio
+                                                        while($elemento = readdir($dir)){ //recorremos todos los elementos del objeto
+                                                            if(($elemento != ".") && ($elemento != "..")){ //no es control de directorios
+                                                                if(!is_dir(FCPATH.'uploads/documents/'.$elemento)){ //es un archivo
+                                                                    $MyFILE_INFO = pathinfo(FCPATH.'uploads/documents/'.$elemento);
+                                                                    $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
+                                                                    $MySIM = end($MyFILE_PART);
+                                                                    switch (strtoupper($MySIM)){ 
+                                                                        case "FS2004": //es una carta por instrumentos
+                                                                            $xSIM = "FS2004";
+                                                                        break;
+                                                                        case "FSX": //es una carta visual
+                                                                            $xSIM = "FSX";
+                                                                        break;
+                                                                        case "P3D": //es una carta visual
+                                                                            $xSIM = "Prepar3D";
+                                                                        break;
+                                                                        case "XPLANE": //es una carta visual
+                                                                            $xSIM = "X-Plane";
+                                                                        break;
+                                                                        case "FS2020": //es una carta visual
+                                                                            $xSIM = "FS2020";
+                                                                        break;
+
+                                                                    }
+                                                                    echo '
+                                                                        <tr>
+                                                                            <td>'.$MyFILE_PART[0].'</td>
+                                                                            <td>'.$xSIM.'</td>
+                                                                            <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/documents/'.$elemento)).'</td>
+                                                                            <td>xx</td>
+                                                                        </tr>
+                                                                    ';
+
+                                                                }
+                                                            }
+                                                        }
+                                                    } catch (Exception $e) {
+                                                        //Problema detetado
+                                                        $this->phpdebug->debug('[DEBUG] -> Excepción: '.$e->getMessage());
+                                                        $this->myfunctions->showDIALOG(false, "Control de errores", $e->getMessage(), 5);
+                                                    }                                                    
+                                                ?>  
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                
+                                </div>
+
+                                <div class="cell-md-6">
+                                    <div class="bg-white p-4 m-2">
+                                        <h4>Agregar ó actualizar escenarios</h4>
+
+                                        <form data-role="validator" action="/staff/FO_addSceneries" method="POST" enctype="multipart/form-data">
+
+                                            <div class="mt-2 mb-2">
+                                                <label>Selecciona la categoría.</label>
+                                                <select id="sim" name="sim" data-role="select" data-validate="required not=-1">
+                                                    <option value="-1" class="d-none"></option>
+                                                    <option value="FS2004">Microsoft Flight Simulator 2004</option>
+                                                    <option value="FSX">Microsoft Flight Simulator X</option>
+                                                    <option value="P3D">Lockheed Martin Prepar3D</option>
+                                                    <option value="XPLANE">X-Plane Flight Simulator</option>
+                                                    <option value="FS2020">Microsoft Flight Simulator 2020</option>
+                                                </select>
+                                                <span class="invalid_feedback">Debes de seleccionar una categoría!</span>
+                                            </div>
+
+
+                                            <div class="row mb-2">
+                                                <label>Documento a subir (solo PDF).</label>
+                                                <input 
+                                                    id="filePDF" 
+                                                    name="filePDF" 
+                                                    type="file" 
+                                                    accept=".pdf"
+                                                    data-role="file" 
+                                                    data-mode="drop" 
+                                                    data-button-title="Elija o arrastre el archivo" 
+                                                    data-validate="required not=-1" 
+                                                >
+                                                <span class="invalid_feedback">Debes de cargar un documento!</span>
+                                            </div>
+
+                                            <button class="button primary">Agregar documento</button>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
             </div>
         </div>
 

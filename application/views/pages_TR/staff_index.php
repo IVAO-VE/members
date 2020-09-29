@@ -214,14 +214,14 @@ $this->load->view("_lib/lib.menu.php");
                                                 <label>Selecciona la categoría.</label>
                                                 <select id="sim" name="sim" data-role="select" data-validate="required not=-1">
                                                     <option value="-1" class="d-none"></option>
-                                                    <option value="FS2004">Conexión y red</option>
-                                                    <option value="FSX">Fraseología y radios</option>
-                                                    <option value="P3D">Aeronaves y equipos</option>
-                                                    <option value="XPLANE">Tiempo y meteorología</option>
-                                                    <option value="FS2020">Reglamentación y normatividad</option>
-                                                    <option value="FS2020">Otras categorías</option>
-                                                    <option value="FS2020">Software y herramientas</option>
-                                                    <option value="FS2020">Prácticas y ejercicios de vuelo</option>
+                                                    <option value="CON">Conexión y red</option>
+                                                    <option value="FRA">Fraseología y radios</option>
+                                                    <option value="AER">Aeronaves y equipos</option>
+                                                    <option value="MET">Tiempo y meteorología</option>
+                                                    <option value="REG">Reglamentación y normatividad</option>
+                                                    <option value="SOF">Software y herramientas</option>
+                                                    <option value="PRA">Prácticas y ejercicios de vuelo</option>
+                                                    <option value="OTR">Otras categorías</option>
                                                 </select>
                                                 <span class="invalid_feedback">Debes de seleccionar una categoría!</span>
                                             </div>

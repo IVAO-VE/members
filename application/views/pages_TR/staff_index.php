@@ -185,7 +185,7 @@ $this->load->view("_lib/lib.menu.php");
                                                                     }
                                                                     echo '
                                                                         <tr>
-                                                                            <td>'.$MyFILE_PART[0].'</td>
+                                                                            <td>'.$xDOC.'</td>
                                                                             <td>'.$xSIM.'</td>
                                                                             <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/documents/'.$elemento)).'</td>
                                                                             <td>xx</td>

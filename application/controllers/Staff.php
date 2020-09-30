@@ -224,7 +224,6 @@ class Staff extends CI_Controller
     public function TR_addDocuments(){
         $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
-        $this->phpdebug->debug($MyEXT);        
         if($MyEXT != "PDF"){
             $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
                                           'message' => 'El archivo no es un documento válido.', 
@@ -232,17 +231,17 @@ class Staff extends CI_Controller
             $this->load->view('pages_FO/staff_index', $data);
         }else{
             $dirUPLOAD = FCPATH.'uploads/';
-            $dirSCENERIES = FCPATH.'uploads/documents/';
+            $dirDOCUMENTS = FCPATH.'uploads/documents/';
             $MyCLASIF = $_POST['clasif'];
             $MyPDF = $_FILES['filePDF']['name'];
            
             if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
             }
-            if(!is_dir($dirSCENERIES)){ //Directorio DOCUMENTOS no existe (hay que crearlo)
-                mkdir($dirSCENERIES);
+            if(!is_dir($dirDOCUMENTS)){ //Directorio DOCUMENTOS no existe (hay que crearlo)
+                mkdir($dirDOCUMENTS);
             }
-            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirSCENERIES.strtoupper($MyCLASIF).'_'.$MySIM.'.pdf')){
+            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirDOCUMENTS.strtoupper($MyCLASIF).'_'.$MyPDF.'.pdf')){
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
                 $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 

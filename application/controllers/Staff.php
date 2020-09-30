@@ -156,7 +156,7 @@ class Staff extends CI_Controller
             $MyICAO = $_POST['icao'];
             $MyREGLA = $_POST['regla'];
             $MyPDF = $_FILES['filePDF']['name'];
-            $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
+            $this->phpdebug->debug('[DEBUG] -> Intentando añadir carta de vuelo para '.$MyICAO);
             
             if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
@@ -244,17 +244,17 @@ class Staff extends CI_Controller
             if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirDOCUMENTS.strtoupper($MyCLASIF).'_'.$MyPDF.'.pdf')){
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
-                                            'message' => 'Fallo al intentar registrar éste escenario.', 
+                $data['showNOTIFY'][] = array('title' => 'Entrenamiento', 
+                                            'message' => 'Fallo al intentar registrar éste documento.', 
                                             'type' => 4);
             }else{
                 //Archivo subido con éxito
                 $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
-                                            'message' => 'Éxito, escenario registrado correctamente.', 
+                $data['showNOTIFY'][] = array('title' => 'Entrenamiento', 
+                                            'message' => 'Éxito, documento registrado correctamente.', 
                                             'type' => 2);
             }
-            $this->load->view('pages_FO/staff_index', $data);
+            $this->load->view('pages_TR/staff_index', $data);
         }
     }    
     

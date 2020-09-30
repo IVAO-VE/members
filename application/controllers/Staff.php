@@ -235,12 +235,11 @@ class Staff extends CI_Controller
             $dirSCENERIES = FCPATH.'uploads/documents/';
             $MyCLASIF = $_POST['clasif'];
             $MyPDF = $_FILES['filePDF']['name'];
-            $this->phpdebug->debug('[DEBUG] -> Intentando escenario para '.$MyICAO);
-            
+           
             if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
             }
-            if(!is_dir($dirSCENERIES)){ //Directorio ESCENARIOS no existe (hay que crearlo)
+            if(!is_dir($dirSCENERIES)){ //Directorio DOCUMENTOS no existe (hay que crearlo)
                 mkdir($dirSCENERIES);
             }
             if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirSCENERIES.strtoupper($MyCLASIF).'_'.$MySIM.'.pdf')){

@@ -125,7 +125,7 @@ class PHPDebug {
         $db->query('INSERT INTO logs(time, ip, vid, log) VALUES('.
                 time().
                 $myfunctions->get_cliente_ip().
-                $this->session->userdata('vid').
+                $session->userdata('vid').
                 $name.
         ')');
     }

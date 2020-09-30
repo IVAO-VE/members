@@ -10,7 +10,7 @@
  **/
 
 
-class PDFInfo
+class PDFMeta
 {
 	public $author;
 	public $title;

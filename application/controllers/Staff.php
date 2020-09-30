@@ -241,7 +241,7 @@ class Staff extends CI_Controller
             if(!is_dir($dirDOCUMENTS)){ //Directorio DOCUMENTOS no existe (hay que crearlo)
                 mkdir($dirDOCUMENTS);
             }
-            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirDOCUMENTS.strtoupper($MyCLASIF).'_'.$MyPDF['filename'].'.pdf')){
+            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirDOCUMENTS.strtoupper($MyCLASIF).'_'.str_replace("_", "-", $MyPDF['filename']).'.pdf')){
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
                 $data['showNOTIFY'][] = array('title' => 'Entrenamiento', 

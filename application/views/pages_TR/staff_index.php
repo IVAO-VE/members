@@ -158,29 +158,29 @@ $this->load->view("_lib/lib.menu.php");
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MySIM = end($MyFILE_PART);
                                                                     switch (strtoupper($MySIM)){ 
-                                                                        case "CON": //es una carta por instrumentos
-                                                                            $xDOC = "FS2004";
+                                                                        case "CON": 
+                                                                            $xDOC = "Conexión y red";
                                                                         break;
-                                                                        case "FRA": //es una carta visual
-                                                                            $xDOC = "FSX";
+                                                                        case "FRA": 
+                                                                            $xDOC = "Fraseología y radios";
                                                                         break;
-                                                                        case "AER": //es una carta visual
-                                                                            $xDOC = "Prepar3D";
+                                                                        case "AER": 
+                                                                            $xDOC = "Aeronaves y equipos";
                                                                         break;
-                                                                        case "MET": //es una carta visual
-                                                                            $xDOC = "X-Plane";
+                                                                        case "MET": 
+                                                                            $xDOC = "Tiempo y meteorología";
                                                                         break;
-                                                                        case "REG": //es una carta visual
-                                                                            $xDOC = "FS2020";
+                                                                        case "REG": 
+                                                                            $xDOC = "Reglamentación y normatividad";
                                                                         break;
-                                                                        case "SOF": //es una carta visual
-                                                                            $xDOC = "FS2020";
+                                                                        case "SOF": 
+                                                                            $xDOC = "Software y herramientas";
                                                                         break;
-                                                                        case "PRA": //es una carta visual
-                                                                            $xDOC = "FS2020";
+                                                                        case "PRA": 
+                                                                            $xDOC = "Prácticas y ejercicios de vuelo";
                                                                         break;
-                                                                        case "OTR": //es una carta visual
-                                                                            $xDOC = "FS2020";
+                                                                        case "OTR": 
+                                                                            $xDOC = "Otras categorías";
                                                                         break;
                                                                     }
                                                                     echo '

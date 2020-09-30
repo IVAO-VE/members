@@ -220,7 +220,48 @@ class Staff extends CI_Controller
             $this->load->view('pages_FO/staff_index', $data);
         }
     }    
+
+    public function TR_addDocuments(){
+        $MyFILE = pathinfo($_FILES['fileZIP']['name']);
+        $MyEXT = strtoupper($MyFILE['extension']);
+        $this->phpdebug->debug($MyEXT);        
+        if($MyEXT != "ZIP"){
+            $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
+                                          'message' => 'El archivo no es ZIP válido.', 
+                                          'type' => 4);
+            $this->load->view('pages_FO/staff_index', $data);
+        }else{
+            $dirUPLOAD = FCPATH.'uploads/';
+            $dirSCENERIES = FCPATH.'uploads/documents/';
+            $MyICAO = $_POST['icao'];
+            $MySIM = $_POST['sim'];
+            $MyPDF = $_FILES['fileZIP']['name'];
+            $this->phpdebug->debug('[DEBUG] -> Intentando escenario para '.$MyICAO);
+            
+            if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+                mkdir($dirUPLOAD);
+            }
+            if(!is_dir($dirSCENERIES)){ //Directorio ESCENARIOS no existe (hay que crearlo)
+                mkdir($dirSCENERIES);
+            }
+            if(!move_uploaded_file($_FILES['fileZIP']['tmp_name'], $dirSCENERIES.strtoupper($MyICAO).'_'.$MySIM.'.zip')){
+                //Problemas al sibir el archivo.
+                $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
+                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
+                                            'message' => 'Fallo al intentar registrar éste escenario.', 
+                                            'type' => 4);
+            }else{
+                //Archivo subido con éxito
+                $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
+                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
+                                            'message' => 'Éxito, escenario registrado correctamente.', 
+                                            'type' => 2);
+            }
+            $this->load->view('pages_FO/staff_index', $data);
+        }
+    }    
     
+
     public function controllers()
     {
         //Consultado con la DB

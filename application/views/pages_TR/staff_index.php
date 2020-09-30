@@ -147,7 +147,7 @@ $this->load->view("_lib/lib.menu.php");
                                                 </thead>
                                                 <tbody>
                                                 <?php
-                                                    //Consultando datos de escenarios en el directorio
+                                                    //Consultando datos de documentos en el directorio
                                                     try {
                                                         $xARRAY_FILES = array();
                                                         $dir = opendir(FCPATH.'uploads/documents/'); //creamos el objeto directorio
@@ -158,22 +158,30 @@ $this->load->view("_lib/lib.menu.php");
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MySIM = end($MyFILE_PART);
                                                                     switch (strtoupper($MySIM)){ 
-                                                                        case "FS2004": //es una carta por instrumentos
-                                                                            $xSIM = "FS2004";
+                                                                        case "CON": //es una carta por instrumentos
+                                                                            $xDOC = "FS2004";
                                                                         break;
-                                                                        case "FSX": //es una carta visual
-                                                                            $xSIM = "FSX";
+                                                                        case "FRA": //es una carta visual
+                                                                            $xDOC = "FSX";
                                                                         break;
-                                                                        case "P3D": //es una carta visual
-                                                                            $xSIM = "Prepar3D";
+                                                                        case "AER": //es una carta visual
+                                                                            $xDOC = "Prepar3D";
                                                                         break;
-                                                                        case "XPLANE": //es una carta visual
-                                                                            $xSIM = "X-Plane";
+                                                                        case "MET": //es una carta visual
+                                                                            $xDOC = "X-Plane";
                                                                         break;
-                                                                        case "FS2020": //es una carta visual
-                                                                            $xSIM = "FS2020";
+                                                                        case "REG": //es una carta visual
+                                                                            $xDOC = "FS2020";
                                                                         break;
-
+                                                                        case "SOF": //es una carta visual
+                                                                            $xDOC = "FS2020";
+                                                                        break;
+                                                                        case "PRA": //es una carta visual
+                                                                            $xDOC = "FS2020";
+                                                                        break;
+                                                                        case "OTR": //es una carta visual
+                                                                            $xDOC = "FS2020";
+                                                                        break;
                                                                     }
                                                                     echo '
                                                                         <tr>

@@ -40,9 +40,7 @@ $this->load->view("_lib/lib.menu.php");
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#gca">GCA</a></li>
-                <li><a href="#profile-activity">Documentos de entrenamiento</a></li>
-                <li><a href="#">Timeline</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#documents">Documentos de entrenamiento</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
@@ -117,7 +115,7 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
                 <br>
             </div>
-            <div id="profile-activity">
+            <div id="documents">
                 <br>
                 <div data-role="panel" data-title-caption="Administración de documentos" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
 
@@ -147,7 +145,7 @@ $this->load->view("_lib/lib.menu.php");
                                                 </thead>
                                                 <tbody>
                                                 <?php
-                                                    //Consultando datos de escenarios en el directorio
+                                                    //Consultando datos de documentos en el directorio
                                                     try {
                                                         $xARRAY_FILES = array();
                                                         $dir = opendir(FCPATH.'uploads/documents/'); //creamos el objeto directorio
@@ -157,28 +155,37 @@ $this->load->view("_lib/lib.menu.php");
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/documents/'.$elemento);
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MySIM = end($MyFILE_PART);
-                                                                    switch (strtoupper($MySIM)){ 
-                                                                        case "FS2004": //es una carta por instrumentos
-                                                                            $xSIM = "FS2004";
+                                                                    switch (strtoupper($MyFILE_PART[0])){ 
+                                                                        case "CON": 
+                                                                            $xDOC = "Conexión y red";
                                                                         break;
-                                                                        case "FSX": //es una carta visual
-                                                                            $xSIM = "FSX";
+                                                                        case "FRA": 
+                                                                            $xDOC = "Fraseología y radios";
                                                                         break;
-                                                                        case "P3D": //es una carta visual
-                                                                            $xSIM = "Prepar3D";
+                                                                        case "AER": 
+                                                                            $xDOC = "Aeronaves y equipos";
                                                                         break;
-                                                                        case "XPLANE": //es una carta visual
-                                                                            $xSIM = "X-Plane";
+                                                                        case "MET": 
+                                                                            $xDOC = "Tiempo y meteorología";
                                                                         break;
-                                                                        case "FS2020": //es una carta visual
-                                                                            $xSIM = "FS2020";
+                                                                        case "REG": 
+                                                                            $xDOC = "Reglamentación y normatividad";
                                                                         break;
-
+                                                                        case "SOF": 
+                                                                            $xDOC = "Software y herramientas";
+                                                                        break;
+                                                                        case "PRA": 
+                                                                            $xDOC = "Prácticas y ejercicios de vuelo";
+                                                                        break;
+                                                                        case "OTR": 
+                                                                            $xDOC = "Otras categorías";
+                                                                        break;
                                                                     }
+                                                                    $this->pdfmeta->load(FCPATH.'uploads/documents/'.$elemento);
                                                                     echo '
                                                                         <tr>
-                                                                            <td>'.$MyFILE_PART[0].'</td>
-                                                                            <td>'.$xSIM.'</td>
+                                                                            <td>'.$xDOC.'</td>
+                                                                            <td>'.$this->pdfmeta->title.'</td>
                                                                             <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/documents/'.$elemento)).'</td>
                                                                             <td>xx</td>
                                                                         </tr>
@@ -195,24 +202,20 @@ $this->load->view("_lib/lib.menu.php");
                                                 ?>  
 
                                                 </tbody>
-
                                             </table>
                                         </div>
                                     </div>
-
-
-                                
                                 </div>
 
                                 <div class="cell-md-6">
                                     <div class="bg-white p-4 m-2">
                                         <h4>Agregar ó actualizar documentos</h4>
 
-                                        <form data-role="validator" action="/staff/FO_addSceneries" method="POST" enctype="multipart/form-data">
+                                        <form data-role="validator" action="/staff/TR_addDocuments" method="POST" enctype="multipart/form-data">
 
                                             <div class="mt-2 mb-2">
                                                 <label>Selecciona la categoría.</label>
-                                                <select id="sim" name="sim" data-role="select" data-validate="required not=-1">
+                                                <select id="clasif" name="clasif" data-role="select" data-validate="required not=-1">
                                                     <option value="-1" class="d-none"></option>
                                                     <option value="CON">Conexión y red</option>
                                                     <option value="FRA">Fraseología y radios</option>

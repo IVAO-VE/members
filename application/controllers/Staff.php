@@ -156,7 +156,7 @@ class Staff extends CI_Controller
             $MyICAO = $_POST['icao'];
             $MyREGLA = $_POST['regla'];
             $MyPDF = $_FILES['filePDF']['name'];
-            $this->phpdebug->debug('[DEBUG] -> Intentando añadir cata de vuelo para '.$MyICAO);
+            $this->phpdebug->debug('[DEBUG] -> Intentando añadir carta de vuelo para '.$MyICAO);
             
             if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
@@ -220,7 +220,45 @@ class Staff extends CI_Controller
             $this->load->view('pages_FO/staff_index', $data);
         }
     }    
+
+    public function TR_addDocuments(){
+        $MyFILE = pathinfo($_FILES['filePDF']['name']);
+        $MyEXT = strtoupper($MyFILE['extension']);
+        if($MyEXT != "PDF"){
+            $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
+                                          'message' => 'El archivo no es un documento válido.', 
+                                          'type' => 4);
+            $this->load->view('pages_FO/staff_index', $data);
+        }else{
+            $dirUPLOAD = FCPATH.'uploads/';
+            $dirDOCUMENTS = FCPATH.'uploads/documents/';
+            $MyCLASIF = $_POST['clasif'];
+            $MyPDF = pathinfo($_FILES['filePDF']['name']);
+           
+            if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+                mkdir($dirUPLOAD);
+            }
+            if(!is_dir($dirDOCUMENTS)){ //Directorio DOCUMENTOS no existe (hay que crearlo)
+                mkdir($dirDOCUMENTS);
+            }
+            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirDOCUMENTS.strtoupper($MyCLASIF).'_'.str_replace("_", "-", $MyPDF['filename']).'.pdf')){
+                //Problemas al sibir el archivo.
+                $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
+                $data['showNOTIFY'][] = array('title' => 'Entrenamiento', 
+                                            'message' => 'Fallo al intentar registrar éste documento.', 
+                                            'type' => 4);
+            }else{
+                //Archivo subido con éxito
+                $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
+                $data['showNOTIFY'][] = array('title' => 'Entrenamiento', 
+                                            'message' => 'Éxito, documento registrado correctamente.', 
+                                            'type' => 2);
+            }
+            $this->load->view('pages_TR/staff_index', $data);
+        }
+    }    
     
+
     public function controllers()
     {
         //Consultado con la DB

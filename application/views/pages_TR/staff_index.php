@@ -203,13 +203,9 @@ $this->load->view("_lib/lib.menu.php");
                                                 ?>  
 
                                                 </tbody>
-
                                             </table>
                                         </div>
                                     </div>
-
-
-                                
                                 </div>
 
                                 <div class="cell-md-6">

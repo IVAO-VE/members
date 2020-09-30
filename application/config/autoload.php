@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('PHPDebug', 'MyFunctions', 'session','database');
+$autoload['libraries'] = array('PDFMeta', 'PHPDebug', 'MyFunctions', 'session','database');
 
 /*
 | -------------------------------------------------------------------

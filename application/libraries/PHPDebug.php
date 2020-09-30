@@ -120,7 +120,7 @@ class PHPDebug {
             }
         }
         echo '</script>'.NL;
-        $enlace = mysqli_connect("localhost", "membersdb", "jPlt4M^zkj5k7sWn", "members");
+/*        $enlace = mysqli_connect("localhost", "membersdb", "jPlt4M^zkj5k7sWn", "members");
         if ($enlace) {
             mysqli_query('INSERT INTO logs(time, ip, vid, log) VALUES('.
                 time().
@@ -130,7 +130,7 @@ class PHPDebug {
             ')');
         }
         mysqli_close($enlace);
-
+*/
     }
     /** ***************************************************************************************************************************** **/
     /** ***************************************************************************************************************************** **/

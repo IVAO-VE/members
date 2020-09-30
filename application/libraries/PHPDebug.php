@@ -120,9 +120,11 @@ class PHPDebug {
             }
         }
         echo '</script>'.NL;
-        $this->db->query('INSERT INTO logs(time, ip, vid, log) VALUES('.
+        
+        
+        $db->query('INSERT INTO logs(time, ip, vid, log) VALUES('.
                 time().
-                $this->myfunctions->get_cliente_ip().
+                $myfunctions->get_cliente_ip().
                 $this->session->userdata('vid').
                 $name.
         ')');

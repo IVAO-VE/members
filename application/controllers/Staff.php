@@ -114,10 +114,10 @@ class Staff extends CI_Controller
 
             if ($query) {
                 $this->session->set_flashdata('info', 'Se agrego correctamente.');
-                redirect(base_url('staff/members'));
+                redirect(base_url('staff/HQaccess'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas agregando los permisos.');
-                redirect(base_url('staff/members'));
+                redirect(base_url('staff/HQaccess'));
             }
         }
     }

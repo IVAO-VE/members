@@ -124,7 +124,7 @@ class PHPDebug {
         if ($enlace) {
             mysqli_query('INSERT INTO logs(time, ip, vid, log) VALUES('.
                 time().
-                $this->myfunctions->get_cliente_ip().
+                "0.0.0.0". //$this->myfunctions->get_cliente_ip().
                 $this->session->userdata('vid').
                 $name.
             ')');

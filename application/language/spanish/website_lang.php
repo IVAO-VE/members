@@ -69,6 +69,7 @@ $lang['dpto05_DOC'] = 'Documentos de entrenamiento';
 $lang['dpto06'] = 'Miembros y afiliación';
 $lang['dpto07'] = 'Eventos';
 $lang['dpto07_CAL'] = 'Calendario de eventos';
+$lang['dpto07_EVE'] = 'Eventos reportables';
 $lang['dpto08'] = 'Relaciones públicas';
 $lang['dpto08_FOR'] = 'Foros de Venezuela';
 $lang['dpto08_FAC'] = 'Social Facebook';

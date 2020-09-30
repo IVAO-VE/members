@@ -69,6 +69,7 @@ $lang['dpto05_DOC'] = 'Training documents';
 $lang['dpto06'] = 'Members and affiliation';
 $lang['dpto07'] = 'Events';
 $lang['dpto07_CAL'] = 'Events calendar';
+$lang['dpto07_EVE'] = 'Reportable Events';
 $lang['dpto08'] = 'Public relations';
 $lang['dpto08_FOR'] = 'Venezuelan forums';
 $lang['dpto08_FAC'] = 'Social Facebook';

@@ -152,6 +152,10 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
                     <span class="icon"><span class="mif-calendar"></span></span>
                     <span class="caption"><?php echo $this->lang->line('dpto07_CAL'); ?></span>
                 </a></li>
+            <li><a href="/app/Events">
+                    <span class="icon"><span class="mif-calendar"></span></span>
+                    <span class="caption"><?php echo $this->lang->line('dpto07_EVE'); ?></span>
+                </a></li>
         </ul>
     </li>
 
@@ -302,7 +306,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         if ($access_nivel['pages_TR'] == 'true') { //Tiene acceso a Entrenamiento
             echo '
                             <li>
-                                <a href="'. base_url('staff/training') .'">
+                                <a href="' . base_url('staff/training') . '">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto05') . '</span>
                                 </a>
@@ -324,7 +328,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         if ($access_nivel['pages_EV'] == 'true') { //Tiene acceso a Eventos
             echo '
                             <li>
-                                <a href="'. base_url('staff/Events') .'">
+                                <a href="' . base_url('staff/Events') . '">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto07') . '</span>
                                 </a>

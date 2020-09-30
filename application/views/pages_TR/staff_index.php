@@ -40,9 +40,7 @@ $this->load->view("_lib/lib.menu.php");
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#gca">GCA</a></li>
-                <li><a href="#profile-activity">Documentos de entrenamiento</a></li>
-                <li><a href="#">Timeline</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#documents">Documentos de entrenamiento</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
@@ -117,7 +115,7 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
                 <br>
             </div>
-            <div id="profile-activity">
+            <div id="documents">
                 <br>
                 <div data-role="panel" data-title-caption="Administración de documentos" data-title-icon="<span class='mif-chart-line'>" data-collapsible="true">
 

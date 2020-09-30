@@ -212,7 +212,7 @@ $this->load->view("_lib/lib.menu.php");
 
                                             <div class="mt-2 mb-2">
                                                 <label>Selecciona la categoría.</label>
-                                                <select id="sim" name="sim" data-role="select" data-validate="required not=-1">
+                                                <select id="clasif" name="clasif" data-role="select" data-validate="required not=-1">
                                                     <option value="-1" class="d-none"></option>
                                                     <option value="CON">Conexión y red</option>
                                                     <option value="FRA">Fraseología y radios</option>

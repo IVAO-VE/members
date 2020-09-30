@@ -222,20 +222,19 @@ class Staff extends CI_Controller
     }    
 
     public function TR_addDocuments(){
-        $MyFILE = pathinfo($_FILES['fileZIP']['name']);
+        $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
         $this->phpdebug->debug($MyEXT);        
-        if($MyEXT != "ZIP"){
+        if($MyEXT != "PDF"){
             $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
-                                          'message' => 'El archivo no es ZIP válido.', 
+                                          'message' => 'El archivo no es un documento válido.', 
                                           'type' => 4);
             $this->load->view('pages_FO/staff_index', $data);
         }else{
             $dirUPLOAD = FCPATH.'uploads/';
             $dirSCENERIES = FCPATH.'uploads/documents/';
-            $MyICAO = $_POST['icao'];
-            $MySIM = $_POST['sim'];
-            $MyPDF = $_FILES['fileZIP']['name'];
+            $MyCLASIF = $_POST['clasif'];
+            $MyPDF = $_FILES['filePDF']['name'];
             $this->phpdebug->debug('[DEBUG] -> Intentando escenario para '.$MyICAO);
             
             if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
@@ -244,7 +243,7 @@ class Staff extends CI_Controller
             if(!is_dir($dirSCENERIES)){ //Directorio ESCENARIOS no existe (hay que crearlo)
                 mkdir($dirSCENERIES);
             }
-            if(!move_uploaded_file($_FILES['fileZIP']['tmp_name'], $dirSCENERIES.strtoupper($MyICAO).'_'.$MySIM.'.zip')){
+            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirSCENERIES.strtoupper($MyCLASIF).'_'.$MySIM.'.pdf')){
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
                 $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 

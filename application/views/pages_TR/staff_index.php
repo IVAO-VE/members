@@ -183,10 +183,11 @@ $this->load->view("_lib/lib.menu.php");
                                                                             $xDOC = "Otras categorías";
                                                                         break;
                                                                     }
+                                                                    $MyPDF = $this->pdfmeta->load(FCPATH.'uploads/documents/'.$elemento);
                                                                     echo '
                                                                         <tr>
                                                                             <td>'.$xDOC.'</td>
-                                                                            <td>yy</td>
+                                                                            <td>'.$MyPDF->title.'</td>
                                                                             <td>'.date('d/m/Y H:i:s', filectime(FCPATH.'uploads/documents/'.$elemento)).'</td>
                                                                             <td>xx</td>
                                                                         </tr>

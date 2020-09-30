@@ -157,7 +157,7 @@ $this->load->view("_lib/lib.menu.php");
                                                                     $MyFILE_INFO = pathinfo(FCPATH.'uploads/documents/'.$elemento);
                                                                     $MyFILE_PART = explode("_", $MyFILE_INFO['filename']);
                                                                     $MySIM = end($MyFILE_PART);
-                                                                    switch (strtoupper($MySIM)){ 
+                                                                    switch (strtoupper($MyFILE_PART[0])){ 
                                                                         case "CON": 
                                                                             $xDOC = "Conexión y red";
                                                                         break;

@@ -589,7 +589,7 @@ class Staff extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
-            redirect(base_url('staff/News'));
+            redirect(base_url('staff/relations'));
         } else {
 
             $title = $this->input->post('title');
@@ -612,10 +612,10 @@ class Staff extends CI_Controller
 
             if ($q) {
                 $this->session->set_flashdata('info', 'La noticia se registro correctamente.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas registrando la noticia.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             }
         }
     }
@@ -624,15 +624,15 @@ class Staff extends CI_Controller
     {
         if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('staff/News'));
+            redirect(base_url('staff/relations'));
         } else {
             $query = $this->db->delete('news', array('id' => $id));
             if ($query) {
                 $this->session->set_flashdata('info', 'La noticia se elimino correctamente.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas eliminando la noticia.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             }
         }
     }
@@ -641,7 +641,7 @@ class Staff extends CI_Controller
     {
         if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('staff/News'));
+            redirect(base_url('staff/relations'));
         } else {
             $this->db->where('id', $id);
             $q = $this->db->get('news');
@@ -650,7 +650,7 @@ class Staff extends CI_Controller
             } else {
                 $data['New'] = false;
             }
-            $this->load->view('pages_PR/staff_news', $data);
+            $this->load->view('pages_PR/staff_index', $data);
         }
     }
 
@@ -664,7 +664,7 @@ class Staff extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
-            redirect(base_url('staff/News'));
+            redirect(base_url('staff/relations'));
         } else {
 
             $title = $this->input->post('title');
@@ -682,10 +682,10 @@ class Staff extends CI_Controller
 
             if ($q) {
                 $this->session->set_flashdata('info', 'La noticia se edito correctamente.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas editando la noticia.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             }
         }
     }
@@ -694,7 +694,7 @@ class Staff extends CI_Controller
     {
         if ($id == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
-            redirect(base_url('staff/News'));
+            redirect(base_url('staff/relations'));
         } else {
             $this->db->where('id', $id);
             $this->db->select('id, status');
@@ -716,10 +716,10 @@ class Staff extends CI_Controller
 
             if ($q) {
                 $this->session->set_flashdata('info', 'El estado se edito correctamente.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas editando el estado.');
-                redirect(base_url('staff/News'));
+                redirect(base_url('staff/relations'));
             }
         }
     }

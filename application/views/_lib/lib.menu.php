@@ -339,7 +339,7 @@ defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
         if ($access_nivel['pages_PR'] == 'true') { //Tiene acceso a Relaciones públicas
             echo '
                             <li>
-                                <a href="#">
+                                <a href="' . base_url('staff/relations') . '">
                                     <span class="icon"><span class="mif-brightness-auto fg-red"></span></span>
                                     <span class="caption">[ ' . $this->lang->line('staff') . ' ] ' . $this->lang->line('dpto08') . '</span>
                                 </a>

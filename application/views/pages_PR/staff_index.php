@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @autor Rixio Iguarán y Simón Cardona.
  * @Departamento Sistemas y Webmaster
@@ -8,13 +9,13 @@
  * 
  **/
 
-    //Asegurando el acceso directo al script
-    defined('BASEPATH') OR exit('El acceso directo al código no está permitido.');
-    //echo BASEPATH; 
-    //Cargando la estructura del HEADER
-    $this->load->view("_lib/lib.header.php");
-    //Cargando la estructura del MENU
-    $this->load->view("_lib/lib.menu.php");
+//Asegurando el acceso directo al script
+defined('BASEPATH') or exit('El acceso directo al código no está permitido.');
+//echo BASEPATH; 
+//Cargando la estructura del HEADER
+$this->load->view("_lib/lib.header.php");
+//Cargando la estructura del MENU
+$this->load->view("_lib/lib.menu.php");
 ?>
 <div class="row border-bottom bd-lightGray m-3">
     <div class="cell-md-4 d-flex flex-align-center">
@@ -33,58 +34,136 @@
 
 
 <div class="fg-dark container-fluid start-screen h-100">
-    <div class="mb-15"></div>   
+    <div class="mb-15"></div>
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto03_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">
-                <li><a href="#airlines"><?php echo $this->lang->line('dpto03_SEC'); ?></a></li>
-                <li><a href="#charts"><?php echo $this->lang->line('dpto03_TSP'); ?></a></li>
-                <li><a href="#meteorologic"><?php echo $this->lang->line('dpto03_GCA'); ?></a></li>
-                <li><a href="#information"><?php echo $this->lang->line('dpto03_FRA'); ?></a></li>
+                <li><a href="#news">Noticias</a></li>
+                <li><a href="#charts">BOT-Trivias</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
-                <div id="airlines">
+                <div id="news">
                     <br>
                     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                        <br>
+                        <table class="table" data-role="table">
+                            <thead>
+                                <tr>
+                                    <th data-sortable="true" data-sort-dir="asc">ID</th>
+                                    <th data-sortable="true">Titulo</th>
+                                    <th data-sortable="true">Descripcion</th>
+                                    <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
+                                    <th data-sortable="true">Creado por</th>
+                                    <th data-sortable="true">Estado</th>
+                                    <th data-sortable="true">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $q = $this->db->get("news");
+                                if ($q->result() > 0) {
+                                    foreach ($q->result() as $fila) {
+                                ?>
+                                        <tr>
+                                            <td><?php echo $fila->id; ?></td>
+                                            <td><?php echo $fila->title; ?></td>
+                                            <td><?php echo $fila->description; ?></td>
+                                            <td><?php echo $fila->date; ?></td>
+                                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
+                                            <td><?php
+                                                switch ($fila->status) {
+                                                    case '0':
+                                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
+                                                        break;
+                                                    case '1':
+                                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
+                                                        break;
+                                                }
+                                                ?></td>
+                                            <td>
+                                                <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
+                                                <a href="<?php echo base_url("staff/NewEdit/$fila->id") ?>"><span class="mif-pencil"></span></a>
+                                            </td>
+                                        </tr>
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                        <div class="d-flex flex-column flex-justify-center">
+                            <div id="t1_info"></div>
+                            <div id="t1_pagination"></div>
+                        </div>
+                        <div id="Buttons" class="gird">
+                            <div class="row">
+                                <div class="cell-11"></div>
+                                <div class="cell-1">
+                                    <a class="button primary cycle " onclick="Metro.dialog.open('#add')">
+                                        <span class="mif-plus"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php if (isset($New)) :
+                                if ($New != false) : ?>
+                                    <div class="dialog" data-role="dialog" data-show="true">
+                                        <div class="dialog-title text-center">Editar Noticia</div>
+                                        <div class="dialog-content">
+                                            <?php foreach ($New as $News) { ?>
+                                                <?php echo form_open('staff/EditNew') ?>
+                                                <input type="hidden" name="id" value="<?php echo $News->id; ?>">
+                                                <div class="gird">
+                                                    <div class="row">
+                                                        <div class="cell-6">
+                                                            <div class="form-group">
+                                                                <label>Titulo</label>
+                                                                <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cell-6">
+                                                            <div class="form-group">
+                                                                <label>Descripcion</label>
+                                                                <textarea name="description" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                        <div class="dialog-actions">
+                                            <input type="submit" class="button primary" value="Editar">
+                                            <?php echo form_close() ?>
+                                            <a href="<?php echo base_url('staff/News') ?>" class="button">Cerrar</a>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endif; ?>
 
+                        </div>
                     </div>
                     <br>
                 </div>
-
-                <div id="charts">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
-
-                <div id="meteorologic">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
-
-                <div id="information">
-                    <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
-                    </div>
-                    <br>
-                </div>
-
+                <br>
             </div>
 
+            <div id="charts">
+                <br>
+                <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
+                </div>
+                <br>
+            </div>
 
         </div>
+
+
+
     </div>
+</div>
 </div>
 
 <?php
-	$this->load->view("_lib/lib.footer.php");
+$this->load->view("_lib/lib.footer.php");
 ?>

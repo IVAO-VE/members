@@ -153,6 +153,7 @@ $this->load->view("_lib/lib.menu.php");
                     $items = json_decode($data);
                     //print_r($items);
                     var_dump($items);
+                    //Variables Originales
                     $question = $items[0]->Question;
                     $A = $items[0]->AnswerA;
                     $B = $items[0]->AnswerB;
@@ -161,18 +162,21 @@ $this->load->view("_lib/lib.menu.php");
                     $Correct = $items[0]->CorrectAnswer;
                     $Running = $items[0]->Running;
                     $ID = $items[0]->ID;
-
-                    $ID = 24;
-
-                    /* $test1 = $items[0]->AnswerC;
-                        $test2 = json_decode($items[0]->AnswerC,true);
-                        echo $test2;
-                        foreach($items as $item){
-                            $question = $item->Question;
-                            echo $question;
-                        }
-                        //echo $items['AnswerC'];
-                        */
+                    ?>
+                    <div class="gird">
+                        <div class="row">
+                            <div class="cell">
+                                <div class="form-group">
+                                    <label>Question</label>
+                                    <input type="text" value="<?php echo $question ?>" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php        
+                    //Variables POST Edicion
+                    $ID = "24";
+                    //Array POST Edicion
                     $array = array(
                         array(
                             'Question' => $question,
@@ -185,33 +189,13 @@ $this->load->view("_lib/lib.menu.php");
                             'ID' => $ID
                         )
                         );
-
-                        //echo json_encode($array);
-                    /*$array = {
-                        "Question"=> $question,
-                        "AnswerA": $A,
-                        'AnswerB': $B,
-                        'AnswerC': $C,
-                        'AnswerD'=> $D,
-                        'CorrectAnswer'=> $Correct,
-                        'Running'=> $Running,
-                        'ID'=> $ID};
-
-                        /*$array = array(
-                            'Question'=> $question,
-                            'AnswerA'=> $A,
-                            'AnswerB'=> $B,
-                            'AnswerC'=> $C,
-                            'AnswerD'=> $D,
-                            'CorrectAnswer'=> $Correct,
-                            'Running'=> $Running,
-                            'ID'=> $ID);
-                        */
+                      
+                    // Informacion de Ruta y forma de insertar documento     
                     //    echo $_SERVER['DOCUMENT_ROOT'];
                     //    echo __DIR__ . '/../';
-                    
-                        $MyJSON = json_encode($array);
-                        $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
+                    //
+                    //    $MyJSON = json_encode($array);
+                    //    $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
                     
                     ?>
                 </div>

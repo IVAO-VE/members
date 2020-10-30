@@ -166,7 +166,7 @@ $this->load->view("_lib/lib.menu.php");
                         
                         echo $items[0]->AnswerC;
                         
-                        $array = {
+                        /*$array = {
                         "Question"=> $question,
                         "AnswerA": $A,
                         'AnswerB': $B,
@@ -188,10 +188,10 @@ $this->load->view("_lib/lib.menu.php");
                         */
                         //    echo $_SERVER['DOCUMENT_ROOT'];
                         //    echo __DIR__ . '/../';
-
+/*
                         $MyJSON = json_encode($array);
                         $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
-                        
+                        */
                         /*foreach($items as $item){
                             $question = $item->Question;
                             echo $question;

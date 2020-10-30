@@ -151,9 +151,16 @@ $this->load->view("_lib/lib.menu.php");
                     <?php
                         $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                         $items = json_decode($data);
-                        //print_r($items);
-                        var_dump($items);
-                        echo $items[0]->Question;
+                        print_r($items);
+                        //var_dump($items);
+                        $question = $items[0]->Question;
+                        $A = $items[0]->AnswerA;
+                        $B = $items[0]->AnswerB;
+                        $C = $items[0]->AnswerC;
+                        $D = $items[0]->AnswerD;
+                        $Correct = $items[0]->CorrectAnswer;
+                        $Running = $items[0]->Running;
+                        $ID = $items[0]->ID;
                         /*foreach($items as $item){
                             $question = $item->Question;
                             echo $question;

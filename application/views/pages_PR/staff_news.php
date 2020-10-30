@@ -97,42 +97,7 @@ function GetName($vid)
 
 </div>
 </div>
-<!-- Modal Agregar Noticia -->
-<div id="add" class="dialog" data-role="dialog">
-    <div class="dialog-title">Agregar nueva noticia</div>
-    <div class="dialog-content">
-        <?php echo form_open('staff/AddNew') ?>
-        <div class="gird">
-            <div class="row">
-                <div class="cell">
-                    <div class="form-group">
-                        <label>Titulo</label>
-                        <input type="text" name="title" class="fg-black" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="cell">
-                    <div class="form-group">
-                        <label>Descripcion</label>
-                        <textarea name="description" data-role="textarea" cols="10" rows="10" required></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <input type="checkbox" data-role="switch" data-caption="Publicar" name="status" data-caption-position="left">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dialog-actions">
-        <input type="submit" class="button success" value="Agregar">
-        <?php echo form_close() ?>
-        <button class="button js-dialog-close">Cerrar</button>
-    </div>
-</div>
-<!-- Fin Modal Agregar Noticia -->
+
 <?php
 $this->load->view("_lib/lib.footer.php");
 ?>

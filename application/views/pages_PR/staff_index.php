@@ -185,6 +185,8 @@ $this->load->view("_lib/lib.menu.php");
                             'ID' => $ID
                         )
                         );
+
+                        echo json_encode($array);
                     /*$array = {
                         "Question"=> $question,
                         "AnswerA": $A,
@@ -207,10 +209,10 @@ $this->load->view("_lib/lib.menu.php");
                         */
                     //    echo $_SERVER['DOCUMENT_ROOT'];
                     //    echo __DIR__ . '/../';
-                    
+                    /*
                         $MyJSON = json_encode($array);
                         $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
-                    
+                    */
                     ?>
                 </div>
                 <br>

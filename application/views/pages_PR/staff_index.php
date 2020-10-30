@@ -172,8 +172,7 @@ $this->load->view("_lib/lib.menu.php");
                             'AnswerD'=> $D,
                             'CorrectAnswer'=> $Correct,
                             'Running'=> $Running,
-                            'ID'=> $ID
-                        ;)
+                            'ID'=> $ID);
 
                         $MyJSON = json_encode($array);
                         $NewData = file_put_contents('https://utilities.ve.ivao.aero/src/trivia.json', $MyJSON);

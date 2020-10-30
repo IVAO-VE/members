@@ -164,12 +164,14 @@ $this->load->view("_lib/lib.menu.php");
 
                         $ID = 24;
                         
-                        //echo $items[0]->AnswerC;
+                        $test1 = $items[0]->AnswerC;
+                        $test2 = json_decode($items[0]->AnswerC,true);
+                        echo $test2
                         /*foreach($items as $item){
                             $question = $item->Question;
                             echo $question;
                         }*/
-                        echo $items['AnswerC'];
+                        //echo $items['AnswerC'];
                         
                         /*$array = {
                         "Question"=> $question,

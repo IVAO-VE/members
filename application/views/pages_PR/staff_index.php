@@ -174,8 +174,11 @@ $this->load->view("_lib/lib.menu.php");
                             'Running'=> $Running,
                             'ID'=> $ID);
 
-                        $MyJSON = json_encode($array);
-                        $NewData = file_put_contents('https://utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
+                            echo $_SERVER['DOCUMENT_ROOT'];
+                            echo __DIR__ . '/../';
+
+                        //$MyJSON = json_encode($array);
+                        //$NewData = file_put_contents('https://utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
 
                         /*foreach($items as $item){
                             $question = $item->Question;

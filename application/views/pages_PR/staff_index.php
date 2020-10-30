@@ -151,10 +151,11 @@ $this->load->view("_lib/lib.menu.php");
                     <?php
                         $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                         $items = json_decode($data, true);
-                        print_r($items);
-                        foreach($items as $item){
+                        //print_r($items);
+                        var_dump($items);
+                        /*foreach($items as $item){
                             echo $item['Question'];
-                        }
+                        }*/
                     ?>
                 </div>
                 <br>

@@ -40,7 +40,7 @@ $this->load->view("_lib/lib.menu.php");
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#news">Noticias</a></li>
-                <li><a href="#charts">BOT-Trivias</a></li>
+                <li><a href="#trivias">BOT-Trivias</a></li>
             </ul>
 
             <div id="user-profile-tabs-content">
@@ -146,10 +146,13 @@ $this->load->view("_lib/lib.menu.php");
                 <br>
             </div>
 
-            <div id="charts">
-                <br>
-                <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-
+            <div id="trivias">
+                <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <?php
+                        $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
+                        $items = json_decode($data, true);
+                        print_r($items);
+                    ?>
                 </div>
                 <br>
             </div>

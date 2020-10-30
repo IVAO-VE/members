@@ -153,6 +153,7 @@ $this->load->view("_lib/lib.menu.php");
                         $items = json_decode($data, true);
                         //print_r($items);
                         var_dump($items);
+                        echo $items[0]->Question;
                         /*foreach($items as $item){
                             echo $item['Question'];
                         }*/

@@ -162,7 +162,7 @@ $this->load->view("_lib/lib.menu.php");
                         $Running = $items[0]->Running;
                         $ID = $items[0]->ID;
 
-                        $ID = 5;
+                        $ID = 24;
                         
                         echo $items[0]->AnswerC;
                         

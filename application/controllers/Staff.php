@@ -48,13 +48,14 @@ class Staff extends CI_Controller
         }
     }
 
-    public function ChangeStatus($Type, $VID){
-        if($Type == NULL){
+    public function ChangeStatus($Type, $VID)
+    {
+        if ($Type == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el Tipo, contacta con el departamento web.');
             redirect(base_url('staff/HQaccess'));
         }
 
-        if($VID == NULL){
+        if ($VID == NULL) {
             $this->session->set_flashdata('error', 'No se ha encontrado el ID, contacta con el departamento web.');
             redirect(base_url('staff/HQaccess'));
         }
@@ -72,9 +73,9 @@ class Staff extends CI_Controller
             case '0':
                 $New = true;
         };*/
-        if($CurrentStatus != 'true'){
+        if ($CurrentStatus != 'true') {
             $New = 'true';
-        }else{
+        } else {
             $New = NULL;
         }
         $data = array(
@@ -93,7 +94,8 @@ class Staff extends CI_Controller
         }
     }
 
-    public function AddAccess(){
+    public function AddAccess()
+    {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('vid', 'VID', 'required|max_length[6]|min_length[6]|numeric');
         $this->form_validation->set_rules('pos', 'Posicion', 'required');
@@ -103,7 +105,7 @@ class Staff extends CI_Controller
             redirect(base_url('staff/HQaccess'));
         } else {
             $vid = $this->input->post('vid');
-            $pos = $this->input->post('pos'); 
+            $pos = $this->input->post('pos');
 
             $data = array(
                 "VID" => $vid,
@@ -141,123 +143,144 @@ class Staff extends CI_Controller
         }
     }
 
-    public function FO_addCharts(){
+    public function FO_addCharts()
+    {
         $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
-        $this->phpdebug->debug($MyEXT);        
-        if($MyEXT != "PDF"){
-            $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
-                                          'message' => 'El archivo no es PDF válido.', 
-                                          'type' => 4);
+        $this->phpdebug->debug($MyEXT);
+        if ($MyEXT != "PDF") {
+            $data['showNOTIFY'][] = array(
+                'title' => 'Error fatal.',
+                'message' => 'El archivo no es PDF válido.',
+                'type' => 4
+            );
             $this->load->view('pages_FO/staff_index', $data);
-        }else{
-            $dirUPLOAD = FCPATH.'uploads/';
-            $dirCHARTS = FCPATH.'uploads/charts/';
+        } else {
+            $dirUPLOAD = FCPATH . 'uploads/';
+            $dirCHARTS = FCPATH . 'uploads/charts/';
             $MyICAO = $_POST['icao'];
             $MyREGLA = $_POST['regla'];
             $MyPDF = $_FILES['filePDF']['name'];
-            $this->phpdebug->debug('[DEBUG] -> Intentando añadir carta de vuelo para '.$MyICAO);
-            
-            if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+            $this->phpdebug->debug('[DEBUG] -> Intentando añadir carta de vuelo para ' . $MyICAO);
+
+            if (!is_dir($dirUPLOAD)) { //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
             }
-            if(!is_dir($dirCHARTS)){ //Directorio CARTAS no existe (hay que crearlo)
+            if (!is_dir($dirCHARTS)) { //Directorio CARTAS no existe (hay que crearlo)
                 mkdir($dirCHARTS);
             }
-            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS.strtoupper($MyICAO).'_'.$MyREGLA.'.pdf')){
+            if (!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirCHARTS . strtoupper($MyICAO) . '_' . $MyREGLA . '.pdf')) {
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
-                                            'message' => 'Fallo al intentar registrar ésta carta aérea.', 
-                                            'type' => 4);
-            }else{
+                $data['showNOTIFY'][] = array(
+                    'title' => 'Cartas aéreas',
+                    'message' => 'Fallo al intentar registrar ésta carta aérea.',
+                    'type' => 4
+                );
+            } else {
                 //Archivo subido con éxito
                 $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-                $data['showNOTIFY'][] = array('title' => 'Cartas aéreas', 
-                                            'message' => 'Éxito, carta aérea registrada correctamente.', 
-                                            'type' => 2);
+                $data['showNOTIFY'][] = array(
+                    'title' => 'Cartas aéreas',
+                    'message' => 'Éxito, carta aérea registrada correctamente.',
+                    'type' => 2
+                );
             }
             $this->load->view('pages_FO/staff_index', $data);
         }
-    }    
+    }
 
-    public function FO_addSceneries(){
+    public function FO_addSceneries()
+    {
         $MyFILE = pathinfo($_FILES['fileZIP']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
-        $this->phpdebug->debug($MyEXT);        
-        if($MyEXT != "ZIP"){
-            $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
-                                          'message' => 'El archivo no es ZIP válido.', 
-                                          'type' => 4);
+        $this->phpdebug->debug($MyEXT);
+        if ($MyEXT != "ZIP") {
+            $data['showNOTIFY'][] = array(
+                'title' => 'Error fatal.',
+                'message' => 'El archivo no es ZIP válido.',
+                'type' => 4
+            );
             $this->load->view('pages_FO/staff_index', $data);
-        }else{
-            $dirUPLOAD = FCPATH.'uploads/';
-            $dirSCENERIES = FCPATH.'uploads/sceneries/';
+        } else {
+            $dirUPLOAD = FCPATH . 'uploads/';
+            $dirSCENERIES = FCPATH . 'uploads/sceneries/';
             $MyICAO = $_POST['icao'];
             $MySIM = $_POST['sim'];
             $MyPDF = $_FILES['fileZIP']['name'];
-            $this->phpdebug->debug('[DEBUG] -> Intentando escenario para '.$MyICAO);
-            
-            if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+            $this->phpdebug->debug('[DEBUG] -> Intentando escenario para ' . $MyICAO);
+
+            if (!is_dir($dirUPLOAD)) { //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
             }
-            if(!is_dir($dirSCENERIES)){ //Directorio ESCENARIOS no existe (hay que crearlo)
+            if (!is_dir($dirSCENERIES)) { //Directorio ESCENARIOS no existe (hay que crearlo)
                 mkdir($dirSCENERIES);
             }
-            if(!move_uploaded_file($_FILES['fileZIP']['tmp_name'], $dirSCENERIES.strtoupper($MyICAO).'_'.$MySIM.'.zip')){
+            if (!move_uploaded_file($_FILES['fileZIP']['tmp_name'], $dirSCENERIES . strtoupper($MyICAO) . '_' . $MySIM . '.zip')) {
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
-                                            'message' => 'Fallo al intentar registrar éste escenario.', 
-                                            'type' => 4);
-            }else{
+                $data['showNOTIFY'][] = array(
+                    'title' => 'Escenarios virtuales',
+                    'message' => 'Fallo al intentar registrar éste escenario.',
+                    'type' => 4
+                );
+            } else {
                 //Archivo subido con éxito
                 $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-                $data['showNOTIFY'][] = array('title' => 'Escenarios virtuales', 
-                                            'message' => 'Éxito, escenario registrado correctamente.', 
-                                            'type' => 2);
+                $data['showNOTIFY'][] = array(
+                    'title' => 'Escenarios virtuales',
+                    'message' => 'Éxito, escenario registrado correctamente.',
+                    'type' => 2
+                );
             }
             $this->load->view('pages_FO/staff_index', $data);
         }
-    }    
+    }
 
-    public function TR_addDocuments(){
+    public function TR_addDocuments()
+    {
         $MyFILE = pathinfo($_FILES['filePDF']['name']);
         $MyEXT = strtoupper($MyFILE['extension']);
-        if($MyEXT != "PDF"){
-            $data['showNOTIFY'][] = array('title' => 'Error fatal.', 
-                                          'message' => 'El archivo no es un documento válido.', 
-                                          'type' => 4);
+        if ($MyEXT != "PDF") {
+            $data['showNOTIFY'][] = array(
+                'title' => 'Error fatal.',
+                'message' => 'El archivo no es un documento válido.',
+                'type' => 4
+            );
             $this->load->view('pages_FO/staff_index', $data);
-        }else{
-            $dirUPLOAD = FCPATH.'uploads/';
-            $dirDOCUMENTS = FCPATH.'uploads/documents/';
+        } else {
+            $dirUPLOAD = FCPATH . 'uploads/';
+            $dirDOCUMENTS = FCPATH . 'uploads/documents/';
             $MyCLASIF = $_POST['clasif'];
             $MyPDF = pathinfo($_FILES['filePDF']['name']);
-           
-            if(!is_dir($dirUPLOAD)){ //Directorio UPLOADS no existe (hay que crearlo)
+
+            if (!is_dir($dirUPLOAD)) { //Directorio UPLOADS no existe (hay que crearlo)
                 mkdir($dirUPLOAD);
             }
-            if(!is_dir($dirDOCUMENTS)){ //Directorio DOCUMENTOS no existe (hay que crearlo)
+            if (!is_dir($dirDOCUMENTS)) { //Directorio DOCUMENTOS no existe (hay que crearlo)
                 mkdir($dirDOCUMENTS);
             }
-            if(!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirDOCUMENTS.strtoupper($MyCLASIF).'_'.str_replace("_", "-", $MyPDF['filename']).'.pdf')){
+            if (!move_uploaded_file($_FILES['filePDF']['tmp_name'], $dirDOCUMENTS . strtoupper($MyCLASIF) . '_' . str_replace("_", "-", $MyPDF['filename']) . '.pdf')) {
                 //Problemas al sibir el archivo.
                 $this->phpdebug->debug('[DEBUG] -> Intento fallido.');
-                $data['showNOTIFY'][] = array('title' => 'Entrenamiento', 
-                                            'message' => 'Fallo al intentar registrar éste documento.', 
-                                            'type' => 4);
-            }else{
+                $data['showNOTIFY'][] = array(
+                    'title' => 'Entrenamiento',
+                    'message' => 'Fallo al intentar registrar éste documento.',
+                    'type' => 4
+                );
+            } else {
                 //Archivo subido con éxito
                 $this->phpdebug->debug('[DEBUG] -> Intento con éxito.');
-                $data['showNOTIFY'][] = array('title' => 'Entrenamiento', 
-                                            'message' => 'Éxito, documento registrado correctamente.', 
-                                            'type' => 2);
+                $data['showNOTIFY'][] = array(
+                    'title' => 'Entrenamiento',
+                    'message' => 'Éxito, documento registrado correctamente.',
+                    'type' => 2
+                );
             }
             $this->load->view('pages_TR/staff_index', $data);
         }
-    }    
-    
+    }
+
 
     public function controllers()
     {
@@ -342,7 +365,7 @@ class Staff extends CI_Controller
             //Verficiamos que no exista otro con mismo NOMBRE
 
             $Nq = $this->db->get_where('awards', array('name' => $name));
-            if($Nq->num_rows() > 0){
+            if ($Nq->num_rows() > 0) {
                 $this->session->set_flashdata('error', 'Ya existe una medalla con este NOMBRE');
                 redirect(base_url('staff/members'));
             }
@@ -356,8 +379,10 @@ class Staff extends CI_Controller
             $query = $this->db->insert('awards', $data);
 
             $fields = array(
-                $short => array('type' => 'VARCHAR',
-                                'constraint' => '100')
+                $short => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => '100'
+                )
             );
 
             $this->load->dbforge();
@@ -899,6 +924,25 @@ class Staff extends CI_Controller
             } else {
                 $this->session->set_flashdata('error', 'Tenemos problemas cambiando de estado.');
                 redirect(base_url('staff/Training'));
+            }
+        }
+    }
+
+    public function relations()
+    {
+        //Consultado con la DB
+        $this->phpdebug->debug('[SEGURIDAD] -> Validando niveles de accesos');
+        $query_access  = $this->db->select('*')
+            ->from('permisos')
+            ->where('vid', $this->session->userdata('vid')) //VID de usuario 
+            ->get();
+        $access_nivel = $query_access->row_array();
+        if (!empty($access_nivel)) { //El usuario está registrado en la db de permisos
+            //******************************
+            if ($access_nivel['pages_PR'] != 'true') { //NO TIENE ACCESO A LA ZONA
+                redirect(base_url());
+            } else {
+                $this->load->view("pages_PR/staff_index");
             }
         }
     }

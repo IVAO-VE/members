@@ -165,10 +165,11 @@ $this->load->view("_lib/lib.menu.php");
                         $ID = 24;
                         
                         //echo $items[0]->AnswerC;
-                        foreach($items as $item){
+                        /*foreach($items as $item){
                             $question = $item->Question;
                             echo $question;
-                        }
+                        }*/
+                        echo $items['AnswerC'];
                         
                         /*$array = {
                         "Question"=> $question,

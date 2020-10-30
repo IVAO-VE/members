@@ -152,6 +152,7 @@ $this->load->view("_lib/lib.menu.php");
                         $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                         $items = json_decode($data, true);
                         print_r($items);
+                        echo $items[0]['Question'];
                     ?>
                 </div>
                 <br>

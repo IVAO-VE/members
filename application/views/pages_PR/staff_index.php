@@ -174,7 +174,7 @@ $this->load->view("_lib/lib.menu.php");
                         'AnswerD'=> $D,
                         'CorrectAnswer'=> $Correct,
                         'Running'=> $Running,
-                        'ID'=> $ID]
+                        'ID'=> $ID];
 
                         /*$array = array(
                             'Question'=> $question,

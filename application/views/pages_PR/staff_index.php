@@ -153,24 +153,24 @@ $this->load->view("_lib/lib.menu.php");
                         $items = json_decode($data, true);
                         //print_r($items);
                         var_dump($items);
-                        $question = $items[0]->Question;
+                        /*$question = $items[0]->Question;
                         $A = $items[0]->AnswerA;
                         $B = $items[0]->AnswerB;
                         $C = $items[0]->AnswerC;
                         $D = $items[0]->AnswerD;
                         $Correct = $items[0]->CorrectAnswer;
                         $Running = $items[0]->Running;
-                        $ID = $items[0]->ID;
+                        $ID = $items[0]->ID;*/
 
                         $ID = 24;
                         
                         $test1 = $items[0]->AnswerC;
                         $test2 = json_decode($items[0]->AnswerC,true);
-                        echo $test2
-                        /*foreach($items as $item){
+                        echo $test2;
+                        foreach($items as $item){
                             $question = $item->Question;
                             echo $question;
-                        }*/
+                        }
                         //echo $items['AnswerC'];
                         
                         /*$array = {

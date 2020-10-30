@@ -46,101 +46,101 @@ $this->load->view("_lib/lib.menu.php");
             <div id="user-profile-tabs-content">
                 <div id="news">
                     <br>
-                        <br>
-                        <table class="table" data-role="table">
-                            <thead>
-                                <tr>
-                                    <th data-sortable="true" data-sort-dir="asc">ID</th>
-                                    <th data-sortable="true">Titulo</th>
-                                    <th data-sortable="true">Descripcion</th>
-                                    <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
-                                    <th data-sortable="true">Creado por</th>
-                                    <th data-sortable="true">Estado</th>
-                                    <th data-sortable="true">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $q = $this->db->get("news");
-                                if ($q->result() > 0) {
-                                    foreach ($q->result() as $fila) {
-                                ?>
-                                        <tr>
-                                            <td><?php echo $fila->id; ?></td>
-                                            <td><?php echo $fila->title; ?></td>
-                                            <td><?php echo $fila->description; ?></td>
-                                            <td><?php echo $fila->date; ?></td>
-                                            <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
-                                            <td><?php
-                                                switch ($fila->status) {
-                                                    case '0':
-                                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
-                                                        break;
-                                                    case '1':
-                                                        echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
-                                                        break;
-                                                }
-                                                ?></td>
-                                            <td>
-                                                <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
-                                                <a href="<?php echo base_url("staff/NewEdit/$fila->id") ?>"><span class="mif-pencil"></span></a>
-                                            </td>
-                                        </tr>
-                                <?php
-                                    }
+                    <br>
+                    <table class="table" data-role="table">
+                        <thead>
+                            <tr>
+                                <th data-sortable="true" data-sort-dir="asc">ID</th>
+                                <th data-sortable="true">Titulo</th>
+                                <th data-sortable="true">Descripcion</th>
+                                <th data-sortable="true" data-format="date" data-format-mask="%d-%m-%y">Fecha creacion</th>
+                                <th data-sortable="true">Creado por</th>
+                                <th data-sortable="true">Estado</th>
+                                <th data-sortable="true">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $q = $this->db->get("news");
+                            if ($q->result() > 0) {
+                                foreach ($q->result() as $fila) {
+                            ?>
+                                    <tr>
+                                        <td><?php echo $fila->id; ?></td>
+                                        <td><?php echo $fila->title; ?></td>
+                                        <td><?php echo $fila->description; ?></td>
+                                        <td><?php echo $fila->date; ?></td>
+                                        <td><?php echo '<a href="https://www.ivao.aero/Member.aspx?Id=' . $fila->author . '">' . $fila->author . '</a>' ?></td>
+                                        <td><?php
+                                            switch ($fila->status) {
+                                                case '0':
+                                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-not fg-red"></span> Oculto</a>';
+                                                    break;
+                                                case '1':
+                                                    echo '<a href="' . base_url("staff/NewStatus/" . $fila->id) . '"><span class="mif-checkmark fg-green"></span> Publicado</a>';
+                                                    break;
+                                            }
+                                            ?></td>
+                                        <td>
+                                            <a href="<?php echo base_url("staff/DeleteNews/$fila->id") ?>"><span class="mif-bin"></span></a>
+                                            <a href="<?php echo base_url("staff/NewEdit/$fila->id") ?>"><span class="mif-pencil"></span></a>
+                                        </td>
+                                    </tr>
+                            <?php
                                 }
-                                ?>
-                            </tbody>
-                        </table>
-                        <div class="d-flex flex-column flex-justify-center">
-                            <div id="t1_info"></div>
-                            <div id="t1_pagination"></div>
-                        </div>
-                        <div id="Buttons" class="gird">
-                            <div class="row">
-                                <div class="cell-11"></div>
-                                <div class="cell-1">
-                                    <a class="button primary cycle " onclick="Metro.dialog.open('#add')">
-                                        <span class="mif-plus"></span>
-                                    </a>
-                                </div>
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                    <div class="d-flex flex-column flex-justify-center">
+                        <div id="t1_info"></div>
+                        <div id="t1_pagination"></div>
+                    </div>
+                    <div id="Buttons" class="gird">
+                        <div class="row">
+                            <div class="cell-11"></div>
+                            <div class="cell-1">
+                                <a class="button primary cycle " onclick="Metro.dialog.open('#add')">
+                                    <span class="mif-plus"></span>
+                                </a>
                             </div>
-                            <?php if (isset($New)) :
-                                if ($New != false) : ?>
-                                    <div class="dialog" data-role="dialog" data-show="true">
-                                        <div class="dialog-title text-center">Editar Noticia</div>
-                                        <div class="dialog-content">
-                                            <?php foreach ($New as $News) { ?>
-                                                <?php echo form_open('staff/EditNew') ?>
-                                                <input type="hidden" name="id" value="<?php echo $News->id; ?>">
-                                                <div class="gird">
-                                                    <div class="row">
-                                                        <div class="cell-6">
-                                                            <div class="form-group">
-                                                                <label>Titulo</label>
-                                                                <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
-                                                            </div>
+                        </div>
+                        <?php if (isset($New)) :
+                            if ($New != false) : ?>
+                                <div class="dialog" data-role="dialog" data-show="true">
+                                    <div class="dialog-title text-center">Editar Noticia</div>
+                                    <div class="dialog-content">
+                                        <?php foreach ($New as $News) { ?>
+                                            <?php echo form_open('staff/EditNew') ?>
+                                            <input type="hidden" name="id" value="<?php echo $News->id; ?>">
+                                            <div class="gird">
+                                                <div class="row">
+                                                    <div class="cell-6">
+                                                        <div class="form-group">
+                                                            <label>Titulo</label>
+                                                            <input type="text" value="<?php echo $News->title ?>" class="fg-black" name="title" required>
                                                         </div>
-                                                        <div class="cell-6">
-                                                            <div class="form-group">
-                                                                <label>Descripcion</label>
-                                                                <textarea name="description" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
-                                                            </div>
+                                                    </div>
+                                                    <div class="cell-6">
+                                                        <div class="form-group">
+                                                            <label>Descripcion</label>
+                                                            <textarea name="description" data-role="textarea" cols="10" rows="10"><?php echo $News->description ?></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            <?php } ?>
-                                        </div>
-                                        <div class="dialog-actions">
-                                            <input type="submit" class="button primary" value="Editar">
-                                            <?php echo form_close() ?>
-                                            <a href="<?php echo base_url('staff/News') ?>" class="button">Cerrar</a>
-                                        </div>
+                                            </div>
+                                        <?php } ?>
                                     </div>
-                                <?php endif; ?>
+                                    <div class="dialog-actions">
+                                        <input type="submit" class="button primary" value="Editar">
+                                        <?php echo form_close() ?>
+                                        <a href="<?php echo base_url('staff/News') ?>" class="button">Cerrar</a>
+                                    </div>
+                                </div>
                             <?php endif; ?>
+                        <?php endif; ?>
 
-                        </div>
+                    </div>
                     <br>
                 </div>
                 <br>
@@ -149,22 +149,22 @@ $this->load->view("_lib/lib.menu.php");
             <div id="trivias">
                 <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                     <?php
-                        $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
-                        $items = json_decode($data, true);
-                        //print_r($items);
-                        var_dump($items);
-                        /*$question = $items[0]->Question;
-                        $A = $items[0]->AnswerA;
-                        $B = $items[0]->AnswerB;
-                        $C = $items[0]->AnswerC;
-                        $D = $items[0]->AnswerD;
-                        $Correct = $items[0]->CorrectAnswer;
-                        $Running = $items[0]->Running;
-                        $ID = $items[0]->ID;*/
+                    $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
+                    $items = json_decode($data, true);
+                    //print_r($items);
+                    var_dump($items);
+                    $question = $items[0]->Question;
+                    $A = $items[0]->AnswerA;
+                    $B = $items[0]->AnswerB;
+                    $C = $items[0]->AnswerC;
+                    $D = $items[0]->AnswerD;
+                    $Correct = $items[0]->CorrectAnswer;
+                    $Running = $items[0]->Running;
+                    $ID = $items[0]->ID;
 
-                        $ID = 24;
-                        
-                        $test1 = $items[0]->AnswerC;
+                    $ID = 24;
+
+                    /* $test1 = $items[0]->AnswerC;
                         $test2 = json_decode($items[0]->AnswerC,true);
                         echo $test2;
                         foreach($items as $item){
@@ -172,8 +172,20 @@ $this->load->view("_lib/lib.menu.php");
                             echo $question;
                         }
                         //echo $items['AnswerC'];
-                        
-                        /*$array = {
+                        */
+                    $array = array(
+                        array(
+                            'Question' => $question,
+                            'AnswerA' => $A,
+                            'AnswerB' => $B,
+                            'AnswerC' => $C,
+                            'AnswerD' => $D,
+                            'CorrectAnswer' => $Correct,
+                            'Running' => $Running,
+                            'ID' => $ID
+                        )
+                        );
+                    /*$array = {
                         "Question"=> $question,
                         "AnswerA": $A,
                         'AnswerB': $B,
@@ -193,12 +205,12 @@ $this->load->view("_lib/lib.menu.php");
                             'Running'=> $Running,
                             'ID'=> $ID);
                         */
-                        //    echo $_SERVER['DOCUMENT_ROOT'];
-                        //    echo __DIR__ . '/../';
-/*
+                    //    echo $_SERVER['DOCUMENT_ROOT'];
+                    //    echo __DIR__ . '/../';
+                    
                         $MyJSON = json_encode($array);
                         $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
-                        */
+                    
                     ?>
                 </div>
                 <br>

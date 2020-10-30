@@ -152,7 +152,7 @@ $this->load->view("_lib/lib.menu.php");
                     $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                     $items = json_decode($data);
                     //print_r($items);
-                    var_dump($items);
+                    //var_dump($items);
                     //Variables Originales
                     $question = $items[0]->Question;
                     $A = $items[0]->AnswerA;
@@ -165,15 +165,21 @@ $this->load->view("_lib/lib.menu.php");
                     ?>
                     <div class="gird">
                         <div class="row">
-                            <div class="cell">
-                                <div class="form-group">
-                                    <label>Question</label>
-                                    <input type="text" value="<?php echo $question ?>" required>
+                            <div class="cell-3"></div>
+                            <div class="cell-6">
+                                <div class="row">
+                                    <div class="cell">
+                                        <div class="form-group">
+                                            <label>Question</label>
+                                            <input type="text" value="<?php echo $question ?>" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="cell-3"></div>
                         </div>
                     </div>
-                    <?php        
+                    <?php
                     //Variables POST Edicion
                     $ID = "24";
                     //Array POST Edicion
@@ -188,15 +194,15 @@ $this->load->view("_lib/lib.menu.php");
                             'Running' => $Running,
                             'ID' => $ID
                         )
-                        );
-                      
+                    );
+
                     // Informacion de Ruta y forma de insertar documento     
                     //    echo $_SERVER['DOCUMENT_ROOT'];
                     //    echo __DIR__ . '/../';
                     //
                     //    $MyJSON = json_encode($array);
                     //    $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
-                    
+
                     ?>
                 </div>
                 <br>

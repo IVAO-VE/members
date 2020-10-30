@@ -46,7 +46,6 @@ $this->load->view("_lib/lib.menu.php");
             <div id="user-profile-tabs-content">
                 <div id="news">
                     <br>
-                    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_HQ_0001'); ?>" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                         <br>
                         <table class="table" data-role="table">
                             <thead>
@@ -142,7 +141,6 @@ $this->load->view("_lib/lib.menu.php");
                             <?php endif; ?>
 
                         </div>
-                    </div>
                     <br>
                 </div>
                 <br>

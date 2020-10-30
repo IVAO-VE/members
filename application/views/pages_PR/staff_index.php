@@ -161,6 +161,23 @@ $this->load->view("_lib/lib.menu.php");
                         $Correct = $items[0]->CorrectAnswer;
                         $Running = $items[0]->Running;
                         $ID = $items[0]->ID;
+
+                        $ID = 5;
+
+                        $array = array(
+                            'Question'=> $question,
+                            'AnswerA'=> $A,
+                            'AnswerB'=> $B,
+                            'AnswerC'=> $C,
+                            'AnswerD'=> $D,
+                            'CorrectAnswer'=> $Correct,
+                            'Running'=> $Running,
+                            'ID'=> $ID
+                        ;)
+
+                        $MyJSON = json_encode($array);
+                        $NewData = file_put_contents('https://utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
+
                         /*foreach($items as $item){
                             $question = $item->Question;
                             echo $question;

@@ -150,7 +150,7 @@ $this->load->view("_lib/lib.menu.php");
                 <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                     <?php
                         $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
-                        $items = json_decode($data;
+                        $items = json_decode($data);
                         //print_r($items);
                         var_dump($items);
                         echo $items[0]->Question;

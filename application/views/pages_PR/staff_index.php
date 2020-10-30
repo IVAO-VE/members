@@ -164,7 +164,7 @@ $this->load->view("_lib/lib.menu.php");
 
                         $ID = 24;
                         
-                        echo $items[0]->AnswerC;
+                        //echo $items[0]->AnswerC;
                         
                         $array = [
                         'Question'=> $question,

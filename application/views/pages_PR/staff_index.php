@@ -176,6 +176,7 @@ $this->load->view("_lib/lib.menu.php");
                             <?php
                             $this->db->select('*');
                             $this->db->from('bot_trivia');
+                            $this->db->order_by('trivia', 'DESC')
                             $query = $this->db->get();
                             if ($query->num_rows() > 0) {
                                 foreach ($query->result() as $row) {

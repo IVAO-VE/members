@@ -158,38 +158,40 @@ $this->load->view("_lib/lib.menu.php");
 
             <div id="trivias">
                 <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-                    <?php
-                    $this->db->select('trivia');
-                    $this->db->from('bot_trivia');
-                    $query = $this->db->get();
-                    if ($query->num_rows() > 0) {
-                        foreach ($query->result() as $row) {
-                    ?>
-                            <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
-                                <div class="w-100 mb-2 mb-0-lg" id="t2_search"></div>
-                                <div class="ml-2" id="t2_rows"></div>
-                            </div>
-                            <table id="t2" class="table table-border cell-border" data-role="table" data-on-draw-cell="skillTableDrawCell" data-search-wrapper="#t2_search" data-rows-wrapper="#t2_rows" data-info-wrapper="#t2_info" data-pagination-wrapper="#t2_pagination" data-horizontal-scroll="true">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nickname</th>
-                                        <th>TAG</th>
-                                        <th>Respuesta</th>
-                                        <th># Trivia</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            <div class="d-flex flex-column flex-justify-center">
-                                <div id="t2_info"></div>
-                                <div id="t2_pagination"></div>
-                            </div>
-                    <?php
+                    <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
+                        <div class="w-100 mb-2 mb-0-lg" id="t2_search"></div>
+                        <div class="ml-2" id="t2_rows"></div>
+                    </div>
+                    <table id="t2" class="table table-border cell-border" data-role="table" data-on-draw-cell="skillTableDrawCell" data-search-wrapper="#t2_search" data-rows-wrapper="#t2_rows" data-info-wrapper="#t2_info" data-pagination-wrapper="#t2_pagination" data-horizontal-scroll="true">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nickname</th>
+                                <th>TAG</th>
+                                <th>Respuesta</th>
+                                <th># Trivia</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        $this->db->select('trivia');
+                        $this->db->from('bot_trivia');
+                        $query = $this->db->get();
+                        if ($query->num_rows() > 0) {
+                            foreach ($query->result() as $row) {
+                        ?>
+
+
+                            <?php
+                            }
+                            ?>
+                    </table>
+                    <div class="d-flex flex-column flex-justify-center">
+                        <div id="t2_info"></div>
+                        <div id="t2_pagination"></div>
+                    </div>
+                <?php
                         }
-                    } else {
-                        echo 'No hay resultados';
-                    }
-                    ?>
+                ?>
                 </div>
                 <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                     <?php

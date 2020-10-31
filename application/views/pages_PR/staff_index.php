@@ -162,7 +162,7 @@ $this->load->view("_lib/lib.menu.php");
                         <div class="w-100 mb-2 mb-0-lg" id="t2_search"></div>
                         <div class="ml-2" id="t2_rows"></div>
                     </div>
-                    <table id="t2" class="table table-border cell-border" data-role="table" data-on-draw-cell="skillTableDrawCell" data-search-wrapper="#t2_search" data-rows-wrapper="#t2_rows" data-info-wrapper="#t2_info" data-pagination-wrapper="#t2_pagination" data-horizontal-scroll="true">
+                    <table id="t2" class="table table-border cell-border" data-role="table" data-search-wrapper="#t2_search" data-rows-wrapper="#t2_rows" data-info-wrapper="#t2_info" data-pagination-wrapper="#t2_pagination" data-horizontal-scroll="true">
                         <thead>
                             <tr>
                                 <th>ID</th>

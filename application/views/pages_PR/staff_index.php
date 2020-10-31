@@ -168,6 +168,9 @@ $this->load->view("_lib/lib.menu.php");
                             <ul data-role="tabs" data-expand="true">
                                 <li><a href="#<?php echo $row->trivia ?>"><?php echo $row->trivia ?></a></li>
                             </ul>
+                            <div id="user-profile-tabs-content">
+                            <div id="<?php echo $row->trivia ?>">
+                            </div>
                     <?php
                         }
                     } else {

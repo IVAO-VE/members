@@ -157,6 +157,24 @@ $this->load->view("_lib/lib.menu.php");
             </div>
 
             <div id="trivias">
+                <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <?php
+                    $this->db->select('trivia');
+                    $this->db->from('bot_trivia');
+                    $query = $this->db->get();
+                    if (!$query->num_rows() > 0) {
+                        foreach ($query->results() as $row) {
+                    ?>
+                            <ul data-role="tabs" data-expand="true">
+                                <li><a href="#<?php echo $row->trivia ?>"><?php echo $row->trivia ?></a></li>
+                            </ul>
+                    <?php
+                        }
+                    } else {
+                        echo 'No hay resultados';
+                    }
+                    ?>
+                </div>
                 <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                     <?php
                     $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');

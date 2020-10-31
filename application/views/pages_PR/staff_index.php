@@ -174,7 +174,7 @@ $this->load->view("_lib/lib.menu.php");
                         </thead>
                         <tbody>
                             <?php
-                            $this->db->select('trivia');
+                            $this->db->select('*');
                             $this->db->from('bot_trivia');
                             $query = $this->db->get();
                             if ($query->num_rows() > 0) {

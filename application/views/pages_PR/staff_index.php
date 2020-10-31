@@ -162,7 +162,7 @@ $this->load->view("_lib/lib.menu.php");
                     $this->db->select('trivia');
                     $this->db->from('bot_trivia');
                     $query = $this->db->get();
-                    if (!$query->num_rows() > 0) {
+                    if ($query->num_rows() > 0) {
                         foreach ($query->results() as $row) {
                     ?>
                             <ul data-role="tabs" data-expand="true">

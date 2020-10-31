@@ -168,10 +168,44 @@ $this->load->view("_lib/lib.menu.php");
                             <div class="cell-3"></div>
                             <div class="cell-6">
                                 <div class="row">
-                                    <div class="cell">
+                                    <div class="cell-6">
                                         <div class="form-group">
                                             <label>Question</label>
                                             <input type="text" value="<?php echo $question ?>" required>
+                                        </div>
+                                    </div>
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Respuesta Correcta</label>
+                                            <input type="text" value="<?php echo $Correct ?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Respuesta A</label>
+                                            <input type="text" value="<?php echo $A ?>" required>
+                                        </div>
+                                    </div>
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Respuesta B</label>
+                                            <input type="text" value="<?php echo $C ?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Respuesta C</label>
+                                            <input type="text" value="<?php echo $C ?>" required>
+                                        </div>
+                                    </div>
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Respuesta D</label>
+                                            <input type="text" value="<?php echo $D ?>" required>
                                         </div>
                                     </div>
                                 </div>

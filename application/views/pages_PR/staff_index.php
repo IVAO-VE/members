@@ -170,7 +170,7 @@ $this->load->view("_lib/lib.menu.php");
                                 <div class="row">
                                     <div class="cell-6">
                                         <div class="form-group">
-                                            <label>Question</label>
+                                            <label>Pregunta</label>
                                             <input type="text" value="<?php echo $question ?>" required>
                                         </div>
                                     </div>
@@ -207,6 +207,12 @@ $this->load->view("_lib/lib.menu.php");
                                             <label>Respuesta D</label>
                                             <input type="text" value="<?php echo $D ?>" required>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-10"></div>
+                                    <div class="cell-2">
+                                        <input type="submit" value="Configurar Trivia">
                                     </div>
                                 </div>
                             </div>

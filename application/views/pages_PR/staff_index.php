@@ -165,13 +165,14 @@ $this->load->view("_lib/lib.menu.php");
                     if ($query->num_rows() > 0) {
                         foreach ($query->result() as $row) {
                     ?>
-                            <ul data-role="tabs" data-expand="true">
+                            <!-- <ul data-role="tabs" data-expand="true">
                                 <li><a href="#<?php echo $row->trivia ?>"><?php echo $row->trivia ?></a></li>
                             </ul>
                             <div id="user-profile-tabs-content">
                             <div id="<?php echo $row->trivia ?>">
                             </div>
-                            </div>
+                            </div> -->
+                            <?php echo $row->trivia ?>
                     <?php
                         }
                     } else {

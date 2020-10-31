@@ -165,14 +165,25 @@ $this->load->view("_lib/lib.menu.php");
                     if ($query->num_rows() > 0) {
                         foreach ($query->result() as $row) {
                     ?>
-                            <!-- <ul data-role="tabs" data-expand="true">
-                                <li><a href="#<?php echo $row->trivia ?>"><?php echo $row->trivia ?></a></li>
-                            </ul>
-                            <div id="user-profile-tabs-content">
-                            <div id="<?php echo $row->trivia ?>">
+                            <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
+                                <div class="w-100 mb-2 mb-0-lg" id="t2_search"></div>
+                                <div class="ml-2" id="t2_rows"></div>
                             </div>
-                            </div> -->
-                            <?php echo $row->trivia ?>
+                            <table id="t2" class="table table-border cell-border" data-role="table" data-on-draw-cell="skillTableDrawCell" data-search-wrapper="#t2_search" data-rows-wrapper="#t2_rows" data-info-wrapper="#t2_info" data-pagination-wrapper="#t2_pagination" data-horizontal-scroll="true">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nickname</th>
+                                        <th>TAG</th>
+                                        <th>Respuesta</th>
+                                        <th># Trivia</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <div class="d-flex flex-column flex-justify-center">
+                                <div id="t2_info"></div>
+                                <div id="t2_pagination"></div>
+                            </div>
                     <?php
                         }
                     } else {

@@ -171,6 +171,7 @@ $this->load->view("_lib/lib.menu.php");
                             <div id="user-profile-tabs-content">
                             <div id="<?php echo $row->trivia ?>">
                             </div>
+                            </div>
                     <?php
                         }
                     } else {

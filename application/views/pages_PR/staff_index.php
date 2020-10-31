@@ -172,25 +172,32 @@ $this->load->view("_lib/lib.menu.php");
                                 <th># Trivia</th>
                             </tr>
                         </thead>
-                        <?php
-                        $this->db->select('trivia');
-                        $this->db->from('bot_trivia');
-                        $query = $this->db->get();
-                        if ($query->num_rows() > 0) {
-                            foreach ($query->result() as $row) {
-                        ?>
-
-
+                        <tbody>
                             <?php
-                            }
+                            $this->db->select('trivia');
+                            $this->db->from('bot_trivia');
+                            $query = $this->db->get();
+                            if ($query->num_rows() > 0) {
+                                foreach ($query->result() as $row) {
                             ?>
+                                <tr>
+                                    <td><?php echo $row->id ?></td>
+                                    <td><?php echo $row->nickname ?></td>
+                                    <td><?php echo $row->tag ?></td>
+                                    <td><?php echo $row->respuesta ?></td>
+                                    <td><?php echo $row->trivia ?></td>
+                                </tr>
+                                <?php
+                                }
+                                ?>
+                        </tbody>
                     </table>
                     <div class="d-flex flex-column flex-justify-center">
                         <div id="t2_info"></div>
                         <div id="t2_pagination"></div>
                     </div>
                 <?php
-                        }
+                            }
                 ?>
                 </div>
                 <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsible="true">

@@ -169,7 +169,7 @@ $this->load->view("_lib/lib.menu.php");
                                 <th>Nickname</th>
                                 <th>TAG</th>
                                 <th>Respuesta</th>
-                                <th># Trivia</th>
+                                <th data-sortable="true" data-format="int"># Trivia</th>
                             </tr>
                         </thead>
                         <tbody>

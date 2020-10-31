@@ -946,4 +946,56 @@ class Staff extends CI_Controller
             }
         }
     }
+
+    public function trivia()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('question', 'Pregunta', 'required');
+        $this->form_validation->set_rules('correct', 'Respuesta Correcta', 'required');
+        $this->form_validation->set_rules('AnswerA', 'Respuesta A', 'required');
+        $this->form_validation->set_rules('AnswerB', 'Respuesta B', 'required');
+        $this->form_validation->set_rules('AnswerC', 'Respuesta C', 'required');
+        $this->form_validation->set_rules('AnswerD', 'Respuesta D', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
+            redirect(base_url('staff/relations'));
+        } else {
+            $question = $this->input->post('question');
+            $Correct = $this->input->post('correct');
+            $A = $this->input->post('AnswerA');
+            $B = $this->input->post('AnswerB');
+            $C = $this->input->post('AnswerC');
+            $D = $this->input->post('AnswerD');
+            $Running = '1';
+
+            date_default_timezone_set('UTC');
+
+            $ID = date("YmdHi");
+
+            $array = array(
+                array(
+                    'Question' => $question,
+                    'AnswerA' => $A,
+                    'AnswerB' => $B,
+                    'AnswerC' => $C,
+                    'AnswerD' => $D,
+                    'CorrectAnswer' => $Correct,
+                    'Running' => $Running,
+                    'ID' => $ID
+                )
+            );
+
+            $MyJSON = json_encode($array);
+            $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
+
+            if ($NewData) {
+                $this->session->set_flashdata('info', 'La trivia se registro correctamente.');
+                redirect(base_url('staff/trivia'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas registrando la trivia.');
+                redirect(base_url('staff/trivia'));
+            }
+        }
+    }
 }

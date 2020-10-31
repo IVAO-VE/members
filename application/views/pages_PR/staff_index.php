@@ -37,6 +37,16 @@ $this->load->view("_lib/lib.menu.php");
     <div class="mb-15"></div>
     <div data-role="panel" data-title-caption="<?php echo $this->lang->line('staff_dpto03_index'); ?>" data-title-icon="<span class='mif-apps'></span>">
         <div class="bg-white h-100">
+            <?php if ($this->session->flashdata('info')) : ?>
+                <div class="remark primary">
+                    <?php echo $this->session->flashdata('info'); ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($this->session->flashdata('error')) : ?>
+                <div class="remark primary">
+                    <?php echo $this->session->flashdata('error'); ?>
+                </div>
+            <?php endif; ?>
 
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#news">Noticias</a></li>
@@ -167,17 +177,18 @@ $this->load->view("_lib/lib.menu.php");
                         <div class="row">
                             <div class="cell-3"></div>
                             <div class="cell-6">
+                                <?php echo form_open('staff/trivia') ?>
                                 <div class="row">
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <label>Pregunta</label>
-                                            <input type="text" value="<?php echo $question ?>" required>
+                                            <input type="text" name="question" value="<?php echo $question ?>" required>
                                         </div>
                                     </div>
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <label>Respuesta Correcta</label>
-                                            <input type="text" value="<?php echo $Correct ?>" required>
+                                            <input type="text" name="correct" value="<?php echo $Correct ?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -185,13 +196,13 @@ $this->load->view("_lib/lib.menu.php");
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <label>Respuesta A</label>
-                                            <input type="text" value="<?php echo $A ?>" required>
+                                            <input type="text" name="AnswerA" value="<?php echo $A ?>" required>
                                         </div>
                                     </div>
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <label>Respuesta B</label>
-                                            <input type="text" value="<?php echo $C ?>" required>
+                                            <input type="text" name="AnswerB" value="<?php echo $C ?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -199,13 +210,13 @@ $this->load->view("_lib/lib.menu.php");
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <label>Respuesta C</label>
-                                            <input type="text" value="<?php echo $C ?>" required>
+                                            <input type="text" name="AnswerC" value="<?php echo $C ?>" required>
                                         </div>
                                     </div>
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <label>Respuesta D</label>
-                                            <input type="text" value="<?php echo $D ?>" required>
+                                            <input type="text" name="AnswerD" value="<?php echo $D ?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -215,6 +226,7 @@ $this->load->view("_lib/lib.menu.php");
                                         <input type="submit" value="Configurar Trivia">
                                     </div>
                                 </div>
+                                <?php echo form_close() ?>
                             </div>
                             <div class="cell-3"></div>
                         </div>
@@ -223,9 +235,9 @@ $this->load->view("_lib/lib.menu.php");
                     //Variables POST Edicion
                     $ID = "24";
                     //Array POST Edicion
-                    $array = array(
-                        array(
-                            'Question' => $question,
+                    //$array = array(
+                    //    array(
+                    /*         'Question' => $question,
                             'AnswerA' => $A,
                             'AnswerB' => $B,
                             'AnswerC' => $C,
@@ -234,7 +246,7 @@ $this->load->view("_lib/lib.menu.php");
                             'Running' => $Running,
                             'ID' => $ID
                         )
-                    );
+                    ); */
 
                     // Informacion de Ruta y forma de insertar documento     
                     //    echo $_SERVER['DOCUMENT_ROOT'];

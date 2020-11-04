@@ -999,15 +999,15 @@ class Staff extends CI_Controller
         }
     }
 
-    public function triviaStatus(){
+    public function triviaStatus()
+    {
         $running = $this->input->post('trivia');
-        if($running){
+        if ($running) {
             $this->session->set_flashdata('info', 'La trivia se registro correctamente.');
-                redirect(base_url('staff/relations'));
-            } else {
-                $this->session->set_flashdata('error', 'Tenemos problemas registrando la trivia.');
-                redirect(base_url('staff/relations'));
-            }
+            redirect(base_url('staff/relations'));
+        } else {
+            $this->session->set_flashdata('error', 'Tenemos problemas registrando la trivia.');
+            redirect(base_url('staff/relations'));
         }
     }
 }

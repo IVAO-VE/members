@@ -171,11 +171,11 @@ $this->load->view("_lib/lib.menu.php");
                                             $ran = $items[0]->Running;
                                                 if($ran == 0){
                                                     ?>
-                                                    <input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="">
+                                                    <a href="https://metroui.org.ua/buttons.html#_split_buttons"><input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="running" value="1"></a>
                                                 <?php    
                                                 }else{
                                                     ?>
-                                                    <input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="" checked>
+                                                    <a href="https://metroui.org.ua/buttons.html#_split_buttons"><input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="running" value="0" checked></a>
                                                 <?php
                                                 }
                                             ?>

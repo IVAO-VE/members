@@ -178,9 +178,9 @@ $this->load->view("_lib/lib.menu.php");
                             $this->db->from('bot_trivia');
                             $this->db->order_by('trivia DESC');
                             $query = $this->db->get();
-                            $this->phpdebug->debug($query);
                             if ($query->num_rows() > 0) {
                                 foreach ($query->result() as $row) {
+                                $this->phpdebug->debug($query);
                             ?>
                                 <tr>
                                     <td><?php echo $row->id ?></td>

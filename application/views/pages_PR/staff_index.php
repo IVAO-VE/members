@@ -176,8 +176,9 @@ $this->load->view("_lib/lib.menu.php");
                             <?php
                             $this->db->select('*');
                             $this->db->from('bot_trivia');
-                            $this->db->order_by('trivia', 'DESC');
+                            $this->db->order_by('trivia DESC');
                             $query = $this->db->get();
+                            $this->phpdebug->debug($query);
                             if ($query->num_rows() > 0) {
                                 foreach ($query->result() as $row) {
                             ?>
@@ -201,6 +202,7 @@ $this->load->view("_lib/lib.menu.php");
                             }
                 ?>
                 </div>
+                <br>
                 <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
                     <?php
                     $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');

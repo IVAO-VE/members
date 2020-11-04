@@ -157,7 +157,7 @@ $this->load->view("_lib/lib.menu.php");
             </div>
 
             <div id="trivias">
-                <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
+                <div data-role="panel" data-title-caption="Estado de trivia" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
                     <div class="gird">
                         <div class="row">
                             <div class="cell-4"></div>
@@ -165,18 +165,17 @@ $this->load->view("_lib/lib.menu.php");
                                 <div class="row">
                                     <div class="cell-6">
                                         <div class="form-group">
-                                            <label>Estado de trivia.</label>
                                             <?php
                                             $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                                             $items = json_decode($data);
                                             $ran = $items[0]->Running;
                                                 if($ran == 0){
                                                     ?>
-                                                    <input type="checkbox" data-role="switch" name="">
+                                                    <input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="">
                                                 <?php    
                                                 }else{
                                                     ?>
-                                                    <input type="checkbox" data-role="switch" name="" checked>
+                                                    <input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="" checked>
                                                 <?php
                                                 }
                                             ?>

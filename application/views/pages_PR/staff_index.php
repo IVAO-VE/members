@@ -158,6 +158,38 @@ $this->load->view("_lib/lib.menu.php");
 
             <div id="trivias">
                 <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
+                    <div class="gird">
+                        <div class="row">
+                            <div class="cell-4"></div>
+                            <div class="cell-4">
+                                <div class="row">
+                                    <div class="cell-6">
+                                        <div class="form-group">
+                                            <label>Estado de trivia.</label>
+                                            <?php
+                                            $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
+                                            $items = json_decode($data);
+                                            $ran = $items[0]->Running;
+                                                if($ran == 0){
+                                                    ?>
+                                                    <input type="checkbox" data-role="switch" name="">
+                                                <?php    
+                                                }else{
+                                                    ?>
+                                                    <input type="checkbox" data-role="switch" name="" checked>
+                                                <?php
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <div class="cell-6"></div>
+                                </div>
+                            </div>
+                            <div class="cell-4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
                     <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
                         <div class="w-100 mb-2 mb-0-lg" id="t2_search"></div>
                         <div class="ml-2" id="t2_rows"></div>
@@ -181,15 +213,15 @@ $this->load->view("_lib/lib.menu.php");
                             $query = $this->db->query("SELECT * FROM `bot_trivia` ORDER BY `trivia` DESC");
                             if ($query->num_rows() > 0) {
                                 foreach ($query->result() as $row) {
-                               // $this->phpdebug->debug('[INFO]' . $query);
+                                    // $this->phpdebug->debug('[INFO]' . $query);
                             ?>
-                                <tr>
-                                    <td><?php echo $row->id ?></td>
-                                    <td><?php echo $row->nickname ?></td>
-                                    <td><?php echo $row->tag ?></td>
-                                    <td><?php echo $row->respuesta ?></td>
-                                    <td><?php echo $row->trivia ?></td>
-                                </tr>
+                                    <tr>
+                                        <td><?php echo $row->id ?></td>
+                                        <td><?php echo $row->nickname ?></td>
+                                        <td><?php echo $row->tag ?></td>
+                                        <td><?php echo $row->respuesta ?></td>
+                                        <td><?php echo $row->trivia ?></td>
+                                    </tr>
                                 <?php
                                 }
                                 ?>

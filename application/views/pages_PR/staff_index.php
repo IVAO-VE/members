@@ -166,19 +166,27 @@ $this->load->view("_lib/lib.menu.php");
                                     <div class="cell-6">
                                         <div class="form-group">
                                             <?php
+                                            form_open('staff/triviaStatus', 'id="status');
                                             $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                                             $items = json_decode($data);
                                             $ran = $items[0]->Running;
-                                                if($ran == 0){
-                                                    ?>
-                                                    <a href="https://metroui.org.ua/buttons.html#_split_buttons"><input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="running" value="1"></a>
-                                                <?php    
-                                                }else{
-                                                    ?>
-                                                    <a href="https://metroui.org.ua/buttons.html#_split_buttons"><input type="checkbox" data-role="switch" data-caption="Estado trivia" data-caption-position="left" data-material="true" name="running" value="0" checked></a>
+                                            if ($ran == 0) {
+                                            ?>
+                                                <input type="checkbox" data-role="switch" data-caption="Estado trivia" id="trivia" data-caption-position="left" data-material="true" name="running" value="1">
+                                                < <?php
+                                                } else {
+                                                    ?> <input type="checkbox" data-role="switch" data-caption="Estado trivia" id="trivia" data-caption-position="left" data-material="true" name="running" value="0" checked>
                                                 <?php
                                                 }
-                                            ?>
+                                                form_close();
+                                                ?>
+                                                <script>
+                                                    $(document.ready(function(e) {
+                                                        $("input#id").click(function(e) {
+                                                            $("#status").submit();
+                                                        });
+                                                    }));
+                                                </script>
                                         </div>
                                     </div>
                                     <div class="cell-6"></div>

@@ -174,10 +174,10 @@ $this->load->view("_lib/lib.menu.php");
                         </thead>
                         <tbody>
                             <?php
-                            $this->db->select('*');
+                            /*$this->db->select('*');
                             $this->db->from('bot_trivia');
                             $this->db->order_by('trivia' , 'DESC');
-                            $query = $this->db->get();
+                            $query = $this->db->get();*/
                             $query = $this->db->query("SELECT * FROM bot_trivia ORDER BY trivia DESC LIMIT 15");
                             if ($query->num_rows() > 0) {
                                 foreach ($query->result() as $row) {

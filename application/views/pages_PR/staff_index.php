@@ -182,7 +182,7 @@ $this->load->view("_lib/lib.menu.php");
                                                 ?>
                                                 <script>
                                                     $(document.ready(function(e) {
-                                                        $("input#id").click(function(e) {
+                                                        $("input#trivia").click(function(e) {
                                                             $("#status").submit();
                                                         });
                                                     }));

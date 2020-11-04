@@ -1001,7 +1001,7 @@ class Staff extends CI_Controller
 
     public function triviaStatus()
     {
-        $running = $this->input->post('trivia');
+        $running = $this->input->post('running');
         if ($running) {
             $this->session->set_flashdata('info', 'La trivia se registro correctamente.');
             redirect(base_url('staff/relations'));

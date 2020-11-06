@@ -172,21 +172,17 @@ $this->load->view("_lib/lib.menu.php");
                                             $ran = $items[0]->Running;
                                             if ($ran == 0) {
                                             ?>
-                                                <input type="checkbox" data-role="switch" data-caption="Estado trivia" id="trivia" data-caption-position="left" data-material="true" name="running" value="1">
-                                                < <?php
-                                                } else {
-                                                    ?> <input type="checkbox" data-role="switch" data-caption="Estado trivia" id="trivia" data-caption-position="left" data-material="true" name="running" value="0" checked>
+                                            <a href="" class="button success cycle"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                                            <?php
+                                            }else{
+                                            ?>
+                                            <a href="" class="button alert cycle"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                                            <?php
+                                            }
+                                            ?>
                                                 <?php
-                                                }
                                                 form_close();
                                                 ?>
-                                                <script>
-                                                    $(document.ready(function(e) {
-                                                        $("input#trivia").click(function(e) {
-                                                            $("#status").submit();
-                                                        });
-                                                    }));
-                                                </script>
                                         </div>
                                     </div>
                                     <div class="cell-6"></div>

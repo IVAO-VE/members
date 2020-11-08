@@ -172,11 +172,11 @@ $this->load->view("_lib/lib.menu.php");
                                             $ran = $items[0]->Running;
                                             if ($ran == 0) {
                                             ?>
-                                            <a href="" class="button success cycle"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                                            <a href="" class="button success cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
                                             }else{
                                             ?>
-                                            <a href="" class="button alert cycle"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                                            <a href="" class="button alert cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
                                             }
                                             ?>

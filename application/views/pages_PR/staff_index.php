@@ -157,7 +157,7 @@ $this->load->view("_lib/lib.menu.php");
             </div>
 
             <div id="trivias">
-                <div data-role="panel" data-title-caption="Estado de trivia" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
+                <div data-role="panel" data-title-caption="Estado de trivia" data-title-icon="<span class='mif-info'>" data-collapsible="true">
                     <div class="gird">
                         <div class="row">
                             <div class="cell-4"></div>
@@ -170,13 +170,13 @@ $this->load->view("_lib/lib.menu.php");
                                             $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                                             $items = json_decode($data);
                                             $ran = $items[0]->Running;
-                                            if ($ran == 0) {
+                                            if ($ran == 1) {
                                             ?>
-                                            <a href="" class="button success cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
+                                            <label>Estado de trivia</label><a href="" class="button success cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
                                             }else{
                                             ?>
-                                            <a href="" class="button alert cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
+                                            <label>Estado de trivia</label><a href="" class="button alert cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
                                             }
                                             ?>

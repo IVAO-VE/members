@@ -1001,8 +1001,40 @@ class Staff extends CI_Controller
 
     public function triviaStatus()
     {
-        $running = $this->input->post('running');
-        if ($running) {
+        $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
+        $items = json_decode($data);
+        $question = $items[0]->Question;
+        $A = $items[0]->AnswerA;
+        $B = $items[0]->AnswerB;
+        $C = $items[0]->AnswerC;
+        $D = $items[0]->AnswerD;
+        $Correct = $items[0]->CorrectAnswer;
+        $Running = $items[0]->Running;
+        $ID = $items[0]->ID;
+
+        if($Running == 1){
+            $ran = '0';
+        }else{
+            $ran = '1';
+        }
+        $array = array(
+            array(
+                'Question' => $question,
+                'AnswerA' => $A,
+                'AnswerB' => $B,
+                'AnswerC' => $C,
+                'AnswerD' => $D,
+                'CorrectAnswer' => $Correct,
+                'Running' => $ran,
+                'ID' => $ID 
+            )
+        );
+
+        $MyJSON = json_encode($array);
+        $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
+
+        if ($NewData
+        ) {
             $this->session->set_flashdata('info', 'La trivia se registro correctamente.');
             redirect(base_url('staff/relations'));
         } else {

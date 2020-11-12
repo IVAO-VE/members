@@ -172,11 +172,11 @@ $this->load->view("_lib/lib.menu.php");
                                             $ran = $items[0]->Running;
                                             if ($ran == 1) {
                                             ?>
-                                            <label>Estado de trivia</label><a href="" class="button success cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
+                                            <label>Estado de trivia</label>&nbsp;<a href="<?php echo base_url('staff/triviaStatus') ?>" class="button success cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
                                             }else{
                                             ?>
-                                            <label>Estado de trivia</label><a href="" class="button alert cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
+                                            <label>Estado de trivia</label>&nbsp;<a href="<?php echo base_url('staff/triviaStatus') ?>" class="button alert cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
                                             }
                                             ?>

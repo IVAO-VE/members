@@ -192,6 +192,7 @@ $this->load->view("_lib/lib.menu.php");
                         </div>
                     </div>
                 </div>
+                <br>
                 <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-drive'>" data-collapsed="true" data-collapsible="true">
                     <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
                         <div class="w-100 mb-2 mb-0-lg" id="t2_search"></div>

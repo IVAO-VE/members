@@ -157,7 +157,7 @@ $this->load->view("_lib/lib.menu.php");
             </div>
 
             <div id="trivias">
-                <div data-role="panel" data-title-caption="Estado de trivia" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                <div data-role="panel" data-title-caption="Estado de trivia" data-title-icon="<span class='mif-equalizer'>" data-collapsible="true">
                     <div class="gird">
                         <div class="row">
                             <div class="cell-4"></div>
@@ -192,7 +192,7 @@ $this->load->view("_lib/lib.menu.php");
                         </div>
                     </div>
                 </div>
-                <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
+                <div data-role="panel" data-title-caption="Resultados trivias" data-title-icon="<span class='mif-drive'>" data-collapsed="true" data-collapsible="true">
                     <div class="d-flex flex-wrap flex-nowrap-lg flex-align-center flex-justify-center flex-justify-start-lg mb-2">
                         <div class="w-100 mb-2 mb-0-lg" id="t2_search"></div>
                         <div class="ml-2" id="t2_rows"></div>
@@ -239,7 +239,7 @@ $this->load->view("_lib/lib.menu.php");
                 ?>
                 </div>
                 <br>
-                <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
+                <div data-role="panel" data-title-caption="Configurar trivias" data-title-icon="<span class='mif-wrench'>" data-collapsed="true" data-collapsible="true">
                     <?php
                     $data = @file_get_contents('https://utilities.ve.ivao.aero/src/trivia.json');
                     $items = json_decode($data);

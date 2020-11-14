@@ -172,17 +172,17 @@ $this->load->view("_lib/lib.menu.php");
                                             $ran = $items[0]->Running;
                                             if ($ran == 1) {
                                             ?>
-                                            <label>Estado de trivia</label>&nbsp;<a href="<?php echo base_url('staff/triviaStatus') ?>" class="button success cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
+                                                <label>Estado de trivia</label>&nbsp;<a href="<?php echo base_url('staff/triviaStatus') ?>" class="button success cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
-                                            }else{
+                                            } else {
                                             ?>
-                                            <label>Estado de trivia</label>&nbsp;<a href="<?php echo base_url('staff/triviaStatus') ?>" class="button alert cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
+                                                <label>Estado de trivia</label>&nbsp;<a href="<?php echo base_url('staff/triviaStatus') ?>" class="button alert cycle"><i class="fa fa-power-off pt-2" aria-hidden="true"></i></a>
                                             <?php
                                             }
                                             ?>
-                                                <?php
-                                                form_close();
-                                                ?>
+                                            <?php
+                                            form_close();
+                                            ?>
                                         </div>
                                     </div>
                                     <div class="cell-6"></div>
@@ -234,6 +234,12 @@ $this->load->view("_lib/lib.menu.php");
                     <div class="d-flex flex-column flex-justify-center">
                         <div id="t2_info"></div>
                         <div id="t2_pagination"></div>
+                    </div>
+                <?php
+                            } else {
+                ?>
+                    <div class="remark alert">
+                        No hay ningun resultado.
                     </div>
                 <?php
                             }

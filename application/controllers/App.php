@@ -47,9 +47,9 @@ class App extends CI_Controller
                                 $this->phpdebug->debug('[APP] -> Miembro detactado y validado');
                                 //Verificando los permisos de usuario
                                 $this->phpdebug->debug('[APP] -> Determinando el nivel de acceso');
-                                if (!$this->model_access->get_access($xMIEMBRO->vid, 'pages_HQ')) {
+                                /*if (!$this->model_access->get_access($xMIEMBRO->vid, 'pages_PR')) {
                                         exit('Usted no tiene permisos para acceder a este sitio.');
-                                }
+                                }*/
                                 //Consultado con la DB
                                 $this->phpdebug->debug('[APP] -> Traduciendo su ubicación');
                                 $query  = $this->db->select('*')

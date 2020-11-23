@@ -238,7 +238,7 @@ $this->load->view("_lib/lib.menu.php");
                     </div>
                 </div>
                 <div id="stats">
-                    <canvas id="Simulator" width="400" height="400"></canvas>
+                    <canvas id="Simulator" width="100" height="100"></canvas>
                     <script>
                         var ctx = document.getElementById('Simulator').getContext('2d');
                         var Simulator = new Chart(ctx, {

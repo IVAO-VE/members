@@ -75,7 +75,7 @@ $this->load->view("_lib/lib.menu.php");
                                     <div align="center" class="form-group">
                                         <input type="submit" class="button primary" value="Agregar">
                                     </div>
-                                <?php echo form_close() ?>
+                                    <?php echo form_close() ?>
                                 </div>
                             </div>
                         </div>
@@ -238,29 +238,37 @@ $this->load->view("_lib/lib.menu.php");
                     </div>
                 </div>
                 <div id="stats">
-                    <canvas id="Simulator" width="100" height="100"></canvas>
-                    <script>
-                        var ctx = document.getElementById('Simulator').getContext('2d');
-                        var Simulator = new Chart(ctx, {
-                            type: 'doughnut',
-                            data: {
-                                labels: ['FSX', 'P3D'],
-                                datasets: [{
-                                    label: 'Vuelos',
-                                    data: [120, 20],
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 99, 132, 1)',
-                                        'rgba(54, 162, 235, 1)'
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            }
-                        });
-                    </script>
+                    <div class="gird">
+                        <div class="row">
+                            <div class="cell-6">
+                                <canvas id="Simulator"></canvas>
+                                <script>
+                                    var ctx = document.getElementById('Simulator').getContext('2d');
+                                    var Simulator = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ['FSX', 'P3D'],
+                                            datasets: [{
+                                                label: 'Vuelos',
+                                                data: [120, 20],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            <div class="cell-6"></div>
+                            <div class="cell-6"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

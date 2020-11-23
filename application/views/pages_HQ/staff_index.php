@@ -258,15 +258,6 @@ $this->load->view("_lib/lib.menu.php");
                                     ],
                                     borderWidth: 1
                                 }]
-                            },
-                            options:{
-                                scales: {
-                                    yAxes: [{
-                                        thicks: {
-                                            beginAtZero: true
-                                        }
-                                    }]
-                                }
                             }
                         });
                     </script>

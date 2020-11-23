@@ -51,7 +51,7 @@ $this->load->view("_lib/lib.menu.php");
             <ul data-role="tabs" data-expand="true">
                 <li><a href="#permisos"><?php echo $this->lang->line('staff_HQ_0001'); ?></a></li>
                 <li><a href="#profile-activity">Activity</a></li>
-                <li><a href="#">Timeline</a></li>
+                <li><a href="#stats">Timeline</a></li>
                 <li><a href="#">Projects</a></li>
             </ul>
 
@@ -236,6 +236,40 @@ $this->load->view("_lib/lib.menu.php");
                         <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-source="<?php echo base_url('_include/'); ?>data/table.json" data-horizontal-scroll="true">
                         </table>
                     </div>
+                </div>
+                <div id="stats">
+                    <canvas id="Simulator" width="400" height="400"></canvas>
+                    <script>
+                        var ctx = document.getElementById('Simulator').getContext('2d');
+                        var Simulator = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['FSX', 'P3D'],
+                                datasets: [{
+                                    label: 'Vuelos',
+                                    data: [120, 20],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options:{
+                                scales: {
+                                    yAxes: [{
+                                        thicks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    </script>
                 </div>
             </div>
 

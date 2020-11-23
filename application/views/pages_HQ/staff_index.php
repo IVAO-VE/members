@@ -240,7 +240,7 @@ $this->load->view("_lib/lib.menu.php");
                 <div id="stats">
                     <div class="gird">
                         <div class="row">
-                            <div class="cell-6">
+                            <div class="cell-6" data-role="panel">
                                 <canvas id="Simulator"></canvas>
                                 <script>
                                     var ctx = document.getElementById('Simulator').getContext('2d');

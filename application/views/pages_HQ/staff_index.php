@@ -243,14 +243,37 @@ $this->load->view("_lib/lib.menu.php");
                             <div class="cell-6" data-role="panel">
                                 <canvas id="Simulator"></canvas>
                                 <script>
+                                <?php
+                                    //Unknown
+                                    $UKquery = $this->db->get_where('whazzup_log', array('simulator' => '0', 'client_type' => 'PILOT'));
+                                    if($UKquery->num_rows() > 0){
+                                        $UKN = $UKquery->num_rows();
+                                    }else{
+                                        $UKN = 0;
+                                    }
+                                    //Microsoft Flight Simulator X
+                                    $FXquery = $this->db->get_where('whazzup_log', array('simulator' => '9', 'client_type' => 'PILOT'));
+                                    if($FXquery->num_rows() > 0){
+                                        $FSX = $FXquery->num_rows();
+                                    }else{
+                                        $FSX = 0;
+                                    }
+                                    //MSFS
+                                    $MFquery = $this->db->get_where('whazzup_log', array('simulator' => '40', 'client_type' => 'PILOT'));
+                                    if($MFquery->num_rows() > 0){
+                                        $MFS = $MFquery->num_rows();
+                                    }else{
+                                        $MFS = 0;
+                                    }
+                                ?>
                                     var ctx = document.getElementById('Simulator').getContext('2d');
                                     var Simulator = new Chart(ctx, {
                                         type: 'doughnut',
                                         data: {
-                                            labels: ['FSX', 'P3D'],
+                                            labels: ['FSX', 'MFS'],
                                             datasets: [{
                                                 label: 'Vuelos',
-                                                data: [120, 20],
+                                                data: [<?php echo $FSX ?>, <?php echo $MFS ?>],
                                                 backgroundColor: [
                                                     'rgba(255, 99, 132, 0.2)',
                                                     'rgba(54, 162, 235, 0.2)'

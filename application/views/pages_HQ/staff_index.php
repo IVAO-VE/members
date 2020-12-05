@@ -275,7 +275,7 @@ $this->load->view("_lib/lib.menu.php");
                                                 label: 'Vuelos',
                                                 data: [<?php echo $UKN ?>, <?php echo $FSX ?>, <?php echo $MFS ?>],
                                                 backgroundColor: [
-                                                    'rgba(128, 217, 152)',
+                                                    'rgba(187, 237, 201)',
                                                     'rgba(255, 99, 132, 0.2)',
                                                     'rgba(54, 162, 235, 0.2)'
                                                 ]

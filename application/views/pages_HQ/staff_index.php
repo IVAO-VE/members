@@ -285,16 +285,14 @@ $this->load->view("_lib/lib.menu.php");
                                     var Simulator = new Chart(ctx, {
                                         type: 'doughnut',
                                         data: {
-                                            labels: ['Unknown','Microsoft Flight Simulator 95','Microsoft Flight Simulator 98' ,'Flight Simulator X', 'Microsoft Flight Simulator 2020'],
+                                            labels: ['Unknown','Flight Simulator X', 'Microsoft Flight Simulator 2020'],
                                             datasets: [{
                                                 label: 'Vuelos',
-                                                data: [<?php echo $UKN ?>, <?php echo $M95 ?>, <?php echo $M98 ?>, <?php echo $FSX ?>, <?php echo $MFS ?>],
+                                                data: [<?php echo $UKN ?>, <?php echo $FSX ?>, <?php echo $MFS ?>],
                                                 backgroundColor: [
                                                     'rgba(187, 237, 201)',
                                                     'rgba(255, 99, 132)',
-                                                    'rgba(54, 162, 235)',
-                                                    'rgba(255, 87, 51)',
-                                                    'rgba(51, 255, 193)'
+                                                    'rgba(54, 162, 235)'
                                                 ]
                                             }]
                                         }

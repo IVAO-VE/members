@@ -242,7 +242,8 @@ $this->load->view("_lib/lib.menu.php");
                         <div class="row">
                             <div class="cell-6" data-role="panel">
                                 <canvas id="Simulator"></canvas>
-                                <?php
+                                <script>
+                                    <?php
                                     //Unknown
                                     $UKquery = $this->db->get_where('whazzup_log', array('simulator' => '0', 'client_type' => 'PILOT'));
                                     if ($UKquery->num_rows() > 0) {
@@ -280,7 +281,6 @@ $this->load->view("_lib/lib.menu.php");
                                         $MFS = 0;
                                     }
                                     ?>
-                                <script>
                                     var ctx = document.getElementById('Simulator').getContext('2d');
                                     var Simulator = new Chart(ctx, {
                                         type: 'doughnut',
@@ -288,7 +288,7 @@ $this->load->view("_lib/lib.menu.php");
                                             labels: ['Unknown', 'Flight Simulator X', 'Microsoft Flight Simulator 2020'],
                                             datasets: [{
                                                 label: 'Vuelos',
-                                                data: [<?php echo $UKN ?>, <?php echo $FSX ?>, <?php echo $MFS ?>],
+                                                data: [10, 50, 20],
                                                 backgroundColor: [
                                                     'rgba(187, 237, 201)',
                                                     'rgba(255, 99, 132)',
@@ -296,7 +296,8 @@ $this->load->view("_lib/lib.menu.php");
                                                 ],
                                                 borderColor: [
                                                     'rgba(255, 99, 132, 1)',
-                                                    'rgba(54, 162, 235, 1)'
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(54, 162, 235)'
                                                 ],
                                                 borderWidth: 1
                                             }]

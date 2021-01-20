@@ -243,49 +243,49 @@ $this->load->view("_lib/lib.menu.php");
                             <div class="cell-6" data-role="panel">
                                 <canvas id="Simulator"></canvas>
                                 <script>
-                                <?php
+                                    <?php
                                     //Unknown
                                     $UKquery = $this->db->get_where('whazzup_log', array('simulator' => '0', 'client_type' => 'PILOT'));
-                                    if($UKquery->num_rows() > 0){
+                                    if ($UKquery->num_rows() > 0) {
                                         $UKN = $UKquery->num_rows();
-                                    }else{
+                                    } else {
                                         $UKN = 0;
                                     }
                                     //Microsoft Flight Simulator 95
                                     $M95query = $this->db->get_where('whazzup_log', array('simulator' => '1', 'client_type' => 'PILOT'));
-                                    if($M95query->num_roes() > 0){
+                                    if ($M95query->num_roes() > 0) {
                                         $M95 = $M95query->num_rows();
-                                    }else{
+                                    } else {
                                         $M95 = 0;
                                     }
                                     //Microsoft Flight Simulator 98
                                     $M98query = $this->db->get_where('whazzup_log', array('simulator' => '2', 'client_type' => 'PILOT'));
-                                    if($M98query->num_rows() > 0){
+                                    if ($M98query->num_rows() > 0) {
                                         $M98 = $M98query->num_rows();
-                                    }else{
+                                    } else {
                                         $M98 = 0;
                                     }
                                     //Microsoft Combat Flight Simulator
                                     //Microsoft Flight Simulator X
                                     $FXquery = $this->db->get_where('whazzup_log', array('simulator' => '9', 'client_type' => 'PILOT'));
-                                    if($FXquery->num_rows() > 0){
+                                    if ($FXquery->num_rows() > 0) {
                                         $FSX = $FXquery->num_rows();
-                                    }else{
+                                    } else {
                                         $FSX = 0;
                                     }
                                     //MSFS
                                     $MFquery = $this->db->get_where('whazzup_log', array('simulator' => '40', 'client_type' => 'PILOT'));
-                                    if($MFquery->num_rows() > 0){
+                                    if ($MFquery->num_rows() > 0) {
                                         $MFS = $MFquery->num_rows();
-                                    }else{
+                                    } else {
                                         $MFS = 0;
                                     }
-                                ?>
+                                    ?>
                                     var ctx = document.getElementById('Simulator').getContext('2d');
                                     var Simulator = new Chart(ctx, {
                                         type: 'doughnut',
                                         data: {
-                                            labels: ['Unknown','Flight Simulator X', 'Microsoft Flight Simulator 2020'],
+                                            labels: ['Unknown', 'Flight Simulator X', 'Microsoft Flight Simulator 2020'],
                                             datasets: [{
                                                 label: 'Vuelos',
                                                 data: [<?php echo $UKN ?>, <?php echo $FSX ?>, <?php echo $MFS ?>],
@@ -293,7 +293,12 @@ $this->load->view("_lib/lib.menu.php");
                                                     'rgba(187, 237, 201)',
                                                     'rgba(255, 99, 132)',
                                                     'rgba(54, 162, 235)'
-                                                ]
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)'
+                                                ],
+                                                borderWidth: 1
                                             }]
                                         }
                                     });

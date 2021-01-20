@@ -242,8 +242,7 @@ $this->load->view("_lib/lib.menu.php");
                         <div class="row">
                             <div class="cell-6" data-role="panel">
                                 <canvas id="Simulator"></canvas>
-                                <script>
-                                    <?php
+                                <?php
                                     //Unknown
                                     $UKquery = $this->db->get_where('whazzup_log', array('simulator' => '0', 'client_type' => 'PILOT'));
                                     if ($UKquery->num_rows() > 0) {
@@ -281,6 +280,7 @@ $this->load->view("_lib/lib.menu.php");
                                         $MFS = 0;
                                     }
                                     ?>
+                                <script>
                                     var ctx = document.getElementById('Simulator').getContext('2d');
                                     var Simulator = new Chart(ctx, {
                                         type: 'doughnut',

@@ -372,11 +372,11 @@
                 </div>
                 <div id="notams">
                     <br>
-                    <div data-role="panel" data-title-caption="Envío de NOTAMs a todos los usuarios" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Creación de NOTAM" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
 
                         <div class="p-1 p-6-lg bg-white">
-                            <h4>Envíar nuevo correo NOTAM</h4>
+                            <h4>Creación de NOTAMs</h4>
                             <form class="mt-3">
                                 <div class="row m-0">
                                     <div class="cell-lg-8 bg-light p-1 p-6-lg">
@@ -405,6 +405,30 @@
                                     </div>
                                 </div>
                             </form>
+                            <?php echo form_open(); ?>
+                                    <div class="gird">
+                                        <div class="row">
+                                            <div class="cell-6">
+                                                <input type="text" data-role="input" name="title" data-prepend="Título:">
+                                            </div>
+                                            <div class="cell-6">
+                                                <select name="airport" data-role="select">
+                                                    <?php 
+                                                        $this->db->select('*');
+                                                        $this->db->from('nav_airports');
+                                                        $this->db->like('icao', 'SV', 'after');
+                                                        $Nquery = $this->db->get();
+                                                        foreach($Nquery->result() as $Nrow){
+                                                        ?>
+                                                        <option value=""><?php echo $Nrow->icao ?></option>
+                                                        <?php    
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php echo form_close(); ?>
                         </div>
 
 

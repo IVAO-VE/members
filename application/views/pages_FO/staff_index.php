@@ -392,14 +392,21 @@
                                                         $Nquery = $this->db->get();
                                                         foreach($Nquery->result() as $Nrow){
                                                         ?>
-                                                        <option value="<?php echo $Nrow->icao ?>"><?php echo $Nrow->icao . "  " .  $Nrow->name ?></option>
+                                                        <option value="<?php echo $Nrow->icao ?>"><?php echo $Nrow->icao . " - " .  $Nrow->name ?></option>
                                                         <?php    
                                                         }
                                                     ?>
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="cell-6">
+                                                <input type="text" data-role="calendarpicker" data-input-format="%d/%m/%y %h:%i" data-prepend="Inicio">
+                                            </div>
+                                            <div class="cell-6"></div>
+                                        </div>
                                     </div>
+                                    
                             <?php echo form_close(); ?>
                         </div>
 

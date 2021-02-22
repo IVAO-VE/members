@@ -335,12 +335,12 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
                 <div id="notams">
                     <br>
-                    <div data-role="panel" data-title-caption="Creación de NOTAM" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Crear NOTAM" data-title-icon="<span class='mif-info'>" data-collapsible="true">
 
 
                         <div class="p-1 p-6-lg bg-white">
                             <h4>Creación de NOTAMs</h4>
-                            <?php echo form_open(); ?>
+                            <?php echo form_open('Staff/AddNotam'); ?>
                             <div class="gird">
                                 <div class="row">
                                     <div class="cell-6">
@@ -386,6 +386,25 @@ $this->load->view("_lib/lib.menu.php");
 
                     </div>
                     <br>
+                    <div data-role="panel" data-title-caption="Lista de NOTAM" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                                <div class="p1 p-6-lg bg-white">
+                                        <h4>Lista de NOTAMS</h4>
+                                        <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-horizontal-scroll="true">
+                                            <thead>
+                                                <tr class="flex-self-center">
+                                                    <th>Nombre</th>
+                                                    <th>Aeropuerto</th>
+                                                    <th>Zona especial</th>
+                                                    <th>Inicio</th>
+                                                    <th>Final</th>
+                                                    <th>Creador</th>
+                                                    <th>Texto</th>
+                                                    <th>Estado</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                </div>
+                    </div>
                 </div>
 
 

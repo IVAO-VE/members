@@ -1012,9 +1012,9 @@ class Staff extends CI_Controller
         $Running = $items[0]->Running;
         $ID = $items[0]->ID;
 
-        if($Running == 1){
+        if ($Running == 1) {
             $ran = '0';
-        }else{
+        } else {
             $ran = '1';
         }
         $array = array(
@@ -1026,20 +1026,64 @@ class Staff extends CI_Controller
                 'AnswerD' => $D,
                 'CorrectAnswer' => $Correct,
                 'Running' => $ran,
-                'ID' => $ID 
+                'ID' => $ID
             )
         );
 
         $MyJSON = json_encode($array);
         $NewData = file_put_contents('/var/www/vhosts/ve.ivao.aero/utilities.ve.ivao.aero/src/trivia.json', $MyJSON);
 
-        if ($NewData
-        ) {
+        if ($NewData) {
             $this->session->set_flashdata('info', 'La trivia se registro correctamente.');
             redirect(base_url('staff/relations'));
         } else {
             $this->session->set_flashdata('error', 'Tenemos problemas registrando la trivia.');
             redirect(base_url('staff/relations'));
+        }
+    }
+
+    public function AddNotam()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('title', 'Titulo NOTAM', 'required');
+        $this->form_validation->set_rules('text', 'Texto', 'required');
+        $this->form_validation->set_rules('start', 'Inicio', 'required');
+        $this->form_validation->set_rules('end', 'Final', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', 'Asegurate de rellenar correctamente los campos:' . validation_errors());
+            redirect(base_url('staff/flights'));
+        } else {
+            $title = $this->input->post('title');
+            $start = $this->input->post('start');
+            $end = $this->input->post('end');
+            $airport = $this->input->post('airport');
+            $special = $this->input->post('special');
+            $text = $this->input->post('text');
+            $author = $this->session->userdata('vid'),
+            $status = 0;
+
+            $data = array(
+                "title" => $title,
+                "airport" => $airport,
+                "special" => $special,
+                "start" => $start,
+                "end" => $end,
+                "text" => $text,
+                "owner" => $author,
+                "state" => $status 
+            );
+
+            $q = $this->db->insert('notams', $data);
+
+            if ($q) {
+                $this->session->set_flashdata('info', 'El Notam se agrego correctamente.');
+                redirect(base_url('staff/flights'));
+            } else {
+                $this->session->set_flashdata('error', 'Tenemos problemas registrando el notam.');
+                redirect(base_url('staff/flights'));
+            }
+        
         }
     }
 }

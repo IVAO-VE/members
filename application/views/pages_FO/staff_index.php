@@ -378,6 +378,9 @@ $this->load->view("_lib/lib.menu.php");
                                         <textarea name="text" data-role="textarea" data-prepend="Texto:"></textarea>
                                     </div>
                                 </div>
+                                <div class="row">
+                                        <input type="submit" class="button success" value="Crear">
+                                </div>
                             </div>
 
                             <?php echo form_close(); ?>

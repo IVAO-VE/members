@@ -405,6 +405,26 @@ $this->load->view("_lib/lib.menu.php");
                                                     <th>Estado</th>
                                                 </tr>
                                             </thead>
+                                            <tbody>
+                                                <?php
+                                                    $this->db->select('*');
+                                                    $this->db->from('notams');
+                                                    $NTquery = $this->db->get();
+                                                    foreach($NTquery->result() as $NTrow){
+                                                ?>
+                                                    <tr>
+                                                        <td><?php echo $NTrow->title; ?></td>
+                                                        <td><?php echo $NTrow->airport; ?></td>
+                                                        <td><?php echo $NTrow->special; ?></td>
+                                                        <td><?php echo $NTrow->start; ?></td>
+                                                        <td><?php echo $NTrow->end; ?></td>
+                                                        <td><?php echo $NTrow->text; ?></td>
+                                                        <td><?php echo $NTrow->owner; ?></td>
+                                                    </tr>
+                                                <?php
+                                                    }
+                                                ?>
+                                            </tbody>
                                         </table>
                                 </div>
                     </div>

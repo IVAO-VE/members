@@ -1060,7 +1060,7 @@ class Staff extends CI_Controller
             $airport = $this->input->post('airport');
             $special = $this->input->post('special');
             $text = $this->input->post('text');
-            $author = $this->session->userdata('vid'),
+            $author = $this->session->userdata('vid');
             $status = 0;
 
             $data = array(

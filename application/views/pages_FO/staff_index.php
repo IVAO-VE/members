@@ -57,7 +57,7 @@ $this->load->view("_lib/lib.menu.php");
         <div class="bg-white h-100">
 
             <ul data-role="tabs" data-expand="true">
-                <li><a href="#airlines"><?php echo $this->lang->line('airlines_title'); ?></a></li>
+                <!-- <li><a href="#airlines"><?php echo $this->lang->line('airlines_title'); ?></a></li> -->
                 <li><a href="#charts"><?php echo $this->lang->line('charts_title'); ?></a></li>
                 <li><a href="#meteorologic"><?php echo $this->lang->line('meteorologic_title'); ?></a></li>
                 <li><a href="#information"><?php echo $this->lang->line('information_title'); ?></a></li>

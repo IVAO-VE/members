@@ -1063,11 +1063,11 @@ class Staff extends CI_Controller
             $author = $this->session->userdata('vid');
             $status = 0;
 
-            if($airport == ""){
+            if($airport == " "){
                 $Nairport = null;
             }
 
-            if($special == ""){
+            if($special == " "){
                 $Nspecial = null;
             }
 

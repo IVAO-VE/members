@@ -1063,10 +1063,18 @@ class Staff extends CI_Controller
             $author = $this->session->userdata('vid');
             $status = 0;
 
+            if($airport == ""){
+                $Nairport = null;
+            }
+
+            if($special == ""){
+                $Nspecial = null;
+            }
+
             $data = array(
                 "title" => $title,
-                "airport" => $airport,
-                "special" => $special,
+                "airport" => $Nairport,
+                "special" => $Nspecial,
                 "start" => $start,
                 "end" => $end,
                 "text" => $text,

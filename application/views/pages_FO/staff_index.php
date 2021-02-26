@@ -399,8 +399,7 @@ $this->load->view("_lib/lib.menu.php");
                                 <thead>
                                     <tr class="flex-self-center">
                                         <th>Nombre</th>
-                                        <th>Aeropuerto</th>
-                                        <th>Zona especial</th>
+                                        <th>Ubicacion</th>
                                         <th>Inicio</th>
                                         <th>Final</th>
                                         <th>Creador</th>
@@ -417,8 +416,15 @@ $this->load->view("_lib/lib.menu.php");
                                     ?>
                                         <tr>
                                             <td><?php echo $NTrow->title; ?></td>
-                                            <td><?php echo $NTrow->airport; ?></td>
-                                            <td><?php echo $NTrow->special; ?></td>
+                                            <td>
+                                             <?php
+                                                if($NTrow->airport != NULL){
+                                                    echo $NTrow->airport;
+                                                }else{
+                                                    echo $NTrow->special;
+                                                }
+                                             ?>
+                                            </td>
                                             <td><?php echo $NTrow->start; ?></td>
                                             <td><?php echo $NTrow->end; ?></td>
                                             <td><?php echo $NTrow->text; ?></td>

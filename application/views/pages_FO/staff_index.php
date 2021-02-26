@@ -348,6 +348,7 @@ $this->load->view("_lib/lib.menu.php");
                                     </div>
                                     <div class="cell-6">
                                         <select name="airport" data-role="select">
+                                        <option value="">Seleccionar</option>
                                             <?php
                                             $this->db->select('*');
                                             $this->db->from('nav_airports');

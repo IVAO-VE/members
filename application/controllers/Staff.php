@@ -1063,12 +1063,16 @@ class Staff extends CI_Controller
             $author = $this->session->userdata('vid');
             $status = 0;
 
-            if($airport == " "){
+            if(empty($airport)){
                 $Nairport = null;
+            }else{
+                $Nairport = $airport;
             }
 
-            if($special == " "){
+            if(empty($special)){
                 $Nspecial = null;
+            }else{
+                $Nspecial = $special;
             }
 
             $data = array(

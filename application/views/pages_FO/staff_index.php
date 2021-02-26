@@ -379,7 +379,10 @@ $this->load->view("_lib/lib.menu.php");
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="cell-10"></div>
+                                    <div class="cell-2">
                                         <input type="submit" class="button success" value="Crear">
+                                    </div>
                                 </div>
                             </div>
 
@@ -390,43 +393,43 @@ $this->load->view("_lib/lib.menu.php");
                     </div>
                     <br>
                     <div data-role="panel" data-title-caption="Lista de NOTAM" data-title-icon="<span class='mif-info'>" data-collapsible="true">
-                                <div class="p1 p-6-lg bg-white">
-                                        <h4>Lista de NOTAMS</h4>
-                                        <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-horizontal-scroll="true">
-                                            <thead>
-                                                <tr class="flex-self-center">
-                                                    <th>Nombre</th>
-                                                    <th>Aeropuerto</th>
-                                                    <th>Zona especial</th>
-                                                    <th>Inicio</th>
-                                                    <th>Final</th>
-                                                    <th>Creador</th>
-                                                    <th>Texto</th>
-                                                    <th>Estado</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                    $this->db->select('*');
-                                                    $this->db->from('notams');
-                                                    $NTquery = $this->db->get();
-                                                    foreach($NTquery->result() as $NTrow){
-                                                ?>
-                                                    <tr>
-                                                        <td><?php echo $NTrow->title; ?></td>
-                                                        <td><?php echo $NTrow->airport; ?></td>
-                                                        <td><?php echo $NTrow->special; ?></td>
-                                                        <td><?php echo $NTrow->start; ?></td>
-                                                        <td><?php echo $NTrow->end; ?></td>
-                                                        <td><?php echo $NTrow->text; ?></td>
-                                                        <td><?php echo $NTrow->owner; ?></td>
-                                                    </tr>
-                                                <?php
-                                                    }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                </div>
+                        <div class="p1 p-6-lg bg-white">
+                            <h4>Lista de NOTAMS</h4>
+                            <table class="table striped table-border mt-4" data-role="table" data-cls-table-top="row" data-cls-search="cell-md-6" data-cls-rows-count="cell-md-6" data-rows="5" data-rows-steps="5, 10" data-show-activity="false" data-horizontal-scroll="true">
+                                <thead>
+                                    <tr class="flex-self-center">
+                                        <th>Nombre</th>
+                                        <th>Aeropuerto</th>
+                                        <th>Zona especial</th>
+                                        <th>Inicio</th>
+                                        <th>Final</th>
+                                        <th>Creador</th>
+                                        <th>Texto</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $this->db->select('*');
+                                    $this->db->from('notams');
+                                    $NTquery = $this->db->get();
+                                    foreach ($NTquery->result() as $NTrow) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $NTrow->title; ?></td>
+                                            <td><?php echo $NTrow->airport; ?></td>
+                                            <td><?php echo $NTrow->special; ?></td>
+                                            <td><?php echo $NTrow->start; ?></td>
+                                            <td><?php echo $NTrow->end; ?></td>
+                                            <td><?php echo $NTrow->text; ?></td>
+                                            <td><?php echo $NTrow->owner; ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 

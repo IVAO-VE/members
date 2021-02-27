@@ -335,7 +335,7 @@ $this->load->view("_lib/lib.menu.php");
                 </div>
                 <div id="notams">
                     <br>
-                    <div data-role="panel" data-title-caption="Crear NOTAM" data-title-icon="<span class='mif-info'>" data-collapsible="true">
+                    <div data-role="panel" data-title-caption="Crear NOTAM" data-title-icon="<span class='mif-info'>" data-collapsed="true" data-collapsible="true">
 
 
                         <div class="p-1 p-6-lg bg-white">

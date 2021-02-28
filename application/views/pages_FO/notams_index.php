@@ -31,17 +31,6 @@ $this->load->view("_lib/lib.menu.php");
         </ul>
     </div>
 </div>
-<div class="dialog" data-role="dialog" id="demoDialog1">
-    <div class="dialog-title">Use Windows location service?</div>
-    <div class="dialog-content">
-        Bassus abactors ducunt ad triticum.
-        A fraternal form of manifestation is the bliss.
-    </div>
-    <div class="dialog-actions">
-        <button class="button js-dialog-close">Disagree</button>
-        <button class="button primary js-dialog-close">Agree</button>
-    </div>
-</div>
 <div class="m-3">
     <div data-role="panel" data-title-caption="NOTAMs" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
         <div class="row">
@@ -55,6 +44,17 @@ $this->load->view("_lib/lib.menu.php");
                             <span class="caption">Rocket</span>
                             <span class="mif-rocket icon"></span>
                         </button>
+                        <div class="dialog" data-role="dialog" id="demoDialog1">
+                            <div class="dialog-title">Use Windows location service?</div>
+                            <div class="dialog-content">
+                                Bassus abactors ducunt ad triticum.
+                                A fraternal form of manifestation is the bliss.
+                            </div>
+                            <div class="dialog-actions">
+                                <button class="button js-dialog-close">Disagree</button>
+                                <button class="button primary js-dialog-close">Agree</button>
+                            </div>
+                        </div>
                     <?php
                     }
                 } else {

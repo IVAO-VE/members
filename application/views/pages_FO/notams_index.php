@@ -31,21 +31,34 @@ $this->load->view("_lib/lib.menu.php");
         </ul>
     </div>
 </div>
+<div class="dialog" data-role="dialog" id="demoDialog1">
+    <div class="dialog-title">Use Windows location service?</div>
+    <div class="dialog-content">
+        Bassus abactors ducunt ad triticum.
+        A fraternal form of manifestation is the bliss.
+    </div>
+    <div class="dialog-actions">
+        <button class="button js-dialog-close">Disagree</button>
+        <button class="button primary js-dialog-close">Agree</button>
+    </div>
+</div>
 <div class="m-3">
-    <div data-role="panel" data-title-caption="<?php echo $this->lang->line('charts_IFR'); ?>" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
+    <div data-role="panel" data-title-caption="NOTAMs" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
         <div class="row">
             <div class="bg-white p-4">
                 <?php
                 $Qnotams = $this->db->get_where('notams', array('state' => '1'));
                 if ($Qnotams->num_rows() > 0) {
+                    foreach ($Qnotams->result() as $QNrow) {
                 ?>
-                    <button class="shortcut">
-                        <span class="caption">Rocket</span>
-                        <span class="mif-rocket icon"></span>
-                    </button>
-                <?php
+                        <button class="shortcut" onclick="Metro.dialog.open('#demoDialog1')">
+                            <span class="caption">Rocket</span>
+                            <span class="mif-rocket icon"></span>
+                        </button>
+                    <?php
+                    }
                 } else {
-                ?>
+                    ?>
                     <div class="remark warning">
                         No hay NOTAMs para mostrar en este momento.
                     </div>

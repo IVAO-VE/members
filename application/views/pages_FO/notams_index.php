@@ -37,8 +37,7 @@ $this->load->view("_lib/lib.menu.php");
             <div class="bg-white p-4">
                 <?php
                 $Qnotams = $this->db->get_where('notams', array('state' => '1'));
-                $Rnotams = $Qnotams->num_rows();
-                if ($Rnotams > 0) {
+                if ($Qnotams->num_rows() > 0) {
                 ?>
                     <button class="shortcut">
                         <span class="caption">Rocket</span>

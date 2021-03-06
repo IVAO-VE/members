@@ -38,7 +38,7 @@ $this->load->view("_lib/lib.menu.php");
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, nisi tenetur. Harum et impedit asperiores illum ullam rerum atque laboriosam mollitia, omnis inventore totam repellat quisquam dolorem molestias deleniti doloremque!
         </p>
     </div>
-    <div data-role="panel" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
+    <div data-role="panel" data-title-caption="   " data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
         <div class="row">
             <div class="bg-white p-4">
                 <?php
@@ -49,7 +49,7 @@ $this->load->view("_lib/lib.menu.php");
                         <button class="shortcut" onclick="Metro.dialog.open('#modal<?php echo $QNrow->id ?>')">
                             <span class="caption"></span>
                             <span class="caption"><?php echo $QNrow->title ?></span>
-                            <span class="mif-rocket icon"></span>
+                            <span class="mif-headphones icon"></span>
                         </button>
                         <div class="dialog" data-role="dialog" id="modal<?php echo $QNrow->id ?>">
                             <div class="dialog-title"><?php echo $QNrow->title ?></div>

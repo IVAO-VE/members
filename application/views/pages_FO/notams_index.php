@@ -41,7 +41,7 @@ $this->load->view("_lib/lib.menu.php");
                     foreach ($Qnotams->result() as $QNrow) {
                 ?>
                         <button class="shortcut" onclick="Metro.dialog.open('#modal<?php echo $QNrow->id ?>')">
-                            <span class="caption"><</span>
+                            <span class="caption"></span>
                             <span class="caption"><?php echo $QNrow->title ?></span>
                             <span class="mif-rocket icon"></span>
                         </button>

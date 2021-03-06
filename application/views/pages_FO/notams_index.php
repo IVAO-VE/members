@@ -32,10 +32,12 @@ $this->load->view("_lib/lib.menu.php");
     </div>
 </div>
 <div class="m-3">
-<h1>NOTAM <small>Notice To Airmen</small></h1>
-<p>
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, nisi tenetur. Harum et impedit asperiores illum ullam rerum atque laboriosam mollitia, omnis inventore totam repellat quisquam dolorem molestias deleniti doloremque!
-</p>
+    <div class="bg-white text-center">
+        <h1>NOTAM <small>Notice To Airmen</small></h1>
+    </div>
+    <p class="text-just">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, nisi tenetur. Harum et impedit asperiores illum ullam rerum atque laboriosam mollitia, omnis inventore totam repellat quisquam dolorem molestias deleniti doloremque!
+    </p>
     <div data-role="panel" data-title-caption="NOTAMs" data-collapsible="true" data-title-icon="<span class='mif-clipboard'></span>" class="mt-4">
         <div class="row">
             <div class="bg-white p-4">

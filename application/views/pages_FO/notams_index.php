@@ -41,11 +41,12 @@ $this->load->view("_lib/lib.menu.php");
                     foreach ($Qnotams->result() as $QNrow) {
                 ?>
                         <button class="shortcut" onclick="Metro.dialog.open('#demoDialog1')">
-                            <span class="caption">Rocket</span>
+                            <span class="caption"><</span>
+                            <span class="caption"><?php echo $QNrow->title ?></span>
                             <span class="mif-rocket icon"></span>
                         </button>
                         <div class="dialog" data-role="dialog" id="demoDialog1">
-                            <div class="dialog-title">Use Windows location service?</div>
+                            <div class="dialog-title"><?php echo $QNrow->title ?></div>
                             <div class="dialog-content">
                                 Bassus abactors ducunt ad triticum.
                                 A fraternal form of manifestation is the bliss.

@@ -40,12 +40,12 @@ $this->load->view("_lib/lib.menu.php");
                 if ($Qnotams->num_rows() > 0) {
                     foreach ($Qnotams->result() as $QNrow) {
                 ?>
-                        <button class="shortcut" onclick="Metro.dialog.open('#<?php echo $QNrow->id ?>')">
+                        <button class="shortcut" onclick="Metro.dialog.open('#modal<?php echo $QNrow->id ?>')">
                             <span class="caption"><</span>
                             <span class="caption"><?php echo $QNrow->title ?></span>
                             <span class="mif-rocket icon"></span>
                         </button>
-                        <div class="dialog" data-role="dialog" id="<?php echo $QNrow->id ?>">
+                        <div class="dialog" data-role="dialog" id="modal<?php echo $QNrow->id ?>">
                             <div class="dialog-title"><?php echo $QNrow->title ?></div>
                             <div class="dialog-content">
                                 Bassus abactors ducunt ad triticum.
